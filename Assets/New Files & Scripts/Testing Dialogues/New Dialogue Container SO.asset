@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: New Dialogue Container SO
+  m_EditorClassIdentifier: 
+  AllowDialogueSave: 0
+  BlockingReopeningDialogue: 0
+  NodeLinkDatas: []
+  DialogueChoiceNodeDatas:
+  - NodeGuid: 50823cb5-a3ad-4841-b5c2-53ec2b110fba
+    Position: {x: 264, y: 222}
+    DialogueNodePorts:
+    - PortGuid: ac299bf4-7b5e-4de8-9df7-ca2ac587869a
+      InputGuid: 
+      OutputGuid: 
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Choice 01
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 0}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 5
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+  DialogueNodeDatas: []
+  TimerChoiceNodeDatas: []
+  EndNodeDatas: []
+  EventNodeDatas: []
+  StartNodeDatas: []
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []

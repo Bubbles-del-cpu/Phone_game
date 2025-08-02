@@ -1,0 +1,28 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+[System.Serializable]
+public class ChapterSaveData
+{
+    public string FileName;
+    public int FileIndex;
+    public string StartID;
+    public bool Completed;
+    public string CurrentGUID;
+    public List<PastCoversationData> PastCoversations;
+
+    public ChapterSaveData()
+    {
+        PastCoversations = new List<PastCoversationData>();
+    }
+
+    [System.Serializable]
+    public class PastCoversationData
+    {
+        public string GUID;
+        public string Text;
+
+        public bool IsChoice;
+        public string SelectedChoice;
+    }
+}

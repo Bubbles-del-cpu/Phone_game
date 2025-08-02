@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76bf2ff3652a68438d37775da7ebe79, type: 3}
+  m_Name: Lily
+  m_EditorClassIdentifier: 
+  characterName:
+  - languageEnum: 0
+    LanguageGenericType: Clair
+  CustomizedName:
+    ValueName: PlayerName
+  UseGlobalValue: 0
+  Images:
+  - {fileID: 21300000, guid: bc9b1a7194f02f94898cc95fb7ab6083, type: 3}
+  - {fileID: 21300000, guid: 58eb1f0393957484dbcf190a79d1e320, type: 3}
+  - {fileID: 21300000, guid: 3f56d518de365854799f16f3fa0ecfeb, type: 3}
+  - {fileID: 21300000, guid: 7674f4f8e0fb8034e8d790b562e3c290, type: 3}
+  - {fileID: 21300000, guid: 2fc9d11e01cc7084c99e4c53da86c9e0, type: 3}
+  - {fileID: 21300000, guid: 141ded73d00f8814996b77067ffe15c9, type: 3}
+  - {fileID: 21300000, guid: 0b965ac0a4a0d894d997b6bbe17d1a42, type: 3}
+  - {fileID: 21300000, guid: ab6dc9ccd656e3e419d62d4211ddec65, type: 3}
+  - {fileID: 21300000, guid: 1b8426eedc6fa554ab1b8d67a4a2d88c, type: 3}
+  textColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+  Avatars:
+  - type: 0
+    LeftPosition: {fileID: -1250542065175253887, guid: 9c8acfb7fc907194c8ead43588958fdc, type: 3}
+    RightPosition: {fileID: -1250542065175253887, guid: 9c8acfb7fc907194c8ead43588958fdc, type: 3}

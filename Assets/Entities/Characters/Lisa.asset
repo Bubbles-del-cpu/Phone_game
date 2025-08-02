@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76bf2ff3652a68438d37775da7ebe79, type: 3}
+  m_Name: Lisa
+  m_EditorClassIdentifier: 
+  characterName:
+  - languageEnum: 0
+    LanguageGenericType: Marin
+  CustomizedName:
+    ValueName: PlayerName
+  UseGlobalValue: 1
+  Images:
+  - {fileID: 21300000, guid: 52a7d9dedb0198448a75a8ae3ca7e65c, type: 3}
+  - {fileID: 21300000, guid: 9b4a9b45a3b8ee741953631f5457f7d5, type: 3}
+  - {fileID: 21300000, guid: 3ee712630c6a8a04691d8b6a282423e0, type: 3}
+  - {fileID: 21300000, guid: 9b8eaa5f33894324fab37e06ee390eea, type: 3}
+  - {fileID: 21300000, guid: 1ab49b710baeaf642b1724263de75ff6, type: 3}
+  - {fileID: 21300000, guid: 1bf85aeaf13c99141950db4d7230bcfe, type: 3}
+  - {fileID: 21300000, guid: 3367022e96107f148874208dddf25901, type: 3}
+  - {fileID: 21300000, guid: 7ee6cb95fdc71444b9bb639433afeb06, type: 3}
+  - {fileID: 21300000, guid: fa2dae40a52453c43bb53208ce6145df, type: 3}
+  textColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+  Avatars:
+  - type: 0
+    LeftPosition: {fileID: 5328894139677964944, guid: c812789a40ded584197e924ee5db6dae, type: 3}
+    RightPosition: {fileID: 5328894139677964944, guid: c812789a40ded584197e924ee5db6dae, type: 3}

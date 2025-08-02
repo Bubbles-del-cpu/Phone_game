@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Test Episode
+  m_EditorClassIdentifier: 
+  AllowDialogueSave: 0
+  BlockingReopeningDialogue: 0
+  NodeLinkDatas:
+  - BaseNodeGuid: bd94de8d-82de-47aa-a13f-f0d82970b684
+    TargetNodeGuid: 66b88041-874f-45b1-807d-31c0c1684433
+  - BaseNodeGuid: 66b88041-874f-45b1-807d-31c0c1684433
+    TargetNodeGuid: 986334e6-d7b7-4c46-9d0c-4701fdffb816
+  - BaseNodeGuid: 986334e6-d7b7-4c46-9d0c-4701fdffb816
+    TargetNodeGuid: e94c2a62-2fee-4ff7-9e0f-ac5ea8f122fc
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 986334e6-d7b7-4c46-9d0c-4701fdffb816
+    Position: {x: 609, y: 180}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c7cbc9723ae0f174cba60146f0cc8e0e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ....
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Image: {fileID: 0}
+    ImageTarget: 0
+    Post: {fileID: 0}
+    Timelapse: 
+    DelayTimer: 0
+  - NodeGuid: 66b88041-874f-45b1-807d-31c0c1684433
+    Position: {x: 369, y: 176}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c7cbc9723ae0f174cba60146f0cc8e0e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Testing
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Image: {fileID: 0}
+    ImageTarget: 0
+    Post: {fileID: 0}
+    Timelapse: 
+    DelayTimer: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: e94c2a62-2fee-4ff7-9e0f-ac5ea8f122fc
+    Position: {x: 877, y: 274}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: bd94de8d-82de-47aa-a13f-f0d82970b684
+    Position: {x: 217, y: 299}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
