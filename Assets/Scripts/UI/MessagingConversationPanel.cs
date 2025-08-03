@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using MeetAndTalk;
 using System.Collections;
 
@@ -19,58 +18,68 @@ public class MessagingConversationPanel : UIPanel
         ScrollToBottom();
     }
 
-    private bool ShouldAutoScroll()
-    {
-        // Only auto-scroll if user is already near the bottom
-        return _scrollView.verticalNormalizedPosition <= 0.1f;
-    }
+    // private bool ShouldAutoScroll()
+    // {
+    //     // Only auto-scroll if user is already near the bottom
+    //     return _scrollView.verticalNormalizedPosition <= 0.1f;
+    // }
 
-    public void AddElement(BaseNodeData nodeData, MessagingBubble prefab, string text, int containerNumber, bool hide = false)
+    public void AddElement(BaseNodeData nodeData, MessagingBubble prefab, string text, DialogueUIManager.MessageSource source, bool notification)
     {
-        var wasNearBottom = ShouldAutoScroll();
-
-        switch (nodeData)
+        //var wasNearBottom = ShouldAutoScroll();
+        for(var index = 0; index < MessageBubbleContainers.Length; index++)
         {
-            case DialogueNodeData nd when nodeData is DialogueNodeData:
-                {
-                    if (nd.Timelapse.Length > 0)
-                    {
-                        MessagingBubble _timelapseBubble = Instantiate(prefab, MessageBubbleContainers[containerNumber]);
-                        _timelapseBubble.Init(hide, nd.Timelapse);
-                        _timelapseBubble.IsTimelapse = true;
-                    }
+            var container = MessageBubbleContainers[index];
+            var containerSource = (DialogueUIManager.MessageSource)index;
 
-                    //Add element after timelapse
-                    var _bubble = Instantiate(prefab, MessageBubbleContainers[containerNumber]);
-                    switch (nd.PostMediaType)
+            //Both panels recieve the same message - this allows both "sides" to scroll to the same locations without issue
+            //Depending on the source one side will be hidden and one will be visible.
+            var hidden = source != containerSource;
+
+            switch (nodeData)
+            {
+                case DialogueNodeData nd when nodeData is DialogueNodeData:
                     {
-                        case MediaType.Sprite:
-                            _bubble.Init(hide, text, nd.Image);
-                            break;
-                        case MediaType.Video:
-                            _bubble.Init(hide, text, nd.Video);
-                            break;
+                        if (nd.Timelapse.Length > 0)
+                        {
+                            MessagingBubble _timelapseBubble = Instantiate(prefab, container);
+                            _timelapseBubble.Init(hidden, nd.Timelapse);
+                            _timelapseBubble.IsTimelapse = true;
+                        }
+
+                        //Add element after timelapse
+                        var _bubble = Instantiate(prefab, container);
+                        switch (nd.PostMediaType)
+                        {
+                            case MediaType.Sprite:
+                                _bubble.Init(hidden, text, nd.Image);
+                                break;
+                            case MediaType.Video:
+                                _bubble.Init(hidden, text, nd.Video);
+                                break;
+                        }
+
+                        if (nd.Post != null && containerSource == DialogueUIManager.MessageSource.Character)
+                        {
+                            GameManager.Instance.SocialMediaCanvas.PostToSocialMedia(nd.Post, nd, notification);
+                        }
                     }
-                }
-                break;
-            case DialogueChoiceNodeData nd when nodeData is DialogueChoiceNodeData:
-                {
-                    //Add element
-                    var _bubble = Instantiate(prefab, MessageBubbleContainers[containerNumber]);
-                    _bubble.Init(hide, text);
-                    if (!nd.RequireCharacterInput)
+                    break;
+                case DialogueChoiceNodeData nd when nodeData is DialogueChoiceNodeData:
                     {
-                        _bubble.gameObject.SetActive(false);
+                        //Add element
+                        if (text != string.Empty)
+                        {
+                            var _bubble = Instantiate(prefab, container);
+                            _bubble.Init(source != containerSource, text);
+                        }
                     }
-                }
-                break;
+                    break;
+            }
         }
 
-        if (wasNearBottom)
-        {
-            Canvas.ForceUpdateCanvases();
-            StartCoroutine(CoAutoScrollToBottom());
-        }
+        Canvas.ForceUpdateCanvases();
+        StartCoroutine(CoAutoScrollToBottom());
     }
 
     IEnumerator CoAutoScrollToBottom(float delay = 0)
@@ -89,12 +98,10 @@ public class MessagingConversationPanel : UIPanel
         }
     }
 
-    public void ScrollToBottom(float delay = 0.1f)
+    public void ScrollToBottom()
     {
         Canvas.ForceUpdateCanvases();
         _scrollView.verticalNormalizedPosition = 0;
-
-        //StartCoroutine(CoAutoScrollToBottom(delay));
     }
 
     public override void Close()

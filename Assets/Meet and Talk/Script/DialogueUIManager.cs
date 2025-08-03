@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
 using System.Text.RegularExpressions;
@@ -38,7 +36,7 @@ namespace MeetAndTalk
         }
 
         [Header("Message & Notification Settings")]
-        public float MessagePanelAutoScrollSpeed = 1;
+        public float MessagePanelAutoScrollSpeed = 4;
         public float NotificationDisplayLength = 2;
 
         [Header("Dynamic Dialogue UI")]
@@ -144,7 +142,7 @@ namespace MeetAndTalk
                         GameManager.Instance.SetNewMessage(nd.Character);
                         break;
                     case DialogueChoiceNodeData nd when _nodeData is DialogueChoiceNodeData:
-                         if (nd.RequireCharacterInput)
+                        if (nd.RequireCharacterInput)
                         {
                             if (notification)
                                 SpawnNotification(Notification.NotificationType.Message, nd.Character, newText);
@@ -156,57 +154,43 @@ namespace MeetAndTalk
             }
 
             //Spawn the messaging bubbles
-            for (var index = 0; index < 2; index++)
+            switch (messageSource)
             {
-                bool isHiddenMessage = false;
-                switch (messageSource)
-                {
-                    case MessageSource.Player:
-                        //Both panels recieve the same message - this allows both "sides" to scroll to the same locations without issue
-                        //Depending on the source one side will be hidden and one will be visible.
-                        isHiddenMessage = index == (int)MessageSource.Character;
-                        switch (_nodeData)
-                        {
-                            case DialogueNodeData nd when _nodeData is DialogueNodeData:
+                case MessageSource.Player:
+                    switch (_nodeData)
+                    {
+                        case DialogueNodeData nd when _nodeData is DialogueNodeData:
+                            targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
+                            break;
+                        case DialogueChoiceNodeData nd when _nodeData is DialogueChoiceNodeData:
+                            targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
+                            break;
+                    }
+                    targetPanel.AddElement(_nodeData, prefab, newText, messageSource, notification);
+                    break;
+                case MessageSource.Character:
+                    switch (_nodeData)
+                    {
+                        case DialogueChoiceNodeData nd when _nodeData is DialogueChoiceNodeData:
+                            {
                                 targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
-                                break;
-                            case DialogueChoiceNodeData nd when _nodeData is DialogueChoiceNodeData:
+                                targetPanel.AddElement(_nodeData, prefab, newText, messageSource, notification);
+                            }
+                            break;
+                        case DialogueNodeData nd when _nodeData is DialogueNodeData:
+                            {
                                 targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
-                                break;
-                        }
-                        targetPanel.AddElement(_nodeData, prefab, newText, index, isHiddenMessage);
-                        break;
-                    case MessageSource.Character:
-                        //Both panels recieve the same message - this allows both "sides" to scroll to the same locations without issue
-                        //Depending on the source one side will be hidden and one will be visible.
-                        isHiddenMessage = index == (int)MessageSource.Player;
-                        switch (_nodeData)
-                        {
-                            case DialogueChoiceNodeData nd when _nodeData is DialogueChoiceNodeData:
-                                {
-                                    targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
-                                    targetPanel.AddElement(_nodeData, prefab, newText, index, isHiddenMessage);
-                                }
-                                break;
-                            case DialogueNodeData nd when _nodeData is DialogueNodeData:
-                                {
-                                    targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
-                                    targetPanel.AddElement(_nodeData, prefab, newText, index, isHiddenMessage);
+                                targetPanel.AddElement(_nodeData, prefab, newText, messageSource, notification);
 
-                                    GameManager.Instance.GalleryCanvas.UnlockMediaButton(nd);
-                                    SaveAndLoadManager.Instance.CurrentSave.UnlockMedia(nd);
-
-                                    if (nd.Post != null && index == 0)
-                                    {
-                                        GameManager.Instance.SocialMediaCanvas.PostToSocialMedia(nd.Post, nd, notification);
-                                    }
-                                }
-                                break;
-                        }
-                        break;
-                }
+                                GameManager.Instance.GalleryCanvas.UnlockMediaButton(nd);
+                                SaveAndLoadManager.Instance.CurrentSave.UnlockMedia(nd);
+                            }
+                            break;
+                    }
+                    break;
             }
         }
+
 
 
         public void SpawnNotification(Notification.NotificationType type, DialogueCharacterSO character, string label)
