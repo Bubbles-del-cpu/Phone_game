@@ -8,11 +8,20 @@ public class SocialMediaCanvas : UICanvas
     [SerializeField] SocialMediaPost socialMediaPostPrefab;
     [SerializeField] RectTransform socialMediaPostsContainer;
 
+
+    public void RemovePosts(int count)
+    {
+        var item = socialMediaPostsContainer.transform.GetChild(socialMediaPostsContainer.transform.childCount - 1);
+        item.gameObject.SetActive(false);
+        Destroy(item.gameObject);
+    }
+
     public void PostToSocialMedia(SocialMediaPostSO _data, DialogueNodeData nodeData, bool showNotification = true)
     {
-        SocialMediaPost _post = Instantiate(socialMediaPostPrefab, socialMediaPostsContainer);
-        _post.SetData(_data, nodeData, showNotification);
+        SocialMediaPost post = Instantiate(socialMediaPostPrefab, socialMediaPostsContainer);
+        post.SetData(_data, nodeData, showNotification);
     }
+
 
     public void Clear()
     {

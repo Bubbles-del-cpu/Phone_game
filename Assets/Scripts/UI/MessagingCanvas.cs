@@ -109,6 +109,31 @@ public class MessagingCanvas : UICanvas
         return buttons[_character];
     }
 
+    public void RemoveConversationPanel(DialogueCharacterSO character)
+    {
+        if (seenCharacters.Contains(character))
+        {
+            if (buttons.ContainsKey(character))
+            {
+                buttons[character].gameObject.SetActive(false);
+                Destroy(buttons[character].gameObject);
+            }
+
+            if (conversations.ContainsKey(character))
+            {
+                conversations[character].gameObject.SetActive(false);
+                Destroy(conversations[character].gameObject);
+            }
+
+            buttons.Remove(character);
+            conversations.Remove(character);
+            seenCharacters.Remove(character);
+        }
+
+        if (seenCharacters.Count == 0)
+            _noContactsMessage?.SetActive(true);
+    }
+
     public Sprite TimelapsePanelBackground { get { return timelapsePanelBackground; } }
     public float BubbleMarginRight { get { return bubbleMarginRight; } }
 }

@@ -19,5 +19,10 @@ namespace MeetAndTalk.Event
         {
             DialogueEventManager.Instance.CharacterEvent(Character);
         }
+
+        public override void RollbackEvent()
+        {
+            //Blank
+        }
     }
 }

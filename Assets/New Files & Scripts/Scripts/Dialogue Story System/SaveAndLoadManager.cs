@@ -177,6 +177,10 @@ public class SaveAndLoadManager : MonoBehaviour
     public void StartNewSave()
     {
         System.IO.File.Delete(GetPath(0));
+
+        //Reset and clear the global value manager so that it can be loaded in fresh for the new save
+        ValueManager.Reset();
+
         LoadSave(0);
 
         GameManager.Instance.ResetGameState();

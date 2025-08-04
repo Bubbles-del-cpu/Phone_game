@@ -4,6 +4,7 @@ using UnityEngine.Events;
 using TMPro;
 using System.Text.RegularExpressions;
 using MeetAndTalk.GlobalValue;
+using System.Linq;
 
 namespace MeetAndTalk
 {
@@ -106,6 +107,50 @@ namespace MeetAndTalk
             if (clearNameColor) name = RemoveRichTextTags(name);
 
             nameLabel.text = name;
+        }
+
+        public List<DialogueCharacterSO> Rollback(List<DialogueCharacterSO> characterPanel)
+        {
+            var emptyList = new List<DialogueCharacterSO>();
+            foreach (var unique in characterPanel.Distinct())
+            {
+                var targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(unique);
+
+                foreach (Transform child in targetPanel.ResponsesPanel.ResponseButtonsContainer.transform)
+                    Destroy(child.gameObject);
+
+                var countToRemove = characterPanel.Count(x => x == unique);
+                targetPanel.RemoveElements(countToRemove);
+                if (countToRemove >= targetPanel.ChildCount)
+                    emptyList.Add(unique);
+            }
+
+            //List of dialogue character for whoes conversation panels are empty and therefore shouldn't be displayed on the contacts list yet
+            return emptyList;
+
+            // switch (nodeData)
+            // {
+            //     case DialogueNodeData nd:
+            //         {
+
+
+            //             if (nd.Post != null)
+            //             {
+            //                 GameManager.Instance.SocialMediaCanvas.Rollback(nd);
+            //             }
+            //         }
+            //         break;
+            //     case DialogueChoiceNodeData nd:
+            //         {
+            //             //DialogueChoiceNodes need to perform rollback twice so that we remove the player choice as well as the text from the character
+            //             for (var index = 0; index < 2; index++)
+            //             {
+            //                 var targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
+            //                 targetPanel.RemoveLastElement();
+            //             }
+            //         }
+            //         break;
+            // }
         }
 
         public void SetFullText(string text, BaseNodeData _nodeData, MessageSource messageSource, bool notification = true, bool updateSave = true)

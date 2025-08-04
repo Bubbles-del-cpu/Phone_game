@@ -392,11 +392,12 @@ MonoBehaviour:
   isOpenOnStart: 1
   openAlpha: 1
   closeButton: {fileID: 0}
-  responseButtonsContainer: {fileID: 5895013864255350747}
+  responseButtonsContainer: {fileID: 1312643626443206170}
   timerSlider: {fileID: 0}
   subPanel: {fileID: 5102689112508644951}
   _hintText: {fileID: 1363645795584344257}
   _hintContainer: {fileID: 5627554905339242793}
+  _rollbackButton: {fileID: 6232879348060666117}
 --- !u!1 &5627554905339242793
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,11 +859,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1633754210310519499, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1633754210310519499, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1633754210310519499, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_AnchorMin.y
@@ -878,7 +879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3456192518087213586, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4189322345688348478, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_Pivot.x
@@ -1056,9 +1057,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7970866326141363856}
     m_Modifications:
+    - target: {fileID: 355389003641682258, guid: 037f53c06e3a8eb4b8fe6953e1ce9454, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 355389003641682258, guid: 037f53c06e3a8eb4b8fe6953e1ce9454, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 355389003641682258, guid: 037f53c06e3a8eb4b8fe6953e1ce9454, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 355389003641682258, guid: 037f53c06e3a8eb4b8fe6953e1ce9454, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 355389003641682258, guid: 037f53c06e3a8eb4b8fe6953e1ce9454, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1751195588282630439, guid: 037f53c06e3a8eb4b8fe6953e1ce9454, type: 3}
       propertyPath: m_Name
       value: Response Speed
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001102290489921452, guid: 037f53c06e3a8eb4b8fe6953e1ce9454, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001102290489921452, guid: 037f53c06e3a8eb4b8fe6953e1ce9454, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001102290489921452, guid: 037f53c06e3a8eb4b8fe6953e1ce9454, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001102290489921452, guid: 037f53c06e3a8eb4b8fe6953e1ce9454, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9212942167389792175, guid: 037f53c06e3a8eb4b8fe6953e1ce9454, type: 3}
       propertyPath: m_Pivot.x
@@ -1150,3 +1187,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9212942167389792175, guid: 037f53c06e3a8eb4b8fe6953e1ce9454, type: 3}
   m_PrefabInstance: {fileID: 6412201201165609706}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6232879348060666117 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1045703429416621039, guid: 037f53c06e3a8eb4b8fe6953e1ce9454, type: 3}
+  m_PrefabInstance: {fileID: 6412201201165609706}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad83171ad4ea234aaa1a16213c27252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

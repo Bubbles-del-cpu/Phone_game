@@ -27,6 +27,7 @@ public class SaveFileData
     {
         public int ID;
         public string Value;
+        public List<string> PreviousValues;
         public GlobalValueType Type;
         public string Name;
     }
@@ -102,7 +103,8 @@ public class SaveFileData
                     ID = varible.ID,
                     Name = varible.Name,
                     Type = varible.Type,
-                    Value = varible.Value
+                    Value = varible.Value,
+                    PreviousValues = varible.PreviousValues
                 });
             }
 
@@ -288,32 +290,41 @@ public class SaveFileData
         CurrentChapterData.Completed = false;
     }
 
-    public void AddNode(BaseNodeData baseNodeData)
+    public void RemoveNode(BaseNodeData nodeData)
     {
         if (SaveAndLoadManager.Instance.ReplayingCompletedChapter)
             return;
 
-        if (CurrentChapterData.PastCoversations.Select(x => x.GUID).Contains(baseNodeData.NodeGuid))
+        if (!CurrentChapterData.PastCoversations.Select(x => x.GUID).Contains(nodeData.NodeGuid))
+            return;
+
+        CurrentChapterData.PastCoversations.RemoveAll(x => x.GUID == nodeData.NodeGuid);
+    }
+
+    public void AddNode(BaseNodeData nodeData)
+    {
+        if (SaveAndLoadManager.Instance.ReplayingCompletedChapter)
+            return;
+
+        if (CurrentChapterData.PastCoversations.Select(x => x.GUID).Contains(nodeData.NodeGuid))
         {
             return;
         }
 
         var newConversation = new ChapterSaveData.PastCoversationData()
         {
-            GUID = baseNodeData.NodeGuid,
+            GUID = nodeData.NodeGuid,
         };
 
-        switch (baseNodeData)
+        switch (nodeData)
         {
-            case DialogueChoiceNodeData nodeData:
-                newConversation.IsChoice = true;
-                break;
-            case TimerChoiceNodeData nodeData:
+            case DialogueChoiceNodeData:
+            case TimerChoiceNodeData:
                 newConversation.IsChoice = true;
                 break;
         }
 
-        CurrentChapterData.CurrentGUID = baseNodeData.NodeGuid;
+        CurrentChapterData.CurrentGUID = nodeData.NodeGuid;
         CurrentChapterData.PastCoversations.Add(newConversation);
     }
 
@@ -394,7 +405,7 @@ public class SaveFileData
         }
     }
 
-    public void MakeChoiceNoce(BaseNodeData nodeData, string choice)
+    public void MakeChoice(BaseNodeData nodeData, string choice)
     {
         if (SaveAndLoadManager.Instance.ReplayingCompletedChapter)
             return;

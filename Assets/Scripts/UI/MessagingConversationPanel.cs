@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using MeetAndTalk;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MessagingConversationPanel : UIPanel
 {
@@ -11,6 +12,8 @@ public class MessagingConversationPanel : UIPanel
     [SerializeField] RectTransform _contentContainer;
     DialogueCharacterSO character;
 
+    public int ChildCount => messageBubbleContainers[0].transform.childCount;
+
     public override void Open()
     {
         base.Open();
@@ -18,16 +21,29 @@ public class MessagingConversationPanel : UIPanel
         ScrollToBottom();
     }
 
-    // private bool ShouldAutoScroll()
-    // {
-    //     // Only auto-scroll if user is already near the bottom
-    //     return _scrollView.verticalNormalizedPosition <= 0.1f;
-    // }
+    public void RemoveElements(int count)
+    {
+        var objectList = new List<GameObject>();
+        for (var index = 1; index <= count; index++)
+        {
+            for (var cIndex = 0; cIndex < MessageBubbleContainers.Length; cIndex++)
+            {
+                var container = MessageBubbleContainers[cIndex];
+
+                var item = container.transform.GetChild(container.transform.childCount - index);
+                item.gameObject.SetActive(false);
+                objectList.Add(item.gameObject);
+            }
+        }
+
+        foreach (var obj in objectList)
+            Destroy(obj);
+    }
 
     public void AddElement(BaseNodeData nodeData, MessagingBubble prefab, string text, DialogueUIManager.MessageSource source, bool notification)
     {
         //var wasNearBottom = ShouldAutoScroll();
-        for(var index = 0; index < MessageBubbleContainers.Length; index++)
+        for (var index = 0; index < MessageBubbleContainers.Length; index++)
         {
             var container = MessageBubbleContainers[index];
             var containerSource = (DialogueUIManager.MessageSource)index;
@@ -48,14 +64,14 @@ public class MessagingConversationPanel : UIPanel
                         }
 
                         //Add element after timelapse
-                        var _bubble = Instantiate(prefab, container);
+                        var bubble = Instantiate(prefab, container);
                         switch (nd.PostMediaType)
                         {
                             case MediaType.Sprite:
-                                _bubble.Init(hidden, text, nd.Image);
+                                bubble.Init(hidden, text, nd.Image);
                                 break;
                             case MediaType.Video:
-                                _bubble.Init(hidden, text, nd.Video);
+                                bubble.Init(hidden, text, nd.Video);
                                 break;
                         }
 
@@ -70,8 +86,8 @@ public class MessagingConversationPanel : UIPanel
                         //Add element
                         if (text != string.Empty)
                         {
-                            var _bubble = Instantiate(prefab, container);
-                            _bubble.Init(source != containerSource, text);
+                            var bubble = Instantiate(prefab, container);
+                            bubble.Init(source != containerSource, text);
                         }
                     }
                     break;
