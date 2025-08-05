@@ -16,7 +16,7 @@ namespace MeetAndTalk.Nodes
         private List<LanguageGeneric<string>> texts = new List<LanguageGeneric<string>>();
         private List<LanguageGeneric<AudioClip>> audioClip = new List<LanguageGeneric<AudioClip>>();
         private DialogueCharacterSO character = ScriptableObject.CreateInstance<DialogueCharacterSO>();
-        private float durationShow = 5;
+        private float durationShow = DialogueManager.BASE_NODE_DISPLAY_TIME;
         private bool requireCharacterInput;
 
 
