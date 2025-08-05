@@ -1,9 +1,19 @@
 using UnityEngine;
+using UnityEngine.UI;
 
+[RequireComponent(typeof(Button))]
 public class CloseGameButton : MonoBehaviour
 {
     [SerializeField]
     private bool _displayDialog = true;
+
+    private Button _button;
+
+    private void Awake()
+    {
+        _button = GetComponent<Button>();
+        _button.onClick.AddListener(Click);
+    }
 
     public void Click()
     {
@@ -23,10 +33,10 @@ public class CloseGameButton : MonoBehaviour
     private void ConfirmClose()
     {
 #if UNITY_STANDALONE
-            Application.Quit();
+        Application.Quit();
 #endif
 #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
+        UnityEditor.EditorApplication.isPlaying = false;
 #endif
     }
 }
