@@ -1160,25 +1160,6 @@ MonoBehaviour:
       Value:
         ValueName: DOM_LVL
       Option1Text: DOM
-      OptionSetting1: 107
-      Option2Text: SUB
-      OptionSetting2: 97
-    - DialogTitle: Did you encourage your brother to send more picture of Lisa?
-      Value:
-        ValueName: LISA_PICS
-      Option1Text: Yes
-      OptionSetting1: true
-      Option2Text: No
-      OptionSetting2: false
-  - Story: {fileID: 11400000, guid: 0768bd4f5991bd14d93ce574df4b07fe, type: 2}
-    StartID: 
-    ChapterIndex: 0
-    IsStoryChapter: 0
-    ReplaySettings:
-    - DialogTitle: Are  you more dominant or submissive?
-      Value:
-        ValueName: DOM_LVL
-      Option1Text: DOM
       OptionSetting1: 110
       Option2Text: SUB
       OptionSetting2: 95
@@ -1196,7 +1177,7 @@ MonoBehaviour:
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-  - Story: {fileID: 11400000, guid: 8eeb8ec848615b24dba92714cdfaf90e, type: 2}
+  - Story: {fileID: 11400000, guid: 0768bd4f5991bd14d93ce574df4b07fe, type: 2}
     StartID: 
     ChapterIndex: 0
     IsStoryChapter: 0
@@ -1236,7 +1217,7 @@ MonoBehaviour:
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-  - Story: {fileID: 11400000, guid: 5c3cb53aa4ae0c0409099a27bed9efff, type: 2}
+  - Story: {fileID: 11400000, guid: 8eeb8ec848615b24dba92714cdfaf90e, type: 2}
     StartID: 
     ChapterIndex: 0
     IsStoryChapter: 0
@@ -1276,7 +1257,7 @@ MonoBehaviour:
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-  - Story: {fileID: 11400000, guid: 93987a0df88fc074cbf0bb4b9276877b, type: 2}
+  - Story: {fileID: 11400000, guid: 5c3cb53aa4ae0c0409099a27bed9efff, type: 2}
     StartID: 
     ChapterIndex: 0
     IsStoryChapter: 0
@@ -1295,6 +1276,46 @@ MonoBehaviour:
       Option1Text: Extort
       OptionSetting1: true
       Option2Text: Love
+      OptionSetting2: false
+  - Story: {fileID: 11400000, guid: 93987a0df88fc074cbf0bb4b9276877b, type: 2}
+    StartID: 
+    ChapterIndex: 0
+    IsStoryChapter: 0
+    ReplaySettings:
+    - DialogTitle: Are you more DOM or SUB?
+      Value:
+        ValueName: DOM_LVL
+      Option1Text: DOM
+      OptionSetting1: 110
+      Option2Text: SUB
+      OptionSetting2: 95
+    - DialogTitle: Did you allow Math to be rough with Lily?
+      Value:
+        ValueName: MATH_ROUGH
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: Did you accept home care?
+      Value:
+        ValueName: AT_HOME_CARE
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: Did you extort Victoria
+      Value:
+        ValueName: victoria_extort
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: Did you encourage Dave to send more pictures of Lisa?
+      Value:
+        ValueName: LISA_PICS
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
       OptionSetting2: false
   - Story: {fileID: 11400000, guid: 79ff72e63ffedf947a27cee93134c6c5, type: 2}
     StartID: 
@@ -1332,6 +1353,32 @@ MonoBehaviour:
     - DialogTitle: Did you encourage Dave to send more pictures of Lisa?
       Value:
         ValueName: LISA_PICS
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+  - Story: {fileID: 11400000, guid: ee87977a18015e349a93df4b8bea4218, type: 2}
+    StartID: 
+    ChapterIndex: 0
+    IsStoryChapter: 0
+    ReplaySettings:
+    - DialogTitle: Are you more DOM or SUB?
+      Value:
+        ValueName: DOM_LVL
+      Option1Text: DOM
+      OptionSetting1: 110
+      Option2Text: SUB
+      OptionSetting2: 95
+    - DialogTitle: Did you continue with Math?
+      Value:
+        ValueName: Continue_math
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: If yes... Did you allow Math to be rough with Lily earlier?
+      Value:
+        ValueName: MATH_ROUGH
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
@@ -2201,7 +2248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189322345688348478, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 29760
+      value: 29880
       objectReference: {fileID: 0}
     - target: {fileID: 4938284421023176446, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_Pivot.x
@@ -3463,7 +3510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189322345688348478, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -20.4693
+      value: -222.93689
       objectReference: {fileID: 0}
     - target: {fileID: 4938284421023176446, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_Pivot.x
@@ -7071,7 +7118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189322345688348478, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 29760
+      value: 29880
       objectReference: {fileID: 0}
     - target: {fileID: 4938284421023176446, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_Pivot.x
@@ -11487,7 +11534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189322345688348478, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 29759.998
+      value: 29879.998
       objectReference: {fileID: 0}
     - target: {fileID: 4938284421023176446, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_Pivot.x
