@@ -227,6 +227,7 @@ namespace MeetAndTalk
 
             if (emptyList.Count > 0)
             {
+                //Note: If empty list has any elements at least 1 will be the current character conversation panel
                 GameManager.Instance.MessagingCanvas.Close();
                 foreach (var character in emptyList)
                 {
@@ -242,6 +243,22 @@ namespace MeetAndTalk
             }
             else
             {
+                //Open the corresponding character conversation panel if there is one to open
+                //This should only be relevant if we have triggered a close via the "emptyList" above
+                switch (targetNode)
+                {
+                    case DialogueNodeData nd:
+                        GameManager.Instance.MessagingCanvas.Open(nd.Character);
+                        break;
+                    case DialogueChoiceNodeData nd:
+                        GameManager.Instance.MessagingCanvas.Open(nd.Character);
+                        break;
+                    case TimerChoiceNodeData nd:
+                        GameManager.Instance.MessagingCanvas.Open(nd.Character);
+                        break;
+
+                }
+
                 CheckNodeType(targetNode);
             }
         }
