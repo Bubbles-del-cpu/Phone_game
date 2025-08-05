@@ -14,10 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IntValues:
   - ValueName: DOM_LVL
-    Value: 109
+    Value: 110
     BaseValue: 116
   - ValueName: VIC_LOVE
     Value: 104
+    BaseValue: 100
+  - ValueName: First_meet_score
+    Value: 100
     BaseValue: 100
   FloatValues:
   - ValueName: Test_Float
@@ -39,14 +42,8 @@ MonoBehaviour:
   - ValueName: IZZY_RED_DRESS
     Value: 0
     BaseValue: 0
-  - ValueName: Victoria_extort
-    Value: 0
-    BaseValue: 0
   - ValueName: Math_rough
     Value: 0
-    BaseValue: 0
-  - ValueName: at_home_care
-    Value: 1
     BaseValue: 0
   - ValueName: Izzy_red_dress
     Value: 0
