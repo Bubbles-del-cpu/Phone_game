@@ -20,6 +20,8 @@ public class GalleryVideoButton : GalleryButtonBase
         }
     }
 
+    public override string FileName => _clip.name;
+
 
     protected override void GalleryButtonClicked()
     {

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine.Video;
 using System.Collections;
 using System.Linq;
+using Unity.Collections;
 
 public class GalleryCanvas : UICanvas
 {
@@ -64,24 +65,23 @@ public class GalleryCanvas : UICanvas
 
     public void UnlockMediaButton(DialogueNodeData nodeData)
     {
-        if (nodeData == null || !_buttonGuids.Contains(nodeData.NodeGuid))
+        if (nodeData == null)
             return;
 
-        UnlockedGalleryMediaButton(nodeData.NodeGuid);
+        UnlockedGalleryMediaButton(nodeData.MediaFileName);
         if (nodeData.Post != null)
-            UnlockedGalleryMediaButton(nodeData.NodeGuid);
+        {
+            UnlockedGalleryMediaButton(nodeData.Post.MediaFileName);
+        }
     }
 
-    private void UnlockedGalleryMediaButton(string guid)
+    private void UnlockedGalleryMediaButton(string fileName)
     {
         //Find and unlocked the button on the gallery canvas
-        var content = _galleryButtons.Where(x => x.AssignedGUID == guid);
-        foreach (var button in content)
+        var content = _galleryButtons.FirstOrDefault(x => x.FileName == fileName);
+        if (content)
         {
-            if (button)
-            {
-                button.Unlocked = true;
-            }
+            content.Unlocked = true;
         }
     }
 
@@ -118,7 +118,6 @@ public class GalleryCanvas : UICanvas
         _buttonGuids.Clear();
         _unlockedSocialMediaImages.Clear();
 
-        var mediaCopy = new List<SaveFileData.MediaData>(SaveAndLoadManager.Instance.CurrentSave.UnlockedMedia);
         CreateMediaButtons(SaveAndLoadManager.Instance.CurrentSave.UnlockedMedia);
         //Unlock the gallery content, initially everything will start out as locked
         // CollectMediaFromChapters(DialogueChapterManager.Instance.StoryList, mediaCopy.Where(x => x.IsStoryChapter));
@@ -130,44 +129,36 @@ public class GalleryCanvas : UICanvas
         //Unlock the gallery content, initially everything will start out as locked
         foreach (var mediaData in saveFileData)
         {
-            if (mediaData.IsStoryChapter)
+            switch (mediaData.ChapterType)
             {
-                var chapter = DialogueChapterManager.Instance.StoryList[mediaData.ChapterIndex];
-                var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, mediaData.NodeGUID);
-                AddMediaButton(chapter, (DialogueNodeData)node);
-            }
-            else
-            {
-                var chapter = DialogueChapterManager.Instance.StandaloneChapters[mediaData.ChapterIndex];
-                var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, mediaData.NodeGUID);
-                AddMediaButton(chapter, (DialogueNodeData)node);
-                switch (mediaData.LockedState)
-                {
-                    case MediaLockState.Unlocked:
-                        UnlockMediaButton((DialogueNodeData)node);
-                        break;
-                }
+                case ChapterType.Story:
+                    {
+                        var chapter = DialogueChapterManager.Instance.StoryList[mediaData.ChapterIndex];
+                        var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, mediaData.NodeGUID);
+                        AddMediaButton(chapter, (DialogueNodeData)node);
+                        switch (mediaData.LockedState)
+                        {
+                            case MediaLockState.Unlocked:
+                                UnlockMediaButton((DialogueNodeData)node);
+                                break;
+                        }
+                    }
+                    break;
+                case ChapterType.Standalone:
+                    {
+                        var chapter = DialogueChapterManager.Instance.StandaloneChapters[mediaData.ChapterIndex];
+                        var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, mediaData.NodeGUID);
+                        AddMediaButton(chapter, (DialogueNodeData)node);
+                        switch (mediaData.LockedState)
+                        {
+                            case MediaLockState.Unlocked:
+                                UnlockMediaButton((DialogueNodeData)node);
+                                break;
+                        }
+                    }
+                    break;
             }
         }
-
-        // //Take the new media buttons and unlock them based on our save file data
-        // foreach (var item in saveFileData)
-        // {
-        //     try
-        //     {
-        //         var chapter = chapterData[item.ChapterIndex];
-        //         var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, item.NodeGUID);
-        //         if (node != null && item.LockedState == MediaLockState.Unlocked)
-        //         {
-        //             var dialogueNodeData = (DialogueNodeData)node;
-        //             UnlockMediaButton(dialogueNodeData);
-        //         }
-        //     }
-        //     catch (Exception ex)
-        //     {
-        //         Debug.LogError($"Valied to collect media from chapter. {ex.Message}");
-        //     }
-        // }
     }
 
     public override void Open()
@@ -226,19 +217,26 @@ public class GalleryCanvas : UICanvas
         {
             case VideoClip videoClip:
                 {
-                    var videoButton = Instantiate(videoButtonPrefab, videoButtonsContainer);
-                    videoButton.Setup(chapterData, node, isSocialMediaPost);
-                    videoButton.Clip = videoClip;
+                    if (!_galleryButtons.Select(x => x.FileName).Contains(videoClip.name))
+                    {
+                        var videoButton = Instantiate(videoButtonPrefab, videoButtonsContainer);
+                        videoButton.Clip = videoClip;
+                        videoButton.Setup(chapterData, node, isSocialMediaPost);
 
-                    _galleryButtons.Add(videoButton);
+                        _galleryButtons.Add(videoButton);
+                    }
                 }
                 break;
             case Sprite image:
                 {
-                    var imageButton = Instantiate(imageButtonPrefab, imageButtonsContainer);
-                    imageButton.Setup(chapterData, node, isSocialMediaPost);
-                    imageButton.Sprite = image;
-                    _galleryButtons.Add(imageButton);
+                    if (!_galleryButtons.Select(x => x.FileName).Contains(image.name))
+                    {
+                        var imageButton = Instantiate(imageButtonPrefab, imageButtonsContainer);
+                        imageButton.Setup(chapterData, node, isSocialMediaPost);
+                        imageButton.Sprite = image;
+
+                        _galleryButtons.Add(imageButton);
+                    }
                 }
                 break;
         }
