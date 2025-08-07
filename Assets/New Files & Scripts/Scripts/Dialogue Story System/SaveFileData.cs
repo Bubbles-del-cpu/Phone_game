@@ -10,7 +10,7 @@ using UnityEngine;
 [System.Serializable]
 public class SaveFileData
 {
-    public static string SAVE_FILE_VERSION = "0.2";
+    public static string SAVE_FILE_VERSION = "0.9";
     public string Version;
     public int SaveFileSlot;
     public bool ForceUnlockAllChapters;

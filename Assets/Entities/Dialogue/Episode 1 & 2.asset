@@ -7466,7 +7466,7 @@ MonoBehaviour:
     Duration: 2
     Delay: 0
     PostMediaType: 0
-    Image: {fileID: -8452612249674163771, guid: dd5f631a31d422d42845818f679ae1f9, type: 3}
+    Image: {fileID: 7574088139979400684, guid: 12bfac3bc229f714d97eeb8fbcedfac9, type: 3}
     Video: {fileID: 0}
     GalleryVisibility: 0
     Post: {fileID: 0}
@@ -7967,31 +7967,6 @@ MonoBehaviour:
     Delay: 0
     PostMediaType: 0
     Image: {fileID: 0}
-    Video: {fileID: 0}
-    GalleryVisibility: 0
-    Post: {fileID: 0}
-    Timelapse: 
-    DelayTimer: 0
-  - NodeGuid: 44261bad-04cf-4fb0-a7bc-a79c7bf9bab8
-    Position: {x: 37627, y: 238}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: 8da73476cefc3eb43b4e7ac5962331b9, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: Good. Here we go
-    - languageEnum: 1
-      LanguageGenericType: 
-    Duration: 2
-    Delay: 0
-    PostMediaType: 0
-    Image: {fileID: -6056025683383406824, guid: 9e32e071fd2037049be15c3b774a0baf, type: 3}
     Video: {fileID: 0}
     GalleryVisibility: 0
     Post: {fileID: 0}
@@ -10195,6 +10170,31 @@ MonoBehaviour:
     Delay: 0
     PostMediaType: 0
     Image: {fileID: -7048372820006817777, guid: 09348ec01cad2a34c83e8d39d7e57ce9, type: 3}
+    Video: {fileID: 0}
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    Timelapse: 
+    DelayTimer: 0
+  - NodeGuid: 44261bad-04cf-4fb0-a7bc-a79c7bf9bab8
+    Position: {x: 37627, y: 238}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 8da73476cefc3eb43b4e7ac5962331b9, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Good. Here we go
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    PostMediaType: 0
+    Image: {fileID: -6056025683383406824, guid: 9e32e071fd2037049be15c3b774a0baf, type: 3}
     Video: {fileID: 0}
     GalleryVisibility: 0
     Post: {fileID: 0}

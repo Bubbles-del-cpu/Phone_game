@@ -1143,14 +1143,7 @@ MonoBehaviour:
     StartID: 
     ChapterIndex: 0
     IsStoryChapter: 0
-    ReplaySettings:
-    - DialogTitle: Are  you more dominant or submissive?
-      Value:
-        ValueName: DOM_LVL
-      Option1Text: DOM
-      OptionSetting1: 107
-      Option2Text: SUB
-      OptionSetting2: 97
+    ReplaySettings: []
   - Story: {fileID: 11400000, guid: 23769f595eff2b741b4bbc260863226b, type: 2}
     StartID: 
     ChapterIndex: 0
@@ -1163,20 +1156,13 @@ MonoBehaviour:
       OptionSetting1: 110
       Option2Text: SUB
       OptionSetting2: 95
-    - DialogTitle: Did you accept at home care?
+    - DialogTitle: Did you accept more picture's of Lisa?
       Value:
-        ValueName: AT_HOME_CARE
-      Option1Text: Yes
-      OptionSetting1: true
-      Option2Text: No
-      OptionSetting2: false
-    - DialogTitle: Did you extort Victoria?
-      Value:
-        ValueName: victoria_extort
-      Option1Text: Yes
-      OptionSetting1: true
-      Option2Text: No
-      OptionSetting2: false
+        ValueName: DOM_LVL
+      Option1Text: DOM
+      OptionSetting1: 110
+      Option2Text: SUB
+      OptionSetting2: 95
   - Story: {fileID: 11400000, guid: 0768bd4f5991bd14d93ce574df4b07fe, type: 2}
     StartID: 
     ChapterIndex: 0
@@ -1199,20 +1185,6 @@ MonoBehaviour:
     - DialogTitle: Did you extort Victoria?
       Value:
         ValueName: victoria_extort
-      Option1Text: Yes
-      OptionSetting1: true
-      Option2Text: No
-      OptionSetting2: false
-    - DialogTitle: Did you encourage your brother to send more picture of Lisa?
-      Value:
-        ValueName: LISA_PICS
-      Option1Text: Yes
-      OptionSetting1: true
-      Option2Text: No
-      OptionSetting2: false
-    - DialogTitle: Did you allow Math to be rough with Lily?
-      Value:
-        ValueName: MATH_ROUGH
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
@@ -1262,20 +1234,33 @@ MonoBehaviour:
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Do you want to activate Home care? (If you dont this episode has
-        no content)
+    - DialogTitle: Did you accept home care?
       Value:
         ValueName: AT_HOME_CARE
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: Do you want to activate the victoria extort path or love path?
+    - DialogTitle: If yes... Did you extort Victoria?
       Value:
         ValueName: victoria_extort
       Option1Text: Extort
       OptionSetting1: true
       Option2Text: Love
+      OptionSetting2: false
+    - DialogTitle: Are you more dominant or submisive
+      Value:
+        ValueName: DOM_LVL
+      Option1Text: DOM
+      OptionSetting1: 108
+      Option2Text: SUB
+      OptionSetting2: 90
+    - DialogTitle: Did you allow Math to be rough with Lily?
+      Value:
+        ValueName: Math_rough
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
       OptionSetting2: false
   - Story: {fileID: 11400000, guid: 93987a0df88fc074cbf0bb4b9276877b, type: 2}
     StartID: 
@@ -1306,13 +1291,6 @@ MonoBehaviour:
     - DialogTitle: Did you extort Victoria
       Value:
         ValueName: victoria_extort
-      Option1Text: Yes
-      OptionSetting1: true
-      Option2Text: No
-      OptionSetting2: false
-    - DialogTitle: Did you encourage Dave to send more pictures of Lisa?
-      Value:
-        ValueName: LISA_PICS
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
@@ -2248,7 +2226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189322345688348478, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 29880
+      value: 30180
       objectReference: {fileID: 0}
     - target: {fileID: 4938284421023176446, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_Pivot.x
@@ -3510,7 +3488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189322345688348478, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -222.93689
+      value: -254.62134
       objectReference: {fileID: 0}
     - target: {fileID: 4938284421023176446, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_Pivot.x
@@ -7118,7 +7096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189322345688348478, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 29880
+      value: 30180
       objectReference: {fileID: 0}
     - target: {fileID: 4938284421023176446, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_Pivot.x
@@ -8248,6 +8226,14 @@ PrefabInstance:
     - target: {fileID: 1206651455313356392, guid: dc45c44b4dc74e745b38f4f3a3ba1181, type: 3}
       propertyPath: m_Name
       value: Discord Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729847870731936826, guid: dc45c44b4dc74e745b38f4f3a3ba1181, type: 3}
+      propertyPath: Link
+      value: https://discord.gg/S4zrwDyWgh
+      objectReference: {fileID: 0}
+    - target: {fileID: 5668252532162475783, guid: dc45c44b4dc74e745b38f4f3a3ba1181, type: 3}
+      propertyPath: Link
+      value: https://discord.gg/S4zrwDyWgh
       objectReference: {fileID: 0}
     - target: {fileID: 6439109756453337234, guid: dc45c44b4dc74e745b38f4f3a3ba1181, type: 3}
       propertyPath: m_Sprite
@@ -11534,7 +11520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189322345688348478, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 29879.998
+      value: 30179.998
       objectReference: {fileID: 0}
     - target: {fileID: 4938284421023176446, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_Pivot.x
@@ -16569,6 +16555,14 @@ PrefabInstance:
     - target: {fileID: 1206651455313356392, guid: dc45c44b4dc74e745b38f4f3a3ba1181, type: 3}
       propertyPath: m_Name
       value: Patreon Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729847870731936826, guid: dc45c44b4dc74e745b38f4f3a3ba1181, type: 3}
+      propertyPath: Link
+      value: https://www.patreon.com/Tasty_soap_Bubbles
+      objectReference: {fileID: 0}
+    - target: {fileID: 5668252532162475783, guid: dc45c44b4dc74e745b38f4f3a3ba1181, type: 3}
+      propertyPath: Link
+      value: https://www.patreon.com/Tasty_soap_Bubbles
       objectReference: {fileID: 0}
     - target: {fileID: 8226525828464585428, guid: dc45c44b4dc74e745b38f4f3a3ba1181, type: 3}
       propertyPath: m_Pivot.x
