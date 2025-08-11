@@ -173,34 +173,35 @@ public class SaveFileData
             wasUpdated = true;
         }
 
-        if (wasUpdated)
+        //Check the saved variables to make sure we have all the ones we need
+        foreach (var item in newSaveFile.AutoSaveState.SavedVariables)
         {
-            //Check the saved variables to make sure we have all the ones we need
-            foreach (var item in newSaveFile.AutoSaveState.SavedVariables)
+            if (!AutoSaveState.SavedVariables.Select(x => x.Name).Contains(item.Name))
             {
-                if (!AutoSaveState.SavedVariables.Select(x => x.Name).Contains(item.Name))
+                AutoSaveState.SavedVariables.Add(item);
+                wasUpdated = true;
+            }
+        }
+
+        //If there is a discrepancy in the total number of chapters then we need to update the collection
+        if (newSaveFile.AutoSaveState.Chapters.Count > AutoSaveState.Chapters.Count)
+        {
+            //Loop forward from the last current chapter and add any missing to the list
+            for (var index = AutoSaveState.Chapters.Count; index < newSaveFile.AutoSaveState.Chapters.Count; index++)
+            {
+                var item = newSaveFile.AutoSaveState.Chapters[index];
+                AutoSaveState.Chapters.Add(new ChapterSaveData()
                 {
-                    AutoSaveState.SavedVariables.Add(item);
-                }
+                    CurrentGUID = "",
+                    Completed = false,
+                    FileIndex = index,
+                    FileName = $"{item.FileName}",
+                    StartID = item.StartID
+                });
+
             }
 
-            //If there is a discrepancy in the total number of chapters then we need to update the collection
-            if (newSaveFile.AutoSaveState.Chapters.Count > AutoSaveState.Chapters.Count)
-            {
-                //Loop forward from the last current chapter and add any missing to the list
-                for (var index = AutoSaveState.Chapters.Count; index < newSaveFile.AutoSaveState.Chapters.Count; index++)
-                {
-                    var item = newSaveFile.AutoSaveState.Chapters[index];
-                    AutoSaveState.Chapters.Add(new ChapterSaveData()
-                    {
-                        CurrentGUID = "",
-                        Completed = false,
-                        FileIndex = index,
-                        FileName = $"{item.FileName}",
-                        StartID = item.StartID
-                    });
-                }
-            }
+            wasUpdated = true;
         }
 
         UpdateMediaData();

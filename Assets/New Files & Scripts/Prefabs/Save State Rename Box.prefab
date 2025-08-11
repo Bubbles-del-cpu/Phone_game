@@ -136,7 +136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4387128028889241888}
-  - component: {fileID: 4311571762390830000}
+  - component: {fileID: 2495993943847428761}
   m_Layer: 5
   m_Name: Save State Rename Box
   m_TagString: Untagged
@@ -166,7 +166,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 255, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4311571762390830000
+--- !u!114 &2495993943847428761
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,10 +175,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1289861167132827233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c443b3bf8a576d443843dd4fa02f7da3, type: 3}
+  m_Script: {fileID: 11500000, guid: 913d8d326afd02e4f967390738a363fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _saveButton: {fileID: 7499604176781478999}
+  _submitButton: {fileID: 7499604176781478999}
   _cancelButton: {fileID: 1078691537863424783}
   _inputField: {fileID: 4203998291846975518}
 --- !u!1 &2191758277922612546
