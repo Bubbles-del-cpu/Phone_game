@@ -275,7 +275,7 @@ public class SaveFileData
                     {
                         case MediaLockState.Unknown:
                         case MediaLockState.Unlocked:
-                            item.LockedState = MediaLockState.Unlocked;
+                            UnlockMedia(item.FileName, false);
                             break;
                     }
                 }
@@ -400,6 +400,18 @@ public class SaveFileData
                 socialItem.FileName = nodeData.Post.MediaFileName;
                 socialItem.LockedState = MediaLockState.Unlocked;
             }
+        }
+
+        if (save)
+            SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
+    }
+
+    private void UnlockMedia(string fileName, bool save = true)
+    {
+        var item = UnlockedMedia.FirstOrDefault(x => x.FileName == fileName);
+        if (item != null)
+        {
+            item.LockedState = MediaLockState.Unlocked;
         }
 
         if (save)
