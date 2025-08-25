@@ -375,6 +375,7 @@ namespace MeetAndTalk
         public MediaType PostMediaType;
         public Sprite Image;
         public VideoClip Video;
+        public Sprite VideoThumbnail;
         public GalleryDisplay GalleryVisibility;
         public SocialMediaPostSO Post;
         public string Timelapse;

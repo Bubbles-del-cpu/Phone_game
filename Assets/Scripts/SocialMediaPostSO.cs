@@ -24,6 +24,7 @@ public class SocialMediaPostSO : ScriptableObject
     public GalleryDisplay GalleryVisibility;
     public Sprite Image;
     public VideoClip Video;
+    public Sprite VideoThumbnail;
 
     public string MediaFileName
     {

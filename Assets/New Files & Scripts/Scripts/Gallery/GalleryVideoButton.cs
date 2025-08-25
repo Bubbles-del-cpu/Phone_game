@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Video;
 
@@ -20,6 +21,17 @@ public class GalleryVideoButton : GalleryButtonBase
         }
     }
 
+    private Sprite _fallbackThumbnail;
+    public Sprite FallbackClipThumbnail
+    {
+        get => _fallbackThumbnail;
+        set
+        {
+            _fallbackThumbnail = value;
+            _videoPreviewSprite = _fallbackThumbnail;
+        }
+    }
+
     public override string FileName => _clip.name;
 
 
@@ -32,12 +44,20 @@ public class GalleryVideoButton : GalleryButtonBase
     {
         if (_clip)
         {
-            _previewTexture = GameManager.Instance.GetVideoFrame(_clip);
-            if (_previewTexture != null && _videoPreviewSprite == null)
+            if (_fallbackThumbnail != null)
             {
-                _videoPreviewSprite = Sprite.Create((Texture2D)_previewTexture, new Rect(0, 0, _previewTexture.width, _previewTexture.height), new Vector2(0.5f, 0.5f));
-                _image.sprite = _videoPreviewSprite;
-                _lockedImage.sprite = _videoPreviewSprite;
+                _image.sprite = _fallbackThumbnail;
+                _lockedImage.sprite = _fallbackThumbnail;
+            }
+            else
+            {
+                _previewTexture = GameManager.Instance.GetVideoFrame(_clip);
+                if (_previewTexture != null && _videoPreviewSprite == null)
+                {
+                    _videoPreviewSprite = Sprite.Create((Texture2D)_previewTexture, new Rect(0, 0, _previewTexture.width, _previewTexture.height), new Vector2(0.5f, 0.5f));
+                    _image.sprite = _videoPreviewSprite;
+                    _lockedImage.sprite = _videoPreviewSprite;
+                }
             }
         }
     }
