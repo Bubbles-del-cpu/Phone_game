@@ -220,7 +220,9 @@ public class GalleryCanvas : UICanvas
                     if (!_galleryButtons.Select(x => x.FileName).Contains(videoClip.name))
                     {
                         var videoButton = Instantiate(videoButtonPrefab, videoButtonsContainer);
+                        videoButton.FallbackClipThumbnail = isSocialMediaPost ? node.Post.VideoThumbnail : node.VideoThumbnail;
                         videoButton.Clip = videoClip;
+
                         videoButton.Setup(chapterData, node, isSocialMediaPost);
 
                         _galleryButtons.Add(videoButton);

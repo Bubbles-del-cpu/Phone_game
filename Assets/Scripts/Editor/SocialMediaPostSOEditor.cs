@@ -4,7 +4,7 @@ using UnityEditor.Rendering;
 [CustomEditor(typeof(SocialMediaPostSO))]
 public class SocialMediaPostSOEditor : UnityEditor.Editor
 {
-    SerializedProperty _characterProp, _messageProp, _typeProp, _imageProp, _videoProp, _commentsProp, _displayProp;
+    SerializedProperty _characterProp, _messageProp, _typeProp, _imageProp, _videoProp, _videoThumbnailProp, _commentsProp, _displayProp;
 
     void OnEnable()
     {
@@ -14,6 +14,7 @@ public class SocialMediaPostSOEditor : UnityEditor.Editor
         _commentsProp = serializedObject.FindProperty("Comments");
         _imageProp = serializedObject.FindProperty("Image");
         _videoProp = serializedObject.FindProperty("Video");
+        _videoThumbnailProp = serializedObject.FindProperty("VideoThumbnail");
         _displayProp = serializedObject.FindProperty("GalleryVisibility");
     }
     public override void OnInspectorGUI()
@@ -30,6 +31,7 @@ public class SocialMediaPostSOEditor : UnityEditor.Editor
                 break;
             case MediaType.Video:
                 EditorGUILayout.PropertyField(_videoProp);
+                EditorGUILayout.PropertyField(_videoThumbnailProp);
                 break;
         }
         EditorGUILayout.PropertyField(_displayProp);
