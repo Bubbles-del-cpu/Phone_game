@@ -27,5 +27,17 @@ namespace MeetAndTalk.Event
             manager.Set(Operation.ValueName, Operation.Operation, Operation.OperationValue);
             manager.SaveFile();
         }
+
+        public override void RollbackEvent()
+        {
+            // Load Global Value Manager
+            manager = Resources.Load<GlobalValueManager>("GlobalValue");
+            manager.LoadFile();
+
+            // Calling the Global Value Change Function
+            manager.Revert(Operation.ValueName);
+
+            manager.SaveFile();
+        }
     }
 }

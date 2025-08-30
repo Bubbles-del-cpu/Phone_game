@@ -18,8 +18,12 @@ namespace MeetAndTalk.Event
         /// </summary>.
         public override void RunEvent()
         {
-            // Przyk³¹d Wywo³ania Funkcji Która znajduje siê w DialogueEventManager
+            // Przykï¿½ï¿½d Wywoï¿½ania Funkcji Ktï¿½ra znajduje siï¿½ w DialogueEventManager
             DialogueEventManager.Instance.ConsoleLogEvent(Content, logType);
+        }
+        public override void RollbackEvent()
+        {
+            //Blank
         }
     }
 

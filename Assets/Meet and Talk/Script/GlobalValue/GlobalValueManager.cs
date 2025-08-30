@@ -71,31 +71,89 @@ namespace MeetAndTalk.GlobalValue
                         {
                             var value = BoolValues.FirstOrDefault(x => x.ValueName == item.Name);
                             if (value != null)
+                            {
                                 bool.TryParse(item.Value, out value.Value);
+                                value.PreviousValues.Clear();
+                                foreach (var pastValues in item.PreviousValues)
+                                {
+                                    bool.TryParse(pastValues, out bool convertedValue);
+                                    value.PreviousValues.Add(convertedValue);
+                                }
+                            }
                             break;
                         }
                     case GlobalValueType.Int:
                         {
                             var value = IntValues.FirstOrDefault(x => x.ValueName == item.Name);
                             if (value != null)
+                            {
                                 int.TryParse(item.Value, out value.Value);
+                                value.PreviousValues.Clear();
+                                foreach (var pastValues in item.PreviousValues)
+                                {
+                                    int.TryParse(pastValues, out int convertedValue);
+                                    value.PreviousValues.Add(convertedValue);
+                                }
+                            }
                             break;
                         }
                     case GlobalValueType.Float:
                         {
                             var value = FloatValues.FirstOrDefault(x => x.ValueName == item.Name);
                             if (value != null)
+                            {
                                 float.TryParse(item.Value, out value.Value);
+                                value.PreviousValues.Clear();
+                                foreach (var pastValues in item.PreviousValues)
+                                {
+                                    float.TryParse(pastValues, out float convertedValue);
+                                    value.PreviousValues.Add(convertedValue);
+                                }
+                            }
                             break;
                         }
                     case GlobalValueType.String:
                         {
                             var value = StringValues.FirstOrDefault(x => x.ValueName == item.Name);
                             if (value != null)
+                            {
                                 value.Value = item.Value;
+                                value.PreviousValues.Clear();
+                                foreach (var pastValues in item.PreviousValues)
+                                {
+                                    value.PreviousValues.Add(pastValues);
+                                }
+                            }
                             break;
                         }
                 }
+            }
+        }
+
+        public void Reset()
+        {
+            for (int i = 0; i < IntValues.Count; i++)
+            {
+                IntValues[i].Value = IntValues[i].BaseValue;
+                IntValues[i].PreviousValues.Clear();
+            }
+
+            for (int i = 0; i < FloatValues.Count; i++)
+            {
+                FloatValues[i].Value = FloatValues[i].BaseValue;
+                FloatValues[i].PreviousValues.Clear();
+            }
+
+            for (int i = 0; i < BoolValues.Count; i++)
+            {
+                BoolValues[i].Value = BoolValues[i].BaseValue;
+                BoolValues[i].PreviousValues.Clear();
+            }
+
+            for (int i = 0; i < StringValues.Count; i++)
+            {
+                StringValues[i].Value = StringValues[i].BaseValue;
+                StringValues[i].PreviousValues.Clear();
             }
         }
 
@@ -108,7 +166,8 @@ namespace MeetAndTalk.GlobalValue
                 {
                     Name = IntValues[i].ValueName,
                     Type = GlobalValueType.Int,
-                    Value = IntValues[i].Value.ToString()
+                    Value = IntValues[i].Value.ToString(),
+                    PreviousValues = IntValues[i].PreviousValues.ConvertAll(x => x.ToString())
                 });
             }
 
@@ -118,7 +177,8 @@ namespace MeetAndTalk.GlobalValue
                 {
                     Name = FloatValues[i].ValueName,
                     Type = GlobalValueType.Float,
-                    Value = FloatValues[i].Value.ToString()
+                    Value = FloatValues[i].Value.ToString(),
+                    PreviousValues = FloatValues[i].PreviousValues.ConvertAll(x => x.ToString())
                 });
             }
 
@@ -128,7 +188,8 @@ namespace MeetAndTalk.GlobalValue
                 {
                     Name = BoolValues[i].ValueName,
                     Type = GlobalValueType.Bool,
-                    Value = BoolValues[i].Value.ToString()
+                    Value = BoolValues[i].Value.ToString(),
+                    PreviousValues = BoolValues[i].PreviousValues.ConvertAll(x => x.ToString())
                 });
             }
 
@@ -138,7 +199,8 @@ namespace MeetAndTalk.GlobalValue
                 {
                     Name = StringValues[i].ValueName,
                     Type = GlobalValueType.String,
-                    Value = StringValues[i].Value.ToString()
+                    Value = StringValues[i].Value,
+                    PreviousValues = StringValues[i].PreviousValues
                 });
             }
 
@@ -254,28 +316,50 @@ namespace MeetAndTalk.GlobalValue
 
         public void Set(string name, string value)
         {
-
             for (int i = 0; i < IntValues.Count; i++)
             {
-                if (IntValues[i].ValueName == name) { IntValues[i].Value = (int)Convert.ChangeType(value, typeof(int)); }
+                if (IntValues[i].ValueName == name)
+                    IntValues[i].Set((int)Convert.ChangeType(value, typeof(int)));
             }
 
             for (int i = 0; i < FloatValues.Count; i++)
             {
-                if (FloatValues[i].ValueName == name) { FloatValues[i].Value = (float)Convert.ChangeType(value, typeof(float)); }
+                if (FloatValues[i].ValueName == name)
+                    FloatValues[i].Set((float)Convert.ChangeType(value, typeof(float)));
             }
 
             for (int i = 0; i < BoolValues.Count; i++)
             {
-                if (BoolValues[i].ValueName == name) { BoolValues[i].Value = (bool)Convert.ChangeType(value, typeof(bool)); }
+                if (BoolValues[i].ValueName == name)
+                    BoolValues[i].Set((bool)Convert.ChangeType(value, typeof(bool)));
             }
 
             for (int i = 0; i < StringValues.Count; i++)
             {
-                if (StringValues[i].ValueName == name) { StringValues[i].Value = (string)Convert.ChangeType(value, typeof(string)); }
+                if (StringValues[i].ValueName == name)
+                    StringValues[i].Set((string)Convert.ChangeType(value, typeof(string)));
             }
 
             SaveFile();
+        }
+
+        public void Revert(string name)
+        {
+            for (int i = 0; i < IntValues.Count; i++)
+                if (IntValues[i].ValueName == name)
+                    IntValues[i].Revert();
+
+            for (int i = 0; i < FloatValues.Count; i++)
+                if (FloatValues[i].ValueName == name)
+                    FloatValues[i].Revert();
+
+            for (int i = 0; i < BoolValues.Count; i++)
+                if (BoolValues[i].ValueName == name)
+                    BoolValues[i].Revert();
+
+            for (int i = 0; i < StringValues.Count; i++)
+                if (StringValues[i].ValueName == name)
+                    StringValues[i].Revert();
         }
 
         public void Set(string name, GlobalValueOperations operators, string value)
@@ -287,13 +371,13 @@ namespace MeetAndTalk.GlobalValue
                     int typeValue = (int)Convert.ChangeType(value, typeof(int));
                     string newValue = "";
 
-                    if(operators == GlobalValueOperations.Add) { newValue = ((int)(IntValues[i].Value + typeValue)).ToString(); }
-                    if(operators == GlobalValueOperations.Subtract) { newValue = ((int)(IntValues[i].Value - typeValue)).ToString(); }
-                    if(operators == GlobalValueOperations.Multiply) { newValue = ((int)(IntValues[i].Value * typeValue)).ToString(); }
-                    if(operators == GlobalValueOperations.Divide) { newValue = ((int)(IntValues[i].Value / typeValue)).ToString(); }
-                    if(operators == GlobalValueOperations.Set) { newValue = ((int)(typeValue)).ToString(); }
+                    if (operators == GlobalValueOperations.Add) { newValue = ((int)(IntValues[i].Value + typeValue)).ToString(); }
+                    if (operators == GlobalValueOperations.Subtract) { newValue = ((int)(IntValues[i].Value - typeValue)).ToString(); }
+                    if (operators == GlobalValueOperations.Multiply) { newValue = ((int)(IntValues[i].Value * typeValue)).ToString(); }
+                    if (operators == GlobalValueOperations.Divide) { newValue = ((int)(IntValues[i].Value / typeValue)).ToString(); }
+                    if (operators == GlobalValueOperations.Set) { newValue = ((int)(typeValue)).ToString(); }
 
-                    Set(IntValues[i].ValueName, newValue);
+                    IntValues[i].Set((int)Convert.ChangeType(newValue, typeof(int)));
                 }
             }
 
@@ -310,7 +394,8 @@ namespace MeetAndTalk.GlobalValue
                     if (operators == GlobalValueOperations.Divide) { newValue = ((float)(FloatValues[i].Value / typeValue)).ToString(); }
                     if (operators == GlobalValueOperations.Set) { newValue = ((float)(typeValue)).ToString(); }
 
-                    Set(FloatValues[i].ValueName, newValue);
+
+                    FloatValues[i].Set((float)Convert.ChangeType(newValue, typeof(float)));
                 }
             }
 
@@ -322,7 +407,7 @@ namespace MeetAndTalk.GlobalValue
                     if (value == "True" || value == "true" || value == "T" || value == "t" || value == "1") { typeValue = true; }
                     string newValue = (string)Convert.ChangeType(typeValue, typeof(string));
 
-                    Set(BoolValues[i].ValueName, newValue);
+                    BoolValues[i].Set((bool)Convert.ChangeType(newValue, typeof(bool)));
                 }
             }
         }
@@ -490,7 +575,28 @@ namespace MeetAndTalk.GlobalValue
     {
         public string ValueName;
         public int Value;
+        public List<int> PreviousValues;
         public int BaseValue;
+
+        public void Set(int newValue)
+        {
+            PreviousValues.Add(Value);
+            Value = newValue;
+        }
+
+        public void Revert()
+        {
+            if (PreviousValues.Count > 0)
+            {
+                var previous = PreviousValues.Last();
+                Value = previous;
+                PreviousValues.RemoveAt(PreviousValues.Count - 1);
+            }
+            else
+            {
+                Value = BaseValue;
+            }
+        }
     }
 
     [System.Serializable]
@@ -498,7 +604,28 @@ namespace MeetAndTalk.GlobalValue
     {
         public string ValueName;
         public string Value;
+        public List<string> PreviousValues;
         public string BaseValue;
+
+        public void Set(string newValue)
+        {
+            PreviousValues.Add(Value);
+            Value = newValue;
+        }
+
+        public void Revert()
+        {
+            if (PreviousValues.Count > 0)
+            {
+                var previous = PreviousValues.Last();
+                Value = previous;
+                PreviousValues.RemoveAt(PreviousValues.Count - 1);
+            }
+            else
+            {
+                Value = BaseValue;
+            }
+        }
     }
 
     [System.Serializable]
@@ -506,7 +633,28 @@ namespace MeetAndTalk.GlobalValue
     {
         public string ValueName;
         public float Value;
+        public List<float> PreviousValues;
         public float BaseValue;
+
+        public void Set(float newValue)
+        {
+            PreviousValues.Add(Value);
+            Value = newValue;
+        }
+
+        public void Revert()
+        {
+            if (PreviousValues.Count > 0)
+            {
+                var previous = PreviousValues.Last();
+                Value = previous;
+                PreviousValues.RemoveAt(PreviousValues.Count - 1);
+            }
+            else
+            {
+                Value = BaseValue;
+            }
+        }
     }
 
     [System.Serializable]
@@ -514,13 +662,35 @@ namespace MeetAndTalk.GlobalValue
     {
         public string ValueName;
         public bool Value;
+        public List<bool> PreviousValues;
         public bool BaseValue;
+
+        public void Set(bool newValue)
+        {
+            PreviousValues.Add(Value);
+            Value = newValue;
+        }
+
+        public void Revert()
+        {
+            if (PreviousValues.Count > 0)
+            {
+                var previous = PreviousValues.Last();
+                Value = previous;
+                PreviousValues.RemoveAt(PreviousValues.Count - 1);
+            }
+            else
+            {
+                Value = BaseValue;
+            }
+        }
     }
 
     [System.Serializable]
     public class GlobalValueClass
     {
         public string ValueName;
+        public string LastValue;
     }
 
     [System.Serializable]

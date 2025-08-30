@@ -33,8 +33,6 @@ MonoBehaviour:
     TargetNodeGuid: a064da96-88ff-4109-8ae6-94e093dfc775
   - BaseNodeGuid: e9aeba71-6677-4371-8120-a0800f78f54e
     TargetNodeGuid: 15bb8031-c172-4c62-a631-da81299dcefc
-  - BaseNodeGuid: b2caca91-cbaf-44ea-9c38-80a76cc145d4
-    TargetNodeGuid: e9aeba71-6677-4371-8120-a0800f78f54e
   - BaseNodeGuid: f4badca5-642e-4aec-b39f-a0220ffb703b
     TargetNodeGuid: bbe413e1-e741-414c-8fa9-b4f95492d425
   - BaseNodeGuid: f4badca5-642e-4aec-b39f-a0220ffb703b
@@ -42,9 +40,13 @@ MonoBehaviour:
   - BaseNodeGuid: 711cb3e0-8bf1-4109-ae8b-c0642f957495
     TargetNodeGuid: 2cabc52e-a0fe-4b88-a4d6-ffc65816aa9d
   - BaseNodeGuid: 15bb8031-c172-4c62-a631-da81299dcefc
-    TargetNodeGuid: 8bf161df-ba23-46bc-a294-c1458e3ba1ec
-  - BaseNodeGuid: 15bb8031-c172-4c62-a631-da81299dcefc
     TargetNodeGuid: 83276e85-bc91-40cf-ad46-298e9877dfa0
+  - BaseNodeGuid: b2caca91-cbaf-44ea-9c38-80a76cc145d4
+    TargetNodeGuid: e9aeba71-6677-4371-8120-a0800f78f54e
+  - BaseNodeGuid: 15bb8031-c172-4c62-a631-da81299dcefc
+    TargetNodeGuid: 969f11fc-21db-41f4-a941-888b6e413ab2
+  - BaseNodeGuid: 969f11fc-21db-41f4-a941-888b6e413ab2
+    TargetNodeGuid: 8bf161df-ba23-46bc-a294-c1458e3ba1ec
   DialogueChoiceNodeDatas:
   - NodeGuid: f4badca5-642e-4aec-b39f-a0220ffb703b
     Position: {x: 1465, y: 196}
@@ -129,7 +131,7 @@ MonoBehaviour:
     Position: {x: 826, y: 195}
     DialogueNodePorts:
     - PortGuid: 4e82f0b0-a307-4b96-8dff-f598f2f06800
-      InputGuid: 8bf161df-ba23-46bc-a294-c1458e3ba1ec
+      InputGuid: 969f11fc-21db-41f4-a941-888b6e413ab2
       OutputGuid: 15bb8031-c172-4c62-a631-da81299dcefc
       TextLanguage:
       - languageEnum: 0
@@ -297,7 +299,7 @@ MonoBehaviour:
     GalleryVisibility: 0
     Post: {fileID: 11400000, guid: eb138877c58468442b655355d1754919, type: 2}
     Timelapse: 
-    DelayTimer: 0
+    DelayTimer: 2.0073051
   - NodeGuid: a064da96-88ff-4109-8ae6-94e093dfc775
     Position: {x: 2124, y: 196}
     DialogueNodePorts: []
@@ -370,9 +372,9 @@ MonoBehaviour:
     Image: {fileID: 0}
     Video: {fileID: 32900000, guid: c23a88aeb39e2f6439b08259dec3773d, type: 3}
     GalleryVisibility: 0
-    Post: {fileID: 11400000, guid: 87442179d7eeea9439b95a0a5f0c4eb6, type: 2}
+    Post: {fileID: 0}
     Timelapse: 
-    DelayTimer: 0
+    DelayTimer: 2.0062819
   - NodeGuid: b2caca91-cbaf-44ea-9c38-80a76cc145d4
     Position: {x: 308, y: 195}
     DialogueNodePorts: []
@@ -397,14 +399,18 @@ MonoBehaviour:
     GalleryVisibility: 0
     Post: {fileID: 11400000, guid: 3508211763692914baa6a2fd540f9ae8, type: 2}
     Timelapse: 
-    DelayTimer: 0
+    DelayTimer: 2.0008895
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: e91e1c83-c709-4a3b-843c-7799be562d16
     Position: {x: 2832, y: 528}
     EndNodeType: 0
     Dialogue: {fileID: 0}
-  EventNodeDatas: []
+  EventNodeDatas:
+  - NodeGuid: 969f11fc-21db-41f4-a941-888b6e413ab2
+    Position: {x: 990, y: -135}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: da12c9c9e4233bb48a505b564e762abf, type: 2}
   StartNodeDatas:
   - NodeGuid: afc3b39e-a378-41e4-9a04-992b933c24fe
     Position: {x: 92, y: 195}

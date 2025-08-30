@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Video;
 using System.Collections;
-using MeetAndTalk;
 
 public class MessagingBubble : MonoBehaviour
 {
