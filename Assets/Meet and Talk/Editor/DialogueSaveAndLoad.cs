@@ -262,6 +262,7 @@ namespace MeetAndTalk.Editor
                 PostMediaType = _node.PostMediaType,
                 Image = _node.Image,
                 Video = _node.Video,
+                VideoThumbnail = _node.VideoThumbnail,
                 Post = _node.Post,
                 Timelapse = _node.Timelapse
             };
@@ -487,6 +488,7 @@ namespace MeetAndTalk.Editor
                 tempNode.PostMediaType = node.PostMediaType;
                 tempNode.Image = node.Image;
                 tempNode.Video = node.Video;
+                tempNode.VideoThumbnail = node.VideoThumbnail;
                 tempNode.Post = node.Post;
                 tempNode.Timelapse = node.Timelapse;
 

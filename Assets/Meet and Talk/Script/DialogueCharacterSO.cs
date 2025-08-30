@@ -130,4 +130,7 @@ public enum GalleryDisplay { Display = 0, Hidden = 1 }
 public enum MediaType { Sprite = 0, Video = 1 }
 
 [System.Serializable]
-public enum MediaLockState { Unknown = 0, Locked = 1, Unlocked = 2}
+public enum MediaLockState { Unknown = 0, Locked = 1, Unlocked = 2 }
+
+[System.Serializable]
+public enum ChapterType { Unknown = 0, Story = 1, Standalone = 2 }

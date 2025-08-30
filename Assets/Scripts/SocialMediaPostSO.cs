@@ -24,6 +24,23 @@ public class SocialMediaPostSO : ScriptableObject
     public GalleryDisplay GalleryVisibility;
     public Sprite Image;
     public VideoClip Video;
+    public Sprite VideoThumbnail;
+
+    public string MediaFileName
+    {
+        get
+        {
+            switch (MediaType)
+            {
+                case MediaType.Sprite:
+                    return Image != null ? Image.name : string.Empty;
+                case MediaType.Video:
+                    return Video != null ? Video.name : string.Empty;
+            }
+
+            return string.Empty;
+        }
+    }
 
     /// <summary>
     /// List of social media comments that are attached to this post

@@ -17,6 +17,8 @@ public abstract class GalleryButtonBase : MonoBehaviour
     protected Button _button;
     public bool Unlocked;
 
+    public virtual string FileName => "";
+
     protected virtual void Awake()
     {
         _button = GetComponent<Button>();

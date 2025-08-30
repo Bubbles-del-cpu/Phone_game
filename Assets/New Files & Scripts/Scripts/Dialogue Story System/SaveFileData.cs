@@ -10,7 +10,7 @@ using UnityEngine;
 [System.Serializable]
 public class SaveFileData
 {
-    public static string SAVE_FILE_VERSION = "0.2";
+    public static string SAVE_FILE_VERSION = "0.9";
     public string Version;
     public int SaveFileSlot;
     public bool ForceUnlockAllChapters;
@@ -35,9 +35,10 @@ public class SaveFileData
     [System.Serializable]
     public class MediaData
     {
-        public string NodeGUID;
+        public string NodeGUID = string.Empty;
+        public string FileName = string.Empty;
         public int ChapterIndex;
-        public bool IsStoryChapter;
+        public ChapterType ChapterType;
         public MediaLockState LockedState;
     }
 
@@ -174,34 +175,35 @@ public class SaveFileData
             wasUpdated = true;
         }
 
-        if (wasUpdated)
+        //Check the saved variables to make sure we have all the ones we need
+        foreach (var item in newSaveFile.AutoSaveState.SavedVariables)
         {
-            //Check the saved variables to make sure we have all the ones we need
-            foreach (var item in newSaveFile.AutoSaveState.SavedVariables)
+            if (!AutoSaveState.SavedVariables.Select(x => x.Name).Contains(item.Name))
             {
-                if (!AutoSaveState.SavedVariables.Select(x => x.Name).Contains(item.Name))
+                AutoSaveState.SavedVariables.Add(item);
+                wasUpdated = true;
+            }
+        }
+
+        //If there is a discrepancy in the total number of chapters then we need to update the collection
+        if (newSaveFile.AutoSaveState.Chapters.Count > AutoSaveState.Chapters.Count)
+        {
+            //Loop forward from the last current chapter and add any missing to the list
+            for (var index = AutoSaveState.Chapters.Count; index < newSaveFile.AutoSaveState.Chapters.Count; index++)
+            {
+                var item = newSaveFile.AutoSaveState.Chapters[index];
+                AutoSaveState.Chapters.Add(new ChapterSaveData()
                 {
-                    AutoSaveState.SavedVariables.Add(item);
-                }
+                    CurrentGUID = "",
+                    Completed = false,
+                    FileIndex = index,
+                    FileName = $"{item.FileName}",
+                    StartID = item.StartID
+                });
+
             }
 
-            //If there is a discrepancy in the total number of chapters then we need to update the collection
-            if (newSaveFile.AutoSaveState.Chapters.Count > AutoSaveState.Chapters.Count)
-            {
-                //Loop forward from the last current chapter and add any missing to the list
-                for (var index = AutoSaveState.Chapters.Count; index < newSaveFile.AutoSaveState.Chapters.Count; index++)
-                {
-                    var item = newSaveFile.AutoSaveState.Chapters[index];
-                    AutoSaveState.Chapters.Add(new ChapterSaveData()
-                    {
-                        CurrentGUID = "",
-                        Completed = false,
-                        FileIndex = index,
-                        FileName = $"{item.FileName}",
-                        StartID = item.StartID
-                    });
-                }
-            }
+            wasUpdated = true;
         }
 
         UpdateMediaData();
@@ -220,19 +222,23 @@ public class SaveFileData
         UnlockedMedia.Clear();
 
         //Collect all new gallery content and update any existing if required
-        CollectMediaFromChapters(DialogueChapterManager.Instance.StoryList, mediaCopy.Where(x => x.IsStoryChapter));
-        CollectMediaFromChapters(DialogueChapterManager.Instance.StandaloneChapters, mediaCopy.Where(x => !x.IsStoryChapter));
+        CollectMediaFromChapters(mediaCopy);
+        //CollectMediaFromChapters(DialogueChapterManager.Instance.StandaloneChapters, mediaCopy.Where(x => !x.ChapterType));
     }
 
-    private void CollectMediaFromChapters(List<DialogueChapterManager.ChapterData> chapterData, IEnumerable<MediaData> saveFileData)
+    private void CollectMediaFromChapters(IEnumerable<MediaData> saveFileData)
     {
         //Add all the gallery content, initially everything will start out as locked
-        foreach (var chapter in chapterData)
+        foreach (var chapter in DialogueChapterManager.Instance.StoryList)
         {
             foreach (var dialogueNode in chapter.Story.DialogueNodeDatas)
-            {
                 AddMedia(chapter, dialogueNode);
-            }
+        }
+
+        foreach (var chapter in DialogueChapterManager.Instance.StandaloneChapters)
+        {
+            foreach (var dialogueNode in chapter.Story.DialogueNodeDatas)
+                AddMedia(chapter, dialogueNode);
         }
 
         //Take the current saved media and buttons and unlock them based on our save file data
@@ -240,15 +246,38 @@ public class SaveFileData
         {
             try
             {
-                var chapter = chapterData[item.ChapterIndex];
-                var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, item.NodeGUID);
-                if (node != null)
+                if (item.FileName == string.Empty)
+                {
+                    var chapter = DialogueChapterManager.Instance.StoryList[item.ChapterIndex];
+                    switch (item.ChapterType)
+                    {
+                        case ChapterType.Standalone:
+                            chapter = DialogueChapterManager.Instance.StandaloneChapters[item.ChapterIndex];
+                            break;
+
+                    }
+
+                    var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, item.NodeGUID);
+                    if (node != null)
+                    {
+                        switch (item.LockedState)
+                        {
+                            case MediaLockState.Unknown:
+                                UnlockMedia((DialogueNodeData)node, false);
+                                break;
+                            case MediaLockState.Unlocked:
+                                UnlockMedia((DialogueNodeData)node, false);
+                                break;
+                        }
+                    }
+                }
+                else
                 {
                     switch (item.LockedState)
                     {
                         case MediaLockState.Unknown:
                         case MediaLockState.Unlocked:
-                            UnlockMedia((DialogueNodeData)node, false);
+                            UnlockMedia(item.FileName, false);
                             break;
                     }
                 }
@@ -330,40 +359,68 @@ public class SaveFileData
 
     public bool AddMedia(DialogueChapterManager.ChapterData chapterData, DialogueNodeData nodeData)
     {
-        if (UnlockedMedia.Select(x => x.NodeGUID).Contains(nodeData.NodeGuid))
+        var postData = UnlockedMedia.FirstOrDefault(x => x.FileName == nodeData.MediaFileName);
+        if (postData == null && nodeData.MediaFileName != string.Empty)
         {
-            return false;
+            //Add Post
+            UnlockedMedia.Add(new MediaData()
+            {
+                NodeGUID = nodeData.NodeGuid,
+                FileName = nodeData.MediaFileName,
+                ChapterIndex = chapterData.ChapterIndex,
+                ChapterType = chapterData.IsStoryChapter ? ChapterType.Story : ChapterType.Standalone,
+                LockedState = MediaLockState.Locked
+            });
         }
 
-        var newUnlockedMedia = new MediaData
+        if (nodeData.Post != null)
         {
-            NodeGUID = nodeData.NodeGuid,
-            ChapterIndex = chapterData.ChapterIndex,
-            IsStoryChapter = chapterData.IsStoryChapter,
-            LockedState = MediaLockState.Locked
-        };
-
-        UnlockedMedia.Add(newUnlockedMedia);
+            var socialPostData = UnlockedMedia.FirstOrDefault(x => x.FileName == nodeData.Post.MediaFileName);
+            if (socialPostData == null && nodeData.Post.MediaFileName != string.Empty)
+            {
+                //Add social post
+                UnlockedMedia.Add(new MediaData()
+                {
+                    NodeGUID = nodeData.NodeGuid,
+                    FileName = nodeData.Post.MediaFileName,
+                    ChapterIndex = chapterData.ChapterIndex,
+                    ChapterType = chapterData.IsStoryChapter ? ChapterType.Story : ChapterType.Standalone,
+                    LockedState = MediaLockState.Locked
+                });
+            }
+        }
 
         return true;
     }
 
-    public void UnlockMedia(BaseNodeData nodeData, bool save = true)
+    public void UnlockMedia(DialogueNodeData nodeData, bool save = true)
     {
-        var item = UnlockedMedia.FirstOrDefault(x => x.NodeGUID == nodeData.NodeGuid);
+        var item = UnlockedMedia.FirstOrDefault(x => x.FileName == nodeData.MediaFileName);
         if (item != null)
         {
             //We found the media, unlock it
             item.LockedState = MediaLockState.Unlocked;
+            item.FileName = nodeData.MediaFileName;
+        }
+
+        if (nodeData.Post != null)
+        {
+            var socialItem = UnlockedMedia.FirstOrDefault(x => x.FileName == nodeData.Post.MediaFileName);
+            if (socialItem != null)
+            {
+                socialItem.FileName = nodeData.Post.MediaFileName;
+                socialItem.LockedState = MediaLockState.Unlocked;
+            }
         }
 
         if (save)
             SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
     }
 
-    public void UnlockMedia(string nodeGuid, bool save)
+    private void UnlockMedia(string fileName, bool save = true)
     {
-        foreach (var item in UnlockedMedia.Where(x => x.NodeGUID == nodeGuid))
+        var item = UnlockedMedia.FirstOrDefault(x => x.FileName == fileName);
+        if (item != null)
         {
             item.LockedState = MediaLockState.Unlocked;
         }

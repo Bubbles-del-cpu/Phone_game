@@ -63,7 +63,11 @@ public class SocialMediaPost : MonoBehaviour
                 break;
             case MediaType.Video:
                 var videoFrame = GameManager.Instance.GetVideoFrame(data.Video);
-                postImage.sprite = Sprite.Create(videoFrame, new Rect(0, 0, videoFrame.width, videoFrame.height), new Vector2(0.5f, 0.5f));
+                postImage.sprite = data.VideoThumbnail;
+
+                if (data.VideoThumbnail == null)
+                    postImage.sprite = Sprite.Create(videoFrame, new Rect(0, 0, videoFrame.width, videoFrame.height), new Vector2(0.5f, 0.5f));
+                    
                 break;
         }
 

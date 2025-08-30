@@ -22,7 +22,7 @@ public class GalleryUnlockConfig : ScriptableObject
         //Unlock the gallery buttons
         foreach (var item in SaveAndLoadManager.Instance.CurrentSave.UnlockedMedia)
         {
-            GameManager.Instance.GalleryCanvas.UnlockMedia(item.NodeGUID);
+            GameManager.Instance.GalleryCanvas.UnlockMedia(item.FileName);
         }
 
         SaveAndLoadManager.Instance.CurrentSave.UnlockAllMedia();

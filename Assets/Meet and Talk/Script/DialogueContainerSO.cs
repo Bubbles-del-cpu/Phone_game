@@ -375,9 +375,26 @@ namespace MeetAndTalk
         public MediaType PostMediaType;
         public Sprite Image;
         public VideoClip Video;
+        public Sprite VideoThumbnail;
         public GalleryDisplay GalleryVisibility;
         public SocialMediaPostSO Post;
         public string Timelapse;
+
+        public string MediaFileName
+        {
+            get
+            {
+                switch (PostMediaType)
+                {
+                    case MediaType.Sprite:
+                        return Image != null ? Image.name : string.Empty;
+                    case MediaType.Video:
+                        return Video != null ? Video.name : string.Empty;
+                }
+
+                return string.Empty;
+            }
+        }
 
         public float DelayTimer = 0;
         public void Reset()
