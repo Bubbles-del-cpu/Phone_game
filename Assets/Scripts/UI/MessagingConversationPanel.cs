@@ -30,9 +30,16 @@ public class MessagingConversationPanel : UIPanel
             {
                 var container = MessageBubbleContainers[cIndex];
 
-                var item = container.transform.GetChild(container.transform.childCount - index);
-                item.gameObject.SetActive(false);
-                objectList.Add(item.gameObject);
+                if (container.transform.childCount > 0)
+                {
+                    var item = container.transform.GetChild(container.transform.childCount - index);
+                    item.gameObject.SetActive(false);
+                    objectList.Add(item.gameObject);
+                }
+                else
+                {
+                    break;
+                }
             }
         }
 
