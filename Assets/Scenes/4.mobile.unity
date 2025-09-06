@@ -1234,30 +1234,30 @@ MonoBehaviour:
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Did you accept home care?
+    - DialogTitle: Are you more DOM or SUB?
+      Value:
+        ValueName: DOM_LVL
+      Option1Text: DOM
+      OptionSetting1: 110
+      Option2Text: SUB
+      OptionSetting2: 95
+    - DialogTitle: Did you allow math to be rough with Lily?
+      Value:
+        ValueName: MATH_ROUGH
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: Did you accept home_care
       Value:
         ValueName: AT_HOME_CARE
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: If yes... Did you extort Victoria?
+    - DialogTitle: If yes did you extort Victoria?
       Value:
         ValueName: victoria_extort
-      Option1Text: Extort
-      OptionSetting1: true
-      Option2Text: Love
-      OptionSetting2: false
-    - DialogTitle: Are you more dominant or submisive
-      Value:
-        ValueName: DOM_LVL
-      Option1Text: DOM
-      OptionSetting1: 108
-      Option2Text: SUB
-      OptionSetting2: 90
-    - DialogTitle: Did you allow Math to be rough with Lily?
-      Value:
-        ValueName: Math_rough
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
@@ -1361,8 +1361,67 @@ MonoBehaviour:
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
+  - Story: {fileID: 11400000, guid: 5176ea5297e9be246a1b53d7a4552242, type: 2}
+    StartID: 
+    ChapterIndex: 0
+    IsStoryChapter: 0
+    ReplaySettings:
+    - DialogTitle: Are you more DOM or SUB?
+      Value:
+        ValueName: DOM_LVL
+      Option1Text: DOM
+      OptionSetting1: 110
+      Option2Text: SUB
+      OptionSetting2: 95
+    - DialogTitle: Did you continue with Math?
+      Value:
+        ValueName: Continue_math
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: If no did you and Lily plan the date with Khalid?
+      Value:
+        ValueName: khalid_meet
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: Did you accept home care
+      Value:
+        ValueName: AT_HOME_CARE
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: If yes did you extort Victoria?
+      Value:
+        ValueName: victoria_extort
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: If you did not extort Victoria. Did you watch a movie with her?
+      Value:
+        ValueName: vic_movie_night
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: Did you accept the docters tests?
+      Value:
+        ValueName: dr_happy
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
   StandaloneChapters:
   - Story: {fileID: 11400000, guid: d4c97dc564b9dab409c930d50f4456ab, type: 2}
+    StartID: 
+    ChapterIndex: 0
+    IsStoryChapter: 0
+    ReplaySettings: []
+  - Story: {fileID: 11400000, guid: 4fcdbc19e69496d4ebf58ac5e251595d, type: 2}
     StartID: 
     ChapterIndex: 0
     IsStoryChapter: 0
@@ -2226,7 +2285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189322345688348478, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 30180
+      value: 30420
       objectReference: {fileID: 0}
     - target: {fileID: 4938284421023176446, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_Pivot.x
@@ -2574,7 +2633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 202.54083
+      value: 202.5
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3201,7 +3260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 325.56805
+      value: 325.5
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3488,7 +3547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189322345688348478, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -254.62134
+      value: -585.75916
       objectReference: {fileID: 0}
     - target: {fileID: 4938284421023176446, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_Pivot.x
@@ -3775,7 +3834,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 79.51361
+      value: 79.5
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6480,7 +6539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 202.54083
+      value: 202.5
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -7096,7 +7155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189322345688348478, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 30180
+      value: 30420
       objectReference: {fileID: 0}
     - target: {fileID: 4938284421023176446, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_Pivot.x
@@ -9457,7 +9516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1207203134180617477, guid: b7abca7edcae76a4d957b7a22623f364, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 325.56805
+      value: 325.5
       objectReference: {fileID: 0}
     - target: {fileID: 1207203134180617477, guid: b7abca7edcae76a4d957b7a22623f364, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -9575,7 +9634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 79.51361
+      value: 79.5
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -11520,7 +11579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189322345688348478, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 30179.998
+      value: 30419.998
       objectReference: {fileID: 0}
     - target: {fileID: 4938284421023176446, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_Pivot.x
