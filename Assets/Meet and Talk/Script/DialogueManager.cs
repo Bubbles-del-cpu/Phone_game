@@ -166,7 +166,7 @@ namespace MeetAndTalk
             bool atStart = false;
             BaseNodeData targetNode = lastDialogueNodeData;
 
-            List<DialogueCharacterSO> rollbackList = new List<DialogueCharacterSO>();
+            Dictionary<DialogueCharacterSO, int> rollbackList = new();
             var socialPostRollbackCount = 0;
             while (!targetFound)
             {
@@ -176,16 +176,26 @@ namespace MeetAndTalk
                     switch (node)
                     {
                         case DialogueNodeData nd:
-                            rollbackList.Add(nd.Character);
+                            if (!rollbackList.ContainsKey(nd.Character))
+                                rollbackList.Add(nd.Character, 1);
+
+                            rollbackList[nd.Character] += 1;
+
+                            if (nd.Timelapse != string.Empty)
+                                rollbackList[nd.Character] += 1;
+
                             if (nd.Post != null)
                                 socialPostRollbackCount++;
-
-                            //DialogueUIManager.Instance.Rollback(nd);
                             break;
                         case DialogueChoiceNodeData choiceNode:
-                            //DialogueUIManager.Instance.Rollback(choiceNode);
+                            if (!rollbackList.ContainsKey(choiceNode.Character))
+                                rollbackList.Add(choiceNode.Character, 0);
 
-                            rollbackList.Add(choiceNode.Character);
+
+                            //Removes the text from the character that is displayed before the choice
+                            if(choiceNode.RequireCharacterInput)
+                                rollbackList[choiceNode.Character] += 1;
+
                             if (ignoreFirstChoice)
                             {
                                 ignoreFirstChoice = false;
@@ -194,7 +204,8 @@ namespace MeetAndTalk
                             {
                                 targetFound = true;
 
-                                rollbackList.Add(choiceNode.Character);
+                                //Removes the dialogue choice that the Player selected so that it can be rollbacked and re-selected
+                                rollbackList[choiceNode.Character] += 1;
                                 targetNode = choiceNode;
                             }
                             break;
