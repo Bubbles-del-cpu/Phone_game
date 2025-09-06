@@ -181,6 +181,9 @@ namespace MeetAndTalk
 
                             rollbackList[nd.Character] += 1;
 
+                            if (nd.Timelapse != string.Empty)
+                                rollbackList[nd.Character] += 1;
+
                             if (nd.Post != null)
                                 socialPostRollbackCount++;
                             break;
