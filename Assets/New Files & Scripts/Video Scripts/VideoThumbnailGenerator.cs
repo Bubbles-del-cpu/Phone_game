@@ -6,7 +6,7 @@ using System.Linq;
 public class VideoThumbnailGenerator : MonoBehaviour
 {
     // [SerializeField] private Camera _thumbnailCamera;
-    // [SerializeField] private GameObject _quad; 
+    // [SerializeField] private GameObject _quad;
     [SerializeField] private VideoPlayer videoPlayer;
     [SerializeField] private float _playTime;
     [SerializeField] private float _cameraLensSize = .5f;
@@ -35,7 +35,7 @@ public class VideoThumbnailGenerator : MonoBehaviour
         foreach (var item in GameManager.Instance.Thumbnails.Keys.ToList())
         {
             complete = false;
-            Debug.Log($"Starting thumbnail generation for {item}"); 
+            Debug.Log($"Starting thumbnail generation for {item}");
             GenerateThumbnail(item, (texture) =>
             {
                 complete = true;
@@ -55,7 +55,7 @@ public class VideoThumbnailGenerator : MonoBehaviour
         _positionOffset += 100;
         StartCoroutine(GenerateThumbnailCoroutine(video, onComplete));
     }
-    
+
     private IEnumerator GenerateThumbnailCoroutine(VideoClip video, System.Action<Texture2D> onComplete)
     {
         // Create a temporary camera setup
@@ -70,16 +70,16 @@ public class VideoThumbnailGenerator : MonoBehaviour
         cam.orthographic = true;
         cam.nearClipPlane = 0.1f;
         cam.farClipPlane = 10f;
-        
+
         // Create a quad to display the video
         GameObject quadGO = GameObject.CreatePrimitive(PrimitiveType.Quad);
         quadGO.transform.parent = cameraGO.transform;
         quadGO.transform.localPosition = _quadPosition;
-        
+
         // Create unlit material for true color reproduction
         Material unlitMaterial = new Material(Shader.Find("Unlit/Texture"));
         quadGO.GetComponent<Renderer>().material = unlitMaterial;
-        
+
         // Setup VideoPlayer
         VideoPlayer videoPlayer = quadGO.AddComponent<VideoPlayer>();
         videoPlayer.playOnAwake = false;
@@ -88,49 +88,50 @@ public class VideoThumbnailGenerator : MonoBehaviour
         videoPlayer.targetMaterialRenderer = quadGO.GetComponent<Renderer>();
         videoPlayer.targetMaterialProperty = "_MainTex";
         videoPlayer.skipOnDrop = false;
-        
+
         // Prepare video to get dimensions
         videoPlayer.Prepare();
-        
+
         while (!videoPlayer.isPrepared)
         {
             yield return null;
         }
-        
+
         // Get video dimensions
         int videoWidth = (int)videoPlayer.width;
         int videoHeight = (int)videoPlayer.height;
         float videoAspect = (float)videoWidth / videoHeight;
-        
+
         // Set desired thumbnail size (you can adjust this)
         int thumbnailHeight = _thumbnailSize;
         int thumbnailWidth = Mathf.RoundToInt(thumbnailHeight * videoAspect);
-        
+
         // Create render texture with correct aspect ratio
         RenderTexture renderTexture = new RenderTexture(thumbnailWidth, thumbnailHeight, 24);
+        renderTexture.depthStencilFormat = UnityEngine.Experimental.Rendering.GraphicsFormat.D24_UNorm_S8_UInt;
         cam.targetTexture = renderTexture;
-        
+
         // Adjust camera to match video aspect ratio
         cam.aspect = videoAspect;
         cam.orthographicSize = _cameraLensSize;
-        
+
         // Scale the quad to match video aspect ratio
         quadGO.transform.localScale = new Vector3(videoAspect, 1, 1);
-        
+
         // Play and wait for content
         videoPlayer.Play();
-        
+
         while (!videoPlayer.isPlaying)
         {
             yield return null;
         }
-        
+
         // Wait for several frames
         yield return new WaitForSeconds(_playTime);
-        
+
         // Render the camera
         cam.Render();
-        
+
         // Capture the result
         Texture2D thumbnail = RenderTextureToTexture2D(renderTexture);
         _positionOffset -= 100;
@@ -139,7 +140,7 @@ public class VideoThumbnailGenerator : MonoBehaviour
         DestroyImmediate(cameraGO);
         DestroyImmediate(quadGO);
         renderTexture.Release();
-        
+
         onComplete?.Invoke(thumbnail);
     }
 
@@ -198,11 +199,11 @@ public class VideoThumbnailGenerator : MonoBehaviour
     private bool IsValidThumbnail(Texture2D texture)
     {
         if (texture == null) return false;
-        
+
         Color centerPixel = texture.GetPixel(texture.width / 2, texture.height / 2);
         return centerPixel.r + centerPixel.g + centerPixel.b > 0.05f;
     }
-    
+
     private Texture2D RenderTextureToTexture2D(RenderTexture renderTexture)
     {
         RenderTexture currentActiveRT = RenderTexture.active;
