@@ -33,20 +33,38 @@ public class MessagingCanvas : UICanvas
         nameLabel.enabled = false;
     }
 
-    public override void Close()
+    // public override void Close()
+    // {
+    //     bool _wasConversationOpen = false;
+    //     foreach(UIPanel _panel in conversations.Values)
+    //     {
+    //         if (_panel.IsOpen)
+    //         {
+    //             _wasConversationOpen = true;
+    //             _panel.Close();
+    //         }
+    //     }
+
+    //     if (!_wasConversationOpen)
+    //         base.Close();
+    // }
+
+    public void Close(bool fullClose, DialogueCharacterSO character)
     {
-        bool _wasConversationOpen = false;
-        foreach(UIPanel _panel in conversations.Values)
+        var openCount = 0;
+        foreach (UIPanel _panel in conversations.Values)
         {
             if (_panel.IsOpen)
-            {
-                _wasConversationOpen = true;
-                _panel.Close();
-            }
+                openCount++;
         }
-        if(!_wasConversationOpen)
-            base.Close();
 
+        conversations[character].Close();
+        if (openCount <= 1)
+        {
+            conversationsPanel.Close();
+            if (fullClose)
+                base.Close();
+        }
     }
 
     public void ClearConversations()
@@ -67,15 +85,32 @@ public class MessagingCanvas : UICanvas
         conversations.Clear();
     }
 
-    public void Open(DialogueCharacterSO _character)
+    public void Open(DialogueCharacterSO _character, bool fromNotification = false)
+    {
+        if (_character != null)
+        {
+            var command = new ConversationOpenCommand(this, openState: true, _character, fromNotification);
+            NavigationManager.Instance.InvokeCommand(command, allowUndo: true);
+        }
+
+        // icon.Character = _character;
+        // nameLabel.text = _character.name;
+        // GameManager.Instance.MessagingCanvas.Close();
+        // conversations[_character].Open();
+        // GameManager.Instance.MessagingCanvas.Open();
+        // profileImage.enabled = true;
+        // nameLabel.enabled = true;
+    }
+
+    public void SetupPanel(DialogueCharacterSO _character)
     {
         icon.Character = _character;
         nameLabel.text = _character.name;
-        GameManager.Instance.MessagingCanvas.Close();
-        conversations[_character].Open();
-        GameManager.Instance.MessagingCanvas.Open();
         profileImage.enabled = true;
         nameLabel.enabled = true;
+
+        conversations[_character].Open();
+        conversationsPanel.Open();
     }
 
     private void CheckCharacter(DialogueCharacterSO character)
@@ -87,12 +122,15 @@ public class MessagingCanvas : UICanvas
             seenCharacters.Add(character);
 
             MessagingConversationButton _button = Instantiate(conversationButtonPrefab, conversationButtonsContainer);
+            _button.name = $"{character.name} (MessagingConversationButton)";
             _button.Character = character;
             buttons.Add(character, _button);
 
             MessagingConversationPanel _panel = Instantiate(conversationPanelPrefab, conversationContainer);
+            _panel.name = $"{character.name} (MessagingConversationPanel)";
             _panel.transform.SetSiblingIndex(_panel.transform.GetSiblingIndex() - 1);
             _panel.Character = character;
+
             conversations.Add(character, _panel);
         }
     }

@@ -61,7 +61,7 @@ public abstract class GalleryButtonBase : MonoBehaviour
         HintText = $"Unlocked in {chapterData.Story.name}";
     }
 
-    protected abstract void GalleryButtonClicked();
+    public abstract void GalleryButtonClicked();
 
     protected void Update()
     {

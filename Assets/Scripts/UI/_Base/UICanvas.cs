@@ -4,10 +4,11 @@ using TMPro;
 using MeetAndTalk;
 using System.Collections;
 
+[RequireComponent(typeof(Canvas))]
 public class UICanvas : MonoBehaviour
 {
-    [SerializeField] bool isOpenOnStart = true;
-    [SerializeField] Button closeButton;
+    //[SerializeField] bool isOpenOnStart = true;
+    //[SerializeField] Button closeButton;
 
     Canvas canvas;
 
@@ -15,32 +16,41 @@ public class UICanvas : MonoBehaviour
     {
         canvas = GetComponent<Canvas>();
 
-        if (closeButton != null)
-            closeButton.onClick.AddListener(() => Close());
+        // if (closeButton != null)
+        //     closeButton.onClick.AddListener(() => Close());
     }
 
     protected virtual void Start()
     {
-        if (IsOpen != isOpenOnStart) Toggle();
+        //if (IsOpen != isOpenOnStart) Toggle();
     }
 
     public virtual void Open()
     {
         if (canvas != null)
-            canvas.enabled = true;
+        {
+            var command = new PanelOpenCommand(this, openState: true);
+            NavigationManager.Instance.InvokeCommand(command, allowUndo: true);
+        }
     }
 
     public virtual void Close()
     {
         if (canvas != null)
-            canvas.enabled = false;
+        {
+            var command = new PanelOpenCommand(this, openState: false);
+            NavigationManager.Instance.InvokeCommand(command, allowUndo: false);
+        }
     }
 
     private IEnumerator CoSetOpenState(float delay, bool state)
     {
         yield return new WaitForSeconds(delay);
         if (canvas != null)
-            canvas.enabled = state;
+        {
+            var command = new PanelOpenCommand(this, state);
+            NavigationManager.Instance.InvokeCommand(command, allowUndo: state);
+        }
     }
 
     public virtual void Open(float delay = 0)
@@ -56,10 +66,10 @@ public class UICanvas : MonoBehaviour
         }
     }
 
-    public virtual void Toggle()
-    {
-        if (!IsOpen) Open(); else Close();
-    }
+    // public virtual void Toggle()
+    // {
+    //     if (!IsOpen) Open(); else Close();
+    // }
 
     public bool IsOpen { get { return canvas.enabled; } }
 

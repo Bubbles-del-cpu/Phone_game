@@ -225,7 +225,9 @@ public class DialogueChapterManager : UICanvas
         SaveAndLoadManager.Instance.PlayingStandaloneChapter = isStandaloneChapter;
 
         GameManager.Instance.TriggerDialogueChapter(chapter.Story);
-        Hide();
+
+        if (IsOpen)
+            Hide();
     }
 
     /// <summary>

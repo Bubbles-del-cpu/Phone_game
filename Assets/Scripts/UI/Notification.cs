@@ -79,11 +79,11 @@ public class Notification : MonoBehaviour
         switch(type)
         {
             default:
-                GameManager.Instance.SocialMediaCanvas.Close();
-                GameManager.Instance.MessagingCanvas.Open(character);
+                //GameManager.Instance.SocialMediaCanvas.Close();
+                GameManager.Instance.MessagingCanvas.Open(character, fromNotification: true);
                 break;
             case NotificationType.SocialMedia:
-                GameManager.Instance.MessagingCanvas.Close();
+                //GameManager.Instance.MessagingCanvas.Close();
                 GameManager.Instance.SocialMediaCanvas.Open();
                 break;
         }

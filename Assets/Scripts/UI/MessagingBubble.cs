@@ -65,7 +65,7 @@ public class MessagingBubble : MonoBehaviour
             transform.parent.GetComponent<RectTransform>().rect.size.y + 50f
             );
 
-        GetComponentInParent<ScrollRect>().verticalNormalizedPosition = 0f;
+        //GetComponentInParent<ScrollRect>().verticalNormalizedPosition = 0f;
         Message = text;
 
         _videoContainer.SetActive(false);
