@@ -185,8 +185,6 @@ MonoBehaviour:
     TargetNodeGuid: 18c19e38-f385-4f99-a16a-4f1186422af0
   - BaseNodeGuid: d692e955-2562-49a8-a3c8-01f7dba2a94c
     TargetNodeGuid: e8762e42-6159-4c4b-afc4-19401fb6a568
-  - BaseNodeGuid: e8762e42-6159-4c4b-afc4-19401fb6a568
-    TargetNodeGuid: 18c19e38-f385-4f99-a16a-4f1186422af0
   - BaseNodeGuid: 18c19e38-f385-4f99-a16a-4f1186422af0
     TargetNodeGuid: d0db0b20-5633-47df-9f7c-7aa60ff2c8d3
   - BaseNodeGuid: bd9d2627-afd5-4344-9d24-970e269a5cdc
@@ -305,6 +303,8 @@ MonoBehaviour:
     TargetNodeGuid: 65af4692-e401-45b7-b718-b7ab65687f3f
   - BaseNodeGuid: 5745f20c-ed12-4d98-b1bb-8b0b199a4195
     TargetNodeGuid: 142ea036-5eb9-4158-95c0-4f6b2a18e2b6
+  - BaseNodeGuid: e8762e42-6159-4c4b-afc4-19401fb6a568
+    TargetNodeGuid: 18c19e38-f385-4f99-a16a-4f1186422af0
   - BaseNodeGuid: 511d664a-5f28-44dd-8ac0-5e5b9836a9c9
     TargetNodeGuid: c5ab0d33-fd4f-4a46-bd7d-a4e8b573b7eb
   - BaseNodeGuid: c5ab0d33-fd4f-4a46-bd7d-a4e8b573b7eb
@@ -389,6 +389,8 @@ MonoBehaviour:
     TargetNodeGuid: 05455d10-5f4d-4194-b27f-42e220bdd5e9
   - BaseNodeGuid: 3d4b1989-3bf9-4fbd-a2a9-e0ff829bdf67
     TargetNodeGuid: d25dc80b-9524-4451-9a67-134ced1a259b
+  - BaseNodeGuid: 3d4b1989-3bf9-4fbd-a2a9-e0ff829bdf67
+    TargetNodeGuid: d692e955-2562-49a8-a3c8-01f7dba2a94c
   - BaseNodeGuid: d0db0b20-5633-47df-9f7c-7aa60ff2c8d3
     TargetNodeGuid: bd9d2627-afd5-4344-9d24-970e269a5cdc
   - BaseNodeGuid: 49c33819-adad-4829-95c4-d8d7a5f1fde0
@@ -411,6 +413,8 @@ MonoBehaviour:
     TargetNodeGuid: 41ae95cf-730a-4dae-8658-508cefa5c591
   - BaseNodeGuid: dc43f8cf-7eb9-4855-aaf7-25283c8d9253
     TargetNodeGuid: 41ae95cf-730a-4dae-8658-508cefa5c591
+  - BaseNodeGuid: a2c74190-0121-4da5-b0d0-236a6f1eb21c
+    TargetNodeGuid: 4eb631cd-e016-4639-9427-b8061d5156b4
   - BaseNodeGuid: ed902782-b98e-4e01-9409-1d6e8b4e6eea
     TargetNodeGuid: fe643c95-e61c-4394-a903-addae69a0db1
   - BaseNodeGuid: 48c30787-ab39-4cde-8217-192f685a2d3c
@@ -445,12 +449,14 @@ MonoBehaviour:
     TargetNodeGuid: b39bc95e-716a-4072-8ede-9ac049c8fc3e
   - BaseNodeGuid: 46819051-1f3a-4e9b-91b7-e052c1bbdaa8
     TargetNodeGuid: 48c30787-ab39-4cde-8217-192f685a2d3c
-  - BaseNodeGuid: 3d4b1989-3bf9-4fbd-a2a9-e0ff829bdf67
-    TargetNodeGuid: d692e955-2562-49a8-a3c8-01f7dba2a94c
-  - BaseNodeGuid: a2c74190-0121-4da5-b0d0-236a6f1eb21c
-    TargetNodeGuid: 4eb631cd-e016-4639-9427-b8061d5156b4
   - BaseNodeGuid: 276d8480-aa11-486d-be11-1cd4b3c333ac
     TargetNodeGuid: 540e167d-050b-4036-9c61-7d2a4d90818b
+  - BaseNodeGuid: b39bc95e-716a-4072-8ede-9ac049c8fc3e
+    TargetNodeGuid: 8c29f418-ce4b-4af0-abbc-57ad08fcc655
+  - BaseNodeGuid: 8c29f418-ce4b-4af0-abbc-57ad08fcc655
+    TargetNodeGuid: 0077aa3f-e1c7-4ee8-8cec-c421497516f7
+  - BaseNodeGuid: 0077aa3f-e1c7-4ee8-8cec-c421497516f7
+    TargetNodeGuid: ecc04621-0779-4ffc-add0-28277898bf66
   DialogueChoiceNodeDatas:
   - NodeGuid: 511d664a-5f28-44dd-8ac0-5e5b9836a9c9
     Position: {x: 1636, y: 514}
@@ -2673,6 +2679,39 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
+  - NodeGuid: 8c29f418-ce4b-4af0-abbc-57ad08fcc655
+    Position: {x: 52399, y: 950}
+    DialogueNodePorts:
+    - PortGuid: 0276186d-bb11-4f47-b52f-a48fa28d2dc9
+      InputGuid: 0077aa3f-e1c7-4ee8-8cec-c421497516f7
+      OutputGuid: 8c29f418-ce4b-4af0-abbc-57ad08fcc655
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Can't wait
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
   DialogueNodeDatas:
   - NodeGuid: 4c214dea-b107-431b-81ad-7e2d8422e34e
     Position: {x: 388, y: 497}
@@ -3785,7 +3824,7 @@ MonoBehaviour:
       LanguageGenericType: {fileID: 0}
     - languageEnum: 1
       LanguageGenericType: {fileID: 0}
-    Character: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4a6d2ae02febf1748b46e60b37b0b6a8, type: 2}
     AvatarPos: 0
     AvatarType: 0
     TextType:
@@ -3811,7 +3850,7 @@ MonoBehaviour:
       LanguageGenericType: {fileID: 0}
     - languageEnum: 1
       LanguageGenericType: {fileID: 0}
-    Character: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4a6d2ae02febf1748b46e60b37b0b6a8, type: 2}
     AvatarPos: 0
     AvatarType: 0
     TextType:
@@ -6185,7 +6224,7 @@ MonoBehaviour:
     PostMediaType: 1
     Image: {fileID: 0}
     Video: {fileID: 32900000, guid: 47406906f89c715458e8537de8a60cf7, type: 3}
-    VideoThumbnail: {fileID: 0}
+    VideoThumbnail: {fileID: 1966794828270103453, guid: 45898fdfb6cc4ff4bae797c264e2e618, type: 3}
     GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
@@ -6467,6 +6506,58 @@ MonoBehaviour:
     TextType:
     - languageEnum: 0
       LanguageGenericType: I'll talk to them tomorrow. Keep your fingers crossed...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    PostMediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    Timelapse: 
+    DelayTimer: 0
+  - NodeGuid: 0077aa3f-e1c7-4ee8-8cec-c421497516f7
+    Position: {x: 52720, y: 957}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c7cbc9723ae0f174cba60146f0cc8e0e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: This is the end of the prologue part 2
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    PostMediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    Timelapse: 
+    DelayTimer: 0
+  - NodeGuid: ecc04621-0779-4ffc-add0-28277898bf66
+    Position: {x: 52926, y: 957}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c7cbc9723ae0f174cba60146f0cc8e0e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: See you next time for part 3
     - languageEnum: 1
       LanguageGenericType: 
     Duration: 2

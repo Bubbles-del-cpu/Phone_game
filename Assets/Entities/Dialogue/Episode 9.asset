@@ -6770,32 +6770,6 @@ MonoBehaviour:
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
-  - NodeGuid: 4c3044ab-c583-4e04-a3bc-3df1a26880df
-    Position: {x: 43012, y: 740}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: But here is the real star of the show
-    - languageEnum: 1
-      LanguageGenericType: 
-    Duration: 2
-    Delay: 0
-    PostMediaType: 0
-    Image: {fileID: 114680974153378712, guid: 5ce9737f24a750141b9324a13884c273, type: 3}
-    Video: {fileID: 0}
-    VideoThumbnail: {fileID: 0}
-    GalleryVisibility: 0
-    Post: {fileID: 0}
-    Timelapse: 
-    DelayTimer: 0
   - NodeGuid: 9821782c-b06d-49fb-a296-26276430abfe
     Position: {x: 42503, y: 1195}
     DialogueNodePorts: []
@@ -8489,7 +8463,7 @@ MonoBehaviour:
     PostMediaType: 1
     Image: {fileID: 1170295526055901247, guid: 159210a7b11afc042a9ff2552a39bc35, type: 3}
     Video: {fileID: 32900000, guid: 151adbf244ed36a49bc511ac0637af0a, type: 3}
-    VideoThumbnail: {fileID: 0}
+    VideoThumbnail: {fileID: 5487447997575077332, guid: d01f917e79d0f3f42b19fed11374b80b, type: 3}
     GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
@@ -9379,7 +9353,7 @@ MonoBehaviour:
     PostMediaType: 1
     Image: {fileID: 0}
     Video: {fileID: 32900000, guid: 2bbb5da933db7214788671add45a3c7d, type: 3}
-    VideoThumbnail: {fileID: 0}
+    VideoThumbnail: {fileID: -7445658507054730336, guid: 1ded44397ba423e4a9795f5908a7e9f3, type: 3}
     GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
@@ -9482,6 +9456,32 @@ MonoBehaviour:
     Delay: 0
     PostMediaType: 0
     Image: {fileID: -5338408803634174113, guid: a3a0a4eadb0c6d844bafb593f71738d8, type: 3}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    Timelapse: 
+    DelayTimer: 0
+  - NodeGuid: 4c3044ab-c583-4e04-a3bc-3df1a26880df
+    Position: {x: 43012, y: 740}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: But here is the real star of the show
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    PostMediaType: 0
+    Image: {fileID: 114680974153378712, guid: 5ce9737f24a750141b9324a13884c273, type: 3}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     GalleryVisibility: 0
