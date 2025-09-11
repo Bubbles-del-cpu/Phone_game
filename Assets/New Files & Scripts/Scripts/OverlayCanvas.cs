@@ -28,7 +28,7 @@ public class OverlayCanvas : UICanvas
     [SerializeField] private Image _fadeOverlay;
 
     private float _fadeTimer;
-    private float _fadeTime;
+    private float _fadeTime, _holdTime;
     private FadeState _fadeState;
     private Action actionOnFade;
     public enum FadeState
@@ -78,7 +78,7 @@ public class OverlayCanvas : UICanvas
                 case FadeState.HOLD:
                     _fadeTimer += Time.deltaTime;
                     percentage = 1;
-                    if (_fadeTimer >= _fadeHoldTime)
+                    if (_fadeTimer >= _holdTime)
                     {
                         _fadeTimer = 0;
                         _fadeState = FadeState.FADE_IN;
@@ -105,7 +105,7 @@ public class OverlayCanvas : UICanvas
         }
     }
 
-    public void FadeToBlack(Action postEvent, float timeToFadeOverride = -1)
+    public void FadeToBlack(Action postEvent, float timeToFadeOverride = -1, float fadeHoldTimeOverride = -1)
     {
         //TODO: Disable inputs
         base.Open();
@@ -113,6 +113,7 @@ public class OverlayCanvas : UICanvas
         _fade = true;
 
         _fadeTime = timeToFadeOverride == -1 ?  _timeToFade : timeToFadeOverride;
+        _holdTime = fadeHoldTimeOverride == -1 ? _fadeHoldTime : fadeHoldTimeOverride;
 
         actionOnFade = postEvent;
     }

@@ -16,7 +16,6 @@ namespace MeetAndTalk.Event
             Instance = this;
         }
 
-
         public void InvokeSceneEvent(string ID)
         {
             foreach (SceneDialogEventInvoke Event in SceneEventList)
@@ -24,9 +23,6 @@ namespace MeetAndTalk.Event
                 if (Event.ID == ID) { Event.SceneEvent.Invoke(); }
             }
         }
-
-
-
         public void ConsoleLogEvent(string content, LogType type)
         {
             if (type == LogType.Info) Debug.Log(content);

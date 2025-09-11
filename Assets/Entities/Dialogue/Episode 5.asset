@@ -271,14 +271,14 @@ MonoBehaviour:
     TargetNodeGuid: a89e5394-0bcb-4f3c-817a-5a268a34ad31
   - BaseNodeGuid: 72a3daf2-9097-44d1-bd94-28b1c5aebdcd
     TargetNodeGuid: e68f70ff-8d3f-4c73-88ac-54a953a91143
-  - BaseNodeGuid: e68f70ff-8d3f-4c73-88ac-54a953a91143
-    TargetNodeGuid: ca158878-83dd-4611-8df9-f08630414961
   - BaseNodeGuid: e371b47f-8955-4393-bcd0-77189bab0c0e
     TargetNodeGuid: 8be4060e-1359-4197-ae18-63ca9cbc85a9
   - BaseNodeGuid: 0a7b79bf-bd10-4537-a227-391ebf55ef5f
     TargetNodeGuid: 382ac41f-587c-45cc-8c9f-4c66537fc5ec
   - BaseNodeGuid: 3c7dbad2-958d-4661-974a-7b728bd76c91
     TargetNodeGuid: aeb67b75-8dfc-4424-83f6-c914fa75bace
+  - BaseNodeGuid: e68f70ff-8d3f-4c73-88ac-54a953a91143
+    TargetNodeGuid: ca158878-83dd-4611-8df9-f08630414961
   - BaseNodeGuid: d4b5f231-a873-4433-a02e-f071a53f1022
     TargetNodeGuid: d79a4a6c-a56b-43f3-9295-67e38760f8f5
   - BaseNodeGuid: d79a4a6c-a56b-43f3-9295-67e38760f8f5
@@ -3861,7 +3861,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -3886,7 +3886,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -3911,7 +3911,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -3936,7 +3936,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -3961,7 +3961,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -3986,7 +3986,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4011,7 +4011,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4036,7 +4036,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4061,7 +4061,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4086,7 +4086,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4111,7 +4111,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4136,7 +4136,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4161,7 +4161,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4187,7 +4187,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4212,7 +4212,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4237,7 +4237,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4262,7 +4262,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4288,7 +4288,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4313,7 +4313,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4339,7 +4339,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4364,7 +4364,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4389,7 +4389,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4414,7 +4414,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4439,7 +4439,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4464,7 +4464,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 5 minutes later
     DelayTimer: 0
@@ -4489,7 +4489,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4514,7 +4514,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4539,7 +4539,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4564,7 +4564,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 5 minutes later
     DelayTimer: 0
@@ -4589,7 +4589,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4614,7 +4614,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4639,7 +4639,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4664,7 +4664,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4689,7 +4689,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4714,7 +4714,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4739,7 +4739,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4764,7 +4764,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 2190586081033126718, guid: 31e8f15a72b706e42bc08321374bbb4a, type: 3}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 1 hour later...
     DelayTimer: 0
@@ -4789,7 +4789,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4814,7 +4814,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4839,7 +4839,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4864,7 +4864,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4889,7 +4889,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4914,7 +4914,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4939,7 +4939,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4964,7 +4964,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -4989,7 +4989,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5014,7 +5014,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: -4111830935755103619, guid: c77a697a5fd788b4ebb6a081e040aa27, type: 3}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 1 hour later
     DelayTimer: 0
@@ -5039,7 +5039,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5064,7 +5064,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 7958738444683644146, guid: 749d631ab7808be43b1957c09086ecca, type: 3}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5089,7 +5089,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5115,7 +5115,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5140,7 +5140,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 11400000, guid: 82b396f39d2608043bc229dd9f7e821b, type: 2}
     Timelapse: 
     DelayTimer: 0
@@ -5165,7 +5165,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 2 Hours later
     DelayTimer: 0
@@ -5190,7 +5190,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5215,7 +5215,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5241,7 +5241,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5266,7 +5266,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5291,7 +5291,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5316,7 +5316,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: -7876590708551924607, guid: 8bf34df0c3882d2418b8f4fcfe6f01d1, type: 3}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5342,7 +5342,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5367,7 +5367,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 11400000, guid: 3eee1ae1c7fd7744db21dba6f5ca9851, type: 2}
     Timelapse: 
     DelayTimer: 0
@@ -5392,7 +5392,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 30 minutes later
     DelayTimer: 0
@@ -5417,7 +5417,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5442,7 +5442,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5467,7 +5467,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5492,7 +5492,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5517,7 +5517,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5542,7 +5542,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5567,7 +5567,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5592,7 +5592,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5617,7 +5617,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5642,7 +5642,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5667,7 +5667,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5692,7 +5692,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5717,7 +5717,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5742,7 +5742,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5767,7 +5767,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5792,7 +5792,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5817,7 +5817,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5842,7 +5842,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5867,7 +5867,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5892,7 +5892,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5917,7 +5917,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5942,7 +5942,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -5967,7 +5967,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 1 hour later
     DelayTimer: 0
@@ -5992,7 +5992,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6017,7 +6017,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 5837859842962278999, guid: 6e8d67e1744a56f46ae7146d056f04d6, type: 3}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6042,7 +6042,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6067,7 +6067,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6092,7 +6092,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6117,7 +6117,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 836667263743648299, guid: 9e18b1782d43f9f4887eb17d79e08950, type: 3}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6142,7 +6142,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6167,7 +6167,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6193,7 +6193,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 15 minutes later...
     DelayTimer: 0
@@ -6218,7 +6218,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6243,7 +6243,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6268,7 +6268,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6293,7 +6293,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6318,7 +6318,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6344,7 +6344,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6369,7 +6369,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6395,7 +6395,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6420,7 +6420,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6445,7 +6445,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6470,7 +6470,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6495,7 +6495,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6520,7 +6520,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6546,7 +6546,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6571,7 +6571,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6596,7 +6596,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6622,7 +6622,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6647,7 +6647,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6672,7 +6672,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: -3523388410153186656, guid: 35c76b49b8adf754daadbc47f4479a4e, type: 3}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6697,7 +6697,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6723,7 +6723,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6748,7 +6748,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6773,7 +6773,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6799,7 +6799,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6824,7 +6824,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6849,7 +6849,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6874,7 +6874,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 8988221757934853809, guid: e4778f7dc0ffeae4b8492a46d739fb97, type: 3}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0
@@ -6899,7 +6899,7 @@ MonoBehaviour:
     PostMediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
     Timelapse: 
     DelayTimer: 0

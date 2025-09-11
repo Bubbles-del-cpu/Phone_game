@@ -20,5 +20,10 @@ namespace MeetAndTalk.Event
             // Invoke Scene Event
             DialogueEventManager.Instance.InvokeSceneEvent(SceneEventID);
         }
+
+        public override void RollbackEvent()
+        {
+            //Blank
+        }
     }
 }

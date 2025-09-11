@@ -4,6 +4,7 @@ using UnityEngine.Events;
 using TMPro;
 using System.Text.RegularExpressions;
 using MeetAndTalk.GlobalValue;
+using System.Linq;
 
 namespace MeetAndTalk
 {
@@ -106,6 +107,26 @@ namespace MeetAndTalk
             if (clearNameColor) name = RemoveRichTextTags(name);
 
             nameLabel.text = name;
+        }
+
+        public List<DialogueCharacterSO> Rollback(Dictionary<DialogueCharacterSO, int> characterPanel)
+        {
+            var emptyList = new List<DialogueCharacterSO>();
+            foreach (var (character, count) in characterPanel)
+            {
+                var targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(character);
+
+                //Clear the response panel of any options
+                foreach (Transform child in targetPanel.ResponsesPanel.ResponseButtonsContainer.transform)
+                    Destroy(child.gameObject);
+
+                targetPanel.RemoveElements(count);
+                if (count >= targetPanel.ChildCount)
+                    emptyList.Add(character);
+            }
+
+            //List of dialogue character for whoes conversation panels are empty and therefore shouldn't be displayed on the contacts list yet
+            return emptyList;
         }
 
         public void SetFullText(string text, BaseNodeData _nodeData, MessageSource messageSource, bool notification = true, bool updateSave = true)

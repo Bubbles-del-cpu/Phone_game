@@ -19,6 +19,7 @@ namespace MeetAndTalk.Event
         /// It can also be called manually
         /// </summary>.
         public abstract void RunEvent();
+        public abstract void RollbackEvent();
     }
 
 #if UNITY_EDITOR

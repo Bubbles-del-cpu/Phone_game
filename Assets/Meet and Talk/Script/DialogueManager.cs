@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using MeetAndTalk.GlobalValue;
 using MeetAndTalk.Localization;
 using Unity.VisualScripting;
+using UnityEngine.Serialization;
 
 namespace MeetAndTalk
 {
@@ -17,7 +18,7 @@ namespace MeetAndTalk
         public LocalizationManager localizationManager;
 
         [HideInInspector] public DialogueUIManager dialogueUIManager;
-        public AudioSource audioSource;
+        [FormerlySerializedAs("audioSource")] public AudioSource AudioSource;
         public DialogueUIManager MainUI;
 
         public enum ResponseSpeed
@@ -39,6 +40,7 @@ namespace MeetAndTalk
         private DialogueChoiceNodeData _nodeChoiceInvoke;
 
         private List<Coroutine> activeCoroutines = new List<Coroutine>();
+        private Stack<BaseNodeData> _visitedNodes = new Stack<BaseNodeData>();
 
         private void Awake()
         {
@@ -46,12 +48,12 @@ namespace MeetAndTalk
 
             // Setup UI
             DialogueUIManager[] all = FindObjectsByType<DialogueUIManager>(FindObjectsSortMode.None);
-            foreach(DialogueUIManager ui in all) { if(ui.dialogueCanvas != null) ui.dialogueCanvas.Close(); }
+            foreach (DialogueUIManager ui in all) { if (ui.dialogueCanvas != null) ui.dialogueCanvas.Close(); }
 
             DialogueUIManager.Instance = MainUI;
             dialogueUIManager = DialogueUIManager.Instance;
 
-            audioSource = GetComponent<AudioSource>();
+            AudioSource = GetComponent<AudioSource>();
         }
 
         /// <summary>
@@ -82,6 +84,7 @@ namespace MeetAndTalk
         {
             // Update Dialogue UI
             dialogueUIManager = DialogueUIManager.Instance;
+            _visitedNodes = new Stack<BaseNodeData>();
 
             // Setup Dialogue
             SetupDialogue(DialogueSO);
@@ -92,28 +95,9 @@ namespace MeetAndTalk
             // Check ID
             if (dialogueContainer.StartNodeDatas.Count == 0) { Debug.LogError("Error: No Start Node in Dialogue Container!"); }
 
-            BaseNodeData _start = null;
-
             if (chapterData.CurrentGUID == string.Empty || SaveAndLoadManager.Instance.ReplayingCompletedChapter)
             {
-                if (chapterData.StartID == string.Empty)
-                {
-                    _start = dialogueContainer.StartNodeDatas[Random.Range(0, dialogueContainer.StartNodeDatas.Count)];
-                }
-                else
-                {
-                    // IF FInd ID assign Data
-                    foreach (StartNodeData data in dialogueContainer.StartNodeDatas)
-                    {
-                        if (data.startID == chapterData.CurrentGUID)
-                        {
-                            _start = data;
-                            break;
-                        }
-                    }
-                }
-
-                CheckNodeType(GetNextNode(_start));
+                TriggerDialogueStart(chapterData);
             }
             else
             {
@@ -143,6 +127,153 @@ namespace MeetAndTalk
             StartDialogueEvent.Invoke();
         }
 
+        private void TriggerDialogueStart(ChapterSaveData chapterData)
+        {
+            StartNodeData startNode = null;
+            if (chapterData.StartID == string.Empty)
+            {
+                startNode = dialogueContainer.StartNodeDatas[Random.Range(0, dialogueContainer.StartNodeDatas.Count)];
+            }
+            else
+            {
+                // IF FInd ID assign Data
+                foreach (StartNodeData data in dialogueContainer.StartNodeDatas)
+                {
+                    if (data.startID == chapterData.CurrentGUID)
+                    {
+                        startNode = data;
+                        break;
+                    }
+                }
+            }
+
+            CheckNodeType(startNode);
+        }
+
+        public void Rollback()
+        {
+            OverlayCanvas.Instance.FadeToBlack(() =>
+            {
+                CoRollback();
+                SaveAndLoadManager.Instance.AutoSave();
+            }, .25f, .25f);
+        }
+
+        private void CoRollback()
+        {
+            bool targetFound = false;
+            bool ignoreFirstChoice = true;
+            bool atStart = false;
+            BaseNodeData targetNode = lastDialogueNodeData;
+
+            Dictionary<DialogueCharacterSO, int> rollbackList = new();
+            var socialPostRollbackCount = 0;
+            while (!targetFound)
+            {
+                if (_visitedNodes.TryPop(out BaseNodeData node))
+                {
+                    SaveAndLoadManager.Instance.CurrentSave.RemoveNode(node);
+                    switch (node)
+                    {
+                        case DialogueNodeData nd:
+                            if (!rollbackList.ContainsKey(nd.Character))
+                                rollbackList.Add(nd.Character, 1);
+
+                            rollbackList[nd.Character] += 1;
+
+                            if (nd.Timelapse != string.Empty)
+                                rollbackList[nd.Character] += 1;
+
+                            if (nd.Post != null)
+                                socialPostRollbackCount++;
+                            break;
+                        case DialogueChoiceNodeData choiceNode:
+                            if (!rollbackList.ContainsKey(choiceNode.Character))
+                                rollbackList.Add(choiceNode.Character, 0);
+
+
+                            //Removes the text from the character that is displayed before the choice
+                            if(choiceNode.RequireCharacterInput)
+                                rollbackList[choiceNode.Character] += 1;
+
+                            if (ignoreFirstChoice)
+                            {
+                                ignoreFirstChoice = false;
+                            }
+                            else
+                            {
+                                targetFound = true;
+
+                                //Removes the dialogue choice that the Player selected so that it can be rollbacked and re-selected
+                                rollbackList[choiceNode.Character] += 1;
+                                targetNode = choiceNode;
+                            }
+                            break;
+                        case EventNodeData eventNode:
+                            foreach (var item in eventNode.EventScriptableObjects)
+                            {
+                                if (item.DialogueEventSO != null)
+                                {
+                                    item.DialogueEventSO.RollbackEvent();
+                                }
+                            }
+                            break;
+                        case StartNodeData:
+                            atStart = true;
+                            targetFound = true;
+                            break;
+                    }
+                }
+                else
+                {
+                    //Stack is empty so we must have reached the start of the dialogue tree
+                    //This is a caught for a failed stack that for some reason doesn't have the start node inside
+                    atStart = true;
+                    break;
+                }
+            }
+
+            var emptyList = DialogueUIManager.Instance.Rollback(rollbackList);
+            GameManager.Instance.SocialMediaCanvas.RemovePosts(socialPostRollbackCount);
+
+            if (emptyList.Count > 0)
+            {
+                //Note: If empty list has any elements at least 1 will be the current character conversation panel
+                GameManager.Instance.MessagingCanvas.Close();
+                foreach (var character in emptyList)
+                {
+                    GameManager.Instance.MessagingCanvas.RemoveConversationPanel(character);
+                }
+            }
+
+            if (atStart)
+            {
+                //GameManager.Instance.ResetGameState();
+                SaveAndLoadManager.Instance.CurrentSave.CurrentChapterData.CurrentGUID = string.Empty;
+                GameManager.Instance.TriggerDialogueChapter(dialogueContainer);
+            }
+            else
+            {
+                //Open the corresponding character conversation panel if there is one to open
+                //This should only be relevant if we have triggered a close via the "emptyList" above
+                switch (targetNode)
+                {
+                    case DialogueNodeData nd:
+                        GameManager.Instance.MessagingCanvas.Open(nd.Character);
+                        break;
+                    case DialogueChoiceNodeData nd:
+                        GameManager.Instance.MessagingCanvas.Open(nd.Character);
+                        break;
+                    case TimerChoiceNodeData nd:
+                        GameManager.Instance.MessagingCanvas.Open(nd.Character);
+                        break;
+
+                }
+
+                CheckNodeType(targetNode);
+            }
+        }
+
         public bool PopulateVisitedNodes(ChapterSaveData savaData)
         {
             bool loadSuccess = true;
@@ -162,27 +293,31 @@ namespace MeetAndTalk
                     continue;
                 }
 
-                dialogueUIManager.SetFullText(item.Text, node, DialogueUIManager.MessageSource.Character, false);
+                _visitedNodes.Push(node);
+                switch (node)
+                {
+                    case EventNodeData:
+                        break;
+                    case DialogueNodeData:
+                    case DialogueChoiceNodeData:
+                    case TimerChoiceNodeData:
+                        dialogueUIManager.SetFullText(item.Text, node, DialogueUIManager.MessageSource.Character, false);
 
-                if (item.IsChoice)
-                    dialogueUIManager.SetFullText(item.SelectedChoice, node, DialogueUIManager.MessageSource.Player, false);
+                        if (item.IsChoice)
+                            dialogueUIManager.SetFullText(item.SelectedChoice, node, DialogueUIManager.MessageSource.Player, false);
+                        break;
+                }
             }
 
             return loadSuccess;
         }
 
-
         public void CheckNodeType(BaseNodeData _baseNodeData)
         {
-            // PlayerPrefs.SetString($"{dialogueContainer.name}_Progress", _baseNodeData.NodeGuid);
+            SaveAndLoadManager.Instance.CurrentSave.AddNode(_baseNodeData);
+            SaveAndLoadManager.Instance.AutoSave();
 
-            if (_baseNodeData.GetType() != typeof(EventNodeData))
-            {
-                SaveAndLoadManager.Instance.CurrentSave.AddNode(_baseNodeData);
-                SaveAndLoadManager.Instance.AutoSave();
-            }
-
-
+            _visitedNodes.Push(_baseNodeData);
             switch (_baseNodeData)
             {
                 case StartNodeData nodeData:
@@ -222,10 +357,11 @@ namespace MeetAndTalk
             PlayerPrefs.SetString($"{dialogueContainer.name}_Progress", GUID);
 
             // Reset Audio
-            audioSource.Stop();
+            AudioSource.Stop();
 
             CheckNodeType(GetNextNode(_nodeData));
         }
+
         private void RunNode(RandomNodeData _nodeData)
         {
             string GUID = _nodeData.DialogueNodePorts[Random.Range(0, _nodeData.DialogueNodePorts.Count)].InputGuid;
@@ -287,9 +423,10 @@ namespace MeetAndTalk
             else dialogueUIManager.UpdateAvatars(null, null, _nodeData.AvatarType);
 
             dialogueUIManager.SkipButton.SetActive(true);
-            MakeButtons(_nodeData.Character, _nodeData, new List<DialogueNodePort>());
 
-            if(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null) audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
+            //MakeButtons(_nodeData.Character, _nodeData, new List<DialogueNodePort>());
+
+            if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null) AudioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
 
             _nodeDialogueInvoke = _nodeData;
 
@@ -309,6 +446,7 @@ namespace MeetAndTalk
                 {
                     yield return new WaitForEndOfFrame();
                 }
+
                 DialogueNode_NextNode();
             }
 
@@ -345,7 +483,7 @@ namespace MeetAndTalk
             else dialogueUIManager.UpdateAvatars(null, null, _nodeData.AvatarType);
 
             dialogueUIManager.SkipButton.SetActive(true);
-            MakeButtons(_nodeData.Character, _nodeData, new List<DialogueNodePort>());
+            //MakeButtons(_nodeData.Character, _nodeData, new List<DialogueNodePort>());
 
             _nodeChoiceInvoke = _nodeData;
             StopAllTrackedCoroutines();
@@ -362,7 +500,7 @@ namespace MeetAndTalk
             }
             StartTrackedCoroutine(tmp());;
 
-            if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null) audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
+            if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null) AudioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
         }
         private void RunNode(EventNodeData _nodeData)
         {
@@ -435,7 +573,7 @@ namespace MeetAndTalk
             else dialogueUIManager.UpdateAvatars(null, null, _nodeData.AvatarType);
 
             dialogueUIManager.SkipButton.SetActive(true);
-            MakeButtons(_nodeData.Character, _nodeData, new List<DialogueNodePort>());
+            //MakeButtons(_nodeData.Character, _nodeData, new List<DialogueNodePort>());
 
             _nodeTimerInvoke = _nodeData;
 
@@ -455,7 +593,7 @@ namespace MeetAndTalk
 
             StartTrackedCoroutine(tmp());;
 
-            if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null) audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
+            if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null) AudioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
 
         }
 
@@ -475,7 +613,7 @@ namespace MeetAndTalk
                 UnityAction tempAction = null;
                 tempAction += () =>
                 {
-                    SaveAndLoadManager.Instance.CurrentSave.MakeChoiceNoce(nodeData, text);
+                    SaveAndLoadManager.Instance.CurrentSave.MakeChoice(nodeData, text);
                     CheckNodeType(GetNodeByGuid(nodePort.InputGuid));
                 };
 
@@ -506,7 +644,7 @@ namespace MeetAndTalk
                     {
                         StopAllTrackedCoroutines();
 
-                        SaveAndLoadManager.Instance.CurrentSave.MakeChoiceNoce(nodeData, text);
+                        SaveAndLoadManager.Instance.CurrentSave.MakeChoice(nodeData, text);
                         CheckNodeType(GetNodeByGuid(nodePort.InputGuid));
                     };
 
@@ -518,14 +656,27 @@ namespace MeetAndTalk
             dialogueUIManager.SetButtons(_character, nodeData, texts, hints, unityActions, true);
         }
 
-        void DialogueNode_NextNode() { CheckNodeType(GetNextNode(_nodeDialogueInvoke)); }
-        void ChoiceNode_GenerateChoice(DialogueCharacterSO _character, BaseNodeData nodeData) { MakeButtons(_character, nodeData, _nodeChoiceInvoke.DialogueNodePorts);
+        void DialogueNode_NextNode()
+        {
+            CheckNodeType(GetNextNode(_nodeDialogueInvoke));
+        }
+
+        void ChoiceNode_GenerateChoice(DialogueCharacterSO _character, BaseNodeData nodeData)
+        {
+            MakeButtons(_character, nodeData, _nodeChoiceInvoke.DialogueNodePorts);
             dialogueUIManager.SkipButton.SetActive(false);
         }
-        void TimerNode_GenerateChoice(DialogueCharacterSO _character, BaseNodeData nodeData) { MakeTimerButtons(_character, nodeData, _nodeTimerInvoke.DialogueNodePorts, _nodeTimerInvoke.Duration, _nodeTimerInvoke.time);
+
+        void TimerNode_GenerateChoice(DialogueCharacterSO _character, BaseNodeData nodeData)
+        {
+            MakeTimerButtons(_character, nodeData, _nodeTimerInvoke.DialogueNodePorts, _nodeTimerInvoke.Duration, _nodeTimerInvoke.time);
             dialogueUIManager.SkipButton.SetActive(false);
         }
-        void TimerNode_NextNode() { CheckNodeType(GetNextNode(_nodeTimerInvoke)); }
+
+        void TimerNode_NextNode()
+        {
+            CheckNodeType(GetNextNode(_nodeTimerInvoke));
+        }
 
 
 
@@ -555,7 +706,7 @@ namespace MeetAndTalk
         {
 
             // Reset Audio
-            audioSource.Stop();
+            AudioSource.Stop();
 
             StopAllTrackedCoroutines();
 
@@ -577,7 +728,7 @@ namespace MeetAndTalk
         public void ForceEndDialog()
         {
             // Reset Audio
-            audioSource.Stop();
+            AudioSource.Stop();
 
             dialogueUIManager.dialogueCanvas.Close();
             EndDialogueEvent.Invoke();
@@ -585,7 +736,7 @@ namespace MeetAndTalk
 StopAllTrackedCoroutines();
 
             // Reset Audio
-            audioSource.Stop();
+            AudioSource.Stop();
         }
     }
 }
