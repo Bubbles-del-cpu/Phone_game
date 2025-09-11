@@ -16,9 +16,9 @@ public class MediaOpenCommand : PanelOpenCommand
 
     public override void Undo()
     {
-        targetPanel.Close();
-
         var galleryCanvas = (GalleryCanvas)_panel;
         galleryCanvas.Close(_openFromConversation);
+
+        targetPanel.Close();
     }
 }
