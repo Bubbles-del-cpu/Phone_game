@@ -4,6 +4,8 @@ using MeetAndTalk;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO.Compression;
+using TMPro;
+using Unity.VisualScripting;
 
 public class MessagingConversationPanel : UIPanel
 {
@@ -11,6 +13,8 @@ public class MessagingConversationPanel : UIPanel
     [SerializeField] MessagingResponsesPanel responsesPanel;
     [SerializeField] ScrollRect _scrollView;
     [SerializeField] RectTransform _contentContainer;
+    [SerializeField] private ProfileIcon _characterIcon;
+    [SerializeField] private TMP_Text _characterName;
     DialogueCharacterSO character;
 
     public int ChildCount => messageBubbleContainers[0].transform.childCount;
@@ -23,30 +27,28 @@ public class MessagingConversationPanel : UIPanel
     public override void Open()
     {
         base.Open();
+        _characterIcon.Character = character;
+        _characterName.text = character.name;
 
         GameManager.Instance.SetNewMessage(character, false);
+
         ScrollToBottom();
     }
 
     public void RemoveElements(int count)
     {
         var objectList = new List<GameObject>();
-        for (var index = 1; index <= count; index++)
+        for (var cIndex = 0; cIndex < MessageBubbleContainers.Length; cIndex++)
         {
-            for (var cIndex = 0; cIndex < MessageBubbleContainers.Length; cIndex++)
+            var index = 0;
+            var container = MessageBubbleContainers[cIndex];
+            while (container.transform.childCount > 0 && index < count)
             {
-                var container = MessageBubbleContainers[cIndex];
+                var item = container.transform.GetChild(container.transform.childCount - 1);
+                item.gameObject.SetActive(false);
+                objectList.Add(item.gameObject);
 
-                if (container.transform.childCount > 0)
-                {
-                    var item = container.transform.GetChild(container.transform.childCount - index);
-                    item.gameObject.SetActive(false);
-                    objectList.Add(item.gameObject);
-                }
-                else
-                {
-                    break;
-                }
+                index++;
             }
         }
 
@@ -103,8 +105,12 @@ public class MessagingConversationPanel : UIPanel
                         //Add element
                         if (text != string.Empty)
                         {
-                            var bubble = Instantiate(prefab, container);
-                            bubble.Init(source != containerSource, text);
+                            if (text[0] != '*')
+                            {
+                                //Frist character is the special action character so don't send the message
+                                var bubble = Instantiate(prefab, container);
+                                bubble.Init(source != containerSource, text);
+                            }
                         }
                     }
                     break;

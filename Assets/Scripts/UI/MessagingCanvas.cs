@@ -8,9 +8,6 @@ public class MessagingCanvas : UICanvas
 {
     [Space(10f)]
     [Header("Messaging")]
-    [SerializeField] ProfileIcon icon;
-    [SerializeField] Image profileImage;
-    [SerializeField] TMP_Text nameLabel;
     [SerializeField] MessagingConversationButton conversationButtonPrefab;
     [SerializeField] RectTransform conversationButtonsContainer;
     [SerializeField] RectTransform conversationContainer;
@@ -29,8 +26,7 @@ public class MessagingCanvas : UICanvas
 
     public void ConversationClosed()
     {
-        profileImage.enabled = false;
-        nameLabel.enabled = false;
+        conversationsPanel.Close();
     }
 
     // public override void Close()
@@ -58,7 +54,9 @@ public class MessagingCanvas : UICanvas
                 openCount++;
         }
 
-        conversations[character].Close();
+        if (character != null && conversations.ContainsKey(character))
+            conversations[character].Close();
+
         if (openCount <= 1)
         {
             conversationsPanel.Close();
@@ -73,16 +71,23 @@ public class MessagingCanvas : UICanvas
         {
             item.Value.Close();
             item.Value.Clear();
+            Destroy(item.Value.gameObject);
         }
 
         foreach (var item in buttons)
         {
-            DestroyImmediate(item.Value.gameObject);
+            Destroy(item.Value.gameObject);
         }
 
         seenCharacters.Clear();
         buttons.Clear();
         conversations.Clear();
+    }
+
+    public override void Open()
+    {
+        conversationsPanel.Close();
+        base.Open();
     }
 
     public void Open(DialogueCharacterSO _character, bool fromNotification = false)
@@ -92,22 +97,17 @@ public class MessagingCanvas : UICanvas
             var command = new ConversationOpenCommand(this, openState: true, _character, fromNotification);
             NavigationManager.Instance.InvokeCommand(command, allowUndo: true);
         }
-
-        // icon.Character = _character;
-        // nameLabel.text = _character.name;
-        // GameManager.Instance.MessagingCanvas.Close();
-        // conversations[_character].Open();
-        // GameManager.Instance.MessagingCanvas.Open();
-        // profileImage.enabled = true;
-        // nameLabel.enabled = true;
     }
 
     public void SetupPanel(DialogueCharacterSO _character)
     {
-        icon.Character = _character;
-        nameLabel.text = _character.name;
-        profileImage.enabled = true;
-        nameLabel.enabled = true;
+        foreach ((var key, var panel) in conversations)
+        {
+            if (key == _character)
+                continue;
+
+            panel.Close();
+        }
 
         conversations[_character].Open();
         conversationsPanel.Open();

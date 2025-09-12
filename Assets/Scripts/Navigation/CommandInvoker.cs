@@ -19,12 +19,13 @@ public class CommandInvoker
     }
 
     //Undo a the lash pushed command
-    public void UndoCommand()
+    public void UndoCommand(bool performUndo = true)
     {
         if (_commands.Count > 0)
         {
             var command = _commands.Peek();
-            command.Undo();
+            if (performUndo)
+                command.Undo();
 
             _commands.Pop();
         }

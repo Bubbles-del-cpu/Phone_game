@@ -205,7 +205,9 @@ namespace MeetAndTalk
                                 targetFound = true;
 
                                 //Removes the dialogue choice that the Player selected so that it can be rollbacked and re-selected
-                                rollbackList[choiceNode.Character] += 1;
+                                if (choiceNode.GetText(localizationManager)[0] != '*')
+                                    rollbackList[choiceNode.Character] += 1;
+
                                 targetNode = choiceNode;
                             }
                             break;
@@ -239,9 +241,9 @@ namespace MeetAndTalk
             if (emptyList.Count > 0)
             {
                 //Note: If empty list has any elements at least 1 will be the current character conversation panel
-                GameManager.Instance.MessagingCanvas.Close();
                 foreach (var character in emptyList)
                 {
+                    NavigationManager.Instance.UndoLast();
                     GameManager.Instance.MessagingCanvas.RemoveConversationPanel(character);
                 }
             }
@@ -249,6 +251,8 @@ namespace MeetAndTalk
             if (atStart)
             {
                 //GameManager.Instance.ResetGameState();
+                //GameManager.Instance.MessagingCanvas.ConversationClosed();
+
                 SaveAndLoadManager.Instance.CurrentSave.CurrentChapterData.CurrentGUID = string.Empty;
                 GameManager.Instance.TriggerDialogueChapter(dialogueContainer);
             }
