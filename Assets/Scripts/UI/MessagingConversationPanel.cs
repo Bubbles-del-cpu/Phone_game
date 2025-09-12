@@ -14,9 +14,15 @@ public class MessagingConversationPanel : UIPanel
 
     public int ChildCount => messageBubbleContainers[0].transform.childCount;
 
+    public override void Awake()
+    {
+        base.Awake();
+    }
+
     public override void Open()
     {
         base.Open();
+
         GameManager.Instance.SetNewMessage(character, false);
         ScrollToBottom();
     }

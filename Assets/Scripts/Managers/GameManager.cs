@@ -153,6 +153,9 @@ public class GameManager : MonoBehaviour
     public void ResetGameState()
     {
         StartCoroutine(CoResetConversations());
+
+        //Reset the navigation stack
+        NavigationManager.Instance.ResetStack();
     }
 
     IEnumerator CoResetConversations()

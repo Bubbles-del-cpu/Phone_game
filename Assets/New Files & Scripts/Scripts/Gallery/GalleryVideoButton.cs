@@ -35,7 +35,7 @@ public class GalleryVideoButton : GalleryButtonBase
     public override string FileName => _clip.name;
 
 
-    protected override void GalleryButtonClicked()
+    public override void GalleryButtonClicked()
     {
         GameManager.Instance.GalleryCanvas.OpenVideo(Clip);
     }

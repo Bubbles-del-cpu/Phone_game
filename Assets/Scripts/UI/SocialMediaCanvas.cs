@@ -40,6 +40,6 @@ public class SocialMediaCanvas : UICanvas
     public override void Open()
     {
         base.Open();
-        GameManager.Instance.MessagingCanvas.Close();
+        //GameManager.Instance.MessagingCanvas.Close();
     }
 }

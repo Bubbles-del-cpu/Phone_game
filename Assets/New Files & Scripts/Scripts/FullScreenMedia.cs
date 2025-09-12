@@ -104,7 +104,7 @@ public class FullScreenMedia : UIPanel
                 player.SetTargetAudioSource(0, GameManager.Instance.audioSource);
                 player.source = VideoSource.VideoClip;
                 player.clip = clip;
-                player.frame = 0;
+                player.frame = 1;
                 player.Pause();
                 break;
         }

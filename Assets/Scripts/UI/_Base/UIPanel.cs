@@ -11,12 +11,10 @@ public class UIPanel : MonoBehaviour
     [SerializeField] Button closeButton;
 
     CanvasGroup canvas;
-    RectTransform rect;
 
     public virtual void Awake()
     {
         canvas = GetComponent<CanvasGroup>();
-        rect = GetComponent<RectTransform>();
         if (closeButton != null)
             closeButton.onClick.AddListener(() => Close());
     }
@@ -45,7 +43,14 @@ public class UIPanel : MonoBehaviour
         if (!IsOpen) Open(); else Close();
     }
 
-    public bool IsOpen { get { return canvas.alpha >= openAlpha; } }
+    public bool IsOpen
+    {
+        get
+        {
+            if (!canvas)
+                canvas = GetComponent<CanvasGroup>();
 
-    public RectTransform Rect { get { return rect; } }
+            return canvas.alpha >= openAlpha;
+        }
+    }
 }
