@@ -179,7 +179,8 @@ namespace MeetAndTalk
                             if (!rollbackList.ContainsKey(nd.Character))
                                 rollbackList.Add(nd.Character, 1);
 
-                            rollbackList[nd.Character] += 1;
+                            if (nd.GetText(localizationManager) != string.Empty || nd.Image != null || nd.Video != null)
+                                rollbackList[nd.Character] += 1;
 
                             if (nd.Timelapse != string.Empty)
                                 rollbackList[nd.Character] += 1;
@@ -190,7 +191,6 @@ namespace MeetAndTalk
                         case DialogueChoiceNodeData choiceNode:
                             if (!rollbackList.ContainsKey(choiceNode.Character))
                                 rollbackList.Add(choiceNode.Character, 0);
-
 
                             //Removes the text from the character that is displayed before the choice
                             if(choiceNode.RequireCharacterInput)

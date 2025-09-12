@@ -379,6 +379,7 @@ namespace MeetAndTalk
         public GalleryDisplay GalleryVisibility;
         public SocialMediaPostSO Post;
         public string Timelapse;
+        public string GetText(LocalizationManager localizationManager) => TextType.Find(text => text.languageEnum == localizationManager.SelectedLang()).LanguageGenericType;
 
         public string MediaFileName
         {

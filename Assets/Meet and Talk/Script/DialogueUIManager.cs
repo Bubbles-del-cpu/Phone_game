@@ -157,8 +157,18 @@ namespace MeetAndTalk
                 switch (_nodeData)
                 {
                     case DialogueNodeData nd when _nodeData is DialogueNodeData:
-                        if (notification)
-                            SpawnNotification(Notification.NotificationType.Message, nd.Character, newText);
+                        var notificationText = newText;
+                        if (newText == string.Empty && (nd.Image != null || nd.Video != null))
+                        {
+                            notificationText = $"has sent a new {(nd.PostMediaType == MediaType.Sprite ? "picture" : "video")}";
+                            if (notification)
+                                SpawnNotification(Notification.NotificationType.Message, nd.Character, notificationText);
+                        }
+                        else if (newText != string.Empty)
+                        {
+                            if (notification)
+                                SpawnNotification(Notification.NotificationType.Message, nd.Character, notificationText);
+                        }
 
                         GameManager.Instance.SetNewMessage(nd.Character);
                         break;
@@ -229,6 +239,7 @@ namespace MeetAndTalk
                         return;
                     break;
             }
+
             Notification _notification = Instantiate(notificationPrefab, notificationsContainer);
             _notification.Type = type;
             _notification.Character = character;

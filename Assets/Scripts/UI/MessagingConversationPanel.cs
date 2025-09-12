@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using MeetAndTalk;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO.Compression;
 
 public class MessagingConversationPanel : UIPanel
 {
@@ -77,15 +78,18 @@ public class MessagingConversationPanel : UIPanel
                         }
 
                         //Add element after timelapse
-                        var bubble = Instantiate(prefab, container);
-                        switch (nd.PostMediaType)
+                        if (text != string.Empty || nd.Image != null || nd.Video != null)
                         {
-                            case MediaType.Sprite:
-                                bubble.Init(hidden, text, nd.Image);
-                                break;
-                            case MediaType.Video:
-                                bubble.Init(hidden, text, nd.Video);
-                                break;
+                            var bubble = Instantiate(prefab, container);
+                            switch (nd.PostMediaType)
+                            {
+                                case MediaType.Sprite:
+                                    bubble.Init(hidden, text, nd.Image);
+                                    break;
+                                case MediaType.Video:
+                                    bubble.Init(hidden, text, nd.Video);
+                                    break;
+                            }
                         }
 
                         if (nd.Post != null && containerSource == DialogueUIManager.MessageSource.Character)
