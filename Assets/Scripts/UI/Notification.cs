@@ -2,8 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using MeetAndTalk;
-using System.Collections;
-using Unity.Burst.Intrinsics;
 
 public class Notification : MonoBehaviour
 {
@@ -19,60 +17,16 @@ public class Notification : MonoBehaviour
     DialogueCharacterSO character;
     private CanvasGroup _cg;
 
-    private float _alphaTimer = 0;
-    private float _timer = 0;
-    private bool _revealComplete;
-    private bool _destroyTriggered;
-
     private void Start()
     {
         button = GetComponent<Button>();
         button.onClick.AddListener(() => OnClicked());
         closeButton.onClick.AddListener(() => Destroy(gameObject));
-        _timer = 0;
 
         _cg = GetComponent<CanvasGroup>();
         _cg.alpha = 1;
         Destroy(gameObject, DialogueUIManager.Instance.NotificationDisplayLength);
     }
-
-    // private void Update()
-    // {
-    //     if (_revealComplete)
-    //     {
-    //         _timer += Time.deltaTime;
-    //         if (_timer >= DialogueUIManager.Instance.NotificationDisplayLength)
-    //         {
-    //             _alphaTimer += Time.deltaTime;
-    //             _cg.alpha = Mathf.Lerp(0, 1, Mathf.Clamp(1 - (_alphaTimer / DialogueUIManager.Instance.NotificationRevealTime), 0, 1));
-    //             if (_cg.alpha <= 0 && !_destroyTriggered)
-    //                 StartCoroutine(CoDestroy());
-    //         }
-    //     }
-    //     else
-    //     {
-    //         _alphaTimer += Time.deltaTime;
-    //         _cg.alpha = Mathf.Lerp(0, 1, Mathf.Clamp(_alphaTimer / DialogueUIManager.Instance.NotificationRevealTime, 0, 1));
-    //         if (_cg.alpha >= 1)
-    //         {
-    //             _revealComplete = true;
-    //             _alphaTimer = 0;
-    //         }
-    //     }
-    // }
-
-    // private IEnumerator CoDestroy()
-    // {
-    //     _destroyTriggered = true;
-    //     var rectTransform = GetComponent<RectTransform>();
-    //     while (rectTransform.sizeDelta.y >= 0)
-    //     {
-    //         yield return new WaitForEndOfFrame();
-    //         rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, rectTransform.sizeDelta.y - (DialogueUIManager.Instance.NotificationRemovalSpeed * Time.deltaTime));
-    //     }
-
-    //     Destroy(gameObject);
-    // }
 
     void OnClicked()
     {
