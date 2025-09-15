@@ -773,7 +773,6 @@ GameObject:
   - component: {fileID: 3895127126150001953}
   - component: {fileID: 529746289347172954}
   - component: {fileID: 4719545978294503100}
-  - component: {fileID: 3898017655816559284}
   m_Layer: 5
   m_Name: Message Container L
   m_TagString: Untagged
@@ -840,18 +839,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
---- !u!114 &3898017655816559284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8562073265075023237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41bad32a0b7812746b45082c8e8cde2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &9183445563155719585
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,7 +850,6 @@ GameObject:
   - component: {fileID: 2031494748898498749}
   - component: {fileID: 1841483798991128831}
   - component: {fileID: 2642077938612568251}
-  - component: {fileID: 7790598255803251098}
   m_Layer: 5
   m_Name: Message Container R
   m_TagString: Untagged
@@ -930,18 +916,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
---- !u!114 &7790598255803251098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9183445563155719585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41bad32a0b7812746b45082c8e8cde2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &708310203608608224
 PrefabInstance:
   m_ObjectHideFlags: 0
