@@ -3645,7 +3645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189322345688348478, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 6793.848
+      value: 7465.773
       objectReference: {fileID: 0}
     - target: {fileID: 4938284421023176446, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_Pivot.x
@@ -7131,7 +7131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189322345688348478, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2544.0005
+      value: 3216.0005
       objectReference: {fileID: 0}
     - target: {fileID: 4938284421023176446, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_Pivot.x
@@ -7554,6 +7554,9 @@ MonoBehaviour:
   MessagePanelAutoScrollSpeed: 4
   NotificationDisplayLength: 2
   MaxMessageSize: 200
+  _batchNotifications: 1
+  _batchReplaceText: 1
+  _singleNotificationOnly: 0
   ButtonPrefab: {fileID: -2090798969861149810, guid: aabebb1b3ddde5b469b80e84510cdaf5, type: 3}
   notificationPrefab: {fileID: 4561581163258094175, guid: 069a83a6c6813c14390b2211bf281582, type: 3}
   notificationsContainer: {fileID: 1390809904}
@@ -12046,7 +12049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189322345688348478, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 7595.9995
+      value: 8267.999
       objectReference: {fileID: 0}
     - target: {fileID: 4938284421023176446, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_Pivot.x
@@ -16636,7 +16639,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 6608.0005}
+  m_AnchoredPosition: {x: 0, y: 7280.0005}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &578701452387998825
