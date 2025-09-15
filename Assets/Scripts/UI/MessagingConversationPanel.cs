@@ -27,6 +27,9 @@ public class MessagingConversationPanel : UIPanel
     public override void Open()
     {
         base.Open();
+
+        transform.SetAsLastSibling();
+
         _characterIcon.Character = character;
         _characterName.text = character.name;
 

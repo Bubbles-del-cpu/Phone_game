@@ -29,22 +29,6 @@ public class MessagingCanvas : UICanvas
         conversationsPanel.Close();
     }
 
-    // public override void Close()
-    // {
-    //     bool _wasConversationOpen = false;
-    //     foreach(UIPanel _panel in conversations.Values)
-    //     {
-    //         if (_panel.IsOpen)
-    //         {
-    //             _wasConversationOpen = true;
-    //             _panel.Close();
-    //         }
-    //     }
-
-    //     if (!_wasConversationOpen)
-    //         base.Close();
-    // }
-
     public void Close(bool fullClose, DialogueCharacterSO character)
     {
         var openCount = 0;
@@ -101,14 +85,6 @@ public class MessagingCanvas : UICanvas
 
     public void SetupPanel(DialogueCharacterSO _character)
     {
-        foreach ((var key, var panel) in conversations)
-        {
-            if (key == _character)
-                continue;
-
-            panel.Close();
-        }
-
         conversations[_character].Open();
         conversationsPanel.Open();
     }
