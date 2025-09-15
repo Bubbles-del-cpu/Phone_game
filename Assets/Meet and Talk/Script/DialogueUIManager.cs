@@ -39,6 +39,7 @@ namespace MeetAndTalk
         [Header("Message & Notification Settings")]
         public float MessagePanelAutoScrollSpeed = 4;
         public float NotificationDisplayLength = 2;
+        public float MaxMessageSize = 200;
 
         [Header("Dynamic Dialogue UI")]
         public MessagingResponseButton ButtonPrefab;

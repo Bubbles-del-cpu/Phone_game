@@ -205,7 +205,7 @@ namespace MeetAndTalk
                                 targetFound = true;
 
                                 //Removes the dialogue choice that the Player selected so that it can be rollbacked and re-selected
-                                if (choiceNode.GetText(localizationManager)[0] != '*')
+                                if (choiceNode.SelectedChoice[0] != '*')
                                     rollbackList[choiceNode.Character] += 1;
 
                                 targetNode = choiceNode;
@@ -303,12 +303,15 @@ namespace MeetAndTalk
                     case EventNodeData:
                         break;
                     case DialogueNodeData:
-                    case DialogueChoiceNodeData:
-                    case TimerChoiceNodeData:
                         dialogueUIManager.SetFullText(item.Text, node, DialogueUIManager.MessageSource.Character, false);
-
-                        if (item.IsChoice)
-                            dialogueUIManager.SetFullText(item.SelectedChoice, node, DialogueUIManager.MessageSource.Player, false);
+                        break;
+                    case DialogueChoiceNodeData choiceNode:
+                        dialogueUIManager.SetFullText(item.SelectedChoice, node, DialogueUIManager.MessageSource.Player, false);
+                        choiceNode.SelectedChoice = item.SelectedChoice;
+                        break;
+                    case TimerChoiceNodeData choiceNode:
+                        dialogueUIManager.SetFullText(item.SelectedChoice, node, DialogueUIManager.MessageSource.Player, false);
+                        choiceNode.SelectedChoice = item.SelectedChoice;
                         break;
                 }
             }

@@ -308,6 +308,7 @@ namespace MeetAndTalk
         public float Delay;
         public string Timelapse;
         public bool RequireCharacterInput;
+        public string SelectedChoice;
         public string GetText(LocalizationManager localizationManager) => TextType.Find(text => text.languageEnum == localizationManager.SelectedLang()).LanguageGenericType;
 
         private float _delayTimer = 0;
@@ -339,6 +340,7 @@ namespace MeetAndTalk
         public float Duration;
         public float Delay;
         public float time;
+        public string SelectedChoice;
 
         private float _delayTimer = 0;
         public void Reset()

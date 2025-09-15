@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO.Compression;
 using TMPro;
 using Unity.VisualScripting;
+using System;
 
 public class MessagingConversationPanel : UIPanel
 {
@@ -43,20 +44,27 @@ public class MessagingConversationPanel : UIPanel
         var objectList = new List<GameObject>();
         for (var cIndex = 0; cIndex < MessageBubbleContainers.Length; cIndex++)
         {
-            var index = 0;
+            var index = 1;
             var container = MessageBubbleContainers[cIndex];
-            while (container.transform.childCount > 0 && index < count)
+            while (index <= count)
             {
-                var item = container.transform.GetChild(container.transform.childCount - 1);
-                item.gameObject.SetActive(false);
-                objectList.Add(item.gameObject);
-
-                index++;
+                try
+                {
+                    var item = container.transform.GetChild(container.transform.childCount - index);
+                    item.gameObject.SetActive(false);
+                    objectList.Add(item.gameObject);
+                    index++;
+                }
+                catch (IndexOutOfRangeException ex)
+                {
+                    Debug.LogError($"Failed to clear conversation panel for {character.name}. Error: {ex.Message}");
+                    break;
+                }
             }
         }
 
         foreach (var obj in objectList)
-            Destroy(obj);
+             Destroy(obj);
     }
 
     public void AddElement(BaseNodeData nodeData, MessagingBubble prefab, string text, DialogueUIManager.MessageSource source, bool notification)
@@ -106,14 +114,11 @@ public class MessagingConversationPanel : UIPanel
                 case DialogueChoiceNodeData nd when nodeData is DialogueChoiceNodeData:
                     {
                         //Add element
-                        if (text != string.Empty)
+                        if (text != string.Empty && text[0] != '*')
                         {
-                            if (text[0] != '*')
-                            {
-                                //Frist character is the special action character so don't send the message
-                                var bubble = Instantiate(prefab, container);
-                                bubble.Init(source != containerSource, text);
-                            }
+                            //Frist character is the special action character so don't send the message
+                            var bubble = Instantiate(prefab, container);
+                            bubble.Init(source != containerSource, text);
                         }
                     }
                     break;
