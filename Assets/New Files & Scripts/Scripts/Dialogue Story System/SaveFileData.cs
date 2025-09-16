@@ -472,6 +472,18 @@ public class SaveFileData
         {
             past.SelectedChoice = choice;
         }
+
+        //Update the runtime node data with the choice so that we can
+        //check the selected choice against specific rules for the rollback action
+        switch (nodeData)
+        {
+            case DialogueChoiceNodeData nd:
+                nd.SelectedChoice = choice;
+                break;
+            case TimerChoiceNodeData nd:
+                nd.SelectedChoice = choice;
+                break;
+        }
     }
 
     public void UpdateText(BaseNodeData nodeData, string text)

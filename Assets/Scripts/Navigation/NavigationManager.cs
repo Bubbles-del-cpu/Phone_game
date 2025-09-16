@@ -27,9 +27,9 @@ public class NavigationManager : MonoBehaviour
         _invoker.ClearCommands();
     }
 
-    public void UndoLast()
+    public void UndoLast(bool performUndo = true)
     {
-        _invoker.UndoCommand();
+        _invoker.UndoCommand(performUndo);
     }
 
     public void InvokeCommand(ICommand commandToInvoke, bool allowUndo = true)

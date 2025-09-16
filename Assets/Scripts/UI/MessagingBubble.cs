@@ -3,14 +3,18 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Video;
 using System.Collections;
+using UnityEngine.Serialization;
+using MeetAndTalk;
 
 public class MessagingBubble : MonoBehaviour
 {
-    [SerializeField] TMP_Text label;
-    [SerializeField] Image image;
+    [SerializeField, FormerlySerializedAs("label")] TMP_Text _label;
+    [SerializeField, FormerlySerializedAs("image")] Image _image;
     [SerializeField] GameObject _imageContainer;
     [SerializeField] GameObject _videoContainer;
     [SerializeField] FullScreenMediaMessageViewer _mediaViewer;
+
+    public string Text => _label.text;
 
 
     CanvasGroup cg;
@@ -25,18 +29,38 @@ public class MessagingBubble : MonoBehaviour
     [SerializeField] RawImage _videoImage;
     [SerializeField] private Texture2D _videoPreviewTexture;
 
+    private void SetContainerSize(float width, float height, RectTransform container)
+    {
+        var isLandscape = width > height;
+        var size = DialogueUIManager.Instance.MaxMessageSize;
+        if (isLandscape)
+        {
+            var aspectRatio = height / width;
+            container.GetComponent<RectTransform>().sizeDelta = new(size, size * aspectRatio);
+        }
+        else
+        {
+            var aspectRatio = width / height;
+            container.GetComponent<RectTransform>().sizeDelta = new(size, size / aspectRatio);
+        }
+    }
 
     public void Init(bool hide, string text, Sprite image)
     {
         MediaType = MediaType.Sprite;
         VideoClip = null;
         Image = image;
+
         Init(hide, text);
 
         _videoContainer.SetActive(false);
         _imageContainer.SetActive(Image != null);
+        _image.preserveAspect = true;
 
-        _mediaViewer.Setup(MediaType, Image, null);
+        if (image != null)
+        {
+            SetContainerSize(image.bounds.extents.x, image.bounds.extents.y, _imageContainer.GetComponent<RectTransform>());
+        }
     }
 
     public void Init(bool hide, string text, VideoClip clip)
@@ -44,21 +68,24 @@ public class MessagingBubble : MonoBehaviour
         MediaType = MediaType.Video;
         VideoClip = clip;
         Image = null;
-        Init(hide, text);
 
         _videoPreviewTexture = GameManager.Instance.GetVideoFrame(clip);
         _videoImage.texture = _videoPreviewTexture;
 
+        Init(hide, text);
+
         _videoContainer.SetActive(VideoClip != null);
         _imageContainer.SetActive(false);
+        _image.preserveAspect = true;
 
+        SetContainerSize(clip.width, clip.height, _videoContainer.GetComponent<RectTransform>());
     }
 
     public void Init(bool hide, string text)
     {
         cg = GetComponent<CanvasGroup>();
         rect = GetComponent<RectTransform>();
-        labelRect = label.GetComponent<RectTransform>();
+        labelRect = _label.GetComponent<RectTransform>();
 
         transform.parent.parent.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(
             RectTransform.Axis.Vertical,
@@ -94,11 +121,25 @@ public class MessagingBubble : MonoBehaviour
     {
         set
         {
-            label.text = value;
+            _label.text = value;
+            _label.gameObject.SetActive(value != string.Empty);
 
             LayoutRebuilder.ForceRebuildLayoutImmediate(rect);
-            if (labelRect.sizeDelta.x > GetComponentInParent<CanvasScaler>().referenceResolution.x - GameManager.Instance.MessagingCanvas.BubbleMarginRight)
-                rect.GetComponent<ContentSizeFitter>().horizontalFit = ContentSizeFitter.FitMode.Unconstrained;
+
+            if (_label.GetPreferredValues().x > DialogueUIManager.Instance.MaxMessageSize - GameManager.Instance.MessagingCanvas.BubbleMarginRight)
+            {
+                //labelRect.GetComponent<ContentSizeFitter>().enabled = false;
+                labelRect.GetComponent<LayoutElement>().enabled = true;
+                labelRect.GetComponent<LayoutElement>().preferredWidth = DialogueUIManager.Instance.MaxMessageSize;
+            }
+            else
+            {
+                //labelRect.GetComponent<ContentSizeFitter>().enabled = true;
+                labelRect.GetComponent<LayoutElement>().enabled = false;
+            }
+
+            //if (labelRect.sizeDelta.x > GetComponentInParent<CanvasScaler>().referenceResolution.x - GameManager.Instance.MessagingCanvas.BubbleMarginRight)
+
         }
     }
 
@@ -106,11 +147,11 @@ public class MessagingBubble : MonoBehaviour
     {
         get
         {
-            return image.sprite;
+            return _image.sprite;
         }
         set
         {
-            image.sprite = value;
+            _image.sprite = value;
         }
     }
     public MediaType MediaType;
@@ -121,8 +162,8 @@ public class MessagingBubble : MonoBehaviour
         set
         {
             if (!value) return;
-            label.fontSize = 15;
-            label.fontStyle = FontStyles.Italic;
+            _label.fontSize = 15;
+            _label.fontStyle = FontStyles.Italic;
             //GetComponent<Image>().sprite = GameManager.Instance.MessagingCanvas.TimelapsePanelBackground;
             GetComponent<Image>().color = Color.grey;
         }
@@ -130,7 +171,7 @@ public class MessagingBubble : MonoBehaviour
 
     private void Update()
     {
-        rect.sizeDelta = label.rectTransform.sizeDelta + _padding + (image.gameObject.activeInHierarchy ? _imageAllowance : Vector2.zero);
+        rect.sizeDelta = _label.rectTransform.sizeDelta + _padding + (_image.gameObject.activeInHierarchy ? _imageAllowance : Vector2.zero);
         switch (MediaType)
         {
             case MediaType.Video:

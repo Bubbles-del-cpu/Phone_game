@@ -10,11 +10,11 @@ public class UICanvas : MonoBehaviour
     //[SerializeField] bool isOpenOnStart = true;
     //[SerializeField] Button closeButton;
 
-    Canvas canvas;
+    protected Canvas _canvas;
 
     protected virtual void Awake()
     {
-        canvas = GetComponent<Canvas>();
+        _canvas = GetComponent<Canvas>();
 
         // if (closeButton != null)
         //     closeButton.onClick.AddListener(() => Close());
@@ -27,7 +27,7 @@ public class UICanvas : MonoBehaviour
 
     public virtual void Open()
     {
-        if (canvas != null)
+        if (_canvas != null)
         {
             var command = new PanelOpenCommand(this, openState: true);
             NavigationManager.Instance.InvokeCommand(command, allowUndo: true);
@@ -36,7 +36,7 @@ public class UICanvas : MonoBehaviour
 
     public virtual void Close()
     {
-        if (canvas != null)
+        if (_canvas != null)
         {
             var command = new PanelOpenCommand(this, openState: false);
             NavigationManager.Instance.InvokeCommand(command, allowUndo: false);
@@ -46,7 +46,7 @@ public class UICanvas : MonoBehaviour
     private IEnumerator CoSetOpenState(float delay, bool state)
     {
         yield return new WaitForSeconds(delay);
-        if (canvas != null)
+        if (_canvas != null)
         {
             var command = new PanelOpenCommand(this, state);
             NavigationManager.Instance.InvokeCommand(command, allowUndo: state);
@@ -60,7 +60,7 @@ public class UICanvas : MonoBehaviour
 
     public virtual void Close(float delay = 0)
     {
-        if (canvas != null)
+        if (_canvas != null)
         {
             StartCoroutine(CoSetOpenState(delay, false));
         }
@@ -71,7 +71,7 @@ public class UICanvas : MonoBehaviour
     //     if (!IsOpen) Open(); else Close();
     // }
 
-    public bool IsOpen { get { return canvas.enabled; } }
+    public bool IsOpen { get { return _canvas.enabled; } }
 
-    public Canvas Canvas { get { return canvas; } }
+    public Canvas Canvas { get { return _canvas; } }
 }

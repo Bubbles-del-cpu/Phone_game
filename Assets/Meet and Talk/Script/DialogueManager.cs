@@ -179,7 +179,8 @@ namespace MeetAndTalk
                             if (!rollbackList.ContainsKey(nd.Character))
                                 rollbackList.Add(nd.Character, 1);
 
-                            rollbackList[nd.Character] += 1;
+                            if (nd.GetText(localizationManager) != string.Empty || nd.Image != null || nd.Video != null)
+                                rollbackList[nd.Character] += 1;
 
                             if (nd.Timelapse != string.Empty)
                                 rollbackList[nd.Character] += 1;
@@ -190,7 +191,6 @@ namespace MeetAndTalk
                         case DialogueChoiceNodeData choiceNode:
                             if (!rollbackList.ContainsKey(choiceNode.Character))
                                 rollbackList.Add(choiceNode.Character, 0);
-
 
                             //Removes the text from the character that is displayed before the choice
                             if(choiceNode.RequireCharacterInput)
@@ -205,7 +205,9 @@ namespace MeetAndTalk
                                 targetFound = true;
 
                                 //Removes the dialogue choice that the Player selected so that it can be rollbacked and re-selected
-                                rollbackList[choiceNode.Character] += 1;
+                                if (choiceNode.SelectedChoice[0] != '*')
+                                    rollbackList[choiceNode.Character] += 1;
+
                                 targetNode = choiceNode;
                             }
                             break;
@@ -239,9 +241,9 @@ namespace MeetAndTalk
             if (emptyList.Count > 0)
             {
                 //Note: If empty list has any elements at least 1 will be the current character conversation panel
-                GameManager.Instance.MessagingCanvas.Close();
                 foreach (var character in emptyList)
                 {
+                    NavigationManager.Instance.UndoLast();
                     GameManager.Instance.MessagingCanvas.RemoveConversationPanel(character);
                 }
             }
@@ -249,6 +251,8 @@ namespace MeetAndTalk
             if (atStart)
             {
                 //GameManager.Instance.ResetGameState();
+                //GameManager.Instance.MessagingCanvas.ConversationClosed();
+
                 SaveAndLoadManager.Instance.CurrentSave.CurrentChapterData.CurrentGUID = string.Empty;
                 GameManager.Instance.TriggerDialogueChapter(dialogueContainer);
             }
@@ -299,12 +303,15 @@ namespace MeetAndTalk
                     case EventNodeData:
                         break;
                     case DialogueNodeData:
-                    case DialogueChoiceNodeData:
-                    case TimerChoiceNodeData:
                         dialogueUIManager.SetFullText(item.Text, node, DialogueUIManager.MessageSource.Character, false);
-
-                        if (item.IsChoice)
-                            dialogueUIManager.SetFullText(item.SelectedChoice, node, DialogueUIManager.MessageSource.Player, false);
+                        break;
+                    case DialogueChoiceNodeData choiceNode:
+                        dialogueUIManager.SetFullText(item.SelectedChoice, node, DialogueUIManager.MessageSource.Player, false);
+                        choiceNode.SelectedChoice = item.SelectedChoice;
+                        break;
+                    case TimerChoiceNodeData choiceNode:
+                        dialogueUIManager.SetFullText(item.SelectedChoice, node, DialogueUIManager.MessageSource.Player, false);
+                        choiceNode.SelectedChoice = item.SelectedChoice;
                         break;
                 }
             }
