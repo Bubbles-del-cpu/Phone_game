@@ -67,7 +67,7 @@ public class SocialMediaPost : MonoBehaviour
 
                 if (data.VideoThumbnail == null)
                     postImage.sprite = Sprite.Create(videoFrame, new Rect(0, 0, videoFrame.width, videoFrame.height), new Vector2(0.5f, 0.5f));
-                    
+
                 break;
         }
 

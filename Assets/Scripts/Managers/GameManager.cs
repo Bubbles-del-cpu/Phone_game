@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     bool _prevFullScreen;
 
+    [HideInInspector] public bool ResettingSave;
+
     [SerializeField] DialogueCharacterSO[] characters;
     [SerializeField] DialogueManager dialogueManager;
     [SerializeField] DialogueContainerSO dialogue;
@@ -209,6 +211,7 @@ public class GameManager : MonoBehaviour
     {
         audioSource.PlayOneShot(sendTextFX);
     }
+
     public Texture2D GetVideoFrame(VideoClip clip)
     {
         //Create the texture
@@ -225,10 +228,18 @@ public class GameManager : MonoBehaviour
                 Thumbnails[clip] = newTexture;
             });
 
-            Thumbnails.Add(clip,  new Texture2D(256, 256, TextureFormat.RGB24, false));
+            Thumbnails.Add(clip, new Texture2D(256, 256, TextureFormat.RGB24, false));
         }
 
         return Thumbnails[clip];
+    }
+
+    public void SetVideoFrame(VideoClip clip, Sprite thumbnail)
+    {
+        if (!Thumbnails.ContainsKey(clip))
+            Thumbnails.Add(clip, null);
+
+        Thumbnails[clip] = thumbnail.texture;
     }
 
     public CharacterData GetCharacterData(DialogueCharacterSO _character)

@@ -55,7 +55,7 @@ public class MessagingConversationPanel : UIPanel
                     objectList.Add(item.gameObject);
                     index++;
                 }
-                catch (IndexOutOfRangeException ex)
+                catch (Exception ex)
                 {
                     Debug.LogError($"Failed to clear conversation panel for {character.name}. Error: {ex.Message}");
                     break;
@@ -147,8 +147,12 @@ public class MessagingConversationPanel : UIPanel
 
     public void ScrollToBottom()
     {
-        Canvas.ForceUpdateCanvases();
-        _scrollView.verticalNormalizedPosition = 0;
+        try
+        {
+            Canvas.ForceUpdateCanvases();
+            _scrollView.verticalNormalizedPosition = 0;
+        }
+        catch (System.Exception){}
     }
 
     public override void Close()

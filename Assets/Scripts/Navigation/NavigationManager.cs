@@ -15,6 +15,8 @@ public class NavigationManager : MonoBehaviour
         }
     }
 
+    public int PanelOpenCount = 0;
+
     private CommandInvoker _invoker;
 
     private void Awake()
@@ -41,6 +43,8 @@ public class NavigationManager : MonoBehaviour
     {
         _invoker.UndoAll();
         _invoker.ClearCommands();
+
+        PanelOpenCount = 0;
     }
 
     public void BackButtonPressed()
