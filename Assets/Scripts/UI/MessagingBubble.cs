@@ -78,7 +78,7 @@ public class MessagingBubble : MonoBehaviour
         _imageContainer.SetActive(false);
         _image.preserveAspect = true;
 
-        SetContainerSize(clip.width, clip.height, _videoContainer.GetComponent<RectTransform>());
+        SetContainerSize(_videoPreviewTexture.width, _videoPreviewTexture.height, _videoContainer.GetComponent<RectTransform>());
     }
 
     public void Init(bool hide, string text)

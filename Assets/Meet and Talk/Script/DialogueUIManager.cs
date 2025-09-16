@@ -5,6 +5,7 @@ using TMPro;
 using System.Text.RegularExpressions;
 using MeetAndTalk.GlobalValue;
 using System.Linq;
+using UnityEditor.EditorTools;
 
 namespace MeetAndTalk
 {
@@ -40,6 +41,20 @@ namespace MeetAndTalk
         public float MessagePanelAutoScrollSpeed = 4;
         public float NotificationDisplayLength = 2;
         public float MaxMessageSize = 200;
+
+        [SerializeField, Tooltip("Batches notifications from a single character into a single notification.")]
+        private bool _batchNotifications = false;
+
+        [SerializeField, Tooltip("Batched notifications will have their text updated to show the latest message but a new notification is not created.")]
+        private bool _batchReplaceText = false;
+
+        [SerializeField, Tooltip("Limits the number of notifications that can be displayed on the screen to 1")]
+        private bool _singleNotificationOnly = false;
+
+        private Dictionary<DialogueCharacterSO, Notification> _notificationDictionary = new();
+
+        private DialogueCharacterSO _lastNotificationCharacter;
+        private float _lastNotificationTime;
 
         [Header("Dynamic Dialogue UI")]
         public MessagingResponseButton ButtonPrefab;
@@ -159,13 +174,16 @@ namespace MeetAndTalk
                 {
                     case DialogueNodeData nd when _nodeData is DialogueNodeData:
                         var notificationText = newText;
-                        if (newText == string.Empty && (nd.Image != null || nd.Video != null))
+                        if (newText == string.Empty)
                         {
-                            notificationText = $"has sent a new {(nd.PostMediaType == MediaType.Sprite ? "picture" : "video")}";
-                            if (notification)
-                                SpawnNotification(Notification.NotificationType.Message, nd.Character, notificationText);
+                            if (nd.Image != null || nd.Video != null)
+                            {
+                                notificationText = $"has sent a new {(nd.PostMediaType == MediaType.Sprite ? "picture" : "video")}";
+                                if (notification)
+                                    SpawnNotification(Notification.NotificationType.Message, nd.Character, notificationText);
+                            }
                         }
-                        else if (newText != string.Empty)
+                        else
                         {
                             if (notification)
                                 SpawnNotification(Notification.NotificationType.Message, nd.Character, notificationText);
@@ -227,7 +245,7 @@ namespace MeetAndTalk
 
         public void SpawnNotification(Notification.NotificationType type, DialogueCharacterSO character, string label)
         {
-            switch(type)
+            switch (type)
             {
                 default:
                     GameManager.Instance.PlayReceiveTextFX();
@@ -241,10 +259,41 @@ namespace MeetAndTalk
                     break;
             }
 
-            Notification _notification = Instantiate(notificationPrefab, notificationsContainer);
-            _notification.Type = type;
-            _notification.Character = character;
-            _notification.Label = label;
+            //Remove the last notifcation if it is still there
+            if (_singleNotificationOnly)
+            {
+                var lastNotifcation = FindFirstObjectByType<Notification>();
+                if (lastNotifcation)
+                {
+                    _notificationDictionary.Remove(lastNotifcation.Character);
+                    lastNotifcation.gameObject.SetActive(false);
+                    Destroy(lastNotifcation.gameObject);
+                }
+            }
+
+            if (_batchNotifications)
+            {
+                if (_notificationDictionary.ContainsKey(character) && _notificationDictionary[character] != null)
+                {
+                    if (_batchReplaceText)
+                    {
+                        _notificationDictionary[character].Setup(type, character, label);
+                    }
+
+                    return;
+                }
+            }
+
+            _lastNotificationTime = Time.time;
+            _lastNotificationCharacter = character;
+
+            Notification notification = Instantiate(notificationPrefab, notificationsContainer);
+            notification.Setup(type, character, label);
+
+            if (!_notificationDictionary.ContainsKey(character))
+                _notificationDictionary.Add(character, null);
+
+            _notificationDictionary[character] = notification;
         }
 
         public void SetButtons(DialogueCharacterSO character, BaseNodeData baseNode, List<string> texts, List<string> hints, List<UnityAction> unityActions, bool showTimer)

@@ -8,13 +8,13 @@ public class MediaOpenCommand : PanelOpenCommand
         _openFromConversation = openedFromConversation;
     }
 
-    public override void Execute()
+    protected override void Open()
     {
         targetPanel.Open();
-        base.Execute();
+        base.Open();
     }
 
-    public override void Undo()
+    protected override void Close()
     {
         var galleryCanvas = (GalleryCanvas)_panel;
         galleryCanvas.Close(_openFromConversation);

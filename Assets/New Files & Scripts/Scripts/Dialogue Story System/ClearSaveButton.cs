@@ -1,3 +1,4 @@
+using MeetAndTalk;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,9 +26,13 @@ public class ClearSaveButton : MonoBehaviour
 
     private void FadeAndRestart()
     {
+        GameManager.Instance.ResettingSave = true;
+        DialogueManager.Instance.StopAllTrackedCoroutines();
+
         OverlayCanvas.Instance.FadeToBlack(() =>
         {
             SaveAndLoadManager.Instance.StartNewSave();
+            GameManager.Instance.ResettingSave = false;
         });
     }
 }

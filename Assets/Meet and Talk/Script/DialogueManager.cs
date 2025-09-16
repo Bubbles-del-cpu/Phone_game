@@ -321,6 +321,9 @@ namespace MeetAndTalk
 
         public void CheckNodeType(BaseNodeData _baseNodeData)
         {
+            if (GameManager.Instance.ResettingSave)
+                return;
+
             SaveAndLoadManager.Instance.CurrentSave.AddNode(_baseNodeData);
             SaveAndLoadManager.Instance.AutoSave();
 
@@ -505,6 +508,7 @@ namespace MeetAndTalk
                 //yield return new WaitForSeconds(_nodeData.Duration);
                 ChoiceNode_GenerateChoice(_nodeData.Character, _nodeData);
             }
+
             StartTrackedCoroutine(tmp());;
 
             if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null) AudioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
@@ -688,7 +692,7 @@ namespace MeetAndTalk
 
 
         #region Improve Coroutine
-        private void StopAllTrackedCoroutines()
+        public void StopAllTrackedCoroutines()
         {
             foreach (var coroutine in activeCoroutines)
             {
@@ -697,6 +701,7 @@ namespace MeetAndTalk
                     StopCoroutine(coroutine);
                 }
             }
+
             activeCoroutines.Clear();
         }
 

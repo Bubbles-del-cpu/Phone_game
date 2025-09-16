@@ -43,7 +43,7 @@ public class OverlayCanvas : UICanvas
     {
         if (_canvas != null)
         {
-            var command = new PanelOpenCommand(this, openState: true);
+            var command = new PanelOpenCommand(this, openState: true, 20);
             NavigationManager.Instance.InvokeCommand(command, allowUndo: false);
         }
     }
