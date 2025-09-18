@@ -39,9 +39,18 @@ public class OverlayCanvas : UICanvas
         HOLD
     }
 
+    public override void Open()
+    {
+        if (_canvas != null)
+        {
+            var command = new PanelOpenCommand(this, openState: true, 20);
+            NavigationManager.Instance.InvokeCommand(command, allowUndo: false);
+        }
+    }
+
     public void ShowDialog(string message, System.Action eventToTrigger, string confirmButtonText, bool twoButtonSetup, string cancelButtonTest)
     {
-        base.Open();
+        Open();
 
         var dialog = Instantiate(_dialogPrefab, transform.GetChild(0));
         dialog.Setup(message, eventToTrigger, confirmButtonText, twoButtonSetup, cancelButtonTest);
@@ -49,7 +58,7 @@ public class OverlayCanvas : UICanvas
 
     public void ShowDialog(GameObject newDialogue)
     {
-        base.Open();
+        Open();
         newDialogue.transform.parent = transform.GetChild(0);
         newDialogue.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
         newDialogue.GetComponent<RectTransform>().localPosition = Vector3.one;
@@ -108,7 +117,7 @@ public class OverlayCanvas : UICanvas
     public void FadeToBlack(Action postEvent, float timeToFadeOverride = -1, float fadeHoldTimeOverride = -1)
     {
         //TODO: Disable inputs
-        base.Open();
+        Open();
         _fadeState = FadeState.FADE_OUT;
         _fade = true;
 

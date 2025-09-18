@@ -6,6 +6,7 @@ using UnityEngine.Video;
 using System.Collections;
 using System.Linq;
 using Unity.Collections;
+using UnityEngine.UI;
 
 public class GalleryCanvas : UICanvas
 {
@@ -14,7 +15,7 @@ public class GalleryCanvas : UICanvas
     [SerializeField] UIPanel foldersPanel;
     [SerializeField] GalleryFolderButton folderButtonPrefab;
     [SerializeField] RectTransform folderButtonsContainer;
-    [SerializeField] UIPanel imagesPanel;
+    //[SerializeField] UIPanel imagesPanel;
     [SerializeField] GalleryImageButton imageButtonPrefab;
     [SerializeField] GalleryVideoButton videoButtonPrefab;
     [SerializeField] RectTransform imageButtonsContainer;
@@ -85,11 +86,10 @@ public class GalleryCanvas : UICanvas
         }
     }
 
-    public override void Close()
+    public void Close(bool imageOpenFromMessage)
     {
-        if (_imageOpenFromMessage)
+        if (imageOpenFromMessage)
         {
-            _imageOpenFromMessage = false;
             fullScreenMedia.Close();
             ShowGalleryTable(MediaType.Sprite);
             base.Close();
@@ -163,8 +163,8 @@ public class GalleryCanvas : UICanvas
 
     public override void Open()
     {
-        imagesPanel.Open();
-
+        _galleryImageContainer.GetComponent<ScrollRect>().verticalScrollbar.value = 1;
+        _galleryVideoContainer.GetComponent<ScrollRect>().verticalScrollbar.value = 1;
         base.Open();
     }
 
@@ -265,7 +265,10 @@ public class GalleryCanvas : UICanvas
 
     public void OnShowGalleryTable(int type)
     {
-        ShowGalleryTable((MediaType)type);
+        var previousType = _galleryImageContainer.activeInHierarchy ? MediaType.Sprite : MediaType.Video;
+
+        var command = new GalleryTabSelectCommand((MediaType)type, previousType);
+        NavigationManager.Instance.InvokeCommand(command);
     }
 
     public void OpenImage(Sprite sprite, bool openedFromMessage = false)
@@ -273,7 +276,7 @@ public class GalleryCanvas : UICanvas
         ShowGalleryTable(MediaType.Sprite);
 
         fullScreenMedia.Setup(MediaType.Sprite, sprite, null);
-        StartCoroutine(CoOpenVideoPanel(fullScreenMedia, openedFromMessage ? 0 : 0.05f));
+        StartCoroutine(CoOpenMediaPanel(fullScreenMedia, openedFromMessage));
 
         _imageOpenFromMessage = openedFromMessage;
     }
@@ -283,15 +286,15 @@ public class GalleryCanvas : UICanvas
         ShowGalleryTable(MediaType.Video);
 
         fullScreenMedia.Setup(MediaType.Video, null, video);
-        StartCoroutine(CoOpenVideoPanel(fullScreenMedia, openedFromMessage ? 0 : 0.05f));
+        StartCoroutine(CoOpenMediaPanel(fullScreenMedia, openedFromMessage));
 
         _imageOpenFromMessage = openedFromMessage;
     }
 
-    private IEnumerator CoOpenVideoPanel(UIPanel panel, float delay)
+    private IEnumerator CoOpenMediaPanel(UIPanel panel, bool openedFromMessage)
     {
-        panel.Open();
-        yield return new WaitForSeconds(delay);
-        Open();
+        yield return new WaitForSeconds(openedFromMessage ? 0 : 0.05f);
+        var command = new MediaOpenCommand(this, openState: true, panel, openedFromMessage);
+        NavigationManager.Instance.InvokeCommand(command);
     }
 }

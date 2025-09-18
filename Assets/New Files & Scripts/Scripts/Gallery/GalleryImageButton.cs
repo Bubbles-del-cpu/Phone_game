@@ -17,7 +17,7 @@ public class GalleryImageButton : GalleryButtonBase
 
     public override string FileName => _image.sprite.name;
 
-    protected override void GalleryButtonClicked()
+    public override void GalleryButtonClicked()
     {
         GameManager.Instance.GalleryCanvas.OpenImage(Sprite);
     }

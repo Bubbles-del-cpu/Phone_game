@@ -242,51 +242,51 @@ public class SaveFileData
         }
 
         //Take the current saved media and buttons and unlock them based on our save file data
-        foreach (var item in saveFileData)
-        {
-            try
+            foreach (var item in saveFileData)
             {
-                if (item.FileName == string.Empty)
+                try
                 {
-                    var chapter = DialogueChapterManager.Instance.StoryList[item.ChapterIndex];
-                    switch (item.ChapterType)
+                    if (item.FileName == string.Empty)
                     {
-                        case ChapterType.Standalone:
-                            chapter = DialogueChapterManager.Instance.StandaloneChapters[item.ChapterIndex];
-                            break;
+                        var chapter = DialogueChapterManager.Instance.StoryList[item.ChapterIndex];
+                        switch (item.ChapterType)
+                        {
+                            case ChapterType.Standalone:
+                                chapter = DialogueChapterManager.Instance.StandaloneChapters[item.ChapterIndex];
+                                break;
 
+                        }
+
+                        var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, item.NodeGUID);
+                        if (node != null)
+                        {
+                            switch (item.LockedState)
+                            {
+                                case MediaLockState.Unknown:
+                                    UnlockMedia((DialogueNodeData)node, false);
+                                    break;
+                                case MediaLockState.Unlocked:
+                                    UnlockMedia((DialogueNodeData)node, false);
+                                    break;
+                            }
+                        }
                     }
-
-                    var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, item.NodeGUID);
-                    if (node != null)
+                    else
                     {
                         switch (item.LockedState)
                         {
                             case MediaLockState.Unknown:
-                                UnlockMedia((DialogueNodeData)node, false);
-                                break;
                             case MediaLockState.Unlocked:
-                                UnlockMedia((DialogueNodeData)node, false);
+                                UnlockMedia(item.FileName, false);
                                 break;
                         }
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    switch (item.LockedState)
-                    {
-                        case MediaLockState.Unknown:
-                        case MediaLockState.Unlocked:
-                            UnlockMedia(item.FileName, false);
-                            break;
-                    }
+                    Debug.LogError($"Valied to collect media from chapter. {ex.Message}");
                 }
             }
-            catch (Exception ex)
-            {
-                Debug.LogError($"Valied to collect media from chapter. {ex.Message}");
-            }
-        }
     }
 
     public ChapterSaveData CurrentChapterData
@@ -371,6 +371,9 @@ public class SaveFileData
                 ChapterType = chapterData.IsStoryChapter ? ChapterType.Story : ChapterType.Standalone,
                 LockedState = MediaLockState.Locked
             });
+
+            if (nodeData.Video != null && nodeData.VideoThumbnail != null)
+                GameManager.Instance.SetVideoFrame(nodeData.Video, nodeData.VideoThumbnail);
         }
 
         if (nodeData.Post != null)
@@ -387,6 +390,9 @@ public class SaveFileData
                     ChapterType = chapterData.IsStoryChapter ? ChapterType.Story : ChapterType.Standalone,
                     LockedState = MediaLockState.Locked
                 });
+
+                if (nodeData.Post.Video != null && nodeData.Post.VideoThumbnail != null)
+                    GameManager.Instance.SetVideoFrame(nodeData.Post.Video, nodeData.Post.VideoThumbnail);
             }
         }
 
@@ -471,6 +477,18 @@ public class SaveFileData
         if (past != null)
         {
             past.SelectedChoice = choice;
+        }
+
+        //Update the runtime node data with the choice so that we can
+        //check the selected choice against specific rules for the rollback action
+        switch (nodeData)
+        {
+            case DialogueChoiceNodeData nd:
+                nd.SelectedChoice = choice;
+                break;
+            case TimerChoiceNodeData nd:
+                nd.SelectedChoice = choice;
+                break;
         }
     }
 

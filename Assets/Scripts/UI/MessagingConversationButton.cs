@@ -50,13 +50,13 @@ public class MessagingConversationButton : MonoBehaviour
             {
                 _responseIndicator.enabled = false;
             }
-            
+
             _unreadIndicator.enabled = value;
         }
     }
 
-    public bool HasResponseReady 
-    { 
+    public bool HasResponseReady
+    {
         set
         {
             _hasResponseWaiting = value;

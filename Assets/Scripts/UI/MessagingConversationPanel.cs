@@ -3,6 +3,10 @@ using UnityEngine.UI;
 using MeetAndTalk;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO.Compression;
+using TMPro;
+using Unity.VisualScripting;
+using System;
 
 public class MessagingConversationPanel : UIPanel
 {
@@ -10,41 +14,57 @@ public class MessagingConversationPanel : UIPanel
     [SerializeField] MessagingResponsesPanel responsesPanel;
     [SerializeField] ScrollRect _scrollView;
     [SerializeField] RectTransform _contentContainer;
+    [SerializeField] private ProfileIcon _characterIcon;
+    [SerializeField] private TMP_Text _characterName;
     DialogueCharacterSO character;
 
     public int ChildCount => messageBubbleContainers[0].transform.childCount;
 
+    public override void Awake()
+    {
+        base.Awake();
+    }
+
     public override void Open()
     {
         base.Open();
+
+        transform.SetAsLastSibling();
+
+        _characterIcon.Character = character;
+        _characterName.text = character.name;
+
         GameManager.Instance.SetNewMessage(character, false);
+
         ScrollToBottom();
     }
 
     public void RemoveElements(int count)
     {
         var objectList = new List<GameObject>();
-        for (var index = 1; index <= count; index++)
+        for (var cIndex = 0; cIndex < MessageBubbleContainers.Length; cIndex++)
         {
-            for (var cIndex = 0; cIndex < MessageBubbleContainers.Length; cIndex++)
+            var index = 1;
+            var container = MessageBubbleContainers[cIndex];
+            while (index <= count)
             {
-                var container = MessageBubbleContainers[cIndex];
-
-                if (container.transform.childCount > 0)
+                try
                 {
                     var item = container.transform.GetChild(container.transform.childCount - index);
                     item.gameObject.SetActive(false);
                     objectList.Add(item.gameObject);
+                    index++;
                 }
-                else
+                catch (Exception ex)
                 {
+                    Debug.LogError($"Failed to clear conversation panel for {character.name}. Error: {ex.Message}");
                     break;
                 }
             }
         }
 
         foreach (var obj in objectList)
-            Destroy(obj);
+             Destroy(obj);
     }
 
     public void AddElement(BaseNodeData nodeData, MessagingBubble prefab, string text, DialogueUIManager.MessageSource source, bool notification)
@@ -71,15 +91,18 @@ public class MessagingConversationPanel : UIPanel
                         }
 
                         //Add element after timelapse
-                        var bubble = Instantiate(prefab, container);
-                        switch (nd.PostMediaType)
+                        if (text != string.Empty || nd.Image != null || nd.Video != null)
                         {
-                            case MediaType.Sprite:
-                                bubble.Init(hidden, text, nd.Image);
-                                break;
-                            case MediaType.Video:
-                                bubble.Init(hidden, text, nd.Video);
-                                break;
+                            var bubble = Instantiate(prefab, container);
+                            switch (nd.PostMediaType)
+                            {
+                                case MediaType.Sprite:
+                                    bubble.Init(hidden, text, nd.Image);
+                                    break;
+                                case MediaType.Video:
+                                    bubble.Init(hidden, text, nd.Video);
+                                    break;
+                            }
                         }
 
                         if (nd.Post != null && containerSource == DialogueUIManager.MessageSource.Character)
@@ -91,8 +114,9 @@ public class MessagingConversationPanel : UIPanel
                 case DialogueChoiceNodeData nd when nodeData is DialogueChoiceNodeData:
                     {
                         //Add element
-                        if (text != string.Empty)
+                        if (text != string.Empty && text[0] != '*')
                         {
+                            //Frist character is the special action character so don't send the message
                             var bubble = Instantiate(prefab, container);
                             bubble.Init(source != containerSource, text);
                         }
@@ -123,8 +147,12 @@ public class MessagingConversationPanel : UIPanel
 
     public void ScrollToBottom()
     {
-        Canvas.ForceUpdateCanvases();
-        _scrollView.verticalNormalizedPosition = 0;
+        try
+        {
+            Canvas.ForceUpdateCanvases();
+            _scrollView.verticalNormalizedPosition = 0;
+        }
+        catch (System.Exception){}
     }
 
     public override void Close()
