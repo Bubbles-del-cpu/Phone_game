@@ -94,18 +94,14 @@ public class SaveAndLoadManager : MonoBehaviour
             //And update if there are any variables or chapters missing
             saveFileData.ComparedAgainstLastest(SaveFileData.CreateBaseSave(saveSlot));
 
-            if (saveFileData.CustomBackgroundImage != string.Empty)
+            if (saveFileData.CustomBackgroundImage.NodeGUID != string.Empty)
             {
-                var media = saveFileData.UnlockedMedia.FirstOrDefault(x => x.NodeGUID == saveFileData.CustomBackgroundImage);
-                if (media != null && media.LockedState == MediaLockState.Unlocked && media.BackgroundCapable)
-                {
-                    var chapter = media.ChapterType == ChapterType.Story ?
-                        DialogueChapterManager.Instance.StoryList[media.ChapterIndex] :
-                        DialogueChapterManager.Instance.StandaloneChapters[media.ChapterIndex];
+                var chapter = saveFileData.CustomBackgroundImage.ChapterType == ChapterType.Story ?
+                    DialogueChapterManager.Instance.StoryList[saveFileData.CustomBackgroundImage.ChapterIndex] :
+                    DialogueChapterManager.Instance.StandaloneChapters[saveFileData.CustomBackgroundImage.ChapterIndex];
 
-                    var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, media.NodeGUID);
-                    GameManager.Instance.SetBackgroundImage((DialogueNodeData)node, media.IsSocialMediaPost);
-                }
+                var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, saveFileData.CustomBackgroundImage.NodeGUID);
+                GameManager.Instance.SetBackgroundImage((DialogueNodeData)node, saveFileData.CustomBackgroundImage.IsSocialMediaPost);
             }
             else
             {

@@ -7,6 +7,7 @@ using System;
 using UnityEngine.Video;
 using UnityEngine.UI;
 using UnityEditor.Experimental.GraphView;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -138,14 +139,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SetBackgroundImage(DialogueNodeData nodeData, bool socialMediaPost)
+    public void SetBackgroundImage(DialogueNodeData nodeData, bool socialMediaPost, bool save = true)
     {
         if (nodeData != null)
         {
             _backgroundImageComponent.sprite = socialMediaPost ? nodeData.Post.Image : nodeData.Image;
+            var targetFileName = _backgroundImageComponent.sprite.name;
+            var items = SaveAndLoadManager.Instance.CurrentSave.UnlockedMedia.Where(x => x.NodeGUID == nodeData.NodeGuid);
+            foreach (var item in items)
+            {
+                if (item.FileName == targetFileName)
+                {
+                    SaveAndLoadManager.Instance.CurrentSave.UnlockMedia(nodeData, false);
+                    SaveAndLoadManager.Instance.CurrentSave.CustomBackgroundImage = item;
 
-            SaveAndLoadManager.Instance.CurrentSave.CustomBackgroundImage = nodeData.NodeGuid;
-            SaveAndLoadManager.Instance.AutoSave();
+                    if (save)
+                        SaveAndLoadManager.Instance.AutoSave();
+                    break;
+                }
+            }
         }
     }
 

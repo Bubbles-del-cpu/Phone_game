@@ -15,7 +15,7 @@ public class SaveFileData
     public int SaveFileSlot;
     public bool ForceUnlockAllChapters;
     public bool DisplayHints;
-    public string CustomBackgroundImage = "";
+    public MediaData CustomBackgroundImage;
     public SystemLanguage LocalizationValue;
     [NonSerialized] public GameSaveState CurrentState;
     public int TotalChapters => CurrentState.Chapters.Count;
