@@ -263,6 +263,7 @@ namespace MeetAndTalk.Editor
                 Image = _node.Image,
                 Video = _node.Video,
                 VideoThumbnail = _node.VideoThumbnail,
+                BackgroundCapable = _node.BackgroundCapable,
                 Post = _node.Post,
                 Timelapse = _node.Timelapse
             };
@@ -489,6 +490,7 @@ namespace MeetAndTalk.Editor
                 tempNode.Image = node.Image;
                 tempNode.Video = node.Video;
                 tempNode.VideoThumbnail = node.VideoThumbnail;
+                tempNode.BackgroundCapable = node.BackgroundCapable;
                 tempNode.Post = node.Post;
                 tempNode.Timelapse = node.Timelapse;
 

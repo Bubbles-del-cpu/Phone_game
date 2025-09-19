@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System;
 using UnityEngine.Video;
+using UnityEngine.UI;
+using UnityEditor.Experimental.GraphView;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,7 +26,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] OverlayCanvas overlayCanvas;
 
     [Header("Config")]
+
     public GalleryUnlockConfig GalleryConfig;
+    [SerializeField] private Image _backgroundImageComponent;
+    public Sprite DefaultBackgroundSprite;
 
 
     [Header("Audio")]
@@ -58,7 +63,7 @@ public class GameManager : MonoBehaviour
 
     Dictionary<DialogueCharacterSO, CharacterData> characterData = new Dictionary<DialogueCharacterSO, CharacterData>();
     Dictionary<DialogueCharacterSO, bool> hasNewMessage = new Dictionary<DialogueCharacterSO, bool>();
-    public Dictionary<VideoClip, Texture2D> Thumbnails = new Dictionary<VideoClip, Texture2D>();
+    public Dictionary<VideoClip, (Texture2D, Sprite, bool)> Thumbnails = new Dictionary<VideoClip, (Texture2D, Sprite, bool)>();
 
     public static string ToUTF32FromPair(string input)
     {
@@ -131,6 +136,22 @@ public class GameManager : MonoBehaviour
 
             _prevFullScreen = Screen.fullScreen;
         }
+    }
+
+    public void SetBackgroundImage(DialogueNodeData nodeData, bool socialMediaPost)
+    {
+        if (nodeData != null)
+        {
+            _backgroundImageComponent.sprite = socialMediaPost ? nodeData.Post.Image : nodeData.Image;
+
+            SaveAndLoadManager.Instance.CurrentSave.CustomBackgroundImage = nodeData.NodeGuid;
+            SaveAndLoadManager.Instance.AutoSave();
+        }
+    }
+
+    public void SetBackgroundImage(Sprite image)
+    {
+        _backgroundImageComponent.sprite = image;
     }
 
     public void TriggerDialogueChapter(DialogueContainerSO chapter)
@@ -212,23 +233,22 @@ public class GameManager : MonoBehaviour
         audioSource.PlayOneShot(sendTextFX);
     }
 
-    public Texture2D GetVideoFrame(VideoClip clip)
+    public void GenerateThumbnails()
+    {
+        _thumbnailGenerator.RegenerateAll();
+    }
+    public (Texture2D, Sprite, bool) GetVideoFrame(VideoClip clip)
     {
         //Create the texture
         if (!Thumbnails.ContainsKey(clip))
         {
-            // _thumbnailVideoPrefab.clip = clip;
-            // _thumbnailVideoPrefab.frame = 5;
-            // _thumbnailVideoPrefab.Play();
-            // _thumbnailVideoPrefab.Pause();
-            // _thumbnailVideoPrefab.Prepare();
-
             _thumbnailGenerator.GenerateThumbnail(clip, (newTexture) =>
             {
-                Thumbnails[clip] = newTexture;
+                var sprite = Sprite.Create(newTexture, new Rect(0, 0, newTexture.width, newTexture.height), new Vector2(0.5f, 0.5f));
+                Thumbnails[clip] = (newTexture, sprite, Thumbnails[clip].Item3);
             });
 
-            Thumbnails.Add(clip, new Texture2D(256, 256, TextureFormat.RGB24, false));
+            Thumbnails.Add(clip, (null, null, false));
         }
 
         return Thumbnails[clip];
@@ -236,10 +256,14 @@ public class GameManager : MonoBehaviour
 
     public void SetVideoFrame(VideoClip clip, Sprite thumbnail)
     {
-        if (!Thumbnails.ContainsKey(clip))
-            Thumbnails.Add(clip, null);
+        if (clip == null)
+            return;
 
-        Thumbnails[clip] = thumbnail.texture;
+        if (!Thumbnails.ContainsKey(clip))
+            Thumbnails.Add(clip, (null, null, false));
+
+        if (thumbnail != null)
+            Thumbnails[clip] = (thumbnail.texture, thumbnail, thumbnail != null);
     }
 
     public CharacterData GetCharacterData(DialogueCharacterSO _character)

@@ -14,7 +14,7 @@ public class FullVideoPlayer : UIPanel
         GameManager.Instance.MainVideoPlayer.Play();
         GameManager.Instance.MainVideoPlayer.Pause();
 
-        _videoImage.texture = GameManager.Instance.GetVideoFrame(clip);
+        _videoImage.texture = GameManager.Instance.GetVideoFrame(clip).Item1;
     }
     public void OnClick()
     {

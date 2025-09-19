@@ -1,64 +1,51 @@
+using System.Collections;
+using MeetAndTalk;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Video;
 
 public class GalleryVideoButton : GalleryButtonBase
 {
-    [SerializeField] private Texture _previewTexture;
     private Sprite _videoPreviewSprite;
-
-    private VideoClip _clip;
-    public VideoClip Clip
-    {
-        get
-        {
-            return _clip;
-        }
-        set
-        {
-            _clip = value;
-            _previewTexture = GameManager.Instance.GetVideoFrame(_clip);
-        }
-    }
-
     private Sprite _fallbackThumbnail;
-    public Sprite FallbackClipThumbnail
+    private VideoClip _clip;
+    public override string FileName => _clip.name;
+
+    public override void Setup(DialogueChapterManager.ChapterData chapterData, DialogueNodeData nodeData, bool isSocialMediaPost)
     {
-        get => _fallbackThumbnail;
-        set
+        base.Setup(chapterData, nodeData, isSocialMediaPost);
+
+        (VideoClip clip, Sprite clipThumbnial) mediaData = nodeData.GetNodeVideoData(isSocialMediaPost);
+
+        _clip = mediaData.clip;
+        _fallbackThumbnail = mediaData.clipThumbnial;
+        if (_fallbackThumbnail != null)
         {
-            _fallbackThumbnail = value;
             _videoPreviewSprite = _fallbackThumbnail;
         }
-    }
 
-    public override string FileName => _clip.name;
+        _image.sprite = _videoPreviewSprite;
+        _lockedImage.sprite = _videoPreviewSprite;
+    }
 
 
     public override void GalleryButtonClicked()
     {
-        GameManager.Instance.GalleryCanvas.OpenVideo(Clip);
+        GameManager.Instance.GalleryCanvas.OpenVideo(_assignedNode, openedFromMessage: false, isSocialMediaPost: _isSocialMediaPost);
     }
 
     private void FixedUpdate()
     {
         if (_clip)
         {
-            if (_fallbackThumbnail != null)
+            if (_fallbackThumbnail == null)
             {
-                _image.sprite = _fallbackThumbnail;
-                _lockedImage.sprite = _fallbackThumbnail;
+                var frame = GameManager.Instance.GetVideoFrame(_clip);
+                _videoPreviewSprite = frame.Item2;
             }
-            else
-            {
-                _previewTexture = GameManager.Instance.GetVideoFrame(_clip);
-                if (_previewTexture != null && _videoPreviewSprite == null)
-                {
-                    _videoPreviewSprite = Sprite.Create((Texture2D)_previewTexture, new Rect(0, 0, _previewTexture.width, _previewTexture.height), new Vector2(0.5f, 0.5f));
-                    _image.sprite = _videoPreviewSprite;
-                    _lockedImage.sprite = _videoPreviewSprite;
-                }
-            }
+
+            _image.sprite = _videoPreviewSprite;
+            _lockedImage.sprite = _videoPreviewSprite;
         }
     }
 }

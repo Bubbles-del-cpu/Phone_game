@@ -379,6 +379,7 @@ namespace MeetAndTalk
         public Sprite Image;
         public VideoClip Video;
         public Sprite VideoThumbnail;
+        public bool BackgroundCapable;
         public GalleryDisplay GalleryVisibility;
         public SocialMediaPostSO Post;
         public string Timelapse;
@@ -413,6 +414,38 @@ namespace MeetAndTalk
                 return true;
 
             return false;
+        }
+
+        public (MediaType, Sprite, VideoClip, Sprite, bool) GetNodeMediaData(bool fromSocialMediaPost)
+        {
+            if (fromSocialMediaPost && Post != null)
+            {
+                return (Post.MediaType, Post.Image, Post.Video, Post.VideoThumbnail, Post.BackgroundCapable);
+            }
+            else
+            {
+                return (PostMediaType, Image, Video, VideoThumbnail, BackgroundCapable);
+            }
+        }
+
+        public (Sprite, bool) GetNodeImageData(bool fromSocialMediaPost)
+        {
+            if (fromSocialMediaPost)
+            {
+                return (Post.Image, Post.BackgroundCapable);
+            }
+            else
+            {
+                return (Image, BackgroundCapable);
+            }
+        }
+
+        public (VideoClip, Sprite) GetNodeVideoData(bool fromSocialMediaPost)
+        {
+            if (fromSocialMediaPost)
+                return (Post.Video, Post.VideoThumbnail);
+            else
+                return (Video, VideoThumbnail);
         }
     }
 

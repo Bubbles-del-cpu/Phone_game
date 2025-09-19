@@ -94,15 +94,8 @@ public class MessagingConversationPanel : UIPanel
                         if (text != string.Empty || nd.Image != null || nd.Video != null)
                         {
                             var bubble = Instantiate(prefab, container);
-                            switch (nd.PostMediaType)
-                            {
-                                case MediaType.Sprite:
-                                    bubble.Init(hidden, text, nd.Image);
-                                    break;
-                                case MediaType.Video:
-                                    bubble.Init(hidden, text, nd.Video);
-                                    break;
-                            }
+                            bubble.Init(hidden, text);
+                            bubble.SetupMediaViewer(nd);
                         }
 
                         if (nd.Post != null && containerSource == DialogueUIManager.MessageSource.Character)

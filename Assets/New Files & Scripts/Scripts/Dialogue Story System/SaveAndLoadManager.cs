@@ -2,6 +2,7 @@ using MeetAndTalk;
 using MeetAndTalk.GlobalValue;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -92,6 +93,24 @@ public class SaveAndLoadManager : MonoBehaviour
             //When the save file is loaded, check it against the latest base save file
             //And update if there are any variables or chapters missing
             saveFileData.ComparedAgainstLastest(SaveFileData.CreateBaseSave(saveSlot));
+
+            if (saveFileData.CustomBackgroundImage != string.Empty)
+            {
+                var media = saveFileData.UnlockedMedia.FirstOrDefault(x => x.NodeGUID == saveFileData.CustomBackgroundImage);
+                if (media != null && media.LockedState == MediaLockState.Unlocked && media.BackgroundCapable)
+                {
+                    var chapter = media.ChapterType == ChapterType.Story ?
+                        DialogueChapterManager.Instance.StoryList[media.ChapterIndex] :
+                        DialogueChapterManager.Instance.StandaloneChapters[media.ChapterIndex];
+
+                    var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, media.NodeGUID);
+                    GameManager.Instance.SetBackgroundImage((DialogueNodeData)node, media.IsSocialMediaPost);
+                }
+            }
+            else
+            {
+                GameManager.Instance.SetBackgroundImage(GameManager.Instance.DefaultBackgroundSprite);
+            }
 
             return saveFileData;
         }

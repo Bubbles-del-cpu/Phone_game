@@ -9,6 +9,7 @@ using MeetAndTalk.Editor;
 using MeetAndTalk.Localization;
 using MeetAndTalk.Event;
 using UnityEngine.Video;
+using UnityEditor;
 
 namespace MeetAndTalk.Nodes
 {
@@ -21,6 +22,7 @@ namespace MeetAndTalk.Nodes
         private MediaType mediaType;
         public GalleryDisplay visibilityType;
         private Sprite image, videoThumbnail;
+        private bool backgroundCapable;
         private VideoClip video;
         private SocialMediaPostSO post;
         private string timelapse;
@@ -35,6 +37,7 @@ namespace MeetAndTalk.Nodes
         public MediaType PostMediaType { get => mediaType; set => mediaType = value; }
         public Sprite Image { get => image; set => image = value; }
         public VideoClip Video { get => video; set => video = value; }
+        public bool BackgroundCapable { get => backgroundCapable; set => backgroundCapable = value; }
         public Sprite VideoThumbnail { get => videoThumbnail; set => videoThumbnail = value; }
         public SocialMediaPostSO Post { get => post; set => post = value; }
         public string Timelapse { get => timelapse; set => timelapse = value; }
@@ -44,6 +47,7 @@ namespace MeetAndTalk.Nodes
         private ObjectField image_Field;
         private ObjectField videoThumbnail_Field;
         private ObjectField video_Field;
+        private Toggle backgroundCapable_Field;
         private ObjectField audioClips_Field;
         private TextField name_Field;
         private ObjectField character_Field;
@@ -220,12 +224,16 @@ namespace MeetAndTalk.Nodes
             {
                 durationShow = value.newValue;
             });
+
             duration_Field.SetValueWithoutNotify(durationShow);
 
             duration_Field.AddToClassList("TextDuration");
             nodeFields.Add(duration_Field);
 
-
+            Label media_label = new Label("Post Media Settings");
+            media_label.AddToClassList("label_duration");
+            media_label.AddToClassList("Label");
+            nodeFields.Add(media_label);
 
             mediaType_Field = new EnumField("Media Type", mediaType);
             mediaType_Field.RegisterValueChangedCallback(value =>
@@ -233,16 +241,17 @@ namespace MeetAndTalk.Nodes
                 mediaType = (MediaType)value.newValue;
                 ClearAndPopulateFields();
             });
+
             mediaType_Field.SetValueWithoutNotify(mediaType);
             nodeFields.Add(mediaType_Field);
-
-
 
             visibilityTypeField = new EnumField("Gallery Visibility", visibilityType);
             visibilityTypeField.RegisterValueChangedCallback(value =>
             {
                 visibilityType = (GalleryDisplay)value.newValue;
+                ClearAndPopulateFields();
             });
+
             visibilityTypeField.SetValueWithoutNotify(visibilityType);
             nodeFields.Add(visibilityTypeField);
 
@@ -258,9 +267,17 @@ namespace MeetAndTalk.Nodes
             {
                 image = value.newValue as Sprite;
             });
-            
-            
-            Label videoThumbnail_label = new Label("Video Fallback Thumbnail");
+
+            backgroundCapable_Field = new Toggle("Background Capable")
+            {
+                value = backgroundCapable
+            };
+
+            backgroundCapable_Field.RegisterValueChangedCallback(value =>
+            {
+                backgroundCapable = value.newValue;
+            });
+
             videoThumbnail_Field = new ObjectField()
             {
                 objectType = typeof(Sprite),
@@ -288,10 +305,26 @@ namespace MeetAndTalk.Nodes
             switch (mediaType)
             {
                 case MediaType.Sprite:
+                    var spriteLabel = new Label("Sprite");
+                    spriteLabel.AddToClassList("label_duration");
+                    spriteLabel.AddToClassList("Label");
+
+                    if (visibilityType == GalleryDisplay.Display)
+                        nodeFields.Add(backgroundCapable_Field);
+
+                    nodeFields.Add(spriteLabel);
                     nodeFields.Add(image_Field);
                     break;
                 case MediaType.Video:
+                    var videoLabel = new Label("Video");
+                    videoLabel.AddToClassList("label_duration");
+                    videoLabel.AddToClassList("Label");
+                    nodeFields.Add(videoLabel);
                     nodeFields.Add(video_Field);
+
+                    var videoThumbnail_label = new Label("Video Fallback Thumbnail");
+                    videoThumbnail_label.AddToClassList("label_duration");
+                    videoThumbnail_label.AddToClassList("Label");
                     nodeFields.Add(videoThumbnail_label);
                     nodeFields.Add(videoThumbnail_Field);
                     break;
@@ -329,6 +362,7 @@ namespace MeetAndTalk.Nodes
             mediaType_Field.SetValueWithoutNotify(mediaType);
             image_Field.SetValueWithoutNotify(image);
             video_Field.SetValueWithoutNotify(video);
+            backgroundCapable_Field.SetValueWithoutNotify(backgroundCapable);
             videoThumbnail_Field.SetValueWithoutNotify(videoThumbnail);
             visibilityTypeField.SetValueWithoutNotify(visibilityType);
             socialMedia_Field.SetValueWithoutNotify(post);
