@@ -20,5 +20,8 @@ public class MediaOpenCommand : PanelOpenCommand
         galleryCanvas.Close(_openFromConversation);
 
         targetPanel.Close();
+
+        if (!_openFromConversation)
+            NavigationManager.Instance.PanelOpenCount -= 1;
     }
 }
