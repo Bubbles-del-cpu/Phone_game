@@ -1161,6 +1161,11 @@ MonoBehaviour:
   _content: {fileID: 433836023}
   _unlockAllButton: {fileID: 258176187}
   StoryList:
+  - Story: {fileID: 11400000, guid: 4b2b3afd41e68fe4c8c7a646981972b3, type: 2}
+    StartID: 
+    ChapterIndex: 0
+    IsStoryChapter: 0
+    ReplaySettings: []
   - Story: {fileID: 11400000, guid: 9ba512ced01626144b88fa42131dc57a, type: 2}
     StartID: 
     ChapterIndex: 0
@@ -12032,15 +12037,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 602498409131702052, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 602498409131702052, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 602498409131702052, guid: 1d65d9481219718439accc523ad13d99, type: 3}
-      propertyPath: m_NumberOfSteps
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1310714138103472768, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_VerticalFit
