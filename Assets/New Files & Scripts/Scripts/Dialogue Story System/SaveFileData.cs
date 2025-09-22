@@ -470,14 +470,15 @@ public class SaveFileData
 
     public void MakeChoice(BaseNodeData nodeData, string choice)
     {
-        if (SaveAndLoadManager.Instance.ReplayingCompletedChapter)
-            return;
-
-        var past = CurrentChapterData.PastCoversations.FirstOrDefault(x => x.GUID == nodeData.NodeGuid);
-        if (past != null)
+        if (!SaveAndLoadManager.Instance.ReplayingCompletedChapter)
         {
-            past.SelectedChoice = choice;
+            var past = CurrentChapterData.PastCoversations.FirstOrDefault(x => x.GUID == nodeData.NodeGuid);
+            if (past != null)
+            {
+                past.SelectedChoice = choice;
+            }
         }
+
 
         //Update the runtime node data with the choice so that we can
         //check the selected choice against specific rules for the rollback action
