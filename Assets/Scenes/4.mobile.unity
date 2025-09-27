@@ -3507,7 +3507,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 70.098656, y: -24}
-  m_SizeDelta: {x: 64, y: 48}
+  m_SizeDelta: {x: 0, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &307139076
 MonoBehaviour:
@@ -6854,7 +6854,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 94, y: -112.00499}
-  m_SizeDelta: {x: 140, y: 75.99}
+  m_SizeDelta: {x: 0, y: 75.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &668380781
 MonoBehaviour:
@@ -7569,6 +7569,7 @@ MonoBehaviour:
   _singleNotificationOnly: 0
   ButtonPrefab: {fileID: -2090798969861149810, guid: aabebb1b3ddde5b469b80e84510cdaf5, type: 3}
   notificationPrefab: {fileID: 4561581163258094175, guid: 069a83a6c6813c14390b2211bf281582, type: 3}
+  NotificationCanvas: {fileID: 545350490}
   notificationsContainer: {fileID: 1390809904}
   HideIfLeftAvatarEmpty: []
   HideIfRightAvatarEmpty: []
@@ -10432,7 +10433,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 262.4933, y: -24}
-  m_SizeDelta: {x: 64, y: 48}
+  m_SizeDelta: {x: 0, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1153060194
 MonoBehaviour:
@@ -15629,7 +15630,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 166.29596, y: -24}
-  m_SizeDelta: {x: 64, y: 48}
+  m_SizeDelta: {x: 0, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1955806144
 MonoBehaviour:
