@@ -1,3 +1,4 @@
+using System; // Required for Guid
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
@@ -192,9 +193,20 @@ namespace MeetAndTalk.Editor
             return tmp;
         }
 
+        // This function is now ONLY for the loading system
         public IFNode CreateIFNode(Vector2 _pos)
         {
             IFNode tmp = new IFNode(_pos, editorWindow, this);
+            tmp.name = "IF";
+
+            return tmp;
+        }
+        
+        // This NEW function is for creating a node from the search menu
+        public IFNode CreateNewIFNode(Vector2 _pos)
+        {
+            IFNode tmp = new IFNode(_pos, editorWindow, this);
+            tmp.nodeGuid = Guid.NewGuid().ToString(); // Assign the permanent ID here!
             tmp.name = "IF";
 
             return tmp;

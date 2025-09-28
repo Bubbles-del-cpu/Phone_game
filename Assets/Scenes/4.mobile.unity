@@ -1166,11 +1166,6 @@ MonoBehaviour:
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings: []
-  - Story: {fileID: 11400000, guid: 9ba512ced01626144b88fa42131dc57a, type: 2}
-    StartID: 
-    ChapterIndex: 0
-    IsStoryChapter: 0
-    ReplaySettings: []
   - Story: {fileID: 11400000, guid: 8549d9521b664f14d94a8ad1c43d452e, type: 2}
     StartID: 
     ChapterIndex: 0
@@ -1495,8 +1490,93 @@ MonoBehaviour:
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
+  - Story: {fileID: 11400000, guid: 259efb97f27f2734caa8ada6559fd7f3, type: 2}
+    StartID: 
+    ChapterIndex: 0
+    IsStoryChapter: 0
+    ReplaySettings:
+    - DialogTitle: Are you more DOM or SUB?
+      Value:
+        ValueName: DOM_LVL
+      Option1Text: DOM
+      OptionSetting1: 110
+      Option2Text: SUB
+      OptionSetting2: 95
+    - DialogTitle: Did you continue with Math?
+      Value:
+        ValueName: Continue_math
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: If no did you and Lily plan the date with Khalid?
+      Value:
+        ValueName: khalid_meet
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+  - Story: {fileID: 11400000, guid: 690eb710124bd1d4b8361f740172594e, type: 2}
+    StartID: 
+    ChapterIndex: 0
+    IsStoryChapter: 0
+    ReplaySettings:
+    - DialogTitle: Did you continue with Math?
+      Value:
+        ValueName: Continue_math
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: If no did you and Lily plan the date with Khalid?
+      Value:
+        ValueName: khalid_meet
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: Did you accept home care
+      Value:
+        ValueName: AT_HOME_CARE
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: If yes did you extort Victoria?
+      Value:
+        ValueName: victoria_extort
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: If you did not extort Victoria. Did you watch a movie with her?
+      Value:
+        ValueName: vic_movie_night
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: Did you accept the docters tests?
+      Value:
+        ValueName: dr_happy
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: Does Lisa know you like to be cucked?
+      Value:
+        ValueName: dr_happy
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
   StandaloneChapters:
   - Story: {fileID: 11400000, guid: d4c97dc564b9dab409c930d50f4456ab, type: 2}
+    StartID: 
+    ChapterIndex: 0
+    IsStoryChapter: 0
+    ReplaySettings: []
+  - Story: {fileID: 11400000, guid: 4fcdbc19e69496d4ebf58ac5e251595d, type: 2}
     StartID: 
     ChapterIndex: 0
     IsStoryChapter: 0
@@ -2720,7 +2800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 166.29597
+      value: 202.54083
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3249,7 +3329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 265.15997
+      value: 325.56805
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3506,8 +3586,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 70.098656, y: -24}
-  m_SizeDelta: {x: 0, y: 48}
+  m_AnchoredPosition: {x: 82.180275, y: -24}
+  m_SizeDelta: {x: 64, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &307139076
 MonoBehaviour:
@@ -4074,7 +4154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 67.43199
+      value: 79.51361
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6625,7 +6705,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6bfd1cb375a6b384ab7c3a2a8fef1a5d, type: 3}
+  m_Sprite: {fileID: -8483731395159641348, guid: 35702ad1cd8142c4998c1702cbf98610, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6781,7 +6861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 166.29597
+      value: 202.54083
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6854,7 +6934,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 94, y: -112.00499}
-  m_SizeDelta: {x: 0, y: 75.99}
+  m_SizeDelta: {x: 140, y: 75.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &668380781
 MonoBehaviour:
@@ -9663,7 +9743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1207203134180617477, guid: b7abca7edcae76a4d957b7a22623f364, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 265.15997
+      value: 325.56805
       objectReference: {fileID: 0}
     - target: {fileID: 1207203134180617477, guid: b7abca7edcae76a4d957b7a22623f364, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -9781,7 +9861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 67.43199
+      value: 79.51361
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -10376,7 +10456,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6bfd1cb375a6b384ab7c3a2a8fef1a5d, type: 3}
+  m_Sprite: {fileID: -4364034832326165938, guid: 04e3a5bdb6c87434d909fbdfd0e80421, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -10432,8 +10512,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 262.4933, y: -24}
-  m_SizeDelta: {x: 0, y: 48}
+  m_AnchoredPosition: {x: 322.90137, y: -24}
+  m_SizeDelta: {x: 64, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1153060194
 MonoBehaviour:
@@ -15629,8 +15709,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 166.29596, y: -24}
-  m_SizeDelta: {x: 0, y: 48}
+  m_AnchoredPosition: {x: 202.54083, y: -24}
+  m_SizeDelta: {x: 64, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1955806144
 MonoBehaviour:

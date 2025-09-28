@@ -93,6 +93,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
+    SelectedChoice: 
   - NodeGuid: f4badca5-642e-4aec-b39f-a0220ffb703b
     Position: {x: 1465, y: 196}
     DialogueNodePorts:
@@ -139,6 +140,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
+    SelectedChoice: 
   - NodeGuid: 711cb3e0-8bf1-4109-ae8b-c0642f957495
     Position: {x: 1728, y: 779}
     DialogueNodePorts:
@@ -172,6 +174,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
+    SelectedChoice: 
   DialogueNodeDatas:
   - NodeGuid: b2caca91-cbaf-44ea-9c38-80a76cc145d4
     Position: {x: 308, y: 195}
