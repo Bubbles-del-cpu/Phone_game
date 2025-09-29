@@ -1,3 +1,4 @@
+using MeetAndTalk;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ public class FullScreenMedia : UIPanel
     [SerializeField] private Button _playButton;
     [SerializeField] private RawImage _videoImage;
     [SerializeField] private MediaType _currentMediaType;
+    [SerializeField] protected GallerySetBackgroundButton _backgroundSetButton;
 
     private Sprite _videoThumbnail;
 
@@ -83,18 +85,36 @@ public class FullScreenMedia : UIPanel
         return imageTransform.sizeDelta;
     }
 
-    public void Setup(MediaType type, Sprite image, VideoClip clip)
+    public void Setup(DialogueNodeData nodeData, bool isSocialMediaPost)
     {
-        _currentMediaType = type;
-        switch (type)
+        _currentMediaType = nodeData.PostMediaType;
+        (MediaType type, Sprite image, VideoClip video, Sprite videoThumbnail, bool backgroundCapable) mediaData =
+            nodeData.GetNodeMediaData(isSocialMediaPost);
+
+        _backgroundSetButton.gameObject.SetActive(false);
+        switch (mediaData.type)
         {
             case MediaType.Sprite:
-                _image.sprite = image;
+                _image.sprite = mediaData.image;
                 _image.preserveAspect = true;
+
+                //Setup the background set button
+                _backgroundSetButton.gameObject.SetActive(mediaData.backgroundCapable);
+                if (mediaData.backgroundCapable)
+                    _backgroundSetButton.Setup(nodeData, isSocialMediaPost);
+
                 break;
             case MediaType.Video:
-                var thumbnailTexture = GameManager.Instance.GetVideoFrame(clip);
-                _videoThumbnail = Sprite.Create(thumbnailTexture, new Rect(0, 0, thumbnailTexture.width, thumbnailTexture.height), new Vector2(0.5f, 0.5f));
+                if (mediaData.videoThumbnail == null)
+                {
+                    var texture = GameManager.Instance.GetVideoFrame(mediaData.video);
+                    _videoThumbnail = texture.Item2;
+                }
+                else
+                {
+                    _videoThumbnail = mediaData.videoThumbnail;
+                }
+
                 _image.sprite = _videoThumbnail;
                 _image.preserveAspect = true;
 
@@ -103,7 +123,7 @@ public class FullScreenMedia : UIPanel
                 player.audioOutputMode = VideoAudioOutputMode.AudioSource;
                 player.SetTargetAudioSource(0, GameManager.Instance.audioSource);
                 player.source = VideoSource.VideoClip;
-                player.clip = clip;
+                player.clip = mediaData.video;
                 player.frame = 1;
                 player.Pause();
                 break;

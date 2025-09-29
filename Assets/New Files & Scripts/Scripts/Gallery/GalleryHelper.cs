@@ -51,16 +51,28 @@ public class GalleryHelper
 
     public bool CheckLength()
     {
+#if UNITY_EDITOR
+        if (USED_PASS == "DEV UNLOCK")
+            return true;
+#endif
         return USED_PASS != string.Empty && USED_PASS.Length == _refLength;
     }
 
     public bool CheckContent(string p)
     {
+#if UNITY_EDITOR
+        if (USED_PASS == "DEV UNLOCK")
+            return true;
+#endif
         return IsValidCode(p);
     }
 
     public bool CheckHash()
     {
+#if UNITY_EDITOR
+        if (USED_PASS == "DEV UNLOCK")
+            return true;
+#endif
         return ComputeHash(USED_PASS, _salt).Length == _hash.Length;
     }
 

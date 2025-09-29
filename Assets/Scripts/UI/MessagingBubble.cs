@@ -45,42 +45,6 @@ public class MessagingBubble : MonoBehaviour
         }
     }
 
-    public void Init(bool hide, string text, Sprite image)
-    {
-        MediaType = MediaType.Sprite;
-        VideoClip = null;
-        Image = image;
-
-        Init(hide, text);
-
-        _videoContainer.SetActive(false);
-        _imageContainer.SetActive(Image != null);
-        _image.preserveAspect = true;
-
-        if (image != null)
-        {
-            SetContainerSize(image.bounds.extents.x, image.bounds.extents.y, _imageContainer.GetComponent<RectTransform>());
-        }
-    }
-
-    public void Init(bool hide, string text, VideoClip clip)
-    {
-        MediaType = MediaType.Video;
-        VideoClip = clip;
-        Image = null;
-
-        _videoPreviewTexture = GameManager.Instance.GetVideoFrame(clip);
-        _videoImage.texture = _videoPreviewTexture;
-
-        Init(hide, text);
-
-        _videoContainer.SetActive(VideoClip != null);
-        _imageContainer.SetActive(false);
-        _image.preserveAspect = true;
-
-        SetContainerSize(_videoPreviewTexture.width, _videoPreviewTexture.height, _videoContainer.GetComponent<RectTransform>());
-    }
-
     public void Init(bool hide, string text)
     {
         cg = GetComponent<CanvasGroup>();
@@ -95,16 +59,54 @@ public class MessagingBubble : MonoBehaviour
         //GetComponentInParent<ScrollRect>().verticalNormalizedPosition = 0f;
         Message = text;
 
-        _videoContainer.SetActive(false);
-        _imageContainer.SetActive(false);
-
-        _mediaViewer.Setup(MediaType, Image, VideoClip);
-
 
         LayoutRebuilder.ForceRebuildLayoutImmediate(rect);
         LayoutRebuilder.ForceRebuildLayoutImmediate(transform.parent.GetComponent<RectTransform>());
 
         StartCoroutine(COEnable(hide));
+    }
+
+    public void SetupMediaViewer(DialogueNodeData nodeData)
+    {
+        if (nodeData == null)
+            return;
+
+        _videoContainer.SetActive(false);
+        _imageContainer.SetActive(false);
+        Sprite postImage = null;
+        VideoClip video = null;
+        Sprite thumbnail = null;
+
+        switch (nodeData.PostMediaType)
+        {
+            case MediaType.Sprite:
+                postImage = nodeData.Image;
+                thumbnail = postImage;
+                break;
+            case MediaType.Video:
+                video = nodeData.Video;
+                thumbnail = nodeData.VideoThumbnail;
+                break;
+        }
+
+        if (postImage == null && video == null)
+            return;
+
+        if (postImage != null)
+        {
+            _image.preserveAspect = true;
+            _image.sprite = postImage;
+            _imageContainer.SetActive(true);
+            SetContainerSize(_image.sprite.texture.width, _image.sprite.texture.height, _imageContainer.GetComponent<RectTransform>());
+        }
+        else
+        {
+            _videoImage.texture = thumbnail == null ? GameManager.Instance.GetVideoFrame(video).Item1 : thumbnail.texture;
+            _videoContainer.SetActive(true);
+            SetContainerSize(_videoImage.texture.width, _videoImage.texture.height, _videoContainer.GetComponent<RectTransform>());
+        }
+
+        _mediaViewer.Setup(nodeData, false);
     }
 
     private IEnumerator COEnable(bool hide)
@@ -177,7 +179,7 @@ public class MessagingBubble : MonoBehaviour
             case MediaType.Video:
                 if (VideoClip)
                 {
-                    _videoPreviewTexture = GameManager.Instance.GetVideoFrame(VideoClip);
+                    _videoPreviewTexture = GameManager.Instance.GetVideoFrame(VideoClip).Item1;
                     _videoImage.texture = _videoPreviewTexture;
                 }
                 break;
