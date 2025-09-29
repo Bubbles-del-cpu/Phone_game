@@ -379,7 +379,7 @@ namespace MeetAndTalk
         public Sprite Image;
         public VideoClip Video;
         public Sprite VideoThumbnail;
-        public bool BackgroundCapable;
+        public bool NotBackgroundCapable;
         public GalleryDisplay GalleryVisibility;
         public SocialMediaPostSO Post;
         public string Timelapse;
@@ -420,11 +420,11 @@ namespace MeetAndTalk
         {
             if (fromSocialMediaPost && Post != null)
             {
-                return (Post.MediaType, Post.Image, Post.Video, Post.VideoThumbnail, Post.BackgroundCapable);
+                return (Post.MediaType, Post.Image, Post.Video, Post.VideoThumbnail, !Post.NotBackgroundCapable);
             }
             else
             {
-                return (PostMediaType, Image, Video, VideoThumbnail, BackgroundCapable);
+                return (PostMediaType, Image, Video, VideoThumbnail, !NotBackgroundCapable);
             }
         }
 
@@ -432,11 +432,11 @@ namespace MeetAndTalk
         {
             if (fromSocialMediaPost)
             {
-                return (Post.Image, Post.BackgroundCapable);
+                return (Post.Image, !Post.NotBackgroundCapable);
             }
             else
             {
-                return (Image, BackgroundCapable);
+                return (Image, !NotBackgroundCapable);
             }
         }
 

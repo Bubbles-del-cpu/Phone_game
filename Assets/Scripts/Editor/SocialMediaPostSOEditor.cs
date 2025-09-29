@@ -16,7 +16,7 @@ public class SocialMediaPostSOEditor : UnityEditor.Editor
         _videoProp = serializedObject.FindProperty("Video");
         _videoThumbnailProp = serializedObject.FindProperty("VideoThumbnail");
         _displayProp = serializedObject.FindProperty("GalleryVisibility");
-        _backgroundProp = serializedObject.FindProperty("BackgroundCapable");
+        _backgroundProp = serializedObject.FindProperty("NotBackgroundCapable");
     }
     public override void OnInspectorGUI()
     {

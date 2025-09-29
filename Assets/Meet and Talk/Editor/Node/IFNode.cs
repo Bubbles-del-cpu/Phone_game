@@ -37,7 +37,6 @@ namespace MeetAndTalk.Nodes
 
             title = "IF Node";
             SetPosition(new Rect(_position, defualtNodeSize));
-            nodeGuid = Guid.NewGuid().ToString();
 
             AddInputPort("Input ", Port.Capacity.Multi);
             AddOutputPort("If True", "True", Port.Capacity.Single);
@@ -58,11 +57,11 @@ namespace MeetAndTalk.Nodes
             {
                 ValueName = value.newValue;   
                 
-                // SprawdŸ, czy ValueName znajduje siê w manager.IntValues lub manager.FloatValues
+                // Sprawdï¿½, czy ValueName znajduje siï¿½ w manager.IntValues lub manager.FloatValues
                 bool isValueNameInIntValues = manager.IntValues.Any(intValue => intValue.ValueName == ValueName);
                 bool isValueNameInFloatValues = manager.FloatValues.Any(floatValue => floatValue.ValueName == ValueName);
 
-                // Ustaw widocznoœæ AvatarPositionField w zale¿noœci od warunków
+                // Ustaw widocznoï¿½ï¿½ AvatarPositionField w zaleï¿½noï¿½ci od warunkï¿½w
                 AvatarPositionField.style.display = isValueNameInIntValues || isValueNameInFloatValues ? DisplayStyle.Flex : DisplayStyle.None;
                 Value_Field.style.display = isValueNameInIntValues || isValueNameInFloatValues ? DisplayStyle.Flex : DisplayStyle.None;
             });
@@ -97,7 +96,7 @@ namespace MeetAndTalk.Nodes
             bool isValueNameInIntValues = manager.IntValues.Any(intValue => intValue.ValueName == ValueName);
             bool isValueNameInFloatValues = manager.FloatValues.Any(floatValue => floatValue.ValueName == ValueName);
 
-            // Ustaw widocznoœæ AvatarPositionField w zale¿noœci od warunków
+            // Ustaw widocznoï¿½ï¿½ AvatarPositionField w zaleï¿½noï¿½ci od warunkï¿½w
             AvatarPositionField.style.display = isValueNameInIntValues || isValueNameInFloatValues ? DisplayStyle.Flex : DisplayStyle.None;
             Value_Field.style.display = isValueNameInIntValues || isValueNameInFloatValues ? DisplayStyle.Flex : DisplayStyle.None;
 

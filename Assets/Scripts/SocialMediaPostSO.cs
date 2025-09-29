@@ -25,7 +25,7 @@ public class SocialMediaPostSO : ScriptableObject
     public Sprite Image;
     public VideoClip Video;
     public Sprite VideoThumbnail;
-    public bool BackgroundCapable;
+    public bool NotBackgroundCapable;
 
     public string MediaFileName
     {

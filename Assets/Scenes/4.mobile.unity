@@ -1161,7 +1161,7 @@ MonoBehaviour:
   _content: {fileID: 433836023}
   _unlockAllButton: {fileID: 258176187}
   StoryList:
-  - Story: {fileID: 11400000, guid: e6ceaba26fc854743b6e81dca67f8748, type: 2}
+  - Story: {fileID: 11400000, guid: 4b2b3afd41e68fe4c8c7a646981972b3, type: 2}
     StartID: 
     ChapterIndex: 0
     IsStoryChapter: 0
@@ -1490,8 +1490,93 @@ MonoBehaviour:
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
+  - Story: {fileID: 11400000, guid: 259efb97f27f2734caa8ada6559fd7f3, type: 2}
+    StartID: 
+    ChapterIndex: 0
+    IsStoryChapter: 0
+    ReplaySettings:
+    - DialogTitle: Are you more DOM or SUB?
+      Value:
+        ValueName: DOM_LVL
+      Option1Text: DOM
+      OptionSetting1: 110
+      Option2Text: SUB
+      OptionSetting2: 95
+    - DialogTitle: Did you continue with Math?
+      Value:
+        ValueName: Continue_math
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: If no did you and Lily plan the date with Khalid?
+      Value:
+        ValueName: khalid_meet
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+  - Story: {fileID: 11400000, guid: 690eb710124bd1d4b8361f740172594e, type: 2}
+    StartID: 
+    ChapterIndex: 0
+    IsStoryChapter: 0
+    ReplaySettings:
+    - DialogTitle: Did you continue with Math?
+      Value:
+        ValueName: Continue_math
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: If no did you and Lily plan the date with Khalid?
+      Value:
+        ValueName: khalid_meet
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: Did you accept home care
+      Value:
+        ValueName: AT_HOME_CARE
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: If yes did you extort Victoria?
+      Value:
+        ValueName: victoria_extort
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: If you did not extort Victoria. Did you watch a movie with her?
+      Value:
+        ValueName: vic_movie_night
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: Did you accept the docters tests?
+      Value:
+        ValueName: dr_happy
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
+    - DialogTitle: Does Lisa know you like to be cucked?
+      Value:
+        ValueName: dr_happy
+      Option1Text: Yes
+      OptionSetting1: true
+      Option2Text: No
+      OptionSetting2: false
   StandaloneChapters:
   - Story: {fileID: 11400000, guid: d4c97dc564b9dab409c930d50f4456ab, type: 2}
+    StartID: 
+    ChapterIndex: 0
+    IsStoryChapter: 0
+    ReplaySettings: []
+  - Story: {fileID: 11400000, guid: 4fcdbc19e69496d4ebf58ac5e251595d, type: 2}
     StartID: 
     ChapterIndex: 0
     IsStoryChapter: 0
@@ -2679,7 +2764,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_SizeDelta.y
@@ -3208,7 +3293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_SizeDelta.y
@@ -3334,7 +3419,7 @@ MonoBehaviour:
   overlayCanvas: {fileID: 535420369}
   GalleryConfig: {fileID: 11400000, guid: f190a8fe1415a9c488f19c2ad45bd59e, type: 2}
   _backgroundImageComponent: {fileID: 1145815081}
-  DefaultBackgroundSprite: {fileID: 21300000, guid: 6bfd1cb375a6b384ab7c3a2a8fef1a5d, type: 3}
+  DefaultBackgroundSprite: {fileID: -4364034832326165938, guid: 04e3a5bdb6c87434d909fbdfd0e80421, type: 3}
   notificationFX: {fileID: 8300000, guid: 6d650ae520bb84f46bbf6c224178723b, type: 3}
   receiveTextFX: {fileID: 8300000, guid: 68d887ca065d1f04c9429c3d98531c6f, type: 3}
   sendTextFX: {fileID: 8300000, guid: 3d76178808894194b9f64a154aa8e33b, type: 3}
@@ -4035,7 +4120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_SizeDelta.y
@@ -6758,7 +6843,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6bfd1cb375a6b384ab7c3a2a8fef1a5d, type: 3}
+  m_Sprite: {fileID: -8483731395159641348, guid: 35702ad1cd8142c4998c1702cbf98610, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6878,7 +6963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_SizeDelta.y
@@ -6986,8 +7071,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 94, y: -128.00499}
-  m_SizeDelta: {x: 140, y: 43.989998}
+  m_AnchoredPosition: {x: 94, y: -112.00499}
+  m_SizeDelta: {x: 140, y: 75.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &668380781
 MonoBehaviour:
@@ -7481,7 +7566,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_SizeDelta.y
@@ -7521,7 +7606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -64
+      value: -96
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7702,6 +7787,7 @@ MonoBehaviour:
   _singleNotificationOnly: 0
   ButtonPrefab: {fileID: -2090798969861149810, guid: aabebb1b3ddde5b469b80e84510cdaf5, type: 3}
   notificationPrefab: {fileID: 4561581163258094175, guid: 069a83a6c6813c14390b2211bf281582, type: 3}
+  NotificationCanvas: {fileID: 545350490}
   notificationsContainer: {fileID: 1390809904}
   HideIfLeftAvatarEmpty: []
   HideIfRightAvatarEmpty: []
@@ -8191,6 +8277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PanelOpenCount: 0
+  _navigationCanvas: {fileID: 802315484}
 --- !u!1 &824498003
 GameObject:
   m_ObjectHideFlags: 0
@@ -8555,7 +8642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8226525828464585428, guid: dc45c44b4dc74e745b38f4f3a3ba1181, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 8226525828464585428, guid: dc45c44b4dc74e745b38f4f3a3ba1181, type: 3}
       propertyPath: m_SizeDelta.y
@@ -8595,7 +8682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8226525828464585428, guid: dc45c44b4dc74e745b38f4f3a3ba1181, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -21.994999
+      value: -37.995
       objectReference: {fileID: 0}
     - target: {fileID: 8226525828464585428, guid: dc45c44b4dc74e745b38f4f3a3ba1181, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9767,7 +9854,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1207203134180617477, guid: b7abca7edcae76a4d957b7a22623f364, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 1207203134180617477, guid: b7abca7edcae76a4d957b7a22623f364, type: 3}
       propertyPath: m_SizeDelta.y
@@ -9885,7 +9972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_SizeDelta.y
@@ -10517,7 +10604,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6bfd1cb375a6b384ab7c3a2a8fef1a5d, type: 3}
+  m_Sprite: {fileID: -4364034832326165938, guid: 04e3a5bdb6c87434d909fbdfd0e80421, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -11726,7 +11813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_SizeDelta.y
@@ -11766,7 +11853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -108
+      value: -268
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -12320,10 +12407,6 @@ PrefabInstance:
     - target: {fileID: 602498409131702052, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 602498409131702052, guid: 1d65d9481219718439accc523ad13d99, type: 3}
-      propertyPath: m_NumberOfSteps
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1310714138103472768, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_VerticalFit
@@ -17382,7 +17465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_SizeDelta.y
@@ -17422,7 +17505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -86
+      value: -182
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -17752,7 +17835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8226525828464585428, guid: dc45c44b4dc74e745b38f4f3a3ba1181, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 8226525828464585428, guid: dc45c44b4dc74e745b38f4f3a3ba1181, type: 3}
       propertyPath: m_SizeDelta.y
@@ -17792,7 +17875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8226525828464585428, guid: dc45c44b4dc74e745b38f4f3a3ba1181, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -21.994999
+      value: -37.995
       objectReference: {fileID: 0}
     - target: {fileID: 8226525828464585428, guid: dc45c44b4dc74e745b38f4f3a3ba1181, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -18530,7 +18613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8735772058212677969, guid: cd1b563eaf3f5f242a9fff9bab9e2fd3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 8735772058212677969, guid: cd1b563eaf3f5f242a9fff9bab9e2fd3, type: 3}
       propertyPath: m_SizeDelta.y
@@ -18570,7 +18653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8735772058212677969, guid: cd1b563eaf3f5f242a9fff9bab9e2fd3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -130
+      value: -354
       objectReference: {fileID: 0}
     - target: {fileID: 8735772058212677969, guid: cd1b563eaf3f5f242a9fff9bab9e2fd3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

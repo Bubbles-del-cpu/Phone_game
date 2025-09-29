@@ -10,7 +10,7 @@ public class GalleryImageButton : GalleryButtonBase
     {
         base.Setup(chapterData, nodeData, isSocialMediaPost);
 
-        (Sprite image,bool backgroundCapable) mediaData = nodeData.GetNodeImageData(isSocialMediaPost);
+        (Sprite image, bool backgroundCapable) mediaData = nodeData.GetNodeImageData(isSocialMediaPost);
         _image.sprite = mediaData.image;
         _lockedImage.sprite = mediaData.image;
     }

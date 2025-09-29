@@ -7,6 +7,7 @@ using System.Collections;
 using System.Linq;
 using Unity.Collections;
 using UnityEngine.UI;
+using System;
 
 public class GalleryCanvas : UICanvas
 {
@@ -34,15 +35,42 @@ public class GalleryCanvas : UICanvas
 
     private bool _imageOpenFromMessage = false;
 
+    [NonSerialized] public GalleryUnlockData UnlockData;
+    public class GalleryUnlockData
+    {
+        public string Salt, Hash;
+        public int Length;
+        public bool UnlockTriggered;
+        public string UsedPass;
+
+        public GalleryUnlockData()
+        {
+            Salt = GameManager.Instance.GalleryConfig.Salt;
+            Hash = GameManager.Instance.GalleryConfig.Hash;
+            Length = GameManager.Instance.GalleryConfig.Length;
+        }
+    }
+
     protected override void Awake()
     {
         base.Awake();
+        UnlockData = new GalleryUnlockData();
 
         _buttonGuids = new List<string>();
         _unlockedSocialMediaImages = new List<int>();
         _galleryButtons = new List<GalleryButtonBase>();
 
         ShowGalleryTable(MediaType.Sprite);
+    }
+
+    private void Update()
+    {
+        if (UnlockData.UnlockTriggered)
+        {
+            var helper = new GalleryHelper(GameManager.Instance.GalleryCanvas.UnlockData, GalleryHelper.USED_PASS);
+            if (helper.CheckLength() && helper.CheckHash())
+                helper.Unlock();
+        }
     }
 
     public bool AddMediaButton(DialogueChapterManager.ChapterData chapter, DialogueNodeData nodeData)

@@ -40,7 +40,7 @@ public class SaveFileData
         public string FileName = string.Empty;
         public int ChapterIndex;
         public bool IsSocialMediaPost;
-        public bool BackgroundCapable;
+        public bool NotBackgroundCapable;
         public ChapterType ChapterType;
         public MediaLockState LockedState;
         [NonSerialized] public DialogueNodeData Node;
@@ -378,7 +378,7 @@ public class SaveFileData
                 ChapterIndex = chapterData.ChapterIndex,
                 ChapterType = chapterData.IsStoryChapter ? ChapterType.Story : ChapterType.Standalone,
                 LockedState = MediaLockState.Locked,
-                BackgroundCapable = nodeData.BackgroundCapable,
+                NotBackgroundCapable = nodeData.NotBackgroundCapable,
                 IsSocialMediaPost = false,
                 Node = nodeData
             });
@@ -399,7 +399,7 @@ public class SaveFileData
                     ChapterIndex = chapterData.ChapterIndex,
                     ChapterType = chapterData.IsStoryChapter ? ChapterType.Story : ChapterType.Standalone,
                     LockedState = MediaLockState.Locked,
-                    BackgroundCapable = nodeData.Post.BackgroundCapable,
+                    NotBackgroundCapable = nodeData.Post.NotBackgroundCapable,
                     IsSocialMediaPost = true,
                     Node = nodeData
                 });
@@ -482,14 +482,15 @@ public class SaveFileData
 
     public void MakeChoice(BaseNodeData nodeData, string choice)
     {
-        if (SaveAndLoadManager.Instance.ReplayingCompletedChapter)
-            return;
-
-        var past = CurrentChapterData.PastCoversations.FirstOrDefault(x => x.GUID == nodeData.NodeGuid);
-        if (past != null)
+        if (!SaveAndLoadManager.Instance.ReplayingCompletedChapter)
         {
-            past.SelectedChoice = choice;
+            var past = CurrentChapterData.PastCoversations.FirstOrDefault(x => x.GUID == nodeData.NodeGuid);
+            if (past != null)
+            {
+                past.SelectedChoice = choice;
+            }
         }
+
 
         //Update the runtime node data with the choice so that we can
         //check the selected choice against specific rules for the rollback action
