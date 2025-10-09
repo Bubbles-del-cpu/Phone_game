@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Custom_Blur
+  m_Name: Custom_Blur 1
   m_Shader: {fileID: 4800000, guid: 671d74aa9516e4c45a5ffc88eaf21009, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -32,17 +32,17 @@ Material:
     - PixelSnap: 0
     - _BlurSize: 0.0057
     - _ColorMask: 15
-    - _Radius: 30
+    - _Radius: 15.4
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilOp: 0
     - _StencilReadMask: 255
     - _StencilWriteMask: 255
     - _UseUIAlphaClip: 0
-    - hstep: 0.117
+    - hstep: 0.648
     - resolution: 256
-    - vstep: 0.286
+    - vstep: 0.826
     m_Colors:
-    - _Color: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

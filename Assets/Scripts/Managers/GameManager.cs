@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System;
 using UnityEngine.Video;
+using UnityEngine.UI;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {

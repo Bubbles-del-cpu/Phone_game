@@ -11,7 +11,7 @@ public abstract class GalleryButtonBase : MonoBehaviour
     public string HintText { get; private set; }
 
     [SerializeField] protected Image _image;
-    [SerializeField] protected Image _lockedImage;
+    [SerializeField] protected UITextureBlur _lockedImage;
     [SerializeField] protected GameObject _lockedContainer;
 
     protected Button _button;
@@ -35,7 +35,6 @@ public abstract class GalleryButtonBase : MonoBehaviour
         });
 
         _image.preserveAspect = true;
-        _lockedImage.preserveAspect = true;
     }
 
     public void Setup(DialogueChapterManager.ChapterData chapterData, DialogueNodeData nodeData, bool isSocialMediaPost)

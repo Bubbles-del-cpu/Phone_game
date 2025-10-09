@@ -11,7 +11,6 @@ public class GalleryImageButton : GalleryButtonBase
         set
         {
             _image.sprite = value;
-            _lockedImage.sprite = value;
         }
     }
 

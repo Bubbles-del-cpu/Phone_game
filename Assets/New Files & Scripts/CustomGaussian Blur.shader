@@ -79,9 +79,9 @@ Shader "Custom/Gaussian Blur"
             };
 
             sampler2D _MainTex;
-            fixed4 _Color;
             fixed4 _TextureSampleAdd;
             float4 _ClipRect;
+            float4 _Color;
             float _Radius;
             float resolution;
             float hstep;

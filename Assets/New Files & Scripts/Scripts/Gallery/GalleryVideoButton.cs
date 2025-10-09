@@ -47,7 +47,7 @@ public class GalleryVideoButton : GalleryButtonBase
             if (_fallbackThumbnail != null)
             {
                 _image.sprite = _fallbackThumbnail;
-                _lockedImage.sprite = _fallbackThumbnail;
+                _lockedImage.ApplyBlur();
             }
             else
             {
@@ -56,7 +56,8 @@ public class GalleryVideoButton : GalleryButtonBase
                 {
                     _videoPreviewSprite = Sprite.Create((Texture2D)_previewTexture, new Rect(0, 0, _previewTexture.width, _previewTexture.height), new Vector2(0.5f, 0.5f));
                     _image.sprite = _videoPreviewSprite;
-                    _lockedImage.sprite = _videoPreviewSprite;
+                    if (_videoPreviewSprite != null)
+                        _lockedImage.ApplyBlur();
                 }
             }
         }

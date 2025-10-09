@@ -56,6 +56,10 @@ public class SaveAndLoadManager : MonoBehaviour
         CurrentSave.CurrentState.SavedVariables = ValueManager.ConvertSaveFile();
 
         //DialogueChapterManager.Instance.Show()
+    }
+
+    public void StartGame()
+    {
         DialogueUIManager.Instance.DisplayHints = CurrentSave.DisplayHints;
         DialogueChapterManager.Instance.TriggerStoryChapter(CurrentSave.CurrentState.CompletedChapters.Count);
         GameManager.Instance.GalleryCanvas.Load();
