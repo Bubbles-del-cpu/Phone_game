@@ -1,19 +1,22 @@
 using System.Collections;
+using MeetAndTalk;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Video;
 
 public class FullScreenMediaMessageViewer : MonoBehaviour, IPointerClickHandler
 {
-    private MediaType _type;
-    private Sprite _image;
-    private VideoClip _clip;
+    private MediaType _type => _assignedNode.PostMediaType;
+    private Sprite _image => _assignedNode.Image;
+    private VideoClip _clip => _assignedNode.Video;
 
-    public void Setup(MediaType type, Sprite image, VideoClip clip)
+    private DialogueNodeData _assignedNode;
+    private bool _isSocialMediaPost;
+
+    public void Setup(DialogueNodeData nodeData, bool isSocialMediaPost)
     {
-        _type = type;
-        _image = image;
-        _clip = clip;
+        _assignedNode = nodeData;
+        _isSocialMediaPost = isSocialMediaPost;
 
         switch (_type)
         {
@@ -34,10 +37,10 @@ public class FullScreenMediaMessageViewer : MonoBehaviour, IPointerClickHandler
         switch (_type)
         {
             case MediaType.Sprite:
-                galleryCanvas.OpenImage(_image, true);
+                galleryCanvas.OpenImage(_assignedNode, openedFromMessage: true, _isSocialMediaPost);
                 break;
             case MediaType.Video:
-                galleryCanvas.OpenVideo(_clip, true);
+                galleryCanvas.OpenVideo(_assignedNode, openedFromMessage: true, _isSocialMediaPost);
                 break;
         }
     }

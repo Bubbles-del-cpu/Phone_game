@@ -205,7 +205,7 @@ namespace MeetAndTalk
                                 targetFound = true;
 
                                 //Removes the dialogue choice that the Player selected so that it can be rollbacked and re-selected
-                                if (choiceNode.SelectedChoice[0] != '*')
+                                if (choiceNode.SelectedChoice.Length > 0 && choiceNode.SelectedChoice[0] != '*')
                                     rollbackList[choiceNode.Character] += 1;
 
                                 targetNode = choiceNode;

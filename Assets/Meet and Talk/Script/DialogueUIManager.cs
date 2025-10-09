@@ -4,8 +4,6 @@ using UnityEngine.Events;
 using TMPro;
 using System.Text.RegularExpressions;
 using MeetAndTalk.GlobalValue;
-using System.Linq;
-using UnityEditor.EditorTools;
 
 namespace MeetAndTalk
 {
@@ -62,6 +60,7 @@ namespace MeetAndTalk
         [Header("Component References")]
 
         [SerializeField] Notification notificationPrefab;
+        public Canvas NotificationCanvas;
         [SerializeField] RectTransform notificationsContainer;
         //public UIPanel ButtonContainer;
 

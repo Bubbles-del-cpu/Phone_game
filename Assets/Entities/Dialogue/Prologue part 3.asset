@@ -1,0 +1,290 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Prologue part 3
+  m_EditorClassIdentifier: 
+  AllowDialogueSave: 0
+  BlockingReopeningDialogue: 0
+  NodeLinkDatas:
+  - BaseNodeGuid: 65d23501-ca2d-4a93-97ec-0607e98ace0d
+    TargetNodeGuid: b4348d17-3884-40aa-8920-b4f413e15bd0
+  - BaseNodeGuid: b4348d17-3884-40aa-8920-b4f413e15bd0
+    TargetNodeGuid: 897f1620-59e1-4ec6-82d5-a42b13f3d933
+  - BaseNodeGuid: 897f1620-59e1-4ec6-82d5-a42b13f3d933
+    TargetNodeGuid: e27da0af-8607-4b6b-bfa1-94f104d03579
+  - BaseNodeGuid: e27da0af-8607-4b6b-bfa1-94f104d03579
+    TargetNodeGuid: 6e3ca930-f01e-4129-96f9-86dac7e70a0e
+  - BaseNodeGuid: 6e3ca930-f01e-4129-96f9-86dac7e70a0e
+    TargetNodeGuid: 5e4ac72b-5001-486f-a193-cfcb6fbd1617
+  - BaseNodeGuid: 5e4ac72b-5001-486f-a193-cfcb6fbd1617
+    TargetNodeGuid: 46270bb0-764e-4018-ab1f-fe07ffb9f85b
+  - BaseNodeGuid: 8a4d04d1-cc6e-4eb0-bb8c-33e52cb5d944
+    TargetNodeGuid: 99dc7769-e4f7-4637-a51c-7da8133672ec
+  - BaseNodeGuid: 46270bb0-764e-4018-ab1f-fe07ffb9f85b
+    TargetNodeGuid: 8a4d04d1-cc6e-4eb0-bb8c-33e52cb5d944
+  - BaseNodeGuid: 46270bb0-764e-4018-ab1f-fe07ffb9f85b
+    TargetNodeGuid: 8a4d04d1-cc6e-4eb0-bb8c-33e52cb5d944
+  - BaseNodeGuid: 99dc7769-e4f7-4637-a51c-7da8133672ec
+    TargetNodeGuid: 7a472b2f-5e32-4fcf-bf91-ab97dba687c5
+  DialogueChoiceNodeDatas:
+  - NodeGuid: 46270bb0-764e-4018-ab1f-fe07ffb9f85b
+    Position: {x: 1571, y: 361}
+    DialogueNodePorts:
+    - PortGuid: 17d25544-a357-4432-93bc-9ebfb180bf7c
+      InputGuid: 8a4d04d1-cc6e-4eb0-bb8c-33e52cb5d944
+      OutputGuid: 46270bb0-764e-4018-ab1f-fe07ffb9f85b
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Hey babe
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: anit gay
+      - languageEnum: 1
+        LanguageGenericType: 
+    - PortGuid: 7bcd23f1-d309-4a76-8e54-527631216b80
+      InputGuid: 8a4d04d1-cc6e-4eb0-bb8c-33e52cb5d944
+      OutputGuid: 46270bb0-764e-4018-ab1f-fe07ffb9f85b
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: '**dont say anything to lily'
+      - languageEnum: 1
+        LanguageGenericType: Choice 02
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: gay
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: 
+  - NodeGuid: 99dc7769-e4f7-4637-a51c-7da8133672ec
+    Position: {x: 2118, y: 375}
+    DialogueNodePorts:
+    - PortGuid: 80375d67-11de-4f64-869d-941cdcc21da4
+      InputGuid: 7a472b2f-5e32-4fcf-bf91-ab97dba687c5
+      OutputGuid: 99dc7769-e4f7-4637-a51c-7da8133672ec
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: end
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: 
+  DialogueNodeDatas:
+  - NodeGuid: b4348d17-3884-40aa-8920-b4f413e15bd0
+    Position: {x: 481, y: 371}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    PostMediaType: 0
+    Image: {fileID: -1779456597711304693, guid: 068e0e28cb2c3bc4690050672d975b66, type: 3}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    Timelapse: 
+    DelayTimer: 0
+  - NodeGuid: 897f1620-59e1-4ec6-82d5-a42b13f3d933
+    Position: {x: 696, y: 367}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    PostMediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    Timelapse: 5 minutes
+    DelayTimer: 0
+  - NodeGuid: e27da0af-8607-4b6b-bfa1-94f104d03579
+    Position: {x: 914, y: 362}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Hey
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    PostMediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    Timelapse: 
+    DelayTimer: 0
+  - NodeGuid: 6e3ca930-f01e-4129-96f9-86dac7e70a0e
+    Position: {x: 1140, y: 366}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: hey 2
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    PostMediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    Timelapse: 
+    DelayTimer: 0
+  - NodeGuid: 5e4ac72b-5001-486f-a193-cfcb6fbd1617
+    Position: {x: 1348, y: 359}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    PostMediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    Timelapse: 5 minutes later
+    DelayTimer: 0
+  - NodeGuid: 8a4d04d1-cc6e-4eb0-bb8c-33e52cb5d944
+    Position: {x: 1901, y: 362}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: hi
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    PostMediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    Timelapse: 
+    DelayTimer: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 7a472b2f-5e32-4fcf-bf91-ab97dba687c5
+    Position: {x: 2485, y: 369}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 65d23501-ca2d-4a93-97ec-0607e98ace0d
+    Position: {x: 328, y: 539}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []

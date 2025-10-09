@@ -6,38 +6,11 @@ public class GalleryUnlockConfig : ScriptableObject
 {
     [SerializeField] private string _codeHash; // Store hash, not plain text
     [SerializeField] private string _salt = "YourGameSpecificSalt2024";
+    [SerializeField] private int _reference;
 
-    public bool IsValidCode(string inputCode)
-    {
-#if UNITY_EDITOR
-        if (inputCode == "DEV UNLOCK")
-            return true;
-#endif
-        string inputHash = ComputeHashWithSalt(inputCode, _salt);
-        return string.Equals(_codeHash, inputHash, StringComparison.Ordinal);
-    }
-
-    public void Unlock()
-    {
-        //Unlock the gallery buttons
-        foreach (var item in SaveAndLoadManager.Instance.CurrentSave.UnlockedMedia)
-        {
-            GameManager.Instance.GalleryCanvas.UnlockMedia(item.FileName);
-        }
-
-        SaveAndLoadManager.Instance.CurrentSave.UnlockAllMedia();
-        SaveAndLoadManager.Instance.AutoSave();
-    }
-
-    private string ComputeHashWithSalt(string input, string salt)
-    {
-        using (var sha256 = System.Security.Cryptography.SHA256.Create())
-        {
-            string combined = input + salt;
-            byte[] bytes = sha256.ComputeHash(System.Text.Encoding.UTF8.GetBytes(combined));
-            return System.Convert.ToBase64String(bytes);
-        }
-    }
+    public string Salt => _salt;
+    public string Hash => _codeHash;
+    public int Length => _reference;
 
 #if UNITY_EDITOR
     [Header("Editor Only - For Hash Generation")]
@@ -48,7 +21,8 @@ public class GalleryUnlockConfig : ScriptableObject
     {
         if (!string.IsNullOrEmpty(plainTextCode))
         {
-            _codeHash = ComputeHashWithSalt(plainTextCode, _salt);
+            _codeHash = GalleryHelper.ComputeHash(plainTextCode, _salt);
+            _reference = plainTextCode.Length;
             plainTextCode = ""; // Clear after generating
             UnityEditor.EditorUtility.SetDirty(this);
         }
