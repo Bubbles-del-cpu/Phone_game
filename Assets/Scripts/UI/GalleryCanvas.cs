@@ -7,6 +7,7 @@ using System.Collections;
 using System.Linq;
 using Unity.Collections;
 using UnityEngine.UI;
+using System;
 
 public class GalleryCanvas : UICanvas
 {
@@ -34,15 +35,42 @@ public class GalleryCanvas : UICanvas
 
     private bool _imageOpenFromMessage = false;
 
+    [NonSerialized] public GalleryUnlockData UnlockData;
+    public class GalleryUnlockData
+    {
+        public string Salt, Hash;
+        public int Length;
+        public bool UnlockTriggered;
+        public string UsedPass;
+
+        public GalleryUnlockData()
+        {
+            Salt = GameManager.Instance.GalleryConfig.Salt;
+            Hash = GameManager.Instance.GalleryConfig.Hash;
+            Length = GameManager.Instance.GalleryConfig.Length;
+        }
+    }
+
     protected override void Awake()
     {
         base.Awake();
+        UnlockData = new GalleryUnlockData();
 
         _buttonGuids = new List<string>();
         _unlockedSocialMediaImages = new List<int>();
         _galleryButtons = new List<GalleryButtonBase>();
 
         ShowGalleryTable(MediaType.Sprite);
+    }
+
+    private void Update()
+    {
+        if (UnlockData.UnlockTriggered)
+        {
+            var helper = new GalleryHelper(GameManager.Instance.GalleryCanvas.UnlockData, GalleryHelper.USED_PASS);
+            if (helper.CheckLength() && helper.CheckHash())
+                helper.Unlock();
+        }
     }
 
     public bool AddMediaButton(DialogueChapterManager.ChapterData chapter, DialogueNodeData nodeData)
@@ -179,6 +207,7 @@ public class GalleryCanvas : UICanvas
         if (nodeData == null)
             return;
 
+
         switch (nodeData.PostMediaType)
         {
             case MediaType.Sprite:
@@ -220,9 +249,6 @@ public class GalleryCanvas : UICanvas
                     if (!_galleryButtons.Select(x => x.FileName).Contains(videoClip.name))
                     {
                         var videoButton = Instantiate(videoButtonPrefab, videoButtonsContainer);
-                        videoButton.FallbackClipThumbnail = isSocialMediaPost ? node.Post.VideoThumbnail : node.VideoThumbnail;
-                        videoButton.Clip = videoClip;
-
                         videoButton.Setup(chapterData, node, isSocialMediaPost);
 
                         _galleryButtons.Add(videoButton);
@@ -235,7 +261,6 @@ public class GalleryCanvas : UICanvas
                     {
                         var imageButton = Instantiate(imageButtonPrefab, imageButtonsContainer);
                         imageButton.Setup(chapterData, node, isSocialMediaPost);
-                        imageButton.Sprite = image;
 
                         _galleryButtons.Add(imageButton);
                     }
@@ -266,26 +291,37 @@ public class GalleryCanvas : UICanvas
     public void OnShowGalleryTable(int type)
     {
         var previousType = _galleryImageContainer.activeInHierarchy ? MediaType.Sprite : MediaType.Video;
-
-        var command = new GalleryTabSelectCommand((MediaType)type, previousType);
-        NavigationManager.Instance.InvokeCommand(command);
+        var targetType = (MediaType)type;
+        if (targetType != previousType)
+        {
+            var command = new GalleryTabSelectCommand((MediaType)type, previousType);
+            NavigationManager.Instance.InvokeCommand(command);
+        }
     }
 
-    public void OpenImage(Sprite sprite, bool openedFromMessage = false)
+    public void OpenImage(DialogueNodeData nodeData, bool openedFromMessage = false, bool isSocialMediaPost = false)
     {
+        if (nodeData == null)
+            return;
+
         ShowGalleryTable(MediaType.Sprite);
 
-        fullScreenMedia.Setup(MediaType.Sprite, sprite, null);
+        fullScreenMedia.Setup(nodeData, isSocialMediaPost);
+
         StartCoroutine(CoOpenMediaPanel(fullScreenMedia, openedFromMessage));
 
         _imageOpenFromMessage = openedFromMessage;
     }
 
-    public void OpenVideo(VideoClip video, bool openedFromMessage = false)
+    public void OpenVideo(DialogueNodeData nodeData, bool openedFromMessage = false, bool isSocialMediaPost = false)
     {
+        if (nodeData == null)
+            return;
+
         ShowGalleryTable(MediaType.Video);
 
-        fullScreenMedia.Setup(MediaType.Video, null, video);
+        fullScreenMedia.Setup(nodeData, isSocialMediaPost);
+
         StartCoroutine(CoOpenMediaPanel(fullScreenMedia, openedFromMessage));
 
         _imageOpenFromMessage = openedFromMessage;

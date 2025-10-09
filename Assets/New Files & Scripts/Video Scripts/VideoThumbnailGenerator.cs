@@ -23,8 +23,27 @@ public class VideoThumbnailGenerator : MonoBehaviour
         videoPlayer.playOnAwake = false;
     }
 
+    [SerializeField] private float _thumbnailRegenTimer = 2;
+    [SerializeField] private bool _performThumbnailRegeneration;
+    private float _timer = 0;
+    private bool _canRegen = false;
+
+    private void Update()
+    {
+        if (_canRegen && _performThumbnailRegeneration)
+        {
+            _timer += Time.deltaTime;
+            if (_timer >= _thumbnailRegenTimer)
+            {
+                _canRegen = false;
+                _timer = 0;
+                StartCoroutine(CoRegenerate());
+            }
+        }
+    }
+
     [ContextMenu("DEBUG_RegenerateAll")]
-    void RegenerateAll()
+    public void RegenerateAll()
     {
         StartCoroutine(CoRegenerate());
     }
@@ -35,12 +54,14 @@ public class VideoThumbnailGenerator : MonoBehaviour
         foreach (var item in GameManager.Instance.Thumbnails.Keys.ToList())
         {
             complete = false;
-            Debug.Log($"Starting thumbnail generation for {item}");
+            //Debug.Log($"Starting thumbnail generation for {item}");
             GenerateThumbnail(item, (texture) =>
             {
                 complete = true;
                 Debug.Log($"Thumbnail generation completed for {item}");
-                GameManager.Instance.Thumbnails[item] = texture;
+
+                var sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+                GameManager.Instance.Thumbnails[item] = (texture, sprite, GameManager.Instance.Thumbnails[item].Item3);
             });
 
             while (!complete)
@@ -48,6 +69,8 @@ public class VideoThumbnailGenerator : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
         }
+
+        _canRegen = true;
     }
 
     public void GenerateThumbnail(VideoClip video, System.Action<Texture2D> onComplete)
@@ -108,7 +131,7 @@ public class VideoThumbnailGenerator : MonoBehaviour
 
         // Create render texture with correct aspect ratio
         RenderTexture renderTexture = new RenderTexture(thumbnailWidth, thumbnailHeight, 24);
-        renderTexture.depthStencilFormat = UnityEngine.Experimental.Rendering.GraphicsFormat.D24_UNorm_S8_UInt;
+        renderTexture.depthStencilFormat = UnityEngine.Experimental.Rendering.GraphicsFormat.D32_SFloat;
         cam.targetTexture = renderTexture;
 
         // Adjust camera to match video aspect ratio
@@ -129,72 +152,29 @@ public class VideoThumbnailGenerator : MonoBehaviour
         // Wait for several frames
         yield return new WaitForSeconds(_playTime);
 
+        // Capture the result
+        // Cleanup
+        videoPlayer.Pause();
+
+        //videoPlayer.frame = 0;
+
+        videoPlayer.Prepare();
+
         // Render the camera
         cam.Render();
 
-        // Capture the result
         Texture2D thumbnail = RenderTextureToTexture2D(renderTexture);
-        _positionOffset -= 100;
-        // Cleanup
-        videoPlayer.Stop();
+        yield return new WaitForSeconds(0.1f);
+
         DestroyImmediate(cameraGO);
         DestroyImmediate(quadGO);
         renderTexture.Release();
 
+        _positionOffset -= 100;
+
+        yield return new WaitForSeconds(0.1f);
         onComplete?.Invoke(thumbnail);
     }
-
-    // private IEnumerator GenerateThumbnailCoroutine(VideoClip video, System.Action<Texture2D> onComplete)
-    // {
-    //     RenderTexture renderTexture = new RenderTexture((int)video.width, (int)video.height, 0);
-
-    //     // Configure VideoPlayer
-    //     videoPlayer.playOnAwake = false;
-    //     videoPlayer.clip = video;
-    //     videoPlayer.renderMode = VideoRenderMode.RenderTexture;
-    //     videoPlayer.targetTexture = renderTexture;
-    //     videoPlayer.skipOnDrop = true;
-
-    //     // Subscribe to frame ready event
-    //     bool frameReady = false;
-    //     videoPlayer.frameReady += (VideoPlayer vp, long frameIdx) =>
-    //     {
-    //         frameReady = true;
-    //     };
-
-    //     // Prepare the video
-    //     videoPlayer.Prepare();
-
-    //     // Wait for video to be prepared
-    //     while (!videoPlayer.isPrepared)
-    //     {
-    //         yield return null;
-    //     }
-
-    //     // Seek to desired time (optional)
-    //     videoPlayer.time = _playTime; // 1 second in
-
-    //     // Play the video
-    //     videoPlayer.Play();
-
-    //     // Wait for the first frame to be ready
-    //     while (!frameReady)
-    //     {
-    //         yield return null;
-    //     }
-
-    //     // Wait one more frame to ensure rendering is complete
-    //     yield return new WaitForEndOfFrame();
-
-    //     // Capture the frame
-    //     Texture2D thumbnail = RenderTextureToTexture2D(renderTexture);
-
-    //     // Cleanup
-    //     videoPlayer.Stop();
-    //     renderTexture.Release();
-
-    //     onComplete?.Invoke(thumbnail);
-    // }
 
     private bool IsValidThumbnail(Texture2D texture)
     {

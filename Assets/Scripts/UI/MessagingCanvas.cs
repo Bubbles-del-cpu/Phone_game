@@ -85,6 +85,8 @@ public class MessagingCanvas : UICanvas
 
     public void SetupPanel(DialogueCharacterSO _character)
     {
+        CheckCharacter(_character);
+
         conversations[_character].Open();
         conversationsPanel.Open();
     }

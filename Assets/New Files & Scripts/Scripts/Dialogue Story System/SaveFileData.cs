@@ -7,7 +7,7 @@ using Unity.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
-[System.Serializable]
+[Serializable]
 public class SaveFileData
 {
     public static string SAVE_FILE_VERSION = "0.10";
@@ -15,6 +15,7 @@ public class SaveFileData
     public int SaveFileSlot;
     public bool ForceUnlockAllChapters;
     public bool DisplayHints;
+    public MediaData CustomBackgroundImage;
     public SystemLanguage LocalizationValue;
     [NonSerialized] public GameSaveState CurrentState;
     public int TotalChapters => CurrentState.Chapters.Count;
@@ -38,8 +39,11 @@ public class SaveFileData
         public string NodeGUID = string.Empty;
         public string FileName = string.Empty;
         public int ChapterIndex;
+        public bool IsSocialMediaPost;
+        public bool NotBackgroundCapable;
         public ChapterType ChapterType;
         public MediaLockState LockedState;
+        [NonSerialized] public DialogueNodeData Node;
     }
 
     [System.Serializable]
@@ -154,7 +158,7 @@ public class SaveFileData
             });
         }
 
-        saveFile.UpdateMediaData();
+        saveFile.UpdateMediaData(generateThumbnails: false);
 
         return saveFile;
     }
@@ -206,7 +210,8 @@ public class SaveFileData
             wasUpdated = true;
         }
 
-        UpdateMediaData();
+        UpdateMediaData(generateThumbnails: true);
+
         if (wasUpdated)
         {
             //Save the file so that it is instantly updated with the new change and output a message to the debugger
@@ -216,17 +221,17 @@ public class SaveFileData
         SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
     }
 
-    public void UpdateMediaData()
+    public void UpdateMediaData(bool generateThumbnails)
     {
         var mediaCopy = new List<MediaData>(UnlockedMedia);
         UnlockedMedia.Clear();
 
         //Collect all new gallery content and update any existing if required
-        CollectMediaFromChapters(mediaCopy);
+        CollectMediaFromChapters(mediaCopy, generateThumbnails);
         //CollectMediaFromChapters(DialogueChapterManager.Instance.StandaloneChapters, mediaCopy.Where(x => !x.ChapterType));
     }
 
-    private void CollectMediaFromChapters(IEnumerable<MediaData> saveFileData)
+    private void CollectMediaFromChapters(IEnumerable<MediaData> saveFileData, bool generateThumbnails)
     {
         //Add all the gallery content, initially everything will start out as locked
         foreach (var chapter in DialogueChapterManager.Instance.StoryList)
@@ -241,52 +246,55 @@ public class SaveFileData
                 AddMedia(chapter, dialogueNode);
         }
 
+        if (generateThumbnails)
+            GameManager.Instance.GenerateThumbnails();
+
         //Take the current saved media and buttons and unlock them based on our save file data
-            foreach (var item in saveFileData)
+        foreach (var item in saveFileData)
+        {
+            try
             {
-                try
+                if (item.FileName == string.Empty)
                 {
-                    if (item.FileName == string.Empty)
+                    var chapter = DialogueChapterManager.Instance.StoryList[item.ChapterIndex];
+                    switch (item.ChapterType)
                     {
-                        var chapter = DialogueChapterManager.Instance.StoryList[item.ChapterIndex];
-                        switch (item.ChapterType)
-                        {
-                            case ChapterType.Standalone:
-                                chapter = DialogueChapterManager.Instance.StandaloneChapters[item.ChapterIndex];
-                                break;
+                        case ChapterType.Standalone:
+                            chapter = DialogueChapterManager.Instance.StandaloneChapters[item.ChapterIndex];
+                            break;
 
-                        }
-
-                        var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, item.NodeGUID);
-                        if (node != null)
-                        {
-                            switch (item.LockedState)
-                            {
-                                case MediaLockState.Unknown:
-                                    UnlockMedia((DialogueNodeData)node, false);
-                                    break;
-                                case MediaLockState.Unlocked:
-                                    UnlockMedia((DialogueNodeData)node, false);
-                                    break;
-                            }
-                        }
                     }
-                    else
+
+                    var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, item.NodeGUID);
+                    if (node != null)
                     {
                         switch (item.LockedState)
                         {
                             case MediaLockState.Unknown:
+                                UnlockMedia((DialogueNodeData)node, false);
+                                break;
                             case MediaLockState.Unlocked:
-                                UnlockMedia(item.FileName, false);
+                                UnlockMedia((DialogueNodeData)node, false);
                                 break;
                         }
                     }
                 }
-                catch (Exception ex)
+                else
                 {
-                    Debug.LogError($"Valied to collect media from chapter. {ex.Message}");
+                    switch (item.LockedState)
+                    {
+                        case MediaLockState.Unknown:
+                        case MediaLockState.Unlocked:
+                            UnlockMedia(item.FileName, false);
+                            break;
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                Debug.LogError($"Valied to collect media from chapter. {ex.Message}");
+            }
+        }
     }
 
     public ChapterSaveData CurrentChapterData
@@ -369,11 +377,13 @@ public class SaveFileData
                 FileName = nodeData.MediaFileName,
                 ChapterIndex = chapterData.ChapterIndex,
                 ChapterType = chapterData.IsStoryChapter ? ChapterType.Story : ChapterType.Standalone,
-                LockedState = MediaLockState.Locked
+                LockedState = MediaLockState.Locked,
+                NotBackgroundCapable = nodeData.NotBackgroundCapable,
+                IsSocialMediaPost = false,
+                Node = nodeData
             });
 
-            if (nodeData.Video != null && nodeData.VideoThumbnail != null)
-                GameManager.Instance.SetVideoFrame(nodeData.Video, nodeData.VideoThumbnail);
+            GameManager.Instance.SetVideoFrame(nodeData.Video, nodeData.VideoThumbnail);
         }
 
         if (nodeData.Post != null)
@@ -388,11 +398,13 @@ public class SaveFileData
                     FileName = nodeData.Post.MediaFileName,
                     ChapterIndex = chapterData.ChapterIndex,
                     ChapterType = chapterData.IsStoryChapter ? ChapterType.Story : ChapterType.Standalone,
-                    LockedState = MediaLockState.Locked
+                    LockedState = MediaLockState.Locked,
+                    NotBackgroundCapable = nodeData.Post.NotBackgroundCapable,
+                    IsSocialMediaPost = true,
+                    Node = nodeData
                 });
 
-                if (nodeData.Post.Video != null && nodeData.Post.VideoThumbnail != null)
-                    GameManager.Instance.SetVideoFrame(nodeData.Post.Video, nodeData.Post.VideoThumbnail);
+                GameManager.Instance.SetVideoFrame(nodeData.Post.Video, nodeData.Post.VideoThumbnail);
             }
         }
 
@@ -470,14 +482,15 @@ public class SaveFileData
 
     public void MakeChoice(BaseNodeData nodeData, string choice)
     {
-        if (SaveAndLoadManager.Instance.ReplayingCompletedChapter)
-            return;
-
-        var past = CurrentChapterData.PastCoversations.FirstOrDefault(x => x.GUID == nodeData.NodeGuid);
-        if (past != null)
+        if (!SaveAndLoadManager.Instance.ReplayingCompletedChapter)
         {
-            past.SelectedChoice = choice;
+            var past = CurrentChapterData.PastCoversations.FirstOrDefault(x => x.GUID == nodeData.NodeGuid);
+            if (past != null)
+            {
+                past.SelectedChoice = choice;
+            }
         }
+
 
         //Update the runtime node data with the choice so that we can
         //check the selected choice against specific rules for the rollback action

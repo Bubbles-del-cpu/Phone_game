@@ -66,13 +66,13 @@ public class SocialMediaPost : MonoBehaviour
                 postImage.sprite = data.VideoThumbnail;
 
                 if (data.VideoThumbnail == null)
-                    postImage.sprite = Sprite.Create(videoFrame, new Rect(0, 0, videoFrame.width, videoFrame.height), new Vector2(0.5f, 0.5f));
+                    postImage.sprite = videoFrame.Item2;
 
                 break;
         }
 
         postImage.preserveAspect = true;
-        _mediaViewer.Setup(data.MediaType, data.Image, data.Video);
+        _mediaViewer.Setup(nodeData, isSocialMediaPost: true);
 
         //Populate the comments
         PopulateComments(data);

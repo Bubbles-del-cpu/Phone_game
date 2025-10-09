@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using MeetAndTalk;
 using UnityEngine;
 
 public class NavigationManager : MonoBehaviour
@@ -16,12 +17,20 @@ public class NavigationManager : MonoBehaviour
     }
 
     public int PanelOpenCount = 0;
+    [SerializeField] private Canvas _navigationCanvas;
+    private readonly int _offsetAmount = 10;
 
     private CommandInvoker _invoker;
 
     private void Awake()
     {
         _invoker = new();
+    }
+
+    private void Update()
+    {
+        _navigationCanvas.sortingOrder = PanelOpenCount + _offsetAmount;
+        DialogueUIManager.Instance.NotificationCanvas.sortingOrder = PanelOpenCount + _offsetAmount;
     }
 
     public void ResetStack()

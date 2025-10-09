@@ -21,27 +21,27 @@ namespace MeetAndTalk.Editor
         public List<SearchTreeEntry> CreateSearchTree(SearchWindowContext context)
         {
             List<SearchTreeEntry> tree = new List<SearchTreeEntry>
-        {
-            new SearchTreeGroupEntry(new GUIContent("Dialogue Node"),0),
+            {
+                new SearchTreeGroupEntry(new GUIContent("Dialogue Node"),0),
 
-            new SearchTreeGroupEntry(new GUIContent("Base Dialogue Node",EditorGUIUtility.FindTexture("d_FilterByType")),1),
+                new SearchTreeGroupEntry(new GUIContent("Base Dialogue Node",EditorGUIUtility.FindTexture("d_FilterByType")),1),
 
-            AddNodeSearchToGroup("Start Node",new StartNode(),"d_Animation.Play"),
-            AddNodeSearchToGroup("Dialogue Node",new DialogueNode(),"d_UnityEditor.HierarchyWindow"),
-            AddNodeSearchToGroup("Choice Node",new DialogueChoiceNode(),"d_TreeEditor.Distribution"),
-            AddNodeSearchToGroup("Timer Choice Node",new TimerChoiceNode(),"d_preAudioAutoPlayOff"),
-            AddNodeSearchToGroup("End Node",new EndNode(),"d_winbtn_win_close_a@2x"),
+                AddNodeSearchToGroup("Start Node",new StartNode(),"d_Animation.Play"),
+                AddNodeSearchToGroup("Dialogue Node",new DialogueNode(),"d_UnityEditor.HierarchyWindow"),
+                AddNodeSearchToGroup("Choice Node",new DialogueChoiceNode(),"d_TreeEditor.Distribution"),
+                AddNodeSearchToGroup("Timer Choice Node",new TimerChoiceNode(),"d_preAudioAutoPlayOff"),
+                AddNodeSearchToGroup("End Node",new EndNode(),"d_winbtn_win_close_a@2x"),
 
-            new SearchTreeGroupEntry(new GUIContent("Functional Dialogue Node",EditorGUIUtility.FindTexture("d_Favorite Icon")),1),
+                new SearchTreeGroupEntry(new GUIContent("Functional Dialogue Node",EditorGUIUtility.FindTexture("d_Favorite Icon")),1),
 
-            AddNodeSearchToGroup("Event Node",new EventNode(),"d_SceneViewFx"),
-            AddNodeSearchToGroup("Random Node",new RandomNote(),"d_preAudioLoopOff"),
-            AddNodeSearchToGroup("IF Node",new IFNode(),"d_preAudioLoopOff"),
+                AddNodeSearchToGroup("Event Node",new EventNode(),"d_SceneViewFx"),
+                AddNodeSearchToGroup("Random Node",new RandomNote(),"d_preAudioLoopOff"),
+                AddNodeSearchToGroup("IF Node",new IFNode(),"d_preAudioLoopOff"),
 
-            new SearchTreeGroupEntry(new GUIContent("Decoration Dialogue Node",EditorGUIUtility.FindTexture("d_Favorite Icon")),1),
+                new SearchTreeGroupEntry(new GUIContent("Decoration Dialogue Node",EditorGUIUtility.FindTexture("d_Favorite Icon")),1),
 
-            AddNodeSearchToGroup("Command Node",new CommandNode(),"d_UnityEditor.ConsoleWindow"),
-        };
+                AddNodeSearchToGroup("Command Node",new CommandNode(),"d_UnityEditor.ConsoleWindow"),
+            };
 
             return tree;
         }
@@ -110,7 +110,7 @@ namespace MeetAndTalk.Editor
                     graphView.AddElement(graphView.CreateCommandNode(_pos));
                     return true;
                 case IFNode node:
-                    graphView.AddElement(graphView.CreateIFNode(_pos));
+                    graphView.AddElement(graphView.CreateNewIFNode(_pos)); // <-- THE FIX IS HERE
                     return true;
             }
             return false;

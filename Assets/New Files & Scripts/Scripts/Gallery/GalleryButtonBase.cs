@@ -1,6 +1,6 @@
 using MeetAndTalk;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
@@ -15,6 +15,8 @@ public abstract class GalleryButtonBase : MonoBehaviour
     [SerializeField] protected GameObject _lockedContainer;
 
     protected Button _button;
+    protected DialogueNodeData _assignedNode;
+    protected bool _isSocialMediaPost;
     public bool Unlocked;
 
     public virtual string FileName => "";
@@ -37,7 +39,7 @@ public abstract class GalleryButtonBase : MonoBehaviour
         _image.preserveAspect = true;
     }
 
-    public void Setup(DialogueChapterManager.ChapterData chapterData, DialogueNodeData nodeData, bool isSocialMediaPost)
+    public virtual void Setup(DialogueChapterManager.ChapterData chapterData, DialogueNodeData nodeData, bool isSocialMediaPost)
     {
         if (nodeData == null || chapterData == null)
         {
@@ -53,6 +55,9 @@ public abstract class GalleryButtonBase : MonoBehaviour
         {
             gameObject.SetActive(nodeData.GalleryVisibility == GalleryDisplay.Display);
         }
+
+        _assignedNode = nodeData;
+        _isSocialMediaPost = isSocialMediaPost;
 
         AssignedGUID = nodeData.NodeGuid;
         ChapterIndex = chapterData.ChapterIndex;
