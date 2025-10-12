@@ -35,6 +35,8 @@ public class SaveAndLoadManager : MonoBehaviour
     private void Start()
     {
         LoadSave(0);
+        DialogueUIManager.Instance.DisplayHints = CurrentSave.DisplayHints;
+        GameManager.Instance.GalleryCanvas.Load();
     }
 
     public void LoadSave(int slot = 0)
@@ -61,9 +63,7 @@ public class SaveAndLoadManager : MonoBehaviour
 
     public void StartGame()
     {
-        DialogueUIManager.Instance.DisplayHints = CurrentSave.DisplayHints;
         DialogueChapterManager.Instance.TriggerStoryChapter(CurrentSave.CurrentState.CompletedChapters.Count);
-        GameManager.Instance.GalleryCanvas.Load();
     }
 
     public void AutoSave()

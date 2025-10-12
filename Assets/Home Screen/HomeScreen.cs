@@ -5,13 +5,21 @@ using UnityEngine;
 public class HomeScreen : MonoBehaviour
 {
     [SerializeField] private CanvasGroup _canvas;
-    [SerializeField] private HomeScreenUnlockSlider _slider;
+
+    [Header("Settings")]
     [SerializeField] private float _homeScreenFadeSpeed;
     [SerializeField] private float _delayToStartGame = .5f;
-    [SerializeField] private TMP_Text _buildText;
     [SerializeField] private bool _useVideo;
-    [SerializeField] private GameObject _backgroundCover;
 
+    [Header("Components")]
+    [SerializeField] private HomeScreenUnlockSlider _slider;
+    [SerializeField] private TMP_Text _buildText;
+    [SerializeField] private GameObject _backgroundCover;
+    [SerializeField] private CanvasGroup _navigationControls;
+    private void Awake()
+    {
+        _navigationControls.alpha = 0;
+    }
     public void OnHomeScreenUnlocked()
     {
         StartCoroutine(FadeHomeScreenOut());
@@ -31,6 +39,7 @@ public class HomeScreen : MonoBehaviour
     private IEnumerator FadeHomeScreenIn()
     {
         _slider.Reset();
+        _navigationControls.alpha = 0;
         while (_canvas.alpha < 1)
         {
             _canvas.alpha += _homeScreenFadeSpeed * Time.deltaTime;
@@ -49,6 +58,7 @@ public class HomeScreen : MonoBehaviour
         }
 
         _slider.Reset();
+        _navigationControls.alpha = 1;
         _canvas.blocksRaycasts = false;
 
         yield return new WaitForSeconds(_delayToStartGame);

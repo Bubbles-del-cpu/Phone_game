@@ -2,37 +2,31 @@ using MeetAndTalk;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Toggle))]
 public class HintSettingsToggle : MonoBehaviour
 {
-    Toggle _toggle;
-    bool _updated;
+    [SerializeField] private Button _button;
+    [SerializeField] private Sprite _enableSprite;
+    [SerializeField] private Sprite _disableSprite;
 
     private void Awake()
     {
-        _toggle = GetComponent<Toggle>();
-        if (_toggle)
+        if (_button)
         {
-            _toggle.onValueChanged.AddListener((value) =>
+            _button.onClick.AddListener(() =>
             {
-                DialogueUIManager.Instance.DisplayHints = value;
+                DialogueUIManager.Instance.DisplayHints = !DialogueUIManager.Instance.DisplayHints;
+                _button.image.sprite = DialogueUIManager.Instance.DisplayHints ? _enableSprite : _disableSprite;
             });
         }
     }
 
     private void Start()
     {
-        gameObject.SetActive(_toggle);
+        _button.image.sprite = DialogueUIManager.Instance.DisplayHints ? _enableSprite : _disableSprite;
     }
 
     private void Update()
     {
-        //First update frame needs to read the DialogueUIManager and set the toggle
-        //Saves us having some public reference on a script - Maybe slightly hacky
-        if (_toggle && !_updated)
-        {
-            _updated = true;
-            _toggle.SetIsOnWithoutNotify(DialogueUIManager.Instance.DisplayHints);
-        }
+        _button.image.sprite = DialogueUIManager.Instance.DisplayHints ? _enableSprite : _disableSprite;
     }
 }
