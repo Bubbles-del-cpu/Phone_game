@@ -324,15 +324,16 @@ namespace MeetAndTalk.Localization
 
                         using (StreamWriter streamWriter = new StreamWriter(filePathAndName))
                         {
+                            streamWriter.WriteLine("// ### AUTO GENERATED CODE ###");
                             streamWriter.WriteLine("namespace MeetAndTalk.Localization");
                             streamWriter.WriteLine("{");
-                            streamWriter.WriteLine("public enum LocalizationEnum");
-                            streamWriter.WriteLine("{");
+                            streamWriter.WriteLine("    public enum LocalizationEnum");
+                            streamWriter.WriteLine("    {");
                             for (int i = 0; i < enumEntries.Count; i++)
                             {
-                                streamWriter.WriteLine("\t" + enumEntries[i] + ",");
+                                streamWriter.WriteLine("      \t" + enumEntries[i] + ",");
                             }
-                            streamWriter.WriteLine("}");
+                            streamWriter.WriteLine("    }");
                             streamWriter.WriteLine("}");
                         }
                         AssetDatabase.Refresh();

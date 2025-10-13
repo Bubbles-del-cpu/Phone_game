@@ -31,10 +31,17 @@ Material:
     m_Floats:
     - PixelSnap: 0
     - _BlurSize: 0.0057
+    - _ColorMask: 15
     - _Radius: 30
-    - hstep: 0.7
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    - hstep: 0.117
     - resolution: 256
-    - vstep: 0.7
+    - vstep: 0.286
     m_Colors:
     - _Color: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
   m_BuildTextureStacks: []

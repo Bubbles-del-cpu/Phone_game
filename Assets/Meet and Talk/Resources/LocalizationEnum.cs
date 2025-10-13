@@ -1,8 +1,9 @@
+// ### AUTO GENERATED CODE ###
 namespace MeetAndTalk.Localization
 {
-public enum LocalizationEnum
-{
-	English,
-	Polish,
-}
+    public enum LocalizationEnum
+    {
+      	English,
+      	Japanese,
+    }
 }
