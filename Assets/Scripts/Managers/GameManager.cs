@@ -171,11 +171,11 @@ public class GameManager : MonoBehaviour
         StartCoroutine(CoStartDialogue());
     }
 
-    public void DisplayDialog(string message, Action eventToTrigger, string confirmButtonText = "Yes", bool twoButtonSetup = true, string cancelButtonTest = "No")
+    public void DisplayDialog(string messageKey, Action eventToTrigger, string confirmButtonKey = "dialog_button_yes", object[] args = null, bool twoButtonSetup = true, string cancelButtonKey = "dialog_button_no")
     {
         if (overlayCanvas)
         {
-            overlayCanvas.ShowDialog(message, eventToTrigger, confirmButtonText, twoButtonSetup, cancelButtonTest);
+            overlayCanvas.ShowDialog(messageKey, eventToTrigger, confirmButtonKey, twoButtonSetup, cancelButtonKey, args);
         }
     }
 

@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Dialog Prompts_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: cd90b1ec22ebd8e478a942bfc9a42d44, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 9059512144695394577
+  m_TableData:
+  - m_Id: 103594815488
+    m_Localized: You have reached the end of the episode you can move on to the next
+      chapter from the homescreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 475092709376
+    m_Localized: Chapter replay complete! Return to chapter select from the homescreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 533422895104
+    m_Localized: All chapters completed
+    m_Metadata:
+      m_Items:
+      - rid: 9059512144695394577
+  - m_Id: 573319114752
+    m_Localized: Chapter save data out of date and could not be loaded. Restarting
+      chapter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 600460455936
+    m_Localized: Are you sure you want to quit?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 629938024448
+    m_Localized: Are you sure you want to start a new game?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 660543860736
+    m_Localized: Are you sure you want unlock and complete all chapters?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 687345463296
+    m_Localized: Are you want to delete this save file slot?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 710187642880
+    m_Localized: Are you sure you want to logout?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 734426525696
+    m_Localized: You are already in a replay. You can end the replay early in the
+      settings.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 761152630784
+    m_Localized: You are already in a standalone chapter. You can end the current
+      chapter early in the settings.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 784653316096
+    m_Localized: Are you sure you want to replay this chapter?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 820820799488
+    m_Localized: Are you sure you want to return to chapter select?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 838067777536
+    m_Localized: Are you sure you want to exit the replay early?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 863489454080
+    m_Localized: Gallery unlock code was not valid.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 887556370432
+    m_Localized: Gallery unlocked!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 909404499968
+    m_Localized: Gallery item is locked. Unlocked in {0}
+    m_Metadata:
+      m_Items:
+      - rid: 9059512144695394577
+  references:
+    version: 2
+    RefIds:
+    - rid: 9059512144695394577
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 533422895104
+        - id: 909404499968

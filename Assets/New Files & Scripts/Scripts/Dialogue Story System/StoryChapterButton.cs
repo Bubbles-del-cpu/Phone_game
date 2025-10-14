@@ -34,7 +34,7 @@ public class StoryChapterButton : MonoBehaviour
     {
         _button.onClick.AddListener(() =>
         {
-            GameManager.Instance.DisplayDialog(GameConstants.DialogTexts.REPLAY_START_WARNING, () =>
+            GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.REPLAY_START_WARNING, () =>
             {
                 StartCoroutine(CoShowOptions());
             });

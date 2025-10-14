@@ -110,7 +110,7 @@ namespace MeetAndTalk
                 {
                     //The save file could not be loaded for this chapter, this implies that it is out of date with the latest verison.
                     //Reset the game state and start the Player from the top of the chapter
-                    GameManager.Instance.DisplayDialog(GameConstants.DialogTexts.INVALID_SAVE_DATA, () =>
+                    GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.INVALID_SAVE_DATA, () =>
                     {
                         //Reset the chapter data in the save file
                         SaveAndLoadManager.Instance.ClearChapterData(chapterData.FileIndex);
@@ -120,7 +120,7 @@ namespace MeetAndTalk
                             SaveAndLoadManager.Instance.LoadSave();
                         });
 
-                    }, "Continue", false);
+                    }, GameConstants.UIElementKeys.CONTINUE, args: null, twoButtonSetup: false);
                 }
             }
 

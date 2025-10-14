@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 
 public class SaveStateButton : MonoBehaviour
@@ -7,29 +9,17 @@ public class SaveStateButton : MonoBehaviour
     [SerializeField] private Button _loadButton;
     [SerializeField] private Button _clearSaveButton;
     [SerializeField] private SaveStateDialogBox _saveDialogPrefab;
-
-    [SerializeField]
-    private TMPro.TMP_Text _label;
-
     public int SlotNumber = 0;
+
+    [Header("Localization Components")]
+    [SerializeField] private LocalizeStringEvent _localizedString;
+    [SerializeField] private LocalizedString _emptySlotString;
+    [SerializeField] private LocalizedString _filledSlotString;
+
     private bool _exists => SaveAndLoadManager.Instance.SaveStateExists(SlotNumber);
-    private string _slotName
+
+    private void Awake()
     {
-        get
-        {
-            if (_exists)
-            {
-                return SaveAndLoadManager.Instance.CurrentSave.SaveStates[SlotNumber].Name;
-            }
-
-            return $"Empty Save Slot";
-        }
-    }
-
-    private void Start()
-    {
-        _label.text = "Emtpy Save Slot";
-
         _saveButton.onClick.AddListener(() =>
         {
             var newDialog = Instantiate(_saveDialogPrefab);
@@ -44,7 +34,7 @@ public class SaveStateButton : MonoBehaviour
 
         _clearSaveButton.onClick.AddListener(() =>
         {
-            GameManager.Instance.DisplayDialog(GameConstants.DialogTexts.SAVE_STATE_DELETE, () =>
+            GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.SAVE_STATE_DELETE, () =>
             {
                 SaveAndLoadManager.Instance.ClearSaveStateSlot(SlotNumber);
             });
@@ -53,8 +43,18 @@ public class SaveStateButton : MonoBehaviour
 
     private void Update()
     {
-        _label.text = _slotName;
-        var exists = _exists;
+        var exists = _exists; //Prevent checking the SaveAndLoadManager get function so many times
+        if (exists)
+        {
+            _localizedString.StringReference.Arguments = new object[] { SlotNumber };
+            _localizedString.StringReference = _filledSlotString;
+        }
+        else
+        {
+            _localizedString.StringReference.Arguments = null;
+            _localizedString.StringReference = _emptySlotString;
+        }
+
         _clearSaveButton.interactable = exists;
         _loadButton.interactable = exists;
         _saveButton.interactable = true;

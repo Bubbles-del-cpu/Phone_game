@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Elements Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: UI Elements
+  m_TableCollectionNameGuidString: 25c33b9c4e890044482bdbe4669d5c2f
+  m_Entries:
+  - m_Id: 9340416000
+    m_Key: dialog_button_yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 235388235776
+    m_Key: dialog_button_no
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2164734521344
+    m_Key: dialog_button_continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2859781025792
+    m_Key: dialog_button_try_again
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11373068906496
+    m_Key: dialog_button_close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15412473065472
+    m_Key: label_images
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15440608456704
+    m_Key: label_videos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15465405181952
+    m_Key: label_unlock_all
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15511047598080
+    m_Key: label_app_gallery
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24477752324096
+    m_Key: label_app_settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24633155481600
+    m_Key: settings_game_volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24747278299136
+    m_Key: settings_fullscreen_toggle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24818799570944
+    m_Key: settings_clear_save
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24931110449152
+    m_Key: settings_return_to_story
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25159536439296
+    m_Key: settings_save_state_warning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26355449950208
+    m_Key: message_no_contacts
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26846871384064
+    m_Key: label_app_chapter_replay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27941802831872
+    m_Key: settings_save_state_label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28411237724160
+    m_Key: settings_save_button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28482968711168
+    m_Key: settings_load_button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30833574113280
+    m_Key: settings_empty_save_state_label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31141977092096
+    m_Key: settings_save_state_header
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 9059512144695394556
+  references:
+    version: 2
+    RefIds:
+    - rid: 9059512144695394556
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1760434936960
