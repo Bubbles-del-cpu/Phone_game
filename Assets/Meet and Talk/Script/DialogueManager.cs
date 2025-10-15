@@ -7,6 +7,7 @@ using MeetAndTalk.GlobalValue;
 using MeetAndTalk.Localization;
 using Unity.VisualScripting;
 using UnityEngine.Serialization;
+using System.Linq;
 
 namespace MeetAndTalk
 {
@@ -41,10 +42,13 @@ namespace MeetAndTalk
 
         private List<Coroutine> activeCoroutines = new List<Coroutine>();
         private Stack<BaseNodeData> _visitedNodes = new Stack<BaseNodeData>();
-
+        public SystemLanguage TargetLanguage;
         private void Awake()
         {
             Instance = this;
+
+            LocalizationManager.Instance.selectedLang = TargetLanguage;
+
 
             // Setup UI
             DialogueUIManager[] all = FindObjectsByType<DialogueUIManager>(FindObjectsSortMode.None);
@@ -205,7 +209,7 @@ namespace MeetAndTalk
                                 targetFound = true;
 
                                 //Removes the dialogue choice that the Player selected so that it can be rollbacked and re-selected
-                                if (choiceNode.SelectedChoice.Length > 0 && choiceNode.SelectedChoice[0] != '*')
+                                if (DialogueLocalizationHelper.GetText(choiceNode.SelectedChoice).Length > 0 && DialogueLocalizationHelper.GetText(choiceNode.SelectedChoice)[0] != '*')
                                     rollbackList[choiceNode.Character] += 1;
 
                                 targetNode = choiceNode;
@@ -298,20 +302,51 @@ namespace MeetAndTalk
                 }
 
                 _visitedNodes.Push(node);
+                if (node.GetType() == typeof(DialogueChoiceNodeData) || node.GetType() == typeof(TimerChoiceNodeData))
+                {
+                    var dNode = (DialogueChoiceNodeData)node;
+                    if (item.SelectedChoice != "")
+                    {
+                        var found = false;
+                        //We have an old save that was made before localization. Compare the texts against the localized version and attempt to display the correct translation
+                        foreach (var lang in dNode.DialogueNodePorts)
+                        {
+                            if (lang.TextLanguage.Any(x => x.LanguageGenericType == item.SelectedChoice))
+                            {
+                                //We found the matching selection from the port. Update and choose that
+                                item.SelectedChoiceTexts = lang.TextLanguage;
+                                found = true;
+                                break;
+                            }
+                        }
+
+                        if (!found)
+                        {
+                            item.SelectedChoiceTexts = dNode.DialogueNodePorts.First().TextLanguage;
+                        }
+                    }
+                }
+
+                //Update these to blank as we will be using the new LanguageGenerics
+                //Soon to be removed as obsolete
+                item.SelectedChoice = "";
+                item.Text = "";
+
                 switch (node)
                 {
                     case EventNodeData:
                         break;
-                    case DialogueNodeData:
-                        dialogueUIManager.SetFullText(item.Text, node, DialogueUIManager.MessageSource.Character, false);
+                    case DialogueNodeData nd:
+                        item.Texts = nd.Texts;
+                        dialogueUIManager.SetFullText(nd.Texts, node, DialogueUIManager.MessageSource.Character, false);
                         break;
                     case TimerChoiceNodeData tChoiceNode when node is TimerChoiceNodeData:
-                        dialogueUIManager.SetFullText(item.SelectedChoice, tChoiceNode, DialogueUIManager.MessageSource.Player, false);
-                        tChoiceNode.SelectedChoice = item.SelectedChoice;
+                        dialogueUIManager.SetFullText(item.SelectedChoiceTexts, tChoiceNode, DialogueUIManager.MessageSource.Player, false);
+                        tChoiceNode.SelectedChoice = item.SelectedChoiceTexts;
                         break;
                     case DialogueChoiceNodeData dChoiceNode when node is DialogueChoiceNodeData:
-                        dialogueUIManager.SetFullText(item.SelectedChoice, dChoiceNode, DialogueUIManager.MessageSource.Player, false);
-                        dChoiceNode.SelectedChoice = item.SelectedChoice;
+                        dialogueUIManager.SetFullText(item.SelectedChoiceTexts, dChoiceNode, DialogueUIManager.MessageSource.Player, false);
+                        dChoiceNode.SelectedChoice = item.SelectedChoiceTexts;
                         break;
                 }
             }
@@ -407,21 +442,32 @@ namespace MeetAndTalk
 
             GlobalValueManager manager = Resources.Load<GlobalValueManager>("GlobalValue");
             manager.LoadFile();
-
+            var characterName = DialogueLocalizationHelper.GetCharacterName(_nodeData.Character);
             // Gloval Value Multiline
-            if (dialogueUIManager.showSeparateName && dialogueUIManager.nameLabel != null && _nodeData.Character != null && _nodeData.Character.UseGlobalValue) { dialogueUIManager.ResetText(""); dialogueUIManager.SetSeparateName($"<color={_nodeData.Character.HexColor()}>{manager.Get<string>(GlobalValueType.String, _nodeData.Character.CustomizedName.ValueName)}</color>"); }
+            if (dialogueUIManager.showSeparateName && dialogueUIManager.nameLabel != null && _nodeData.Character != null && _nodeData.Character.UseGlobalValue)
+            {
+                dialogueUIManager.ResetText("");
+                dialogueUIManager.SetSeparateName($"<color={_nodeData.Character.HexColor()}>{manager.Get<string>(GlobalValueType.String, _nodeData.Character.CustomizedName.ValueName)}</color>");
+            }
             // Normal Multiline
-            else if (dialogueUIManager.showSeparateName && dialogueUIManager.nameLabel != null && _nodeData.Character != null) { dialogueUIManager.ResetText(""); dialogueUIManager.SetSeparateName($"<color={_nodeData.Character.HexColor()}>{_nodeData.Character.characterName.Find(text => text.languageEnum == localizationManager.SelectedLang()).LanguageGenericType}</color>"); }
+            else if (dialogueUIManager.showSeparateName && dialogueUIManager.nameLabel != null && _nodeData.Character != null)
+            {
+                dialogueUIManager.ResetText("");
+                dialogueUIManager.SetSeparateName($"<color={_nodeData.Character.HexColor()}>{characterName}</color>");
+            }
             // No Change Character Multiline
-            else if (dialogueUIManager.showSeparateName && dialogueUIManager.nameLabel != null && _nodeData.Character != null) { dialogueUIManager.ResetText(""); }
+            else if (dialogueUIManager.showSeparateName && dialogueUIManager.nameLabel != null && _nodeData.Character != null)
+                dialogueUIManager.ResetText("");
             // Global Value Inline
-            else if (_nodeData.Character != null && _nodeData.Character.UseGlobalValue) dialogueUIManager.ResetText($"<color={_nodeData.Character.HexColor()}>{manager.Get<string>(GlobalValueType.String, _nodeData.Character.CustomizedName.ValueName)}: </color>");
+            else if (_nodeData.Character != null && _nodeData.Character.UseGlobalValue)
+                dialogueUIManager.ResetText($"<color={_nodeData.Character.HexColor()}>{manager.Get<string>(GlobalValueType.String, _nodeData.Character.CustomizedName.ValueName)}: </color>");
             // Normal Inline
-            else if (_nodeData.Character != null) dialogueUIManager.ResetText($"<color={_nodeData.Character.HexColor()}>{_nodeData.Character.characterName.Find(text => text.languageEnum == localizationManager.SelectedLang()).LanguageGenericType}: </color>");
+            else if (_nodeData.Character != null)
+                dialogueUIManager.ResetText($"<color={_nodeData.Character.HexColor()}>{characterName}: </color>");
             // Last Change
             else dialogueUIManager.ResetText("");
 
-            dialogueUIManager.SetFullText(_nodeData.GetText(), _nodeData, DialogueUIManager.MessageSource.Character);
+            dialogueUIManager.SetFullText(_nodeData.Texts, _nodeData, DialogueUIManager.MessageSource.Character);
 
             // New Character Avatar
             if (_nodeData.AvatarPos == AvatarPosition.Left)
@@ -484,7 +530,7 @@ namespace MeetAndTalk
             // Last Change
             else dialogueUIManager.ResetText("");
 
-            dialogueUIManager.SetFullText($"{_nodeData.TextType.Find(text => text.languageEnum == localizationManager.SelectedLang()).LanguageGenericType}", _nodeData, DialogueUIManager.MessageSource.Character);
+            dialogueUIManager.SetFullText(_nodeData.TextType, _nodeData, DialogueUIManager.MessageSource.Character);
 
             // New Character Avatar
             if (_nodeData.AvatarPos == AvatarPosition.Left) dialogueUIManager.UpdateAvatars(_nodeData.Character, null, _nodeData.AvatarType);
@@ -571,11 +617,7 @@ namespace MeetAndTalk
             // Last Change
             else dialogueUIManager.ResetText("");
 
-            dialogueUIManager.SetFullText(
-                $"{_nodeData.TextType.Find(text => text.languageEnum == localizationManager.SelectedLang()).LanguageGenericType}",
-                _nodeData,
-                DialogueUIManager.MessageSource.Character
-                );
+            dialogueUIManager.SetFullText(_nodeData.TextType, _nodeData, DialogueUIManager.MessageSource.Character);
 
             // New Character Avatar
             if (_nodeData.AvatarPos == AvatarPosition.Left) dialogueUIManager.UpdateAvatars(_nodeData.Character, null, _nodeData.AvatarType);
@@ -610,60 +652,55 @@ namespace MeetAndTalk
         private void MakeButtons(DialogueCharacterSO _character, BaseNodeData nodeData, List<DialogueNodePort> _nodePorts)
         {
             List<string> texts = new();
-            List<string> hints = new();
             List<UnityAction> unityActions = new List<UnityAction>();
 
             foreach (DialogueNodePort nodePort in _nodePorts)
             {
                 //Grab text and hint and add them to the lists
-                nodePort.GetConvertedText(localizationManager.SelectedLang(), out string text, out string hint);
-                texts.Add(text);
-                hints.Add(hint);
-
                 UnityAction tempAction = null;
                 tempAction += () =>
                 {
-                    SaveAndLoadManager.Instance.CurrentSave.MakeChoice(nodeData, text);
+                    SaveAndLoadManager.Instance.CurrentSave.MakeChoice(nodeData, nodePort.TextLanguage);
+                    SaveAndLoadManager.Instance.AutoSave();
                     CheckNodeType(GetNodeByGuid(nodePort.InputGuid));
                 };
 
                 unityActions.Add(tempAction);
             }
 
-            dialogueUIManager.SetButtons(_character, nodeData, texts, hints, unityActions, false);
+            dialogueUIManager.SetButtons(_character, nodeData, _nodePorts.Select(x => x.TextLanguage).ToList(), _nodePorts.Select(x => x.HintLanguage).ToList(), unityActions, false);
         }
-        private void MakeTimerButtons(DialogueCharacterSO _character, BaseNodeData nodeData, List<DialogueNodePort> _nodePorts, float ShowDuration, float timer)
+
+        private void MakeTimerButtons(DialogueCharacterSO _character, BaseNodeData nodeData, List<DialogueNodePort> _nodePorts, float showDuration)
         {
             List<string> texts = new List<string>();
-            List<string> hints = new();
             List<UnityAction> unityActions = new List<UnityAction>();
 
-            IEnumerator tmp() { yield return new WaitForSeconds(timer); TimerNode_NextNode(); }
-            StartTrackedCoroutine(tmp());;
+            IEnumerator tmp()
+            {
+                yield return new WaitForSeconds(showDuration);
+                TimerNode_NextNode();
+            }
+
+            StartTrackedCoroutine(tmp());
 
             foreach (DialogueNodePort nodePort in _nodePorts)
             {
-                if (nodePort != _nodePorts[0])
+                //Grab text and hint and add them to the lists
+                UnityAction tempAction = null;
+                tempAction += () =>
                 {
-                    nodePort.GetConvertedText(localizationManager.SelectedLang(), out string text, out string hint);
-                    texts.Add(text);
-                    hints.Add(hint);
+                    StopAllTrackedCoroutines();
+                    SaveAndLoadManager.Instance.CurrentSave.MakeChoice(nodeData, nodePort.TextLanguage);
+                    SaveAndLoadManager.Instance.AutoSave();
+                    CheckNodeType(GetNodeByGuid(nodePort.InputGuid));
+                };
 
-                    UnityAction tempAction = null;
-                    tempAction += () =>
-                    {
-                        StopAllTrackedCoroutines();
-
-                        SaveAndLoadManager.Instance.CurrentSave.MakeChoice(nodeData, text);
-                        CheckNodeType(GetNodeByGuid(nodePort.InputGuid));
-                    };
-
-                    unityActions.Add(tempAction);
-                }
+                unityActions.Add(tempAction);
             }
 
             //TODO: Do we need hints on the timer options, probably not
-            dialogueUIManager.SetButtons(_character, nodeData, texts, hints, unityActions, true);
+            dialogueUIManager.SetButtons(_character, nodeData, _nodePorts.Select(x => x.TextLanguage).ToList(), _nodePorts.Select(x => x.HintLanguage).ToList(), unityActions, true);
         }
 
         void DialogueNode_NextNode()
@@ -679,7 +716,7 @@ namespace MeetAndTalk
 
         void TimerNode_GenerateChoice(DialogueCharacterSO _character, BaseNodeData nodeData)
         {
-            MakeTimerButtons(_character, nodeData, _nodeTimerInvoke.DialogueNodePorts, _nodeTimerInvoke.Duration, _nodeTimerInvoke.time);
+            MakeTimerButtons(_character, nodeData, _nodeTimerInvoke.DialogueNodePorts, _nodeTimerInvoke.time);
             dialogueUIManager.SkipButton.SetActive(false);
         }
 

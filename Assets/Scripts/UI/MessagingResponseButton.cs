@@ -13,20 +13,21 @@ public class MessagingResponseButton : MonoBehaviour
     [SerializeField, FormerlySerializedAs("label")] TMP_Text _label;
     [SerializeField] DialogueHintButton _hintButton;
 
-    private string _fullText;
-    private string _hint;
+    private List<LanguageGeneric<string>> _fullText;
+    private List<LanguageGeneric<string>> _hint;
     MessagingResponsesPanel _panel;
 
     private string AdjustedText
     {
         get
         {
-            if (_fullText.Length > GameManager.Instance.MaximumResponseLength)
+            var text = DialogueLocalizationHelper.GetText(_fullText);
+            if (text.Length > GameManager.Instance.MaximumResponseLength)
             {
-                return $"{_fullText.Substring(0, GameManager.Instance.MaximumResponseLength)}...";
+                return $"{text.Substring(0, GameManager.Instance.MaximumResponseLength)}...";
             }
 
-            return _fullText;
+            return text;
         }
     }
 
@@ -34,7 +35,9 @@ public class MessagingResponseButton : MonoBehaviour
     UnityAction _action;
     BaseNodeData _assignedNode;
 
-    public void Init(BaseNodeData node, string text, string hint, MessagingResponsesPanel panel, UnityAction preAction, UnityAction action)
+    private bool IsBlankHint => DialogueLocalizationHelper.GetText(_hint) == DialogueNodePort.BLANK_HINT && DialogueLocalizationHelper.GetText(_hint) == string.Empty;
+
+    public void Init(BaseNodeData node, List<LanguageGeneric<string>> text, List<LanguageGeneric<string>> hint, MessagingResponsesPanel panel, UnityAction preAction, UnityAction action)
     {
         _assignedNode = node;
         _fullText = text;
@@ -42,8 +45,8 @@ public class MessagingResponseButton : MonoBehaviour
 
         _button = GetComponent<Button>();
 
-        _hintButton.Setup(hint, panel);
-        _hintButton.Interactable = _hint != DialogueNodePort.BLANK_HINT && _hint != string.Empty;
+        _hintButton.Setup(DialogueLocalizationHelper.GetText(_hint), panel);
+        _hintButton.Interactable = !IsBlankHint;
 
         GetComponentInChildren<TMP_Text>().text = AdjustedText;
         gameObject.SetActive(true);
@@ -60,7 +63,7 @@ public class MessagingResponseButton : MonoBehaviour
 
     private void Update()
     {
-        if (DialogueUIManager.Instance.DisplayHints && _hint != DialogueNodePort.BLANK_HINT && _hint != string.Empty)
+        if (DialogueUIManager.Instance.DisplayHints && !IsBlankHint)
         {
             //Adjust the right side to accomodate the hint button
             _label.GetComponent<RectTransform>().sizeDelta = new(-20, 0);

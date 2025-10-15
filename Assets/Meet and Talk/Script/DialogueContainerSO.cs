@@ -309,7 +309,7 @@ namespace MeetAndTalk
         public float Delay;
         public string Timelapse;
         public bool RequireCharacterInput;
-        public string SelectedChoice;
+        public List<LanguageGeneric<string>> SelectedChoice;
         public string GetText(LocalizationManager localizationManager) => TextType.Find(text => text.languageEnum == localizationManager.SelectedLang()).LanguageGenericType;
 
         protected float _delayTimer = 0;
@@ -546,13 +546,12 @@ namespace MeetAndTalk
 
         public void GetConvertedText(LocalizationEnum lang, out string text, out string hint)
         {
-            text = TextLanguage.Find(x => x.languageEnum == lang).LanguageGenericType;
-
-            var hintLang = HintLanguage.Find(x => x.languageEnum == lang);
+            text = DialogueLocalizationHelper.GetText(TextLanguage);
+            var hintLang = DialogueLocalizationHelper.GetText(HintLanguage);
             hint = "";
             if (hintLang != null)
             {
-                hint = hintLang.LanguageGenericType;
+                hint = hintLang;
             }
         }
     }

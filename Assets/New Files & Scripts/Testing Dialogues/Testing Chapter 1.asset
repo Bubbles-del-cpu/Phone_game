@@ -94,7 +94,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 711cb3e0-8bf1-4109-ae8b-c0642f957495
     Position: {x: 1728, y: 779}
     DialogueNodePorts:
@@ -128,7 +128,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 15bb8031-c172-4c62-a631-da81299dcefc
     Position: {x: 868, y: 170}
     DialogueNodePorts:
@@ -176,7 +176,11 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice:
+    - languageEnum: 0
+      LanguageGenericType: this is a really long message lets see what happens
+    - languageEnum: 1
+      LanguageGenericType: Choice 02
   DialogueNodeDatas:
   - NodeGuid: 47f743e7-0ea8-4c28-b070-6d72147cddf7
     Position: {x: 2390, y: 305}
@@ -289,7 +293,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: just surviving?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: japanese text
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -305,7 +309,7 @@ MonoBehaviour:
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 11400000, guid: eb138877c58468442b655355d1754919, type: 2}
-    DelayTimer: 0
+    DelayTimer: 2.0004687
   - NodeGuid: a064da96-88ff-4109-8ae6-94e093dfc775
     Position: {x: 2124, y: 196}
     DialogueNodePorts: []
@@ -385,7 +389,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: long time no talk
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: japanese text
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -401,7 +405,7 @@ MonoBehaviour:
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    DelayTimer: 0
+    DelayTimer: 2.001085
   - NodeGuid: b2caca91-cbaf-44ea-9c38-80a76cc145d4
     Position: {x: 308, y: 195}
     DialogueNodePorts: []
@@ -417,7 +421,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: hello! \u1F600 \u1F600 \u1F600
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: japanese text
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -433,9 +437,9 @@ MonoBehaviour:
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 11400000, guid: 3508211763692914baa6a2fd540f9ae8, type: 2}
-    DelayTimer: 0
+    DelayTimer: 2.0008025
   - NodeGuid: 83276e85-bc91-40cf-ad46-298e9877dfa0
-    Position: {x: 769, y: 774}
+    Position: {x: 848, y: 745}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0

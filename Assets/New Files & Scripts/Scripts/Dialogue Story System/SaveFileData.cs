@@ -12,6 +12,7 @@ public class SaveFileData
 {
     public static string SAVE_FILE_VERSION = "0.10";
     public string Version;
+    public string PreviousVersion;
     public int SaveFileSlot;
     public bool ForceUnlockAllChapters;
     public bool DisplayHints;
@@ -93,8 +94,10 @@ public class SaveFileData
                     {
                         GUID = pastConv.GUID,
                         IsChoice = pastConv.IsChoice,
-                        SelectedChoice = pastConv.SelectedChoice,
-                        Text = pastConv.Text
+                        SelectedChoice = pastConv.SelectedChoice, //Soon to be obsolete
+                        Text = pastConv.Text, //Soon to be obsolete
+                        Texts = pastConv.Texts,
+                        SelectedChoiceTexts = pastConv.SelectedChoiceTexts
                     });
                 }
 
@@ -175,6 +178,8 @@ public class SaveFileData
         var oldVersion = Version;
         if (Version != newSaveFile.Version)
         {
+            PreviousVersion = Version;
+
             Version = newSaveFile.Version;
             wasUpdated = true;
         }
@@ -482,32 +487,35 @@ public class SaveFileData
         }
     }
 
-    public void MakeChoice(BaseNodeData nodeData, string choice)
+    public void MakeChoice(BaseNodeData nodeData, List<LanguageGeneric<string>> choices)
     {
         if (!SaveAndLoadManager.Instance.ReplayingCompletedChapter)
         {
             var past = CurrentChapterData.PastCoversations.FirstOrDefault(x => x.GUID == nodeData.NodeGuid);
             if (past != null)
             {
-                past.SelectedChoice = choice;
+                //Don't set SelectedChoice anymore as its obsolete
+                //past.SelectedChoice = choices.Find(x => x.languageEnum == GameManager.LOCALIZATION_MANAGER.SelectedLang()).LanguageGenericType;
+                past.SelectedChoiceTexts = choices;
             }
         }
 
 
         //Update the runtime node data with the choice so that we can
         //check the selected choice against specific rules for the rollback action
+        var choiceText = choices.Find(x => x.languageEnum == GameManager.LOCALIZATION_MANAGER.SelectedLang()).LanguageGenericType;
         switch (nodeData)
         {
             case TimerChoiceNodeData nd:
-                nd.SelectedChoice = choice;
+                nd.SelectedChoice = choices;
                 break;
             case DialogueChoiceNodeData nd:
-                nd.SelectedChoice = choice;
+                nd.SelectedChoice = choices;
                 break;
         }
     }
 
-    public void UpdateText(BaseNodeData nodeData, string text)
+    public void UpdateText(BaseNodeData nodeData, List<LanguageGeneric<string>> texts)
     {
         if (SaveAndLoadManager.Instance.ReplayingCompletedChapter)
             return;
@@ -515,7 +523,9 @@ public class SaveFileData
         var past = CurrentChapterData.PastCoversations.FirstOrDefault(x => x.GUID == nodeData.NodeGuid);
         if (past != null)
         {
-            past.Text = text;
+            //Don't set Text anymore as its obsolete
+            //past.Text = texts.Find(x => x.languageEnum == GameManager.LOCALIZATION_MANAGER.SelectedLang()).LanguageGenericType;
+            past.Texts = texts;
         }
     }
 }
