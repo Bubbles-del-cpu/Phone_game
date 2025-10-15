@@ -46,7 +46,7 @@ namespace MeetAndTalk.Editor
             return tree;
         }
 
-        private SearchTreeEntry AddNodeSearchToGroup(string _name, BaseNode _baseNode, string IconName)
+        private SearchTreeEntry AddNodeSearchToGroup<T>(string _name, T _baseNode, string IconName)
         {
             Texture2D _icon = EditorGUIUtility.FindTexture(IconName) as Texture2D;
             SearchTreeEntry tmp = new SearchTreeEntry(new GUIContent(_name, _icon))
@@ -73,9 +73,9 @@ namespace MeetAndTalk.Editor
         public bool OnSelectEntry(SearchTreeEntry _searchTreeEntry, SearchWindowContext _context)
         {
             Vector2 mousePosition = editorWindow.rootVisualElement.ChangeCoordinatesTo
-                (
+            (
                 editorWindow.rootVisualElement.parent, _context.screenMousePosition - editorWindow.position.position
-                );
+            );
             Vector2 graphMousePosition = graphView.contentViewContainer.WorldToLocal(mousePosition);
 
             return CheckForNodeType(_searchTreeEntry, graphMousePosition);
@@ -85,31 +85,31 @@ namespace MeetAndTalk.Editor
         {
             switch (_searchTreeEntry.userData)
             {
-                case StartNode node:
+                case StartNode:
                     graphView.AddElement(graphView.CreateStartNode(_pos));
                     return true;
-                case DialogueNode node:
+                case DialogueNode:
                     graphView.AddElement(graphView.CreateDialogueNode(_pos));
                     return true;
-                case DialogueChoiceNode node:
-                    graphView.AddElement(graphView.CreateDialogueChoiceNode(_pos));
-                    return true;
-                case TimerChoiceNode node:
+                case TimerChoiceNode:
                     graphView.AddElement(graphView.CreateTimerChoiceNode(_pos));
                     return true;
-                case EventNode node:
+                case DialogueChoiceNode:
+                    graphView.AddElement(graphView.CreateDialogueChoiceNode(_pos));
+                    return true;
+                case EventNode:
                     graphView.AddElement(graphView.CreateEventNode(_pos));
                     return true;
-                case EndNode node:
+                case EndNode:
                     graphView.AddElement(graphView.CreateEndNode(_pos));
                     return true;
-                case RandomNote node:
+                case RandomNote:
                     graphView.AddElement(graphView.CreateRandomNode(_pos));
                     return true;
-                case CommandNode node:
+                case CommandNode:
                     graphView.AddElement(graphView.CreateCommandNode(_pos));
                     return true;
-                case IFNode node:
+                case IFNode:
                     graphView.AddElement(graphView.CreateNewIFNode(_pos)); // <-- THE FIX IS HERE
                     return true;
             }

@@ -179,10 +179,10 @@ namespace MeetAndTalk
                             if (!rollbackList.ContainsKey(nd.Character))
                                 rollbackList.Add(nd.Character, 1);
 
-                            if (nd.GetText(localizationManager) != string.Empty || nd.Image != null || nd.Video != null)
+                            if (nd.GetText() != string.Empty || nd.Image != null || nd.Video != null)
                                 rollbackList[nd.Character] += 1;
 
-                            if (nd.Timelapse != string.Empty)
+                            if (nd.GetTimeLapse() != string.Empty)
                                 rollbackList[nd.Character] += 1;
 
                             if (nd.Post != null)
@@ -265,10 +265,10 @@ namespace MeetAndTalk
                     case DialogueNodeData nd:
                         GameManager.Instance.MessagingCanvas.Open(nd.Character);
                         break;
-                    case DialogueChoiceNodeData nd:
+                    case TimerChoiceNodeData nd:
                         GameManager.Instance.MessagingCanvas.Open(nd.Character);
                         break;
-                    case TimerChoiceNodeData nd:
+                    case DialogueChoiceNodeData nd:
                         GameManager.Instance.MessagingCanvas.Open(nd.Character);
                         break;
 
@@ -305,13 +305,13 @@ namespace MeetAndTalk
                     case DialogueNodeData:
                         dialogueUIManager.SetFullText(item.Text, node, DialogueUIManager.MessageSource.Character, false);
                         break;
-                    case DialogueChoiceNodeData choiceNode:
-                        dialogueUIManager.SetFullText(item.SelectedChoice, node, DialogueUIManager.MessageSource.Player, false);
-                        choiceNode.SelectedChoice = item.SelectedChoice;
+                    case TimerChoiceNodeData tChoiceNode when node is TimerChoiceNodeData:
+                        dialogueUIManager.SetFullText(item.SelectedChoice, tChoiceNode, DialogueUIManager.MessageSource.Player, false);
+                        tChoiceNode.SelectedChoice = item.SelectedChoice;
                         break;
-                    case TimerChoiceNodeData choiceNode:
-                        dialogueUIManager.SetFullText(item.SelectedChoice, node, DialogueUIManager.MessageSource.Player, false);
-                        choiceNode.SelectedChoice = item.SelectedChoice;
+                    case DialogueChoiceNodeData dChoiceNode when node is DialogueChoiceNodeData:
+                        dialogueUIManager.SetFullText(item.SelectedChoice, dChoiceNode, DialogueUIManager.MessageSource.Player, false);
+                        dChoiceNode.SelectedChoice = item.SelectedChoice;
                         break;
                 }
             }
@@ -336,10 +336,10 @@ namespace MeetAndTalk
                 case DialogueNodeData nodeData:
                     RunNode(nodeData);
                     break;
-                case DialogueChoiceNodeData nodeData:
+                case TimerChoiceNodeData nodeData:
                     RunNode(nodeData);
                     break;
-                case TimerChoiceNodeData nodeData:
+                case DialogueChoiceNodeData nodeData:
                     RunNode(nodeData);
                     break;
                 case EventNodeData nodeData:
@@ -421,16 +421,15 @@ namespace MeetAndTalk
             // Last Change
             else dialogueUIManager.ResetText("");
 
-            dialogueUIManager.SetFullText(
-                $"{_nodeData.TextType.Find(text => text.languageEnum == localizationManager.SelectedLang()).LanguageGenericType}",
-                _nodeData,
-                DialogueUIManager.MessageSource.Character
-                );
+            dialogueUIManager.SetFullText(_nodeData.GetText(), _nodeData, DialogueUIManager.MessageSource.Character);
 
             // New Character Avatar
-            if (_nodeData.AvatarPos == AvatarPosition.Left) dialogueUIManager.UpdateAvatars(_nodeData.Character, null, _nodeData.AvatarType);
-            else if (_nodeData.AvatarPos == AvatarPosition.Right) dialogueUIManager.UpdateAvatars(null, _nodeData.Character, _nodeData.AvatarType);
-            else dialogueUIManager.UpdateAvatars(null, null, _nodeData.AvatarType);
+            if (_nodeData.AvatarPos == AvatarPosition.Left)
+                dialogueUIManager.UpdateAvatars(_nodeData.Character, null, _nodeData.AvatarType);
+            else if (_nodeData.AvatarPos == AvatarPosition.Right)
+                dialogueUIManager.UpdateAvatars(null, _nodeData.Character, _nodeData.AvatarType);
+            else
+                dialogueUIManager.UpdateAvatars(null, null, _nodeData.AvatarType);
 
             dialogueUIManager.SkipButton.SetActive(true);
 
@@ -724,14 +723,14 @@ namespace MeetAndTalk
 
             switch (currentDialogueNodeData)
             {
-                case DialogueNodeData nodeData:
+                case DialogueNodeData:
                     DialogueNode_NextNode();
-                    break;
-                case DialogueChoiceNodeData nodeData:
-                    ChoiceNode_GenerateChoice(nodeData.Character, nodeData);
                     break;
                 case TimerChoiceNodeData nodeData:
                     TimerNode_GenerateChoice(nodeData.Character, nodeData);
+                    break;
+                case DialogueChoiceNodeData nodeData:
+                    ChoiceNode_GenerateChoice(nodeData.Character, nodeData);
                     break;
                 default:
                     break;

@@ -208,7 +208,7 @@ public class GalleryCanvas : UICanvas
             return;
 
 
-        switch (nodeData.PostMediaType)
+        switch (nodeData.MediaType)
         {
             case MediaType.Sprite:
                 if (nodeData.Image != null)

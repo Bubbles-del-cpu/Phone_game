@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
   m_Name: intro
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   AllowDialogueSave: 0
   BlockingReopeningDialogue: 0
   NodeLinkDatas:
@@ -79,10 +79,10 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: how have you been?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType:
     Duration: 2
     Delay: 0
-    Timelapse: 
+    Timelapse:
     RequireCharacterInput: 0
   - NodeGuid: ce7f6a6a-b9eb-451c-8a55-9a779e78821c
     Position: {x: 1479, y: 195}
@@ -117,10 +117,10 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: need some cheering up?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType:
     Duration: 2
     Delay: 0
-    Timelapse: 
+    Timelapse:
     RequireCharacterInput: 0
   - NodeGuid: eb7c2ed9-8cbb-4b42-829b-d80a3262537e
     Position: {x: 1855, y: 905}
@@ -156,10 +156,10 @@ MonoBehaviour:
       LanguageGenericType: but i need your help. i can't decide if i should get it
         or not. what do you think?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType:
     Duration: 2
     Delay: 0
-    Timelapse: 
+    Timelapse:
     RequireCharacterInput: 0
   - NodeGuid: 7a178801-c5c2-4508-9d9f-af762ee388f3
     Position: {x: -65, y: 195}
@@ -183,12 +183,12 @@ MonoBehaviour:
     AvatarType: 0
     TextType:
     - languageEnum: 0
-      LanguageGenericType: 
+      LanguageGenericType:
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType:
     Duration: 5
     Delay: 0
-    Timelapse: 
+    Timelapse:
     RequireCharacterInput: 0
   DialogueNodeDatas:
   - NodeGuid: 32545409-1db7-4608-bec0-df23bf1f0c65
@@ -206,7 +206,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: hello!
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType:
     Duration: 2
     Delay: 0
     PostMediaType: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
     Video: {fileID: 0}
     ImageTarget: 0
     Post: {fileID: 0}
-    Timelapse: 
+    Timelapse:
     DelayTimer: 0
   - NodeGuid: c6290eb6-cefd-4d90-89ba-2d9033f9a478
     Position: {x: 1193, y: 195}
@@ -231,7 +231,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: just surviving?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType:
     Duration: 2
     Delay: 0
     PostMediaType: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
     Video: {fileID: 0}
     ImageTarget: 0
     Post: {fileID: 11400000, guid: eb138877c58468442b655355d1754919, type: 2}
-    Timelapse: 
+    Timelapse:
     DelayTimer: 0
   - NodeGuid: 499aa1c1-8095-4116-a9be-e819a2d11a7f
     Position: {x: 1314, y: 905}
@@ -256,7 +256,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: ive been good!
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType:
     Duration: 2
     Delay: 0
     PostMediaType: 0
@@ -264,7 +264,7 @@ MonoBehaviour:
     Video: {fileID: 0}
     ImageTarget: 0
     Post: {fileID: 11400000, guid: eb138877c58468442b655355d1754919, type: 2}
-    Timelapse: 
+    Timelapse:
     DelayTimer: 0
   - NodeGuid: 0fbebb97-6268-41aa-8b49-b93e9db1f963
     Position: {x: 1587, y: 905}
@@ -281,7 +281,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: been out shopping all day and found this!
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType:
     Duration: 2
     Delay: 0
     PostMediaType: 0
@@ -289,7 +289,7 @@ MonoBehaviour:
     Video: {fileID: 0}
     ImageTarget: 1
     Post: {fileID: 11400000, guid: df953d203b734814bb8a6f526821e6a0, type: 2}
-    Timelapse: 
+    Timelapse:
     DelayTimer: 0
   - NodeGuid: dfd89a58-760c-4cf3-af08-f399f3197453
     Position: {x: 2245, y: 905}
@@ -306,7 +306,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: thank you for your help!
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType:
     Duration: 2
     Delay: 0
     PostMediaType: 0
@@ -314,7 +314,7 @@ MonoBehaviour:
     Video: {fileID: 0}
     ImageTarget: 0
     Post: {fileID: 11400000, guid: 9fd17527cce19d74c8552d702889f6b5, type: 2}
-    Timelapse: 
+    Timelapse:
     DelayTimer: 0
   - NodeGuid: f1a4f15e-bccf-42af-8072-6bde30c3623d
     Position: {x: 2388, y: 196}
@@ -331,7 +331,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: now three!!!
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType:
     Duration: 2
     Delay: 0
     PostMediaType: 0
@@ -356,7 +356,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: now you owe me two smiles!!
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType:
     Duration: 6
     Delay: 0
     PostMediaType: 0
@@ -379,9 +379,9 @@ MonoBehaviour:
     AvatarType: 0
     TextType:
     - languageEnum: 0
-      LanguageGenericType: 
+      LanguageGenericType:
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType:
     Duration: 4
     Delay: 0
     PostMediaType: 0
@@ -389,7 +389,7 @@ MonoBehaviour:
     Video: {fileID: 0}
     ImageTarget: 1
     Post: {fileID: 0}
-    Timelapse: 
+    Timelapse:
     DelayTimer: 0
   - NodeGuid: 583862d7-64f4-4d38-a742-f2e466bc1647
     Position: {x: 569, y: 195}
@@ -406,7 +406,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: long time no talk how are your kids doing abroud
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType:
     Duration: 2
     Delay: 0
     PostMediaType: 0
@@ -414,7 +414,7 @@ MonoBehaviour:
     Video: {fileID: 0}
     ImageTarget: 0
     Post: {fileID: 0}
-    Timelapse: 
+    Timelapse:
     DelayTimer: 0
   TimerChoiceNodeDatas: []
   EndNodeDatas: []
@@ -422,7 +422,7 @@ MonoBehaviour:
   StartNodeDatas:
   - NodeGuid: 7fff6fa3-bbfb-46a7-82ef-45bd04ce4d5f
     Position: {x: -217, y: 207}
-    startID: 
+    startID:
   RandomNodeDatas: []
   CommandNodeDatas: []
   IfNodeDatas: []

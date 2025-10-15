@@ -7,9 +7,20 @@ using System;
 using UnityEngine.Video;
 using UnityEngine.UI;
 using System.Linq;
+using MeetAndTalk.Localization;
 
+[ExecuteInEditMode]
 public class GameManager : MonoBehaviour
 {
+    public static LocalizationManager LOCALIZATION_MANAGER
+    {
+        get
+        {
+            var resoruce = Resources.Load<LocalizationManager>("Languages");
+            return resoruce;
+        }
+    }
+
     public static GameManager Instance;
     bool _prevFullScreen;
 
@@ -209,7 +220,7 @@ public class GameManager : MonoBehaviour
 
         settingsCanvas.Close();
 
-        foreach(var item in FindObjectsByType<Notification>(FindObjectsSortMode.None))
+        foreach (var item in FindObjectsByType<Notification>(FindObjectsSortMode.None))
         {
             item.gameObject.SetActive(false);
             Destroy(item);
@@ -230,7 +241,8 @@ public class GameManager : MonoBehaviour
         messagingCanvas.gameObject.SetActive(true);
     }
 
-    public void PlayNotificationFX() {
+    public void PlayNotificationFX()
+    {
         audioSource.PlayOneShot(notificationFX);
     }
 
@@ -307,7 +319,7 @@ public class GameManager : MonoBehaviour
 
     public DialogueCharacterSO[] Characters { get { return characters; } }
 
-    public MessagingCanvas MessagingCanvas{ get { return messagingCanvas; } }
+    public MessagingCanvas MessagingCanvas { get { return messagingCanvas; } }
     public GalleryCanvas GalleryCanvas { get { return galleryCanvas; } }
     public ContactsCanvas ContactsCanvas { get { return contactsCanvas; } }
     public SocialMediaCanvas SocialMediaCanvas { get { return socialMediaCanvas; } }

@@ -11,6 +11,8 @@ using static UnityEngine.GraphicsBuffer;
 using System.Collections.Generic;
 using UnityEngine.Networking;
 using System;
+using UnityEngine.Video;
+using System.Linq;
 
 #if UNITY_EDITOR
 
@@ -30,11 +32,32 @@ public class DialogueContainerSOEditor : Editor
     bool CommandNode = false;
     bool IFNode = false;
 
+    //This function needs to run for any dialogue tree that haven't been opened for the new translation timelapse system
+    //Once it has completed ideally it will be removed and never need to run again but if it does run again nothing should happen
+    //as the timelapse list should have been populated with the correct number of elements to match the Texts list
+    private void CheckTimeLapseText(DialogueContainerSO target)
+    {
+        foreach(var node in target.DialogueNodeDatas)
+        {
+            for (var index = 0; index < node.Texts.Count; index++)
+            {
+                if (index >= node.Timelapses.Count)
+                    node.Timelapses.Add(new LanguageGeneric<string>()
+                    {
+                        languageEnum = node.Texts[index].languageEnum,
+                        LanguageGenericType = node.Timelapse
+                    });
+
+                node.Timelapse = "";
+            }
+        }
+    }
+
     public override void OnInspectorGUI()
     {
         EditorUtility.SetDirty(target);
         DialogueContainerSO _target = (DialogueContainerSO)target;
-
+        CheckTimeLapseText(_target);
         // Base Info
         EditorGUI.indentLevel = 0;
 
@@ -83,15 +106,15 @@ public class DialogueContainerSOEditor : Editor
                 {
                     switch (item)
                     {
-                        case DialogueChoiceNodeData nData when item.GetType() == typeof(DialogueChoiceNodeData):
-                            foreach (var port in nData.DialogueNodePorts)
+                        case TimerChoiceNodeData tData:
+                            foreach (var port in tData.DialogueNodePorts)
                             {
                                 foreach (var hint in port.HintLanguage)
                                     hint.LanguageGenericType = DialogueNodePort.BLANK_HINT;
                             }
                             break;
-                        case TimerChoiceNodeData tData when item.GetType() == typeof(TimerChoiceNodeData):
-                            foreach (var port in tData.DialogueNodePorts)
+                        case DialogueChoiceNodeData nData:
+                            foreach (var port in nData.DialogueNodePorts)
                             {
                                 foreach (var hint in port.HintLanguage)
                                     hint.LanguageGenericType = DialogueNodePort.BLANK_HINT;
@@ -224,13 +247,35 @@ public class DialogueContainerSOEditor : Editor
 
                 _target.DialogueNodeDatas[i].Duration = EditorGUILayout.FloatField("Display Time", _target.DialogueNodeDatas[i].Duration);
 
-                for (int j = 0; j < _target.DialogueNodeDatas[0].TextType.Count; j++)
+                EditorGUILayout.LabelField("Media Settings");
+                _target.DialogueNodeDatas[i].GalleryVisibility = (GalleryDisplay)EditorGUILayout.EnumPopup("Gallery Visiblity", _target.DialogueNodeDatas[i].GalleryVisibility);
+                switch(_target.DialogueNodeDatas[i].GalleryVisibility)
                 {
-                    MAT_Editor.BeginBoxGroup(_target.DialogueNodeDatas[i].TextType[j].languageEnum.ToString(), 00);
+                    case GalleryDisplay.Display:
+                        _target.DialogueNodeDatas[i].MediaType = (MediaType)EditorGUILayout.EnumPopup("Media Type", _target.DialogueNodeDatas[i].MediaType);
+                        switch(_target.DialogueNodeDatas[i].MediaType)
+                        {
+                            case MediaType.Sprite:
+                                _target.DialogueNodeDatas[i].NotBackgroundCapable = EditorGUILayout.Toggle("Not Background Capabe", _target.DialogueNodeDatas[i].NotBackgroundCapable);
+                                _target.DialogueNodeDatas[i].Image = (Sprite)EditorGUILayout.ObjectField("Image", _target.DialogueNodeDatas[i].Image, typeof(Sprite), false);
+                                break;
+                            case MediaType.Video:
+                                _target.DialogueNodeDatas[i].Video = (VideoClip)EditorGUILayout.ObjectField("Video", _target.DialogueNodeDatas[i].Video, typeof(VideoClip), false);
+                                _target.DialogueNodeDatas[i].VideoThumbnail = (Sprite)EditorGUILayout.ObjectField("Fixed Thumbnail", _target.DialogueNodeDatas[i].VideoThumbnail, typeof(Sprite), false);
+                                break;
+                        }
+                        break;
+                }
+
+                for (int j = 0; j < _target.DialogueNodeDatas[i].Texts.Count; j++)
+                {
+                    MAT_Editor.BeginBoxGroup(_target.DialogueNodeDatas[i].Texts[j].languageEnum.ToString(), 00);
                     _target.DialogueNodeDatas[i].AudioClips[j].LanguageGenericType = (AudioClip)EditorGUILayout.ObjectField("Audio Clips", _target.DialogueNodeDatas[i].AudioClips[j].LanguageGenericType, typeof(AudioClip), false);
-                    _target.DialogueNodeDatas[i].TextType[j].LanguageGenericType = EditorGUILayout.TextField("Displayed String", _target.DialogueNodeDatas[i].TextType[j].LanguageGenericType);
+                    _target.DialogueNodeDatas[i].Texts[j].LanguageGenericType = EditorGUILayout.TextField("Displayed String", _target.DialogueNodeDatas[i].Texts[j].LanguageGenericType);
+                    _target.DialogueNodeDatas[i].Timelapses[j].LanguageGenericType = EditorGUILayout.TextField("Timelapse", _target.DialogueNodeDatas[i].Timelapses[j].LanguageGenericType);
                     EditorGUILayout.EndVertical();
                 }
+
                 EditorGUILayout.EndVertical();
                 // Display Node
                 EditorGUILayout.EndHorizontal();
@@ -239,113 +284,118 @@ public class DialogueContainerSOEditor : Editor
         }
         #endregion
 
-        #region Choice Node
-        count = _target.DialogueChoiceNodeDatas.Count;
+        #region Choice Nodes
 
         // Foldout
-        MAT_Editor.FoldoutGroup($"Choice Node [{count}]", "List of Player's Choice", MAT_Editor.GetTinyIcon("Node_Choice_Gizmo"), ref DialogueChoiceNode);
 
-        if (DialogueChoiceNode)
-        {
-            EditorGUILayout.BeginVertical("HelpBox");
-            // List
-            for (int i = 0; i < count; i++)
-            {
-                EditorGUILayout.BeginHorizontal();
-                // Display Node
-                MAT_Editor.BeginBoxGroup(_target.DialogueChoiceNodeDatas[i].NodeGuid, i + 1);
+        //MAT_Editor.FoldoutGroup(, MAT_Editor.GetTinyIcon("Node_Choice_Gizmo"), ref DialogueChoiceNode);
+        CustomEditorHelper.DrawDialogueChoiceNodes(_target.DialogueChoiceNodeDatas, $"Choice Node [{_target.DialogueChoiceNodeDatas.Count}]", "List of Player's Choice", "Node_Choice_Gizmo", ref DialogueChoiceNode);
+        CustomEditorHelper.DrawDialogueChoiceNodes(_target.TimerChoiceNodeDatas, $"Timer Choice Node [{count}]", "List of Time-Limited Player Choices", "Node_Timer_Gizmo", ref DialogueTimerChoiceNode);
+        // if (DialogueChoiceNode || DialogueTimerChoiceNode)
+        // {
+        //     count = DialogueChoiceNode ? _target.DialogueChoiceNodeDatas.Count : _target.TimerChoiceNodeDatas.Count;
+        //     var nodeDatas = DialogueChoiceNode ? _target.DialogueChoiceNodeDatas : _target.TimerChoiceNodeDatas.Cast<DialogueChoiceNodeData>().ToList();
+        //     EditorGUILayout.BeginVertical("HelpBox");
+        //     // List
+        //     for (int i = 0; i < count; i++)
+        //     {
+        //         EditorGUILayout.BeginHorizontal();
+        //         // Display Node
+        //         MAT_Editor.BeginBoxGroup(nodeDatas[i].NodeGuid, i + 1);
 
-                _target.DialogueChoiceNodeDatas[i].Position = EditorGUILayout.Vector2Field("Position", _target.DialogueChoiceNodeDatas[i].Position);
-                _target.DialogueChoiceNodeDatas[i].Character = (DialogueCharacterSO)EditorGUILayout.ObjectField("Character", _target.DialogueChoiceNodeDatas[i].Character, typeof(DialogueCharacterSO), false);
-                _target.DialogueChoiceNodeDatas[i].AvatarPos = (AvatarPosition)EditorGUILayout.EnumPopup("Avatar Display", _target.DialogueChoiceNodeDatas[i].AvatarPos);
-                _target.DialogueChoiceNodeDatas[i].AvatarType = (AvatarType)EditorGUILayout.EnumPopup("Avatar Emotion", _target.DialogueChoiceNodeDatas[i].AvatarType);
-                _target.DialogueChoiceNodeDatas[i].Duration = EditorGUILayout.FloatField("Display Time", _target.DialogueChoiceNodeDatas[i].Duration);
-                _target.DialogueChoiceNodeDatas[i].RequireCharacterInput = EditorGUILayout.Toggle("Require Input", _target.DialogueChoiceNodeDatas[i].RequireCharacterInput);
+        //         nodeDatas[i].Position = EditorGUILayout.Vector2Field("Position", nodeDatas[i].Position);
+        //         nodeDatas[i].Character = (DialogueCharacterSO)EditorGUILayout.ObjectField("Character", nodeDatas[i].Character, typeof(DialogueCharacterSO), false);
+        //         nodeDatas[i].AvatarPos = (AvatarPosition)EditorGUILayout.EnumPopup("Avatar Display", nodeDatas[i].AvatarPos);
+        //         nodeDatas[i].AvatarType = (AvatarType)EditorGUILayout.EnumPopup("Avatar Emotion", nodeDatas[i].AvatarType);
+        //         nodeDatas[i].Duration = EditorGUILayout.FloatField("Display Time", nodeDatas[i].Duration);
+        //         nodeDatas[i].RequireCharacterInput = EditorGUILayout.Toggle("Require Input", nodeDatas[i].RequireCharacterInput);
 
-                for (int j = 0; j < _target.DialogueChoiceNodeDatas[0].TextType.Count; j++)
-                {
-                    MAT_Editor.BeginBoxGroup(_target.DialogueChoiceNodeDatas[i].TextType[j].languageEnum.ToString(), 00);
+        //         if (DialogueTimerChoiceNode)
+        //             _target.TimerChoiceNodeDatas[i].time = EditorGUILayout.FloatField("Time to make decision", _target.TimerChoiceNodeDatas[i].time);
 
-                    _target.DialogueChoiceNodeDatas[i].AudioClips[j].LanguageGenericType = (AudioClip)EditorGUILayout.ObjectField("Audio Clips", _target.DialogueChoiceNodeDatas[i].AudioClips[j].LanguageGenericType, typeof(AudioClip), false);
-                    _target.DialogueChoiceNodeDatas[i].TextType[j].LanguageGenericType = EditorGUILayout.TextField("Displayed String", _target.DialogueChoiceNodeDatas[i].TextType[j].LanguageGenericType);
-                    EditorGUILayout.LabelField("Options: ", EditorStyles.boldLabel);
-                    EditorGUI.indentLevel++;
-                    foreach (var port in _target.DialogueChoiceNodeDatas[i].DialogueNodePorts)
-                    {
-                        for (var index = 0; index < port.TextLanguage.Count; index++)
-                        {
-                            port.TextLanguage[index].LanguageGenericType = EditorGUILayout.TextField($"Option_{index + 1}", port.TextLanguage[index].LanguageGenericType);
-                        }
+        //         for (int j = 0; j < GameManager.LOCALIZATION_MANAGER.lang.Count + 1; j++)
+        //         {
+        //             MAT_Editor.BeginBoxGroup(nodeDatas[i].TextType[j].languageEnum.ToString(), 00);
+        //             nodeDatas[i].AudioClips[j].LanguageGenericType = (AudioClip)EditorGUILayout.ObjectField("Audio Clips", nodeDatas[i].AudioClips[j].LanguageGenericType, typeof(AudioClip), false);
+        //             nodeDatas[i].TextType[j].LanguageGenericType = EditorGUILayout.TextField("Displayed String", nodeDatas[i].TextType[j].LanguageGenericType);
+        //             var portIndex = 1;
+        //             foreach (var port in nodeDatas[i].DialogueNodePorts)
+        //             {
+        //                 MAT_Editor.BeginBoxGroup($"Option_{j + 1}", portIndex);
+        //                 port.TextLanguage[j].LanguageGenericType = EditorGUILayout.TextField(port.TextLanguage[j].LanguageGenericType);
+        //                 port.HintLanguage[j].LanguageGenericType = EditorGUILayout.TextField(port.HintLanguage[j].LanguageGenericType);
+        //                 EditorGUILayout.EndVertical();
+        //                 portIndex++;
+        //             }
 
-                        for (var index = 0; index < port.HintLanguage.Count; index++)
-                        {
-                            port.HintLanguage[index].LanguageGenericType = EditorGUILayout.TextField($"Hint_{index + 1}", port.HintLanguage[index].LanguageGenericType);
-                        }
-                    }
-                    EditorGUI.indentLevel--;
-                    EditorGUILayout.EndVertical();
-                }
-                EditorGUILayout.EndVertical();
-                // Display Node
-                EditorGUILayout.EndHorizontal();
-            }
-            EditorGUILayout.EndVertical();
-        }
+        //             //EditorGUILayout.LabelField("Options: ", EditorStyles.boldLabel);
+
+        //             // EditorGUI.indentLevel++;
+
+        //             // EditorGUI.indentLevel--;
+        //             EditorGUILayout.EndVertical();
+        //         }
+        //         EditorGUILayout.EndVertical();
+        //         // Display Node
+        //         EditorGUILayout.EndHorizontal();
+        //     }
+        //     EditorGUILayout.EndVertical();
+        // }
         #endregion
 
-        #region Timer Choice Node
-        count = _target.TimerChoiceNodeDatas.Count;
+        // #region Timer Choice Node
+        // count = _target.TimerChoiceNodeDatas.Count;
 
-        // Foldout
-        MAT_Editor.FoldoutGroup($"Timer Choice Node [{count}]", "List of Time-Limited Player Choices", MAT_Editor.GetTinyIcon("Node_Timer_Gizmo"), ref DialogueTimerChoiceNode);
+        // // Foldout
+        // MAT_Editor.FoldoutGroup($"Timer Choice Node [{count}]", "List of Time-Limited Player Choices", MAT_Editor.GetTinyIcon("Node_Timer_Gizmo"), ref DialogueTimerChoiceNode);
 
-        if (DialogueTimerChoiceNode)
-        {
-            EditorGUILayout.BeginVertical("HelpBox");
-            // List
-            for (int i = 0; i < count; i++)
-            {
-                EditorGUILayout.BeginHorizontal();
-                // Display Node
-                MAT_Editor.BeginBoxGroup(_target.TimerChoiceNodeDatas[i].NodeGuid, i + 1);
+        // if (DialogueTimerChoiceNode)
+        // {
+        //     EditorGUILayout.BeginVertical("HelpBox");
+        //     // List
+        //     for (int i = 0; i < count; i++)
+        //     {
+        //         EditorGUILayout.BeginHorizontal();
+        //         // Display Node
+        //         MAT_Editor.BeginBoxGroup(_target.TimerChoiceNodeDatas[i].NodeGuid, i + 1);
 
-                _target.TimerChoiceNodeDatas[i].Position = EditorGUILayout.Vector2Field("Position", _target.TimerChoiceNodeDatas[i].Position);
-                _target.TimerChoiceNodeDatas[i].Character = (DialogueCharacterSO)EditorGUILayout.ObjectField("Character", _target.TimerChoiceNodeDatas[i].Character, typeof(DialogueCharacterSO), false);
-                _target.TimerChoiceNodeDatas[i].AvatarPos = (AvatarPosition)EditorGUILayout.EnumPopup("Avatar Display", _target.TimerChoiceNodeDatas[i].AvatarPos);
-                _target.TimerChoiceNodeDatas[i].AvatarType = (AvatarType)EditorGUILayout.EnumPopup("Avatar Emotion", _target.TimerChoiceNodeDatas[i].AvatarType);
-                _target.TimerChoiceNodeDatas[i].Duration = EditorGUILayout.FloatField("Display Time", _target.TimerChoiceNodeDatas[i].Duration);
-                _target.TimerChoiceNodeDatas[i].time = EditorGUILayout.FloatField("Time to make decision", _target.TimerChoiceNodeDatas[i].time);
+        //         _target.TimerChoiceNodeDatas[i].Position = EditorGUILayout.Vector2Field("Position", _target.TimerChoiceNodeDatas[i].Position);
+        //         _target.TimerChoiceNodeDatas[i].Character = (DialogueCharacterSO)EditorGUILayout.ObjectField("Character", _target.TimerChoiceNodeDatas[i].Character, typeof(DialogueCharacterSO), false);
+        //         _target.TimerChoiceNodeDatas[i].AvatarPos = (AvatarPosition)EditorGUILayout.EnumPopup("Avatar Display", _target.TimerChoiceNodeDatas[i].AvatarPos);
+        //         _target.TimerChoiceNodeDatas[i].AvatarType = (AvatarType)EditorGUILayout.EnumPopup("Avatar Emotion", _target.TimerChoiceNodeDatas[i].AvatarType);
+        //         _target.TimerChoiceNodeDatas[i].Duration = EditorGUILayout.FloatField("Display Time", _target.TimerChoiceNodeDatas[i].Duration);
+        //         _target.TimerChoiceNodeDatas[i].time = EditorGUILayout.FloatField("Time to make decision", _target.TimerChoiceNodeDatas[i].time);
 
-                for (int j = 0; j < _target.TimerChoiceNodeDatas[0].TextType.Count; j++)
-                {
-                    MAT_Editor.BeginBoxGroup(_target.DialogueChoiceNodeDatas[i].TextType[j].languageEnum.ToString(), 00);
-                    _target.TimerChoiceNodeDatas[i].AudioClips[j].LanguageGenericType = (AudioClip)EditorGUILayout.ObjectField("Audio Clips", _target.TimerChoiceNodeDatas[i].AudioClips[j].LanguageGenericType, typeof(AudioClip), false);
-                    _target.TimerChoiceNodeDatas[i].TextType[j].LanguageGenericType = EditorGUILayout.TextField("Displayed String", _target.TimerChoiceNodeDatas[i].TextType[j].LanguageGenericType);
-                    EditorGUILayout.LabelField("Options: ", EditorStyles.boldLabel);
-                    EditorGUI.indentLevel++;
+        //         for (int j = 0; j < _target.TimerChoiceNodeDatas[0].TextType.Count; j++)
+        //         {
+        //             MAT_Editor.BeginBoxGroup(_target.DialogueChoiceNodeDatas[i].TextType[j].languageEnum.ToString(), 00);
+        //             _target.TimerChoiceNodeDatas[i].AudioClips[j].LanguageGenericType = (AudioClip)EditorGUILayout.ObjectField("Audio Clips", _target.TimerChoiceNodeDatas[i].AudioClips[j].LanguageGenericType, typeof(AudioClip), false);
+        //             _target.TimerChoiceNodeDatas[i].TextType[j].LanguageGenericType = EditorGUILayout.TextField("Displayed String", _target.TimerChoiceNodeDatas[i].TextType[j].LanguageGenericType);
+        //             EditorGUILayout.LabelField("Options: ", EditorStyles.boldLabel);
+        //             EditorGUI.indentLevel++;
 
-                    foreach (var port in _target.TimerChoiceNodeDatas[i].DialogueNodePorts)
-                    {
-                        for (var index = 0; index < port.TextLanguage.Count; index++)
-                        {
-                            port.TextLanguage[index].LanguageGenericType = EditorGUILayout.TextField($"Option ID: {index}", port.TextLanguage[index].LanguageGenericType);
-                        }
+        //             foreach (var port in _target.TimerChoiceNodeDatas[i].DialogueNodePorts)
+        //             {
+        //                 for (var index = 0; index < port.TextLanguage.Count; index++)
+        //                 {
+        //                     port.TextLanguage[index].LanguageGenericType = EditorGUILayout.TextField($"Option ID: {index}", port.TextLanguage[index].LanguageGenericType);
+        //                 }
 
-                        for (var index = 0; index < port.HintLanguage.Count; index++)
-                        {
-                            port.HintLanguage[index].LanguageGenericType = EditorGUILayout.TextField($"Hint ID: {index}", port.HintLanguage[index].LanguageGenericType);
-                        }
-                    }
-                    EditorGUI.indentLevel--;
-                    EditorGUILayout.EndVertical();
-                }
-                EditorGUILayout.EndVertical();
-                // Display Node
-                EditorGUILayout.EndHorizontal();
-            }
-            EditorGUILayout.EndVertical();
-        }
-        #endregion
+        //                 for (var index = 0; index < port.HintLanguage.Count; index++)
+        //                 {
+        //                     port.HintLanguage[index].LanguageGenericType = EditorGUILayout.TextField($"Hint ID: {index}", port.HintLanguage[index].LanguageGenericType);
+        //                 }
+        //             }
+        //             EditorGUI.indentLevel--;
+        //             EditorGUILayout.EndVertical();
+        //         }
+        //         EditorGUILayout.EndVertical();
+        //         // Display Node
+        //         EditorGUILayout.EndHorizontal();
+        //     }
+        //     EditorGUILayout.EndVertical();
+        // }
+        // #endregion
 
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("Functional Nodes", EditorStyles.boldLabel);
@@ -493,7 +543,8 @@ public class DialogueContainerSOEditor : Editor
 
         foreach (var dialogueData in _target.DialogueNodeDatas)
         {
-            TranslateTextList(dialogueData.TextType, apiKey, isGoogle);
+            TranslateTextList(dialogueData.Texts, apiKey, isGoogle);
+            TranslateTextList(dialogueData.Timelapses, apiKey, isGoogle);
         }
         foreach (var dialogueChoiceData in _target.DialogueChoiceNodeDatas)
         {

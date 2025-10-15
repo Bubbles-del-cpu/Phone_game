@@ -201,7 +201,7 @@ namespace MeetAndTalk.Editor
 
             return tmp;
         }
-        
+
         // This NEW function is for creating a node from the search menu
         public IFNode CreateNewIFNode(Vector2 _pos)
         {

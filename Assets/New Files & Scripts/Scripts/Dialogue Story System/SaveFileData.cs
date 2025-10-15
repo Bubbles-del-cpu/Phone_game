@@ -355,8 +355,10 @@ public class SaveFileData
 
         switch (nodeData)
         {
-            case DialogueChoiceNodeData:
             case TimerChoiceNodeData:
+                newConversation.IsChoice = true;
+                break;
+            case DialogueChoiceNodeData:
                 newConversation.IsChoice = true;
                 break;
         }
@@ -496,10 +498,10 @@ public class SaveFileData
         //check the selected choice against specific rules for the rollback action
         switch (nodeData)
         {
-            case DialogueChoiceNodeData nd:
+            case TimerChoiceNodeData nd:
                 nd.SelectedChoice = choice;
                 break;
-            case TimerChoiceNodeData nd:
+            case DialogueChoiceNodeData nd:
                 nd.SelectedChoice = choice;
                 break;
         }

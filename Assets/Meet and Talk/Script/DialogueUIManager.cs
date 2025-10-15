@@ -177,7 +177,7 @@ namespace MeetAndTalk
                         {
                             if (nd.Image != null || nd.Video != null)
                             {
-                                notificationText = $"has sent a new {(nd.PostMediaType == MediaType.Sprite ? "picture" : "video")}";
+                                notificationText = $"has sent a new {(nd.MediaType == MediaType.Sprite ? "picture" : "video")}";
                                 if (notification)
                                     SpawnNotification(Notification.NotificationType.Message, nd.Character, notificationText);
                             }
