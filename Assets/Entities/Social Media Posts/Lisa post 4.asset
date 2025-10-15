@@ -13,9 +13,18 @@ MonoBehaviour:
   m_Name: Lisa post 4
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
-  Message: New bikini to get the tans
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: New bikini to get the tans
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
+  MediaType: 0
+  GalleryVisibility: 0
   Image: {fileID: 5890984596631815967, guid: d0d2e32a8df227b4990eeab82bfa5277, type: 3}
-  ImageTarget: 1
+  Video: {fileID: 0}
+  VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments:
   - Name: Izzy
     Content: Slay

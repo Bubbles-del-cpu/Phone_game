@@ -13,11 +13,18 @@ MonoBehaviour:
   m_Name: Lily(Crush)post 1
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: 44da74b3d308fdb4e9f9fdc127092247, type: 2}
-  Message: Waiting for someone...
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: Waiting for someone...
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 0
   GalleryVisibility: 0
   Image: {fileID: 1801986909405769250, guid: 3b5d9773893d0e649b1c840556cf2c69, type: 3}
   Video: {fileID: 0}
+  VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments:
   - Name: James
     Content: I went there yesterday. Sucked ass...

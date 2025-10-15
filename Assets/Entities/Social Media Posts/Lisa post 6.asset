@@ -13,13 +13,19 @@ MonoBehaviour:
   m_Name: Lisa post 6
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
-  Message: Someone couldn't handle their tequila. Looks like I had to take the reins
-    tonight
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: Someone couldn't handle their tequila. Looks like I had
+      to take the reins tonight
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 0
   GalleryVisibility: 0
   Image: {fileID: -2103037731824995907, guid: 20e070c3dee256040949b243a0e2bc7b, type: 3}
   Video: {fileID: 0}
   VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments:
   - Name: 'Izzy '
     Content: haha

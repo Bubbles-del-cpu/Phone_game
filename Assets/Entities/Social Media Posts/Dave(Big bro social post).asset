@@ -13,11 +13,18 @@ MonoBehaviour:
   m_Name: Dave(Big bro social post)
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: 4a6d2ae02febf1748b46e60b37b0b6a8, type: 2}
-  Message: Resit grind
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: Resit grind
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 0
   GalleryVisibility: 0
   Image: {fileID: 7096779254177660888, guid: d0cf02e798c397547abb417447820de4, type: 3}
   Video: {fileID: 0}
+  VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments:
   - Name: Izzy
     Content: You got this stud

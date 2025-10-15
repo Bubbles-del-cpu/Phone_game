@@ -13,10 +13,18 @@ MonoBehaviour:
   m_Name: Lisa post 2
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
-  Message: Dinner with Hubby @Dave
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: Dinner with Hubby @Dave
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 0
+  GalleryVisibility: 0
   Image: {fileID: -5675359923315279408, guid: 5b5a09aa38ccff64b8e7b304114f2c49, type: 3}
   Video: {fileID: 0}
+  VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments:
   - Name: Izzy
     Content: I could use some wine right now
