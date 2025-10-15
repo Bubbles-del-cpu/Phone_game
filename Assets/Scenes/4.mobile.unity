@@ -1079,7 +1079,7 @@ MonoBehaviour:
   _content: {fileID: 433836023}
   _unlockAllButton: {fileID: 1779906041}
   StoryList:
-  - Story: {fileID: 11400000, guid: e6ceaba26fc854743b6e81dca67f8748, type: 2}
+  - Story: {fileID: 11400000, guid: 4b2b3afd41e68fe4c8c7a646981972b3, type: 2}
     StartID: 
     ChapterIndex: 0
     IsStoryChapter: 0
@@ -1089,7 +1089,34 @@ MonoBehaviour:
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are  you more dominant or submissive?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Are  you more dominant or submissive?
       Value:
         ValueName: DOM_LVL
       Option1Text: DOM
@@ -1101,7 +1128,34 @@ MonoBehaviour:
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are  you more dominant or submissive?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Are  you more dominant or submissive?
       Value:
         ValueName: DOM_LVL
       Option1Text: DOM
@@ -1113,7 +1167,34 @@ MonoBehaviour:
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are  you more dominant or submissive?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Are  you more dominant or submissive?
       Value:
         ValueName: DOM_LVL
       Option1Text: DOM
@@ -1125,7 +1206,34 @@ MonoBehaviour:
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are  you more dominant or submissive?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Are  you more dominant or submissive?
       Value:
         ValueName: DOM_LVL
       Option1Text: DOM
@@ -1142,14 +1250,68 @@ MonoBehaviour:
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are  you more dominant or submissive?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Are  you more dominant or submissive?
       Value:
         ValueName: DOM_LVL
       Option1Text: DOM
       OptionSetting1: 110
       Option2Text: SUB
       OptionSetting2: 95
-    - DialogTitle: Did you accept more picture's of Lisa?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51345289342976
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you accept more picture's of Lisa?
       Value:
         ValueName: DOM_LVL
       Option1Text: DOM
@@ -1161,21 +1323,102 @@ MonoBehaviour:
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are  you more dominant or submissive?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Are  you more dominant or submissive?
       Value:
         ValueName: DOM_LVL
       Option1Text: DOM
       OptionSetting1: 110
       Option2Text: SUB
       OptionSetting2: 95
-    - DialogTitle: Did you accept at home care?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51501413920768
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you accept at home care?
       Value:
         ValueName: AT_HOME_CARE
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: Did you extort Victoria?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51427267014656
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you extort Victoria?
       Value:
         ValueName: victoria_extort
       Option1Text: Yes
@@ -1187,35 +1430,170 @@ MonoBehaviour:
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are  you more dominant or submissive?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Are  you more dominant or submissive?
       Value:
         ValueName: DOM_LVL
       Option1Text: DOM
       OptionSetting1: 110
       Option2Text: SUB
       OptionSetting2: 95
-    - DialogTitle: Did you allow Math to be rough with Lily?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51617478701056
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you allow Math to be rough with Lily?
       Value:
         ValueName: MATH_ROUGH
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: Did you accept home care?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51501413920768
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you accept home care?
       Value:
         ValueName: AT_HOME_CARE
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: Did you extort Victoria?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51427267014656
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you extort Victoria?
       Value:
         ValueName: victoria_extort
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: Did you encourage Dave to send more pictures of Lisa?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51555235229696
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you encourage Dave to send more pictures of Lisa?
       Value:
         ValueName: LISA_PICS
       Option1Text: Yes
@@ -1227,28 +1605,136 @@ MonoBehaviour:
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are you more DOM or SUB?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Are you more DOM or SUB?
       Value:
         ValueName: DOM_LVL
       Option1Text: DOM
       OptionSetting1: 110
       Option2Text: SUB
       OptionSetting2: 95
-    - DialogTitle: Did you allow math to be rough with Lily?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51617478701056
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you allow math to be rough with Lily?
       Value:
         ValueName: MATH_ROUGH
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: Did you accept home_care
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51501413920768
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you accept home_care
       Value:
         ValueName: AT_HOME_CARE
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: If yes did you extort Victoria?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51427267014656
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: If yes did you extort Victoria?
       Value:
         ValueName: victoria_extort
       Option1Text: Yes
@@ -1260,28 +1746,136 @@ MonoBehaviour:
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are you more DOM or SUB?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Are you more DOM or SUB?
       Value:
         ValueName: DOM_LVL
       Option1Text: DOM
       OptionSetting1: 110
       Option2Text: SUB
       OptionSetting2: 95
-    - DialogTitle: Did you allow Math to be rough with Lily?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51617478701056
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you allow Math to be rough with Lily?
       Value:
         ValueName: MATH_ROUGH
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: Did you accept home care?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51501413920768
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you accept home care?
       Value:
         ValueName: AT_HOME_CARE
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: Did you extort Victoria
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51427267014656
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you extort Victoria
       Value:
         ValueName: victoria_extort
       Option1Text: Yes
@@ -1293,35 +1887,170 @@ MonoBehaviour:
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are you more DOM or SUB?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Are you more DOM or SUB?
       Value:
         ValueName: DOM_LVL
       Option1Text: DOM
       OptionSetting1: 110
       Option2Text: SUB
       OptionSetting2: 95
-    - DialogTitle: Did you allow Math to be rough with Lily?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51617478701056
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you allow Math to be rough with Lily?
       Value:
         ValueName: MATH_ROUGH
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: Did you accept home care?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51501413920768
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you accept home care?
       Value:
         ValueName: AT_HOME_CARE
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: Did you extort Victoria
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51427267014656
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you extort Victoria
       Value:
         ValueName: victoria_extort
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: Did you encourage Dave to send more pictures of Lisa?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51555235229696
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you encourage Dave to send more pictures of Lisa?
       Value:
         ValueName: LISA_PICS
       Option1Text: Yes
@@ -1333,21 +2062,102 @@ MonoBehaviour:
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are you more DOM or SUB?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Are you more DOM or SUB?
       Value:
         ValueName: DOM_LVL
       Option1Text: DOM
       OptionSetting1: 110
       Option2Text: SUB
       OptionSetting2: 95
-    - DialogTitle: Did you continue with Math?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51883980582912
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you continue with Math?
       Value:
         ValueName: Continue_math
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: If yes... Did you allow Math to be rough with Lily earlier?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 58953681301504
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: If yes... Did you allow Math to be rough with Lily earlier?
       Value:
         ValueName: MATH_ROUGH
       Option1Text: Yes
@@ -1359,49 +2169,238 @@ MonoBehaviour:
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are you more DOM or SUB?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Are you more DOM or SUB?
       Value:
         ValueName: DOM_LVL
       Option1Text: DOM
       OptionSetting1: 110
       Option2Text: SUB
       OptionSetting2: 95
-    - DialogTitle: Did you continue with Math?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51883980582912
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you continue with Math?
       Value:
         ValueName: Continue_math
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: If no did you and Lily plan the date with Khalid?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 52026930851840
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: If no did you and Lily plan the date with Khalid?
       Value:
         ValueName: khalid_meet
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: Did you accept home care
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51501413920768
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you accept home care
       Value:
         ValueName: AT_HOME_CARE
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: If yes did you extort Victoria?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51427267014656
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: If yes did you extort Victoria?
       Value:
         ValueName: victoria_extort
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: If you did not extort Victoria. Did you watch a movie with her?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 52115288059904
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: If you did not extort Victoria. Did you watch a movie with her?
       Value:
         ValueName: vic_movie_night
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: Did you accept the docters tests?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 52214428823552
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you accept the docters tests?
       Value:
         ValueName: dr_happy
       Option1Text: Yes
@@ -1413,21 +2412,102 @@ MonoBehaviour:
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are you more DOM or SUB?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Are you more DOM or SUB?
       Value:
         ValueName: DOM_LVL
       Option1Text: DOM
       OptionSetting1: 110
       Option2Text: SUB
       OptionSetting2: 95
-    - DialogTitle: Did you continue with Math?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51883980582912
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you continue with Math?
       Value:
         ValueName: Continue_math
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: If no did you and Lily plan the date with Khalid?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 52026930851840
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: If no did you and Lily plan the date with Khalid?
       Value:
         ValueName: khalid_meet
       Option1Text: Yes
@@ -1439,49 +2519,238 @@ MonoBehaviour:
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Did you continue with Math?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51617478701056
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you continue with Math?
       Value:
         ValueName: Continue_math
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: If no did you and Lily plan the date with Khalid?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 52026930851840
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: If no did you and Lily plan the date with Khalid?
       Value:
         ValueName: khalid_meet
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: Did you accept home care
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51501413920768
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you accept home care
       Value:
         ValueName: AT_HOME_CARE
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: If yes did you extort Victoria?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 59995940679680
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: If yes did you extort Victoria?
       Value:
         ValueName: victoria_extort
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: If you did not extort Victoria. Did you watch a movie with her?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 52115288059904
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: If you did not extort Victoria. Did you watch a movie with her?
       Value:
         ValueName: vic_movie_night
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: Did you accept the docters tests?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 52214428823552
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Did you accept the docters tests?
       Value:
         ValueName: dr_happy
       Option1Text: Yes
       OptionSetting1: true
       Option2Text: No
       OptionSetting2: false
-    - DialogTitle: Does Lisa know you like to be cucked?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 52345165279232
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      DialogTitle: Does Lisa know you like to be cucked?
       Value:
         ValueName: dr_happy
       Option1Text: Yes
@@ -1509,6 +2778,9 @@ MonoBehaviour:
   ReplayDialog: {fileID: 4768670791729921411, guid: 2630e85cc97137d43b317fbcb527a404, type: 3}
   _chapterButtonPrefab: {fileID: 3627330244019954525, guid: b1c44dc711475c348b7e3f66eef58421, type: 3}
   _chapterButtonContainer: {fileID: 229333746260310737}
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &110121370
 GameObject:
   m_ObjectHideFlags: 0
@@ -2760,7 +4032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 200.06757
+      value: 162.97299
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3198,7 +4470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 321.44592
+      value: 259.62164
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3457,7 +4729,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 81.35586, y: -24}
+  m_AnchoredPosition: {x: 68.991, y: -24}
   m_SizeDelta: {x: 64, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &307139076
@@ -4025,7 +5297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 78.689186
+      value: 66.324326
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6969,7 +8241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 200.06757
+      value: 162.97299
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -9175,6 +10447,7 @@ MonoBehaviour:
   PlayingStandaloneChapter: 0
   CurrentSave:
     Version: 
+    PreviousVersion: 
     SaveFileSlot: 0
     ForceUnlockAllChapters: 0
     DisplayHints: 0
@@ -9792,7 +11065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1207203134180617477, guid: b7abca7edcae76a4d957b7a22623f364, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 321.44592
+      value: 259.62164
       objectReference: {fileID: 0}
     - target: {fileID: 1207203134180617477, guid: b7abca7edcae76a4d957b7a22623f364, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -9910,7 +11183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 78.689186
+      value: 66.324326
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -10698,7 +11971,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 318.7793, y: -24}
+  m_AnchoredPosition: {x: 256.955, y: -24}
   m_SizeDelta: {x: 64, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1153060194
@@ -10904,43 +12177,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169289311}
   m_CullTransparentMesh: 1
---- !u!84 &1190834175
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 6
-  m_Width: 606
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 0
-  m_ColorFormat: 4
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_UseDynamicScaleExplicit: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &1195960641
 GameObject:
   m_ObjectHideFlags: 0
@@ -13443,6 +14679,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1599159640}
   m_CullTransparentMesh: 1
+--- !u!84 &1609211593
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 6
+  m_Width: 606
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 0
+  m_ColorFormat: 4
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_UseDynamicScaleExplicit: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1001 &1639671802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15653,7 +16926,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 1190834175}
+  m_Texture: {fileID: 1609211593}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -16062,7 +17335,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200.06757, y: -24}
+  m_AnchoredPosition: {x: 162.97299, y: -24}
   m_SizeDelta: {x: 64, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1955806144

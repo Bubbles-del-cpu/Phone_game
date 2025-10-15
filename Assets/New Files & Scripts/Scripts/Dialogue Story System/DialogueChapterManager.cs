@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.UI;
 
 public class DialogueChapterManager : UICanvas
@@ -20,11 +21,15 @@ public class DialogueChapterManager : UICanvas
         [System.Serializable]
         public class ChapterReplaySetting
         {
-            public string DialogTitle;
+            public LocalizedString DialogueTitleString;
             public GlobalValueSave Value;
-            public string Option1Text;
+
+            [Header("Option 1")]
+            public LocalizedString Option1TextString;
             public string OptionSetting1;
-            public string Option2Text;
+
+            [Header("Option 2")]
+            public LocalizedString Option2TextString;
             public string OptionSetting2;
         }
 
