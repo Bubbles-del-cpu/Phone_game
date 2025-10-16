@@ -12,12 +12,11 @@ public class SaveFileData
 {
     public static string SAVE_FILE_VERSION = "0.10";
     public string Version;
-    public string PreviousVersion;
     public int SaveFileSlot;
     public bool ForceUnlockAllChapters;
     public bool DisplayHints;
     public MediaData CustomBackgroundImage;
-    public SystemLanguage LocalizationValue;
+    public SystemLanguage CurrentLanguage = SystemLanguage.English;
     [NonSerialized] public GameSaveState CurrentState;
     public int TotalChapters => CurrentState.Chapters.Count;
     public GameSaveState AutoSaveState;
@@ -134,7 +133,7 @@ public class SaveFileData
 
         saveFile.Version = SAVE_FILE_VERSION;
         saveFile.SaveFileSlot = slot;
-        saveFile.LocalizationValue = DialogueManager.Instance.localizationManager.selectedLang;
+        saveFile.CurrentLanguage = DialogueManager.Instance.localizationManager.selectedLang;
         saveFile.UnlockedMedia = new List<MediaData>();
         saveFile.ForceUnlockAllChapters = false;
         saveFile.DisplayHints = false;
@@ -178,8 +177,6 @@ public class SaveFileData
         var oldVersion = Version;
         if (Version != newSaveFile.Version)
         {
-            PreviousVersion = Version;
-
             Version = newSaveFile.Version;
             wasUpdated = true;
         }

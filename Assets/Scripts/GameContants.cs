@@ -12,22 +12,23 @@ public static class GameConstants
     public static class DialogTextKeys
     {
         public static string DIALOGUE_TABLE_KEY = "Dialog Prompts";
-        public static string CHAPTER_COMPLETE= "CHAPTER_COMPLETE";
-        public static string CHAPTER_REPLAY_COMPLETE = "CHAPTER_REPLAY_COMPLETE";
-        public static string ALL_CHAPTERS_COMPLETE = "ALL_CHAPTERS_COMPLETE";
-        public static string INVALID_SAVE_DATA = "INVALID_SAVE_DATA";
-        public static string QUIT = "QUIT";
-        public static string CLEAR_SAVE = "CLEAR_SAVE";
-        public static string CHAPTER_UNLOCK_WARNING = "CHAPTER_UNLOCK_WARNING?";
-        public static string SAVE_STATE_DELETE = "SAVE_STATE_DELETE";
-        public static string LOGOUT_WARNING = "LOGOUT_WARNING";
-        public static string REPLAY_CHAPTER_SELECT_WARNING = "REPLAY_CHAPTER_SELECT_WARNING";
-        public static string STANDALONE_CHAPTER_SELECT_WARNING = "STANDALONE_CHAPTER_SELECT_WARNING";
-        public static string REPLAY_START_WARNING = "REPLAY_START_WARNING";
-        public static string REPLAY_EXIT_WARNING = "REPLAY_EXIT_WARNING";
-        public static string EARLY_REPLAY_EXIT = "EARLY_REPLAY_EXIT";
-        public static string GALLERY_CODE_FAIL = "GALLERY_CODE_FAIL";
-        public static string GALLERY_CODE_SUCCESS = "GALLERY_CODE_SUCCESS";
-        public static string GALLERY_ITEM_LOCKED = "GALLERY_ITEM_LOCKED";
+        public static string CHAPTER_COMPLETE= "chapter_complete";
+        public static string CHAPTER_REPLAY_COMPLETE = "chapter_replay_complete";
+        public static string ALL_CHAPTERS_COMPLETE = "all_chapters_complete";
+        public static string INVALID_SAVE_DATA = "invalid_save_data";
+        public static string QUIT = "quit";
+        public static string CLEAR_SAVE = "clear_save";
+        public static string CHAPTER_UNLOCK_WARNING = "chapter_unlock_warning";
+        public static string SAVE_STATE_DELETE = "save_state_delete";
+        public static string LOGOUT_WARNING = "logout_warning";
+        public static string REPLAY_CHAPTER_SELECT_WARNING = "replay_chapter_select_warning";
+        public static string STANDALONE_CHAPTER_SELECT_WARNING = "standalone_chapter_select_warning";
+        public static string REPLAY_START_WARNING = "replay_start_warning";
+        public static string REPLAY_EXIT_WARNING = "replay_exit_warning";
+        public static string EARLY_REPLAY_EXIT = "early_replay_exit";
+        public static string GALLERY_CODE_FAIL = "gallery_code_fail";
+        public static string GALLERY_CODE_SUCCESS = "gallery_code_success";
+        public static string GALLERY_ITEM_LOCKED = "gallery_item_locked";
+        public static string WARNING_LANGUAGE_CHANGE = "warning_language_change";
     }
 }

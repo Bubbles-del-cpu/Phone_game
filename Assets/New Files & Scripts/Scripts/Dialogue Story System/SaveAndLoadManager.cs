@@ -32,9 +32,14 @@ public class SaveAndLoadManager : MonoBehaviour
     public SaveFileData CurrentSave;
     public GlobalValueManager ValueManager;
 
-    private void Start()
+    private void Awake()
     {
         LoadSave(0);
+        GameManager.Instance.ChangeLanguage(CurrentSave.CurrentLanguage);
+    }
+
+    private void Start()
+    {
         DialogueUIManager.Instance.DisplayHints = CurrentSave.DisplayHints;
         GameManager.Instance.GalleryCanvas.Load();
     }
@@ -154,6 +159,7 @@ public class SaveAndLoadManager : MonoBehaviour
         {
             //Reset the chapter
             CurrentSave.CurrentState.Chapters[chapterIndex] = new ChapterSaveData();
+            GameManager.Instance.ResetBackgroundImage();
             AutoSave();
         }
         catch (Exception) { }
@@ -203,5 +209,6 @@ public class SaveAndLoadManager : MonoBehaviour
         LoadSave(0);
 
         GameManager.Instance.ResetGameState();
+        GameManager.Instance.ResetBackgroundImage();
     }
 }

@@ -2,10 +2,8 @@ using MeetAndTalk;
 using MeetAndTalk.GlobalValue;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Localization;
-using UnityEngine.UI;
 
 public class DialogueChapterManager : UICanvas
 {

@@ -42,13 +42,9 @@ namespace MeetAndTalk
 
         private List<Coroutine> activeCoroutines = new List<Coroutine>();
         private Stack<BaseNodeData> _visitedNodes = new Stack<BaseNodeData>();
-        public SystemLanguage TargetLanguage;
         private void Awake()
         {
             Instance = this;
-
-            LocalizationManager.Instance.selectedLang = TargetLanguage;
-
 
             // Setup UI
             DialogueUIManager[] all = FindObjectsByType<DialogueUIManager>(FindObjectsSortMode.None);
@@ -122,6 +118,7 @@ namespace MeetAndTalk
                         OverlayCanvas.Instance.FadeToBlack(() =>
                         {
                             SaveAndLoadManager.Instance.LoadSave();
+                            GameManager.Instance.ResetGameState();
                         });
 
                     }, GameConstants.UIElementKeys.CONTINUE, args: null, twoButtonSetup: false);

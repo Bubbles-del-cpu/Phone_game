@@ -8,6 +8,8 @@ using UnityEngine.Video;
 using UnityEngine.UI;
 using System.Linq;
 using MeetAndTalk.Localization;
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization;
 
 [ExecuteInEditMode]
 public class GameManager : MonoBehaviour
@@ -109,6 +111,34 @@ public class GameManager : MonoBehaviour
         return output;
     }
 
+    // To set to a specific language, for example by locale code:
+    public void ChangeLanguage(Locale locale)
+    {
+        LocalizationSettings.SelectedLocale = locale;
+
+        var code = locale.LocaleName.Split(" ")[0];
+        //var convertedCode = LocalizationManager.GetIsoLanguageCode(code);
+        Enum.GetNames(typeof(SystemLanguage)).ToList().ForEach(lang =>
+        {
+            if (lang == code)
+            {
+                //Set the system language in the GameManager
+                LOCALIZATION_MANAGER.selectedLang = (SystemLanguage)Enum.Parse(typeof(SystemLanguage), lang);
+                SaveAndLoadManager.Instance.CurrentSave.CurrentLanguage = LOCALIZATION_MANAGER.selectedLang;
+                SaveAndLoadManager.Instance.AutoSave();
+            }
+        });
+    }
+
+    public void ChangeLanguage(SystemLanguage language)
+    {
+        var locale = LocalizationSettings.AvailableLocales.Locales.Where(x => x.LocaleName.StartsWith(language.ToString())).FirstOrDefault();
+        if (locale != null)
+        {
+            ChangeLanguage(locale);
+        }
+    }
+
     private void Awake()
     {
         if (Instance != null)
@@ -171,6 +201,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ResetBackgroundImage()
+    {
+        _backgroundImageComponent.sprite = DefaultBackgroundSprite;
+    }
+
     public void SetBackgroundImage(Sprite image)
     {
         _backgroundImageComponent.sprite = image;
@@ -228,6 +263,8 @@ public class GameManager : MonoBehaviour
 
         //Double call to messaging canvas close in order to shut the contants window AND the message window
         messagingCanvas.Close();
+
+        StartCoroutine(CoStartDialogue());
     }
 
     IEnumerator CoStartDialogue()
