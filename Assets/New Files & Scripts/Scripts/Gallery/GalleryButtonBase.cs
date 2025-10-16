@@ -32,7 +32,12 @@ public abstract class GalleryButtonBase : MonoBehaviour
             }
             else
             {
-                GameManager.Instance.DisplayDialog($"{GameConstants.DialogTexts.GALLERY_ITEM_LOCKED} {HintText}", null, "Close", false);
+                GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.GALLERY_ITEM_LOCKED,
+                    eventToTrigger: null,
+                    GameConstants.UIElementKeys.CLOSE,
+                    new object[] { HintText },
+                    twoButtonSetup: false
+                    );
             }
         });
 
@@ -62,7 +67,7 @@ public abstract class GalleryButtonBase : MonoBehaviour
         AssignedGUID = nodeData.NodeGuid;
         ChapterIndex = chapterData.ChapterIndex;
 
-        HintText = $"Unlocked in {chapterData.Story.name}";
+        HintText = chapterData.Story.name;
     }
 
     public abstract void GalleryButtonClicked();

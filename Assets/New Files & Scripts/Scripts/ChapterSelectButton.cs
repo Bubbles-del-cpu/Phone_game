@@ -9,7 +9,7 @@ public class ChapterSelectButton : MonoBehaviour
     {
         if (_displayDialog)
         {
-            GameManager.Instance.DisplayDialog(GameConstants.DialogTexts.REPLAY_EXIT_WARNING, () =>
+            GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.REPLAY_EXIT_WARNING, () =>
             {
                 DialogueChapterManager.Instance.ReturnToChapterSelection();
             });

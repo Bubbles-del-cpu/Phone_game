@@ -83,10 +83,10 @@ public class MessagingConversationPanel : UIPanel
             {
                 case DialogueNodeData nd when nodeData is DialogueNodeData:
                     {
-                        if (nd.Timelapse.Length > 0)
+                        if (nd.GetTimeLapse().Length > 0)
                         {
                             MessagingBubble _timelapseBubble = Instantiate(prefab, container);
-                            _timelapseBubble.Init(hidden, nd.Timelapse);
+                            _timelapseBubble.Init(hidden, nd.GetTimeLapse());
                             _timelapseBubble.IsTimelapse = true;
                         }
 

@@ -48,12 +48,12 @@ public class OverlayCanvas : UICanvas
         }
     }
 
-    public void ShowDialog(string message, System.Action eventToTrigger, string confirmButtonText, bool twoButtonSetup, string cancelButtonTest)
+    public void ShowDialog(string messageKey, System.Action eventToTrigger, string confirmButtonKey, bool twoButtonSetup, string cancelButtonKey, object[] args)
     {
         Open();
 
         var dialog = Instantiate(_dialogPrefab, transform.GetChild(0));
-        dialog.Setup(message, eventToTrigger, confirmButtonText, twoButtonSetup, cancelButtonTest);
+        dialog.Setup(messageKey, eventToTrigger, confirmButtonKey, twoButtonSetup, cancelButtonKey, args);
     }
 
     public void ShowDialog(GameObject newDialogue)

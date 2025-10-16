@@ -12,9 +12,9 @@ public class ChapterSettingsDialog : MonoBehaviour
 
     public void Setup(ChapterReplaySetting setting, System.Action action)
     {
-        _textLabel.text = setting.DialogTitle;
-        _option1Label.text = setting.Option1Text;
-        _option2Label.text = setting.Option2Text;
+        _textLabel.text = setting.DialogueTitleString.GetLocalizedString();
+        _option1Label.text = setting.Option1TextString.GetLocalizedString();
+        _option2Label.text = setting.Option2TextString.GetLocalizedString();
         _option1.onClick.AddListener(() =>
         {
             SaveAndLoadManager.Instance.ValueManager.Set(setting.Value.ValueName, setting.OptionSetting1);

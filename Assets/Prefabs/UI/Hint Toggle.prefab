@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 9173900674643538025}
   - component: {fileID: 8003326958035646757}
   - component: {fileID: 6648103458435359175}
+  - component: {fileID: 4757473970924434039}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -424,6 +425,41 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4757473970924434039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5752632771951272002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f55fcc3768689a4f9cf863b8c11c618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeSpriteEvent
+  m_LocalizedAssetReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:fce5e25b62483f941b4ab1548a91c488
+    m_TableEntryReference:
+      m_KeyId: 582462697472
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+  m_UpdateAsset:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2038858950013192841}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!1 &6687685116936184722
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,5 +512,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 9173900674643538025}
-  _enableSprite: {fileID: 4194793830502507440, guid: ddff1cca241a46a40bed50a9e15221be, type: 3}
-  _disableSprite: {fileID: 6800729873356211404, guid: 6db2adb7bdb53bf4085f173f0aaee26f, type: 3}
+  _localizedSpriteEvent: {fileID: 4757473970924434039}
+  _enableSprite:
+    m_TableReference:
+      m_TableCollectionName: GUID:fce5e25b62483f941b4ab1548a91c488
+    m_TableEntryReference:
+      m_KeyId: 742353760256
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+  _disableSprite:
+    m_TableReference:
+      m_TableCollectionName: GUID:fce5e25b62483f941b4ab1548a91c488
+    m_TableEntryReference:
+      m_KeyId: 582462697472
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0

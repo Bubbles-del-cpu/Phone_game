@@ -19,7 +19,7 @@ public class CloseGameButton : MonoBehaviour
     {
         if (_displayDialog)
         {
-            GameManager.Instance.DisplayDialog(GameConstants.DialogTexts.QUIT, () =>
+            GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.QUIT, () =>
             {
                 ConfirmClose();
             });

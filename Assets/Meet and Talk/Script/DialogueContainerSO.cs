@@ -15,6 +15,7 @@ using MeetAndTalk.Event;
 using UnityEngine.Video;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEngine.Serialization;
 
 namespace MeetAndTalk
 {
@@ -91,9 +92,9 @@ namespace MeetAndTalk
                 List<string> dialogueNodeContent = new List<string>();
                 dialogueNodeContent.Add(SO.DialogueNodeDatas[i].NodeGuid); // Add Node GUID
                                                                            // Loop through each text type for the dialogue node
-                for (int j = 0; j < SO.DialogueNodeDatas[i].TextType.Count; j++)
+                for (int j = 0; j < SO.DialogueNodeDatas[i].Texts.Count; j++)
                 {
-                    dialogueNodeContent.Add(SO.DialogueNodeDatas[i].TextType[j].LanguageGenericType);
+                    dialogueNodeContent.Add(SO.DialogueNodeDatas[i].Texts[j].LanguageGenericType);
                 }
                 // Concatenate dialogue node content with tab separators
                 string dialogueNodeFinal = string.Join("\t", dialogueNodeContent);
@@ -221,7 +222,7 @@ namespace MeetAndTalk
                                 // Update text for each language
                                 for (int j = 0; j < fields.Length - 1; j++)
                                 {
-                                    SO.DialogueNodeDatas[i].TextType[j].LanguageGenericType = fields[j + 1];
+                                    SO.DialogueNodeDatas[i].Texts[j].LanguageGenericType = fields[j + 1];
                                 }
                             }
                         }
@@ -308,17 +309,17 @@ namespace MeetAndTalk
         public float Delay;
         public string Timelapse;
         public bool RequireCharacterInput;
-        public string SelectedChoice;
+        public List<LanguageGeneric<string>> SelectedChoice;
         public string GetText(LocalizationManager localizationManager) => TextType.Find(text => text.languageEnum == localizationManager.SelectedLang()).LanguageGenericType;
 
-        private float _delayTimer = 0;
+        protected float _delayTimer = 0;
 
-        public void Reset()
+        public virtual void Reset()
         {
             _delayTimer = 0;
         }
 
-        public bool ShouldDelay()
+        public virtual bool ShouldDelay()
         {
             _delayTimer += Time.deltaTime * (float)DialogueManager.Instance.DisplaySpeedMultipler;
             if (_delayTimer >= Duration)
@@ -329,33 +330,9 @@ namespace MeetAndTalk
     }
 
     [System.Serializable]
-    public class TimerChoiceNodeData : BaseNodeData
+    public class TimerChoiceNodeData : DialogueChoiceNodeData
     {
-        public List<DialogueNodePort> DialogueNodePorts;
-        public List<LanguageGeneric<AudioClip>> AudioClips;
-        public DialogueCharacterSO Character;
-        public AvatarPosition AvatarPos;
-        public AvatarType AvatarType;
-        public List<LanguageGeneric<string>> TextType;
-        public float Duration;
-        public float Delay;
         public float time;
-        public string SelectedChoice;
-
-        private float _delayTimer = 0;
-        public void Reset()
-        {
-            _delayTimer = 0;
-        }
-
-        public bool ShouldDelay()
-        {
-            _delayTimer += Time.deltaTime * (float)DialogueManager.Instance.DisplaySpeedMultipler;
-            if (_delayTimer >= Duration)
-                return true;
-
-            return false;
-        }
     }
 
     [System.Serializable]
@@ -372,24 +349,36 @@ namespace MeetAndTalk
         public DialogueCharacterSO Character;
         public AvatarPosition AvatarPos;
         public AvatarType AvatarType;
-        public List<LanguageGeneric<string>> TextType;
+        [FormerlySerializedAs("TextType")] public List<LanguageGeneric<string>> Texts;
+        public List<LanguageGeneric<string>> Timelapses;
+        [HideInInspector] public string Timelapse;
         public float Duration;
         public float Delay;
-        public MediaType PostMediaType;
+        [FormerlySerializedAs("PostMediaType")] public MediaType MediaType;
         public Sprite Image;
         public VideoClip Video;
         public Sprite VideoThumbnail;
         public bool NotBackgroundCapable;
         public GalleryDisplay GalleryVisibility;
         public SocialMediaPostSO Post;
-        public string Timelapse;
-        public string GetText(LocalizationManager localizationManager) => TextType.Find(text => text.languageEnum == localizationManager.SelectedLang()).LanguageGenericType;
+        public string GetText() => Texts.Find(text => text.languageEnum == GameManager.LOCALIZATION_MANAGER.SelectedLang()).LanguageGenericType;
+        public string GetTimeLapse() => Timelapses.Find(x => x.languageEnum == GameManager.LOCALIZATION_MANAGER.SelectedLang()).LanguageGenericType;
+
+        // public DialogueNodeData()
+        // {
+        //     // if (Timelapse != null && Timelapse != "")
+        //     // {
+        //     //     Timelapses = new List<LanguageGeneric<string>>();
+        //     //     for (var index = 0; index < Texts.Count; index++)
+        //     //         Timelapses.Add(new LanguageGeneric<string>() { languageEnum = Texts[index].languageEnum, LanguageGenericType = Timelapse });
+        //     // }
+        // }
 
         public string MediaFileName
         {
             get
             {
-                switch (PostMediaType)
+                switch (MediaType)
                 {
                     case MediaType.Sprite:
                         return Image != null ? Image.name : string.Empty;
@@ -424,7 +413,7 @@ namespace MeetAndTalk
             }
             else
             {
-                return (PostMediaType, Image, Video, VideoThumbnail, !NotBackgroundCapable);
+                return (MediaType, Image, Video, VideoThumbnail, !NotBackgroundCapable);
             }
         }
 
@@ -557,13 +546,12 @@ namespace MeetAndTalk
 
         public void GetConvertedText(LocalizationEnum lang, out string text, out string hint)
         {
-            text = TextLanguage.Find(x => x.languageEnum == lang).LanguageGenericType;
-
-            var hintLang = HintLanguage.Find(x => x.languageEnum == lang);
+            text = DialogueLocalizationHelper.GetText(TextLanguage);
+            var hintLang = DialogueLocalizationHelper.GetText(HintLanguage);
             hint = "";
             if (hintLang != null)
             {
-                hint = hintLang.LanguageGenericType;
+                hint = hintLang;
             }
         }
     }

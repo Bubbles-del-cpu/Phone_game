@@ -13,10 +13,18 @@ MonoBehaviour:
   m_Name: Lisa post 3
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
-  Message: The weather is so good
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: The weather is so good
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 0
+  GalleryVisibility: 0
   Image: {fileID: 2522121277682509647, guid: 39a83f92fae27e145ac7d0b4962739c7, type: 3}
   Video: {fileID: 0}
+  VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments:
   - Name: Dave
     Content: Sheeeeeesh mamasita

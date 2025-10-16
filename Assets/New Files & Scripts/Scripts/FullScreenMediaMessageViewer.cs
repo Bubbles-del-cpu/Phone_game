@@ -6,7 +6,7 @@ using UnityEngine.Video;
 
 public class FullScreenMediaMessageViewer : MonoBehaviour, IPointerClickHandler
 {
-    private MediaType _type => _assignedNode.PostMediaType;
+    private MediaType _type => _assignedNode.MediaType;
     private Sprite _image => _assignedNode.Image;
     private VideoClip _clip => _assignedNode.Video;
 

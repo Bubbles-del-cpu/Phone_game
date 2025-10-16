@@ -13,8 +13,16 @@ MonoBehaviour:
   m_Name: Chizuru Post 2
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: 8da73476cefc3eb43b4e7ac5962331b9, type: 2}
-  Message: new outfit!!!
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: new outfit!!!
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 0
+  GalleryVisibility: 0
   Image: {fileID: 21300000, guid: 758a8dc02f13057449f6aa2a4b83ed96, type: 3}
   Video: {fileID: 0}
+  VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments: []

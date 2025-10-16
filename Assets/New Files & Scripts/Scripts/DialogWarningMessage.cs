@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 
 public class DialogWarningMessage : MonoBehaviour
@@ -7,25 +8,38 @@ public class DialogWarningMessage : MonoBehaviour
     private TMPro.TMP_Text _textField;
 
     [SerializeField]
+    private LocalizeStringEvent _localizedString;
+
+    [SerializeField]
     private System.Action _onConfirm;
 
     [SerializeField]
     private Button _confirmButton;
+    [SerializeField] private LocalizeStringEvent _confirmButtonLocalizedString;
 
     [SerializeField]
     private Button _cancelButton;
+    [SerializeField] private LocalizeStringEvent _cancelButtonLocalizedString;
 
-    public void Setup(string message, System.Action eventToTrigger, string confirmButtonText, bool twoButtonSetup, string cancelButtonTest)
+    private void Awake()
     {
-        if (_textField)
+        _localizedString.OnUpdateString.AddListener((newString) =>
         {
-            _textField.text = message == string.Empty ? "Are you sure?" : message;
-            _textField.text = GameManager.ToUTF32(_textField.text);
-        }
-        _onConfirm = eventToTrigger;
+            _textField.text = GameManager.ToUTF32(newString);
+        });
+    }
 
-        _confirmButton.GetComponentInChildren<TMPro.TMP_Text>().text = confirmButtonText;
-        _cancelButton.GetComponentInChildren<TMPro.TMP_Text>().text = cancelButtonTest;
+    public void Setup(string message_key, System.Action eventToTrigger, string confirmButtonKey, bool twoButtonSetup, string cancelButtonKey, object[] args)
+    {
+        if (_localizedString)
+        {
+            _localizedString.StringReference.Arguments = args;
+            _localizedString.StringReference.SetReference(GameConstants.DialogTextKeys.DIALOGUE_TABLE_KEY, message_key);
+        }
+
+        _onConfirm = eventToTrigger;
+        _confirmButtonLocalizedString.StringReference.SetReference(GameConstants.UIElementKeys.UI_ELEMENTS_TABLE_KEY, confirmButtonKey);
+        _cancelButtonLocalizedString.StringReference.SetReference(GameConstants.UIElementKeys.UI_ELEMENTS_TABLE_KEY, cancelButtonKey);
 
         if (!twoButtonSetup)
             _cancelButton.gameObject.SetActive(false);

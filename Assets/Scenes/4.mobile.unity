@@ -396,7 +396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4133859085542183446, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 264.70142
+      value: 337.08167
       objectReference: {fileID: 0}
     - target: {fileID: 4133859085542183446, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -432,7 +432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4133859085542183446, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 136.35071
+      value: 172.54083
       objectReference: {fileID: 0}
     - target: {fileID: 4133859085542183446, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -450,6 +450,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4350341562012617451, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 5506035587838689341, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: SlotNumber
       value: 3
@@ -464,6 +468,43 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4133859085542183446, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
   m_PrefabInstance: {fileID: 27937085}
   m_PrefabAsset: {fileID: 0}
+--- !u!84 &28056642
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 6
+  m_Width: 606
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 0
+  m_ColorFormat: 4
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_UseDynamicScaleExplicit: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &41451946
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,7 +690,7 @@ VideoPlayer:
   m_SkipOnDrop: 1
   m_Looping: 1
   m_WaitForFirstFrame: 1
-  m_FrameReadyEventEnabled: 0
+  m_FrameReadyEventEnabled: 1
   m_VideoShaders: []
 --- !u!4 &56180243
 Transform:
@@ -795,6 +836,7 @@ GameObject:
   - component: {fileID: 77093524}
   - component: {fileID: 77093526}
   - component: {fileID: 77093525}
+  - component: {fileID: 77093527}
   m_Layer: 5
   m_Name: Save States
   m_TagString: Untagged
@@ -876,7 +918,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 3
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -906,7 +948,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 22.17691, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -920,142 +962,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77093523}
   m_CullTransparentMesh: 1
---- !u!1 &80977539
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 80977540}
-  - component: {fileID: 80977542}
-  - component: {fileID: 80977541}
-  m_Layer: 5
-  m_Name: Label
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &80977540
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80977539}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 533350229}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 15, y: 0}
-  m_SizeDelta: {x: -30, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &80977541
+--- !u!114 &77093527
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80977539}
+  m_GameObject: {fileID: 77093523}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:25c33b9c4e890044482bdbe4669d5c2f
+    m_TableEntryReference:
+      m_KeyId: 25159536439296
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
     m_PersistentCalls:
-      m_Calls: []
-  m_text: Hints Enabled
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 284cfdc787954dc48b775c094aada963, type: 2}
-  m_sharedMaterial: {fileID: 9089966715700050618, guid: 284cfdc787954dc48b775c094aada963, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 4096
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 0
-  m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_EmojiFallbackSupport: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 12, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &80977542
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80977539}
-  m_CullTransparentMesh: 1
+      m_Calls:
+      - m_Target: {fileID: 77093525}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &94939506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,7 +1118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _content: {fileID: 433836023}
-  _unlockAllButton: {fileID: 258176187}
+  _unlockAllButton: {fileID: 1779906041}
   StoryList:
   - Story: {fileID: 11400000, guid: 4b2b3afd41e68fe4c8c7a646981972b3, type: 2}
     StartID: 
@@ -1184,48 +1130,144 @@ MonoBehaviour:
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are  you more dominant or submissive?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: DOM_LVL
-      Option1Text: DOM
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: 103
-      Option2Text: SUB
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: 99
   - Story: {fileID: 11400000, guid: efc57e9e7766e814fbcba674fab7c8f2, type: 2}
     StartID: 
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are  you more dominant or submissive?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: DOM_LVL
-      Option1Text: DOM
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: 105
-      Option2Text: SUB
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: 99
   - Story: {fileID: 11400000, guid: 719861f5c039dff4493de89447809d8d, type: 2}
     StartID: 
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are  you more dominant or submissive?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: DOM_LVL
-      Option1Text: DOM
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: 106
-      Option2Text: SUB
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: 99
   - Story: {fileID: 11400000, guid: f3a5a66f515074c40ba81a0880a15e1c, type: 2}
     StartID: 
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are  you more dominant or submissive?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: DOM_LVL
-      Option1Text: DOM
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: 106
-      Option2Text: SUB
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: 99
   - Story: {fileID: 11400000, guid: c9379e696d0b3664b8255999ae59ffa3, type: 2}
     StartID: 
@@ -1237,351 +1279,1383 @@ MonoBehaviour:
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are  you more dominant or submissive?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: DOM_LVL
-      Option1Text: DOM
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: 110
-      Option2Text: SUB
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: 95
-    - DialogTitle: Did you accept more picture's of Lisa?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51345289342976
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: DOM_LVL
-      Option1Text: DOM
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: 110
-      Option2Text: SUB
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: 95
   - Story: {fileID: 11400000, guid: 0768bd4f5991bd14d93ce574df4b07fe, type: 2}
     StartID: 
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are  you more dominant or submissive?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: DOM_LVL
-      Option1Text: DOM
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: 110
-      Option2Text: SUB
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: 95
-    - DialogTitle: Did you accept at home care?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51501413920768
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: AT_HOME_CARE
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: Did you extort Victoria?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51427267014656
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: victoria_extort
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
   - Story: {fileID: 11400000, guid: 8eeb8ec848615b24dba92714cdfaf90e, type: 2}
     StartID: 
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are  you more dominant or submissive?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: DOM_LVL
-      Option1Text: DOM
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: 110
-      Option2Text: SUB
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: 95
-    - DialogTitle: Did you allow Math to be rough with Lily?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51617478701056
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: MATH_ROUGH
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: Did you accept home care?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51501413920768
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: AT_HOME_CARE
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: Did you extort Victoria?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51427267014656
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: victoria_extort
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: Did you encourage Dave to send more pictures of Lisa?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51555235229696
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: LISA_PICS
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
   - Story: {fileID: 11400000, guid: 5c3cb53aa4ae0c0409099a27bed9efff, type: 2}
     StartID: 
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are you more DOM or SUB?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: DOM_LVL
-      Option1Text: DOM
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: 110
-      Option2Text: SUB
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: 95
-    - DialogTitle: Did you allow math to be rough with Lily?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51617478701056
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: MATH_ROUGH
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: Did you accept home_care
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51501413920768
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: AT_HOME_CARE
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: If yes did you extort Victoria?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51427267014656
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: victoria_extort
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
   - Story: {fileID: 11400000, guid: 93987a0df88fc074cbf0bb4b9276877b, type: 2}
     StartID: 
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are you more DOM or SUB?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: DOM_LVL
-      Option1Text: DOM
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: 110
-      Option2Text: SUB
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: 95
-    - DialogTitle: Did you allow Math to be rough with Lily?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51617478701056
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: MATH_ROUGH
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: Did you accept home care?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51501413920768
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: AT_HOME_CARE
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: Did you extort Victoria
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51427267014656
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: victoria_extort
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
   - Story: {fileID: 11400000, guid: 79ff72e63ffedf947a27cee93134c6c5, type: 2}
     StartID: 
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are you more DOM or SUB?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: DOM_LVL
-      Option1Text: DOM
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: 110
-      Option2Text: SUB
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: 95
-    - DialogTitle: Did you allow Math to be rough with Lily?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51617478701056
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: MATH_ROUGH
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: Did you accept home care?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51501413920768
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: AT_HOME_CARE
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: Did you extort Victoria
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51427267014656
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: victoria_extort
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: Did you encourage Dave to send more pictures of Lisa?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51555235229696
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: LISA_PICS
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
   - Story: {fileID: 11400000, guid: ee87977a18015e349a93df4b8bea4218, type: 2}
     StartID: 
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are you more DOM or SUB?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: DOM_LVL
-      Option1Text: DOM
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: 110
-      Option2Text: SUB
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: 95
-    - DialogTitle: Did you continue with Math?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51883980582912
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: Continue_math
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: If yes... Did you allow Math to be rough with Lily earlier?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 58953681301504
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: MATH_ROUGH
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
   - Story: {fileID: 11400000, guid: 5176ea5297e9be246a1b53d7a4552242, type: 2}
     StartID: 
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are you more DOM or SUB?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: DOM_LVL
-      Option1Text: DOM
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: 110
-      Option2Text: SUB
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: 95
-    - DialogTitle: Did you continue with Math?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51883980582912
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: Continue_math
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: If no did you and Lily plan the date with Khalid?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 52026930851840
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: khalid_meet
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: Did you accept home care
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51501413920768
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: AT_HOME_CARE
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: If yes did you extort Victoria?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51427267014656
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: victoria_extort
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: If you did not extort Victoria. Did you watch a movie with her?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 52115288059904
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: vic_movie_night
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: Did you accept the docters tests?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 52214428823552
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: dr_happy
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
   - Story: {fileID: 11400000, guid: 259efb97f27f2734caa8ada6559fd7f3, type: 2}
     StartID: 
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Are you more DOM or SUB?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: DOM_LVL
-      Option1Text: DOM
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: 110
-      Option2Text: SUB
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: 95
-    - DialogTitle: Did you continue with Math?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51883980582912
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: Continue_math
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: If no did you and Lily plan the date with Khalid?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 52026930851840
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: khalid_meet
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
   - Story: {fileID: 11400000, guid: 690eb710124bd1d4b8361f740172594e, type: 2}
     StartID: 
     ChapterIndex: 0
     IsStoryChapter: 0
     ReplaySettings:
-    - DialogTitle: Did you continue with Math?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51617478701056
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: Continue_math
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: If no did you and Lily plan the date with Khalid?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 52026930851840
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: khalid_meet
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: Did you accept home care
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 51501413920768
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: AT_HOME_CARE
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: If yes did you extort Victoria?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 59995940679680
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: victoria_extort
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: If you did not extort Victoria. Did you watch a movie with her?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 52115288059904
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: vic_movie_night
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: Did you accept the docters tests?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 52214428823552
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: dr_happy
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
-    - DialogTitle: Does Lisa know you like to be cucked?
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 52345165279232
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       Value:
         ValueName: dr_happy
-      Option1Text: Yes
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting1: true
-      Option2Text: No
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
       OptionSetting2: false
   StandaloneChapters:
   - Story: {fileID: 11400000, guid: d4c97dc564b9dab409c930d50f4456ab, type: 2}
@@ -1604,6 +2678,9 @@ MonoBehaviour:
   ReplayDialog: {fileID: 4768670791729921411, guid: 2630e85cc97137d43b317fbcb527a404, type: 3}
   _chapterButtonPrefab: {fileID: 3627330244019954525, guid: b1c44dc711475c348b7e3f66eef58421, type: 3}
   _chapterButtonContainer: {fileID: 229333746260310737}
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &110121370
 GameObject:
   m_ObjectHideFlags: 0
@@ -1827,7 +2904,7 @@ RectTransform:
   m_Children:
   - {fileID: 2016217542}
   - {fileID: 1215883102}
-  - {fileID: 533350229}
+  - {fileID: 3202453062568142708}
   - {fileID: 932112937}
   - {fileID: 1896793244}
   m_Father: {fileID: 390000733}
@@ -1917,6 +2994,7 @@ GameObject:
   - component: {fileID: 167911234}
   - component: {fileID: 167911236}
   - component: {fileID: 167911235}
+  - component: {fileID: 167911237}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2042,6 +3120,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 167911233}
   m_CullTransparentMesh: 1
+--- !u!114 &167911237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167911233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:25c33b9c4e890044482bdbe4669d5c2f
+    m_TableEntryReference:
+      m_KeyId: 24818799570944
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 167911235}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &169499089
 GameObject:
   m_ObjectHideFlags: 0
@@ -2155,7 +3273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4133859085542183446, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 264.70142
+      value: 337.08167
       objectReference: {fileID: 0}
     - target: {fileID: 4133859085542183446, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2191,7 +3309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4133859085542183446, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 136.35071
+      value: 172.54083
       objectReference: {fileID: 0}
     - target: {fileID: 4133859085542183446, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2208,6 +3326,10 @@ PrefabInstance:
     - target: {fileID: 4133859085542183446, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350341562012617451, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 5506035587838689341, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: SlotNumber
@@ -2815,7 +3937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 162.6168
+      value: 202.54083
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2860,138 +3982,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7705376511045826073, guid: 0079d76834869b049bf20fb4c4a0bbe1, type: 3}
   m_PrefabInstance: {fileID: 460314474}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &258176187
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 258176188}
-  - component: {fileID: 258176191}
-  - component: {fileID: 258176190}
-  - component: {fileID: 258176189}
-  m_Layer: 5
-  m_Name: Button
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &258176188
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258176187}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1602610619}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 110, y: 50}
-  m_Pivot: {x: 0.5, y: 0}
---- !u!114 &258176189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258176187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 258176190}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 94939511}
-        m_TargetAssemblyTypeName: DialogueChapterManager, Assembly-CSharp
-        m_MethodName: UnlockAllChapters
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &258176190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258176187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: -3987150382418871173, guid: 51e8a5ea19f426b44b93205a383d1f6f, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &258176191
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258176187}
-  m_CullTransparentMesh: 1
 --- !u!1 &262641402
 GameObject:
   m_ObjectHideFlags: 0
@@ -3003,6 +3993,7 @@ GameObject:
   - component: {fileID: 262641403}
   - component: {fileID: 262641405}
   - component: {fileID: 262641404}
+  - component: {fileID: 262641406}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -3128,6 +4119,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 262641402}
   m_CullTransparentMesh: 1
+--- !u!114 &262641406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262641402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:25c33b9c4e890044482bdbe4669d5c2f
+    m_TableEntryReference:
+      m_KeyId: 15511047598080
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 262641404}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &263917699
 GameObject:
   m_ObjectHideFlags: 0
@@ -3344,7 +4375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 259.028
+      value: 325.56805
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3603,7 +4634,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 68.87227, y: -24}
+  m_AnchoredPosition: {x: 82.180275, y: -24}
   m_SizeDelta: {x: 64, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &307139076
@@ -3748,7 +4779,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4189322345688348478, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0009765625
+      value: -0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 4938284421023176446, guid: 1d65d9481219718439accc523ad13d99, type: 3}
       propertyPath: m_Pivot.x
@@ -4171,7 +5202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 66.2056
+      value: 79.51361
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4716,7 +5747,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1825609526}
+  - {fileID: 5635773194072107420}
   - {fileID: 1948671003}
   - {fileID: 138979077}
   m_Father: {fileID: 538586809}
@@ -5270,6 +6301,7 @@ GameObject:
   - component: {fileID: 450328247}
   - component: {fileID: 450328249}
   - component: {fileID: 450328248}
+  - component: {fileID: 450328250}
   m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
@@ -5395,6 +6427,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450328246}
   m_CullTransparentMesh: 1
+--- !u!114 &450328250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450328246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:25c33b9c4e890044482bdbe4669d5c2f
+    m_TableEntryReference:
+      m_KeyId: 24633155481600
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 450328248}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &456484274
 GameObject:
   m_ObjectHideFlags: 0
@@ -5687,6 +6759,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6549769935234173403, guid: c82156aed7501d74189c079bf4d7dd18, type: 3}
+      propertyPath: _reloadGameOnChange
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6723711164131498649, guid: c82156aed7501d74189c079bf4d7dd18, type: 3}
       propertyPath: _navigationCanvas
       value: 
@@ -5890,7 +6966,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4133859085542183446, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 264.70142
+      value: 337.08167
       objectReference: {fileID: 0}
     - target: {fileID: 4133859085542183446, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -5926,7 +7002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4133859085542183446, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 136.35071
+      value: 172.54083
       objectReference: {fileID: 0}
     - target: {fileID: 4133859085542183446, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -5943,6 +7019,10 @@ PrefabInstance:
     - target: {fileID: 4133859085542183446, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350341562012617451, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 5506035587838689341, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: SlotNumber
@@ -6086,108 +7166,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &533350228
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 533350229}
-  - component: {fileID: 533350230}
-  - component: {fileID: 533350231}
-  m_Layer: 5
-  m_Name: Hint Toggle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &533350229
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 533350228}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1551995216}
-  - {fileID: 80977540}
-  m_Father: {fileID: 138979077}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 0, y: 50}
-  m_Pivot: {x: 0.5, y: 1}
---- !u!114 &533350230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 533350228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1551995217}
-  toggleTransition: 1
-  graphic: {fileID: 1977826757}
-  m_Group: {fileID: 0}
-  onValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_IsOn: 1
---- !u!114 &533350231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 533350228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 399f3db2cd7cd3f4d98426b6d03fc8fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _button: {fileID: 0}
-  _enableSprite: {fileID: 0}
-  _disableSprite: {fileID: 0}
 --- !u!1001 &533930563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6552,6 +7530,7 @@ GameObject:
   - component: {fileID: 539386157}
   - component: {fileID: 539386159}
   - component: {fileID: 539386158}
+  - component: {fileID: 539386160}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -6677,6 +7656,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539386156}
   m_CullTransparentMesh: 1
+--- !u!114 &539386160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539386156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:25c33b9c4e890044482bdbe4669d5c2f
+    m_TableEntryReference:
+      m_KeyId: 15412473065472
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 539386158}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &543724667
 GameObject:
   m_ObjectHideFlags: 0
@@ -7135,7 +8154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 162.6168
+      value: 202.54083
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -7171,43 +8190,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
   m_PrefabInstance: {fileID: 594017751}
   m_PrefabAsset: {fileID: 0}
---- !u!84 &605194190
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 6
-  m_Width: 606
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 0
-  m_ColorFormat: 4
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_UseDynamicScaleExplicit: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &668380779
 GameObject:
   m_ObjectHideFlags: 0
@@ -7287,161 +8269,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 1
   m_VerticalFit: 0
---- !u!1 &679834891
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 679834892}
-  - component: {fileID: 679834896}
-  - component: {fileID: 679834895}
-  - component: {fileID: 679834894}
-  - component: {fileID: 679834893}
-  - component: {fileID: 679834897}
-  m_Layer: 5
-  m_Name: Unlock Button
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &679834892
+--- !u!224 &679834892 stripped
 RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+  m_PrefabInstance: {fileID: 4045753648153021485}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679834891}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 136951455200324989}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 4}
-  m_SizeDelta: {x: 120, y: 80}
-  m_Pivot: {x: 0.5, y: 0}
---- !u!114 &679834893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679834891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f82401adbe52ff439916290b64ec5ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefab: {fileID: 6534080581705230908, guid: 130702aa15761614ea3bcf2930c0a72c, type: 3}
---- !u!114 &679834894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679834891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 679834895}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &679834895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679834891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: -3987150382418871173, guid: 51e8a5ea19f426b44b93205a383d1f6f, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &679834896
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679834891}
-  m_CullTransparentMesh: 1
---- !u!114 &679834897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679834891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: 180
-  m_PreferredHeight: 40
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
-  m_LayoutPriority: 1
 --- !u!1 &682748001
 GameObject:
   m_ObjectHideFlags: 0
@@ -9223,6 +10055,7 @@ GameObject:
   - component: {fileID: 1001433889}
   - component: {fileID: 1001433891}
   - component: {fileID: 1001433890}
+  - component: {fileID: 1001433892}
   m_Layer: 5
   m_Name: Save States
   m_TagString: Untagged
@@ -9348,6 +10181,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1001433888}
   m_CullTransparentMesh: 1
+--- !u!114 &1001433892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001433888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:25c33b9c4e890044482bdbe4669d5c2f
+    m_TableEntryReference:
+      m_KeyId: 31141977092096
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1001433890}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1009555203
 GameObject:
   m_ObjectHideFlags: 0
@@ -9498,7 +10371,7 @@ MonoBehaviour:
       NotBackgroundCapable: 0
       ChapterType: 0
       LockedState: 0
-    LocalizationValue: 10
+    CurrentLanguage: 0
     AutoSaveState:
       IsSaved: 0
       Name: 
@@ -9868,6 +10741,7 @@ GameObject:
   - component: {fileID: 1044279879}
   - component: {fileID: 1044279881}
   - component: {fileID: 1044279880}
+  - component: {fileID: 1044279882}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -9993,6 +10867,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044279878}
   m_CullTransparentMesh: 1
+--- !u!114 &1044279882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044279878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:25c33b9c4e890044482bdbe4669d5c2f
+    m_TableEntryReference:
+      m_KeyId: 24931110449152
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1044279880}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1001 &1049300165
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10063,7 +10977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1207203134180617477, guid: b7abca7edcae76a4d957b7a22623f364, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 259.028
+      value: 325.56805
       objectReference: {fileID: 0}
     - target: {fileID: 1207203134180617477, guid: b7abca7edcae76a4d957b7a22623f364, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -10181,7 +11095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 66.2056
+      value: 79.51361
       objectReference: {fileID: 0}
     - target: {fileID: 7147783605986530847, guid: 914260a19aa6ed24dbfce7482c1aac2c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -10720,6 +11634,142 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 3
   m_AspectRatio: 0.5626134
+--- !u!1001 &1141457364
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2000564213}
+    m_Modifications:
+    - target: {fileID: 4429789393621691492, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429789393621691492, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429789393621691492, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 94939511}
+    - target: {fileID: 4429789393621691492, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429789393621691492, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlockAllChapters
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429789393621691492, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DialogueChapterManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4429789393621691492, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826359419987280452, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_Name
+      value: 'Chapters - Unlock Button '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826359419987280452, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1775769970775044407, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+    - {fileID: 3854925195889120973, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+--- !u!224 &1141457365 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+  m_PrefabInstance: {fileID: 1141457364}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1145815079
 GameObject:
   m_ObjectHideFlags: 0
@@ -10833,7 +11883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 256.36133, y: -24}
+  m_AnchoredPosition: {x: 322.90137, y: -24}
   m_SizeDelta: {x: 64, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1153060194
@@ -11648,6 +12698,7 @@ GameObject:
   - component: {fileID: 1324330578}
   - component: {fileID: 1324330580}
   - component: {fileID: 1324330579}
+  - component: {fileID: 1324330581}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -11775,6 +12826,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324330577}
   m_CullTransparentMesh: 1
+--- !u!114 &1324330581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324330577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:25c33b9c4e890044482bdbe4669d5c2f
+    m_TableEntryReference:
+      m_KeyId: 15440608456704
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1324330579}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1001 &1358395321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12167,7 +13258,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -2
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!224 &1381356464
 RectTransform:
@@ -13212,82 +14303,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   socialMediaPostPrefab: {fileID: 6619704965765484665, guid: ec12ca90fbe319a4e956ae874984881e, type: 3}
   socialMediaPostsContainer: {fileID: 1471121941}
---- !u!1 &1551995215
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1551995216}
-  - component: {fileID: 1551995218}
-  - component: {fileID: 1551995217}
-  m_Layer: 5
-  m_Name: Background
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1551995216
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551995215}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1977826756}
-  m_Father: {fileID: 533350229}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 30, y: 30}
-  m_Pivot: {x: 0, y: 0.5}
---- !u!114 &1551995217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551995215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1551995218
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551995215}
-  m_CullTransparentMesh: 1
 --- !u!1 &1557487252
 GameObject:
   m_ObjectHideFlags: 0
@@ -13299,6 +14314,7 @@ GameObject:
   - component: {fileID: 1557487253}
   - component: {fileID: 1557487255}
   - component: {fileID: 1557487254}
+  - component: {fileID: 1557487256}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -13424,6 +14440,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557487252}
   m_CullTransparentMesh: 1
+--- !u!114 &1557487256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557487252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:25c33b9c4e890044482bdbe4669d5c2f
+    m_TableEntryReference:
+      m_KeyId: 24747278299136
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1557487254}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1562435131 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7508060064371985585, guid: 1d65d9481219718439accc523ad13d99, type: 3}
@@ -13535,42 +14591,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1599159640}
   m_CullTransparentMesh: 1
---- !u!1 &1602610618
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1602610619}
-  m_Layer: 5
-  m_Name: Unlock Button
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1602610619
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602610618}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 258176188}
-  m_Father: {fileID: 2000564213}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
-  m_Pivot: {x: 0.5, y: 0}
 --- !u!1001 &1639671802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14109,8 +15129,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 136.35071, y: -19}
-  m_SizeDelta: {x: 264.70142, y: 30}
+  m_AnchoredPosition: {x: 172.54083, y: -19}
+  m_SizeDelta: {x: 337.08167, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1744895692
 MonoBehaviour:
@@ -14188,6 +15208,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -40}
   m_SizeDelta: {x: 0, y: -80}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1779906041 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5826359419987280452, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+  m_PrefabInstance: {fileID: 1141457364}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1785663266
 GameObject:
   m_ObjectHideFlags: 0
@@ -14866,7 +15891,7 @@ GameObject:
   - component: {fileID: 1811737323}
   - component: {fileID: 1811737322}
   m_Layer: 5
-  m_Name: Pictures
+  m_Name: Images
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15023,120 +16048,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 24}
   m_SizeDelta: {x: 0, y: -48}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &1825609525
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 390000733}
-    m_Modifications:
-    - target: {fileID: 1293253320513571643, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_Name
-      value: Header
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_Pivot.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 136951454789903157, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1858440040}
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
---- !u!224 &1825609526 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5635773193739746985, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-  m_PrefabInstance: {fileID: 1825609525}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &1825609528 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 136951454789903157, guid: 0d834a10af2a75a45a0eb3417c244ca0, type: 3}
-  m_PrefabInstance: {fileID: 1825609525}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1858440039
 GameObject:
   m_ObjectHideFlags: 0
@@ -15148,6 +16059,7 @@ GameObject:
   - component: {fileID: 1858440040}
   - component: {fileID: 1858440042}
   - component: {fileID: 1858440041}
+  - component: {fileID: 1858440043}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -15167,7 +16079,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1825609528}
+  m_Father: {fileID: 136951454063211520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -15273,6 +16185,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858440039}
   m_CullTransparentMesh: 1
+--- !u!114 &1858440043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858440039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:25c33b9c4e890044482bdbe4669d5c2f
+    m_TableEntryReference:
+      m_KeyId: 24477752324096
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1858440041}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1875664547
 GameObject:
   m_ObjectHideFlags: 0
@@ -15617,7 +16569,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -120}
+  m_AnchoredPosition: {x: 0, y: -190}
   m_SizeDelta: {x: 0, y: 250}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1896793245
@@ -15849,7 +16801,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 605194190}
+  m_Texture: {fileID: 28056642}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -16258,7 +17210,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 162.6168, y: -24}
+  m_AnchoredPosition: {x: 202.54083, y: -24}
   m_SizeDelta: {x: 64, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1955806144
@@ -16388,81 +17340,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1955806142}
-  m_CullTransparentMesh: 1
---- !u!1 &1977826755
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1977826756}
-  - component: {fileID: 1977826758}
-  - component: {fileID: 1977826757}
-  m_Layer: 5
-  m_Name: Checkmark
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1977826756
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1977826755}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1551995216}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -8, y: -8}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1977826757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1977826755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: -8861258157061019179, guid: 4937aad7e6dd6f547a36fb3a2ddca011, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1977826758
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1977826755}
   m_CullTransparentMesh: 1
 --- !u!1 &1980111511
 GameObject:
@@ -16679,7 +17556,7 @@ RectTransform:
   m_Children:
   - {fileID: 2120851405}
   - {fileID: 444376037}
-  - {fileID: 1602610619}
+  - {fileID: 1141457365}
   m_Father: {fileID: 1110712736}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -17167,6 +18044,7 @@ GameObject:
   - component: {fileID: 2120851405}
   - component: {fileID: 2120851407}
   - component: {fileID: 2120851406}
+  - component: {fileID: 2120851408}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -17292,6 +18170,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2120851404}
   m_CullTransparentMesh: 1
+--- !u!114 &2120851408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120851404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:25c33b9c4e890044482bdbe4669d5c2f
+    m_TableEntryReference:
+      m_KeyId: 26846871384064
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2120851406}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &2124375997
 GameObject:
   m_ObjectHideFlags: 0
@@ -17358,6 +18276,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!224 &136951454063211520
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3501501188084429526}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1858440040}
+  m_Father: {fileID: 5635773194072107420}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -40, y: -20}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &136951455200324989
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17557,6 +18495,26 @@ GameObject:
   - component: {fileID: 2444677947635610254}
   - component: {fileID: 6140277934896109848}
   - component: {fileID: 7206965112904338650}
+  m_Layer: 5
+  m_Name: Header
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1293253322179795982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5635773194072107420}
+  - component: {fileID: 3065234483289088073}
+  - component: {fileID: 2444677948781112307}
+  - component: {fileID: 6140277933895303269}
+  - component: {fileID: 7206965113907238311}
   m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
@@ -17858,6 +18816,36 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2444677948781112307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293253322179795982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.13746631, g: 0.13746631, b: 0.13746631, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &2484678807055314789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17980,6 +18968,7 @@ GameObject:
   - component: {fileID: 5109022608381612591}
   - component: {fileID: 6677652335468019770}
   - component: {fileID: 2484678807055314789}
+  - component: {fileID: 6677652335468019771}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -17987,6 +18976,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!222 &3065234483289088073
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293253322179795982}
+  m_CullTransparentMesh: 1
 --- !u!222 &3065234484432501044
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18017,6 +19014,204 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!1001 &3202453062568142707
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 138979077}
+    m_Modifications:
+    - target: {fileID: 981577249266477795, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_text
+      value: Langauge
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735092649268378400, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_Pivot.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735092649268378400, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735092649268378400, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867616895647563306, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867616895647563306, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867616895647563306, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867616895647563306, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867616895647563306, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867616895647563306, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867616895647563306, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867616895647563306, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867616895647563306, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867616895647563306, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867616895647563306, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867616895647563306, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867616895647563306, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867616895647563306, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867616895647563306, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867616895647563306, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867616895647563306, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -120
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867616895647563306, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867616895647563306, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2867616895647563306, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3285739000439927805, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3285739000439927805, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493563841606671747, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_Name
+      value: Language Dropdown
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606500637470445319, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606500637470445319, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606500637470445319, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 7342017410007715458, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 321350097044418173, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3202453062568142711}
+  m_SourcePrefab: {fileID: 100100000, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+--- !u!224 &3202453062568142708 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2867616895647563306, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+  m_PrefabInstance: {fileID: 3202453062568142707}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3202453062568142709 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 321350097044418173, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+  m_PrefabInstance: {fileID: 3202453062568142707}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3202453062568142710 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 981577249266477795, guid: 13c2db2872d5add4b8db784bbfc26d2e, type: 3}
+  m_PrefabInstance: {fileID: 3202453062568142707}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3202453062568142709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3202453062568142711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3202453062568142709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:25c33b9c4e890044482bdbe4669d5c2f
+    m_TableEntryReference:
+      m_KeyId: 768201977458688
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3202453062568142710}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &3308362993622713373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18209,6 +19404,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &3501501188084429526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 136951454063211520}
+  m_Layer: 5
+  m_Name: Content
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!114 &3553681734649166539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18258,6 +19469,103 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1001 &4045753648153021485
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 136951455200324989}
+    m_Modifications:
+    - target: {fileID: 5826359419987280452, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_Name
+      value: Unlock Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763347266948466002, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9392dceb32cf43e4f888c3418b9d665e, type: 3}
 --- !u!222 &4222554264875936822
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18312,7 +19620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4133859085542183446, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 264.70142
+      value: 337.08167
       objectReference: {fileID: 0}
     - target: {fileID: 4133859085542183446, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -18348,7 +19656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4133859085542183446, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 136.35071
+      value: 172.54083
       objectReference: {fileID: 0}
     - target: {fileID: 4133859085542183446, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -18365,6 +19673,10 @@ PrefabInstance:
     - target: {fileID: 4133859085542183446, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350341562012617451, guid: fb47b6cc60ae9e54ba0119392c4a6a2a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18460,6 +19772,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 80}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!224 &5635773194072107420
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293253322179795982}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 136951454063211520}
+  m_Father: {fileID: 390000733}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 60}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!224 &5762726967553079730
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18536,6 +19868,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!114 &6140277933895303269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293253322179795982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543cfbaf07897424c933666870b48edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpenOnStart: 1
+  openAlpha: 1
+  closeButton: {fileID: 0}
 --- !u!114 &6140277934896109848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18589,6 +19936,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2852444732261085591}
   m_CullTransparentMesh: 1
+--- !u!114 &6677652335468019771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2852444732261085591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:25c33b9c4e890044482bdbe4669d5c2f
+    m_TableEntryReference:
+      m_KeyId: 26355449950208
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2484678807055314789}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []
 --- !u!1001 &6750716295087218757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18653,6 +20040,10 @@ PrefabInstance:
       propertyPath: MainUI
       value: 
       objectReference: {fileID: 761626516}
+    - target: {fileID: 6750716295316983515, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
+      propertyPath: TargetLanguage
+      value: 22
+      objectReference: {fileID: 0}
     - target: {fileID: 6750716295316983515, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
       propertyPath: PostChoiceDelay
       value: 1
@@ -18808,6 +20199,18 @@ CanvasGroup:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293253321175844211}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!225 &7206965113907238311
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293253322179795982}
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1

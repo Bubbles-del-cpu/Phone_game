@@ -13,10 +13,18 @@ MonoBehaviour:
   m_Name: Lily_spicy_post_ass
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
-  Message: You like my ASSets
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: You like my ASSets
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 0
+  GalleryVisibility: 0
   Image: {fileID: -2131658266077652376, guid: 239a224c8e59d6e47a7291b48d862200, type: 3}
   Video: {fileID: 0}
+  VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments:
   - Name: Izzy
     Content: Sheesh

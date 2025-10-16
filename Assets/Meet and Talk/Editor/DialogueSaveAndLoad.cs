@@ -90,14 +90,14 @@ namespace MeetAndTalk.Editor
             {
                 switch (node)
                 {
-                    case DialogueChoiceNode dialogueChoiceNode:
-                        _dialogueContainerSO.DialogueChoiceNodeDatas.Add(SaveNodeData(dialogueChoiceNode));
-                        break;
                     case DialogueNode dialogueNode:
                         _dialogueContainerSO.DialogueNodeDatas.Add(SaveNodeData(dialogueNode));
                         break;
                     case TimerChoiceNode timerChoiceNode:
                         _dialogueContainerSO.TimerChoiceNodeDatas.Add(SaveNodeData(timerChoiceNode));
+                        break;
+                    case DialogueChoiceNode dialogueChoiceNode:
+                        _dialogueContainerSO.DialogueChoiceNodeDatas.Add(SaveNodeData(dialogueChoiceNode));
                         break;
                     case StartNode startNode:
                         _dialogueContainerSO.StartNodeDatas.Add(SaveNodeData(startNode));
@@ -252,20 +252,20 @@ namespace MeetAndTalk.Editor
             {
                 NodeGuid = _node.nodeGuid,
                 Position = _node.GetPosition().position,
-                TextType = _node.Texts,
+                Texts = _node.Texts,
+                Timelapses = _node.TimeLapses,
                 Character = _node.Character,
                 AvatarPos = _node.avatarPosition,
                 AvatarType = _node.avatarType,
-                AudioClips = _node.AudioClip,
+                AudioClips = _node.AudioClips,
                 DialogueNodePorts = _node.dialogueNodePorts,
                 Duration = _node.DurationShow,
-                PostMediaType = _node.PostMediaType,
+                MediaType = _node.PostMediaType,
                 Image = _node.Image,
                 Video = _node.Video,
                 VideoThumbnail = _node.VideoThumbnail,
                 NotBackgroundCapable = _node.NotBackgroundCapable,
                 Post = _node.Post,
-                Timelapse = _node.Timelapse
             };
 
             return dialogueNodeData;
@@ -389,6 +389,7 @@ namespace MeetAndTalk.Editor
                 {
                     tempNode.Texts.Find(language => language.languageEnum == languageGeneric.languageEnum).LanguageGenericType = languageGeneric.LanguageGenericType;
                 }
+
                 foreach (LanguageGeneric<AudioClip> languageGeneric in node.AudioClips)
                 {
                     tempNode.AudioClip.Find(language => language.languageEnum == languageGeneric.languageEnum).LanguageGenericType = languageGeneric.LanguageGenericType;
@@ -471,14 +472,23 @@ namespace MeetAndTalk.Editor
                 DialogueNode tempNode = graphView.CreateDialogueNode(node.Position);
                 tempNode.nodeGuid = node.NodeGuid;
 
-                foreach (LanguageGeneric<string> languageGeneric in node.TextType)
+                // tempNode.Texts = node.Texts;
+                // tempNode.TimeLapses = node.Timelapses;
+                // tempNode.AudioClips = node.AudioClips;
+
+                foreach (LanguageGeneric<string> languageGeneric in node.Texts)
                 {
                     tempNode.Texts.Find(language => language.languageEnum == languageGeneric.languageEnum).LanguageGenericType = languageGeneric.LanguageGenericType;
                 }
 
+                foreach (LanguageGeneric<string> languageGeneric in node.Timelapses)
+                {
+                    tempNode.TimeLapses.Find(language => language.languageEnum == languageGeneric.languageEnum).LanguageGenericType = languageGeneric.LanguageGenericType;
+                }
+
                 foreach (LanguageGeneric<AudioClip> languageGeneric in node.AudioClips)
                 {
-                    tempNode.AudioClip.Find(language => language.languageEnum == languageGeneric.languageEnum).LanguageGenericType = languageGeneric.LanguageGenericType;
+                    tempNode.AudioClips.Find(language => language.languageEnum == languageGeneric.languageEnum).LanguageGenericType = languageGeneric.LanguageGenericType;
                 }
 
                 tempNode.Character = node.Character;
@@ -486,13 +496,12 @@ namespace MeetAndTalk.Editor
                 tempNode.avatarType = node.AvatarType;
 
                 tempNode.DurationShow = node.Duration;
-                tempNode.PostMediaType = node.PostMediaType;
+                tempNode.PostMediaType = node.MediaType;
                 tempNode.Image = node.Image;
                 tempNode.Video = node.Video;
                 tempNode.VideoThumbnail = node.VideoThumbnail;
                 tempNode.NotBackgroundCapable = node.NotBackgroundCapable;
                 tempNode.Post = node.Post;
-                tempNode.Timelapse = node.Timelapse;
 
                 tempNode.LoadValueInToField();
                 graphView.AddElement(tempNode);

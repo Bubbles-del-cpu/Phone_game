@@ -16,7 +16,7 @@ public class SaveFileData
     public bool ForceUnlockAllChapters;
     public bool DisplayHints;
     public MediaData CustomBackgroundImage;
-    public SystemLanguage LocalizationValue;
+    public SystemLanguage CurrentLanguage = SystemLanguage.English;
     [NonSerialized] public GameSaveState CurrentState;
     public int TotalChapters => CurrentState.Chapters.Count;
     public GameSaveState AutoSaveState;
@@ -93,8 +93,10 @@ public class SaveFileData
                     {
                         GUID = pastConv.GUID,
                         IsChoice = pastConv.IsChoice,
-                        SelectedChoice = pastConv.SelectedChoice,
-                        Text = pastConv.Text
+                        SelectedChoice = pastConv.SelectedChoice, //Soon to be obsolete
+                        Text = pastConv.Text, //Soon to be obsolete
+                        Texts = pastConv.Texts,
+                        SelectedChoiceTexts = pastConv.SelectedChoiceTexts
                     });
                 }
 
@@ -131,7 +133,7 @@ public class SaveFileData
 
         saveFile.Version = SAVE_FILE_VERSION;
         saveFile.SaveFileSlot = slot;
-        saveFile.LocalizationValue = DialogueManager.Instance.localizationManager.selectedLang;
+        saveFile.CurrentLanguage = DialogueManager.Instance.localizationManager.selectedLang;
         saveFile.UnlockedMedia = new List<MediaData>();
         saveFile.ForceUnlockAllChapters = false;
         saveFile.DisplayHints = false;
@@ -355,8 +357,10 @@ public class SaveFileData
 
         switch (nodeData)
         {
-            case DialogueChoiceNodeData:
             case TimerChoiceNodeData:
+                newConversation.IsChoice = true;
+                break;
+            case DialogueChoiceNodeData:
                 newConversation.IsChoice = true;
                 break;
         }
@@ -480,32 +484,35 @@ public class SaveFileData
         }
     }
 
-    public void MakeChoice(BaseNodeData nodeData, string choice)
+    public void MakeChoice(BaseNodeData nodeData, List<LanguageGeneric<string>> choices)
     {
         if (!SaveAndLoadManager.Instance.ReplayingCompletedChapter)
         {
             var past = CurrentChapterData.PastCoversations.FirstOrDefault(x => x.GUID == nodeData.NodeGuid);
             if (past != null)
             {
-                past.SelectedChoice = choice;
+                //Don't set SelectedChoice anymore as its obsolete
+                //past.SelectedChoice = choices.Find(x => x.languageEnum == GameManager.LOCALIZATION_MANAGER.SelectedLang()).LanguageGenericType;
+                past.SelectedChoiceTexts = choices;
             }
         }
 
 
         //Update the runtime node data with the choice so that we can
         //check the selected choice against specific rules for the rollback action
+        var choiceText = choices.Find(x => x.languageEnum == GameManager.LOCALIZATION_MANAGER.SelectedLang()).LanguageGenericType;
         switch (nodeData)
         {
-            case DialogueChoiceNodeData nd:
-                nd.SelectedChoice = choice;
-                break;
             case TimerChoiceNodeData nd:
-                nd.SelectedChoice = choice;
+                nd.SelectedChoice = choices;
+                break;
+            case DialogueChoiceNodeData nd:
+                nd.SelectedChoice = choices;
                 break;
         }
     }
 
-    public void UpdateText(BaseNodeData nodeData, string text)
+    public void UpdateText(BaseNodeData nodeData, List<LanguageGeneric<string>> texts)
     {
         if (SaveAndLoadManager.Instance.ReplayingCompletedChapter)
             return;
@@ -513,7 +520,9 @@ public class SaveFileData
         var past = CurrentChapterData.PastCoversations.FirstOrDefault(x => x.GUID == nodeData.NodeGuid);
         if (past != null)
         {
-            past.Text = text;
+            //Don't set Text anymore as its obsolete
+            //past.Text = texts.Find(x => x.languageEnum == GameManager.LOCALIZATION_MANAGER.SelectedLang()).LanguageGenericType;
+            past.Texts = texts;
         }
     }
 }

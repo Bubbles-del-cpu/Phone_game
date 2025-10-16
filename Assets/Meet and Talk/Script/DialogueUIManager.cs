@@ -144,8 +144,9 @@ namespace MeetAndTalk
             return emptyList;
         }
 
-        public void SetFullText(string text, BaseNodeData _nodeData, MessageSource messageSource, bool notification = true, bool updateSave = true)
+        public void SetFullText(List<LanguageGeneric<string>> texts, BaseNodeData _nodeData, MessageSource messageSource, bool notification = true, bool updateSave = true)
         {
+            var text = texts.Find(x => x.languageEnum == GameManager.LOCALIZATION_MANAGER.SelectedLang()).LanguageGenericType;
             string newText = GameManager.ToUTF32(text);
 
             Regex regex = new Regex(@"\{(.*?)\}");
@@ -159,7 +160,7 @@ namespace MeetAndTalk
 
             if (updateSave && messageSource == 0)
             {
-                SaveAndLoadManager.Instance.CurrentSave.UpdateText(_nodeData, newText);
+                SaveAndLoadManager.Instance.CurrentSave.UpdateText(_nodeData, texts);
                 SaveAndLoadManager.Instance.AutoSave();
             }
 
@@ -177,7 +178,7 @@ namespace MeetAndTalk
                         {
                             if (nd.Image != null || nd.Video != null)
                             {
-                                notificationText = $"has sent a new {(nd.PostMediaType == MediaType.Sprite ? "picture" : "video")}";
+                                notificationText = $"has sent a new {(nd.MediaType == MediaType.Sprite ? "picture" : "video")}";
                                 if (notification)
                                     SpawnNotification(Notification.NotificationType.Message, nd.Character, notificationText);
                             }
@@ -295,7 +296,7 @@ namespace MeetAndTalk
             _notificationDictionary[character] = notification;
         }
 
-        public void SetButtons(DialogueCharacterSO character, BaseNodeData baseNode, List<string> texts, List<string> hints, List<UnityAction> unityActions, bool showTimer)
+        public void SetButtons(DialogueCharacterSO character, BaseNodeData baseNode, List<List<LanguageGeneric<string>>> texts, List<List<LanguageGeneric<string>>> hints, List<UnityAction> unityActions, bool showTimer)
         {
             // Hide If Choice Empty
             GameManager.Instance.MessagingCanvas.GetConversationButton(character).HasResponseReady = texts.Count > 0;

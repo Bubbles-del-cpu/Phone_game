@@ -13,9 +13,17 @@ MonoBehaviour:
   m_Name: Clair Post 1
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
-  Message: thanks for following me!!! be sure to check out my YouTube and Twitch
-    accounts!!!
-  MediaType: 1
-  Image: {fileID: 21300000, guid: 3f56d518de365854799f16f3fa0ecfeb, type: 3}
-  Video: {fileID: 32900000, guid: 415713e16f7e4a24ab6196397c984b70, type: 3}
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: thanks for following me!!! be sure to check out my YouTube
+      and Twitch accounts!!!
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
+  MediaType: 0
+  GalleryVisibility: 0
+  Image: {fileID: 21300000, guid: adf182af6b2328643888e3118e078076, type: 3}
+  Video: {fileID: 32900000, guid: f021ff9a1f9bcac43bc3f2a812ab464f, type: 3}
+  VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments: []

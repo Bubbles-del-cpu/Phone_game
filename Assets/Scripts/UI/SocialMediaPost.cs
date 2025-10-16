@@ -48,14 +48,14 @@ public class SocialMediaPost : MonoBehaviour
     IEnumerator CoSpawnNotification(SocialMediaPostSO value)
     {
         yield return new WaitForSeconds(1f);
-        DialogueUIManager.Instance.SpawnNotification(Notification.NotificationType.SocialMedia, value.Character, value.Message);
+        DialogueUIManager.Instance.SpawnNotification(Notification.NotificationType.SocialMedia, value.Character, DialogueLocalizationHelper.GetText(value.MessageTexts));
     }
 
     public void SetData(SocialMediaPostSO data, DialogueNodeData nodeData, bool showNotification)
     {
         icon.Character = data.Character;
         nameLabel.text = data.Character.name;
-        postLabel.text = data.Message;
+        postLabel.text = DialogueLocalizationHelper.GetText(data.MessageTexts);
         switch (data.MediaType)
         {
             case MediaType.Sprite:

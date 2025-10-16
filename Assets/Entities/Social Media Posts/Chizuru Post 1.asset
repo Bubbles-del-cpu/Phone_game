@@ -13,11 +13,18 @@ MonoBehaviour:
   m_Name: Chizuru Post 1
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: 8da73476cefc3eb43b4e7ac5962331b9, type: 2}
-  Message: thank you for all the support!
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: thank you for all the support!
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 1
   GalleryVisibility: 1
   Image: {fileID: 21300000, guid: adf182af6b2328643888e3118e078076, type: 3}
   Video: {fileID: 32900000, guid: a440e4b5ff822ef46ac6cacc7e5879f6, type: 3}
+  VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments:
   - Name: Name1
     Content: This is a comment
