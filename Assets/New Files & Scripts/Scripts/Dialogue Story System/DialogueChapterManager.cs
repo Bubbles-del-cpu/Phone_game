@@ -2,9 +2,8 @@ using MeetAndTalk;
 using MeetAndTalk.GlobalValue;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Localization;
 
 public class DialogueChapterManager : UICanvas
 {
@@ -20,11 +19,15 @@ public class DialogueChapterManager : UICanvas
         [System.Serializable]
         public class ChapterReplaySetting
         {
-            public string DialogTitle;
+            public LocalizedString DialogueTitleString;
             public GlobalValueSave Value;
-            public string Option1Text;
+
+            [Header("Option 1")]
+            public LocalizedString Option1TextString;
             public string OptionSetting1;
-            public string Option2Text;
+
+            [Header("Option 2")]
+            public LocalizedString Option2TextString;
             public string OptionSetting2;
         }
 
@@ -94,11 +97,11 @@ public class DialogueChapterManager : UICanvas
     {
         if (SaveAndLoadManager.Instance.PlayingStandaloneChapter)
         {
-            GameManager.Instance.DisplayDialog(GameConstants.DialogTexts.STANDALONE_CHAPTER_SELECT_WARNING, null, "Continue", false);
+            GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.STANDALONE_CHAPTER_SELECT_WARNING, eventToTrigger: null, GameConstants.UIElementKeys.CONTINUE, args: null, twoButtonSetup: false);
         }
         else if (SaveAndLoadManager.Instance.ReplayingCompletedChapter)
         {
-            GameManager.Instance.DisplayDialog(GameConstants.DialogTexts.REPLAY_CHAPTER_SELECT_WARNING, null, "Continue", false);
+            GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.REPLAY_CHAPTER_SELECT_WARNING, eventToTrigger: null, GameConstants.UIElementKeys.CONTINUE, args: null, twoButtonSetup: false);
         }
         else
         {
@@ -198,17 +201,16 @@ public class DialogueChapterManager : UICanvas
         yield return new WaitForSeconds(.5f);
 
         var wasReplaying = SaveAndLoadManager.Instance.ReplayingCompletedChapter;
-        var buttonTitle = "Continue";
 
         if (SaveAndLoadManager.Instance.CurrentSave.CurrentState.CompletedChapters.Count >= SaveAndLoadManager.Instance.CurrentSave.TotalChapters)
         {
             //We have completed the last chapter.
-            GameManager.Instance.DisplayDialog(GameConstants.DialogTexts.ALL_CHAPTERS_COMPLETE, null, buttonTitle, false);
+            GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.ALL_CHAPTERS_COMPLETE, eventToTrigger: null, GameConstants.UIElementKeys.CONTINUE, args: null, twoButtonSetup: false);
         }
         else
         {
-            var message = wasReplaying ? GameConstants.DialogTexts.CHAPTER_REPLAY_COMPLETE : GameConstants.DialogTexts.CHAPTER_COMPLETE;
-            GameManager.Instance.DisplayDialog(message, null, buttonTitle, false);
+            var message = wasReplaying ? GameConstants.DialogTextKeys.CHAPTER_REPLAY_COMPLETE : GameConstants.DialogTextKeys.CHAPTER_COMPLETE;
+            GameManager.Instance.DisplayDialog(message, eventToTrigger: null, GameConstants.UIElementKeys.CONTINUE, args: null, twoButtonSetup: false);
             GameManager.Instance.NextChapterReady = true;
         }
     }
@@ -267,7 +269,7 @@ public class DialogueChapterManager : UICanvas
 
     public void UnlockAllChapters()
     {
-        GameManager.Instance.DisplayDialog(GameConstants.DialogTexts.CHAPTER_UNLOCK_WARNING, () =>
+        GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.CHAPTER_UNLOCK_WARNING, () =>
         {
             SaveAndLoadManager.Instance.CurrentSave.ForceUnlockAllChapters = true;
             SaveAndLoadManager.Instance.AutoSave();

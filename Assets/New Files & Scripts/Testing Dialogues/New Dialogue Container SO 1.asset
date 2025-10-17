@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: New Dialogue Container SO 1
+  m_EditorClassIdentifier: Assembly-CSharp::MeetAndTalk.DialogueContainerSO
+  AllowDialogueSave: 0
+  BlockingReopeningDialogue: 0
+  NodeLinkDatas:
+  - BaseNodeGuid: 0432ffb1-cec1-466a-a5f3-6fdf56f67870
+    TargetNodeGuid: 081d53c8-cb18-4eab-801c-f1d228bc7e6a
+  - BaseNodeGuid: 081d53c8-cb18-4eab-801c-f1d228bc7e6a
+    TargetNodeGuid: 39d91850-9087-4cfa-9600-cf8735567635
+  - BaseNodeGuid: 39d91850-9087-4cfa-9600-cf8735567635
+    TargetNodeGuid: 8a25ffce-9a1f-47f6-b5bf-712579b90238
+  DialogueChoiceNodeDatas:
+  - NodeGuid: 39d91850-9087-4cfa-9600-cf8735567635
+    Position: {x: 944, y: 119}
+    DialogueNodePorts:
+    - PortGuid: fc4a8562-e1c5-4c01-874f-af86ae68f4fe
+      InputGuid: 8a25ffce-9a1f-47f6-b5bf-712579b90238
+      OutputGuid: 39d91850-9087-4cfa-9600-cf8735567635
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Engish option
+      - languageEnum: 1
+        LanguageGenericType: 'JPN option '
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Engish hint
+      - languageEnum: 1
+        LanguageGenericType: JPN hint
+    - PortGuid: 69e50ad9-1094-4dcd-af7d-5c79a2186ff8
+      InputGuid: 
+      OutputGuid: 
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Engish option extra
+      - languageEnum: 1
+        LanguageGenericType: JPN option
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Engish hint extra
+      - languageEnum: 1
+        LanguageGenericType: JPN hint
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 0}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: 
+  DialogueNodeDatas:
+  - NodeGuid: 081d53c8-cb18-4eab-801c-f1d228bc7e6a
+    Position: {x: 697, y: 119}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 0}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 123
+    - languageEnum: 1
+      LanguageGenericType: 456
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 123
+    - languageEnum: 1
+      LanguageGenericType: 456 Test
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  TimerChoiceNodeDatas:
+  - NodeGuid: 8a25ffce-9a1f-47f6-b5bf-712579b90238
+    Position: {x: 1311, y: 119}
+    DialogueNodePorts:
+    - PortGuid: f5c1b659-1eb7-4fcd-a090-aecc99aa2fbd
+      InputGuid: 
+      OutputGuid: 
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Choice 01
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: test2
+      - languageEnum: 1
+        LanguageGenericType: test
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 0}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: 
+    time: 10
+  EndNodeDatas: []
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 0432ffb1-cec1-466a-a5f3-6fdf56f67870
+    Position: {x: 521, y: 119}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []

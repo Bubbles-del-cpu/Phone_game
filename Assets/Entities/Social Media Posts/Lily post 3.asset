@@ -13,6 +13,16 @@ MonoBehaviour:
   m_Name: Lily post 3
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
-  Message: Burgir time
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: Burgir time
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
+  MediaType: 0
+  GalleryVisibility: 0
   Image: {fileID: 2430343300886275911, guid: 925294aec76f0f340bfdf682d3965db5, type: 3}
-  ImageTarget: 1
+  Video: {fileID: 0}
+  VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
+  Comments: []

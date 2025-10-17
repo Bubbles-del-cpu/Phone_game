@@ -13,12 +13,18 @@ MonoBehaviour:
   m_Name: Izzy witch post 1
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: bee4a3948b628174c94924853c363672, type: 2}
-  Message: Some people have all the luck!
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: Some people have all the luck!
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 0
   GalleryVisibility: 0
   Image: {fileID: 5475606864303052391, guid: 14218538fbeca71408e93747067da098, type: 3}
   Video: {fileID: 0}
   VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments:
   - Name: Lily
     Content: Can't wait to be chilling like that

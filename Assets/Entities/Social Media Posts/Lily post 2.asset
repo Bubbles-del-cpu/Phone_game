@@ -13,8 +13,16 @@ MonoBehaviour:
   m_Name: Lily post 2
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
-  Message: Happiest day of my live. I wish you a speedy recovery honey
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: Happiest day of my live. I wish you a speedy recovery honey
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 0
+  GalleryVisibility: 0
   Image: {fileID: -7048372820006817777, guid: 09348ec01cad2a34c83e8d39d7e57ce9, type: 3}
   Video: {fileID: 0}
+  VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments: []

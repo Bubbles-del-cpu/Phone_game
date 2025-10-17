@@ -13,10 +13,16 @@ MonoBehaviour:
   m_Name: anon social post 2
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: a6dcda5e591893944acddb37aaa5146b, type: 2}
-  Message: She came back for more
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: She came back for more
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 0
   GalleryVisibility: 0
   Image: {fileID: 1808548520723810215, guid: 9be8950b0746ab74fbd98ca32a227815, type: 3}
   Video: {fileID: 0}
   VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments: []

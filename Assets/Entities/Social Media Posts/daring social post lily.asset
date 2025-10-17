@@ -13,12 +13,18 @@ MonoBehaviour:
   m_Name: daring social post lily
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
-  Message: Lost in the bamboo forest... Finders keepers
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: Lost in the bamboo forest... Finders keepers
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 0
   GalleryVisibility: 0
   Image: {fileID: 7192469208063191473, guid: bb44636387b26e44997db930a14268b9, type: 3}
   Video: {fileID: 0}
   VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments:
   - Name: Dr. Markus Weber
     Content: Just wauw

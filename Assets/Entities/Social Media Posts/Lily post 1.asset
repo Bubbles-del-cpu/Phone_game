@@ -13,8 +13,16 @@ MonoBehaviour:
   m_Name: Lily post 1
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
-  Message: Shopping with my best buddy
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: Shopping with my best buddy
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 0
+  GalleryVisibility: 0
   Image: {fileID: 2250064846363548832, guid: e0262f66a8af27d4283768a9576a8150, type: 3}
   Video: {fileID: 0}
+  VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments: []

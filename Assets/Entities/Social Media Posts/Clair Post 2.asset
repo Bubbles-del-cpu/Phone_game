@@ -13,6 +13,16 @@ MonoBehaviour:
   m_Name: Clair Post 2
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
-  Message: so bored....
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: so bored....
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
+  MediaType: 0
+  GalleryVisibility: 0
   Image: {fileID: 21300000, guid: 58eb1f0393957484dbcf190a79d1e320, type: 3}
-  ImageTarget: 1
+  Video: {fileID: 0}
+  VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
+  Comments: []

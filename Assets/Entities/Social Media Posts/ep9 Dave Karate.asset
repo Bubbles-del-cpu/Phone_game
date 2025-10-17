@@ -13,10 +13,18 @@ MonoBehaviour:
   m_Name: ep9 Dave Karate
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: 14173166ace8e7b418d7ae1d1a0526b0, type: 2}
-  Message: Karate master in the making
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: Karate master in the making
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 0
+  GalleryVisibility: 0
   Image: {fileID: -1312912825616498353, guid: 583d46179d46ab548a1a816e07d5c850, type: 3}
   Video: {fileID: 0}
+  VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments:
   - Name: Izzy
     Content: Il fight you hehe

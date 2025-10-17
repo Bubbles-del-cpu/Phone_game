@@ -77,7 +77,7 @@ public class MessagingBubble : MonoBehaviour
         VideoClip video = null;
         Sprite thumbnail = null;
 
-        switch (nodeData.PostMediaType)
+        switch (nodeData.MediaType)
         {
             case MediaType.Sprite:
                 postImage = nodeData.Image;

@@ -7,9 +7,22 @@ using System;
 using UnityEngine.Video;
 using UnityEngine.UI;
 using System.Linq;
+using MeetAndTalk.Localization;
+using UnityEngine.Localization.Settings;
+using UnityEngine.Localization;
 
+[ExecuteInEditMode]
 public class GameManager : MonoBehaviour
 {
+    public static LocalizationManager LOCALIZATION_MANAGER
+    {
+        get
+        {
+            var resoruce = Resources.Load<LocalizationManager>("Languages");
+            return resoruce;
+        }
+    }
+
     public static GameManager Instance;
     bool _prevFullScreen;
 
@@ -26,7 +39,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] OverlayCanvas overlayCanvas;
 
     [Header("Config")]
-
+    public bool EnableLanaguageSwitching = false;
     public GalleryUnlockConfig GalleryConfig;
     [SerializeField] private Image _backgroundImageComponent;
     public Sprite DefaultBackgroundSprite;
@@ -98,6 +111,34 @@ public class GameManager : MonoBehaviour
         return output;
     }
 
+    // To set to a specific language, for example by locale code:
+    public void ChangeLanguage(Locale locale)
+    {
+        LocalizationSettings.SelectedLocale = locale;
+
+        var code = locale.LocaleName.Split(" ")[0];
+        //var convertedCode = LocalizationManager.GetIsoLanguageCode(code);
+        Enum.GetNames(typeof(SystemLanguage)).ToList().ForEach(lang =>
+        {
+            if (lang == code)
+            {
+                //Set the system language in the GameManager
+                LOCALIZATION_MANAGER.selectedLang = (SystemLanguage)Enum.Parse(typeof(SystemLanguage), lang);
+                SaveAndLoadManager.Instance.CurrentSave.CurrentLanguage = LOCALIZATION_MANAGER.selectedLang;
+                SaveAndLoadManager.Instance.AutoSave();
+            }
+        });
+    }
+
+    public void ChangeLanguage(SystemLanguage language)
+    {
+        var locale = LocalizationSettings.AvailableLocales.Locales.Where(x => x.LocaleName.StartsWith(language.ToString())).FirstOrDefault();
+        if (locale != null)
+        {
+            ChangeLanguage(locale);
+        }
+    }
+
     private void Awake()
     {
         if (Instance != null)
@@ -160,6 +201,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ResetBackgroundImage()
+    {
+        _backgroundImageComponent.sprite = DefaultBackgroundSprite;
+    }
+
     public void SetBackgroundImage(Sprite image)
     {
         _backgroundImageComponent.sprite = image;
@@ -171,11 +217,11 @@ public class GameManager : MonoBehaviour
         StartCoroutine(CoStartDialogue());
     }
 
-    public void DisplayDialog(string message, Action eventToTrigger, string confirmButtonText = "Yes", bool twoButtonSetup = true, string cancelButtonTest = "No")
+    public void DisplayDialog(string messageKey, Action eventToTrigger, string confirmButtonKey = "dialog_button_yes", object[] args = null, bool twoButtonSetup = true, string cancelButtonKey = "dialog_button_no")
     {
         if (overlayCanvas)
         {
-            overlayCanvas.ShowDialog(message, eventToTrigger, confirmButtonText, twoButtonSetup, cancelButtonTest);
+            overlayCanvas.ShowDialog(messageKey, eventToTrigger, confirmButtonKey, twoButtonSetup, cancelButtonKey, args);
         }
     }
 
@@ -209,7 +255,7 @@ public class GameManager : MonoBehaviour
 
         settingsCanvas.Close();
 
-        foreach(var item in FindObjectsByType<Notification>(FindObjectsSortMode.None))
+        foreach (var item in FindObjectsByType<Notification>(FindObjectsSortMode.None))
         {
             item.gameObject.SetActive(false);
             Destroy(item);
@@ -217,6 +263,8 @@ public class GameManager : MonoBehaviour
 
         //Double call to messaging canvas close in order to shut the contants window AND the message window
         messagingCanvas.Close();
+
+        StartCoroutine(CoStartDialogue());
     }
 
     IEnumerator CoStartDialogue()
@@ -230,7 +278,8 @@ public class GameManager : MonoBehaviour
         messagingCanvas.gameObject.SetActive(true);
     }
 
-    public void PlayNotificationFX() {
+    public void PlayNotificationFX()
+    {
         audioSource.PlayOneShot(notificationFX);
     }
 
@@ -307,7 +356,7 @@ public class GameManager : MonoBehaviour
 
     public DialogueCharacterSO[] Characters { get { return characters; } }
 
-    public MessagingCanvas MessagingCanvas{ get { return messagingCanvas; } }
+    public MessagingCanvas MessagingCanvas { get { return messagingCanvas; } }
     public GalleryCanvas GalleryCanvas { get { return galleryCanvas; } }
     public ContactsCanvas ContactsCanvas { get { return contactsCanvas; } }
     public SocialMediaCanvas SocialMediaCanvas { get { return socialMediaCanvas; } }

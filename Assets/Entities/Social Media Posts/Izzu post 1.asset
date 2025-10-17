@@ -13,10 +13,18 @@ MonoBehaviour:
   m_Name: Izzu post 1
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
-  Message: buetifull
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: buetifull
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 0
+  GalleryVisibility: 0
   Image: {fileID: 5161574972495923456, guid: 263ee1864bb6b6b42b25e6873870827d, type: 3}
   Video: {fileID: 0}
+  VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments:
   - Name: FUCKER_XX
     Content: Boring

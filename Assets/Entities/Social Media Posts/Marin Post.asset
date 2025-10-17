@@ -13,6 +13,16 @@ MonoBehaviour:
   m_Name: Marin Post
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
-  Message: first modeling job!!!! #newjob
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: first modeling job!!!! #newjob
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
+  MediaType: 0
+  GalleryVisibility: 0
   Image: {fileID: 21300000, guid: 1bf85aeaf13c99141950db4d7230bcfe, type: 3}
-  ImageTarget: 1
+  Video: {fileID: 0}
+  VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
+  Comments: []

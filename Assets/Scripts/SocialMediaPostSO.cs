@@ -1,9 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 using MeetAndTalk;
 using System.Collections.Generic;
-using UnityEngine.Events;
 using UnityEngine.Video;
 
 [CreateAssetMenu()]
@@ -19,7 +16,9 @@ public class SocialMediaPostSO : ScriptableObject
     }
 
     public DialogueCharacterSO Character;
-    public string Message;
+
+    public List<LanguageGeneric<string>> MessageTexts;
+    [HideInInspector] public string Message;
     public MediaType MediaType;
     public GalleryDisplay GalleryVisibility;
     public Sprite Image;

@@ -12,7 +12,7 @@ public class ClearSaveButton : MonoBehaviour
     {
         if (_displayDialog)
         {
-            GameManager.Instance.DisplayDialog(GameConstants.DialogTexts.CLEAR_SAVE, () =>
+            GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.CLEAR_SAVE, () =>
             {
                 FadeAndRestart();
             });

@@ -302,8 +302,6 @@ namespace MeetAndTalk.Editor
 
             graphView.UpdateTheme(_theme.ToString());
         }
-
-
     }
 #endif
 }

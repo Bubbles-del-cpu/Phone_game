@@ -13,11 +13,18 @@ MonoBehaviour:
   m_Name: lily post 4
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
-  Message: Would you like to squeeze them?
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: Would you like to squeeze them?
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 0
   GalleryVisibility: 0
   Image: {fileID: 5244391671801061990, guid: a60a9ba2dfcbbdc44ac79e47098b69ff, type: 3}
   Video: {fileID: 0}
+  VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments:
   - Name: Math
     Content: Freshly fucked

@@ -13,10 +13,16 @@ MonoBehaviour:
   m_Name: lisa dave morning post
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
-  Message: We got up late
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: We got up late
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 0
   GalleryVisibility: 0
   Image: {fileID: 2515066832577415653, guid: ed581302b92aa984ba848b34efbbcd80, type: 3}
   Video: {fileID: 0}
   VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments: []

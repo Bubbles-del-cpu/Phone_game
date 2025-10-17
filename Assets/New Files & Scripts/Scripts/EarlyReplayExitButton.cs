@@ -13,7 +13,7 @@ public class EarlyReplayExitButton : MonoBehaviour
     }
     private void OnClick()
     {
-        GameManager.Instance.DisplayDialog(GameConstants.DialogTexts.EARLY_REPLAY_EXIT, () =>
+        GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.EARLY_REPLAY_EXIT, () =>
         {
             DialogueChapterManager.Instance.CompleteChapterReplayEarly();
         });

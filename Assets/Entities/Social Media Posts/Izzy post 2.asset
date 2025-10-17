@@ -13,10 +13,18 @@ MonoBehaviour:
   m_Name: Izzy post 2
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
-  Message: Beach day, with my floaties
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: Beach day, with my floaties
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 0
+  GalleryVisibility: 0
   Image: {fileID: 5199665934585966885, guid: 25dd625898af9be40a472b58dd584f9a, type: 3}
   Video: {fileID: 0}
+  VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments:
   - Name: Lisa
     Content: Where dif you get that bikini?

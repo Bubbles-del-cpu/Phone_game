@@ -16,7 +16,9 @@ namespace MeetAndTalk.Nodes
     public class DialogueNode : BaseNode
     {
         private List<LanguageGeneric<string>> texts = new List<LanguageGeneric<string>>();
-        private List<LanguageGeneric<AudioClip>> audioClip = new List<LanguageGeneric<AudioClip>>();
+        private List<LanguageGeneric<string>> timelapses = new List<LanguageGeneric<string>>();
+        private string oldTimelapse;
+        private List<LanguageGeneric<AudioClip>> audioClips = new List<LanguageGeneric<AudioClip>>();
         private DialogueCharacterSO character = ScriptableObject.CreateInstance<DialogueCharacterSO>();
         private float durationShow = DialogueManager.BASE_NODE_DISPLAY_TIME;
         private MediaType mediaType;
@@ -25,13 +27,14 @@ namespace MeetAndTalk.Nodes
         private bool notBackgroundCapable;
         private VideoClip video;
         private SocialMediaPostSO post;
-        private string timelapse;
 
 
         public List<DialogueNodePort> dialogueNodePorts = new List<DialogueNodePort>();
 
         public List<LanguageGeneric<string>> Texts { get => texts; set => texts = value; }
-        public List<LanguageGeneric<AudioClip>> AudioClip { get => audioClip; set => audioClip = value; }
+        public List<LanguageGeneric<string>> TimeLapses { get => timelapses; set => timelapses = value; }
+        public string TimeLapse { get => oldTimelapse; set => oldTimelapse = value; }
+        public List<LanguageGeneric<AudioClip>> AudioClips { get => audioClips; set => audioClips = value; }
         public DialogueCharacterSO Character { get => character; set => character = value; }
         public float DurationShow { get => durationShow; set => durationShow = value; }
         public MediaType PostMediaType { get => mediaType; set => mediaType = value; }
@@ -40,9 +43,10 @@ namespace MeetAndTalk.Nodes
         public bool NotBackgroundCapable { get => notBackgroundCapable; set => notBackgroundCapable = value; }
         public Sprite VideoThumbnail { get => videoThumbnail; set => videoThumbnail = value; }
         public SocialMediaPostSO Post { get => post; set => post = value; }
-        public string Timelapse { get => timelapse; set => timelapse = value; }
+        //public string Timelapse { get => timelapse; set => timelapse = value; }
 
         private TextField texts_Field;
+        private TextField timelapse_Field;
         private EnumField mediaType_Field;
         private ObjectField image_Field;
         private ObjectField videoThumbnail_Field;
@@ -53,7 +57,6 @@ namespace MeetAndTalk.Nodes
         private ObjectField character_Field;
         private FloatField duration_Field;
         private ObjectField socialMedia_Field;
-        private TextField timelapse_Field;
 
         private List<VisualElement> nodeFields;
 
@@ -88,7 +91,14 @@ namespace MeetAndTalk.Nodes
                     languageEnum = language,
                     LanguageGenericType = ""
                 });
-                AudioClip.Add(new LanguageGeneric<AudioClip>
+
+                timelapses.Add(new LanguageGeneric<string>
+                {
+                    languageEnum = language,
+                    LanguageGenericType = ""
+                });
+
+                AudioClips.Add(new LanguageGeneric<AudioClip>
                 {
                     languageEnum = language,
                     LanguageGenericType = null
@@ -113,20 +123,6 @@ namespace MeetAndTalk.Nodes
 
         private void PopulateFields()
         {
-            /* AUDIO CLIPS */
-            audioClips_Field = new ObjectField()
-            {
-                objectType = typeof(AudioClip),
-                allowSceneObjects = false,
-                value = audioClip.Find(audioClips => audioClips.languageEnum == editorWindow.LanguageEnum).LanguageGenericType,
-            };
-            audioClips_Field.RegisterValueChangedCallback(value =>
-            {
-                audioClip.Find(audioClips => audioClips.languageEnum == editorWindow.LanguageEnum).LanguageGenericType = value.newValue as AudioClip;
-            });
-            audioClips_Field.SetValueWithoutNotify(audioClip.Find(audioClips => audioClips.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
-            nodeFields.Add(audioClips_Field);
-
             /* Character CLIPS */
             Label label_character = new Label("Character SO");
             label_character.AddToClassList("label_name");
@@ -178,6 +174,24 @@ namespace MeetAndTalk.Nodes
             AvatarTypeField.SetValueWithoutNotify(avatarType);
             nodeFields.Add(AvatarTypeField);
 
+            /* AUDIO CLIPS */
+            Label label_audio = new Label("Audio Clip");
+            label_audio.AddToClassList("label_name");
+            label_audio.AddToClassList("Label");
+            nodeFields.Add(label_audio);
+            audioClips_Field = new ObjectField()
+            {
+                objectType = typeof(AudioClip),
+                allowSceneObjects = false,
+                value = audioClips.Find(audioClips => audioClips.languageEnum == editorWindow.LanguageEnum).LanguageGenericType,
+            };
+            audioClips_Field.RegisterValueChangedCallback(value =>
+            {
+                audioClips.Find(audioClips => audioClips.languageEnum == editorWindow.LanguageEnum).LanguageGenericType = value.newValue as AudioClip;
+            });
+            audioClips_Field.SetValueWithoutNotify(audioClips.Find(audioClips => audioClips.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
+            nodeFields.Add(audioClips_Field);
+
             /* TEXT BOX */
             Label label_texts = new Label("Displayed Text");
             label_texts.AddToClassList("label_texts");
@@ -196,7 +210,7 @@ namespace MeetAndTalk.Nodes
             nodeFields.Add(texts_Field);
 
             /* TIMELAPSE */
-            Label label_timelapse = new Label("Timelapse");
+            Label label_timelapse = new Label("Timelapse Text");
             label_timelapse.AddToClassList("label_timelapse");
             label_timelapse.AddToClassList("Label");
             nodeFields.Add(label_timelapse);
@@ -204,9 +218,11 @@ namespace MeetAndTalk.Nodes
             timelapse_Field = new TextField("");
             timelapse_Field.RegisterValueChangedCallback(value =>
             {
-                timelapse = value.newValue;
+                timelapses.Find(tl => tl.languageEnum == editorWindow.LanguageEnum).LanguageGenericType = value.newValue;
             });
-            timelapse_Field.SetValueWithoutNotify(timelapse);
+
+            timelapse_Field.multiline = true; // Enable multi-line entry
+            timelapse_Field.SetValueWithoutNotify(timelapses.Find(tl => tl.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
             timelapse_Field.multiline = true;
 
             timelapse_Field.AddToClassList("TextTimelapse");
@@ -344,17 +360,24 @@ namespace MeetAndTalk.Nodes
             });
             texts_Field.SetValueWithoutNotify(texts.Find(text => text.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
 
+            timelapse_Field.RegisterValueChangedCallback(value =>
+            {
+                timelapses.Find(tl => tl.languageEnum == editorWindow.LanguageEnum).LanguageGenericType = value.newValue;
+            });
+            timelapse_Field.SetValueWithoutNotify(timelapses.Find(tl => tl.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
+
             audioClips_Field.RegisterValueChangedCallback(value =>
             {
-                audioClip.Find(audioClips => audioClips.languageEnum == editorWindow.LanguageEnum).LanguageGenericType = value.newValue as AudioClip;
+                audioClips.Find(audioClips => audioClips.languageEnum == editorWindow.LanguageEnum).LanguageGenericType = value.newValue as AudioClip;
             });
-            audioClips_Field.SetValueWithoutNotify(audioClip.Find(audioClips => audioClips.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
+            audioClips_Field.SetValueWithoutNotify(audioClips.Find(audioClips => audioClips.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
         }
 
         public override void LoadValueInToField()
         {
             texts_Field.SetValueWithoutNotify(texts.Find(language => language.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
-            audioClips_Field.SetValueWithoutNotify(audioClip.Find(language => language.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
+            timelapse_Field.SetValueWithoutNotify(timelapses.Find(tl => tl.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
+            audioClips_Field.SetValueWithoutNotify(audioClips.Find(language => language.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
             character_Field.SetValueWithoutNotify(character);
             AvatarPositionField.SetValueWithoutNotify(avatarPosition);
             AvatarTypeField.SetValueWithoutNotify(avatarType);
@@ -366,7 +389,6 @@ namespace MeetAndTalk.Nodes
             videoThumbnail_Field.SetValueWithoutNotify(videoThumbnail);
             visibilityTypeField.SetValueWithoutNotify(visibilityType);
             socialMedia_Field.SetValueWithoutNotify(post);
-            timelapse_Field.SetValueWithoutNotify(timelapse);
 
             ClearAndPopulateFields();
         }
@@ -382,8 +404,23 @@ namespace MeetAndTalk.Nodes
             Port output = outputContainer.Query<Port>().First();
             if (!output.connected) error.Add("Output does not lead to any node");
 
-            if (durationShow < 1 && durationShow != 0) warning.Add("Short time for Make Decision");
-            for (int i = 0; i < Texts.Count; i++) { if (Texts[i].LanguageGenericType == "") warning.Add($"No Text for {Texts[i].languageEnum} Language"); }
+            if (durationShow < 1 && durationShow != 0)
+                warning.Add("Short time for Make Decision");
+
+            for (int i = 0; i < Texts.Count; i++)
+            {
+                if (Texts[i].LanguageGenericType == "")
+                    warning.Add($"No Text for {Texts[i].languageEnum} Language");
+            }
+
+            if (TimeLapses.Any(x => x.LanguageGenericType != ""))
+            {
+                for (int i = 0; i < TimeLapses.Count; i++)
+                {
+                    if (TimeLapses[i].LanguageGenericType == "")
+                        warning.Add($"No TimeLapses for {TimeLapses[i].languageEnum} Language");
+                }
+            }
 
             ErrorList = error;
             WarningList = warning;

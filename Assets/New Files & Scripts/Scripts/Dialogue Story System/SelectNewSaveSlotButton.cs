@@ -9,7 +9,7 @@ public class SelectNewSaveSlotButton : MonoBehaviour
     {
         if (_displayDialog)
         {
-            GameManager.Instance.DisplayDialog(GameConstants.DialogTexts.LOGOUT_WARNING, () =>
+            GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.LOGOUT_WARNING, () =>
             {
                 ConfirmReset();
             });

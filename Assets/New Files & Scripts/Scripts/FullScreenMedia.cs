@@ -87,7 +87,7 @@ public class FullScreenMedia : UIPanel
 
     public void Setup(DialogueNodeData nodeData, bool isSocialMediaPost)
     {
-        _currentMediaType = nodeData.PostMediaType;
+        _currentMediaType = nodeData.MediaType;
         (MediaType type, Sprite image, VideoClip video, Sprite videoThumbnail, bool backgroundCapable) mediaData =
             nodeData.GetNodeMediaData(isSocialMediaPost);
 

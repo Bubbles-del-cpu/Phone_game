@@ -11,11 +11,11 @@ public class GalleryUnlockDialog : InputFieldDialogBox
         if (helper.CheckContent(_inputField.text))
         {
             GameManager.Instance.GalleryCanvas.UnlockData.UnlockTriggered = true;
-            GameManager.Instance.DisplayDialog(GameConstants.DialogTexts.GALLERY_CODE_SUCCESS, () => base.Submit(), "Continue", false);
+            GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.GALLERY_CODE_SUCCESS, () => base.Submit(), GameConstants.UIElementKeys.CONTINUE, args: null, twoButtonSetup: false);
         }
         else
         {
-            GameManager.Instance.DisplayDialog(GameConstants.DialogTexts.GALLERY_CODE_FAIL, null, "Try again", false);
+            GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.GALLERY_CODE_FAIL, eventToTrigger: null, GameConstants.UIElementKeys.TRY_AGAIN, args: null, twoButtonSetup: false);
         }
     }
 }

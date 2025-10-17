@@ -13,12 +13,18 @@ MonoBehaviour:
   m_Name: Izzy post 1
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
-  Message: Wedding after partys hit diffrent
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: Wedding after partys hit diffrent
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 1
   GalleryVisibility: 0
   Image: {fileID: 4108560935946514913, guid: 5267377b15e1f1a4e9f0ff65d6c3a317, type: 3}
   Video: {fileID: 32900000, guid: 60e0647ca71040547aa8fc2a53f83689, type: 3}
   VideoThumbnail: {fileID: -6179694509028872468, guid: 5af05f6ef1400b542860b2d5fdffd5ba, type: 3}
+  NotBackgroundCapable: 0
   Comments:
   - Name: Paul
     Content: 'We gotta do that again ( :'
