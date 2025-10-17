@@ -252,6 +252,7 @@ public class DialogueContainerSOEditor : Editor
                 switch(_target.DialogueNodeDatas[i].GalleryVisibility)
                 {
                     case GalleryDisplay.Display:
+                    case GalleryDisplay.Hidden:
                         _target.DialogueNodeDatas[i].MediaType = (MediaType)EditorGUILayout.EnumPopup("Media Type", _target.DialogueNodeDatas[i].MediaType);
                         switch(_target.DialogueNodeDatas[i].MediaType)
                         {

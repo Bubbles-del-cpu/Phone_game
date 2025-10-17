@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] OverlayCanvas overlayCanvas;
 
     [Header("Config")]
-
+    public bool EnableLanaguageSwitching = false;
     public GalleryUnlockConfig GalleryConfig;
     [SerializeField] private Image _backgroundImageComponent;
     public Sprite DefaultBackgroundSprite;

@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
-using UnityEngine.UI;
 
 
 /// <summary>
@@ -11,6 +9,7 @@ using UnityEngine.UI;
 [AddComponentMenu("Localization Language Dropdown")]
 public class LocalizationLanguageDropdown : MonoBehaviour
 {
+    [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private TMPro.TMP_Dropdown _dropdown;
     [SerializeField] private bool _reloadGameOnChange;
 
@@ -59,6 +58,7 @@ public class LocalizationLanguageDropdown : MonoBehaviour
     {
         //Delay the start to allow time for the save file to be loaded and the current language to be read
         StartCoroutine(CoStart());
+        ShowDropDown(GameManager.Instance.EnableLanaguageSwitching);
     }
 
     private IEnumerator CoStart()
@@ -67,5 +67,12 @@ public class LocalizationLanguageDropdown : MonoBehaviour
         var index = LocalizationSettings.AvailableLocales.Locales.FindIndex(x => x.LocaleName.StartsWith(SaveAndLoadManager.Instance.CurrentSave.CurrentLanguage.ToString()));
         if (index != -1)
             _dropdown.SetValueWithoutNotify(index);
+    }
+
+    private void ShowDropDown(bool show)
+    {
+        _canvasGroup.alpha = show ? 1 : 0;
+        _canvasGroup.interactable = show;
+        _canvasGroup.blocksRaycasts = show;
     }
 }

@@ -123,20 +123,6 @@ namespace MeetAndTalk.Nodes
 
         private void PopulateFields()
         {
-            /* AUDIO CLIPS */
-            audioClips_Field = new ObjectField()
-            {
-                objectType = typeof(AudioClip),
-                allowSceneObjects = false,
-                value = audioClips.Find(audioClips => audioClips.languageEnum == editorWindow.LanguageEnum).LanguageGenericType,
-            };
-            audioClips_Field.RegisterValueChangedCallback(value =>
-            {
-                audioClips.Find(audioClips => audioClips.languageEnum == editorWindow.LanguageEnum).LanguageGenericType = value.newValue as AudioClip;
-            });
-            audioClips_Field.SetValueWithoutNotify(audioClips.Find(audioClips => audioClips.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
-            nodeFields.Add(audioClips_Field);
-
             /* Character CLIPS */
             Label label_character = new Label("Character SO");
             label_character.AddToClassList("label_name");
@@ -187,6 +173,24 @@ namespace MeetAndTalk.Nodes
             });
             AvatarTypeField.SetValueWithoutNotify(avatarType);
             nodeFields.Add(AvatarTypeField);
+
+            /* AUDIO CLIPS */
+            Label label_audio = new Label("Audio Clip");
+            label_audio.AddToClassList("label_name");
+            label_audio.AddToClassList("Label");
+            nodeFields.Add(label_audio);
+            audioClips_Field = new ObjectField()
+            {
+                objectType = typeof(AudioClip),
+                allowSceneObjects = false,
+                value = audioClips.Find(audioClips => audioClips.languageEnum == editorWindow.LanguageEnum).LanguageGenericType,
+            };
+            audioClips_Field.RegisterValueChangedCallback(value =>
+            {
+                audioClips.Find(audioClips => audioClips.languageEnum == editorWindow.LanguageEnum).LanguageGenericType = value.newValue as AudioClip;
+            });
+            audioClips_Field.SetValueWithoutNotify(audioClips.Find(audioClips => audioClips.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
+            nodeFields.Add(audioClips_Field);
 
             /* TEXT BOX */
             Label label_texts = new Label("Displayed Text");
@@ -409,10 +413,13 @@ namespace MeetAndTalk.Nodes
                     warning.Add($"No Text for {Texts[i].languageEnum} Language");
             }
 
-            for (int i = 0; i < TimeLapses.Count; i++)
+            if (TimeLapses.Any(x => x.LanguageGenericType != ""))
             {
-                if (TimeLapses[i].LanguageGenericType == "")
-                    warning.Add($"No TimeLapses for {TimeLapses[i].languageEnum} Language");
+                for (int i = 0; i < TimeLapses.Count; i++)
+                {
+                    if (TimeLapses[i].LanguageGenericType == "")
+                        warning.Add($"No TimeLapses for {TimeLapses[i].languageEnum} Language");
+                }
             }
 
             ErrorList = error;

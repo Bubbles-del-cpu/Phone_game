@@ -171,6 +171,10 @@ namespace MeetAndTalk.Nodes
 
         protected virtual void PopulateContainer()
         {
+            Label label_audio = new Label("Audio Clip");
+            label_audio.AddToClassList("label_name");
+            label_audio.AddToClassList("Label");
+            mainContainer.Add(label_audio);
             mainContainer.Add(audioClips_Field);
 
             /* Character CLIPS */

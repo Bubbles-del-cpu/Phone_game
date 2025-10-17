@@ -41,7 +41,7 @@ public static class CustomEditorHelper
                 var portIndex = 1;
                 foreach (var port in nodeDatas[i].DialogueNodePorts)
                 {
-                    MAT_Editor.BeginBoxGroup($"Choice {j + 1}", portIndex);
+                    MAT_Editor.BeginBoxGroup($"Choice {portIndex}", portIndex);
                     port.TextLanguage[j].LanguageGenericType = EditorGUILayout.TextField("Choice", port.TextLanguage[j].LanguageGenericType);
                     port.HintLanguage[j].LanguageGenericType = EditorGUILayout.TextField("Choice Hint", port.HintLanguage[j].LanguageGenericType);
                     EditorGUILayout.EndVertical();
