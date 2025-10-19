@@ -93,7 +93,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: f4badca5-642e-4aec-b39f-a0220ffb703b
     Position: {x: 1465, y: 196}
     DialogueNodePorts:
@@ -140,7 +140,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 711cb3e0-8bf1-4109-ae8b-c0642f957495
     Position: {x: 1728, y: 779}
     DialogueNodePorts:
@@ -174,7 +174,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   DialogueNodeDatas:
   - NodeGuid: b2caca91-cbaf-44ea-9c38-80a76cc145d4
     Position: {x: 308, y: 195}
@@ -187,21 +187,27 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: hello! \u1F600 \u1F600 \u1F600
     - languageEnum: 1
       LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 21300000, guid: 7d8cd788e22bedb4e8ae5ab4cfe53f09, type: 3}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
-    DelayTimer: 0
+    DelayTimer: 2.0009508
   - NodeGuid: 47f743e7-0ea8-4c28-b070-6d72147cddf7
     Position: {x: 2390, y: 305}
     DialogueNodePorts: []
@@ -213,20 +219,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: now three!!!
     - languageEnum: 1
       LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 2 hours later...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 21300000, guid: 3367022e96107f148874208dddf25901, type: 3}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 2 hours later...
     DelayTimer: 0
   - NodeGuid: 83276e85-bc91-40cf-ad46-298e9877dfa0
     Position: {x: 1193, y: 717}
@@ -239,20 +251,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: 
     - languageEnum: 1
       LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: c8314cdc-c54c-427d-890c-f05d1f5e7381
     Position: {x: 1447, y: 708}
@@ -265,20 +283,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Another dialogue line
     - languageEnum: 1
       LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 2cabc52e-a0fe-4b88-a4d6-ffc65816aa9d
     Position: {x: 2107, y: 693}
@@ -291,20 +315,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: End
     - languageEnum: 1
       LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 10
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 21300000, guid: 1bf85aeaf13c99141950db4d7230bcfe, type: 3}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 8bf161df-ba23-46bc-a294-c1458e3ba1ec
     Position: {x: 1193, y: 195}
@@ -317,20 +347,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: just surviving?
     - languageEnum: 1
       LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 11400000, guid: eb138877c58468442b655355d1754919, type: 2}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: a064da96-88ff-4109-8ae6-94e093dfc775
     Position: {x: 2124, y: 196}
@@ -343,20 +379,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: now you owe me two smiles!!
     - languageEnum: 1
       LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 10 minutes later...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 6
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 11400000, guid: 9fd17527cce19d74c8552d702889f6b5, type: 2}
-    Timelapse: 10 minutes later...
     DelayTimer: 0
   - NodeGuid: bbe413e1-e741-414c-8fa9-b4f95492d425
     Position: {x: 1853, y: 196}
@@ -369,20 +411,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: now you owe me a smile!! <3
     - languageEnum: 1
       LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 4
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 21300000, guid: 52a7d9dedb0198448a75a8ae3ca7e65c, type: 3}
     Video: {fileID: 32900000, guid: c23a88aeb39e2f6439b08259dec3773d, type: 3}
     VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 11400000, guid: 3508211763692914baa6a2fd540f9ae8, type: 2}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: e9aeba71-6677-4371-8120-a0800f78f54e
     Position: {x: 569, y: 195}
@@ -395,21 +443,27 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: long time no talk
     - languageEnum: 1
       LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 32900000, guid: c23a88aeb39e2f6439b08259dec3773d, type: 3}
     VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 11400000, guid: 87442179d7eeea9439b95a0a5f0c4eb6, type: 2}
-    Timelapse: 
-    DelayTimer: 0
+    DelayTimer: 2.0036035
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: e91e1c83-c709-4a3b-843c-7799be562d16
