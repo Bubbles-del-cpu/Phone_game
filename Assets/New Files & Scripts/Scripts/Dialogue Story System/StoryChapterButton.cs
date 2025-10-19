@@ -51,7 +51,7 @@ public class StoryChapterButton : MonoBehaviour
             //We have to replay settings to just trigger the chapter instantly
             OverlayCanvas.Instance.FadeToBlack(() =>
             {
-                GameManager.Instance.ResetGameState();
+                GameManager.Instance.ResetGameState(startDialogue: false);
                 if (IsStandaloneChapterButton)
                 {
                     DialogueChapterManager.Instance.TriggerStandaloneChapter(AssignedChapter);
@@ -76,7 +76,7 @@ public class StoryChapterButton : MonoBehaviour
                     {
                         OverlayCanvas.Instance.FadeToBlack(() =>
                         {
-                            GameManager.Instance.ResetGameState();
+                            GameManager.Instance.ResetGameState(startDialogue: false);
                             if (IsStandaloneChapterButton)
                             {
                                 DialogueChapterManager.Instance.TriggerStandaloneChapter(AssignedChapter);

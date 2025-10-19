@@ -230,15 +230,15 @@ public class GameManager : MonoBehaviour
         overlayCanvas.ShowDialog(popup);
     }
 
-    public void ResetGameState()
+    public void ResetGameState(bool startDialogue = true)
     {
-        StartCoroutine(CoResetConversations());
+        StartCoroutine(CoResetConversations(startDialogue));
 
         //Reset the navigation stack
         NavigationManager.Instance.ResetStack();
     }
 
-    IEnumerator CoResetConversations()
+    IEnumerator CoResetConversations(bool startDialogue)
     {
         NextChapterReady = false;
 
@@ -264,7 +264,8 @@ public class GameManager : MonoBehaviour
         //Double call to messaging canvas close in order to shut the contants window AND the message window
         messagingCanvas.Close();
 
-        StartCoroutine(CoStartDialogue());
+        if (startDialogue)
+            StartCoroutine(CoStartDialogue());
     }
 
     IEnumerator CoStartDialogue()

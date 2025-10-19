@@ -87,11 +87,11 @@ public class FullScreenMedia : UIPanel
 
     public void Setup(DialogueNodeData nodeData, bool isSocialMediaPost)
     {
-        _currentMediaType = nodeData.MediaType;
         (MediaType type, Sprite image, VideoClip video, Sprite videoThumbnail, bool backgroundCapable) mediaData =
             nodeData.GetNodeMediaData(isSocialMediaPost);
 
         _backgroundSetButton.gameObject.SetActive(false);
+        _currentMediaType = mediaData.type;
         switch (mediaData.type)
         {
             case MediaType.Sprite:

@@ -6,9 +6,9 @@ using UnityEngine.Video;
 
 public class FullScreenMediaMessageViewer : MonoBehaviour, IPointerClickHandler
 {
-    private MediaType _type => _assignedNode.MediaType;
-    private Sprite _image => _assignedNode.Image;
-    private VideoClip _clip => _assignedNode.Video;
+    private MediaType _type => _isSocialMediaPost ? _assignedNode.Post.MediaType : _assignedNode.MediaType;
+    private Sprite _image => _isSocialMediaPost ? _assignedNode.Post.Image : _assignedNode.Image;
+    private VideoClip _clip => _isSocialMediaPost ? _assignedNode.Post.Video : _assignedNode.Video;
 
     private DialogueNodeData _assignedNode;
     private bool _isSocialMediaPost;
@@ -17,18 +17,7 @@ public class FullScreenMediaMessageViewer : MonoBehaviour, IPointerClickHandler
     {
         _assignedNode = nodeData;
         _isSocialMediaPost = isSocialMediaPost;
-
-        switch (_type)
-        {
-            case MediaType.Sprite:
-                if (_image == null)
-                    gameObject.SetActive(false);
-                break;
-            case MediaType.Video:
-                if (_clip == null)
-                    gameObject.SetActive(false);
-                break;
-        }
+        gameObject.SetActive(true);
     }
 
     public void OnPointerClick(PointerEventData eventData)
