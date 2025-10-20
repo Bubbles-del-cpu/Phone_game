@@ -28,12 +28,40 @@ public class GalleryCanvas : UICanvas
 
     [SerializeField] GameObject _galleryImageContainer;
     [SerializeField] GameObject _galleryVideoContainer;
+    [SerializeField] private int _imagePageNumber = 0;
+    [SerializeField] private int _videoPageNumber = 0;
+    [SerializeField] private int _buttonsPerPage = 20;
+    [SerializeField] private List<GalleryImageButton> _imageButtons;
+    [SerializeField] private List<GalleryVideoButton> _videoButtons;
+    [SerializeField] private MediaType _currentMediaType = MediaType.Sprite;
+    [SerializeField] private TMP_Text _pageNumberText;
+    [SerializeField] private int _totalImagePages => Mathf.CeilToInt((float)_galleryImageItems.Count / _buttonsPerPage);
+    [SerializeField] private int _totalVideoPages => Mathf.CeilToInt((float)_galleryVideoItems.Count / _buttonsPerPage);
 
-    private List<string> _buttonGuids;
-    private List<int> _unlockedSocialMediaImages;
-    private List<GalleryButtonBase> _galleryButtons;
+    [SerializeField] private List<GalleryMediaItem> _galleryImageItems;
+    [SerializeField] private List<GalleryMediaItem> _galleryVideoItems;
 
     private bool _imageOpenFromMessage = false;
+
+    [Serializable]
+    private class GalleryMediaItem
+    {
+        public DialogueNodeData Node;
+        public string FileName => MediaType switch
+        {
+            MediaType.Sprite => Image != null ? Image.name : string.Empty,
+            MediaType.Video => Video != null ? Video.name : string.Empty,
+            _ => string.Empty,
+        };
+
+        public bool IsSocialMediaPost;
+        public MediaType MediaType;
+        public Sprite Image;
+        public VideoClip Video;
+        public Sprite VideoThumbnail;
+        public MediaLockState LockState;
+        public DialogueChapterManager.ChapterData ChapterData;
+    }
 
     [NonSerialized] public GalleryUnlockData UnlockData;
     public class GalleryUnlockData
@@ -54,13 +82,45 @@ public class GalleryCanvas : UICanvas
     protected override void Awake()
     {
         base.Awake();
+
         UnlockData = new GalleryUnlockData();
+        CreateButtons();
+    }
 
-        _buttonGuids = new List<string>();
-        _unlockedSocialMediaImages = new List<int>();
-        _galleryButtons = new List<GalleryButtonBase>();
+    public void ResetGalleryButtons()
+    {
+        foreach (var button in _imageButtons)
+        {
+            Destroy(button.gameObject);
+        }
 
-        ShowGalleryTable(MediaType.Sprite);
+        foreach (var button in _videoButtons)
+        {
+            Destroy(button.gameObject);
+        }
+
+        _videoButtons.Clear();
+        _imageButtons.Clear();
+        _currentMediaType = MediaType.Sprite;
+        _imagePageNumber = 0;
+        _videoPageNumber = 0;
+
+        CreateButtons();
+        CreateMediaButtons(SaveAndLoadManager.Instance.CurrentSave.UnlockedMedia);
+    }
+
+    private void CreateButtons()
+    {
+        for(var index = 0; index < _buttonsPerPage; index++)
+        {
+            var imageButton = Instantiate(imageButtonPrefab, imageButtonsContainer);
+            imageButton.gameObject.SetActive(true);
+            _imageButtons.Add(imageButton);
+
+            var videoButton = Instantiate(videoButtonPrefab, videoButtonsContainer);
+            videoButton.gameObject.SetActive(true);
+            _videoButtons.Add(videoButton);
+        }
     }
 
     private void Update()
@@ -73,19 +133,19 @@ public class GalleryCanvas : UICanvas
         }
     }
 
-    public bool AddMediaButton(DialogueChapterManager.ChapterData chapter, DialogueNodeData nodeData)
-    {
-        if (nodeData == null || _buttonGuids.Contains(nodeData.NodeGuid))
-            return false;
+    // public bool AddMediaButton(DialogueChapterManager.ChapterData chapter, DialogueNodeData nodeData)
+    // {
+    //     if (nodeData == null || _buttonGuids.Contains(nodeData.NodeGuid))
+    //         return false;
 
-        if (nodeData.Image != null || nodeData.Video != null || nodeData.Post != null)
-        {
-            SpawnMediaButton(chapter, nodeData);
-            return true;
-        }
+    //     if (nodeData.Image != null || nodeData.Video != null || nodeData.Post != null)
+    //     {
+    //         SpawnMediaButton(chapter, nodeData);
+    //         return true;
+    //     }
 
-        return false;
-    }
+    //     return false;
+    // }
 
     public void UnlockMedia(string guid)
     {
@@ -107,10 +167,11 @@ public class GalleryCanvas : UICanvas
     private void UnlockedGalleryMediaButton(string fileName)
     {
         //Find and unlocked the button on the gallery canvas
-        var content = _galleryButtons.FirstOrDefault(x => x.FileName == fileName);
-        if (content)
+        var content = _galleryImageItems.FirstOrDefault(x => x.FileName == fileName);
+        if (content != null)
         {
-            content.Unlocked = true;
+            content.LockState = MediaLockState.Unlocked;
+            DisplayGalleryPage(_currentMediaType, _currentMediaType == MediaType.Sprite ? _imagePageNumber : _videoPageNumber);
         }
     }
 
@@ -139,22 +200,117 @@ public class GalleryCanvas : UICanvas
 
     public void Load()
     {
-        foreach (var item in _galleryButtons)
-            Destroy(item.gameObject);
-
-        _galleryButtons.Clear();
-        _buttonGuids.Clear();
-        _unlockedSocialMediaImages.Clear();
-
-        CreateMediaButtons(SaveAndLoadManager.Instance.CurrentSave.UnlockedMedia);
+        ResetGalleryButtons();
+        DisplayGalleryPage(MediaType.Sprite, 0);
         //Unlock the gallery content, initially everything will start out as locked
         // CollectMediaFromChapters(DialogueChapterManager.Instance.StoryList, mediaCopy.Where(x => x.IsStoryChapter));
         // CollectMediaFromChapters(DialogueChapterManager.Instance.StandaloneChapters, mediaCopy.Where(x => !x.IsStoryChapter));
     }
 
+    public void NextPage()
+    {
+        switch (_currentMediaType)
+        {
+            case MediaType.Sprite:
+                {
+                    var maxPages = Mathf.CeilToInt((float)_galleryImageItems.Count / _buttonsPerPage);
+                    if (_imagePageNumber + 1 < maxPages)
+                    {
+                        _imagePageNumber++;
+                        DisplayGalleryPage(MediaType.Sprite, _imagePageNumber);
+                    }
+                    _pageNumberText.text = $"Page {_imagePageNumber + 1} / {_totalImagePages}";
+                }
+                break;
+            case MediaType.Video:
+                {
+                    var maxPages = Mathf.CeilToInt((float)_galleryVideoItems.Count / _buttonsPerPage);
+                    if (_videoPageNumber + 1 < maxPages)
+                    {
+                        _videoPageNumber++;
+                        DisplayGalleryPage(MediaType.Video, _videoPageNumber);
+                    }
+                    _pageNumberText.text = $"Page {_videoPageNumber + 1} / {_totalVideoPages}";
+                }
+                break;
+        }
+    }
+
+    public void PreviousPage()
+    {
+        switch (_currentMediaType)
+        {
+            case MediaType.Sprite:
+                {
+                    if (_imagePageNumber - 1 >= 0)
+                    {
+                        _imagePageNumber--;
+                        DisplayGalleryPage(MediaType.Sprite, _imagePageNumber);
+                    }
+                    _pageNumberText.text = $"Page {_imagePageNumber + 1} / {_totalImagePages}";
+                }
+                break;
+            case MediaType.Video:
+                {
+                    if (_videoPageNumber - 1 >= 0)
+                    {
+                        _videoPageNumber--;
+                        DisplayGalleryPage(MediaType.Video, _videoPageNumber);
+                    }
+
+                    _pageNumberText.text = $"Page {_videoPageNumber + 1} / {_totalVideoPages}";
+                }
+                break;
+        }
+    }
+
+    private void DisplayGalleryPage(MediaType type, int pageNumber)
+    {
+        switch (type)
+        {
+            case MediaType.Sprite:
+                {
+                    var items = _galleryImageItems.GetRange(pageNumber * _buttonsPerPage, Math.Min(_buttonsPerPage, _galleryImageItems.Count - (pageNumber * _buttonsPerPage))).ToList();
+                    for (var i = 0; i < items.Count; i++)
+                    {
+                        var button = _imageButtons[i];
+                        var data = items[i];
+                        button.Setup(data.ChapterData, data.Node, data.IsSocialMediaPost);
+                        if (data.LockState == MediaLockState.Unlocked)
+                            button.Unlocked = true;
+                        else
+                            button.Unlocked = false;
+
+                        button.gameObject.SetActive(true);
+                    }
+                }
+                break;
+            case MediaType.Video:
+                {
+                    var items = _galleryVideoItems.GetRange(pageNumber * _buttonsPerPage, Math.Min(_buttonsPerPage, _galleryVideoItems.Count - (pageNumber * _buttonsPerPage))).ToList();
+                    for (var i = 0; i < items.Count; i++)
+                    {
+                        var button = _videoButtons[i];
+                        var data = items[i];
+                        button.Setup(data.ChapterData, data.Node, data.IsSocialMediaPost);
+                        if (data.LockState == MediaLockState.Unlocked)
+                            button.Unlocked = true;
+                        else
+                            button.Unlocked = false;
+
+                        button.gameObject.SetActive(true);
+                    }
+                }
+                break;
+        }
+
+        UpdateUnlockedCount();
+    }
+
     private void CreateMediaButtons(IEnumerable<SaveFileData.MediaData> saveFileData)
     {
-        //Unlock the gallery content, initially everything will start out as locked
+        _galleryImageItems = new List<GalleryMediaItem>();
+        _galleryVideoItems = new List<GalleryMediaItem>();
         foreach (var mediaData in saveFileData)
         {
             switch (mediaData.ChapterType)
@@ -163,24 +319,59 @@ public class GalleryCanvas : UICanvas
                     {
                         var chapter = DialogueChapterManager.Instance.StoryList[mediaData.ChapterIndex];
                         var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, mediaData.NodeGUID);
-                        AddMediaButton(chapter, (DialogueNodeData)node);
-                        switch (mediaData.LockedState)
+                        var nd = (DialogueNodeData)node;
+
+                        var type = mediaData.IsSocialMediaPost ? nd.Post.MediaType : nd.MediaType;
+                        var imageData = new GalleryMediaItem()
                         {
-                            case MediaLockState.Unlocked:
-                                UnlockMediaButton((DialogueNodeData)node);
+                            Node = nd,
+                            IsSocialMediaPost = mediaData.IsSocialMediaPost,
+                            MediaType = mediaData.IsSocialMediaPost ? nd.Post.MediaType : nd.MediaType,
+                            Image = mediaData.IsSocialMediaPost ? nd.Post.Image : nd.Image,
+                            Video = mediaData.IsSocialMediaPost ? nd.Post.Video : nd.Video,
+                            VideoThumbnail = mediaData.IsSocialMediaPost ? nd.Post.VideoThumbnail : nd.VideoThumbnail,
+                            ChapterData = chapter,
+                            LockState = mediaData.LockedState
+                        };
+
+                        switch (type)
+                        {
+                            case MediaType.Sprite:
+                                _galleryImageItems.Add(imageData);
+                                break;
+                            case MediaType.Video:
+                                _galleryVideoItems.Add(imageData);
                                 break;
                         }
                     }
                     break;
                 case ChapterType.Standalone:
                     {
+
                         var chapter = DialogueChapterManager.Instance.StandaloneChapters[mediaData.ChapterIndex];
                         var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, mediaData.NodeGUID);
-                        AddMediaButton(chapter, (DialogueNodeData)node);
-                        switch (mediaData.LockedState)
+                        var nd = (DialogueNodeData)node;
+
+                        var imageData = new GalleryMediaItem()
                         {
-                            case MediaLockState.Unlocked:
-                                UnlockMediaButton((DialogueNodeData)node);
+                            Node = nd,
+                            IsSocialMediaPost = mediaData.IsSocialMediaPost,
+                            MediaType = mediaData.IsSocialMediaPost ? nd.Post.MediaType : nd.MediaType,
+                            Image = mediaData.IsSocialMediaPost ? nd.Post.Image : nd.Image,
+                            Video = mediaData.IsSocialMediaPost ? nd.Post.Video : nd.Video,
+                            VideoThumbnail = mediaData.IsSocialMediaPost ? nd.Post.VideoThumbnail : nd.VideoThumbnail,
+                            ChapterData = chapter,
+                            LockState = mediaData.LockedState
+                        };
+
+                        var type = mediaData.IsSocialMediaPost ? nd.Post.MediaType : nd.MediaType;
+                        switch (type)
+                        {
+                            case MediaType.Sprite:
+                                _galleryImageItems.Add(imageData);
+                                break;
+                            case MediaType.Video:
+                                _galleryVideoItems.Add(imageData);
                                 break;
                         }
                     }
@@ -189,10 +380,53 @@ public class GalleryCanvas : UICanvas
         }
     }
 
+    // private IEnumerator CoCreateMediaButtons(IEnumerable<SaveFileData.MediaData> saveFileData)
+    // {
+    //     //Unlock the gallery content, initially everything will start out as locked
+    //     var count = 0;
+    //     foreach (var mediaData in saveFileData)
+    //     {
+    //         switch (mediaData.ChapterType)
+    //         {
+    //             case ChapterType.Story:
+    //                 {
+    //                     var chapter = DialogueChapterManager.Instance.StoryList[mediaData.ChapterIndex];
+    //                     var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, mediaData.NodeGUID);
+    //                     AddMediaButton(chapter, (DialogueNodeData)node);
+    //                     switch (mediaData.LockedState)
+    //                     {
+    //                         case MediaLockState.Unlocked:
+    //                             UnlockMediaButton((DialogueNodeData)node);
+    //                             break;
+    //                     }
+    //                 }
+    //                 break;
+    //             case ChapterType.Standalone:
+    //                 {
+    //                     var chapter = DialogueChapterManager.Instance.StandaloneChapters[mediaData.ChapterIndex];
+    //                     var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, mediaData.NodeGUID);
+    //                     AddMediaButton(chapter, (DialogueNodeData)node);
+    //                     switch (mediaData.LockedState)
+    //                     {
+    //                         case MediaLockState.Unlocked:
+    //                             UnlockMediaButton((DialogueNodeData)node);
+    //                             break;
+    //                     }
+    //                 }
+    //                 break;
+    //         }
+    //         count++;
+    //         if (count % 5 == 0)
+    //             yield return new WaitForEndOfFrame();
+    //     }
+    // }
+
     public override void Open()
     {
         _galleryImageContainer.GetComponent<ScrollRect>().verticalScrollbar.value = 1;
         _galleryVideoContainer.GetComponent<ScrollRect>().verticalScrollbar.value = 1;
+        _pageNumberText.text = $"Page {_imagePageNumber + 1} / {_totalImagePages}";
+        UpdateUnlockedCount();
         base.Open();
     }
 
@@ -202,90 +436,104 @@ public class GalleryCanvas : UICanvas
         Open();
     }
 
-    private void SpawnMediaButton(DialogueChapterManager.ChapterData chapterData, DialogueNodeData nodeData)
-    {
-        if (nodeData == null)
-            return;
+    // private void SpawnMediaButton(DialogueChapterManager.ChapterData chapterData, DialogueNodeData nodeData)
+    // {
+    //     if (nodeData == null)
+    //         return;
 
 
-        switch (nodeData.MediaType)
-        {
-            case MediaType.Sprite:
-                if (nodeData.Image != null)
-                    SpawnButton(chapterData, nodeData, nodeData.Image, isSocialMediaPost: false);
-                break;
-            case MediaType.Video:
-                if (nodeData.Video != null)
-                    SpawnButton(chapterData, nodeData, nodeData.Video, isSocialMediaPost: false);
-                break;
-        }
+    //     switch (nodeData.MediaType)
+    //     {
+    //         case MediaType.Sprite:
+    //             if (nodeData.Image != null)
+    //                 SpawnButton(chapterData, nodeData, nodeData.Image, isSocialMediaPost: false);
+    //             break;
+    //         case MediaType.Video:
+    //             if (nodeData.Video != null)
+    //                 SpawnButton(chapterData, nodeData, nodeData.Video, isSocialMediaPost: false);
+    //             break;
+    //     }
 
-        if (nodeData.Post != null)
-        {
-            if (!_unlockedSocialMediaImages.Contains(nodeData.Post.GetHashCode()))
-            {
-                _unlockedSocialMediaImages.Add(nodeData.Post.GetHashCode());
-                switch (nodeData.Post.MediaType)
-                {
-                    case MediaType.Sprite:
-                        SpawnButton(chapterData, nodeData, nodeData.Post.Image, isSocialMediaPost: true);
-                        break;
-                    case MediaType.Video:
-                        SpawnButton(chapterData, nodeData, nodeData.Post.Video, isSocialMediaPost: true);
-                        break;
-                }
-            }
-        }
+    //     if (nodeData.Post != null)
+    //     {
+    //         if (!_unlockedSocialMediaImages.Contains(nodeData.Post.GetHashCode()))
+    //         {
+    //             _unlockedSocialMediaImages.Add(nodeData.Post.GetHashCode());
+    //             switch (nodeData.Post.MediaType)
+    //             {
+    //                 case MediaType.Sprite:
+    //                     SpawnButton(chapterData, nodeData, nodeData.Post.Image, isSocialMediaPost: true);
+    //                     break;
+    //                 case MediaType.Video:
+    //                     SpawnButton(chapterData, nodeData, nodeData.Post.Video, isSocialMediaPost: true);
+    //                     break;
+    //             }
+    //         }
+    //     }
 
-        _buttonGuids.Add(nodeData.NodeGuid);
-    }
+    //     _buttonGuids.Add(nodeData.NodeGuid);
+    // }
 
-    private void SpawnButton(DialogueChapterManager.ChapterData chapterData, DialogueNodeData node, UnityEngine.Object data, bool isSocialMediaPost)
-    {
-        switch (data)
-        {
-            case VideoClip videoClip:
-                {
-                    if (!_galleryButtons.Select(x => x.FileName).Contains(videoClip.name))
-                    {
-                        var videoButton = Instantiate(videoButtonPrefab, videoButtonsContainer);
-                        videoButton.Setup(chapterData, node, isSocialMediaPost);
+    // private void SpawnButton(DialogueChapterManager.ChapterData chapterData, DialogueNodeData node, UnityEngine.Object data, bool isSocialMediaPost)
+    // {
+    //     switch (data)
+    //     {
+    //         case VideoClip videoClip:
+    //             {
+    //                 if (!_galleryButtons.Select(x => x.FileName).Contains(videoClip.name))
+    //                 {
+    //                     var videoButton = Instantiate(videoButtonPrefab, videoButtonsContainer);
+    //                     videoButton.Setup(chapterData, node, isSocialMediaPost);
 
-                        _galleryButtons.Add(videoButton);
-                    }
-                }
-                break;
-            case Sprite image:
-                {
-                    if (!_galleryButtons.Select(x => x.FileName).Contains(image.name))
-                    {
-                        var imageButton = Instantiate(imageButtonPrefab, imageButtonsContainer);
-                        imageButton.Setup(chapterData, node, isSocialMediaPost);
+    //                     _galleryButtons.Add(videoButton);
+    //                 }
+    //             }
+    //             break;
+    //         case Sprite image:
+    //             {
+    //                 if (!_galleryButtons.Select(x => x.FileName).Contains(image.name))
+    //                 {
+    //                     var imageButton = Instantiate(imageButtonPrefab, imageButtonsContainer);
+    //                     imageButton.Setup(chapterData, node, isSocialMediaPost);
 
-                        _galleryButtons.Add(imageButton);
-                    }
-                }
-                break;
-        }
-    }
+    //                     _galleryButtons.Add(imageButton);
+    //                 }
+    //             }
+    //             break;
+    //     }
+    // }
 
     public void ShowGalleryTable(MediaType type)
     {
         _galleryImageContainer.SetActive(type == MediaType.Sprite);
         _galleryVideoContainer.SetActive(type == MediaType.Video);
 
-        IEnumerable<GalleryButtonBase> maxCount = _galleryButtons;
-        switch (type)
+        UpdateUnlockedCount();
+
+        _currentMediaType = type;
+        DisplayGalleryPage(type, _currentMediaType == MediaType.Sprite ? _imagePageNumber : _videoPageNumber);
+        switch (_currentMediaType)
         {
             case MediaType.Sprite:
-                maxCount = _galleryButtons.Where(x => x.GetType() == typeof(GalleryImageButton));
+                _pageNumberText.text = $"Page {_imagePageNumber + 1} / {_totalImagePages}";
                 break;
             case MediaType.Video:
-                maxCount = _galleryButtons.Where(x => x.GetType() == typeof(GalleryVideoButton));
+                _pageNumberText.text = $"Page {_videoPageNumber + 1} / {_totalVideoPages}";
+                break;
+        }
+    }
+
+    private void UpdateUnlockedCount()
+    {
+        List<GalleryMediaItem> maxCount = _galleryImageItems;
+        switch (_currentMediaType)
+        {
+            case MediaType.Video:
+                maxCount = _galleryVideoItems;
                 break;
         }
 
-        _unlockedCount.text = $"{maxCount.Count(x => x.Unlocked)} / {maxCount.Count()}";
+        _unlockedCount.text = $"{maxCount.Count(x => x.LockState == MediaLockState.Unlocked)} / {maxCount.Count()}";
     }
 
     public void OnShowGalleryTable(int type)

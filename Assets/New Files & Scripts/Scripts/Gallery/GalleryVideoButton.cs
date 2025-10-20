@@ -36,24 +36,24 @@ public class GalleryVideoButton : GalleryButtonBase
 
     private void FixedUpdate()
     {
-        if (_clip)
-        {
-            if (_fallbackThumbnail == null)
-            {
-                _image.sprite = _fallbackThumbnail;
-                _lockedImage.ApplyBlur();
-            }
-            else
-            {
-                var frame = GameManager.Instance.GetVideoFrame(_clip);
-                _videoPreviewSprite = frame.Item2;
-                if ( _videoPreviewSprite == null)
-                {
-                    _image.sprite = _videoPreviewSprite;
-                    if (_videoPreviewSprite != null)
-                        _lockedImage.ApplyBlur();
-                }
-            }
-        }
+        // if (_clip)
+        // {
+        //     if (_fallbackThumbnail == null)
+        //     {
+        //         _image.sprite = _fallbackThumbnail;
+        //         _lockedImage.ApplyBlur();
+        //     }
+        //     else
+        //     {
+        //         var frame = GameManager.Instance.GetVideoFrame(_clip);
+        //         _videoPreviewSprite = frame.Item2;
+        //         if ( _videoPreviewSprite == null)
+        //         {
+        //             _image.sprite = _videoPreviewSprite;
+        //             if (_videoPreviewSprite != null)
+        //                 _lockedImage.ApplyBlur();
+        //         }
+        //     }
+        // }
     }
 }

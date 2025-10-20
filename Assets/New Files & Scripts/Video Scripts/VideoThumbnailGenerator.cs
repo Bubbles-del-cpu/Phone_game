@@ -37,7 +37,7 @@ public class VideoThumbnailGenerator : MonoBehaviour
             {
                 _canRegen = false;
                 _timer = 0;
-                StartCoroutine(CoRegenerate());
+                //StartCoroutine(CoRegenerate());
             }
         }
     }
@@ -45,6 +45,8 @@ public class VideoThumbnailGenerator : MonoBehaviour
     [ContextMenu("DEBUG_RegenerateAll")]
     public void RegenerateAll()
     {
+        return;
+
         StartCoroutine(CoRegenerate());
     }
 
@@ -76,6 +78,7 @@ public class VideoThumbnailGenerator : MonoBehaviour
     public void GenerateThumbnail(VideoClip video, System.Action<Texture2D> onComplete)
     {
         _positionOffset += 100;
+        return;
         StartCoroutine(GenerateThumbnailCoroutine(video, onComplete));
     }
 

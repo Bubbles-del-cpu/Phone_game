@@ -235,6 +235,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(CoResetConversations(startDialogue));
 
         //Reset the navigation stack
+        GalleryCanvas.ResetGalleryButtons();
         NavigationManager.Instance.ResetStack();
     }
 
