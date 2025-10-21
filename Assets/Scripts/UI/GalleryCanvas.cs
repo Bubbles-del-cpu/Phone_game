@@ -133,44 +133,52 @@ public class GalleryCanvas : UICanvas
         }
     }
 
-    // public bool AddMediaButton(DialogueChapterManager.ChapterData chapter, DialogueNodeData nodeData)
-    // {
-    //     if (nodeData == null || _buttonGuids.Contains(nodeData.NodeGuid))
-    //         return false;
-
-    //     if (nodeData.Image != null || nodeData.Video != null || nodeData.Post != null)
-    //     {
-    //         SpawnMediaButton(chapter, nodeData);
-    //         return true;
-    //     }
-
-    //     return false;
-    // }
-
-    public void UnlockMedia(string guid)
+    public void RefreshGalleryPage()
     {
-        UnlockedGalleryMediaButton(guid);
+        DisplayGalleryPage(_currentMediaType, _currentMediaType == MediaType.Sprite ? _imagePageNumber : _videoPageNumber);
     }
 
-    public void UnlockMediaButton(DialogueNodeData nodeData)
+    public void UnlockMedia(string guid, bool reloadedGallery)
+    {
+        if (string.IsNullOrEmpty(guid))
+            return;
+
+        UnlockedGalleryMediaButton(guid, reloadedGallery);
+    }
+
+
+    public void UnlockMediaButton(DialogueNodeData nodeData, bool reloadedGallery)
     {
         if (nodeData == null)
             return;
 
-        UnlockedGalleryMediaButton(nodeData.MediaFileName);
+        UnlockedGalleryMediaButton(nodeData.MediaFileName, reloadedGallery);
         if (nodeData.Post != null)
         {
-            UnlockedGalleryMediaButton(nodeData.Post.MediaFileName);
+            UnlockedGalleryMediaButton(nodeData.Post.MediaFileName, reloadedGallery);
         }
     }
 
-    private void UnlockedGalleryMediaButton(string fileName)
+    private void UnlockedGalleryMediaButton(string fileName, bool reloadedGallery)
     {
         //Find and unlocked the button on the gallery canvas
         var content = _galleryImageItems.FirstOrDefault(x => x.FileName == fileName);
         if (content != null)
         {
             content.LockState = MediaLockState.Unlocked;
+        }
+
+        var videoContent = _galleryVideoItems.FirstOrDefault(x => x.FileName == fileName);
+        if (videoContent != null)
+        {
+            videoContent.LockState = MediaLockState.Unlocked;
+        }
+
+        if (reloadedGallery)
+        {
+            var mediaBefore = _currentMediaType;
+            ResetGalleryButtons();
+            _currentMediaType = mediaBefore;
             DisplayGalleryPage(_currentMediaType, _currentMediaType == MediaType.Sprite ? _imagePageNumber : _videoPageNumber);
         }
     }

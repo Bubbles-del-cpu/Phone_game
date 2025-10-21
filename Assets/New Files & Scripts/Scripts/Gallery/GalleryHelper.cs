@@ -41,11 +41,12 @@ public class GalleryHelper
         //Unlock the gallery buttons
         foreach (var item in SaveAndLoadManager.Instance.CurrentSave.UnlockedMedia)
         {
-            GameManager.Instance.GalleryCanvas.UnlockMedia(item.FileName);
+            GameManager.Instance.GalleryCanvas.UnlockMedia(item.FileName, reloadedGallery: false);
         }
 
         SaveAndLoadManager.Instance.CurrentSave.UnlockAllMedia();
         SaveAndLoadManager.Instance.AutoSave();
+        GameManager.Instance.GalleryCanvas.RefreshGalleryPage();
     }
 
 
