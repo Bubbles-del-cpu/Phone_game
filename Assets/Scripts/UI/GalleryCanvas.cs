@@ -114,11 +114,11 @@ public class GalleryCanvas : UICanvas
         for(var index = 0; index < _buttonsPerPage; index++)
         {
             var imageButton = Instantiate(imageButtonPrefab, imageButtonsContainer);
-            imageButton.gameObject.SetActive(true);
+            imageButton.gameObject.SetActive(false);
             _imageButtons.Add(imageButton);
 
             var videoButton = Instantiate(videoButtonPrefab, videoButtonsContainer);
-            videoButton.gameObject.SetActive(true);
+            videoButton.gameObject.SetActive(false);
             _videoButtons.Add(videoButton);
         }
     }
@@ -202,7 +202,6 @@ public class GalleryCanvas : UICanvas
             }
         }
 
-        GameManager.Instance.MainVideoPlayer.time = 0;
         GameManager.Instance.MainVideoPlayer.Stop();
     }
 
@@ -279,9 +278,15 @@ public class GalleryCanvas : UICanvas
             case MediaType.Sprite:
                 {
                     var items = _galleryImageItems.GetRange(pageNumber * _buttonsPerPage, Math.Min(_buttonsPerPage, _galleryImageItems.Count - (pageNumber * _buttonsPerPage))).ToList();
-                    for (var i = 0; i < items.Count; i++)
+                    for (var i = 0; i < _buttonsPerPage; i++)
                     {
                         var button = _imageButtons[i];
+                        if (i >= items.Count)
+                        {
+                            button.gameObject.SetActive(false);
+                            continue;
+                        }
+
                         var data = items[i];
                         button.Setup(data.ChapterData, data.Node, data.IsSocialMediaPost);
                         if (data.LockState == MediaLockState.Unlocked)
@@ -296,9 +301,15 @@ public class GalleryCanvas : UICanvas
             case MediaType.Video:
                 {
                     var items = _galleryVideoItems.GetRange(pageNumber * _buttonsPerPage, Math.Min(_buttonsPerPage, _galleryVideoItems.Count - (pageNumber * _buttonsPerPage))).ToList();
-                    for (var i = 0; i < items.Count; i++)
+                    for (var i = 0; i < _buttonsPerPage; i++)
                     {
                         var button = _videoButtons[i];
+                        if (i >= items.Count)
+                        {
+                            button.gameObject.SetActive(false);
+                            continue;
+                        }
+
                         var data = items[i];
                         button.Setup(data.ChapterData, data.Node, data.IsSocialMediaPost);
                         if (data.LockState == MediaLockState.Unlocked)

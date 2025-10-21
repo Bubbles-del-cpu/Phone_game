@@ -11,11 +11,12 @@ public class FullScreenMedia : UIPanel
     [SerializeField] private MediaType _currentMediaType;
     [SerializeField] protected GallerySetBackgroundButton _backgroundSetButton;
 
+    private VideoClip _clipToPlay;
     private Sprite _videoThumbnail;
 
     public void OnPlayClick()
     {
-        GameManager.Instance.MainVideoPlayer.Play();
+        GameManager.Instance.MainVideoPlayer.PlayVideo(_clipToPlay);
     }
 
     private void Update()
@@ -28,7 +29,7 @@ public class FullScreenMedia : UIPanel
                 _playButton.gameObject.SetActive(false);
                 break;
             case MediaType.Video:
-                _playButton.gameObject.SetActive(!GameManager.Instance.MainVideoPlayer.isPlaying);
+                _playButton.gameObject.SetActive(!GameManager.Instance.MainVideoPlayer.IsPlaying);
                 if (_playButton.gameObject.activeInHierarchy)
                 {
                     _image.gameObject.SetActive(true);
@@ -41,7 +42,7 @@ public class FullScreenMedia : UIPanel
                     _videoImage.gameObject.SetActive(true);
 
                     var transform = _videoImage.GetComponent<RectTransform>();
-                    _videoImage.texture = GameManager.Instance.MainVideoPlayer.texture;
+                    _videoImage.texture = GameManager.Instance.MainVideoPlayer.Texture;
                     transform.sizeDelta = SizeToParent(_videoImage);
                 }
 
@@ -118,14 +119,9 @@ public class FullScreenMedia : UIPanel
                 _image.sprite = _videoThumbnail;
                 _image.preserveAspect = true;
 
-                var player = GameManager.Instance.MainVideoPlayer;
+                GameManager.Instance.MainVideoPlayer.Stop();
+                _clipToPlay = mediaData.video;
 
-                player.audioOutputMode = VideoAudioOutputMode.AudioSource;
-                player.SetTargetAudioSource(0, GameManager.Instance.audioSource);
-                player.source = VideoSource.VideoClip;
-                player.clip = mediaData.video;
-                player.frame = 1;
-                player.Pause();
                 break;
         }
 

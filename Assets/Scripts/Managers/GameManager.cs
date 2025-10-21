@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     public bool EnableLanaguageSwitching = false;
     public GalleryUnlockConfig GalleryConfig;
     [SerializeField] private Image _backgroundImageComponent;
+    [SerializeField] private UITextureBlur _backgroundTextureBlur;
     public Sprite DefaultBackgroundSprite;
 
 
@@ -54,7 +55,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Video Components")]
     [SerializeField] private VideoThumbnailGenerator _thumbnailGenerator;
-    public VideoPlayer MainVideoPlayer;
+    public PreparedVideoPlayer MainVideoPlayer;
 
     [Header("Component References")]
     [SerializeField]
@@ -150,10 +151,6 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         audioSource = GetComponent<AudioSource>();
-
-        MainVideoPlayer.sendFrameReadyEvents = true;
-        MainVideoPlayer.renderMode = VideoRenderMode.APIOnly;
-        MainVideoPlayer.playOnAwake = false;
     }
 
     private void Start()
@@ -185,6 +182,8 @@ public class GameManager : MonoBehaviour
         {
             _backgroundImageComponent.sprite = socialMediaPost ? nodeData.Post.Image : nodeData.Image;
             var targetFileName = _backgroundImageComponent.sprite.name;
+            _backgroundTextureBlur.ApplyBlur();
+
             var items = SaveAndLoadManager.Instance.CurrentSave.UnlockedMedia.Where(x => x.NodeGUID == nodeData.NodeGuid);
             foreach (var item in items)
             {

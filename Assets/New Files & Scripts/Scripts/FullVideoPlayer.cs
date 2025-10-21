@@ -1,30 +1,33 @@
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Video;
+// using UnityEngine;
+// using UnityEngine.UI;
+// using UnityEngine.Video;
 
-public class FullVideoPlayer : UIPanel
-{
-    [SerializeField] private Button _playButton;
-    [SerializeField] private RawImage _videoImage;
+// public class FullVideoPlayer : UIPanel
+// {
+//     [SerializeField] private Button _playButton;
+//     [SerializeField] private RawImage _videoImage;
 
-    public void Setup(VideoClip clip)
-    {
-        GameManager.Instance.MainVideoPlayer.clip = clip;
-        GameManager.Instance.MainVideoPlayer.frame = 5;
-        GameManager.Instance.MainVideoPlayer.Play();
-        GameManager.Instance.MainVideoPlayer.Pause();
+//     private VideoClip _clip;
 
-        _videoImage.texture = GameManager.Instance.GetVideoFrame(clip).Item1;
-    }
-    public void OnClick()
-    {
-        _videoImage.texture = GameManager.Instance.MainVideoPlayer.texture;
-        GameManager.Instance.MainVideoPlayer.frame = 0;
-        GameManager.Instance.MainVideoPlayer.Play();
-    }
+//     public void Setup(VideoClip clip)
+//     {
+//         _clip = clip;
+//         GameManager.Instance.MainVideoPlayer.clip = clip;
+//         GameManager.Instance.MainVideoPlayer.frame = 5;
+//         GameManager.Instance.MainVideoPlayer.Play();
+//         GameManager.Instance.MainVideoPlayer.Pause();
 
-    private void Update()
-    {
-        _playButton.gameObject.SetActive(!GameManager.Instance.MainVideoPlayer.isPlaying);
-    }
-}
+//         _videoImage.texture = GameManager.Instance.GetVideoFrame(clip).Item1;
+//     }
+//     public void OnClick()
+//     {
+//         _videoImage.texture = GameManager.Instance.MainVideoPlayer.texture;
+//         GameManager.Instance.MainVideoPlayer.frame = 0;
+//         GameManager.Instance.MainVideoPlayer.Play();
+//     }
+
+//     private void Update()
+//     {
+//         _playButton.gameObject.SetActive(!GameManager.Instance.MainVideoPlayer.isPlaying);
+//     }
+// }

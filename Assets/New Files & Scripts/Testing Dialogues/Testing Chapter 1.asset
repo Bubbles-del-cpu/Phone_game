@@ -401,7 +401,7 @@ MonoBehaviour:
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    DelayTimer: 0
+    DelayTimer: 2.0101204
   - NodeGuid: b2caca91-cbaf-44ea-9c38-80a76cc145d4
     Position: {x: 308, y: 195}
     DialogueNodePorts: []
@@ -432,8 +432,8 @@ MonoBehaviour:
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
-    Post: {fileID: 11400000, guid: 3508211763692914baa6a2fd540f9ae8, type: 2}
-    DelayTimer: 0
+    Post: {fileID: 0}
+    DelayTimer: 2.090868
   - NodeGuid: 83276e85-bc91-40cf-ad46-298e9877dfa0
     Position: {x: 848, y: 745}
     DialogueNodePorts: []
@@ -464,8 +464,8 @@ MonoBehaviour:
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
-    Post: {fileID: 0}
-    DelayTimer: 0
+    Post: {fileID: 11400000, guid: 3508211763692914baa6a2fd540f9ae8, type: 2}
+    DelayTimer: 2.0309634
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: e91e1c83-c709-4a3b-843c-7799be562d16
