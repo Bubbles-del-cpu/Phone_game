@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 25c5e8d4377d20645acb1d9262895330
+guid: e2076c837b72e2b479b44ff65c653545
 VideoClipImporter:
   externalObjects: {}
   serializedVersion: 3
@@ -16,6 +16,24 @@ VideoClipImporter:
     :
       enableTranscoding: 1
       codec: 1
+      resizeFormat: 0
+      aspectRatio: 0
+      customWidth: 1080
+      customHeight: 1564
+      bitrateMode: 2
+      spatialQuality: 2
+    Android:
+      enableTranscoding: 1
+      codec: 1
+      resizeFormat: 2
+      aspectRatio: 0
+      customWidth: 1080
+      customHeight: 1564
+      bitrateMode: 1
+      spatialQuality: 1
+    Standalone:
+      enableTranscoding: 1
+      codec: 2
       resizeFormat: 0
       aspectRatio: 0
       customWidth: 1080
