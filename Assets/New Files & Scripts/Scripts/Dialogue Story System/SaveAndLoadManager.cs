@@ -140,13 +140,13 @@ public class SaveAndLoadManager : MonoBehaviour
         }
     }
 
-    public void CreateSaveState(int slot, string name = "")
+    public void CreateSaveState(int slot, string name)
     {
         try
         {
             CurrentSave.SaveStates[slot] = CurrentSave.CurrentState.Clone();
             CurrentSave.SaveStates[slot].IsSaved = true;
-            CurrentSave.SaveStates[slot].Name = name == string.Empty ? $"Save slot {slot + 1}" : name;
+            CurrentSave.SaveStates[slot].Name = name;
 
             AutoSave();
         }

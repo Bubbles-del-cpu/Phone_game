@@ -33,6 +33,7 @@ namespace MeetAndTalk.Nodes
         protected FloatField duration_Field;
         protected ObjectField character_Field;
         protected Toggle requireCharacterInput_Field;
+        private List<VisualElement> nodeFields;
 
         public AvatarPosition avatarPosition;
         public AvatarType avatarType;
@@ -53,6 +54,7 @@ namespace MeetAndTalk.Nodes
             title = "Choice";
             SetPosition(new Rect(_position, defualtNodeSize));
             nodeGuid = Guid.NewGuid().ToString();
+            nodeFields = new List<VisualElement>();
 
             AddInputPort("Input ", Port.Capacity.Multi);
 
@@ -169,40 +171,56 @@ namespace MeetAndTalk.Nodes
         protected virtual void PopulateContainer()
         {
             /* Character CLIPS */
-            Label label_character = new Label("Character SO");
-            label_character.AddToClassList("label_name");
-            label_character.AddToClassList("Label");
+           foreach (var item in nodeFields)
+            {
+                if (mainContainer.Contains(item))
+                    mainContainer.Remove(item);
+            }
 
-            mainContainer.Add(label_character);
-            mainContainer.Add(character_Field);
-            mainContainer.Add(AvatarPositionField);
-            mainContainer.Add(AvatarTypeField);
-            mainContainer.Add(requireCharacterInput_Field);
+            nodeFields.Clear();
 
-            Label label_audio = new Label("Audio Clip");
-            label_audio.AddToClassList("label_name");
-            label_audio.AddToClassList("Label");
-            mainContainer.Add(label_audio);
-            mainContainer.Add(audioClips_Field);
-            
+            //mainContainer.Add(label_character);
+            Label name_Label = new Label("Character");
+            name_Label.AddToClassList("label_texts");
+            name_Label.AddToClassList("Label");
+            nodeFields.Add(name_Label);
+            nodeFields.Add(character_Field);
+            nodeFields.Add(AvatarPositionField);
+            nodeFields.Add(AvatarTypeField);
+            nodeFields.Add(requireCharacterInput_Field);
+
+
+            // mainContainer.Add(label_audio);
+            Label audio_Label = new Label("Audio Clip");
+            audio_Label.AddToClassList("label_texts");
+            audio_Label.AddToClassList("Label");
+            nodeFields.Add(audio_Label);
+            nodeFields.Add(audioClips_Field);
+
             if (RequireInput)
             {
                 Label displayText_Label = new Label("Displayed Text");
                 displayText_Label.AddToClassList("label_texts");
                 displayText_Label.AddToClassList("Label");
-                mainContainer.Add(displayText_Label);
-                mainContainer.Add(texts_Field);
+                nodeFields.Add(displayText_Label);
+                nodeFields.Add(texts_Field);
             }
 
-            mainContainer.Add(duration_Field);
+            nodeFields.Add(duration_Field);
 
+
+            foreach (var item in nodeFields)
+            {
+                if (!mainContainer.Contains(item))
+                    mainContainer.Add(item);
+            }
         }
 
         protected virtual void AddTextFields(bool add)
         {
             // mainContainer.Add(displayText_Label);
             // mainContainer.Add(texts_Field);
-                
+
             // if (add)
             // {
             //     mainContainer.Add(displayText_Label);
