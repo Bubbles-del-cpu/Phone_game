@@ -39,10 +39,6 @@ MonoBehaviour:
     TargetNodeGuid: 10712a28-81da-43ca-8602-16d5650eb738
   - BaseNodeGuid: b65dfdd9-a87b-464c-8cb3-f3cdae00efd0
     TargetNodeGuid: eac25310-756b-4152-b4f3-20357c0654b1
-  - BaseNodeGuid: cb5ea591-8e18-49a6-b81d-1ea61054e99e
-    TargetNodeGuid: c94a1777-03e0-45b8-af92-09dd5766997f
-  - BaseNodeGuid: cb5ea591-8e18-49a6-b81d-1ea61054e99e
-    TargetNodeGuid: 3a65616f-d1d1-4096-bad6-402d540c465d
   - BaseNodeGuid: 7e0d9b0a-472f-4849-9f17-40efb48dcd5d
     TargetNodeGuid: 90e45cd3-5e5b-4810-a6d0-7aead522fdc3
   - BaseNodeGuid: 7e0d9b0a-472f-4849-9f17-40efb48dcd5d
@@ -687,10 +683,6 @@ MonoBehaviour:
     TargetNodeGuid: 5209752d-2afe-41d8-bd36-405db84a6b35
   - BaseNodeGuid: 5209752d-2afe-41d8-bd36-405db84a6b35
     TargetNodeGuid: 050fe9f4-7591-474c-a845-58883576330a
-  - BaseNodeGuid: f2529480-1269-4e52-9ce1-f27db7452ebb
-    TargetNodeGuid: 5bb10af1-2c46-4a92-abdc-44d88a98e649
-  - BaseNodeGuid: f2529480-1269-4e52-9ce1-f27db7452ebb
-    TargetNodeGuid: 96536293-29cb-44ca-b538-6f1658cdc469
   - BaseNodeGuid: 94be1f57-88f0-4f4a-8abd-3025fa531af8
     TargetNodeGuid: 50c4936f-c648-4ac6-8791-b824fe59febb
   - BaseNodeGuid: 65379d48-0e56-411e-8837-acde9f7486e7
@@ -721,6 +713,14 @@ MonoBehaviour:
     TargetNodeGuid: 086dc83f-3675-4177-978a-74c7ba18f8bd
   - BaseNodeGuid: e0904324-a07e-4850-9a54-678ca7b318ab
     TargetNodeGuid: bfc107d8-1fb2-4b5d-b90b-c4789d42ab0b
+  - BaseNodeGuid: f2529480-1269-4e52-9ce1-f27db7452ebb
+    TargetNodeGuid: 5bb10af1-2c46-4a92-abdc-44d88a98e649
+  - BaseNodeGuid: f2529480-1269-4e52-9ce1-f27db7452ebb
+    TargetNodeGuid: 96536293-29cb-44ca-b538-6f1658cdc469
+  - BaseNodeGuid: cb5ea591-8e18-49a6-b81d-1ea61054e99e
+    TargetNodeGuid: 3a65616f-d1d1-4096-bad6-402d540c465d
+  - BaseNodeGuid: cb5ea591-8e18-49a6-b81d-1ea61054e99e
+    TargetNodeGuid: c94a1777-03e0-45b8-af92-09dd5766997f
   DialogueChoiceNodeDatas:
   - NodeGuid: 47bffa5b-8d7b-4928-a462-006796f7f88d
     Position: {x: 709, y: -494}
@@ -2104,55 +2104,6 @@ MonoBehaviour:
     - languageEnum: 1
       LanguageGenericType: 
     Duration: 5
-    Delay: 0
-    Timelapse: 
-    RequireCharacterInput: 0
-    SelectedChoice: []
-  - NodeGuid: c94a1777-03e0-45b8-af92-09dd5766997f
-    Position: {x: 19665, y: 679}
-    DialogueNodePorts:
-    - PortGuid: db303f05-bc3d-4590-a548-3147f88287b3
-      InputGuid: bc9786f7-afc1-42b5-8ef7-5373fc961832
-      OutputGuid: c94a1777-03e0-45b8-af92-09dd5766997f
-      TextLanguage:
-      - languageEnum: 0
-        LanguageGenericType: Physicaly its going very well. But I just had a consult
-          with my doctor and it was very stange
-      - languageEnum: 1
-        LanguageGenericType: Choice 01
-      HintLanguage:
-      - languageEnum: 0
-        LanguageGenericType: 
-      - languageEnum: 1
-        LanguageGenericType: 
-    - PortGuid: 027ee8fc-6dd7-44fe-9e4b-3976af2a1176
-      InputGuid: de412d67-1267-4fc8-93ad-c6d65342dfb4
-      OutputGuid: c94a1777-03e0-45b8-af92-09dd5766997f
-      TextLanguage:
-      - languageEnum: 0
-        LanguageGenericType: I'm okay, Lily. The meds help a lot. Each day is a little
-          better. Don't worry about me
-      - languageEnum: 1
-        LanguageGenericType: Choice 02
-      HintLanguage:
-      - languageEnum: 0
-        LanguageGenericType: 
-      - languageEnum: 1
-        LanguageGenericType: 
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: 
-    - languageEnum: 1
-      LanguageGenericType: 
-    Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
@@ -5475,6 +5426,55 @@ MonoBehaviour:
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: New charachter(s) (Boundries, Communication, NTS)
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: c94a1777-03e0-45b8-af92-09dd5766997f
+    Position: {x: 19665, y: 679}
+    DialogueNodePorts:
+    - PortGuid: db303f05-bc3d-4590-a548-3147f88287b3
+      InputGuid: bc9786f7-afc1-42b5-8ef7-5373fc961832
+      OutputGuid: c94a1777-03e0-45b8-af92-09dd5766997f
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Physicaly its going very well. But I just had a consult
+          with my doctor and it was very stange
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    - PortGuid: 027ee8fc-6dd7-44fe-9e4b-3976af2a1176
+      InputGuid: de412d67-1267-4fc8-93ad-c6d65342dfb4
+      OutputGuid: c94a1777-03e0-45b8-af92-09dd5766997f
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: I'm okay, Lily. The meds help a lot. Each day is a little
+          better. Don't worry about me
+      - languageEnum: 1
+        LanguageGenericType: Choice 02
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
       - languageEnum: 1
         LanguageGenericType: 
     AudioClips:
@@ -11218,8 +11218,8 @@ MonoBehaviour:
     ValueName: dr_happy
     Operations: 0
     OperationValue: 
-    TrueGUID: c94a1777-03e0-45b8-af92-09dd5766997f
-    FalseGUID: 3a65616f-d1d1-4096-bad6-402d540c465d
+    TrueGUID: 3a65616f-d1d1-4096-bad6-402d540c465d
+    FalseGUID: c94a1777-03e0-45b8-af92-09dd5766997f
   - NodeGuid: 7e0d9b0a-472f-4849-9f17-40efb48dcd5d
     Position: {x: 39194, y: 358}
     ValueName: LISA_PICS

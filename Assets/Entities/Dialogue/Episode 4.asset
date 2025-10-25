@@ -17,10 +17,6 @@ MonoBehaviour:
   NodeLinkDatas:
   - BaseNodeGuid: a973dd70-97f2-4d77-a6a8-679b2083f360
     TargetNodeGuid: 5554ecab-b1b6-458a-a453-c3776de9a048
-  - BaseNodeGuid: f530b575-87d8-453f-bed9-e1ead171fec9
-    TargetNodeGuid: a05ca40c-9d76-482d-a93f-80728214b15c
-  - BaseNodeGuid: c57668c4-ded0-4b1d-b413-e1ce9d4f48f1
-    TargetNodeGuid: ef8282c7-9cde-4691-bc67-1c40c203d9c4
   - BaseNodeGuid: a1040c7f-b290-40c7-b869-700c47533ae5
     TargetNodeGuid: 6e4366d1-d81f-4260-afb8-6e49c3b8178d
   - BaseNodeGuid: 33a802c4-aafe-44ca-ae94-5168796c3f5d
@@ -51,8 +47,6 @@ MonoBehaviour:
     TargetNodeGuid: fc31412c-3c34-4e0a-85dd-cbbbfee4f17e
   - BaseNodeGuid: c72b4a91-8bfc-4a99-a7f5-bf1f5f19173a
     TargetNodeGuid: 533e4606-b1a5-4899-bcb8-fdb716dbd418
-  - BaseNodeGuid: d1549f3c-dc8a-48ca-b209-338007444478
-    TargetNodeGuid: bd9ebfab-29fd-4c9e-92e8-96b5c73397bf
   - BaseNodeGuid: 6cfe5df0-9f4e-4e2b-82cc-0c30b7b0c883
     TargetNodeGuid: bdf3e8bf-0836-4975-b01a-32f123818fa6
   - BaseNodeGuid: 716f1522-560f-4541-8685-e4e1ee3c5a4d
@@ -153,6 +147,8 @@ MonoBehaviour:
     TargetNodeGuid: 26b40ee7-7804-482b-8175-41839b3d2f1a
   - BaseNodeGuid: a861770e-89e2-405d-85b3-86ff689fb771
     TargetNodeGuid: 33a802c4-aafe-44ca-ae94-5168796c3f5d
+  - BaseNodeGuid: d1549f3c-dc8a-48ca-b209-338007444478
+    TargetNodeGuid: bd9ebfab-29fd-4c9e-92e8-96b5c73397bf
   - BaseNodeGuid: 4a8a392c-712a-4ee7-b3c9-7799d430c611
     TargetNodeGuid: 465bb768-7586-468d-af0c-32a2109c825c
   - BaseNodeGuid: 2fd01954-7f5f-475d-af44-745f6847f013
@@ -201,10 +197,6 @@ MonoBehaviour:
     TargetNodeGuid: 114436eb-be48-4ffc-8572-ea4bd614af03
   - BaseNodeGuid: 114436eb-be48-4ffc-8572-ea4bd614af03
     TargetNodeGuid: 55250dd9-9d03-4f6f-9575-f3d62663c21f
-  - BaseNodeGuid: 55250dd9-9d03-4f6f-9575-f3d62663c21f
-    TargetNodeGuid: c57668c4-ded0-4b1d-b413-e1ce9d4f48f1
-  - BaseNodeGuid: 55250dd9-9d03-4f6f-9575-f3d62663c21f
-    TargetNodeGuid: f530b575-87d8-453f-bed9-e1ead171fec9
   - BaseNodeGuid: ef8282c7-9cde-4691-bc67-1c40c203d9c4
     TargetNodeGuid: 41945669-3d71-4bb6-9290-f4eec901f1b1
   - BaseNodeGuid: 41945669-3d71-4bb6-9290-f4eec901f1b1
@@ -333,6 +325,14 @@ MonoBehaviour:
     TargetNodeGuid: 9c5a8782-efbd-4fc5-866b-067b3bc699db
   - BaseNodeGuid: 6d38c207-2c5d-4122-816d-73f04a5c943f
     TargetNodeGuid: f28ffe84-d6e5-4c60-9bf1-f0be23d6170d
+  - BaseNodeGuid: 55250dd9-9d03-4f6f-9575-f3d62663c21f
+    TargetNodeGuid: c57668c4-ded0-4b1d-b413-e1ce9d4f48f1
+  - BaseNodeGuid: 55250dd9-9d03-4f6f-9575-f3d62663c21f
+    TargetNodeGuid: f530b575-87d8-453f-bed9-e1ead171fec9
+  - BaseNodeGuid: f530b575-87d8-453f-bed9-e1ead171fec9
+    TargetNodeGuid: ef8282c7-9cde-4691-bc67-1c40c203d9c4
+  - BaseNodeGuid: c57668c4-ded0-4b1d-b413-e1ce9d4f48f1
+    TargetNodeGuid: a05ca40c-9d76-482d-a93f-80728214b15c
   DialogueChoiceNodeDatas:
   - NodeGuid: 4a8a392c-712a-4ee7-b3c9-7799d430c611
     Position: {x: 890, y: 257}
@@ -1171,7 +1171,7 @@ MonoBehaviour:
     Position: {x: 11359, y: 342}
     DialogueNodePorts:
     - PortGuid: 9b0badf0-58fc-4855-b5e6-419d3d7165da
-      InputGuid: c57668c4-ded0-4b1d-b413-e1ce9d4f48f1
+      InputGuid: f530b575-87d8-453f-bed9-e1ead171fec9
       OutputGuid: 55250dd9-9d03-4f6f-9575-f3d62663c21f
       TextLanguage:
       - languageEnum: 0
@@ -1180,11 +1180,11 @@ MonoBehaviour:
         LanguageGenericType: Choice 01
       HintLanguage:
       - languageEnum: 0
-        LanguageGenericType: Will give more Lisa pictures in the future
+        LanguageGenericType: Will give less Lisa pictures
       - languageEnum: 1
         LanguageGenericType: 
     - PortGuid: c20c47cd-b817-4696-bb54-f4d752c1f0a7
-      InputGuid: f530b575-87d8-453f-bed9-e1ead171fec9
+      InputGuid: c57668c4-ded0-4b1d-b413-e1ce9d4f48f1
       OutputGuid: 55250dd9-9d03-4f6f-9575-f3d62663c21f
       TextLanguage:
       - languageEnum: 0
@@ -1193,7 +1193,7 @@ MonoBehaviour:
         LanguageGenericType: Choice 02
       HintLanguage:
       - languageEnum: 0
-        LanguageGenericType: Will get less Lisa pictures in the future
+        LanguageGenericType: Will give more Lisa pictures
       - languageEnum: 1
         LanguageGenericType: 
     AudioClips:
@@ -5168,18 +5168,18 @@ MonoBehaviour:
     EndNodeType: 0
     Dialogue: {fileID: 0}
   EventNodeDatas:
-  - NodeGuid: f530b575-87d8-453f-bed9-e1ead171fec9
-    Position: {x: 11707, y: 592}
-    EventScriptableObjects:
-    - DialogueEventSO: {fileID: 11400000, guid: 10ec969a035773f4ca52cc1d2d1b1d32, type: 2}
-  - NodeGuid: c57668c4-ded0-4b1d-b413-e1ce9d4f48f1
-    Position: {x: 11329, y: -62}
-    EventScriptableObjects:
-    - DialogueEventSO: {fileID: 11400000, guid: 2fe3ba95095f34941b9f47a7069c1332, type: 2}
   - NodeGuid: a1040c7f-b290-40c7-b869-700c47533ae5
     Position: {x: 20131, y: 8}
     EventScriptableObjects:
     - DialogueEventSO: {fileID: 11400000, guid: a870bd7b7e481d0409d3abf746af888c, type: 2}
+  - NodeGuid: f530b575-87d8-453f-bed9-e1ead171fec9
+    Position: {x: 11338, y: -40}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 10ec969a035773f4ca52cc1d2d1b1d32, type: 2}
+  - NodeGuid: c57668c4-ded0-4b1d-b413-e1ce9d4f48f1
+    Position: {x: 11708, y: 641}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 2fe3ba95095f34941b9f47a7069c1332, type: 2}
   StartNodeDatas:
   - NodeGuid: a973dd70-97f2-4d77-a6a8-679b2083f360
     Position: {x: 83, y: 423}

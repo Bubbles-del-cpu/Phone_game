@@ -1,4 +1,4 @@
-[Info][GUPS.OBF][Setup] Active Editor Platform: MacEditorPlatform
+[Info][GUPS.OBF][Setup] Active Editor Platform: WindowsEditorPlatform
 [Info][GUPS.OBF][Setup] Active Build Platform: DefaultBuildPlatform
 [Info][GUPS.OBF][Setup] Load Project
 [Debug][GUPS.OBF][Setup] Load DataContainer
@@ -5589,7 +5589,7 @@
 [Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Unload Obfuscator Settings
 [Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Unload DataContainer
 [Info][GUPS.OBF][OnAnalyse_Component_Prefabs] Finished PreBuild!
-[Info][GUPS.OBF][Setup] Active Editor Platform: MacEditorPlatform
+[Info][GUPS.OBF][Setup] Active Editor Platform: WindowsEditorPlatform
 [Info][GUPS.OBF][Setup] Active Build Platform: DefaultBuildPlatform
 [Info][GUPS.OBF][Setup] Start 'PostAssemblyBuild' process.
 [Info][GUPS.OBF][Setup] Load
@@ -5643,45 +5643,45 @@
 [Debug][GUPS.OBF][Setup] Load Pipeline
 [Warning][GUPS.OBF][Setup] There is no assembly: Assembly-CSharp-firstpass.dll
 [Debug][GUPS.OBF][Setup] Found to obfuscate assemblies (1):
-  - /Users/dajofisser/Desktop/unity_Projects/Phone_game/Temp/StagingArea/Data/Managed/Assembly-CSharp.dll
+  - C:\Users\dajof\Desktop\unity nts game\New NTS game\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 
 [Debug][GUPS.OBF][Setup] Found helper assemblies (1):
-  - /Users/dajofisser/Desktop/unity_Projects/Phone_game/Temp/StagingArea/Data/Managed/GUPS.Obfuscator.dll
+  - C:\Users\dajof\Desktop\unity nts game\New NTS game\Temp\StagingArea\Data\Managed\GUPS.Obfuscator.dll
 
 [Debug][GUPS.OBF][Setup] Found dependency directories (33):
-  - /Applications/Unity/Hub/Editor/6000.2.8f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos
-  - /Applications/Unity/Hub/Editor/6000.2.8f1/Unity.app/Contents/Managed/UnityEngine
-  - /Applications/Unity/Hub/Editor/6000.2.8f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos/Facades
-  - /Applications/Unity/Hub/Editor/6000.2.8f1/Unity.app/Contents/Managed
-  - /Applications/Unity/Hub/Editor/6000.2.8f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport
-  - /Applications/Unity/Hub/Editor/6000.2.8f1/PlaybackEngines/WindowsStandaloneSupport
-  - /Applications/Unity/Hub/Editor/6000.2.8f1/PlaybackEngines/AndroidPlayer
-  - /Users/dajofisser/Desktop/unity_Projects/Phone_game/Library/ScriptAssemblies
-  - /Users/dajofisser/Desktop/unity_Projects/Phone_game/Library/PackageCache/com.unity.nuget.mono-cecil@d78732e851eb
-  - /Users/dajofisser/Desktop/unity_Projects/Phone_game/Library/PackageCache/com.unity.localization@d45547f9f157/Editor
-  - /Users/dajofisser/Desktop/unity_Projects/Phone_game/Library/PackageCache/com.unity.visualscripting@6279e2b7c485/Editor/VisualScripting.Core/Dependencies/YamlDotNet
-  - /Users/dajofisser/Desktop/unity_Projects/Phone_game/Library/PackageCache/com.unity.burst@1df634d836b8/Unity.Burst.CodeGen
-  - /Users/dajofisser/Desktop/unity_Projects/Phone_game/Assets/GUPS/Plugins/Json
-  - /Users/dajofisser/Desktop/unity_Projects/Phone_game/Library/PackageCache/com.unity.collections@d49facba0036/Unity.Collections.LowLevel.ILSupport
-  - /Users/dajofisser/Desktop/unity_Projects/Phone_game/Library/PackageCache/com.unity.ext.nunit@031a54704bff/net40/unity-custom
-  - /Users/dajofisser/Desktop/unity_Projects/Phone_game/Assets/GUPS/Editor/Plugins/Mono.Cecil
-  - /Users/dajofisser/Desktop/unity_Projects/Phone_game/Library/PackageCache/com.unity.collab-proxy@ab839cc7d2ad/Lib/Editor
-  - /Users/dajofisser/Desktop/unity_Projects/Phone_game/Library/PackageCache/com.unity.visualscripting@6279e2b7c485/Editor/VisualScripting.Core/Dependencies/DotNetZip
-  - /Users/dajofisser/Desktop/unity_Projects/Phone_game/Library/PackageCache/com.unity.collections@d49facba0036/Unity.Collections.Tests/System.IO.Hashing
-  - /Users/dajofisser/Desktop/unity_Projects/Phone_game/Library/PackageCache/com.unity.visualscripting@6279e2b7c485/Runtime/VisualScripting.Flow/Dependencies/NCalc
-  - /Users/dajofisser/Desktop/unity_Projects/Phone_game/Library/PackageCache/com.unity.burst@1df634d836b8
-  - /Users/dajofisser/Desktop/unity_Projects/Phone_game/Library/PackageCache/com.unity.nuget.newtonsoft-json@74deb55db2a0/Runtime
-  - /Users/dajofisser/Desktop/unity_Projects/Phone_game/Library/PackageCache/com.unity.visualscripting@6279e2b7c485/Editor/VisualScripting.Core/EditorAssetResources
-  - /Users/dajofisser/Desktop/unity_Projects/Phone_game/Assets/GUPS/Obfuscator/Editor/Plugins
-  - /Users/dajofisser/Desktop/unity_Projects/Phone_game/Library/PackageCache/com.unity.collections@d49facba0036/Unity.Collections.Tests/System.Runtime.CompilerServices.Unsafe
-  - /Applications/Unity/Hub/Editor/6000.2.8f1/PlaybackEngines/AndroidPlayer/Variations/il2cpp/Managed
-  - Assets/GUPS/Plugins/Json
-  - /Users/dajofisser/Desktop/unity_Projects/Phone_game/Library/PackageCache/com.unity.nuget.newtonsoft-json@74deb55db2a0/Runtime/AOT
-  - /Applications/Unity/Hub/Editor/6000.2.8f1/Unity.app/Contents/NetStandard/ref/2.1.0
-  - /Applications/Unity/Hub/Editor/6000.2.8f1/Unity.app/Contents/NetStandard/compat/2.1.0/shims/netstandard
-  - /Applications/Unity/Hub/Editor/6000.2.8f1/Unity.app/Contents/NetStandard/Extensions/2.0.0
-  - /Applications/Unity/Hub/Editor/6000.2.8f1/Unity.app/Contents/NetStandard/compat/2.1.0/shims/netfx
-  - /Applications/Unity/Hub/Editor/6000.2.8f1/Unity.app/Managed
+  - C:\Program Files\Unity\Hub\Editor\6000.2.8f1\Editor\Data\MonoBleedingEdge\lib\mono\unityjit-win32
+  - C:\Program Files\Unity\Hub\Editor\6000.2.8f1\Editor\Data\Managed\UnityEngine
+  - C:\Program Files\Unity\Hub\Editor\6000.2.8f1\Editor\Data\MonoBleedingEdge\lib\mono\unityjit-win32\Facades
+  - C:\Program Files\Unity\Hub\Editor\6000.2.8f1\Editor\Data\Managed
+  - C:\Program Files\Unity\Hub\Editor\6000.2.8f1\Editor\Data\PlaybackEngines\MacStandaloneSupport
+  - C:\Program Files\Unity\Hub\Editor\6000.2.8f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport
+  - C:\Program Files\Unity\Hub\Editor\6000.2.8f1\Editor\Data\PlaybackEngines\AndroidPlayer
+  - C:\Users\dajof\Desktop\unity nts game\New NTS game\Library\ScriptAssemblies
+  - C:\Users\dajof\Desktop\unity nts game\New NTS game\Library\PackageCache\com.unity.nuget.mono-cecil@d78732e851eb
+  - C:\Users\dajof\Desktop\unity nts game\New NTS game\Library\PackageCache\com.unity.localization@d45547f9f157\Editor
+  - C:\Users\dajof\Desktop\unity nts game\New NTS game\Library\PackageCache\com.unity.visualscripting@6279e2b7c485\Editor\VisualScripting.Core\Dependencies\YamlDotNet
+  - C:\Users\dajof\Desktop\unity nts game\New NTS game\Library\PackageCache\com.unity.burst@1df634d836b8\Unity.Burst.CodeGen
+  - C:\Users\dajof\Desktop\unity nts game\New NTS game\Assets\GUPS\Plugins\Json
+  - C:\Users\dajof\Desktop\unity nts game\New NTS game\Library\PackageCache\com.unity.collections@d49facba0036\Unity.Collections.LowLevel.ILSupport
+  - C:\Users\dajof\Desktop\unity nts game\New NTS game\Library\PackageCache\com.unity.ext.nunit@031a54704bff\net40\unity-custom
+  - C:\Users\dajof\Desktop\unity nts game\New NTS game\Assets\GUPS\Editor\Plugins\Mono.Cecil
+  - C:\Users\dajof\Desktop\unity nts game\New NTS game\Library\PackageCache\com.unity.collab-proxy@ab839cc7d2ad\Lib\Editor
+  - C:\Users\dajof\Desktop\unity nts game\New NTS game\Library\PackageCache\com.unity.visualscripting@6279e2b7c485\Editor\VisualScripting.Core\Dependencies\DotNetZip
+  - C:\Users\dajof\Desktop\unity nts game\New NTS game\Library\PackageCache\com.unity.collections@d49facba0036\Unity.Collections.Tests\System.IO.Hashing
+  - C:\Users\dajof\Desktop\unity nts game\New NTS game\Library\PackageCache\com.unity.visualscripting@6279e2b7c485\Runtime\VisualScripting.Flow\Dependencies\NCalc
+  - C:\Users\dajof\Desktop\unity nts game\New NTS game\Library\PackageCache\com.unity.burst@1df634d836b8
+  - C:\Users\dajof\Desktop\unity nts game\New NTS game\Library\PackageCache\com.unity.nuget.newtonsoft-json@74deb55db2a0\Runtime
+  - C:\Users\dajof\Desktop\unity nts game\New NTS game\Library\PackageCache\com.unity.visualscripting@6279e2b7c485\Editor\VisualScripting.Core\EditorAssetResources
+  - C:\Users\dajof\Desktop\unity nts game\New NTS game\Assets\GUPS\Obfuscator\Editor\Plugins
+  - C:\Users\dajof\Desktop\unity nts game\New NTS game\Library\PackageCache\com.unity.collections@d49facba0036\Unity.Collections.Tests\System.Runtime.CompilerServices.Unsafe
+  - C:\Program Files\Unity\Hub\Editor\6000.2.8f1\Editor\Data\PlaybackEngines\AndroidPlayer\Variations\il2cpp\Managed
+  - Assets\GUPS\Plugins\Json
+  - C:\Users\dajof\Desktop\unity nts game\New NTS game\Library\PackageCache\com.unity.nuget.newtonsoft-json@74deb55db2a0\Runtime\AOT
+  - C:\Program Files\Unity\Hub\Editor\6000.2.8f1\Editor\Data\NetStandard\ref\2.1.0
+  - C:\Program Files\Unity\Hub\Editor\6000.2.8f1\Editor\Data\NetStandard\compat\2.1.0\shims\netstandard
+  - C:\Program Files\Unity\Hub\Editor\6000.2.8f1\Editor\Data\NetStandard\Extensions\2.0.0
+  - C:\Program Files\Unity\Hub\Editor\6000.2.8f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx
+  - C:\Program Files\Unity\Hub\Editor\6000.2.8f1\Editor\Managed
 
 [Debug][GUPS.OBF][Setup] Load Assembly Resolver
 [Info][GUPS.OBF][Setup] Prepare Assemblies
@@ -10218,6 +10218,11 @@
 [Info][GUPS.OBF][OnPostObfuscate_Assemblies] [Assembly-CSharp] Remove obfuscator attributes ...
 [Info][GUPS.OBF][OnPostObfuscate_Assemblies] [Assembly-CSharp] Remove obfuscator reference ...
 [Info][GUPS.OBF][OnPostObfuscate_Assemblies] [Assembly-CSharp] Remove obfuscator editor reference ...
+[Warning][GUPS.OBF][OnPostObfuscate_Assemblies] Failed to save the mapping at your entered location! Storing it in the obfuscator temp directory. Exception: System.UnauthorizedAccessException: Access to the path 'C:\Users\johnf\Downloads' is denied.
+  at System.IO.FileSystem.CreateDirectory (System.String fullPath) [0x00145] in <715c8f689fc74561a4fef078d73c94aa>:0 
+  at System.IO.Directory.CreateDirectory (System.String path) [0x0002c] in <715c8f689fc74561a4fef078d73c94aa>:0 
+  at GUPS.Obfuscator.Editor.Project.PostAssemblyBuild.Renaming.RenameManager.SaveMappingToFile (System.String _FilePath) [0x00013] in <980dfcaa08d847ec81bcc49fa8f2ed4a>:0 
+  at GUPS.Obfuscator.Editor.Project.PostAssemblyBuild.Pipeline.Component.Optional.RenamingComponent.OnPostPipelineProcess (GUPS.Editor.Project.Step.IStepOutput _StepOutput) [0x00055] in <980dfcaa08d847ec81bcc49fa8f2ed4a>:0 
 [Info][GUPS.OBF][OnPostObfuscate_Assemblies] Pre save Assemblies
 [Info][GUPS.OBF][OnPostObfuscate_Assemblies] Process component Unity Animation Methods - Compatibility
 [Info][GUPS.OBF][OnPostObfuscate_Assemblies] Process component Unity Event Methods - Compatibility
@@ -10243,7 +10248,7 @@
 [Info][GUPS.OBF][OnPostObfuscate_Assemblies] Process component Not Obfuscate Cause
 [Info][GUPS.OBF][OnPostObfuscate_Assemblies] Process component Remove Obfuscator References
 [Info][GUPS.OBF][OnPostObfuscate_Assemblies] Save Assemblies
-[Info][GUPS.OBF][OnPostObfuscate_Assemblies] Saving assembly: /Users/dajofisser/Desktop/unity_Projects/Phone_game/Temp/StagingArea/Data/Managed/Assembly-CSharp.dll
+[Info][GUPS.OBF][OnPostObfuscate_Assemblies] Saving assembly: C:\Users\dajof\Desktop\unity nts game\New NTS game\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 [Info][GUPS.OBF][OnPostObfuscate_Assemblies] Post save Assemblies
 [Info][GUPS.OBF][OnPostObfuscate_Assemblies] Process component Unity Animation Methods - Compatibility
 [Info][GUPS.OBF][OnPostObfuscate_Assemblies] Process component Unity Event Methods - Compatibility
@@ -10272,8 +10277,8 @@
 [Debug][GUPS.OBF][OnPostObfuscate_Assemblies] Unload RenameManager
 [Debug][GUPS.OBF][OnPostObfuscate_Assemblies] Unload Cache
 [Debug][GUPS.OBF][OnPostObfuscate_Assemblies] Unload Assemblies
-[Info][GUPS.OBF][OnPostObfuscate_Assemblies] Unloaded assembly successfully: /Users/dajofisser/Desktop/unity_Projects/Phone_game/Temp/StagingArea/Data/Managed/Assembly-CSharp.dll
-[Info][GUPS.OBF][OnPostObfuscate_Assemblies] Unloaded assembly successfully: /Users/dajofisser/Desktop/unity_Projects/Phone_game/Temp/StagingArea/Data/Managed/GUPS.Obfuscator.dll
+[Info][GUPS.OBF][OnPostObfuscate_Assemblies] Unloaded assembly successfully: C:\Users\dajof\Desktop\unity nts game\New NTS game\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
+[Info][GUPS.OBF][OnPostObfuscate_Assemblies] Unloaded assembly successfully: C:\Users\dajof\Desktop\unity nts game\New NTS game\Temp\StagingArea\Data\Managed\GUPS.Obfuscator.dll
 [Debug][GUPS.OBF][OnPostObfuscate_Assemblies] Unload Assembly Resolver
 [Info][GUPS.OBF][OnPostObfuscate_Assemblies] Unloaded successfully the AssemblyResolver.
 [Debug][GUPS.OBF][OnPostObfuscate_Assemblies] Unload Pipeline
@@ -10281,7 +10286,7 @@
 [Debug][GUPS.OBF][OnPostObfuscate_Assemblies] Unload ObfuscatorSettings
 [Debug][GUPS.OBF][OnPostObfuscate_Assemblies] Unload DataContainer
 [Info][GUPS.OBF][OnPostObfuscate_Assemblies] Finished PostAssemblyBuild!
-[Info][GUPS.OBF][Setup] Active Editor Platform: MacEditorPlatform
+[Info][GUPS.OBF][Setup] Active Editor Platform: WindowsEditorPlatform
 [Info][GUPS.OBF][Setup] Active Build Platform: DefaultBuildPlatform
 [Info][GUPS.OBF][Setup] Start 'PostAssetsBuild' process.
 [Info][GUPS.OBF][Setup] Load Project
@@ -10299,7 +10304,7 @@
 [Debug][GUPS.OBF][OnPostAssetsBuild] Unload Obfuscator Settings
 [Debug][GUPS.OBF][OnPostAssetsBuild] Unload DataContainer
 [Info][GUPS.OBF][OnPostAssetsBuild] Finished PostAssetsBuild!
-[Info][GUPS.OBF][Setup] Active Editor Platform: MacEditorPlatform
+[Info][GUPS.OBF][Setup] Active Editor Platform: WindowsEditorPlatform
 [Info][GUPS.OBF][Setup] Active Build Platform: DefaultBuildPlatform
 [Info][GUPS.OBF][Setup] Start 'PostBuild' process.
 [Info][GUPS.OBF][Setup] Load Project
