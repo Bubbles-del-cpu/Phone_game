@@ -312,10 +312,10 @@ namespace MeetAndTalk
             var stringLengthLimit = GameManager.Instance.MaximumResponseLength;
             for (int i = 0; i < texts.Count; i++)
             {
-                // --- CRASH FIX APPLIED ---
+                // --- THIS IS THE CRASH FIX ---
                 MessagingResponseButton btn = Instantiate(ButtonPrefab);
                 btn.transform.SetParent(_panel.ResponsesPanel.ResponseButtonsContainer.transform, false);
-                // --- END FIX ---
+                // --- END OF FIX ---
                 
                 btn.Init(baseNode, texts[i], hints[i], _panel.ResponsesPanel, () =>
                 {

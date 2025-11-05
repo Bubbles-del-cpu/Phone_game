@@ -67,7 +67,6 @@ public class MessagingConversationPanel : UIPanel
             Destroy(obj);
     }
 
-    // --- THIS METHOD HAS BEEN RESTORED & FIXED ---
     public void AddElement(BaseNodeData nodeData, MessagingBubble prefab, string text, DialogueUIManager.MessageSource source, bool notification)
     {
         // Re-added the loop to create hidden bubbles for layout
@@ -84,10 +83,8 @@ public class MessagingConversationPanel : UIPanel
                     {
                         if (nd.GetTimeLapse().Length > 0)
                         {
-                            // --- CRASH FIX APPLIED ---
                             MessagingBubble _timelapseBubble = Instantiate(prefab);
                             _timelapseBubble.transform.SetParent(container, false);
-                            // --- END FIX ---
                             _timelapseBubble.Init(hidden, nd.GetTimeLapse());
                             _timelapseBubble.IsTimelapse = true;
                         }
@@ -95,12 +92,10 @@ public class MessagingConversationPanel : UIPanel
                         //Add element after timelapse
                         if (text != string.Empty || nd.Image != null || nd.Video != null)
                         {
-                            // --- CRASH FIX APPLIED ---
                             var bubble = Instantiate(prefab);
                             bubble.transform.SetParent(container, false);
-                            // --- END FIX ---
                             bubble.Init(hidden, text);
-                            bubble.SetupMediaViewer(nd);
+                            bubble.SetupMediaViewer(nd); // This line is correct
                         }
 
                         if (nd.Post != null && containerSource == DialogueUIManager.MessageSource.Character)
@@ -115,11 +110,12 @@ public class MessagingConversationPanel : UIPanel
                         if (text != string.Empty && text[0] != '*')
                         {
                             //Frist character is the special action character so don't send the message
-                            // --- CRASH FIX APPLIED ---
                             var bubble = Instantiate(prefab);
                             bubble.transform.SetParent(container, false);
-                            // --- END FIX ---
                             bubble.Init(source != containerSource, text);
+                            
+                            // --- ERROR LINE REMOVED ---
+                            // bubble.SetupMediaViewer(nd); // <-- This was the line causing the error
                         }
                     }
                     break;
@@ -137,12 +133,12 @@ public class MessagingConversationPanel : UIPanel
         yield return null;
 
         if (delay > 0)
-            yield return new WaitForSecondsRealtime(delay); // This was fixed in a previous step
+            yield return new WaitForSecondsRealtime(delay); 
 
         while (_scrollView.verticalNormalizedPosition > 0)
         {
             yield return new WaitForEndOfFrame();
-            _scrollView.verticalNormalizedPosition -= DialogueUIManager.Instance.MessagePanelAutoScrollSpeed * Time.deltaTime;
+            _scrollView.verticalNormalizedPosition -= DialogueUIManager.Instance.MessagePanelAutoScrollSpeed * Time.unscaledDeltaTime;
         }
     }
 
@@ -174,7 +170,6 @@ public class MessagingConversationPanel : UIPanel
         }
     }
     
-    // --- THIS METHOD HAS BEEN RESTORED ---
     private void Update()
     {
         // Reverted to original logic that works with the hidden bubble system

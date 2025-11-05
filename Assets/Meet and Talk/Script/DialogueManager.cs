@@ -82,7 +82,7 @@ namespace MeetAndTalk
         //public void StartDialogue() { StartDialogue(null, ""); }
         public void StartDialogue(DialogueContainerSO DialogueSO, ChapterSaveData chapterData)
         {
-            Debug.Log("NEW BUILD v1.3: StartDialogue called."); // <-- NEW LOG
+            Debug.Log("NEW BUILD v1.3: StartDialogue called."); 
             // Update Dialogue UI
             dialogueUIManager = DialogueUIManager.Instance;
             _visitedNodes = new Stack<BaseNodeData>();
@@ -98,14 +98,14 @@ namespace MeetAndTalk
 
             if (chapterData.CurrentGUID == string.Empty || SaveAndLoadManager.Instance.ReplayingCompletedChapter)
             {
-                Debug.Log("NEW BUILD v1.3: Starting new chapter from scratch."); // <-- NEW LOG
+                Debug.Log("NEW BUILD v1.3: Starting new chapter from scratch."); 
                 TriggerDialogueStart(chapterData);
             }
             else
             {
-                Debug.Log("NEW BUILD v1.3: Attempting to load from save file."); // <-- NEW LOG
+                Debug.Log("NEW BUILD v1.3: Attempting to load from save file."); 
                 //Draw out all the conversation up until this point but it cannot be done with notifications
-                bool populateSuccess = PopulateVisitedNodes(chapterData); // <-- Modified
+                bool populateSuccess = PopulateVisitedNodes(chapterData); 
                 if (populateSuccess)
                 {
                     // --- MODIFIED CODE BLOCK ---
@@ -120,17 +120,17 @@ namespace MeetAndTalk
                     }
                     else
                     {
-                        Debug.Log($"NEW BUILD v1.3: CurrentGUID is valid ({currentNode.NodeGuid}). Calling CheckNodeType."); // <-- NEW LOG
+                        Debug.Log($"NEW BUILD v1.3: CurrentGUID is valid ({currentNode.NodeGuid}). Calling CheckNodeType."); 
                         CheckNodeType(currentNode);
                     }
                     // --- END MODIFIED CODE BLOCK ---
                 }
                 else
                 {
-                    Debug.LogWarning("NEW BUILD v1.3: PopulateVisitedNodes returned false. Save data is invalid. Resetting chapter."); // <-- NEW LOG
+                    Debug.LogWarning("NEW BUILD v1.3: PopulateVisitedNodes returned false. Save data is invalid. Resetting chapter."); 
                     //The save file could not be loaded for this chapter, this implies that it is out of date with the latest verison.
                     //Reset the game state and start the Player from the top of the chapter
-                    TriggerInvalidSaveReset(chapterData); // <-- Refactored to use new helper method
+                    TriggerInvalidSaveReset(chapterData); 
                 }
             }
 
@@ -611,6 +611,7 @@ namespace MeetAndTalk
                 }
 
                 //yield return new WaitForSeconds(_nodeData.Duration);
+                Debug.Log("NEW BUILD v1.4: Delay finished. Calling ChoiceNode_GenerateChoice."); // <-- THIS IS THE LOG YOU ADDED
                 ChoiceNode_GenerateChoice(_nodeData.Character, _nodeData);
             }
 
