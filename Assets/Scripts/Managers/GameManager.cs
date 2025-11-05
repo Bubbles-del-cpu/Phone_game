@@ -270,10 +270,15 @@ public class GameManager : MonoBehaviour
 
     IEnumerator CoStartDialogue()
     {
+        Debug.Log("NEW BUILD v1.1: CoStartDialogue is using WaitForSecondsRealtime."); // <-- NEW LOG
         if (SaveAndLoadManager.Instance.CurrentSave.CurrentChapterData.CurrentGUID == string.Empty)
             yield return new WaitForSecondsRealtime(3f);
         else
             yield return new WaitForSecondsRealtime(.25f);
+            
+        // --- NEW FIX FOR DUPLICATION BUG ---
+        messagingCanvas.ClearConversations();
+        // --- END FIX ---
 
         dialogueManager.StartDialogue(dialogue, SaveAndLoadManager.Instance.CurrentSave.CurrentChapterData);
         messagingCanvas.gameObject.SetActive(true);

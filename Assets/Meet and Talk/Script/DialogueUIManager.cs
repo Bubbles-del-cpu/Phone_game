@@ -11,7 +11,7 @@ namespace MeetAndTalk
     {
         public static DialogueUIManager Instance;
 
-        [Header("Type Writing")]                    // Premium Feature
+        [Header("Type Writing")]                   // Premium Feature
         public bool EnableTypeWriting = false;      // Premium Feature
         public float typingSpeed = 50.0f;           // Premium Feature
 
@@ -65,9 +65,9 @@ namespace MeetAndTalk
         //public UIPanel ButtonContainer;
 
         [Header("Hide IF Condition")]
-        public List<GameObject> HideIfLeftAvatarEmpty = new List<GameObject>();         // Premium Feature
-        public List<GameObject> HideIfRightAvatarEmpty = new List<GameObject>();        // Premium Feature
-        public List<GameObject> HideIfChoiceEmpty = new List<GameObject>();             // Premium Feature
+        public List<GameObject> HideIfLeftAvatarEmpty = new List<GameObject>();      // Premium Feature
+        public List<GameObject> HideIfRightAvatarEmpty = new List<GameObject>();     // Premium Feature
+        public List<GameObject> HideIfChoiceEmpty = new List<GameObject>();          // Premium Feature
 
         [HideInInspector] public string prefixText;
         [HideInInspector] public string fullText;
@@ -202,7 +202,7 @@ namespace MeetAndTalk
                         break;
                 }
             }
-
+            
             //Spawn the messaging bubbles
             switch (messageSource)
             {
@@ -312,7 +312,11 @@ namespace MeetAndTalk
             var stringLengthLimit = GameManager.Instance.MaximumResponseLength;
             for (int i = 0; i < texts.Count; i++)
             {
-                MessagingResponseButton btn = Instantiate(ButtonPrefab, _panel.ResponsesPanel.ResponseButtonsContainer.transform);
+                // --- CRASH FIX APPLIED ---
+                MessagingResponseButton btn = Instantiate(ButtonPrefab);
+                btn.transform.SetParent(_panel.ResponsesPanel.ResponseButtonsContainer.transform, false);
+                // --- END FIX ---
+                
                 btn.Init(baseNode, texts[i], hints[i], _panel.ResponsesPanel, () =>
                 {
                     GameManager.Instance.MessagingCanvas.GetConversationButton(character).HasResponseReady = false;

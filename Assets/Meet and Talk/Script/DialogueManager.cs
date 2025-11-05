@@ -82,6 +82,7 @@ namespace MeetAndTalk
         //public void StartDialogue() { StartDialogue(null, ""); }
         public void StartDialogue(DialogueContainerSO DialogueSO, ChapterSaveData chapterData)
         {
+            Debug.Log("NEW BUILD v1.3: StartDialogue called."); // <-- NEW LOG
             // Update Dialogue UI
             dialogueUIManager = DialogueUIManager.Instance;
             _visitedNodes = new Stack<BaseNodeData>();
@@ -97,36 +98,62 @@ namespace MeetAndTalk
 
             if (chapterData.CurrentGUID == string.Empty || SaveAndLoadManager.Instance.ReplayingCompletedChapter)
             {
+                Debug.Log("NEW BUILD v1.3: Starting new chapter from scratch."); // <-- NEW LOG
                 TriggerDialogueStart(chapterData);
             }
             else
             {
+                Debug.Log("NEW BUILD v1.3: Attempting to load from save file."); // <-- NEW LOG
                 //Draw out all the conversation up until this point but it cannot be done with notifications
-                if (PopulateVisitedNodes(chapterData))
+                bool populateSuccess = PopulateVisitedNodes(chapterData); // <-- Modified
+                if (populateSuccess)
                 {
-                    CheckNodeType(GetNodeByGuid(chapterData.CurrentGUID));
+                    // --- MODIFIED CODE BLOCK ---
+                    Debug.Log("NEW BUILD v1.3: PopulateVisitedNodes succeeded. Checking CurrentGUID.");
+                    var currentNode = GetNodeByGuid(chapterData.CurrentGUID);
+
+                    if (currentNode == null)
+                    {
+                        Debug.LogError($"FATAL ERROR: CurrentGUID '{chapterData.CurrentGUID}' is NULL or missing. This save file is corrupted. Resetting chapter.");
+                        // This manually triggers your existing fallback logic
+                        TriggerInvalidSaveReset(chapterData);
+                    }
+                    else
+                    {
+                        Debug.Log($"NEW BUILD v1.3: CurrentGUID is valid ({currentNode.NodeGuid}). Calling CheckNodeType."); // <-- NEW LOG
+                        CheckNodeType(currentNode);
+                    }
+                    // --- END MODIFIED CODE BLOCK ---
                 }
                 else
                 {
+                    Debug.LogWarning("NEW BUILD v1.3: PopulateVisitedNodes returned false. Save data is invalid. Resetting chapter."); // <-- NEW LOG
                     //The save file could not be loaded for this chapter, this implies that it is out of date with the latest verison.
                     //Reset the game state and start the Player from the top of the chapter
-                    GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.INVALID_SAVE_DATA, () =>
-                    {
-                        //Reset the chapter data in the save file
-                        SaveAndLoadManager.Instance.ClearChapterData(chapterData.FileIndex);
-
-                        OverlayCanvas.Instance.FadeToBlack(() =>
-                        {
-                            SaveAndLoadManager.Instance.LoadSave();
-                            GameManager.Instance.ResetGameState();
-                        });
-
-                    }, GameConstants.UIElementKeys.CONTINUE, args: null, twoButtonSetup: false);
+                    TriggerInvalidSaveReset(chapterData); // <-- Refactored to use new helper method
                 }
             }
 
             StartDialogueEvent.Invoke();
         }
+        
+        // --- NEW HELPER FUNCTION ---
+        private void TriggerInvalidSaveReset(ChapterSaveData chapterData)
+        {
+            GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.INVALID_SAVE_DATA, () =>
+            {
+                //Reset the chapter data in the save file
+                SaveAndLoadManager.Instance.ClearChapterData(chapterData.FileIndex);
+
+                OverlayCanvas.Instance.FadeToBlack(() =>
+                {
+                    SaveAndLoadManager.Instance.LoadSave();
+                    GameManager.Instance.ResetGameState();
+                });
+
+            }, GameConstants.UIElementKeys.CONTINUE, args: null, twoButtonSetup: false);
+        }
+        // --- END NEW HELPER FUNCTION ---
 
         private void TriggerDialogueStart(ChapterSaveData chapterData)
         {
@@ -282,8 +309,25 @@ namespace MeetAndTalk
         public bool PopulateVisitedNodes(ChapterSaveData savaData)
         {
             bool loadSuccess = true;
-            foreach (var item in savaData.PastCoversations)
+
+            // --- FIX 1: Limit message history to prevent GPU crash ---
+            int maxMessagesToRepopulate = 30; // Only load the last 30 messages
+            int startIndex = Mathf.Max(0, savaData.PastCoversations.Count - maxMessagesToRepopulate);
+            // --- END FIX 1 ---
+
+            // --- MODIFIED LOOP: Start from our new startIndex ---
+            for (int i = startIndex; i < savaData.PastCoversations.Count; i++)
             {
+                var item = savaData.PastCoversations[i];
+                // --- END MODIFIED LOOP ---
+
+                // --- FIX 2: Stop duplication bug ---
+                if (item.GUID == savaData.CurrentGUID)
+                {
+                    continue;
+                }
+                // --- END FIX 2 ---
+            
                 var node = GetNodeByGuid(item.GUID);
                 if (node == null)
                 {
@@ -291,11 +335,6 @@ namespace MeetAndTalk
                     //Eaxit to start the Player from the top of the chapter using the latest data
                     loadSuccess = false;
                     break;
-                }
-
-                if (item.GUID == savaData.CurrentGUID)
-                {
-                    continue;
                 }
 
                 _visitedNodes.Push(node);
@@ -353,13 +392,32 @@ namespace MeetAndTalk
 
         public void CheckNodeType(BaseNodeData _baseNodeData)
         {
-            if (GameManager.Instance.ResettingSave)
-                return;
+            // --- NEW CODE STARTS HERE ---
+            Debug.Log($"NEW BUILD v1.3: CheckNodeType called with node: {(_baseNodeData != null ? _baseNodeData.NodeGuid : "NULL")}");
 
+            if (_baseNodeData == null)
+            {
+                Debug.LogError("FATAL ERROR: CheckNodeType was called on a NULL node. This is likely a corrupted save file. Cannot continue.");
+                // We can't proceed, but we also don't want to crash.
+                return; 
+            }
+            // --- NEW CODE ENDS HERE ---
+
+            if (GameManager.Instance.ResettingSave)
+            {
+                Debug.Log("NEW BUILD v1.3: GameManager is resetting save, skipping CheckNodeType."); // <-- NEW LOG
+                return;
+            }
+            
+            Debug.Log($"NEW BUILD v1.3: Adding node {_baseNodeData.NodeGuid} to save file."); // <-- NEW LOG
             SaveAndLoadManager.Instance.CurrentSave.AddNode(_baseNodeData);
+            Debug.Log("NEW BUILD v1.3: Calling AutoSave."); // <-- NEW LOG
             SaveAndLoadManager.Instance.AutoSave();
+            Debug.Log("NEW BUILD v1.3: AutoSave complete. Pushing node to visited stack."); // <-- NEW LOG
 
             _visitedNodes.Push(_baseNodeData);
+            
+            Debug.Log($"NEW BUILD v1.3: Running switch on node type: {_baseNodeData.GetType()}"); // <-- NEW LOG
             switch (_baseNodeData)
             {
                 case StartNodeData nodeData:
@@ -395,6 +453,7 @@ namespace MeetAndTalk
 
         private void RunNode(StartNodeData _nodeData)
         {
+            Debug.Log($"NEW BUILD v1.3: RunNode(StartNodeData) called for {_nodeData.NodeGuid}"); // <-- NEW LOG
             string GUID = _nodeData.NodeGuid;
             PlayerPrefs.SetString($"{dialogueContainer.name}_Progress", GUID);
 
@@ -406,11 +465,13 @@ namespace MeetAndTalk
 
         private void RunNode(RandomNodeData _nodeData)
         {
+            Debug.Log($"NEW BUILD v1.3: RunNode(RandomNodeData) called for {_nodeData.NodeGuid}"); // <-- NEW LOG
             string GUID = _nodeData.DialogueNodePorts[Random.Range(0, _nodeData.DialogueNodePorts.Count)].InputGuid;
             CheckNodeType(GetNodeByGuid(GUID));
         }
         private void RunNode(IfNodeData _nodeData)
         {
+            Debug.Log($"NEW BUILD v1.3: RunNode(IfNodeData) called for {_nodeData.NodeGuid}"); // <-- NEW LOG
             string ValueName = _nodeData.ValueName;
             GlobalValueIFOperations Operations = _nodeData.Operations;
             string OperationValue = _nodeData.OperationValue;
@@ -423,6 +484,7 @@ namespace MeetAndTalk
         }
         private void RunNode(DialogueNodeData _nodeData)
         {
+            Debug.Log($"NEW BUILD v1.3: RunNode(DialogueNodeData) called for {_nodeData.NodeGuid}"); // <-- NEW LOG
             //IEnumerator delaytmp()
             //{
             //    yield return new WaitForSeconds(_nodeData.Delay);
@@ -507,6 +569,7 @@ namespace MeetAndTalk
         }
         private void RunNode(DialogueChoiceNodeData _nodeData)
         {
+            Debug.Log($"NEW BUILD v1.3: RunNode(DialogueChoiceNodeData) called for {_nodeData.NodeGuid}"); // <-- NEW LOG
             lastDialogueNodeData = currentDialogueNodeData;
             currentDialogueNodeData = _nodeData;
 
@@ -557,6 +620,7 @@ namespace MeetAndTalk
         }
         private void RunNode(EventNodeData _nodeData)
         {
+            Debug.Log($"NEW BUILD v1.3: RunNode(EventNodeData) called for {_nodeData.NodeGuid}"); // <-- NEW LOG
             foreach (var item in _nodeData.EventScriptableObjects)
             {
                 if (item.DialogueEventSO != null)
@@ -569,6 +633,7 @@ namespace MeetAndTalk
 
         private void RunNode(EndNodeData _nodeData)
         {
+            Debug.Log($"NEW BUILD v1.3: RunNode(EndNodeData) called for {_nodeData.NodeGuid}"); // <-- NEW LOG
             PlayerPrefs.SetString($"{dialogueContainer.name}_Progress", "ENDED");
 
             switch (_nodeData.EndNodeType)
@@ -594,6 +659,7 @@ namespace MeetAndTalk
         }
         private void RunNode(TimerChoiceNodeData _nodeData)
         {
+            Debug.Log($"NEW BUILD v1.3: RunNode(TimerChoiceNodeData) called for {_nodeData.NodeGuid}"); // <-- NEW LOG
             lastDialogueNodeData = currentDialogueNodeData;
             currentDialogueNodeData = _nodeData;
 

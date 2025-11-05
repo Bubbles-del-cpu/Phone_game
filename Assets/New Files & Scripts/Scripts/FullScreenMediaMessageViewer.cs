@@ -22,7 +22,25 @@ public class FullScreenMediaMessageViewer : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        // --- NEW FIX #1: Check if the node is null ---
+        // This stops the crash if Setup() was never called (e.g., on save load).
+        if (_assignedNode == null)
+        {
+            Debug.LogError("FullScreenMediaMessageViewer was clicked, but _assignedNode is null. Setup() was likely never called on this bubble.");
+            return; // Stop the crash
+        }
+        // --- END FIX #1 ---
+
         var galleryCanvas = FindFirstObjectByType<GalleryCanvas>();
+
+        // --- NEW FIX #2: Check if the canvas was found ---
+        if (galleryCanvas == null)
+        {
+            Debug.LogError("FullScreenMediaMessageViewer could not find an active GalleryCanvas in the scene.");
+            return; // Stop a potential crash here too
+        }
+        // --- END FIX #2 ---
+
         switch (_type)
         {
             case MediaType.Sprite:

@@ -321,10 +321,17 @@ namespace MeetAndTalk
 
         public virtual bool ShouldDelay()
         {
+            // This new log will show us if the loop starts
+            if (_delayTimer == 0) // <-- NEW LOG
+            {
+                Debug.Log("NEW BUILD v1.1: Starting delay loop (DialogueChoiceNodeData) using unscaledDeltaTime."); // <-- NEW LOG
+            }
+
             _delayTimer += (Time.unscaledDeltaTime * (float)DialogueManager.Instance.DisplaySpeedMultipler);
             if (_delayTimer <= Duration)
                 return true;
 
+            Debug.Log($"NEW BUILD v1.Example: Finished delay loop for choice node: {NodeGuid}"); // <-- NEW LOG
             return false;
         }
     }
@@ -398,10 +405,18 @@ namespace MeetAndTalk
 
         public bool ShouldDelay()
         {
+            // This new log will show us if the loop starts
+            if (DelayTimer == 0) // <-- NEW LOG
+            {
+                Debug.Log($"NEW BUILD v1.1: Starting delay loop (DialogueNodeData) using unscaledDeltaTime for node: {NodeGuid} with duration: {Duration}"); // <-- NEW LOG
+            }
+
             DelayTimer += (Time.unscaledDeltaTime * (float)DialogueManager.Instance.DisplaySpeedMultipler);
             if (DelayTimer <= Duration)
                 return true;
 
+            // This new log will show us if the loop finishes
+            Debug.Log($"NEW BUILD v1.1: Finished delay loop for node: {NodeGuid}"); // <-- NEW LOG
             return false;
         }
 

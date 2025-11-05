@@ -64,19 +64,18 @@ public class MessagingConversationPanel : UIPanel
         }
 
         foreach (var obj in objectList)
-             Destroy(obj);
+            Destroy(obj);
     }
 
+    // --- THIS METHOD HAS BEEN RESTORED & FIXED ---
     public void AddElement(BaseNodeData nodeData, MessagingBubble prefab, string text, DialogueUIManager.MessageSource source, bool notification)
     {
-        //var wasNearBottom = ShouldAutoScroll();
+        // Re-added the loop to create hidden bubbles for layout
         for (var index = 0; index < MessageBubbleContainers.Length; index++)
         {
             var container = MessageBubbleContainers[index];
             var containerSource = (DialogueUIManager.MessageSource)index;
 
-            //Both panels recieve the same message - this allows both "sides" to scroll to the same locations without issue
-            //Depending on the source one side will be hidden and one will be visible.
             var hidden = source != containerSource;
 
             switch (nodeData)
@@ -85,7 +84,10 @@ public class MessagingConversationPanel : UIPanel
                     {
                         if (nd.GetTimeLapse().Length > 0)
                         {
-                            MessagingBubble _timelapseBubble = Instantiate(prefab, container);
+                            // --- CRASH FIX APPLIED ---
+                            MessagingBubble _timelapseBubble = Instantiate(prefab);
+                            _timelapseBubble.transform.SetParent(container, false);
+                            // --- END FIX ---
                             _timelapseBubble.Init(hidden, nd.GetTimeLapse());
                             _timelapseBubble.IsTimelapse = true;
                         }
@@ -93,7 +95,10 @@ public class MessagingConversationPanel : UIPanel
                         //Add element after timelapse
                         if (text != string.Empty || nd.Image != null || nd.Video != null)
                         {
-                            var bubble = Instantiate(prefab, container);
+                            // --- CRASH FIX APPLIED ---
+                            var bubble = Instantiate(prefab);
+                            bubble.transform.SetParent(container, false);
+                            // --- END FIX ---
                             bubble.Init(hidden, text);
                             bubble.SetupMediaViewer(nd);
                         }
@@ -110,7 +115,10 @@ public class MessagingConversationPanel : UIPanel
                         if (text != string.Empty && text[0] != '*')
                         {
                             //Frist character is the special action character so don't send the message
-                            var bubble = Instantiate(prefab, container);
+                            // --- CRASH FIX APPLIED ---
+                            var bubble = Instantiate(prefab);
+                            bubble.transform.SetParent(container, false);
+                            // --- END FIX ---
                             bubble.Init(source != containerSource, text);
                         }
                     }
@@ -129,7 +137,7 @@ public class MessagingConversationPanel : UIPanel
         yield return null;
 
         if (delay > 0)
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForSecondsRealtime(delay); // This was fixed in a previous step
 
         while (_scrollView.verticalNormalizedPosition > 0)
         {
@@ -165,9 +173,11 @@ public class MessagingConversationPanel : UIPanel
             }
         }
     }
-
+    
+    // --- THIS METHOD HAS BEEN RESTORED ---
     private void Update()
     {
+        // Reverted to original logic that works with the hidden bubble system
         _contentContainer.sizeDelta = new Vector2(_contentContainer.sizeDelta.x, messageBubbleContainers[0].sizeDelta.y);
     }
 
