@@ -125,7 +125,7 @@ namespace MeetAndTalk.Nodes
             requireCharacterInput_Field.RegisterValueChangedCallback(value =>
             {
                 requireCharacterInput = value.newValue;
-                AddTextFields(value.newValue);
+                PopulateContainer();
             });
 
             requireCharacterInput_Field.SetValueWithoutNotify(requireCharacterInput);

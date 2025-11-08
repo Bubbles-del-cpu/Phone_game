@@ -199,7 +199,7 @@ public class SaveAndLoadManager : MonoBehaviour
         catch (Exception) { }
     }
 
-    public void StartNewSave()
+    public void StartNewSave(bool startDialogue = true)
     {
         System.IO.File.Delete(GetPath(0));
 
@@ -208,7 +208,7 @@ public class SaveAndLoadManager : MonoBehaviour
 
         LoadSave(0);
 
-        GameManager.Instance.ResetGameState();
+        GameManager.Instance.ResetGameState(startDialogue);
         GameManager.Instance.ResetBackgroundImage();
     }
 }
