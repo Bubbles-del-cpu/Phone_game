@@ -870,43 +870,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!84 &55320029
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 6
-  m_Width: 1024
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 0
-  m_ColorFormat: 4
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_UseDynamicScaleExplicit: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!1 &56180241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,6 +1129,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69180845}
   m_CullTransparentMesh: 1
+--- !u!84 &72942795
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 6
+  m_Width: 1024
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 0
+  m_ColorFormat: 4
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_UseDynamicScaleExplicit: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &76090470
 GameObject:
   m_ObjectHideFlags: 0
@@ -3307,6 +3307,104 @@ MonoBehaviour:
         m_WaitForCompletion: 0
         m_LocalVariables: []
       OptionSetting2: false
+  - Story: {fileID: 11400000, guid: d4c8173f05afa094097eb723d8413082, type: 2}
+    StartID: 
+    ChapterIndex: 0
+    IsStoryChapter: 0
+    ReplaySettings:
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 10148775941169152
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Value:
+        ValueName: Continue_math
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 10149008259473408
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      OptionSetting1: true
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 10148971538341888
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      OptionSetting2: false
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 10148210532212736
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Value:
+        ValueName: khalid_meet
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:25c33b9c4e890044482bdbe4669d5c2f
+        m_TableEntryReference:
+          m_KeyId: 9340416000
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      OptionSetting1: true
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:25c33b9c4e890044482bdbe4669d5c2f
+        m_TableEntryReference:
+          m_KeyId: 235388235776
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      OptionSetting2: false
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 10148532239523840
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Value:
+        ValueName: support_no_condom_nts
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:25c33b9c4e890044482bdbe4669d5c2f
+        m_TableEntryReference:
+          m_KeyId: 9340416000
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      OptionSetting1: true
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:25c33b9c4e890044482bdbe4669d5c2f
+        m_TableEntryReference:
+          m_KeyId: 235388235776
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      OptionSetting2: false
   StandaloneChapters:
   - Story: {fileID: 11400000, guid: d4c97dc564b9dab409c930d50f4456ab, type: 2}
     StartID: 
@@ -5154,7 +5252,7 @@ MonoBehaviour:
   socialMediaCanvas: {fileID: 1527154566}
   settingsCanvas: {fileID: 1721397299}
   overlayCanvas: {fileID: 535420369}
-  EnableLanaguageSwitching: 1
+  EnableLanaguageSwitching: 0
   GalleryConfig: {fileID: 11400000, guid: f190a8fe1415a9c488f19c2ad45bd59e, type: 2}
   _backgroundImageComponent: {fileID: 1145815081}
   _backgroundTextureBlur: {fileID: 1913427039}
@@ -17834,7 +17932,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 55320029}
+  m_Texture: {fileID: 72942795}
   m_UVRect:
     serializedVersion: 2
     x: 0
