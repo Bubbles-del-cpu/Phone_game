@@ -188,7 +188,7 @@ public class DialogueChapterManager : UICanvas
     {
         OverlayCanvas.Instance.FadeToBlack(() =>
         {
-            GameManager.Instance.ResetGameState();
+            GameManager.Instance.ResetGameState(false);
             TriggerStoryChapter(SaveAndLoadManager.Instance.CurrentSave.CurrentState.CompletedChapters.Count);
 
             //Open chapter selection
