@@ -16,6 +16,7 @@ public class MessagingConversationPanel : UIPanel
     [SerializeField] RectTransform _contentContainer;
     [SerializeField] private ProfileIcon _characterIcon;
     [SerializeField] private TMP_Text _characterName;
+    [SerializeField] private MatchChildScaleAutomatic[] _messageContainers;
     DialogueCharacterSO character;
 
     public int ChildCount => messageBubbleContainers[0].transform.childCount;
@@ -65,6 +66,8 @@ public class MessagingConversationPanel : UIPanel
 
         foreach (var obj in objectList)
              Destroy(obj);
+
+        UpdateChildContainers();
     }
 
     public void AddElement(BaseNodeData nodeData, MessagingBubble prefab, string text, DialogueUIManager.MessageSource source, bool notification)
@@ -119,6 +122,7 @@ public class MessagingConversationPanel : UIPanel
         }
 
         Canvas.ForceUpdateCanvases();
+        UpdateChildContainers();
         StartCoroutine(CoAutoScrollToBottom());
     }
 
@@ -164,11 +168,20 @@ public class MessagingConversationPanel : UIPanel
                 Destroy(item.GetChild(index).gameObject, 1);
             }
         }
+        UpdateChildContainers();
     }
 
     private void Update()
     {
         _contentContainer.sizeDelta = new Vector2(_contentContainer.sizeDelta.x, messageBubbleContainers[0].sizeDelta.y);
+    }
+
+    private void UpdateChildContainers()
+    {
+        foreach (var item in _messageContainers)
+        {
+            item.UpdateSize();
+        }
     }
 
     public RectTransform[] MessageBubbleContainers { get { return messageBubbleContainers; } }
