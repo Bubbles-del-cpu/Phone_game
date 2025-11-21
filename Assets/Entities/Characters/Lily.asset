@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName:
   - languageEnum: 0
-    LanguageGenericType: Clair
+    LanguageGenericType: Lily
+  - languageEnum: 1
+    LanguageGenericType: Lily
   CustomizedName:
     ValueName: PlayerName
+    LastValue: 
   UseGlobalValue: 0
   Images:
   - {fileID: 21300000, guid: bc9b1a7194f02f94898cc95fb7ab6083, type: 3}

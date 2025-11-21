@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.0627451, b: 0.19607845, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 0
+  m_ShowMaskGraphic: 1
 --- !u!1 &4004459794470890854
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,6 +839,7 @@ MonoBehaviour:
   _likedButton: {fileID: 4781053621695390025}
   _likeSprite: {fileID: -7913360812853490349, guid: 5bbf886483dfd0e4690160d6a969675b, type: 3}
   _unlikeSprite: {fileID: -556584299334786685, guid: a5c158c406467374590860f797466401, type: 3}
+  _debugSprite: {fileID: 0}
 --- !u!114 &2424385090514126201
 MonoBehaviour:
   m_ObjectHideFlags: 0

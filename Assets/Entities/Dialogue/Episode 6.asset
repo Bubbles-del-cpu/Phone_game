@@ -394,7 +394,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Is this Esmeralda again?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u307E\u305FEsmeralda\u3067\u3059\u304B\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -413,12 +413,12 @@ MonoBehaviour:
       LanguageGenericType: We have received news back regarding your dissatisfaction
         about your coverage for your medication.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u304A\u5BA2\u69D8\u306E\u51E6\u65B9\u85AC\u306E\u88DC\u511F\u306B\u3064\u3044\u3066\u306E\u4E0D\u6E80\u306B\u95A2\u3057\u3001\u30D5\u30A3\u30FC\u30C9\u30D0\u30C3\u30AF\u3092\u53D7\u3051\u53D6\u308A\u307E\u3057\u305F\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 19ecbe23-dea2-4708-999c-83bf7876af4c
     Position: {x: 1415, y: 334}
     DialogueNodePorts:
@@ -429,7 +429,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Basic users?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u57FA\u672C\u30E6\u30FC\u30B6\u30FC\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -448,12 +448,12 @@ MonoBehaviour:
       LanguageGenericType: This is based on the fact that it's clearly disclosed
         in our policy that experimental medication is not covered for our basic users.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3053\u308C\u306F\u3001\u5B9F\u9A13\u7684\u306A\u6295\u85AC\u304C\u5F53\u793E\u306E\u57FA\u672C\u30E6\u30FC\u30B6\u30FC\u306B\u306F\u88DC\u511F\u3055\u308C\u306A\u3044\u3053\u3068\u304C\u3001\u898F\u7D04\u306B\u660E\u78BA\u306B\u958B\u793A\u3055\u308C\u3066\u3044\u308B\u3068\u3044\u3046\u4E8B\u5B9F\u306B\u57FA\u3065\u3044\u3066\u3044\u307E\u3059\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 18a380ec-ed2d-4338-91eb-a4d419caf78a
     Position: {x: 1725, y: 319}
     DialogueNodePorts:
@@ -464,7 +464,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: So if I had the "Premium" plan, it would have been covered?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3067\u306F\u3001\u3082\u3057\u300CPremium\u300D\u30D7\u30E9\u30F3\u3060\u3063\u305F\u3089\u3001\u88DC\u511F\u3055\u308C\u3066\u3044\u305F\u3068\u3044\u3046\u3053\u3068\u3067\u3059\u304B\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -483,12 +483,12 @@ MonoBehaviour:
       LanguageGenericType: Yes, that's correct. You are using the basic insurance
         plan at the moment.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u306F\u3044\u3001\u305D\u306E\u901A\u308A\u3067\u3059\u3002\u73FE\u5728\u3001\u304A\u5BA2\u69D8\u306F\u57FA\u672C\u306E\u4FDD\u967A\u30D7\u30E9\u30F3\u3092\u3054\u5229\u7528\u3067\u3059\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 976929de-1ea0-4e12-b254-8f0b586e9ef0
     Position: {x: 2029, y: 313}
     DialogueNodePorts:
@@ -499,7 +499,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: How much more is the premium plan?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "Premium\u30D7\u30E9\u30F3\u306F\u3042\u3068\u3044\u304F\u3089\u3067\u3059\u304B\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -517,12 +517,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: That's correct.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u306E\u901A\u308A\u3067\u3054\u3056\u3044\u307E\u3059\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 141efb33-c1be-471b-a964-d95da85e993c
     Position: {x: 2332, y: 312}
     DialogueNodePorts:
@@ -533,7 +533,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Only ten dollars?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u305F\u3063\u305F\u306E10\u30C9\u30EB\u3067\u3059\u304B\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -551,12 +551,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: It's 10 dollars more per month.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u6708\u300510\u30C9\u30EB\u8FFD\u52A0\u3068\u306A\u308A\u307E\u3059\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: c6107ab8-5c01-4d3b-b0f2-30b3cca2956f
     Position: {x: 2641, y: 317}
     DialogueNodePorts:
@@ -567,7 +567,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: How much do I owe you guys for the medication?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3053\u306E\u6295\u85AC\u306B\u95A2\u3057\u3066\u3001\u5F0A\u793E\u306B\u3044\u304F\u3089\u304A\u652F\u6255\u3044\u3044\u305F\u3060\u304F\u3053\u3068\u306B\u306A\u308A\u307E\u3059\u304B\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -585,12 +585,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: That's correct.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u306E\u901A\u308A\u3067\u3054\u3056\u3044\u307E\u3059\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 5974e7b7-9fcd-46c1-a1af-68e106eae531
     Position: {x: 3155, y: 323}
     DialogueNodePorts:
@@ -601,7 +601,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: PER WEEK?!
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u4E00\u9031\u9593\u3042\u305F\u308A\u3067\u3001\u3067\u3059\u304B\uFF1F\uFF01"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -619,12 +619,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: It comes down to 420.89 per week.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u9031\u3042\u305F\u308A420.89\u30C9\u30EB\u306B\u306A\u308A\u307E\u3059\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: fa7d37e0-f8ce-47b8-9899-ad3ee4289798
     Position: {x: 3477, y: 320}
     DialogueNodePorts:
@@ -635,7 +635,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Are you serious?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u672C\u6C17\u3067\u3059\u304B\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -658,7 +658,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 461e9507-1bca-4446-b5e0-95da993c0d11
     Position: {x: 3786, y: 328}
     DialogueNodePorts:
@@ -669,7 +669,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Can I upgrade to the premium plan?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u30D7\u30EC\u30DF\u30A2\u30E0\u30D7\u30E9\u30F3\u306B\u30A2\u30C3\u30D7\u30B0\u30EC\u30FC\u30C9\u3067\u304D\u307E\u3059\u304B\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -692,7 +692,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 9cc0a2ac-65ca-47e5-86ec-fcfafd0bd51c
     Position: {x: 4091, y: 331}
     DialogueNodePorts:
@@ -703,7 +703,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: This must be a joke.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3053\u308C\u306F\u5197\u8AC7\u3067\u3057\u3087\u3046\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -722,12 +722,12 @@ MonoBehaviour:
       LanguageGenericType: Sorry, but since you currently have a pre-existing condition,
         we can't offer you an upgrade to our premium plan.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u7533\u3057\u8A33\u3054\u3056\u3044\u307E\u305B\u3093\u304C\u3001\u73FE\u5728\u3001\u304A\u5BA2\u69D8\u306B\u306F\u6301\u75C5\u304C\u3054\u3056\u3044\u307E\u3059\u305F\u3081\u3001\u30D7\u30EC\u30DF\u30A2\u30E0\u30D7\u30E9\u30F3\u3078\u306E\u30A2\u30C3\u30D7\u30B0\u30EC\u30FC\u30C9\u306F\u3054\u63D0\u4F9B\u3067\u304D\u307E\u305B\u3093\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: b7cb439f-44cb-4bde-8884-55080b129bd0
     Position: {x: 4402, y: 335}
     DialogueNodePorts:
@@ -738,7 +738,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Unbelievable.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u4FE1\u3058\u3089\u308C\u307E\u305B\u3093\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -756,12 +756,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I understand how you feel, but this is not a joke.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: I understand how you feel, but this is not a joke.
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: c0ec38d0-e92b-46fa-acc6-2673c0661d7a
     Position: {x: 4706, y: 334}
     DialogueNodePorts:
@@ -773,7 +773,7 @@ MonoBehaviour:
         LanguageGenericType: You're telling me I could have just paid 10 dollars
           more and all this wouldn't have happened?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u305F\u3063\u305F10\u30C9\u30EB\u591A\u304F\u6255\u3046\u3060\u3051\u3067\u3001\u3053\u306E\u5168\u3066\u3092\u56DE\u907F\u3067\u304D\u305F\u3068\u3044\u3046\u3053\u3068\u3067\u3059\u304B\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -796,7 +796,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: f7ed5cf9-5575-4e20-9ea8-dfc3bf7e3a2d
     Position: {x: 5219, y: 325}
     DialogueNodePorts:
@@ -807,7 +807,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Fuck you.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3075\u3056\u3051\u308B\u306A\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -820,7 +820,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: No, bye.
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "\u3044\u3044\u3048\u3001\u3055\u3088\u3046\u306A\u3089\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -843,7 +843,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: c0bf7598-1c79-4e1b-a4a2-631d1ffe05ea
     Position: {x: 7400, y: 306}
     DialogueNodePorts:
@@ -854,7 +854,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Thanks for letting me know.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u304A\u77E5\u3089\u305B\u3044\u305F\u3060\u304D\u3001\u3042\u308A\u304C\u3068\u3046\u3054\u3056\u3044\u307E\u3059\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -873,12 +873,12 @@ MonoBehaviour:
       LanguageGenericType: The appointment with the doctor has been scheduled for
         tomorrow.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u533B\u5E2B\u3068\u306E\u4E88\u7D04\u306F\u660E\u65E5\u3067\u624B\u914D\u3044\u305F\u3057\u307E\u3057\u305F\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: c99004e4-07c4-4857-9055-ed487ec7c72e
     Position: {x: 8487, y: 303}
     DialogueNodePorts:
@@ -889,7 +889,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Is my beautiful wife awake already?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u50D5\u306E\u7F8E\u3057\u3044\u59BB\u306F\u3082\u3046\u8D77\u304D\u305F\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -912,7 +912,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 5befa40e-0f25-4ad2-9181-a283df460a0f
     Position: {x: 8797, y: 291}
     DialogueNodePorts:
@@ -923,7 +923,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Hello?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3082\u3057\u3082\u3057\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -946,7 +946,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: fe5f2e58-4e28-4b29-af7e-60f586a04597
     Position: {x: 9420, y: 294}
     DialogueNodePorts:
@@ -958,7 +958,7 @@ MonoBehaviour:
         LanguageGenericType: All that action over the past two days took a toll on
           you, I see.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3053\u306E\u4E8C\u65E5\u9593\u306E\u884C\u52D5\u3067\u3001\u75B2\u308C\u305F\u307F\u305F\u3044\u3060\u306D\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -981,7 +981,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 57f5a767-7d1b-45a6-9b0a-5637c17f1010
     Position: {x: 9113, y: 308}
     DialogueNodePorts:
@@ -992,7 +992,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Haha, sleepyhead.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u30CF\u30CF\u3001\u5BDD\u574A\u52A9\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1010,12 +1010,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Not really.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u3046\u3067\u3082\u306A\u3044\u3088\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: b99caf9e-06fd-4e04-8dc2-07a88a0c418e
     Position: {x: 9717, y: 302}
     DialogueNodePorts:
@@ -1026,7 +1026,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: A little?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5C11\u3057\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1044,12 +1044,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Maybe a little.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5C11\u3057\u3060\u3051\u306D\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 80812801-e518-47f7-85e3-f138419c0bdd
     Position: {x: 10032, y: 298}
     DialogueNodePorts:
@@ -1060,7 +1060,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: "\U0001F602"
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\U0001F602"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1078,12 +1078,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Just a little, yeah...
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u672C\u5F53\u306B\u3061\u3087\u3063\u3068\u3060\u3051\u3001\u3046\u3093..."
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 85f3be10-aa15-4981-9d76-239b7bb79309
     Position: {x: 10335, y: 300}
     DialogueNodePorts:
@@ -1094,7 +1094,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: So what are the plans for today?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u305D\u308C\u3067\u3001\u4ECA\u65E5\u306E\u4E88\u5B9A\u306F\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1117,7 +1117,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 69b7ac55-11e5-450f-a856-a7367090411b
     Position: {x: 10844, y: 286}
     DialogueNodePorts:
@@ -1128,7 +1128,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: ' Sounds good, you definitely deserve it.'
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3044\u3044\u306D\u3001\u3042\u306A\u305F\u306F\u672C\u5F53\u306B\u305D\u308C\u306B\u5024\u3059\u308B\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1146,12 +1146,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: It might be a good idea to have a lazy day.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u4ECA\u65E5\u306F\u306E\u3093\u3073\u308A\u904E\u3054\u3059\u306E\u3082\u826F\u3044\u304B\u3082\u3057\u308C\u306A\u3044\u306D\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: ba0a7e2c-0d11-4960-9e48-03e3859c62ba
     Position: {x: 11762, y: 283}
     DialogueNodePorts:
@@ -1163,7 +1163,7 @@ MonoBehaviour:
         LanguageGenericType: Sounds like you should enjoy the peace and quiet while
           you still can.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u4ECA\u306E\u3046\u3061\u306B\u9759\u3051\u3055\u3092\u697D\u3057\u3093\u3067\u304A\u304F\u3079\u304D\u3060\u306D\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1181,12 +1181,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I'll just have to wait and see.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5F85\u3063\u3066\u69D8\u5B50\u3092\u898B\u308B\u3057\u304B\u306A\u3044\u306D\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 71a4c717-24c0-45bf-8ce8-dae84b71f784
     Position: {x: 12071, y: 286}
     DialogueNodePorts:
@@ -1197,7 +1197,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Sounds good. Love you.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3044\u3044\u306D\u3002\u611B\u3057\u3066\u3044\u308B\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1216,12 +1216,12 @@ MonoBehaviour:
       LanguageGenericType: Exactly. I'll update you when the peace and quiet has
         been disturbed.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u306E\u901A\u308A\u3002\u9759\u3051\u3055\u304C\u4E71\u3055\u308C\u305F\u3089\u3001\u307E\u305F\u9023\u7D61\u3059\u308B\u3088\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 3f51768a-6779-4ffb-af5f-f6b8db8826d2
     Position: {x: 13130, y: 285}
     DialogueNodePorts:
@@ -1232,7 +1232,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Good morning.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u304A\u306F\u3088\u3046\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1250,12 +1250,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: How are you feeling, bro?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u6C17\u5206\u306F\u3069\u3046\u3001bro\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 9b025f54-adbc-44d1-a8e5-032bed940733
     Position: {x: 13431, y: 289}
     DialogueNodePorts:
@@ -1266,7 +1266,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: "To be honest\u2026 not that good, bro."
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u6B63\u76F4\u306B\u8A00\u3046\u3068... \u3042\u307E\u308A\u826F\u304F\u306A\u3044\u3088\u3001bro\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1289,7 +1289,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 6ff620af-be39-4b0f-ac91-43dccf58e7f9
     Position: {x: 13733, y: 290}
     DialogueNodePorts:
@@ -1300,7 +1300,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I just received the first invoice from the insurance.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u4FDD\u967A\u4F1A\u793E\u304B\u3089\u6700\u521D\u306E\u8ACB\u6C42\u66F8\u304C\u5C4A\u3044\u305F\u3070\u304B\u308A\u306A\u3093\u3060\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1323,7 +1323,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 1d6620f1-14d7-43a5-b997-37240fe428a8
     Position: {x: 14040, y: 283}
     DialogueNodePorts:
@@ -1334,7 +1334,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: It's quite bad.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u304B\u306A\u308A\u3072\u3069\u3044\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1352,12 +1352,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: That bad?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u3093\u306A\u306B\u3072\u3069\u3044\u306E\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 8df699b5-8a12-44fa-88ea-441b083f9f42
     Position: {x: 14624, y: 265}
     DialogueNodePorts:
@@ -1368,7 +1368,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: They can't help me.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5F7C\u3089\u306F\u50D5\u3092\u52A9\u3051\u3089\u308C\u306A\u3044\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1391,7 +1391,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: f40bea6e-0bf1-43b9-bf66-ebaf9b435d4b
     Position: {x: 15154, y: 254}
     DialogueNodePorts:
@@ -1403,7 +1403,7 @@ MonoBehaviour:
         LanguageGenericType: I'll tell her tomorrow. I also have a conversation with
           my doctor tomorrow about the future use of the medication.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5F7C\u5973\u306B\u306F\u660E\u65E5\u8A71\u3059\u3088\u3002\u305D\u308C\u306B\u3001\u85AC\u306E\u4ECA\u5F8C\u306E\u4F7F\u7528\u306B\u3064\u3044\u3066\u3082\u3001\u660E\u65E5\u533B\u5E2B\u3068\u8A71\u3059\u4E88\u5B9A\u3060\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1421,12 +1421,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Did you tell Lily?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "Lily\u306B\u306F\u8A71\u3057\u305F\u306E\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 1c7233ea-97aa-416f-beca-08f897ddc94e
     Position: {x: 15677, y: 257}
     DialogueNodePorts:
@@ -1437,7 +1437,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I don't know.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5206\u304B\u3089\u306A\u3044\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1455,12 +1455,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Is there a chance you'll stop the medication?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u6295\u85AC\u3092\u4E2D\u6B62\u3059\u308B\u53EF\u80FD\u6027\u304C\u3042\u308B\u306E\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 3eb10f3e-b485-49d6-bcb3-58ce86029245
     Position: {x: 16009, y: 251}
     DialogueNodePorts:
@@ -1472,7 +1472,7 @@ MonoBehaviour:
         LanguageGenericType: "But I do know I really don\u2019t want to go back to
           how I was feeling before the medication."
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3067\u3082\u3001\u6295\u85AC\u524D\u306E\u6C17\u5206\u306B\u623B\u308A\u305F\u304F\u306A\u3044\u306E\u306F\u78BA\u304B\u3060\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1495,7 +1495,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 309610d5-0d77-428d-b022-424ed3c9ea69
     Position: {x: 16327, y: 254}
     DialogueNodePorts:
@@ -1506,7 +1506,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Thanks, I'll think about it.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3042\u308A\u304C\u3068\u3046\u3001\u8003\u3048\u3066\u304A\u304F\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1525,12 +1525,12 @@ MonoBehaviour:
       LanguageGenericType: "Once again, bro. If you need any help, don\u2019t hesitate
         to ask."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3082\u3046\u4E00\u5EA6\u8A00\u3046\u3088\u3001bro\u3002\u4F55\u304B\u52A9\u3051\u304C\u5FC5\u8981\u306A\u3089\u3001\u9060\u616E\u306A\u304F\u8A00\u3063\u3066\u306D\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: ebc4da75-5e6e-44da-b525-4775067e66f3
     Position: {x: 16642, y: 260}
     DialogueNodePorts:
@@ -1541,7 +1541,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: But I only see it as a last resort.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3067\u3082\u3001\u305D\u308C\u306F\u6700\u5F8C\u306E\u624B\u6BB5\u3068\u3057\u304B\u8003\u3048\u3066\u3044\u306A\u3044\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1564,7 +1564,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 0c08da44-0258-4d20-b45e-fa269e3de8ed
     Position: {x: 16968, y: 253}
     DialogueNodePorts:
@@ -1575,7 +1575,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: "I won\u2019t forget."
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5FD8\u308C\u306A\u3044\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1593,12 +1593,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Just remember the option is there.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u306E\u9078\u629E\u80A2\u304C\u3042\u308B\u3063\u3066\u3053\u3068\u3060\u3051\u306F\u899A\u3048\u3066\u304A\u3044\u3066\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: a225d5c3-321f-4a02-9a74-952b84a6059e
     Position: {x: 17286, y: 252}
     DialogueNodePorts:
@@ -1609,7 +1609,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Any plans for the rest of the day?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u4ECA\u65E5\u306E\u6B8B\u308A\u306E\u6642\u9593\u306F\u4F55\u304B\u4E88\u5B9A\u3042\u308B\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1627,12 +1627,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: ' Good.'
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u826F\u304B\u3063\u305F\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 789eb515-d183-4869-b7da-6c878548a451
     Position: {x: 17810, y: 263}
     DialogueNodePorts:
@@ -1643,7 +1643,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Great idea, it does look really nice there.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u7D20\u6674\u3089\u3057\u3044\u30A2\u30A4\u30C7\u30A2\u3060\u306D\u3002\u305D\u3053\u306F\u672C\u5F53\u306B\u7D20\u6575\u306B\u898B\u3048\u308B\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1661,12 +1661,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Lisa and I will go there today.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "Lisa\u3068\u50D5\u306F\u4ECA\u65E5\u3001\u305D\u3053\u306B\u884C\u304F\u3088\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: f3150ec2-5fa1-43bf-b73c-6bc9748b9931
     Position: {x: 18530, y: 264}
     DialogueNodePorts:
@@ -1678,7 +1678,7 @@ MonoBehaviour:
         LanguageGenericType: "Yeah, his name is Math. They met him at a restaurant.
           He\u2019s been showing Lily and Izzy some parts of the island."
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3046\u3093\u3001\u5F7C\u306E\u540D\u524D\u306FMath\u3060\u3088\u3002\u30EC\u30B9\u30C8\u30E9\u30F3\u3067\u5F7C\u306B\u4F1A\u3063\u305F\u3093\u3060\u3002\u5F7C\u306FLily\u3068Izzy\u306B\u5CF6\u306E\u3044\u304F\u3064\u304B\u306E\u5834\u6240\u3092\u6848\u5185\u3057\u3066\u3044\u308B\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1697,12 +1697,13 @@ MonoBehaviour:
       LanguageGenericType: Do you know anything about this guy? Do you know who he
         is?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3053\u306E\u7537\u306B\u3064\u3044\u3066\u4F55\u304B\u77E5\u3063\u3066\u308B\uFF1F
+        \u5F7C\u306F\u8AB0\u304B\u77E5\u3063\u3066\u308B\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 3c8faee6-8c60-45c9-b585-64f09420b434
     Position: {x: 18835, y: 273}
     DialogueNodePorts:
@@ -1713,7 +1714,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: "I don\u2019t see any issues."
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u7279\u306B\u554F\u984C\u306F\u306A\u3044\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1731,12 +1732,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "Aah, okay. You\u2019re cool with that?"
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3042\u3042\u3001\u306A\u308B\u307B\u3069\u3002\u541B\u306F\u305D\u308C\u3067\u5927\u4E08\u592B\u306A\u306E\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 1adae229-36c2-4b97-8ffe-78f18daae8b7
     Position: {x: 19164, y: 269}
     DialogueNodePorts:
@@ -1748,7 +1749,7 @@ MonoBehaviour:
         LanguageGenericType: "Don\u2019t worry bro. I trust Lily. There\u2019s nothing
           to worry about."
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5FC3\u914D\u3057\u306A\u3044\u3067\u3001bro\u3002Lily\u3092\u4FE1\u983C\u3057\u3066\u3044\u308B\u3002\u4F55\u3082\u5FC3\u914D\u3059\u308B\u3053\u3068\u306F\u306A\u3044\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1766,12 +1767,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Okay, good good. Just checking.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5206\u304B\u3063\u305F\u3001\u826F\u304B\u3063\u305F\u3002\u78BA\u8A8D\u3057\u305F\u3060\u3051\u3060\u3088\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 15864dc3-b8a0-4558-a44f-7b2c0899234d
     Position: {x: 21080, y: 229}
     DialogueNodePorts:
@@ -1782,7 +1783,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Bye bro. Have fun today.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3058\u3083\u3042\u306D\u3001bro\u3002\u4ECA\u65E5\u4E00\u65E5\u697D\u3057\u3093\u3067\u306D\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1805,7 +1806,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: ccc5b0e5-320d-4093-96c9-68603dc8f7a9
     Position: {x: 21719, y: 287}
     DialogueNodePorts:
@@ -1816,7 +1817,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: What are the plans?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3069\u3093\u306A\u4E88\u5B9A\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1839,7 +1840,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 681cf6f4-6001-4eda-a0eb-fd12961b46fe
     Position: {x: 22039, y: 283}
     DialogueNodePorts:
@@ -1850,7 +1851,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Hello?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3082\u3057\u3082\u3057\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1873,7 +1874,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: f61df012-3c98-4ea1-9680-bf5b95a8d185
     Position: {x: 22669, y: 282}
     DialogueNodePorts:
@@ -1884,7 +1885,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Hey Izzy
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u306D\u3048\u3001Izzy\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1897,7 +1898,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Good morning Izzy
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "\u304A\u306F\u3088\u3046\u3001Izzy\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1920,7 +1921,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 3a77ecda-5d83-491c-a987-363207003a0d
     Position: {x: 22989, y: 268}
     DialogueNodePorts:
@@ -1931,7 +1932,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Do you know where Lily is?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "Lily\u304C\u3069\u3053\u306B\u3044\u308B\u304B\u77E5\u3063\u3066\u308B\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1954,7 +1955,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 8a5623ce-189e-45f0-8113-b07aa7953561
     Position: {x: 23802, y: 289}
     DialogueNodePorts:
@@ -1965,7 +1966,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Uhu
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3046\u3093\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1983,12 +1984,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: hehe
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: hehe
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: f1fbfd66-0609-4ba0-882d-e4bc0b664b23
     Position: {x: 24516, y: 288}
     DialogueNodePorts:
@@ -1999,7 +2000,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Sounds intriguing
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u8208\u5473\u6DF1\u3044\u306D\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2017,12 +2018,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: We're going to do some very special shopping today
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u4ECA\u65E5\u306F\u3068\u3066\u3082\u7279\u5225\u306A\u8CB7\u3044\u7269\u3092\u3059\u308B\u3093\u3060\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 15bd8ad1-4a62-451c-8b77-709f420942b6
     Position: {x: 25024, y: 284}
     DialogueNodePorts:
@@ -2033,7 +2034,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: "You\u2019ll never change, will you"
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3042\u306A\u305F\u306F\u6C7A\u3057\u3066\u5909\u308F\u3089\u306A\u3044\u306D\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2051,12 +2052,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: So I'm not telling you anything else
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3060\u304B\u3089\u3001\u3053\u308C\u4EE5\u4E0A\u306F\u4F55\u3082\u6559\u3048\u306A\u3044\u3088\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 64bf29d6-8866-4b1a-8e36-6e4133d5e0c7
     Position: {x: 25785, y: 262}
     DialogueNodePorts:
@@ -2067,7 +2068,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Hmmm
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3093\u30FC..."
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2080,7 +2081,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: What is it?
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "\u4F55\u306A\u306E\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2103,7 +2104,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 624d0694-d882-4071-94ec-3cf5bd2ffe71
     Position: {x: 26105, y: 267}
     DialogueNodePorts:
@@ -2114,7 +2115,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: "Let me guess\u2026 it's going to be a picture of Lily"
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5F53\u3066\u3066\u307F\u3088\u3046\u304B... Lily\u306E\u5199\u771F\u306B\u306A\u308B\u3093\u3067\u3057\u3087\u3046\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2132,12 +2133,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "I'm sure you\u2019ll like it"
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u304D\u3063\u3068\u6C17\u306B\u5165\u308B\u3068\u601D\u3046\u3088\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: ceb25318-854e-48ec-a835-763d16108293
     Position: {x: 26825, y: 267}
     DialogueNodePorts:
@@ -2148,7 +2149,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: A catch?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u843D\u3068\u3057\u7A74\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2166,12 +2167,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: There's a catch
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305F\u3060\u3057\u3001\u843D\u3068\u3057\u7A74\u304C\u3042\u308B\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: f4833515-13ad-4c09-a800-ec20c7f3007a
     Position: {x: 27741, y: 269}
     DialogueNodePorts:
@@ -2182,12 +2183,12 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: "Let\u2019s do it"
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3084\u308D\u3046\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: This answer will unlock an extra picture
       - languageEnum: 1
-        LanguageGenericType: 
+        LanguageGenericType: "\u3053\u306E\u7B54\u3048\u3067\u3001\u8FFD\u52A0\u306E\u5199\u771F\u3092\u30A2\u30F3\u30ED\u30C3\u30AF\u3067\u304D\u308B\u3002"
     - PortGuid: 3cb60945-72cb-45dc-a5f5-0f37211c14a4
       InputGuid: b1f904d2-2cbb-4b2f-918d-6d60569f6947
       OutputGuid: f4833515-13ad-4c09-a800-ec20c7f3007a
@@ -2195,7 +2196,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: "I don\u2019t like that idea"
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "\u305D\u306E\u30A2\u30A4\u30C7\u30A2\u306F\u597D\u304D\u3058\u3083\u306A\u3044\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2213,12 +2214,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "So\u2026 what do you say?"
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u308C\u3067... \u3069\u3046\u3059\u308B\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 595afb9f-6b7a-4f2a-8012-1e0c73f0e670
     Position: {x: 28799, y: 69}
     DialogueNodePorts:
@@ -2229,7 +2230,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I can't see anything
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u4F55\u3082\u898B\u3048\u306A\u3044\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2240,9 +2241,9 @@ MonoBehaviour:
       OutputGuid: 595afb9f-6b7a-4f2a-8012-1e0c73f0e670
       TextLanguage:
       - languageEnum: 0
-        LanguageGenericType: Send me the picture, Izzy
+        LanguageGenericType: Send me the picture Izzy
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "Izzy\u3001\u305D\u306E\u5199\u771F\u3092\u9001\u3063\u3066\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2260,12 +2261,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Amazing, isn't it?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3059\u3054\u3044\u3067\u3057\u3087\u3046\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: c698c1ef-9769-4192-ac7c-32363f68a086
     Position: {x: 29450, y: -227}
     DialogueNodePorts:
@@ -2274,9 +2275,9 @@ MonoBehaviour:
       OutputGuid: c698c1ef-9769-4192-ac7c-32363f68a086
       TextLanguage:
       - languageEnum: 0
-        LanguageGenericType: You're so mean, Izzy
+        LanguageGenericType: You're so mean Izzy
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "Izzy\u306F\u610F\u5730\u60AA\u3060\u306D\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2294,12 +2295,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Math sure can
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "Math\u306A\u3089\u3067\u304D\u308B\u3088\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 125df3e6-ee83-42ee-8ee0-d416b7383645
     Position: {x: 30686, y: 210}
     DialogueNodePorts:
@@ -2310,7 +2311,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: it is
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u305D\u3046\u3060\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2323,7 +2324,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: You acctualy sent this to Math?
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "\u672C\u5F53\u306B\u3053\u308C\u3092Math\u306B\u9001\u3063\u305F\u306E\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2341,12 +2342,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "Amazing, isn\u2019t it?"
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3059\u3054\u3044\u3067\u3057\u3087\u3046\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 4a8db035-9959-4de4-a2f8-e4d2682d455e
     Position: {x: 31966, y: 782}
     DialogueNodePorts:
@@ -2355,9 +2356,9 @@ MonoBehaviour:
       OutputGuid: 4a8db035-9959-4de4-a2f8-e4d2682d455e
       TextLanguage:
       - languageEnum: 0
-        LanguageGenericType: Thanks, Izzy
+        LanguageGenericType: Thanks Izzy
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3042\u308A\u304C\u3068\u3046\u3001Izzy\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2375,12 +2376,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "I\u2019ll tell Lily you were looking for her"
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "Lily\u306B\u3001\u541B\u304C\u5F7C\u5973\u3092\u63A2\u3057\u3066\u3044\u305F\u3068\u4F1D\u3048\u308B\u3088\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 2aecc165-7e0a-4294-be99-2a98aa33be13
     Position: {x: 33132, y: 392}
     DialogueNodePorts:
@@ -2389,9 +2390,9 @@ MonoBehaviour:
       OutputGuid: 2aecc165-7e0a-4294-be99-2a98aa33be13
       TextLanguage:
       - languageEnum: 0
-        LanguageGenericType: No problem, darling
+        LanguageGenericType: No problem darling
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3069\u3046\u3044\u305F\u3057\u307E\u3057\u3066\u3001\u30C0\u30FC\u30EA\u30F3\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2414,7 +2415,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: f72241aa-e392-446a-b34e-49703351dae0
     Position: {x: 33448, y: 391}
     DialogueNodePorts:
@@ -2425,7 +2426,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Have fun there
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u697D\u3057\u3093\u3067\u304D\u3066\u306D\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2443,12 +2444,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: We're on the way to the mall now
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u4ECA\u3001\u30E2\u30FC\u30EB\u306B\u5411\u304B\u3063\u3066\u3044\u308B\u3068\u3053\u308D\u3060\u3088\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 377a62bc-8c01-4fe1-9e77-3f25b0d09dc1
     Position: {x: 33982, y: 381}
     DialogueNodePorts:
@@ -2459,7 +2460,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Love you too
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u79C1\u3082\u611B\u3057\u3066\u3044\u308B\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2477,12 +2478,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Love you
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u611B\u3057\u3066\u3044\u308B\u3088\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 4002f13b-8466-4637-b693-fbac976c713e
     Position: {x: 34747, y: 368}
     DialogueNodePorts:
@@ -2493,7 +2494,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Interesting clothing?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u9762\u767D\u3044\u670D\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2511,12 +2512,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Izzy and I are trying on some interesting clothing
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "Izzy\u3068\u50D5\u306F\u3001\u3044\u304F\u3064\u304B\u306E\u9762\u767D\u3044\u670D\u3092\u8A66\u7740\u3057\u3066\u3044\u308B\u3068\u3053\u308D\u3060\u3088\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 4c459e61-0131-4bc9-ba1a-63309a7977f9
     Position: {x: 35257, y: 366}
     DialogueNodePorts:
@@ -2527,7 +2528,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Haha
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u30CF\u30CF\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2545,12 +2546,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Cause there really isn't a lot of it
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3060\u3063\u3066\u3001\u672C\u5F53\u306B\u307B\u3068\u3093\u3069\u306A\u3044\u304B\u3089\u306D\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: b2b12cf7-4a83-4192-8afd-66a3c188c464
     Position: {x: 35555, y: 364}
     DialogueNodePorts:
@@ -2561,7 +2562,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I think I know what you mean
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u4F55\u3092\u8A00\u3044\u305F\u3044\u304B\u5206\u304B\u308B\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2584,7 +2585,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 503f69c5-7752-4ce3-a2a8-7df99bef729d
     Position: {x: 35821, y: 41}
     DialogueNodePorts:
@@ -2595,7 +2596,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: So, anything you want to share
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u305D\u308C\u3067\u3001\u4F55\u304B\u30B7\u30A7\u30A2\u3057\u305F\u3044\u3053\u3068\u306F\u3042\u308B\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2618,7 +2619,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 8ae12237-7422-4629-8f53-9bfc2f2c9852
     Position: {x: 37141, y: 375}
     DialogueNodePorts:
@@ -2629,7 +2630,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: "That\u2019s a hard choice"
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u305D\u308C\u306F\u96E3\u3057\u3044\u9078\u629E\u3060\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2642,7 +2643,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: One is a clear winner
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "\u3069\u3061\u3089\u304B\u4E00\u65B9\u304C\u660E\u3089\u304B\u306B\u52DD\u8005\u3060\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2665,7 +2666,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: a6fcc6e4-e198-4fe0-988d-c15262a66966
     Position: {x: 37772, y: 105}
     DialogueNodePorts:
@@ -2677,7 +2678,7 @@ MonoBehaviour:
         LanguageGenericType: "Are you talking about who I think you\u2019re talking
           about?"
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u50D5\u304C\u8A71\u3057\u3066\u3044\u308B\u3068\u601D\u3063\u3066\u3044\u308B\u4EBA\u306B\u3064\u3044\u3066\u8A71\u3057\u3066\u3044\u308B\u306E\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2696,12 +2697,12 @@ MonoBehaviour:
       LanguageGenericType: "If you can\u2019t decide, I maybe need to ask someone
         else\u2019s opinion, don\u2019t you think?"
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u6C7A\u3081\u3089\u308C\u306A\u3044\u306A\u3089\u3001\u4ED6\u306E\u4EBA\u306E\u610F\u898B\u3092\u805E\u304F\u5FC5\u8981\u304C\u3042\u308B\u304B\u3082\u3057\u308C\u306A\u3044\u3088\u3001\u305D\u3046\u601D\u308F\u306A\u3044\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 6403920c-952f-4f99-a989-588148d2c044
     Position: {x: 38074, y: 86}
     DialogueNodePorts:
@@ -2712,7 +2713,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: haha
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u30CF\u30CF\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2730,12 +2731,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I think you know very well
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3088\u304F\u5206\u304B\u3063\u3066\u3044\u308B\u3068\u601D\u3046\u3088\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 9838f685-d7f8-4bd9-82f1-81f19d7afd56
     Position: {x: 38393, y: 86}
     DialogueNodePorts:
@@ -2747,7 +2748,7 @@ MonoBehaviour:
         LanguageGenericType: I think it's a good idea to get someone else's expert
           opinion
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u4ED6\u306E\u4EBA\u306E\u5C02\u9580\u7684\u306A\u610F\u898B\u3092\u805E\u304F\u306E\u306F\u826F\u3044\u30A2\u30A4\u30C7\u30A2\u3060\u3068\u601D\u3046\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2770,7 +2771,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: a12b2a8c-6dcf-4fca-a207-7d49c7f00439
     Position: {x: 37559, y: 560}
     DialogueNodePorts:
@@ -2781,7 +2782,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: The blue one
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u9752\u3044\u307B\u3046\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2794,7 +2795,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: The red one
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "\u8D64\u3044\u307B\u3046\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2812,12 +2813,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Which one is it?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3069\u3063\u3061\u304C\u305D\u3046\u304B\u306A\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 8c0fcc35-9b08-4241-95bb-07cb03762194
     Position: {x: 38124, y: 581}
     DialogueNodePorts:
@@ -2828,7 +2829,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: "There\u2019s only one way to find out"
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u78BA\u304B\u3081\u308B\u65B9\u6CD5\u306F\u4E00\u3064\u3057\u304B\u306A\u3044\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2846,12 +2847,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Do you think Math will have the same opinion?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "Math\u3082\u540C\u3058\u610F\u898B\u3060\u3068\u601D\u3046\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 80e5d98f-d833-460c-87a1-ff24d1569c7d
     Position: {x: 39502, y: 476}
     DialogueNodePorts:
@@ -2862,7 +2863,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Which one is it?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3069\u3063\u3061\u304C\u6B63\u89E3\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2885,7 +2886,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 8f220177-8555-4ac8-a907-da145c5c1129
     Position: {x: 40570, y: 432}
     DialogueNodePorts:
@@ -2896,7 +2897,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Fine
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3044\u3044\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2914,12 +2915,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: What do you say?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3069\u3046\u3059\u308B\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 0c9bb065-4fc6-4469-8a3a-ed8401872489
     Position: {x: 40874, y: 434}
     DialogueNodePorts:
@@ -2930,7 +2931,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: The blue one?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u9752\u3044\u307B\u3046\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2943,12 +2944,12 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: The red one?
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "\u8D64\u3044\u307B\u3046\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: This answer unlocks an extra picture
       - languageEnum: 1
-        LanguageGenericType: 
+        LanguageGenericType: "\u3053\u306E\u7B54\u3048\u3067\u3001\u8FFD\u52A0\u306E\u5199\u771F\u3092\u30A2\u30F3\u30ED\u30C3\u30AF\u3067\u304D\u308B\u3002"
     AudioClips:
     - languageEnum: 0
       LanguageGenericType: {fileID: 0}
@@ -2966,7 +2967,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 11b816a9-6d86-4095-9935-a851e6bce5c2
     Position: {x: 41427, y: 267}
     DialogueNodePorts:
@@ -2977,7 +2978,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Sad
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u60B2\u3057\u3044\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2995,12 +2996,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Guess Math is getting a little extra reward
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "Math\u304C\u8FFD\u52A0\u306E\u5831\u916C\u3092\u5C11\u3057\u3082\u3089\u3046\u3053\u3068\u306B\u306A\u308B\u306D\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: bfb788ab-59b3-42c9-94e2-4ddbeb368a80
     Position: {x: 41939, y: 269}
     DialogueNodePorts:
@@ -3009,9 +3010,9 @@ MonoBehaviour:
       OutputGuid: bfb788ab-59b3-42c9-94e2-4ddbeb368a80
       TextLanguage:
       - languageEnum: 0
-        LanguageGenericType: I look forward to it
+        LanguageGenericType: I'm looking forward to it
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u697D\u3057\u307F\u306B\u3057\u3066\u3044\u308B\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3030,12 +3031,12 @@ MonoBehaviour:
       LanguageGenericType: "Maybe I\u2019ll change my mind tonight and you\u2019ll
         get an even better reward"
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u4ECA\u591C\u6C17\u304C\u5909\u308F\u308B\u304B\u3082\u3057\u308C\u306A\u3044\u3057\u3001\u305D\u3046\u3059\u308C\u3070\u3082\u3063\u3068\u826F\u3044\u5831\u916C\u304C\u3082\u3089\u3048\u308B\u304B\u3082\u306D\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 8bdc8402-345f-4f7b-a6cb-798e7eabff10
     Position: {x: 41664, y: 759}
     DialogueNodePorts:
@@ -3046,7 +3047,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: wow
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3046\u308F\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3069,7 +3070,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 7c48b74f-23ac-4a06-84ae-8743fd119f81
     Position: {x: 42250, y: 784}
     DialogueNodePorts:
@@ -3080,7 +3081,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I do
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u305D\u3046\u601D\u3046\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3093,7 +3094,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: You should also send it to Math
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "Math\u306B\u3082\u305D\u308C\u3092\u9001\u308B\u3079\u304D\u3060\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3111,12 +3112,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: But you deserve it
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3067\u3082\u3001\u541B\u306F\u305D\u308C\u306B\u5024\u3059\u308B\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: e11f14fb-933f-4b8c-8619-fd24f3ae5a55
     Position: {x: 42870, y: 903}
     DialogueNodePorts:
@@ -3127,7 +3128,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: yeah
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3046\u3093\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3145,12 +3146,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Are you sure?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u672C\u5F53\u306B\u3044\u3044\u306E\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: b9074f9e-4200-4291-b22d-9c79d60e0c19
     Position: {x: 43180, y: 893}
     DialogueNodePorts:
@@ -3161,7 +3162,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: "I don\u2019t mind sharing"
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5206\u3051\u5408\u3063\u3066\u3082\u3044\u3044\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3184,7 +3185,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: d98cc20f-08ff-40ec-8265-6c410720da42
     Position: {x: 44145, y: 638}
     DialogueNodePorts:
@@ -3195,7 +3196,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: So what are the further plans?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3058\u3083\u3042\u3001\u3053\u306E\u5148\u306E\u4E88\u5B9A\u306F\u4F55\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3218,7 +3219,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 7f21b2e3-a774-4db0-b844-e5d74fffbd12
     Position: {x: 45108, y: 652}
     DialogueNodePorts:
@@ -3229,7 +3230,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Have fun there
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u697D\u3057\u3093\u3067\u306D\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3252,7 +3253,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: 
+    SelectedChoice: []
   - NodeGuid: 1297145c-bf9a-4515-a7f1-e14402430f3a
     Position: {x: 45447, y: 637}
     DialogueNodePorts:
@@ -3263,7 +3264,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Love you too
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u79C1\u3082\u611B\u3057\u3066\u308B\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3276,7 +3277,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Kisses
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "\u30AD\u30B9\u3092\u9001\u308B\u306D\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3294,12 +3295,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Love you babe
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u611B\u3057\u3066\u308B\u3088\u3001babe\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: 
+    SelectedChoice: []
   DialogueNodeDatas:
   - NodeGuid: 8340fc1e-6056-40d5-92db-e7b8db0af170
     Position: {x: 445, y: 300}
@@ -3312,21 +3313,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 0043999410142aa4e9b8a3b0bebb746f, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Good morning.
     - languageEnum: 1
+      LanguageGenericType: "\u304A\u306F\u3088\u3046\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 12fd0f76-ebc2-43fc-8379-f7da6ad16a71
     Position: {x: 1004, y: 342}
@@ -3339,21 +3345,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 0043999410142aa4e9b8a3b0bebb746f, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Yes, this is Esmeralda.
     - languageEnum: 1
+      LanguageGenericType: "\u305B\u3084\u3067\u3001Esmeralda\u3084\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 1a665d30-4677-405e-9089-2880314c57a6
     Position: {x: 1210, y: 343}
@@ -3366,21 +3377,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 0043999410142aa4e9b8a3b0bebb746f, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: The verdict is that the appeal has been denied.
     - languageEnum: 1
+      LanguageGenericType: "\u63A7\u8A34\u306F\u68C4\u5374\u3055\u308C\u305F\u3067\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 3dbeae41-730d-42dd-aee3-b76b7922e9e7
     Position: {x: 2952, y: 323}
@@ -3393,21 +3409,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 0043999410142aa4e9b8a3b0bebb746f, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Let me see...
     - languageEnum: 1
+      LanguageGenericType: "\u3061\u3087\u3063\u3068\u898B\u305B\u3066\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: b8c1e31a-6d05-4b89-bc18-b85d7ca56995
     Position: {x: 5013, y: 326}
@@ -3420,21 +3441,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 0043999410142aa4e9b8a3b0bebb746f, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
-      LanguageGenericType: Do you have any further questions for me, sir?
+      LanguageGenericType: Do you have any further questions for me sir?
+    - languageEnum: 1
+      LanguageGenericType: "\u4ED6\u306B\u8CEA\u554F\u306F\u3042\u308A\u307E\u3059\u304B\uFF1F"
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
     - languageEnum: 1
       LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 94b4d4b2-1b00-46f7-92f0-03820096e75f
     Position: {x: 5626, y: 459}
@@ -3447,21 +3473,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 0043999410142aa4e9b8a3b0bebb746f, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Bye, have a pleasant day.
     - languageEnum: 1
+      LanguageGenericType: "\u3058\u3083\u3042\u306A\u3001\u3048\u3048\u4E00\u65E5\u3084\u3067\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 46dea780-af4e-4f00-84a6-1337c7689072
     Position: {x: 5998, y: 290}
@@ -3474,21 +3505,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 0043999410142aa4e9b8a3b0bebb746f, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: This conversation has been TERMINATED.
     - languageEnum: 1
+      LanguageGenericType: "\u3053\u306E\u4F1A\u8A71\u306F\u7D42\u4E86\u3057\u307E\u3057\u305F\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: e1087e35-d7c1-4772-aec0-73afb5e6b78e
     Position: {x: 6207, y: 287}
@@ -3501,21 +3537,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 0043999410142aa4e9b8a3b0bebb746f, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: This is an auto-generated message.
     - languageEnum: 1
+      LanguageGenericType: "\u3053\u308C\u306F\u81EA\u52D5\u751F\u6210\u3055\u308C\u305F\u30E1\u30C3\u30BB\u30FC\u30B8\u3067\u3059\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: beb33234-bd7d-45c9-b3d0-6ba3f08bf5e1
     Position: {x: 6414, y: 279}
@@ -3528,21 +3569,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 0043999410142aa4e9b8a3b0bebb746f, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Your due balance for week 39 is 420.89.
     - languageEnum: 1
+      LanguageGenericType: "39\u9031\u76EE\u306E\u672A\u6255\u3044\u6B8B\u9AD8\u306F420.89\u3067\u3059\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: aec8eb37-0108-4784-ad58-3de1f0f2024f
     Position: {x: 6615, y: 289}
@@ -3555,21 +3601,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 0043999410142aa4e9b8a3b0bebb746f, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Please pay within 48 hours.
     - languageEnum: 1
+      LanguageGenericType: "48\u6642\u9593\u4EE5\u5185\u306B\u304A\u652F\u6255\u3044\u304F\u3060\u3055\u3044\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: bf576896-b5b2-43f9-ba5f-115934b32084
     Position: {x: 7198, y: 307}
@@ -3582,21 +3633,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8da73476cefc3eb43b4e7ac5962331b9, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Good morning, patient number 1942.
     - languageEnum: 1
+      LanguageGenericType: "\u304A\u306F\u3088\u3046\u3054\u3056\u3044\u307E\u3059\u3001\u60A3\u8005\u756A\u53F71942\u3055\u3093\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 8d3c2fb8-d67c-4229-87a1-78241e18c132
     Position: {x: 7708, y: 303}
@@ -3609,21 +3665,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8da73476cefc3eb43b4e7ac5962331b9, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: No problem.
     - languageEnum: 1
+      LanguageGenericType: "\u554F\u984C\u306A\u3044\u3067\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 0d58e34c-5e59-4166-aadc-7c21ba71b0cb
     Position: {x: 7910, y: 312}
@@ -3636,21 +3697,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8da73476cefc3eb43b4e7ac5962331b9, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Have a nice day.
     - languageEnum: 1
+      LanguageGenericType: "\u3048\u3048\u4E00\u65E5\u3092\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 881f762e-a116-43c7-b204-ec99f20a20e5
     Position: {x: 10640, y: 290}
@@ -3663,21 +3729,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Well, yesterday and the day before were so busy.
     - languageEnum: 1
+      LanguageGenericType: "\u3044\u3084\u30FC\u3001\u6628\u65E5\u3068\u4E00\u6628\u65E5\u306F\u3081\u3063\u3061\u3083\u5FD9\u3057\u304B\u3063\u305F\u308F\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 2e125ae3-c275-4f74-9ca9-3e311b202c69
     Position: {x: 11155, y: 282}
@@ -3690,21 +3761,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Haha, thanks.
     - languageEnum: 1
+      LanguageGenericType: "\u306F\u306F\u3001\u304A\u304A\u304D\u306B\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 0a13f8e1-a834-44d7-aca8-665326be1a9e
     Position: {x: 11355, y: 276}
@@ -3717,21 +3793,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: But I'm not sure Izzy will allow it.
     - languageEnum: 1
+      LanguageGenericType: "\u3067\u3082\u3001Izzy\u304C\u8A31\u3059\u304B\u5206\u304B\u3089\u3093\u308F\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: acefb4df-d677-4bde-beec-b5cc4ce9e06a
     Position: {x: 11565, y: 278}
@@ -3744,21 +3825,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: She might have some plans already.
     - languageEnum: 1
+      LanguageGenericType: "\u5F7C\u5973\u3001\u3082\u3046\u4E88\u5B9A\u3042\u308B\u304B\u3082\u306A\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 6dac7505-4e60-47c1-bc55-bd462a2a2c6d
     Position: {x: 12375, y: 285}
@@ -3771,21 +3857,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Love you too.
     - languageEnum: 1
+      LanguageGenericType: "\u4FFA\u3082\u597D\u304D\u3084\u3067\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: d94880cc-f205-4807-bd8e-085332a667ab
     Position: {x: 12918, y: 278}
@@ -3798,21 +3889,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 14173166ace8e7b418d7ae1d1a0526b0, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Good morning.
     - languageEnum: 1
+      LanguageGenericType: "\u304A\u306F\u3088\u3046\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 737a3c3c-1bc5-4286-987d-e6ef46406b07
     Position: {x: 14415, y: 266}
@@ -3825,21 +3921,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 14173166ace8e7b418d7ae1d1a0526b0, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Heard anything else from your insurance?
     - languageEnum: 1
+      LanguageGenericType: "\u4FDD\u967A\u304B\u3089\u4ED6\u306B\u4F55\u304B\u805E\u3044\u305F\uFF1F"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 11400000, guid: 398b604f2ebf2e54d84650b3f52b8792, type: 2}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 974852ed-d86b-4773-ac52-f9b1ebce619c
     Position: {x: 14941, y: 258}
@@ -3852,21 +3953,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 14173166ace8e7b418d7ae1d1a0526b0, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
-      LanguageGenericType: Fucked up, bro.
+      LanguageGenericType: Fucked up bro.
+    - languageEnum: 1
+      LanguageGenericType: "\u3081\u3063\u3061\u3083\u3084\u3070\u3044\u308F\u3001\u5144\u8CB4\u3002"
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
     - languageEnum: 1
       LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: e5b680c8-f506-4089-8d36-bd39c8a41568
     Position: {x: 15456, y: 256}
@@ -3879,21 +3985,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 14173166ace8e7b418d7ae1d1a0526b0, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Makes sense.
     - languageEnum: 1
+      LanguageGenericType: "\u306A\u308B\u307B\u3069\u306A\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 8705e45d-710c-478e-ad78-4a77b8c67234
     Position: {x: 17615, y: 253}
@@ -3906,21 +4017,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 14173166ace8e7b418d7ae1d1a0526b0, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Lily told us about a beautiful waterfall she went to yesterday.
     - languageEnum: 1
+      LanguageGenericType: "Lily\u304C\u6628\u65E5\u884C\u3063\u305F\u7DBA\u9E97\u306A\u6EDD\u306E\u3053\u3068\u8A71\u3057\u3066\u304F\u308C\u305F\u3067\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 647fe466-c4bc-4d36-b640-49d9b68ec7b9
     Position: {x: 18332, y: 262}
@@ -3933,21 +4049,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 14173166ace8e7b418d7ae1d1a0526b0, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Lily also told us about some guy taking them there.
     - languageEnum: 1
+      LanguageGenericType: "Lily\u306F\u8AB0\u304B\u306B\u305D\u3053\u306B\u9023\u308C\u3066\u884C\u304B\u308C\u305F\u3053\u3068\u3082\u8A71\u3057\u3066\u304F\u308C\u305F\u3067\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 2a28b991-e7bc-4b25-8c93-a3e3f73e359e
     Position: {x: 18102, y: 260}
@@ -3960,21 +4081,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 14173166ace8e7b418d7ae1d1a0526b0, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Yeah.
     - languageEnum: 1
+      LanguageGenericType: "\u305B\u3084\u306A\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 1737e55d-4926-4a71-a0c3-012bced00e41
     Position: {x: 19472, y: 262}
@@ -3987,21 +4113,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 14173166ace8e7b418d7ae1d1a0526b0, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: "\U0001F44D"
     - languageEnum: 1
+      LanguageGenericType: "\U0001F44D"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 453eba4f-d540-41ae-be04-8c046de84319
     Position: {x: 20643, y: 224}
@@ -4014,21 +4145,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 14173166ace8e7b418d7ae1d1a0526b0, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Good
     - languageEnum: 1
+      LanguageGenericType: "\u3048\u3048\u306A\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 6be763ae-5e6f-4946-97f1-82accf96ebdf
     Position: {x: 20164, y: 222}
@@ -4041,21 +4177,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Izzy is forcing me to get up...
     - languageEnum: 1
+      LanguageGenericType: "Izzy\u304C\u7121\u7406\u3084\u308A\u8D77\u3053\u305D\u3046\u3068\u3057\u3066\u3093\u2026\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 9167976497799680790, guid: 8dfdfc0473497b946b3acf936163d10d, type: 3}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 0200f8c1-4a3e-437d-9112-7ed38a8062a0
     Position: {x: 20876, y: 225}
@@ -4068,21 +4209,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 14173166ace8e7b418d7ae1d1a0526b0, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: "Aight, I\u2019ll talk to you later then."
     - languageEnum: 1
+      LanguageGenericType: "\u308F\u304B\u3063\u305F\u3001\u307E\u305F\u5F8C\u3067\u306A\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 27f17999-98f2-4e2f-8fe7-bed9f0f68964
     Position: {x: 23318, y: 275}
@@ -4095,21 +4241,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Hey
     - languageEnum: 1
+      LanguageGenericType: "\u304A\u3044\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: e3bfa37c-ebdf-44d6-a58b-80351851920a
     Position: {x: 23562, y: 289}
@@ -4122,21 +4273,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: She's fucking Math in the shower
     - languageEnum: 1
+      LanguageGenericType: "\u5F7C\u5973\u306F\u30B7\u30E3\u30EF\u30FC\u3067Math\u3068\u30D5\u30A1\u30C3\u30AF\u3057\u3066\u3044\u308B\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: dbffd282-52e3-45e8-b485-77d214fac829
     Position: {x: 24311, y: 281}
@@ -4149,21 +4305,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: She's just taking a shower
     - languageEnum: 1
+      LanguageGenericType: "\u5F7C\u5973\u306F\u305F\u3060\u30B7\u30E3\u30EF\u30FC\u3092\u6D74\u3073\u3066\u3044\u308B\u3060\u3051\u3060\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 26033cce-7c5c-443b-a5f2-66c06963688d
     Position: {x: 24110, y: 289}
@@ -4176,21 +4337,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: "\U0001F602"
     - languageEnum: 1
+      LanguageGenericType: "\U0001F602"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 5f4c11aa-5a36-44d1-bb71-b6289e417d5a
     Position: {x: 24822, y: 279}
@@ -4203,21 +4369,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: It does... and I want to keep it that way
     - languageEnum: 1
+      LanguageGenericType: "\u305D\u3046\u3067\u3042\u3063\u3066\u307B\u3057\u3044\u3057\u3001\u305D\u306E\u307E\u307E\u306B\u3057\u3066\u304A\u304D\u305F\u3044\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 5e44ba71-2c9e-4164-a985-51bf9b773002
     Position: {x: 25351, y: 279}
@@ -4230,21 +4401,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: "Nope\u2026 hehe"
     - languageEnum: 1
+      LanguageGenericType: "\u3044\u3084\u3001\u9055\u3046... \u3078\u3078\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: e6eb5a86-368d-4d65-8e0c-53d4191f1090
     Position: {x: 25560, y: 265}
@@ -4257,21 +4433,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: I can offer you something though
     - languageEnum: 1
+      LanguageGenericType: "\u3067\u3082\u3001\u4F55\u304B\u63D0\u4F9B\u3067\u304D\u308B\u3082\u306E\u306F\u3042\u308B\u3088\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 1fc92050-dc2e-4931-a550-98f170cc0464
     Position: {x: 26419, y: 267}
@@ -4284,21 +4465,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Wow, you are so smart hehe
     - languageEnum: 1
+      LanguageGenericType: "\u3046\u308F\u3001\u3042\u306A\u305F\u306F\u672C\u5F53\u306B\u982D\u304C\u3044\u3044\u306D\u3001\u3078\u3078\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: ac2c2566-809f-4bc0-a6b2-e04a37eda1c3
     Position: {x: 26621, y: 268}
@@ -4311,21 +4497,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: It is, BUT!
     - languageEnum: 1
+      LanguageGenericType: "\u305D\u3046\u3060\u3051\u3069\u3001\u3067\u3082\uFF01"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: d1bad2c9-c8bf-40ea-9f95-3842cf64fc77
     Position: {x: 27337, y: 261}
@@ -4338,22 +4529,27 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: If I send you this picture of Lily in her current state
         (under the shower)
     - languageEnum: 1
+      LanguageGenericType: "\u3082\u3057\u3001\u30B7\u30E3\u30EF\u30FC\u4E2D\u306ELily\u306E\u4ECA\u306E\u72B6\u614B\u306E\u5199\u771F\u3092\u9001\u3063\u305F\u3089"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 78041102-ad3f-400a-9e7c-133db2580070
     Position: {x: 27535, y: 262}
@@ -4366,21 +4562,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: I will also send the picture to Math
     - languageEnum: 1
+      LanguageGenericType: "\u305D\u306E\u5199\u771F\u3092Math\u306B\u3082\u9001\u308B\u3088\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: d61b8042-84c0-4903-a776-46a8ae82a211
     Position: {x: 27137, y: 260}
@@ -4393,21 +4594,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Yes
     - languageEnum: 1
+      LanguageGenericType: "\u306F\u3044\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 86d8fbab-2f08-48e7-8b94-7f9f9225e1a7
     Position: {x: 28166, y: 68}
@@ -4420,21 +4626,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: "That\u2019s what I like to hear"
     - languageEnum: 1
+      LanguageGenericType: "\u305D\u308C\u304C\u805E\u304D\u305F\u304B\u3063\u305F\u8A00\u8449\u3060\u3088\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 216fc4fa-7f4c-4c11-843e-3ede8955cd6f
     Position: {x: 28373, y: 74}
@@ -4447,21 +4658,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Give me a minute
     - languageEnum: 1
+      LanguageGenericType: "\u5C11\u3057\u6642\u9593\u3092\u3061\u3087\u3046\u3060\u3044\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 0cb80443-5105-4d29-8786-211143f59a72
     Position: {x: 28592, y: 75}
@@ -4474,21 +4690,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Be ready
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u6E96\u5099\u3057\u3066\u3066\u3002"
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 10 minutes later...
+    - languageEnum: 1
+      LanguageGenericType: "10\u5206\u5F8C..."
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 10 minutes later
     DelayTimer: 0
   - NodeGuid: fc9e2821-ad6b-4a01-a429-d6fd8af0e192
     Position: {x: 29227, y: -233}
@@ -4501,21 +4722,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Hehe
     - languageEnum: 1
+      LanguageGenericType: "\u3078\u3078\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: aaa0f97b-2f83-4b38-a8b4-368b1652b29f
     Position: {x: 29961, y: -220}
@@ -4528,21 +4754,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: I'm just a little cruel and brilliant. Hehe
     - languageEnum: 1
+      LanguageGenericType: "\u50D5\u306F\u3061\u3087\u3063\u3068\u6B8B\u9177\u3067\u5929\u624D\u7684\u306A\u3060\u3051\u3060\u3088\u3002\u3078\u3078\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: c65a330c-a9a7-42a2-8ee1-50ddcb758efc
     Position: {x: 29755, y: -229}
@@ -4555,21 +4786,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: I'm not mean
     - languageEnum: 1
+      LanguageGenericType: "\u610F\u5730\u60AA\u3058\u3083\u306A\u3044\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: e92bfcec-a498-488b-a52c-84cef817836c
     Position: {x: 30171, y: -207}
@@ -4582,21 +4818,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: And you just have to deal with it
     - languageEnum: 1
+      LanguageGenericType: "\u305D\u3057\u3066\u3001\u3042\u306A\u305F\u306F\u305D\u308C\u3092\u53D7\u3051\u5165\u308C\u308B\u3057\u304B\u306A\u3044\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 78464c54-ff0f-487d-b55a-72212d06009c
     Position: {x: 29216, y: 210}
@@ -4609,21 +4850,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Whoa whoa whoa
     - languageEnum: 1
+      LanguageGenericType: "\u3061\u3087\u3001\u3061\u3087\u3063\u3068\u5F85\u3063\u3066\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: aada6d49-db1d-4c9f-8aa9-06e7ca31e492
     Position: {x: 29631, y: 218}
@@ -4636,21 +4882,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: You have to wait your turn
     - languageEnum: 1
+      LanguageGenericType: "\u9806\u756A\u3092\u5F85\u305F\u306A\u3044\u3068\u3044\u3051\u306A\u3044\u3088\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 9e59d4a1-8f62-4363-9dac-3bc3b3475eed
     Position: {x: 29428, y: 212}
@@ -4663,21 +4914,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
-      LanguageGenericType: Calm down, cowboy
+      LanguageGenericType: Calm down cowboy
+    - languageEnum: 1
+      LanguageGenericType: "\u843D\u3061\u7740\u3051\u3001\u30AB\u30A6\u30DC\u30FC\u30A4\u3002"
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
     - languageEnum: 1
       LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 8c97bad5-39c2-47c8-afb1-ae54730f52c9
     Position: {x: 30373, y: 261}
@@ -4690,21 +4946,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: But I guess you've waited long enough
     - languageEnum: 1
+      LanguageGenericType: "\u3067\u3082\u3001\u3082\u3046\u5341\u5206\u5F85\u3063\u305F\u3060\u308D\u3046\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 2908627585037537263, guid: 88f3e54fd61020e43afa030124633bf6, type: 3}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 2a3b05f4-049b-4f7f-8720-4fc89b3f8af3
     Position: {x: 31071, y: -84}
@@ -4717,21 +4978,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: "Well, while you enjoy that, Lily and I are going to the\u2026"
     - languageEnum: 1
+      LanguageGenericType: "\u307E\u3042\u3001\u3042\u306A\u305F\u304C\u305D\u308C\u3092\u697D\u3057\u3093\u3067\u3044\u308B\u9593\u306B\u3001Lily\u3068\u50D5\u306F..."
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 4f43d7db-976b-4301-8d49-b5cb31e6046d
     Position: {x: 31092, y: 385}
@@ -4744,21 +5010,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: That was the deal
     - languageEnum: 1
+      LanguageGenericType: "\u305D\u308C\u304C\u53D6\u5F15\u3060\u3063\u305F\u3067\u3057\u3087\u3046\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 849b3294-f744-4ab8-84fb-9026c5431127
     Position: {x: 31323, y: 375}
@@ -4771,21 +5042,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: So, yes I did
     - languageEnum: 1
+      LanguageGenericType: "\u3060\u304B\u3089\u3001\u305D\u3046\u3001\u50D5\u306F\u3084\u3063\u305F\u3088\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: a4a08849-c38a-4221-a7a4-7dab679fddee
     Position: {x: 31928, y: 181}
@@ -4798,21 +5074,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Bye
     - languageEnum: 1
+      LanguageGenericType: "\u3058\u3083\u3042\u306D\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 24275c01-a72a-42fa-87d8-4a96925f5ec9
     Position: {x: 31666, y: 184}
@@ -4825,21 +5106,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Talk to you later
     - languageEnum: 1
+      LanguageGenericType: "\u307E\u305F\u5F8C\u3067\u8A71\u305D\u3046\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: b1f904d2-2cbb-4b2f-918d-6d60569f6947
     Position: {x: 28441, y: 716}
@@ -4852,21 +5138,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Hmmm
     - languageEnum: 1
+      LanguageGenericType: "\u3093\u30FC..."
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 5d96e6f2-c7f0-4ac3-ba95-a7d61d22aa4b
     Position: {x: 29443, y: 790}
@@ -4879,21 +5170,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Sad
     - languageEnum: 1
+      LanguageGenericType: "\u60B2\u3057\u3044\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 9eaee7f5-b4d9-450f-b451-d18a6cea025f
     Position: {x: 30339, y: 848}
@@ -4906,21 +5202,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: But whatever
     - languageEnum: 1
+      LanguageGenericType: "\u3067\u3082\u3001\u3069\u3046\u3067\u3082\u3044\u3044\u3088\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 2b495c37-e366-4cd7-8113-deee8a05832b
     Position: {x: 31192, y: 861}
@@ -4933,21 +5234,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: "We\u2019ll be on our way in about half an hour"
     - languageEnum: 1
+      LanguageGenericType: "\u4E09\u5341\u5206\u307B\u3069\u3067\u51FA\u767A\u3059\u308B\u3088\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 6266f7cd-3db5-443e-8582-486f458a7342
     Position: {x: 32639, y: 365}
@@ -4960,21 +5266,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Hey darling
     - languageEnum: 1
+      LanguageGenericType: "\u306D\u3048\u3001\u30C0\u30FC\u30EA\u30F3\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: d4e2d8a6-62ae-44af-9611-f498404542f2
     Position: {x: 32852, y: 367}
@@ -4987,21 +5298,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Sorry, I was in the shower when you texted me back
     - languageEnum: 1
+      LanguageGenericType: "\u3054\u3081\u3093\u3001\u8FD4\u4FE1\u304C\u3042\u3063\u305F\u6642\u3001\u30B7\u30E3\u30EF\u30FC\u306B\u5165\u3063\u3066\u3044\u305F\u3093\u3060\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 64e0a356-5771-41cf-82ba-9e81d2cbe108
     Position: {x: 33777, y: 389}
@@ -5014,21 +5330,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Thanks
     - languageEnum: 1
+      LanguageGenericType: "\u3042\u308A\u304C\u3068\u3046\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: bf73ea97-7011-411a-b181-36fe4d9c1b75
     Position: {x: 34539, y: 362}
@@ -5041,21 +5362,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Hey baby
     - languageEnum: 1
+      LanguageGenericType: "\u306D\u3048\u3001\u30D9\u30A4\u30D3\u30FC\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 5d548450-f30b-4f8a-ba99-ca3d904000dc
     Position: {x: 35047, y: 363}
@@ -5068,21 +5394,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Well, if you can even call it clothing
     - languageEnum: 1
+      LanguageGenericType: "\u307E\u3042\u3001\u305D\u308C\u3092\u670D\u3068\u547C\u3079\u308B\u306E\u306A\u3089\u306D\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 7f935f53-5b61-4d70-90e0-83a23aead4b1
     Position: {x: 36068, y: 360}
@@ -5095,21 +5426,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Of course
     - languageEnum: 1
+      LanguageGenericType: "\u3082\u3061\u308D\u3093\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: e97d96d1-f8ef-4602-99bb-82d12f313a33
     Position: {x: 36267, y: 359}
@@ -5122,21 +5458,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Here, I tried on 2 colors so far
     - languageEnum: 1
+      LanguageGenericType: "\u306F\u3044\u3001\u4ECA\u306E\u3068\u3053\u308D\u4E8C\u8272\u8A66\u3057\u3066\u307F\u305F\u3088\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 157e914f-9eed-4469-b817-73c1589725a7
     Position: {x: 36480, y: 372}
@@ -5149,21 +5490,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Which one do you like more?
     - languageEnum: 1
+      LanguageGenericType: "\u3069\u3063\u3061\u306E\u307B\u3046\u304C\u597D\u304D\uFF1F"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 6a17a1c8-6cbe-41d5-9b98-bd7ea2089ffa
     Position: {x: 36887, y: 356}
@@ -5176,21 +5522,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Or this one?
     - languageEnum: 1
+      LanguageGenericType: "\u305D\u308C\u3068\u3082\u3001\u3053\u3063\u3061\uFF1F"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: -5066148895119518621, guid: 26af649de08d87240abd272c0f498c26, type: 3}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 6148f474-82c0-4074-bf0d-76622a008a68
     Position: {x: 36684, y: 368}
@@ -5203,21 +5554,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: This one?
     - languageEnum: 1
+      LanguageGenericType: "\u3053\u308C\uFF1F"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: -6653384514646115814, guid: e96f8e38cf8ad2a44b450f578829684e, type: 3}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 19cffdfd-4e38-4bca-9e7d-7adcbf5c9722
     Position: {x: 37556, y: 102}
@@ -5230,21 +5586,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Hmmm
     - languageEnum: 1
+      LanguageGenericType: "\u3093\u30FC..."
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 1c12fe26-9605-482e-94c8-db1fe9e911bf
     Position: {x: 38902, y: 76}
@@ -5257,21 +5618,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: "I\u2019ll be right back with you"
     - languageEnum: 1
+      LanguageGenericType: "\u3059\u3050\u306B\u623B\u308B\u306D\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 6b0e8181-7ebc-4dc3-9e00-9e035e9d83f4
     Position: {x: 38700, y: 86}
@@ -5284,21 +5650,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Hihi
     - languageEnum: 1
+      LanguageGenericType: "\u30D2\u30D2\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 733f6aa5-9bcb-4ec3-a8fd-512d39e7257c
     Position: {x: 37874, y: 547}
@@ -5311,21 +5682,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: I like that one as well
     - languageEnum: 1
+      LanguageGenericType: "\u79C1\u3082\u305D\u3063\u3061\u3082\u597D\u304D\u3060\u3088\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 1b1b7198-2475-484a-88de-e2430c54e179
     Position: {x: 39297, y: 473}
@@ -5338,21 +5714,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: ' Well, the verdict is in'
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3055\u3066\u3001\u5224\u6C7A\u304C\u51FA\u305F\u3088\u3002"
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 10 minutes later...
+    - languageEnum: 1
+      LanguageGenericType: "10\u5206\u5F8C..."
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 10 minutes later
     DelayTimer: 0
   - NodeGuid: 30f2d8cb-ab64-41b5-84da-36779df564a3
     Position: {x: 39828, y: 476}
@@ -5365,21 +5746,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: What do you think?
     - languageEnum: 1
+      LanguageGenericType: "\u3069\u3046\u601D\u3046\uFF1F"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 7f19b2d2-ee14-4a83-9865-7ed320bf7f7b
     Position: {x: 40038, y: 474}
@@ -5392,21 +5778,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: If you guess correctly, you get an extra reward
     - languageEnum: 1
+      LanguageGenericType: "\u3082\u3057\u6B63\u89E3\u3057\u305F\u3089\u3001\u8FFD\u52A0\u306E\u5831\u916C\u304C\u3082\u3089\u3048\u308B\u3088\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 615544e8-3d14-497d-b758-970e30f0312f
     Position: {x: 40272, y: 466}
@@ -5419,21 +5810,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: If you guess wrong, the reward goes to Math
     - languageEnum: 1
+      LanguageGenericType: "\u3082\u3057\u9593\u9055\u3063\u305F\u3089\u3001\u5831\u916C\u306FMath\u306E\u3082\u306E\u306B\u306A\u308B\u3088\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: f41c6349-3a5f-4355-8980-392ef5a46f7f
     Position: {x: 41224, y: 276}
@@ -5446,21 +5842,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: "Nope, unlucky\u2026"
     - languageEnum: 1
+      LanguageGenericType: "\u6B8B\u5FF5\u306A\u304C\u3089\u3001\u30CF\u30BA\u30EC\u3060\u306D..."
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: d5d7d3dd-77a4-440a-abdb-68f4936dd467
     Position: {x: 41737, y: 270}
@@ -5473,21 +5874,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: "Don\u2019t be sad babe"
     - languageEnum: 1
+      LanguageGenericType: "\u60B2\u3057\u307E\u306A\u3044\u3067\u3001\u30D9\u30A4\u30D3\u30FC\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 8824d6b6-6758-4330-b414-711a64ee11a2
     Position: {x: 41432, y: 760}
@@ -5500,21 +5906,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Here is your reward
     - languageEnum: 1
+      LanguageGenericType: "\u3053\u308C\u304C\u3042\u306A\u305F\u306E\u5831\u916C\u3060\u3088\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: -1679630011111909813, guid: f6924fba02546a24aa92a1a33e77eb38, type: 3}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 10816441-22b0-4955-a574-e0ef12da2756
     Position: {x: 41222, y: 773}
@@ -5527,21 +5938,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Nice, you got it!
     - languageEnum: 1
+      LanguageGenericType: "\u3044\u3044\u306D\u3001\u5206\u304B\u3063\u305F\uFF01"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: d777f953-b6a7-42f1-9393-975d86dba818
     Position: {x: 41999, y: 766}
@@ -5554,21 +5970,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: "Hihi, Math\u2019s missing out"
     - languageEnum: 1
+      LanguageGenericType: "\u30D2\u30D2\u3001Math\u306F\u640D\u3057\u3066\u3044\u308B\u306D\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 951b6b2e-6f45-490f-9916-00a4b61a8424
     Position: {x: 42651, y: 905}
@@ -5581,21 +6002,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Oh
     - languageEnum: 1
+      LanguageGenericType: "\u3042\u3042\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 2898c133-580f-44c7-b67c-3d216571e566
     Position: {x: 43489, y: 895}
@@ -5608,21 +6034,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: "\U0001F602"
     - languageEnum: 1
+      LanguageGenericType: "\U0001F602"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 2b0b45ba-1344-4920-b24f-75050439e904
     Position: {x: 43690, y: 906}
@@ -5635,21 +6066,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: "I know you don\u2019t"
     - languageEnum: 1
+      LanguageGenericType: "\u305D\u3046\u3058\u3083\u306A\u3044\u3063\u3066\u77E5\u3063\u3066\u3044\u308B\u3088\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 7cdf1975-0979-4530-bd44-95084253a412
     Position: {x: 43898, y: 902}
@@ -5662,21 +6098,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Send
     - languageEnum: 1
+      LanguageGenericType: "\u9001\u308B\u306D\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: b69109d3-c9c8-4915-9cce-7dad9512f178
     Position: {x: 44448, y: 645}
@@ -5689,21 +6130,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: We're just going to walk around a bit
     - languageEnum: 1
+      LanguageGenericType: "\u79C1\u305F\u3061\u306F\u3061\u3087\u3063\u3068\u6563\u6B69\u3059\u308B\u3060\u3051\u3060\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: e331c7ca-c2fc-415b-a71c-90c9c7b610d9
     Position: {x: 44672, y: 648}
@@ -5716,21 +6162,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Then back to the hotel
     - languageEnum: 1
+      LanguageGenericType: "\u305D\u308C\u304B\u3089\u3001\u30DB\u30C6\u30EB\u306B\u623B\u308B\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 784ac7e9-977a-4cb5-a1fd-3ac91f9c7241
     Position: {x: 44874, y: 659}
@@ -5743,21 +6194,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Nothing special
     - languageEnum: 1
+      LanguageGenericType: "\u7279\u306B\u4F55\u3082\u306A\u3044\u3088\u3002"
+    Timelapses:
+    - languageEnum: 0
       LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   TimerChoiceNodeDatas: []
   EndNodeDatas:

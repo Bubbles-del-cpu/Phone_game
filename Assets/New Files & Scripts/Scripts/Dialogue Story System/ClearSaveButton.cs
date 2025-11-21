@@ -8,6 +8,7 @@ public class ClearSaveButton : MonoBehaviour
     [SerializeField]
     private bool _displayDialog = true;
 
+    [SerializeField] private bool _startNewGameAfterClear = true;
     public void Click()
     {
         if (_displayDialog)
@@ -31,7 +32,7 @@ public class ClearSaveButton : MonoBehaviour
 
         OverlayCanvas.Instance.FadeToBlack(() =>
         {
-            SaveAndLoadManager.Instance.StartNewSave();
+            SaveAndLoadManager.Instance.StartNewSave(_startNewGameAfterClear);
             GameManager.Instance.ResettingSave = false;
         });
     }

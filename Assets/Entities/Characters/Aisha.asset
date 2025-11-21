@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName:
   - languageEnum: 0
-    LanguageGenericType: Chizuru
+    LanguageGenericType: Aisha
+  - languageEnum: 1
+    LanguageGenericType: Aisha
   CustomizedName:
     ValueName: PlayerName
+    LastValue: 
   UseGlobalValue: 1
   Images:
   - {fileID: 21300000, guid: 89936e8be15e8484ebb1bf0709f90ef6, type: 3}

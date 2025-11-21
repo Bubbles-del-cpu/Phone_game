@@ -13,6 +13,7 @@ public class SaveStateButton : MonoBehaviour
 
     [Header("Localization Components")]
     [SerializeField] private LocalizeStringEvent _localizedString;
+    [SerializeField] private TMPro.TextMeshProUGUI _textLabel;
     [SerializeField] private LocalizedString _emptySlotString;
     [SerializeField] private LocalizedString _filledSlotString;
 
@@ -46,8 +47,16 @@ public class SaveStateButton : MonoBehaviour
         var exists = _exists; //Prevent checking the SaveAndLoadManager get function so many times
         if (exists)
         {
-            _localizedString.StringReference.Arguments = new object[] { SlotNumber };
-            _localizedString.StringReference = _filledSlotString;
+            var slot = SaveAndLoadManager.Instance.CurrentSave.SaveStates[SlotNumber];
+            if (slot.Name == string.Empty)
+            {
+                _localizedString.StringReference.Arguments = new object[] { SlotNumber };
+                _localizedString.StringReference = _filledSlotString;
+            }
+            else
+            {
+                _textLabel.text = slot.Name;
+            }
         }
         else
         {

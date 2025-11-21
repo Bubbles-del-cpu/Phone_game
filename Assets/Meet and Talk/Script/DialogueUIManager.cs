@@ -232,16 +232,14 @@ namespace MeetAndTalk
                                 targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
                                 targetPanel.AddElement(_nodeData, prefab, newText, messageSource, notification);
 
-                                GameManager.Instance.GalleryCanvas.UnlockMediaButton(nd);
                                 SaveAndLoadManager.Instance.CurrentSave.UnlockMedia(nd);
+                                GameManager.Instance.GalleryCanvas.UnlockMediaButton(nd, reloadedGallery: true);
                             }
                             break;
                     }
                     break;
             }
         }
-
-
 
         public void SpawnNotification(Notification.NotificationType type, DialogueCharacterSO character, string label)
         {

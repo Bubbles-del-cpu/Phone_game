@@ -11,7 +11,9 @@ public class UITextureBlur : MonoBehaviour
     [SerializeField] private Image _sourceImage;
     private Texture _targetTexture => _sourceImage != null && _sourceImage.sprite != null ? _sourceImage.sprite.texture : _sourceTexture;
     [SerializeField] [Range(0f, 20f)] private float _blurSize = 2f;
-    [SerializeField] [Range(1, 20)] private int _iterations = 2;
+    [SerializeField][Range(1, 20)] private int _iterations = 2;
+    [SerializeField] private int _fixedTextureSize = 512;
+    [SerializeField] private bool _useDynamicTextureSize = false;
 
     [Header("Optional: Auto-update")]
     [SerializeField] private bool _updateEveryFrame = false;
@@ -59,16 +61,17 @@ public class UITextureBlur : MonoBehaviour
         if (_targetImage == null)
             _targetImage = GetComponent<RawImage>();
 
-        int width = _targetTexture.width;
-        int height = _targetTexture.height;
+        // int width = _blurTextureSize;
+        // int height = _blurTextureSize;
 
         // Recreate render textures if size changed
-        if (_tempRT1 == null || _lastWidth != width || _lastHeight != height)
+        if (_tempRT1 == null || (_useDynamicTextureSize && (_lastWidth != _targetTexture.width || _lastHeight != _targetTexture.height)))
         {
+            //Debug.Log("[UITextureBlur] Recreating render textures due to size change.");
             ReleaseRenderTextures();
-            CreateRenderTextures(width, height);
-            _lastWidth = width;
-            _lastHeight = height;
+            CreateRenderTextures(_fixedTextureSize, _fixedTextureSize);
+            // _lastWidth = width;
+            // _lastHeight = height;
         }
 
         // Set blur size
@@ -91,14 +94,14 @@ public class UITextureBlur : MonoBehaviour
         }
 
         // Copy final result to persistent render texture
-        if (_resultRT == null || _resultRT.width != width || _resultRT.height != height)
+        if (_resultRT == null || (_useDynamicTextureSize && (_lastWidth != _targetTexture.width || _lastHeight != _targetTexture.height)))
         {
             if (_resultRT != null)
             {
                 _resultRT.Release();
                 DestroyRT(_resultRT);
             }
-            _resultRT = new RenderTexture(width, height, 0, RenderTextureFormat.ARGB32);
+            _resultRT = new RenderTexture(_fixedTextureSize, _fixedTextureSize, 0, RenderTextureFormat.ARGB32);
             _resultRT.filterMode = FilterMode.Bilinear;
         }
 

@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     public bool EnableLanaguageSwitching = false;
     public GalleryUnlockConfig GalleryConfig;
     [SerializeField] private Image _backgroundImageComponent;
+    [SerializeField] private UITextureBlur _backgroundTextureBlur;
     public Sprite DefaultBackgroundSprite;
 
 
@@ -54,7 +55,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Video Components")]
     [SerializeField] private VideoThumbnailGenerator _thumbnailGenerator;
-    public VideoPlayer MainVideoPlayer;
+    public PreparedVideoPlayer MainVideoPlayer;
 
     [Header("Component References")]
     [SerializeField]
@@ -150,10 +151,6 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         audioSource = GetComponent<AudioSource>();
-
-        MainVideoPlayer.sendFrameReadyEvents = true;
-        MainVideoPlayer.renderMode = VideoRenderMode.APIOnly;
-        MainVideoPlayer.playOnAwake = false;
     }
 
     private void Start()
@@ -185,6 +182,8 @@ public class GameManager : MonoBehaviour
         {
             _backgroundImageComponent.sprite = socialMediaPost ? nodeData.Post.Image : nodeData.Image;
             var targetFileName = _backgroundImageComponent.sprite.name;
+            _backgroundTextureBlur.ApplyBlur();
+
             var items = SaveAndLoadManager.Instance.CurrentSave.UnlockedMedia.Where(x => x.NodeGUID == nodeData.NodeGuid);
             foreach (var item in items)
             {
@@ -230,15 +229,16 @@ public class GameManager : MonoBehaviour
         overlayCanvas.ShowDialog(popup);
     }
 
-    public void ResetGameState()
+    public void ResetGameState(bool startDialogue = true)
     {
-        StartCoroutine(CoResetConversations());
+        StartCoroutine(CoResetConversations(startDialogue));
 
         //Reset the navigation stack
+        GalleryCanvas.ResetGalleryButtons();
         NavigationManager.Instance.ResetStack();
     }
 
-    IEnumerator CoResetConversations()
+    IEnumerator CoResetConversations(bool startDialogue)
     {
         NextChapterReady = false;
 
@@ -251,7 +251,7 @@ public class GameManager : MonoBehaviour
         messagingCanvas.Close();
 
         //Restart the dialogue trees
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSecondsRealtime(.1f);
 
         settingsCanvas.Close();
 
@@ -264,15 +264,16 @@ public class GameManager : MonoBehaviour
         //Double call to messaging canvas close in order to shut the contants window AND the message window
         messagingCanvas.Close();
 
-        StartCoroutine(CoStartDialogue());
+        if (startDialogue)
+            StartCoroutine(CoStartDialogue());
     }
 
     IEnumerator CoStartDialogue()
     {
         if (SaveAndLoadManager.Instance.CurrentSave.CurrentChapterData.CurrentGUID == string.Empty)
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSecondsRealtime(3f);
         else
-            yield return new WaitForSeconds(.25f);
+            yield return new WaitForSecondsRealtime(.25f);
 
         dialogueManager.StartDialogue(dialogue, SaveAndLoadManager.Instance.CurrentSave.CurrentChapterData);
         messagingCanvas.gameObject.SetActive(true);

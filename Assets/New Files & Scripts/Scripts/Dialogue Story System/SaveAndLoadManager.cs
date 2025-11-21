@@ -140,13 +140,13 @@ public class SaveAndLoadManager : MonoBehaviour
         }
     }
 
-    public void CreateSaveState(int slot, string name = "")
+    public void CreateSaveState(int slot, string name)
     {
         try
         {
             CurrentSave.SaveStates[slot] = CurrentSave.CurrentState.Clone();
             CurrentSave.SaveStates[slot].IsSaved = true;
-            CurrentSave.SaveStates[slot].Name = name == string.Empty ? $"Save slot {slot + 1}" : name;
+            CurrentSave.SaveStates[slot].Name = name;
 
             AutoSave();
         }
@@ -199,7 +199,7 @@ public class SaveAndLoadManager : MonoBehaviour
         catch (Exception) { }
     }
 
-    public void StartNewSave()
+    public void StartNewSave(bool startDialogue = true)
     {
         System.IO.File.Delete(GetPath(0));
 
@@ -208,7 +208,7 @@ public class SaveAndLoadManager : MonoBehaviour
 
         LoadSave(0);
 
-        GameManager.Instance.ResetGameState();
+        GameManager.Instance.ResetGameState(startDialogue);
         GameManager.Instance.ResetBackgroundImage();
     }
 }

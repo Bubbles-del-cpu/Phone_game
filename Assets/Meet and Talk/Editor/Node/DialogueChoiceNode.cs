@@ -33,7 +33,7 @@ namespace MeetAndTalk.Nodes
         protected FloatField duration_Field;
         protected ObjectField character_Field;
         protected Toggle requireCharacterInput_Field;
-        protected Label displayText_Label;
+        private List<VisualElement> nodeFields;
 
         public AvatarPosition avatarPosition;
         public AvatarType avatarType;
@@ -54,6 +54,7 @@ namespace MeetAndTalk.Nodes
             title = "Choice";
             SetPosition(new Rect(_position, defualtNodeSize));
             nodeGuid = Guid.NewGuid().ToString();
+            nodeFields = new List<VisualElement>();
 
             AddInputPort("Input ", Port.Capacity.Multi);
 
@@ -121,19 +122,19 @@ namespace MeetAndTalk.Nodes
 
             //Require Character Field
             requireCharacterInput_Field = new Toggle("Has Character Input");
-
             requireCharacterInput_Field.RegisterValueChangedCallback(value =>
             {
                 requireCharacterInput = value.newValue;
-                AddTextFields(value.newValue);
+                PopulateContainer();
             });
+
             requireCharacterInput_Field.SetValueWithoutNotify(requireCharacterInput);
 
 
             /* TEXT BOX */
-            displayText_Label = new Label("Displayed Text");
-            displayText_Label.AddToClassList("label_texts");
-            displayText_Label.AddToClassList("Label");
+            // displayText_Label = new Label("Displayed Text");
+            // displayText_Label.AddToClassList("label_texts");
+            // displayText_Label.AddToClassList("Label");
 
             texts_Field = new TextField("");
             texts_Field.RegisterValueChangedCallback(value =>
@@ -142,7 +143,6 @@ namespace MeetAndTalk.Nodes
             });
             texts_Field.SetValueWithoutNotify(texts.Find(text => text.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
             texts_Field.multiline = true;
-
             texts_Field.AddToClassList("TextBox");
 
             /* DIALOGUE DURATION */
@@ -155,7 +155,6 @@ namespace MeetAndTalk.Nodes
             duration_Field.SetValueWithoutNotify(durationShow);
             duration_Field.AddToClassList("TextDuration");
 
-            AddTextFields(true);
 
             Button button = new Button()
             {
@@ -171,43 +170,72 @@ namespace MeetAndTalk.Nodes
 
         protected virtual void PopulateContainer()
         {
-            Label label_audio = new Label("Audio Clip");
-            label_audio.AddToClassList("label_name");
-            label_audio.AddToClassList("Label");
-            mainContainer.Add(label_audio);
-            mainContainer.Add(audioClips_Field);
-
             /* Character CLIPS */
-            Label label_character = new Label("Character SO");
-            label_character.AddToClassList("label_name");
-            label_character.AddToClassList("Label");
+           foreach (var item in nodeFields)
+            {
+                if (mainContainer.Contains(item))
+                    mainContainer.Remove(item);
+            }
 
-            mainContainer.Add(label_character);
-            mainContainer.Add(character_Field);
-            mainContainer.Add(AvatarPositionField);
-            mainContainer.Add(AvatarTypeField);
-            mainContainer.Add(requireCharacterInput_Field);
-            mainContainer.Add(duration_Field);
+            nodeFields.Clear();
 
+            //mainContainer.Add(label_character);
+            Label name_Label = new Label("Character");
+            name_Label.AddToClassList("label_texts");
+            name_Label.AddToClassList("Label");
+            nodeFields.Add(name_Label);
+            nodeFields.Add(character_Field);
+            nodeFields.Add(AvatarPositionField);
+            nodeFields.Add(AvatarTypeField);
+            nodeFields.Add(requireCharacterInput_Field);
+
+
+            // mainContainer.Add(label_audio);
+            Label audio_Label = new Label("Audio Clip");
+            audio_Label.AddToClassList("label_texts");
+            audio_Label.AddToClassList("Label");
+            nodeFields.Add(audio_Label);
+            nodeFields.Add(audioClips_Field);
+
+            if (RequireInput)
+            {
+                Label displayText_Label = new Label("Displayed Text");
+                displayText_Label.AddToClassList("label_texts");
+                displayText_Label.AddToClassList("Label");
+                nodeFields.Add(displayText_Label);
+                nodeFields.Add(texts_Field);
+            }
+
+            nodeFields.Add(duration_Field);
+
+
+            foreach (var item in nodeFields)
+            {
+                if (!mainContainer.Contains(item))
+                    mainContainer.Add(item);
+            }
         }
 
         protected virtual void AddTextFields(bool add)
         {
-            if (add)
-            {
-                mainContainer.Add(displayText_Label);
-                mainContainer.Add(texts_Field);
-            }
-            else
-            {
-                if (mainContainer.Contains(displayText_Label))
-                    mainContainer.Remove(displayText_Label);
+            // mainContainer.Add(displayText_Label);
+            // mainContainer.Add(texts_Field);
 
-                if (mainContainer.Contains(texts_Field))
-                    mainContainer.Remove(texts_Field);
-                //mainContainer.Remove(duration_Label);
-                //mainContainer.Remove(duration_Field);
-            }
+            // if (add)
+            // {
+            //     mainContainer.Add(displayText_Label);
+            //     mainContainer.Add(texts_Field);
+            // }
+            // else
+            // {
+            //     if (mainContainer.Contains(displayText_Label))
+            //         mainContainer.Remove(displayText_Label);
+
+            //     if (mainContainer.Contains(texts_Field))
+            //         mainContainer.Remove(texts_Field);
+            //     //mainContainer.Remove(duration_Label);
+            //     //mainContainer.Remove(duration_Field);
+            // }
         }
 
         public virtual void ReloadLanguage()
@@ -243,10 +271,7 @@ namespace MeetAndTalk.Nodes
             audioClips_Field.SetValueWithoutNotify(audioClip.Find(language => language.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
             requireCharacterInput_Field.SetValueWithoutNotify(RequireInput);
 
-            if (!RequireInput)
-            {
-                AddTextFields(false);
-            }
+            PopulateContainer();
         }
 
         public virtual Port AddChoicePort(BaseNode basenote, DialogueNodePort inDialogueNodePort = null)
