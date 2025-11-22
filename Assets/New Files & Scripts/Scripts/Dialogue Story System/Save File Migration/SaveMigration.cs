@@ -36,17 +36,34 @@ namespace SaveMigrationSystem
                 StringBuilder lastChapter = new StringBuilder();
                 int braceDepth = 0;
                 bool captureElement = false;
-
+                var checkField = $"\"{ARRAY_FIELD_OLD}\"";
+                var newField = $"\"{ARRAY_FIELD_NEW}\"";
                 while ((line = reader.ReadLine()) != null)
                 {
-                    // Detect start of chapterHistory array
-                    if (line.Contains($"\"{ARRAY_FIELD_OLD}\""))
+                    if (line.Contains(checkField))
                     {
-                        // Replace field name
-                        line = line.Replace($"\"{ARRAY_FIELD_OLD}\": [", $"\"{ARRAY_FIELD_NEW}\":");
-                        writer.WriteLine(line);
-                        inChapterHistory = true;
-                        continue;
+                        if (line.Contains($"{checkField}: [],"))
+                        {
+                            // Handle empty array case
+                            line = line.Replace($"{checkField}: [],", $"{newField}: {{}},");
+                            writer.WriteLine(line);
+                            continue;
+                        }
+                        else if (line.Contains($"{checkField}: []"))
+                        {
+                            // Handle empty array case without trailing comma
+                            line = line.Replace($"{checkField}: []", $"{newField}: {{}}");
+                            writer.WriteLine(line);
+                            continue;
+                        }
+                        else
+                        {
+                            // Multi-line array case
+                            line = line.Replace($"{checkField}: [", $"{newField}:");
+                            writer.WriteLine(line);
+                            inChapterHistory = true;
+                            continue;
+                        }
                     }
 
                     if (inChapterHistory)
