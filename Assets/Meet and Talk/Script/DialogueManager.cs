@@ -68,6 +68,9 @@ namespace MeetAndTalk
         {
             if (_dialogueStarted || dialogueContainer == null || _chapterData == null)
             {
+                if (_dialogueStarted)
+                    _loadingIndicator.gameObject.SetActive(false);
+
                 return;
             }
 
