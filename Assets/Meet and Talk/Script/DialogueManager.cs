@@ -16,7 +16,18 @@ namespace MeetAndTalk
         public const float BASE_NODE_DISPLAY_TIME = 2;
         public const float REPOPULATE_YIELD_COUNT = 10;
 
-        [HideInInspector] public static DialogueManager Instance;
+        private static DialogueManager _instance;
+        public static DialogueManager Instance
+        {
+            get
+            {
+                if (!_instance)
+                    _instance = FindFirstObjectByType<DialogueManager>();
+
+                return _instance;
+            }
+        }
+
         public LocalizationManager localizationManager;
 
         [HideInInspector] public DialogueUIManager dialogueUIManager;
@@ -52,15 +63,9 @@ namespace MeetAndTalk
         [SerializeField] private RectTransform _loadingIndicator;
         private void Awake()
         {
-            Instance = this;
-
             // Setup UI
             DialogueUIManager[] all = FindObjectsByType<DialogueUIManager>(FindObjectsSortMode.None);
             foreach (DialogueUIManager ui in all) { if (ui.dialogueCanvas != null) ui.dialogueCanvas.Close(); }
-
-            DialogueUIManager.Instance = MainUI;
-            dialogueUIManager = DialogueUIManager.Instance;
-
             AudioSource = GetComponent<AudioSource>();
         }
 
@@ -110,17 +115,6 @@ namespace MeetAndTalk
                     StartDialogueEvent.Invoke();
                 }
             }
-        }
-
-        /// <summary>
-        /// Pozwala na zmiane aktualnego UI Dialogu
-        /// </summary>
-        /// <param name="UI"></param>
-        public void ChangeUI(DialogueUIManager UI)
-        {
-            // Setup UI
-            if (UI != null) DialogueUIManager.Instance = UI;
-            else Debug.LogError("DialogueUIManager.UI Object jest Pusty!");
         }
 
         /// <summary>

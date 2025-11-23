@@ -22,8 +22,18 @@ public class GameManager : MonoBehaviour
             return resoruce;
         }
     }
+    private static GameManager _instance;
+    public static GameManager Instance
+    {
+        get
+        {
+            if (!_instance)
+                _instance = FindFirstObjectByType<GameManager>();
 
-    public static GameManager Instance;
+            return _instance;
+        }
+    }
+
     bool _prevFullScreen;
 
     [HideInInspector] public bool ResettingSave;
@@ -142,14 +152,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Instance = this;
-
         audioSource = GetComponent<AudioSource>();
     }
 

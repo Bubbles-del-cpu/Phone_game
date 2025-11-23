@@ -9,7 +9,17 @@ namespace MeetAndTalk
 {
     public class DialogueUIManager : MonoBehaviour
     {
-        public static DialogueUIManager Instance;
+        private static DialogueUIManager _instance;
+        public static DialogueUIManager Instance
+        {
+            get
+            {
+                if (!_instance)
+                    _instance = FindFirstObjectByType<DialogueUIManager>();
+
+                return _instance;
+            }
+        }
 
         [Header("Type Writing")]                    // Premium Feature
         public bool EnableTypeWriting = false;      // Premium Feature
@@ -31,7 +41,6 @@ namespace MeetAndTalk
             {
                 _displayHints = value;
                 SaveAndLoadManager.Instance.CurrentSave.DisplayHints = value;
-                SaveAndLoadManager.Instance.AutoSave();
             }
         }
 
@@ -83,8 +92,6 @@ namespace MeetAndTalk
 
         private void Awake()
         {
-            if (Instance == null) Instance = this;
-
             // Premium Feature: Type-Writing
             if (EnableTypeWriting) lastTypingTime = Time.time;
         }
