@@ -49,6 +49,7 @@ MonoBehaviour:
         LanguageGenericType: Answer First
       - languageEnum: 1
         LanguageGenericType: "Odpowied\u017A Pierwsza"
+      HintLanguage: []
     - PortGuid: a95ea62f-823d-4d47-85f6-5e35f79ff543
       InputGuid: e28a2d3f-e245-4334-ad89-cae1454c693b
       OutputGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
@@ -57,6 +58,7 @@ MonoBehaviour:
         LanguageGenericType: Answer Second
       - languageEnum: 1
         LanguageGenericType: Odpowiedz Druga
+      HintLanguage: []
     AudioClips:
     - languageEnum: 0
       LanguageGenericType: {fileID: 8300000, guid: 56ef6313c5e50d040ac1e663643dc0a9, type: 3}
@@ -71,6 +73,10 @@ MonoBehaviour:
     - languageEnum: 1
       LanguageGenericType: "To teraz wybierz jedn\u0105 z dw\xF3ch odpowiedzi"
     Duration: 5
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
   DialogueNodeDatas:
   - NodeGuid: 22f599fe-bf89-4c1d-a11e-24846e378fe0
     Position: {x: -400, y: -104}
@@ -83,12 +89,27 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 2e32fce93d6416647a0d4fd3c2ad917c, type: 2}
     AvatarPos: 1
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Who are you?
     - languageEnum: 1
       LanguageGenericType: "Kim jeste\u015B?"
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
   - NodeGuid: ab381fe3-b8b3-49d4-9b85-1bc882ab3f22
     Position: {x: -160, y: -104}
     DialogueNodePorts: []
@@ -100,12 +121,27 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 6c7c2303cba66254eb2469508683ee61, type: 2}
     AvatarPos: 2
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Will, what about you?
     - languageEnum: 1
       LanguageGenericType: Will, a ty?
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
   - NodeGuid: 21d5cf27-0301-4b08-9d7c-b4c510d14ee7
     Position: {x: 87, y: -104}
     DialogueNodePorts: []
@@ -117,12 +153,27 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 52bf713ca2c3ac34995eb97495258ba0, type: 2}
     AvatarPos: 1
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Jayden
     - languageEnum: 1
       LanguageGenericType: Jayden
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
   - NodeGuid: 3dbf6b6e-6d77-462d-8c4c-8d7376ea8008
     Position: {x: 1199, y: 30}
     DialogueNodePorts: []
@@ -134,14 +185,29 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 52bf713ca2c3ac34995eb97495258ba0, type: 2}
     AvatarPos: 1
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Good answer, both led to the same thing but you can lead
         multiple dialogue options
     - languageEnum: 1
       LanguageGenericType: "Dobra odpowied\u017C, obie prowadzi\u0142y do tego samego
         ale mo\u017Cesz poprowadzi\u0107 wiele opcji dialogowych"
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 7
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
   - NodeGuid: 3ab91ec7-110f-4eb0-b7f1-5e01a90c711f
     Position: {x: 1443, y: 30}
     DialogueNodePorts: []
@@ -153,12 +219,27 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 6c7c2303cba66254eb2469508683ee61, type: 2}
     AvatarPos: 2
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: I'll see you later
     - languageEnum: 1
       LanguageGenericType: "Zobaczymy si\u0119 p\xF3zniej"
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 3
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
   - NodeGuid: f0b67569-d7ba-45fc-b51d-fa00c4710203
     Position: {x: 946, y: -104}
     DialogueNodePorts: []
@@ -170,12 +251,27 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 6c7c2303cba66254eb2469508683ee61, type: 2}
     AvatarPos: 2
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: I choose answer one
     - languageEnum: 1
       LanguageGenericType: "Wybieram odpowied\u017A pierwsz\u0105"
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 3
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
   - NodeGuid: 62f85d56-c20d-444c-869b-e061135e621d
     Position: {x: 342, y: -104}
     DialogueNodePorts: []
@@ -187,13 +283,28 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 52bf713ca2c3ac34995eb97495258ba0, type: 2}
     AvatarPos: 1
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: What you see now is a demo of a sample dialogue.
     - languageEnum: 1
       LanguageGenericType: "To co teraz widzisz, jest to demo przyk\u0142adowego
         dialogu."
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 7
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
   - NodeGuid: e28a2d3f-e245-4334-ad89-cae1454c693b
     Position: {x: 946, y: 192}
     DialogueNodePorts: []
@@ -205,12 +316,27 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: 6c7c2303cba66254eb2469508683ee61, type: 2}
     AvatarPos: 2
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: I choose answer two
     - languageEnum: 1
       LanguageGenericType: "Wybieram odpowied\u017C drug\u0105"
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 3
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: 7187faa9-3131-478a-916d-786974f7991c

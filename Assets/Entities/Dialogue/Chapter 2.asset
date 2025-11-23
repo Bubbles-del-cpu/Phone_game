@@ -80,6 +80,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
+    SelectedChoice: []
   - NodeGuid: ce7f6a6a-b9eb-451c-8a55-9a779e78821c
     Position: {x: 1479, y: 195}
     DialogueNodePorts:
@@ -118,6 +119,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
+    SelectedChoice: []
   - NodeGuid: 0fdea421-c307-41b8-8b4d-af7e2cbe6459
     Position: {x: -191, y: 236}
     DialogueNodePorts:
@@ -147,6 +149,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
+    SelectedChoice: []
   - NodeGuid: 6f867fa9-e80b-4cf6-8661-bd16b1117606
     Position: {x: -576, y: 257}
     DialogueNodePorts:
@@ -177,6 +180,7 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
+    SelectedChoice: []
   DialogueNodeDatas:
   - NodeGuid: 583862d7-64f4-4d38-a742-f2e466bc1647
     Position: {x: 569, y: 195}
@@ -189,19 +193,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: long time no talk
     - languageEnum: 1
       LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
     Post: {fileID: 11400000, guid: 87442179d7eeea9439b95a0a5f0c4eb6, type: 2}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: c6290eb6-cefd-4d90-89ba-2d9033f9a478
     Position: {x: 1193, y: 195}
@@ -214,19 +225,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: just surviving?
     - languageEnum: 1
       LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
     Post: {fileID: 11400000, guid: eb138877c58468442b655355d1754919, type: 2}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: f1a4f15e-bccf-42af-8072-6bde30c3623d
     Position: {x: 2388, y: 196}
@@ -239,19 +257,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: now three!!!
     - languageEnum: 1
       LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 2 hours later...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 21300000, guid: 9b8eaa5f33894324fab37e06ee390eea, type: 3}
     Video: {fileID: 0}
-    ImageTarget: 1
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 2 hours later...
     DelayTimer: 0
   - NodeGuid: 7f116c71-ff90-4813-bd9b-c0b315d7d0bc
     Position: {x: 2124, y: 196}
@@ -264,19 +289,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: now you owe me two smiles!!
     - languageEnum: 1
       LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 10 minutes later...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 6
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 21300000, guid: fa2dae40a52453c43bb53208ce6145df, type: 3}
     Video: {fileID: 0}
-    ImageTarget: 1
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
     Post: {fileID: 11400000, guid: 9fd17527cce19d74c8552d702889f6b5, type: 2}
-    Timelapse: 10 minutes later...
     DelayTimer: 0
   - NodeGuid: 7bdea7cd-d865-4e49-ad30-c43e558e60e6
     Position: {x: 1854, y: 195}
@@ -289,19 +321,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: now you owe me a smile!! <3
     - languageEnum: 1
       LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 4
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 21300000, guid: ce8365dc16e5e4941a6369971ac34309, type: 3}
     Video: {fileID: 0}
-    ImageTarget: 1
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
     Post: {fileID: 11400000, guid: 3508211763692914baa6a2fd540f9ae8, type: 2}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 32545409-1db7-4608-bec0-df23bf1f0c65
     Position: {x: 324, y: 195}
@@ -314,19 +353,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: hello!
     - languageEnum: 1
       LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
-    ImageTarget: 0
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   TimerChoiceNodeDatas: []
   EndNodeDatas:

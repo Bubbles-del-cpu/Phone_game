@@ -45,7 +45,7 @@ public class UICanvas : MonoBehaviour
 
     private IEnumerator CoSetOpenState(float delay, bool state)
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSecondsRealtime(delay);
         if (_canvas != null)
         {
             var command = new PanelOpenCommand(this, state);

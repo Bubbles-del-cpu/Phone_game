@@ -251,7 +251,7 @@ public class GameManager : MonoBehaviour
         messagingCanvas.Close();
 
         //Restart the dialogue trees
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSecondsRealtime(.1f);
 
         settingsCanvas.Close();
 
@@ -271,9 +271,9 @@ public class GameManager : MonoBehaviour
     IEnumerator CoStartDialogue()
     {
         if (SaveAndLoadManager.Instance.CurrentSave.CurrentChapterData.CurrentGUID == string.Empty)
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSecondsRealtime(3f);
         else
-            yield return new WaitForSeconds(.25f);
+            yield return new WaitForSecondsRealtime(.25f);
 
         dialogueManager.StartDialogue(dialogue, SaveAndLoadManager.Instance.CurrentSave.CurrentChapterData);
         messagingCanvas.gameObject.SetActive(true);

@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5339487395452981443, guid: e6dd4f8d630506f4da4be5ef771f8da3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 54120866276299727, guid: e6dd4f8d630506f4da4be5ef771f8da3, type: 3}
       propertyPath: m_SizeDelta.x
       value: -75
@@ -94,7 +98,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5428898849183682350, guid: e6dd4f8d630506f4da4be5ef771f8da3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5428898849183682350, guid: e6dd4f8d630506f4da4be5ef771f8da3, type: 3}
       propertyPath: m_SizeDelta.y
@@ -106,7 +110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5428898849183682350, guid: e6dd4f8d630506f4da4be5ef771f8da3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -10
+      value: -21.630001
       objectReference: {fileID: 0}
     - target: {fileID: 5697198558141926995, guid: e6dd4f8d630506f4da4be5ef771f8da3, type: 3}
       propertyPath: m_Pivot.x
@@ -134,11 +138,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5697198558141926995, guid: e6dd4f8d630506f4da4be5ef771f8da3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -282
       objectReference: {fileID: 0}
     - target: {fileID: 5697198558141926995, guid: e6dd4f8d630506f4da4be5ef771f8da3, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 43.260002
       objectReference: {fileID: 0}
     - target: {fileID: 5697198558141926995, guid: e6dd4f8d630506f4da4be5ef771f8da3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -187,6 +191,18 @@ PrefabInstance:
     - target: {fileID: 5697198558141926995, guid: e6dd4f8d630506f4da4be5ef771f8da3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135911240428712562, guid: e6dd4f8d630506f4da4be5ef771f8da3, type: 3}
+      propertyPath: m_Color.b
+      value: 0.3490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135911240428712562, guid: e6dd4f8d630506f4da4be5ef771f8da3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.3490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135911240428712562, guid: e6dd4f8d630506f4da4be5ef771f8da3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.3490566
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

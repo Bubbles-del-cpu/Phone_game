@@ -131,7 +131,7 @@ public class DialogueChapterManager : UICanvas
         for (var index = 0; index < StoryList.Count; index++)
         {
             var chapterData = StoryList[index];
-            var isCompleted = SaveAndLoadManager.Instance.CurrentSave.ForceUnlockAllChapters || SaveAndLoadManager.Instance.CurrentSave.AutoSaveState.Chapters[chapterData.ChapterIndex].Completed;
+            var isCompleted = SaveAndLoadManager.Instance.CurrentSave.ForceUnlockAllChapters || SaveAndLoadManager.Instance.CurrentSave.AutoSaveState.IsChapterCompleted(chapterData.ChapterIndex);
             var newButton = Instantiate(_chapterButtonPrefab, _chapterButtonContainer);
             newButton.Setup(chapterData, isCompleted, currentChapter.FileIndex == index, false);
 
@@ -188,7 +188,7 @@ public class DialogueChapterManager : UICanvas
     {
         OverlayCanvas.Instance.FadeToBlack(() =>
         {
-            GameManager.Instance.ResetGameState();
+            GameManager.Instance.ResetGameState(false);
             TriggerStoryChapter(SaveAndLoadManager.Instance.CurrentSave.CurrentState.CompletedChapters.Count);
 
             //Open chapter selection
@@ -202,7 +202,7 @@ public class DialogueChapterManager : UICanvas
 
         var wasReplaying = SaveAndLoadManager.Instance.ReplayingCompletedChapter;
 
-        if (SaveAndLoadManager.Instance.CurrentSave.CurrentState.CompletedChapters.Count >= SaveAndLoadManager.Instance.CurrentSave.TotalChapters)
+        if (SaveAndLoadManager.Instance.CurrentSave.CurrentState.CompletedChapters.Count >= StoryList.Count)
         {
             //We have completed the last chapter.
             GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.ALL_CHAPTERS_COMPLETE, eventToTrigger: null, GameConstants.UIElementKeys.CONTINUE, args: null, twoButtonSetup: false);

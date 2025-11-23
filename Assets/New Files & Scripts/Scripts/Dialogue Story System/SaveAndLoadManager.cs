@@ -95,6 +95,12 @@ public class SaveAndLoadManager : MonoBehaviour
         var path = GetPath(saveSlot);
         if (System.IO.File.Exists(path))
         {
+            if (SaveMigrationSystem.SaveMigration.NeedMigration(path))
+            {
+                Debug.Log($"[SaveAndLoadManager] Migrating save file for slot {saveSlot}. File Location: {path}");
+                SaveMigrationSystem.SaveMigration.MigrateLargeSave(path);
+            }
+
             Debug.Log($"[SaveAndLoadManager] Loading save slot {saveSlot}. File Location: {path}");
             var data = System.IO.File.ReadAllText(GetPath(saveSlot));
             var saveFileData = JsonUtility.FromJson<SaveFileData>(data);
@@ -158,7 +164,7 @@ public class SaveAndLoadManager : MonoBehaviour
         try
         {
             //Reset the chapter
-            CurrentSave.CurrentState.Chapters[chapterIndex] = new ChapterSaveData();
+            CurrentSave.CurrentState.LastChapter = new ChapterSaveData();
             GameManager.Instance.ResetBackgroundImage();
             AutoSave();
         }
@@ -199,7 +205,7 @@ public class SaveAndLoadManager : MonoBehaviour
         catch (Exception) { }
     }
 
-    public void StartNewSave()
+    public void StartNewSave(bool startDialogue = true)
     {
         System.IO.File.Delete(GetPath(0));
 
@@ -208,7 +214,7 @@ public class SaveAndLoadManager : MonoBehaviour
 
         LoadSave(0);
 
-        GameManager.Instance.ResetGameState();
+        GameManager.Instance.ResetGameState(startDialogue);
         GameManager.Instance.ResetBackgroundImage();
     }
 }

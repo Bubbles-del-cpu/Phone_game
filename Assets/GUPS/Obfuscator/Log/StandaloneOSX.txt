@@ -57,7 +57,7 @@
 [Info][GUPS.OBF][OnProcess_Assets] Process component Analyse Unity Animation Methods
 [Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Iterate components in loaded build scene 'Assets/Scenes/4.mobile.unity'.
 [Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Found 6 Root GameObjects in Scene Assets/Scenes/4.mobile.unity
-[Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Found 1261 Components in Scene Assets/Scenes/4.mobile.unity
+[Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Found 1270 Components in Scene Assets/Scenes/4.mobile.unity
 [Info][GUPS.OBF][OnAnalyse_Component_Scenes] Process component Analyse Unity Event Component
 [Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Main Camera' of type 'UnityEngine.Transform'.
 [Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Main Camera' of type 'UnityEngine.Camera'.
@@ -609,6 +609,21 @@
 [Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Logo' of type 'UnityEngine.RectTransform'.
 [Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Logo' of type 'UnityEngine.CanvasRenderer'.
 [Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Logo' of type 'UnityEngine.UI.Image'.
+[Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Clear Save Button' of type 'UnityEngine.RectTransform'.
+[Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Clear Save Button' of type 'UnityEngine.CanvasRenderer'.
+[Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Clear Save Button' of type 'UnityEngine.UI.Image'.
+[Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Clear Save Button' of type 'UnityEngine.UI.Button'.
+[Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Found unity event methods in component 'Clear Save Button' (1):
+  - Click
+
+[Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Clear Save Button' of type 'ClearSaveButton'.
+[Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Text (TMP)' of type 'UnityEngine.RectTransform'.
+[Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Text (TMP)' of type 'UnityEngine.CanvasRenderer'.
+[Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Text (TMP)' of type 'TMPro.TextMeshProUGUI'.
+[Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Text (TMP)' of type 'UnityEngine.Localization.Components.LocalizeStringEvent'.
+[Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Found unity event methods in component 'Text (TMP)' (1):
+  - set_text
+
 [Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Build Text' of type 'UnityEngine.RectTransform'.
 [Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Build Text' of type 'UnityEngine.CanvasRenderer'.
 [Debug][GUPS.OBF][OnAnalyse_Component_Scenes] Find unity event methods in component 'Build Text' of type 'TMPro.TextMeshProUGUI'.
@@ -4165,7 +4180,7 @@
 [Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Value' of type 'UnityEngine.RectTransform'.
 [Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Value' of type 'UnityEngine.CanvasRenderer'.
 [Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Value' of type 'UnityEngine.UI.Text'.
-[Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Found '94' Components in the prefab at path 'Assets/Home Screen/Home Screen.prefab'.
+[Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Found '103' Components in the prefab at path 'Assets/Home Screen/Home Screen.prefab'.
 [Info][GUPS.OBF][OnAnalyse_Component_Prefabs] Process component Analyse Unity Event Component
 [Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Home Screen' of type 'UnityEngine.RectTransform'.
 [Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Home Screen' of type 'HomeScreen'.
@@ -4278,6 +4293,21 @@
 [Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Logo' of type 'UnityEngine.RectTransform'.
 [Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Logo' of type 'UnityEngine.CanvasRenderer'.
 [Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Logo' of type 'UnityEngine.UI.Image'.
+[Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Button' of type 'UnityEngine.RectTransform'.
+[Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Button' of type 'UnityEngine.CanvasRenderer'.
+[Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Button' of type 'UnityEngine.UI.Image'.
+[Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Button' of type 'UnityEngine.UI.Button'.
+[Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Found unity event methods in component 'Button' (1):
+  - Click
+
+[Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Button' of type 'ClearSaveButton'.
+[Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Text (TMP)' of type 'UnityEngine.RectTransform'.
+[Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Text (TMP)' of type 'UnityEngine.CanvasRenderer'.
+[Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Text (TMP)' of type 'TMPro.TextMeshProUGUI'.
+[Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Text (TMP)' of type 'UnityEngine.Localization.Components.LocalizeStringEvent'.
+[Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Found unity event methods in component 'Text (TMP)' (1):
+  - set_text
+
 [Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Build Text' of type 'UnityEngine.RectTransform'.
 [Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Build Text' of type 'UnityEngine.CanvasRenderer'.
 [Debug][GUPS.OBF][OnAnalyse_Component_Prefabs] Find unity event methods in component 'Build Text' of type 'TMPro.TextMeshProUGUI'.
@@ -5648,7 +5678,7 @@
 [Debug][GUPS.OBF][Setup] Found helper assemblies (1):
   - C:\Users\dajof\Desktop\unity nts game\New NTS game\Temp\StagingArea\Data\Managed\GUPS.Obfuscator.dll
 
-[Debug][GUPS.OBF][Setup] Found dependency directories (33):
+[Debug][GUPS.OBF][Setup] Found dependency directories (34):
   - C:\Program Files\Unity\Hub\Editor\6000.2.8f1\Editor\Data\MonoBleedingEdge\lib\mono\unityjit-win32
   - C:\Program Files\Unity\Hub\Editor\6000.2.8f1\Editor\Data\Managed\UnityEngine
   - C:\Program Files\Unity\Hub\Editor\6000.2.8f1\Editor\Data\MonoBleedingEdge\lib\mono\unityjit-win32\Facades
@@ -5656,6 +5686,7 @@
   - C:\Program Files\Unity\Hub\Editor\6000.2.8f1\Editor\Data\PlaybackEngines\MacStandaloneSupport
   - C:\Program Files\Unity\Hub\Editor\6000.2.8f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport
   - C:\Program Files\Unity\Hub\Editor\6000.2.8f1\Editor\Data\PlaybackEngines\AndroidPlayer
+  - C:\Program Files\Unity\Hub\Editor\6000.2.8f1\Editor\Data\PlaybackEngines\LinuxStandaloneSupport
   - C:\Users\dajof\Desktop\unity nts game\New NTS game\Library\ScriptAssemblies
   - C:\Users\dajof\Desktop\unity nts game\New NTS game\Library\PackageCache\com.unity.nuget.mono-cecil@d78732e851eb
   - C:\Users\dajof\Desktop\unity nts game\New NTS game\Library\PackageCache\com.unity.localization@d45547f9f157\Editor
@@ -5793,7 +5824,6 @@
 [Info][GUPS.OBF][OnAnalyse_Assemblies] [[Assembly-CSharp] ChapterSaveData]  Analyse Type References in Custom Attribute References...
 [Info][GUPS.OBF][OnAnalyse_Assemblies] [[Assembly-CSharp] ChapterSettingsDialog/<>c__DisplayClass5_0]  Analyse Type References in Custom Attribute References...
 [Info][GUPS.OBF][OnAnalyse_Assemblies] [[Assembly-CSharp] ChapterSettingsDialog]  Analyse Type References in Custom Attribute References...
-[Info][GUPS.OBF][OnAnalyse_Assemblies] [[Assembly-CSharp] ClearSaveButton/<>c]  Analyse Type References in Custom Attribute References...
 [Info][GUPS.OBF][OnAnalyse_Assemblies] [[Assembly-CSharp] ClearSaveButton]  Analyse Type References in Custom Attribute References...
 [Info][GUPS.OBF][OnAnalyse_Assemblies] [[Assembly-CSharp] DialogueChapterManager/ChapterData/ChapterReplaySetting]  Analyse Type References in Custom Attribute References...
 [Info][GUPS.OBF][OnAnalyse_Assemblies] [[Assembly-CSharp] DialogueChapterManager/ChapterData]  Analyse Type References in Custom Attribute References...
@@ -6026,7 +6056,6 @@
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Types Namespace [[Assembly-CSharp] ChapterSaveData] Obfuscator Free is used.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Types Namespace [[Assembly-CSharp] ChapterSettingsDialog/<>c__DisplayClass5_0] Obfuscator Free is used.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Types Namespace [[Assembly-CSharp] ChapterSettingsDialog] Obfuscator Free is used.
-[Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Types Namespace [[Assembly-CSharp] ClearSaveButton/<>c] Obfuscator Free is used.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Types Namespace [[Assembly-CSharp] ClearSaveButton] Obfuscator Free is used.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Types Namespace [[Assembly-CSharp] DialogueChapterManager/ChapterData/ChapterReplaySetting] Obfuscator Free is used.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Types Namespace [[Assembly-CSharp] DialogueChapterManager/ChapterData] Obfuscator Free is used.
@@ -6263,7 +6292,6 @@
 [Info][GUPS.OBF][OnAnalyse_Assemblies] [[Assembly-CSharp] ChapterSaveData]  Analyse Type References in Custom Attribute References...
 [Info][GUPS.OBF][OnAnalyse_Assemblies] [[Assembly-CSharp] ChapterSettingsDialog/<>c__DisplayClass5_0]  Analyse Type References in Custom Attribute References...
 [Info][GUPS.OBF][OnAnalyse_Assemblies] [[Assembly-CSharp] ChapterSettingsDialog]  Analyse Type References in Custom Attribute References...
-[Info][GUPS.OBF][OnAnalyse_Assemblies] [[Assembly-CSharp] ClearSaveButton/<>c]  Analyse Type References in Custom Attribute References...
 [Info][GUPS.OBF][OnAnalyse_Assemblies] [[Assembly-CSharp] ClearSaveButton]  Analyse Type References in Custom Attribute References...
 [Info][GUPS.OBF][OnAnalyse_Assemblies] [[Assembly-CSharp] DialogueChapterManager/ChapterData/ChapterReplaySetting]  Analyse Type References in Custom Attribute References...
 [Info][GUPS.OBF][OnAnalyse_Assemblies] [[Assembly-CSharp] DialogueChapterManager/ChapterData]  Analyse Type References in Custom Attribute References...
@@ -6501,8 +6529,6 @@
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Type [ChapterSaveData] Because of the deactivation of the 'Obfuscate serializable classes' settings.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Types Namespace [ChapterSaveData] Because of the deactivation of the 'Obfuscate serializable classes' settings.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Type [[Assembly-CSharp] ChapterSettingsDialog] Because of compatibility component: Unity - Compatibility : The class or base class contains some serializeable fields and the 'Obfuscate Serializeable Fields' settings is deactivated.
-[Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Type [ClearSaveButton/<>c] Because of the deactivation of the 'Obfuscate serializable classes' settings.
-[Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Types Namespace [ClearSaveButton/<>c] Because of the deactivation of the 'Obfuscate serializable classes' settings.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Type [[Assembly-CSharp] ClearSaveButton] Because of compatibility component: Unity - Compatibility : The class or base class contains some serializeable fields and the 'Obfuscate Serializeable Fields' settings is deactivated.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Type [DialogueChapterManager/ChapterData/ChapterReplaySetting] Because of the deactivation of the 'Obfuscate serializable classes' settings.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Types Namespace [DialogueChapterManager/ChapterData/ChapterReplaySetting] Because of the deactivation of the 'Obfuscate serializable classes' settings.
@@ -6874,8 +6900,6 @@
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Method [[Assembly-CSharp] System.Void ChapterSaveData::.ctor()] Because of compatibility component: .Net Framework - Compatibility : Is Special.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Method [[Assembly-CSharp] System.Void ChapterSettingsDialog/<>c__DisplayClass5_0::.ctor()] Because of compatibility component: .Net Framework - Compatibility : Is Special.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Method [[Assembly-CSharp] System.Void ChapterSettingsDialog::.ctor()] Because of compatibility component: .Net Framework - Compatibility : Is Special.
-[Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Method [[Assembly-CSharp] System.Void ClearSaveButton/<>c::.cctor()] Because of compatibility component: .Net Framework - Compatibility : Is Special.
-[Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Method [[Assembly-CSharp] System.Void ClearSaveButton/<>c::.ctor()] Because of compatibility component: .Net Framework - Compatibility : Is Special.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Method [[Assembly-CSharp] System.Void ClearSaveButton::.ctor()] Because of compatibility component: .Net Framework - Compatibility : Is Special.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Method [[Assembly-CSharp] System.Void DialogueChapterManager/ChapterData/ChapterReplaySetting::.ctor()] Because of compatibility component: .Net Framework - Compatibility : Is Special.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Method [[Assembly-CSharp] System.Void DialogueChapterManager/ChapterData::.ctor()] Because of compatibility component: .Net Framework - Compatibility : Is Special.
@@ -7285,9 +7309,8 @@
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Field [[Assembly-CSharp] UnityEngine.UI.Button ChapterSettingsDialog::_option2] Because of compatibility component: Unity - Compatibility : The field has a 'SerializeField' attribute and therefore is serializeable. The disabled setting 'Obfuscate SerializeAble Fields' deactivates obfuscation this field.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Field [[Assembly-CSharp] TMPro.TMP_Text ChapterSettingsDialog::_option1Label] Because of compatibility component: Unity - Compatibility : The field has a 'SerializeField' attribute and therefore is serializeable. The disabled setting 'Obfuscate SerializeAble Fields' deactivates obfuscation this field.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Field [[Assembly-CSharp] TMPro.TMP_Text ChapterSettingsDialog::_option2Label] Because of compatibility component: Unity - Compatibility : The field has a 'SerializeField' attribute and therefore is serializeable. The disabled setting 'Obfuscate SerializeAble Fields' deactivates obfuscation this field.
-[Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Field [[Assembly-CSharp] ClearSaveButton/<>c ClearSaveButton/<>c::<>9] Because of the deactivated 'Obfuscate serializable classes' setting.
-[Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Field [[Assembly-CSharp] System.Action ClearSaveButton/<>c::<>9__2_0] Because of the deactivated 'Obfuscate serializable classes' setting.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Field [[Assembly-CSharp] System.Boolean ClearSaveButton::_displayDialog] Because of compatibility component: Unity - Compatibility : The field has a 'SerializeField' attribute and therefore is serializeable. The disabled setting 'Obfuscate SerializeAble Fields' deactivates obfuscation this field.
+[Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Field [[Assembly-CSharp] System.Boolean ClearSaveButton::_startNewGameAfterClear] Because of compatibility component: Unity - Compatibility : The field has a 'SerializeField' attribute and therefore is serializeable. The disabled setting 'Obfuscate SerializeAble Fields' deactivates obfuscation this field.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Field [[Assembly-CSharp] UnityEngine.Localization.LocalizedString DialogueChapterManager/ChapterData/ChapterReplaySetting::DialogueTitleString] Because of the deactivated 'Obfuscate serializable classes' setting.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Field [[Assembly-CSharp] MeetAndTalk.GlobalValue.GlobalValueSave DialogueChapterManager/ChapterData/ChapterReplaySetting::Value] Because of the deactivated 'Obfuscate serializable classes' setting.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Field [[Assembly-CSharp] UnityEngine.Localization.LocalizedString DialogueChapterManager/ChapterData/ChapterReplaySetting::Option1TextString] Because of the deactivated 'Obfuscate serializable classes' setting.
@@ -7360,6 +7383,7 @@
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Field [[Assembly-CSharp] SaveStateDialogBox SaveStateButton::_saveDialogPrefab] Because of compatibility component: Unity - Compatibility : The field has a 'SerializeField' attribute and therefore is serializeable. The disabled setting 'Obfuscate SerializeAble Fields' deactivates obfuscation this field.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Field [[Assembly-CSharp] System.Int32 SaveStateButton::SlotNumber] Because of compatibility component: Unity - Compatibility : The class is a Unity class (MonoBehaviour/...) and the setting 'Obfuscate Public unity fields' is deactivated.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Field [[Assembly-CSharp] UnityEngine.Localization.Components.LocalizeStringEvent SaveStateButton::_localizedString] Because of compatibility component: Unity - Compatibility : The field has a 'SerializeField' attribute and therefore is serializeable. The disabled setting 'Obfuscate SerializeAble Fields' deactivates obfuscation this field.
+[Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Field [[Assembly-CSharp] TMPro.TextMeshProUGUI SaveStateButton::_textLabel] Because of compatibility component: Unity - Compatibility : The field has a 'SerializeField' attribute and therefore is serializeable. The disabled setting 'Obfuscate SerializeAble Fields' deactivates obfuscation this field.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Field [[Assembly-CSharp] UnityEngine.Localization.LocalizedString SaveStateButton::_emptySlotString] Because of compatibility component: Unity - Compatibility : The field has a 'SerializeField' attribute and therefore is serializeable. The disabled setting 'Obfuscate SerializeAble Fields' deactivates obfuscation this field.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Field [[Assembly-CSharp] UnityEngine.Localization.LocalizedString SaveStateButton::_filledSlotString] Because of compatibility component: Unity - Compatibility : The field has a 'SerializeField' attribute and therefore is serializeable. The disabled setting 'Obfuscate SerializeAble Fields' deactivates obfuscation this field.
 [Info][GUPS.OBF][OnAnalyse_Assemblies] Skip Field [[Assembly-CSharp] System.Boolean SelectNewSaveSlotButton::_displayDialog] Because of compatibility component: Unity - Compatibility : The field has a 'SerializeField' attribute and therefore is serializeable. The disabled setting 'Obfuscate SerializeAble Fields' deactivates obfuscation this field.
@@ -8057,9 +8081,9 @@
 [Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void ChapterSettingsDialog/<>c__DisplayClass5_0::<Setup>b__1()] : dz
 [Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void ChapterSettingsDialog::Setup(DialogueChapterManager/ChapterData/ChapterReplaySetting,System.Action)] : ea
 [Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void ChapterSettingsDialog::OnClick()] : eb
-[Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void ClearSaveButton/<>c::<FadeAndRestart>b__2_0()] : ec
-[Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void ClearSaveButton::FadeAndRestart()] : ed
-[Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void ClearSaveButton::<Click>b__1_0()] : ee
+[Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void ClearSaveButton::FadeAndRestart()] : ec
+[Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void ClearSaveButton::<Click>b__2_0()] : ed
+[Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void ClearSaveButton::<FadeAndRestart>b__3_0()] : ee
 [Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void DialogueChapterManager/<CoShowDialog>d__28::System.IDisposable.Dispose()] : ef
 [Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Object DialogueChapterManager/<CoShowDialog>d__28::System.Collections.Generic.IEnumerator<System.Object>.get_Current()] : eg
 [Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void DialogueChapterManager/<CoShowDialog>d__28::System.Collections.IEnumerator.Reset()] : eh
@@ -8095,7 +8119,7 @@
 [Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void SaveAndLoadManager::ClearChapterData(System.Int32)] : fl
 [Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void SaveAndLoadManager::LoadSaveSlot(System.Int32)] : fm
 [Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void SaveAndLoadManager::ClearSaveStateSlot(System.Int32)] : fn
-[Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void SaveAndLoadManager::StartNewSave()] : fo
+[Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void SaveAndLoadManager::StartNewSave(System.Boolean)] : fo
 [Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] SaveFileData/GameSaveState SaveFileData/GameSaveState::Clone()] : fp
 [Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.String SaveFileData/<>c::<ComparedAgainstLastest>b__18_0(SaveFileData/GlobalSaveVariable)] : fq
 [Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.String SaveFileData/<>c::<RemoveNode>b__25_0(ChapterSaveData/PastCoversationData)] : fr
@@ -8129,10 +8153,10 @@
 [Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void SaveFileData::MakeChoice(MeetAndTalk.BaseNodeData,System.Collections.Generic.List`1<MeetAndTalk.LanguageGeneric`1<System.String>>)] : gt
 [Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void SaveFileData::UpdateText(MeetAndTalk.BaseNodeData,System.Collections.Generic.List`1<MeetAndTalk.LanguageGeneric`1<System.String>>)] : gu
 [Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Boolean SaveStateButton::get__exists()] : gv
-[Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void SaveStateButton::<Awake>b__10_0()] : gw
-[Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void SaveStateButton::<Awake>b__10_1()] : gx
-[Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void SaveStateButton::<Awake>b__10_2()] : gy
-[Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void SaveStateButton::<Awake>b__10_3()] : gz
+[Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void SaveStateButton::<Awake>b__11_0()] : gw
+[Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void SaveStateButton::<Awake>b__11_1()] : gx
+[Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void SaveStateButton::<Awake>b__11_2()] : gy
+[Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void SaveStateButton::<Awake>b__11_3()] : gz
 [Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void SelectNewSaveSlotButton::ConfirmReset()] : ha
 [Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void SelectNewSaveSlotButton::<Click>b__1_0()] : hb
 [Info][GUPS.OBF][OnFindMemberNames_Assemblies] Found new Method Name [[Assembly-CSharp] System.Void StoryChapterButton/<>c__DisplayClass16_0::<CoShowOptions>b__0()] : hc
@@ -9202,9 +9226,9 @@
 [Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void ChapterSettingsDialog/<>c__DisplayClass5_0::<Setup>b__1()] to dz
 [Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void ChapterSettingsDialog::Setup(DialogueChapterManager/ChapterData/ChapterReplaySetting,System.Action)] to ea
 [Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void ChapterSettingsDialog::OnClick()] to eb
-[Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void ClearSaveButton/<>c::<FadeAndRestart>b__2_0()] to ec
-[Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void ClearSaveButton::FadeAndRestart()] to ed
-[Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void ClearSaveButton::<Click>b__1_0()] to ee
+[Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void ClearSaveButton::FadeAndRestart()] to ec
+[Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void ClearSaveButton::<Click>b__2_0()] to ed
+[Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void ClearSaveButton::<FadeAndRestart>b__3_0()] to ee
 [Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void DialogueChapterManager/<CoShowDialog>d__28::System.IDisposable.Dispose()] to ef
 [Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Object DialogueChapterManager/<CoShowDialog>d__28::System.Collections.Generic.IEnumerator<System.Object>.get_Current()] to eg
 [Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void DialogueChapterManager/<CoShowDialog>d__28::System.Collections.IEnumerator.Reset()] to eh
@@ -9240,7 +9264,7 @@
 [Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void SaveAndLoadManager::ClearChapterData(System.Int32)] to fl
 [Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void SaveAndLoadManager::LoadSaveSlot(System.Int32)] to fm
 [Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void SaveAndLoadManager::ClearSaveStateSlot(System.Int32)] to fn
-[Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void SaveAndLoadManager::StartNewSave()] to fo
+[Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void SaveAndLoadManager::StartNewSave(System.Boolean)] to fo
 [Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] SaveFileData/GameSaveState SaveFileData/GameSaveState::Clone()] to fp
 [Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.String SaveFileData/<>c::<ComparedAgainstLastest>b__18_0(SaveFileData/GlobalSaveVariable)] to fq
 [Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.String SaveFileData/<>c::<RemoveNode>b__25_0(ChapterSaveData/PastCoversationData)] to fr
@@ -9274,10 +9298,10 @@
 [Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void SaveFileData::MakeChoice(MeetAndTalk.BaseNodeData,System.Collections.Generic.List`1<MeetAndTalk.LanguageGeneric`1<System.String>>)] to gt
 [Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void SaveFileData::UpdateText(MeetAndTalk.BaseNodeData,System.Collections.Generic.List`1<MeetAndTalk.LanguageGeneric`1<System.String>>)] to gu
 [Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Boolean SaveStateButton::get__exists()] to gv
-[Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void SaveStateButton::<Awake>b__10_0()] to gw
-[Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void SaveStateButton::<Awake>b__10_1()] to gx
-[Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void SaveStateButton::<Awake>b__10_2()] to gy
-[Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void SaveStateButton::<Awake>b__10_3()] to gz
+[Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void SaveStateButton::<Awake>b__11_0()] to gw
+[Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void SaveStateButton::<Awake>b__11_1()] to gx
+[Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void SaveStateButton::<Awake>b__11_2()] to gy
+[Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void SaveStateButton::<Awake>b__11_3()] to gz
 [Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void SelectNewSaveSlotButton::ConfirmReset()] to ha
 [Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void SelectNewSaveSlotButton::<Click>b__1_0()] to hb
 [Info][GUPS.OBF][OnObfuscate_Assemblies] Rename Method [[Assembly-CSharp] System.Void StoryChapterButton/<>c__DisplayClass16_0::<CoShowOptions>b__0()] to hc
