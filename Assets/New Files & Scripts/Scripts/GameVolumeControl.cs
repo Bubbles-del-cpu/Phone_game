@@ -12,21 +12,17 @@ public class GameVolumeControl : MonoBehaviour
 
     private void Start()
     {
-        var mananger = FindFirstObjectByType<GameManager>();
-
         _slider = GetComponent<Slider>();
-        _slider.value = mananger.audioSource.volume * _slider.maxValue;
+        _slider.value = GameManager.Instance.audioSource.volume * _slider.maxValue;
 
         _valueDisplay.text = $"{_slider.value}";
     }
 
     public void AdjustGameVolume(float value)
     {
-        var mananger = FindFirstObjectByType<GameManager>();
-        if (mananger)
+        if (GameManager.Instance)
         {
-            mananger.audioSource.volume = value / _slider.maxValue;
-
+            GameManager.Instance.audioSource.volume = value / _slider.maxValue;
             _valueDisplay.text = $"{_slider.value}";
         }
     }
