@@ -530,7 +530,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Good morning, are you the doctor?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u304A\u306F\u3088\u3046\u3054\u3056\u3044\u307E\u3059\u3001\u5148\u751F\u3067\u3059\u304B\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -548,7 +548,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Good morning
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u304A\u306F\u3088\u3046"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -564,7 +564,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: No, I think I remember.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3044\u3044\u3048\u3001\u899A\u3048\u3066\u3044\u308B\u3068\u601D\u3044\u307E\u3059\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -577,7 +577,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: No sorry, I don't remember.
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "\u3059\u307F\u307E\u305B\u3093\u3001\u899A\u3048\u3066\u3044\u307E\u305B\u3093\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -611,7 +611,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I guess you could say that.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u305D\u3046\u3068\u3082\u8A00\u3048\u307E\u3059\u306D\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -629,7 +629,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Your insurance is giving you a tough time, aren't they?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u4FDD\u967A\u306E\u3053\u3068\u3067\u82E6\u52B4\u3055\u308C\u3066\u3044\u308B\u306E\u3067\u3059\u306D\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -645,7 +645,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Yeah, Aisha told me this already.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3048\u3048\u3001Aisha\u304B\u3089\u3082\u3046\u805E\u3044\u3066\u3044\u307E\u3059\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -679,7 +679,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I have actually been feeling fine the past couple days.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5B9F\u3092\u8A00\u3046\u3068\u3001\u3053\u3053\u6570\u65E5\u4F53\u8ABF\u306F\u826F\u3044\u3093\u3067\u3059\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -693,7 +693,7 @@ MonoBehaviour:
         LanguageGenericType: It's like I have been doing and supporting stuff that
           I thought I would never support.
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "\u307E\u308B\u3067\u3001\u6C7A\u3057\u3066\u652F\u6301\u3057\u306A\u3044\u3068\u601D\u3063\u3066\u3044\u305F\u3053\u3068\u3092\u3084\u3063\u305F\u308A\u3001\u652F\u6301\u3057\u305F\u308A\u3057\u3066\u3044\u308B\u3088\u3046\u3067\u3059\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -727,7 +727,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: It's like I have changed as a person
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u307E\u308B\u3067\u4EBA\u9593\u304C\u5909\u308F\u3063\u3066\u3057\u307E\u3063\u305F\u307F\u305F\u3044\u3067\u3059\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -761,7 +761,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I guess you could call it that.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u305D\u3046\u547C\u3079\u308B\u304B\u3082\u3057\u308C\u307E\u305B\u3093\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -795,7 +795,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: "That\u2019s... both comforting and kind of scary."
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u305D\u308C\u306F... \u5B89\u5FC3\u3067\u304D\u308B\u3068\u540C\u6642\u306B\u3001\u5C11\u3057\u6016\u3044\u3067\u3059\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -813,7 +813,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: So, you're not imagining things.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3064\u307E\u308A\u3001\u6C17\u306E\u305B\u3044\u3067\u306F\u306A\u3044\u3068\u3044\u3046\u3053\u3068\u3067\u3059\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -829,7 +829,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Right.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5206\u304B\u308A\u307E\u3057\u305F\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -848,7 +848,7 @@ MonoBehaviour:
       LanguageGenericType: "But for now, staying on the medication is important\u2014abrupt
         changes can cause worse symptoms."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3067\u3059\u304C\u3001\u4ECA\u306E\u3068\u3053\u308D\u306F\u6295\u85AC\u3092\u7D9A\u3051\u308B\u3053\u3068\u304C\u91CD\u8981\u3067\u3059\u3002\u6025\u306A\u5909\u66F4\u306F\u75C7\u72B6\u3092\u60AA\u5316\u3055\u305B\u308B\u53EF\u80FD\u6027\u304C\u3042\u308A\u307E\u3059\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -864,7 +864,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: "Wait, seriously? I don\u2019t need that."
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5F85\u3063\u3066\u3001\u672C\u6C17\u3067\uFF1F\u305D\u3093\u306A\u3082\u306E\u306F\u5FC5\u8981\u3042\u308A\u307E\u305B\u3093\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -882,7 +882,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "I\u2019ve prescribed you some at-home care support."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5728\u5B85\u30B1\u30A2\u306E\u30B5\u30DD\u30FC\u30C8\u3092\u3044\u304F\u3064\u304B\u51E6\u65B9\u3057\u307E\u3057\u305F\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -898,7 +898,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: You're messing with them?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5F7C\u3089\u3092\u304B\u3089\u304B\u3063\u3066\u3044\u308B\u3093\u3067\u3059\u304B\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -916,7 +916,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "But the insurance company doesn\u2019t know that."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3067\u3082\u3001\u4FDD\u967A\u4F1A\u793E\u306F\u305D\u308C\u3092\u77E5\u308A\u307E\u305B\u3093\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -932,7 +932,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Interesting.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u8208\u5473\u6DF1\u3044\u3067\u3059\u306D\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -950,7 +950,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I checked your policy; it's covered.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3042\u306A\u305F\u306E\u4FDD\u967A\u8A3C\u66F8\u3092\u78BA\u8A8D\u3057\u307E\u3057\u305F\u3002\u305D\u308C\u306F\u88DC\u511F\u306E\u5BFE\u8C61\u3067\u3059\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -966,7 +966,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: "So what kind of \u201Ccare\u201D are we talking about?"
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3067\u306F\u3001\u3069\u306E\u3088\u3046\u306A\u300C\u30B1\u30A2\u300D\u306E\u8A71\u3067\u3059\u304B\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -985,7 +985,7 @@ MonoBehaviour:
       LanguageGenericType: "Don\u2019t tell anyone. I\u2019ve got a reputation to
         maintain."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u8AB0\u306B\u3082\u8A00\u308F\u306A\u3044\u3067\u304F\u3060\u3055\u3044\u3002\u7DAD\u6301\u3059\u3079\u304D\u8A55\u5224\u304C\u3042\u308A\u307E\u3059\u304B\u3089\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -1001,12 +1001,12 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: 'Yes. '
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u306F\u3044\u3002"
       HintLanguage:
       - languageEnum: 0
-        LanguageGenericType: 'Will start the home care path (On '
+        LanguageGenericType: 'Will start the home care path '
       - languageEnum: 1
-        LanguageGenericType: 
+        LanguageGenericType: "\u5728\u5B85\u30B1\u30A2\u306E\u9053\u7B4B\u3092\u59CB\u3081\u308B\u3053\u3068\u306B\u306A\u308A\u307E\u3059\u3002"
     - PortGuid: a62a241c-81df-4650-bba3-3d1024cb659e
       InputGuid: df0dfaa5-99e7-4acd-996a-cfc58ac5db5a
       OutputGuid: a18615db-8737-4ed2-bfc0-a4e7818fa46a
@@ -1014,13 +1014,13 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: No. Lily would not approve.
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "\u3044\u3044\u3048\u3002Lily\u304C\u8A8D\u3081\u3066\u304F\u308C\u306A\u3044\u3067\u3057\u3087\u3046\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: will not start the home care path (The home care path
           is a cheating path)
       - languageEnum: 1
-        LanguageGenericType: 
+        LanguageGenericType: "\u5728\u5B85\u30B1\u30A2\u306E\u9053\u7B4B\u306F\u59CB\u3081\u307E\u305B\u3093\u3002\uFF08\u305D\u308C\u306F\u4E0D\u6B63\u306A\u624B\u6BB5\u3067\u3059\u3002\uFF09"
     AudioClips:
     - languageEnum: 0
       LanguageGenericType: {fileID: 0}
@@ -1049,7 +1049,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Absolutely.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3082\u3061\u308D\u3093\u3067\u3059\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1081,9 +1081,9 @@ MonoBehaviour:
       OutputGuid: d47ebcf5-5f62-4449-a7bf-59df67cdedc5
       TextLanguage:
       - languageEnum: 0
-        LanguageGenericType: Perfect, doc.
+        LanguageGenericType: Perfect doc.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5B8C\u74A7\u3067\u3059\u3088\u3001\u5148\u751F\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1117,7 +1117,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: No.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3044\u3044\u3048\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1135,7 +1135,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Any further questions for me?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u4ED6\u306B\u3054\u8CEA\u554F\u306F\u3042\u308A\u307E\u3059\u304B\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -1149,9 +1149,9 @@ MonoBehaviour:
       OutputGuid: 3ce27d91-4766-4884-a845-4a000223421f
       TextLanguage:
       - languageEnum: 0
-        LanguageGenericType: Good morning, sweetheart. How are you feeling?
+        LanguageGenericType: Good morning sweetheart. How are you feeling?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u304A\u306F\u3088\u3046\u3001\u30CF\u30CB\u30FC\u3002\u6C17\u5206\u306F\u3069\u3046\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1185,7 +1185,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Nice.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u826F\u304B\u3063\u305F\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1203,7 +1203,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I'm well rested. We went to bed early yesterday.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3088\u304F\u7720\u308C\u307E\u3057\u305F\u3002\u6628\u65E5\u306F\u65E9\u304F\u5BDD\u307E\u3057\u305F\u304B\u3089\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -1219,7 +1219,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Any plans for today?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u4ECA\u65E5\u306E\u4E88\u5B9A\u306F\u3042\u308A\u307E\u3059\u304B\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1253,7 +1253,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Oh, so what did he need?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3042\u3089\u3001\u305D\u308C\u3067\u5F7C\u306F\u4F55\u304C\u8981\u308B\u306E\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1271,7 +1271,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Math did text me.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "Math\u304B\u3089\u30E1\u30C3\u30BB\u30FC\u30B8\u304C\u6765\u305F\u3088\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -1287,7 +1287,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Can't blame him.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5F7C\u3092\u8CAC\u3081\u3089\u308C\u306A\u3044\u306D\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1300,7 +1300,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: You should.
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "\u8CAC\u3081\u308B\u3079\u304D\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1318,7 +1318,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Cause he really wants to see me again.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3060\u3063\u3066\u3001\u5F7C\u306F\u672C\u5F53\u306B\u307E\u305F\u4F1A\u3044\u305F\u304C\u3063\u3066\u3044\u308B\u304B\u3089\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -1334,7 +1334,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Yes. You had fun last time, right?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3048\u3048\u3002\u524D\u56DE\u306F\u697D\u3057\u304B\u3063\u305F\u3093\u3067\u3057\u3087\u3046\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1368,7 +1368,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: "I have some guesses\u2026"
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3044\u304F\u3064\u304B\u4E88\u60F3\u306F\u3042\u308B\u3051\u3069\u2026"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1381,7 +1381,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: "I don\u2019t know."
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "\u5206\u304B\u308A\u307E\u305B\u3093\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1399,7 +1399,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: What would he mean by a wet surprise?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u300C\u30A6\u30A7\u30C3\u30C8\u306A\u30B5\u30D7\u30E9\u30A4\u30BA\u300D\u3063\u3066\u3001\u5F7C\u306F\u3069\u3046\u3044\u3046\u610F\u5473\u306A\u3093\u3060\u308D\u3046\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -1415,7 +1415,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I guess there is.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u305D\u3046\u307F\u305F\u3044\u306D\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1433,7 +1433,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "Well, guess there\u2019s only one way to find out."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u307E\u3042\u3001\u78BA\u304B\u3081\u308B\u65B9\u6CD5\u306F\u4E00\u3064\u3057\u304B\u306A\u3044\u308F\u306D\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -1449,7 +1449,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Maybe you should send a picture with that text.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u305D\u306E\u30E1\u30C3\u30BB\u30FC\u30B8\u3068\u4E00\u7DD2\u306B\u5199\u771F\u3092\u9001\u3063\u305F\u3089\u3069\u3046\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1462,7 +1462,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Good.
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "\u3044\u3044\u308F\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1480,7 +1480,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "I\u2019ll tell him I\u2019ll see him tomorrow then."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3058\u3083\u3042\u3001\u660E\u65E5\u5F7C\u306B\u4F1A\u3046\u3063\u3066\u4F1D\u3048\u3066\u304A\u304F\u306D\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -1496,7 +1496,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Cute.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u53EF\u611B\u3044\u306D\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1530,12 +1530,12 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I like option 1 more.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u30AA\u30D7\u30B7\u30E7\u30F3\uFF11\u306E\u65B9\u304C\u3044\u3044\u306A\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: Dominance +1
       - languageEnum: 1
-        LanguageGenericType: 
+        LanguageGenericType: "\u652F\u914D\u529B\u30D7\u30E9\u30B9\uFF11"
     - PortGuid: 6300bebb-2a81-43ac-9beb-7723daf59c6b
       InputGuid: 483520ff-c278-4760-8c93-d789f779c7ed
       OutputGuid: 4a586c83-87b1-4a01-974c-0da05b3a0def
@@ -1543,12 +1543,12 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Definitely option 2.
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "\u7D76\u5BFE\u306B\u30AA\u30D7\u30B7\u30E7\u30F3\uFF12\u3060\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: Dominance -1
       - languageEnum: 1
-        LanguageGenericType: 
+        LanguageGenericType: "\u652F\u914D\u529B\u30DE\u30A4\u30CA\u30B9\uFF11"
     AudioClips:
     - languageEnum: 0
       LanguageGenericType: {fileID: 0}
@@ -1577,7 +1577,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: '?'
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: '?'
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1611,7 +1611,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: There is no doubt in my mind.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u9593\u9055\u3044\u306A\u304F\u305D\u3046\u3060\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1629,7 +1629,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Do you think Math will like it?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "Math\u306F\u6C17\u306B\u5165\u3063\u3066\u304F\u308C\u308B\u3068\u601D\u3046\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -1645,7 +1645,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Wait!
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5F85\u3063\u3066\uFF01"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1679,7 +1679,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Before you go, I need to tell you something important.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u884C\u304F\u524D\u306B\u3001\u5927\u4E8B\u306A\u3053\u3068\u3092\u8A00\u3063\u3066\u304A\u304B\u306A\u304D\u3083\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1697,7 +1697,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: '?'
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: '?'
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -1713,7 +1713,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: So I received news from my insurance.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3042\u306E\u306D\u3001\u4FDD\u967A\u4F1A\u793E\u304B\u3089\u9023\u7D61\u304C\u3042\u3063\u305F\u306E\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1731,7 +1731,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: What is it?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u4F55\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -1748,7 +1748,7 @@ MonoBehaviour:
         LanguageGenericType: "They won\u2019t cover the medicine that I\u2019ve been
           taking."
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u4ECA\u307E\u3067\u98F2\u3093\u3067\u3044\u305F\u85AC\u304C\u3001\u4FDD\u967A\u306E\u5BFE\u8C61\u5916\u306B\u306A\u3063\u305F\u306E\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1782,7 +1782,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: "Don\u2019t say sorry."
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3054\u3081\u3093\u306A\u3055\u3044\u306A\u3093\u3066\u8A00\u308F\u306A\u3044\u3067\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1800,7 +1800,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "I can\u2019t believe they\u2019re doing this to us."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u4FE1\u3058\u3089\u308C\u306A\u3044\u308F\u3001\u5F7C\u3089\u304C\u79C1\u305F\u3061\u306B\u3053\u3093\u306A\u3053\u3068\u3092\u3059\u308B\u306A\u3093\u3066\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -1816,7 +1816,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: This is in no way your fault.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3053\u308C\u306F\u6C7A\u3057\u3066\u3042\u306A\u305F\u306E\u305B\u3044\u3058\u3083\u306A\u3044\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1851,7 +1851,7 @@ MonoBehaviour:
         LanguageGenericType: "We already talked about this. Don\u2019t worry about
           that."
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3082\u3046\u3053\u306E\u8A71\u306F\u3057\u305F\u3067\u3057\u3087\u3002\u305D\u3093\u306A\u3053\u3068\u306F\u6C17\u306B\u3057\u306A\u3044\u3067\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1869,7 +1869,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "But I\u2019m here on the other side of the world."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3067\u3082\u3001\u79C1\u306F\u4E16\u754C\u306E\u53CD\u5BFE\u5074\u306B\u3044\u308B\u306E\u3088\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -1885,7 +1885,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I just need to figure out a way to get some money together.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u305F\u3060\u3001\u3069\u3046\u306B\u304B\u3057\u3066\u304A\u91D1\u3092\u7528\u610F\u3059\u308B\u65B9\u6CD5\u3092\u898B\u3064\u3051\u306A\u304D\u3083\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1919,7 +1919,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Yes, I told him.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3048\u3048\u3001\u8A71\u3057\u305F\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1937,7 +1937,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Have you told your brother?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3042\u306A\u305F\u306E\u5F1F\uFF08\u5144\uFF09\u306B\u306F\u8A71\u3057\u305F\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -1954,7 +1954,7 @@ MonoBehaviour:
         LanguageGenericType: "He offered, but I really don\u2019t want to rely on
           him."
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5F7C\u306F\u7533\u3057\u51FA\u3066\u304F\u308C\u305F\u3051\u3069\u3001\u672C\u5F53\u306B\u5F7C\u306B\u983C\u308A\u305F\u304F\u306A\u3044\u3093\u3060\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -1972,7 +1972,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Can he support you?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5F7C\u304C\u3042\u306A\u305F\u3092\u652F\u3048\u3089\u308C\u308B\u304B\u306A\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -1988,7 +1988,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I know, but I first want to try to get it together myself.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5206\u304B\u3063\u3066\u3044\u308B\u3051\u3069\u3001\u307E\u305A\u306F\u81EA\u5206\u3067\u4F55\u3068\u304B\u3057\u305F\u3044\u3093\u3060\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2007,7 +2007,7 @@ MonoBehaviour:
       LanguageGenericType: "I get that. But that\u2019s what family is for\u2014they
         can support you in tough times."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u308C\u306F\u5206\u304B\u308B\u3088\u3002\u3067\u3082\u3001\u3053\u3046\u3044\u3046\u6642\u306E\u305F\u3081\u306B\u5BB6\u65CF\u304C\u3044\u308B\u3093\u3060\u3002\u5927\u5909\u306A\u6642\u3053\u305D\u3001\u5F7C\u3089\u306F\u3042\u306A\u305F\u3092\u652F\u3048\u3066\u304F\u308C\u308B\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2023,7 +2023,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Okay?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3069\u3046\u3044\u3046\u3053\u3068\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2041,7 +2041,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: There might be something that could get us some more money...
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u4F55\u304B\u3001\u3082\u3063\u3068\u304A\u91D1\u3092\u7A3C\u3052\u308B\u3082\u306E\u304C\u3042\u308B\u304B\u3082\u3057\u308C\u306A\u3044\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2057,7 +2057,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Really?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u672C\u5F53\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2076,7 +2076,8 @@ MonoBehaviour:
       LanguageGenericType: "It\u2019s nothing huge, but... I\u2019ve been making
         a bit of money off my socials for the first time."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5927\u3057\u305F\u3053\u3068\u3058\u3083\u306A\u3044\u3093\u3060\u3051\u3069...
+        \u521D\u3081\u3066SNS\u3067\u5C11\u3057\u304A\u91D1\u3092\u7A3C\u3044\u3067\u3044\u308B\u306E\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2092,7 +2093,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: "That\u2019s amazing, baby."
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u305D\u308C\u306F\u7D20\u6674\u3089\u3057\u3044\u3088\u3001\u30D9\u30A4\u30D3\u30FC\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2110,7 +2111,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "Yeah. Just some small amounts, but it\u2019s something."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3048\u3048\u3002\u5C11\u984D\u3060\u3051\u3069\u3001\u4F55\u3082\u3057\u306A\u3044\u3088\u308A\u306F\u30DE\u30B7\u3088\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2126,7 +2127,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: "I\u2019m proud of you. Seriously."
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u8A87\u308A\u306B\u601D\u3046\u3088\u3002\u672C\u5F53\u306B\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2160,7 +2161,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Push it?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u9811\u5F35\u308B\u3063\u3066\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2179,7 +2180,7 @@ MonoBehaviour:
       LanguageGenericType: "Well\u2014Izzy\u2019s always saying I should push it
         a little more."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3042\u306E\u306D\u3001Izzy\u306F\u3044\u3064\u3082\u3001\u3082\u3063\u3068\u9811\u5F35\u308B\u3079\u304D\u3060\u3063\u3066\u8A00\u3063\u3066\u3044\u308B\u306E\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2195,7 +2196,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Hmm.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3046\u30FC\u3093\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2214,7 +2215,7 @@ MonoBehaviour:
       LanguageGenericType: You know. Do some more revealing stuff. Bikini shots.
         Maybe a little more suggestive.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u307B\u3089\u3002\u3082\u3063\u3068\u9732\u51FA\u5EA6\u306E\u9AD8\u3044\u3053\u3068\u3002\u30D3\u30AD\u30CB\u59FF\u3068\u304B\u3002\u3082\u3057\u304B\u3057\u305F\u3089\u3082\u3046\u5C11\u3057\u6311\u767A\u7684\u306B\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2230,7 +2231,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Lily...
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: Lily...
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2249,7 +2250,7 @@ MonoBehaviour:
       LanguageGenericType: "I mean, if it helps bring in money faster\u2014maybe
         even enough to help with the costs\u2014"
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3064\u307E\u308A\u3001\u3082\u3063\u3068\u65E9\u304F\u304A\u91D1\u304C\u5165\u3063\u3066\u304F\u308B\u306A\u3089\u2014\u8CBB\u7528\u3092\u8CC4\u3046\u306E\u306B\u5341\u5206\u306A\u304F\u3089\u3044\u2014"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2266,7 +2267,7 @@ MonoBehaviour:
         LanguageGenericType: "I don\u2019t want you doing anything that makes you
           uncomfortable just because of me."
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u50D5\u306E\u305F\u3081\u306B\u3001\u541B\u304C\u4E0D\u5FEB\u306B\u611F\u3058\u308B\u3088\u3046\u306A\u3053\u3068\u306F\u4F55\u3082\u3057\u3066\u307B\u3057\u304F\u306A\u3044\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2285,7 +2286,8 @@ MonoBehaviour:
       LanguageGenericType: "And if it helps you stay on the meds you need... I\u2019d
         at least want to try."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u308C\u306B\u3001\u5FC5\u8981\u306A\u85AC\u3092\u98F2\u307F\u7D9A\u3051\u308B\u306E\u306B\u5F79\u7ACB\u3064\u306A\u3089...
+        \u5C11\u306A\u304F\u3068\u3082\u8A66\u3057\u3066\u307F\u305F\u3044\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2301,7 +2303,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Please just think about it for a bit.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3068\u308A\u3042\u3048\u305A\u5C11\u3057\u8003\u3048\u3066\u307F\u3066\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2319,7 +2321,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: It might just be the right thing for us.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u308C\u304C\u79C1\u305F\u3061\u306B\u3068\u3063\u3066\u3001\u6B63\u3057\u3044\u3053\u3068\u306A\u306E\u304B\u3082\u3057\u308C\u306A\u3044\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2335,7 +2337,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I love you so much.
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u611B\u3057\u3066\u3044\u308B\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2353,7 +2355,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "Don\u2019t worry."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5FC3\u914D\u3057\u306A\u3044\u3067\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2369,7 +2371,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: "I don\u2019t want you to feel like you need to do this."
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3042\u306A\u305F\u304C\u3053\u308C\u3092\u3057\u306A\u3051\u308C\u3070\u306A\u3089\u306A\u3044\u3068\u611F\u3058\u3066\u307B\u3057\u304F\u306A\u3044\u3093\u3060\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2403,7 +2405,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Be safe at the pool...
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u30D7\u30FC\u30EB\u3067\u306F\u6C17\u3092\u3064\u3051\u3066\u306D\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2421,7 +2423,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "I\u2019m going now."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3058\u3083\u3042\u3001\u884C\u304F\u306D\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2437,7 +2439,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I didn't want to worry you
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5FC3\u914D\u3055\u305B\u305F\u304F\u306A\u304B\u3063\u305F\u304B\u3089\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2455,7 +2457,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Why am I only hearing about this now?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u306A\u305C\u4ECA\u306B\u306A\u3063\u3066\u521D\u3081\u3066\u805E\u304F\u306E\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2471,7 +2473,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: About three days
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u4E09\u65E5\u3050\u3089\u3044\u304B\u306A\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2489,7 +2491,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: How long have you known?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3044\u3064\u304B\u3089\u77E5\u3063\u3066\u3044\u305F\u306E\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2506,7 +2508,8 @@ MonoBehaviour:
         LanguageGenericType: I was trying to figure it out first... I didn't want
           to dump it on you without a plan
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u307E\u305A\u81EA\u5206\u3067\u4F55\u3068\u304B\u3057\u3088\u3046\u3068\u601D\u3063\u3066\u3044\u305F\u306E...
+          \u30D7\u30E9\u30F3\u306A\u3057\u3067\u541B\u306B\u62BC\u3057\u4ED8\u3051\u305F\u304F\u306A\u304B\u3063\u305F\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2525,7 +2528,7 @@ MonoBehaviour:
       LanguageGenericType: You sat with that alone for three days and didn't say
         a word?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u4E09\u65E5\u9593\u3082\u305D\u308C\u3092\u4E00\u4EBA\u3067\u62B1\u3048\u8FBC\u3093\u3067\u3001\u4F55\u3082\u8A00\u308F\u306A\u304B\u3063\u305F\u306E\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2541,7 +2544,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: You're right
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u305D\u3046\u306D\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2576,7 +2579,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I'm sorry
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3054\u3081\u3093\u306D\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2610,7 +2613,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I didn't mean it like that
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u305D\u3093\u306A\u3064\u3082\u308A\u3058\u3083\u306A\u304B\u3063\u305F\u306E\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2629,7 +2632,7 @@ MonoBehaviour:
       LanguageGenericType: I just hate that you're hurting and hiding it from me
         like I'm fragile or something
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u541B\u304C\u50B7\u3064\u3044\u3066\u3044\u3066\u3001\u50D5\u304C\u8106\u3044\u307F\u305F\u3044\u306B\u96A0\u3057\u3066\u3044\u308B\u306E\u304C\u5ACC\u306A\u3093\u3060\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2645,7 +2648,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I just need to figure out a way to get some money together
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u305F\u3060\u3001\u3069\u3046\u306B\u304B\u3057\u3066\u304A\u91D1\u3092\u7528\u610F\u3059\u308B\u65B9\u6CD5\u3092\u898B\u3064\u3051\u306A\u304D\u3083\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2663,7 +2666,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Then stop treating me like I can't handle things
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u308C\u306A\u3089\u3001\u79C1\u304C\u4F55\u3082\u5BFE\u51E6\u3067\u304D\u306A\u3044\u307F\u305F\u3044\u306B\u6271\u3046\u306E\u306F\u3084\u3081\u3066\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2679,7 +2682,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Yes, I told him
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3048\u3048\u3001\u8A71\u3057\u305F\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2697,7 +2700,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Have you told your brother?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3042\u306A\u305F\u306E\u5F1F\uFF08\u5144\uFF09\u306B\u306F\u8A71\u3057\u305F\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2713,7 +2716,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: He offered, but I really don't want to rely on him
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5F7C\u306F\u7533\u3057\u51FA\u3066\u304F\u308C\u305F\u3051\u3069\u3001\u672C\u5F53\u306B\u5F7C\u306B\u983C\u308A\u305F\u304F\u306A\u3044\u3093\u3060\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2731,7 +2734,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Can he support you?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5F7C\u304C\u3042\u306A\u305F\u3092\u652F\u3048\u3089\u308C\u308B\u304B\u306A\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2747,7 +2750,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: "It's not about not letting you help\u2014"
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u541B\u306B\u52A9\u3051\u3055\u305B\u305F\u304F\u306A\u3044\u3068\u3044\u3046\u3053\u3068\u3058\u3083\u306A\u304F\u3066\u2014"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2766,7 +2769,7 @@ MonoBehaviour:
       LanguageGenericType: I get wanting to stand on your own. I do. But it feels
         like you'd rather struggle than even let me or someone else try to help
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u81EA\u7ACB\u3057\u305F\u3044\u6C17\u6301\u3061\u306F\u5206\u304B\u308B\u3002\u672C\u5F53\u306B\u3002\u3067\u3082\u3001\u79C1\u3084\u8AB0\u304B\u306B\u52A9\u3051\u3055\u305B\u308B\u3088\u308A\u3082\u3001\u4E00\u4EBA\u3067\u82E6\u3057\u3080\u65B9\u3092\u9078\u3076\u3088\u3046\u306B\u898B\u3048\u308B\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2782,7 +2785,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Okay?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u4F55\u3092\u3059\u308B\u306E\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2800,7 +2803,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: There might be something I can do
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u79C1\u306B\u3067\u304D\u308B\u3053\u3068\u304C\u3042\u308B\u304B\u3082\u3057\u308C\u306A\u3044\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2816,7 +2819,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Really?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u672C\u5F53\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2835,7 +2838,7 @@ MonoBehaviour:
       LanguageGenericType: It's nothing crazy, but I've actually started making a
         bit of money from my socials
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5909\u306A\u3053\u3068\u3058\u3083\u306A\u3044\u3093\u3060\u3051\u3069\u3001\u5B9F\u306FSNS\u3067\u5C11\u3057\u304A\u91D1\u3092\u7A3C\u304E\u59CB\u3081\u305F\u306E\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2851,7 +2854,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: That's amazing baby
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u305D\u308C\u306F\u3059\u3054\u3044\u306D\u3001\u30D9\u30A4\u30D3\u30FC\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2869,7 +2872,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Yeah.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3048\u3048\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2885,7 +2888,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I'm proud of you. Seriously
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u8A87\u308A\u306B\u601D\u3046\u3088\u3002\u672C\u5F53\u306B\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2919,7 +2922,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Push it how?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3069\u3046\u3084\u3063\u3066\u5148\u3078\u9032\u3081\u308B\u3063\u3066\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2938,7 +2941,7 @@ MonoBehaviour:
       LanguageGenericType: "But I've been thinking\u2014Izzy keeps saying I should
         push it further"
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3067\u3082\u8003\u3048\u3066\u3044\u308B\u3093\u3060\u3051\u3069\u2014Izzy\u304C\u3082\u3063\u3068\u5148\u3078\u9032\u3081\u308B\u3079\u304D\u3060\u3063\u3066\u8A00\u3044\u7D9A\u3051\u3066\u3044\u308B\u306E\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2954,7 +2957,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Hmm
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3046\u30FC\u3093\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -2972,7 +2975,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: You know... bikini pics, maybe more suggestive posts
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u307B\u3089\u306D... \u30D3\u30AD\u30CB\u306E\u5199\u771F\u3068\u304B\u3001\u3082\u3046\u5C11\u3057\u523A\u6FC0\u7684\u306A\u6295\u7A3F\u3068\u304B\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -2989,7 +2992,7 @@ MonoBehaviour:
         LanguageGenericType: Lily... I don't want you doing something just because
           I can't pay for my meds
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "Lily... \u50D5\u306E\u85AC\u4EE3\u304C\u6255\u3048\u306A\u3044\u304B\u3089\u3068\u3044\u3063\u3066\u3001\u541B\u306B\u305D\u3093\u306A\u3053\u3068\u3092\u3057\u3066\u307B\u3057\u304F\u306A\u3044\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3008,7 +3011,7 @@ MonoBehaviour:
       LanguageGenericType: I know how this sounds, but if doing that could actually
         bring in real money, enough to help, shouldn't I consider it?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3053\u3093\u306A\u3053\u3068\u3092\u8A00\u3046\u306E\u306F\u5206\u304B\u3063\u3066\u3044\u308B\u3093\u3060\u3051\u3069\u3001\u3082\u3057\u305D\u308C\u3067\u672C\u5F53\u306B\u3001\u52A9\u3051\u306B\u306A\u308B\u304F\u3089\u3044\u5341\u5206\u306A\u91D1\u984D\u304C\u7A3C\u3052\u308B\u306A\u3089\u3001\u8003\u3048\u308B\u3079\u304D\u3058\u3083\u306A\u3044\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -3024,7 +3027,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I don't want it to change how you see yourself
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u541B\u304C\u81EA\u5206\u81EA\u8EAB\u3092\u898B\u308B\u76EE\u304C\u5909\u308F\u3063\u3066\u3057\u307E\u3046\u306E\u306F\u5ACC\u3060\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3043,7 +3046,7 @@ MonoBehaviour:
       LanguageGenericType: "And if I can do something I'm okay with that brings in
         money faster\u2014why not?"
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u308C\u306B\u3001\u81EA\u5206\u304C\u7D0D\u5F97\u3067\u304D\u308B\u3053\u3068\u3067\u3001\u65E9\u304F\u304A\u91D1\u304C\u7A3C\u3052\u308B\u306A\u3089\u3001\u3069\u3046\u3057\u3066\u3084\u3089\u306A\u3044\u306E\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -3059,7 +3062,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Please just think it through
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3069\u3046\u304B\u3001\u3088\u304F\u8003\u3048\u3066\u307F\u3066\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3078,7 +3081,7 @@ MonoBehaviour:
       LanguageGenericType: But I won't sit here doing nothing while you suffer. That's
         not who I am
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3067\u3082\u3001\u541B\u304C\u82E6\u3057\u3093\u3067\u3044\u308B\u306E\u306B\u3001\u50D5\u304C\u3053\u3053\u3067\u4F55\u3082\u3057\u306A\u3044\u3067\u3044\u308B\u306E\u306F\u5ACC\u3060\u3002\u305D\u308C\u306F\u50D5\u3058\u3083\u306A\u3044\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -3094,7 +3097,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Don't rush into anything because of guilt
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u7F6A\u60AA\u611F\u3067\u4F55\u3082\u304B\u3082\u6025\u304C\u306A\u3044\u3067\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3128,7 +3131,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I do trust you
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u4FE1\u3058\u3066\u3044\u308B\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3147,7 +3150,7 @@ MonoBehaviour:
       LanguageGenericType: And maybe it's time you started trusting me to make those
         decisions
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u308C\u306B\u3001\u305D\u3046\u3044\u3046\u6C7A\u65AD\u3092\u79C1\u306B\u4EFB\u305B\u308B\u6642\u304C\u6765\u305F\u306E\u304B\u3082\u3057\u308C\u306A\u3044\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -3163,7 +3166,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Be safe at the pool..
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u30D7\u30FC\u30EB\u3067\u306F\u6C17\u3092\u3064\u3051\u3066\u306D\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3181,7 +3184,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Now I really need to go or Izzy's gonna kill me
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3082\u3046\u672C\u5F53\u306B\u884C\u304B\u306A\u3044\u3068\u3001Izzy\u306B\u6BBA\u3055\u308C\u3061\u3083\u3046\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -3197,7 +3200,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Yo brother
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3088\u3001\u30D6\u30E9\u30B6\u30FC\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3231,7 +3234,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I just told Lily about the insurance thing
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u4ECA\u3001Lily\u306B\u4FDD\u967A\u306E\u3053\u3068\u3092\u8A71\u3057\u305F\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3249,7 +3252,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: What's up?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3069\u3046\u3057\u305F\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -3265,7 +3268,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: She took it well
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5F7C\u5973\u306F\u843D\u3061\u7740\u3044\u3066\u53D7\u3051\u6B62\u3081\u3066\u304F\u308C\u305F\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3299,7 +3302,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Well she started blaming herself for some reason
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u307E\u3042\u3001\u306A\u305C\u304B\u5F7C\u5973\u306F\u81EA\u5206\u81EA\u8EAB\u3092\u8CAC\u3081\u59CB\u3081\u305F\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3333,7 +3336,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Which she should not do
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u305D\u308C\u306F\u5F7C\u5973\u304C\u3059\u3079\u304D\u3053\u3068\u3058\u3083\u306A\u3044\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3367,7 +3370,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Nothing about this is her fault
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3053\u306E\u4EF6\u306B\u95A2\u3057\u3066\u3001\u5F7C\u5973\u306B\u4F55\u306E\u8CAC\u4EFB\u3082\u306A\u3044\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3401,7 +3404,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I agree. I shouldn't have waited
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u540C\u611F\u3060\u3002\u5F85\u3064\u3079\u304D\u3058\u3083\u306A\u304B\u3063\u305F\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3420,7 +3423,7 @@ MonoBehaviour:
       LanguageGenericType: It's not good to keep these things from the people that
         are closest to you
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u4E00\u756A\u8EAB\u8FD1\u306A\u4EBA\u305F\u3061\u306B\u3053\u3046\u3044\u3046\u3053\u3068\u3092\u96A0\u3059\u306E\u306F\u826F\u304F\u306A\u3044\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -3436,7 +3439,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: 'I was just scared to be honest '
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u6B63\u76F4\u3001\u305F\u3060\u6016\u304B\u3063\u305F\u3093\u3060\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3470,7 +3473,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: She was a bit angry with me
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5F7C\u5973\u306F\u5C11\u3057\u6012\u3063\u3066\u3044\u305F\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3504,7 +3507,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I should have told her sooner
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3082\u3063\u3068\u65E9\u304F\u5F7C\u5973\u306B\u8A00\u3046\u3079\u304D\u3060\u3063\u305F\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3538,7 +3541,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: '?'
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: '?'
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3572,7 +3575,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Hot damn
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u30DE\u30B8\u304B\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3606,7 +3609,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: She's definitely worth it
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5F7C\u5973\u306B\u306F\u305D\u308C\u3060\u3051\u306E\u4FA1\u5024\u304C\u3042\u308B\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3640,7 +3643,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: haha, totaly understandable
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u306F\u306F\u3001\u3059\u3054\u304F\u7406\u89E3\u3067\u304D\u308B\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3658,7 +3661,8 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "\U0001F602 That's why I put a ring on it"
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3060\u304B\u3089\u3053\u305D\u3001\u5F7C\u5973\u306B\u6307\u8F2A\u3092\u8D08\u3063\u305F\u3093\u3060\u3002
+        \U0001F602"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -3674,7 +3678,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Fuck dude
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u30AF\u30BD\u30C3\u3001\u304A\u3044\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3692,7 +3696,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Yep
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3046\u3093\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -3708,7 +3712,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: You should hold her tight
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5F7C\u5973\u3092\u3057\u3063\u304B\u308A\u62B1\u304D\u3057\u3081\u308B\u3079\u304D\u3060\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3742,7 +3746,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Later
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u307E\u305F\u306A\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3776,7 +3780,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Hey, nice to meet you
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3084\u3042\u3001\u521D\u3081\u307E\u3057\u3066\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3794,7 +3798,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: My name is Victoria. I'll be your new at-home nurse
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u79C1\u306FVictoria\u3068\u7533\u3057\u307E\u3059\u3002\u3042\u306A\u305F\u306E\u65B0\u3057\u3044\u5728\u5B85\u30CA\u30FC\u30B9\u3067\u3059\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -3810,7 +3814,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Sure
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5206\u304B\u308A\u307E\u3057\u305F\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3828,7 +3832,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: But we'll talk more about it when I come by
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3067\u3082\u3001\u304A\u4F3A\u3044\u3057\u305F\u6642\u306B\u3001\u307E\u305F\u8A73\u3057\u304F\u8A71\u3057\u307E\u3057\u3087\u3046\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -3844,7 +3848,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Time?
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u6642\u9593\u3067\u3059\u304B\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3862,7 +3866,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: When is the best time for you?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3042\u306A\u305F\u306B\u3068\u3063\u3066\u90FD\u5408\u306E\u826F\u3044\u6642\u9593\u306F\u3044\u3064\u3067\u3059\u304B\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -3878,7 +3882,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Oh yeah of course
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3042\u3042\u3001\u305D\u3046\u3067\u3057\u305F\u306D\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3896,7 +3900,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: The best time for me to come over
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u79C1\u304C\u8A2A\u554F\u3059\u308B\u306E\u306B\u4E00\u756A\u90FD\u5408\u306E\u826F\u3044\u6642\u9593\u3067\u3059\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -3912,7 +3916,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Sounds good
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3044\u3044\u3067\u3059\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3931,7 +3935,7 @@ MonoBehaviour:
       LanguageGenericType: I'll see you tomorrow morning then. Then we'll discuss
         everything further
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3067\u306F\u3001\u660E\u65E5\u306E\u671D\u304A\u4F1A\u3044\u3057\u307E\u3057\u3087\u3046\u3002\u305D\u306E\u6642\u306B\u5168\u3066\u8A73\u3057\u304F\u8A71\u3057\u5408\u3044\u307E\u3057\u3087\u3046\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -3947,7 +3951,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Bye
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5931\u793C\u3057\u307E\u3059\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3965,7 +3969,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: See you tomorrow
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3067\u306F\u3001\u307E\u305F\u660E\u65E5\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -3981,7 +3985,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: '?'
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: '?'
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -3994,7 +3998,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I think you have the wrong chat Victoria
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "Victoria\u3055\u3093\u3001\u30C1\u30E3\u30C3\u30C8\u3092\u9593\u9055\u3048\u3066\u3044\u308B\u3088\u3046\u3067\u3059\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -4028,7 +4032,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I noticed
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u6C17\u3065\u3044\u305F\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -4046,7 +4050,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Shit, I was in the wrong chat
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3057\u307E\u3063\u305F\u3001\u30C1\u30E3\u30C3\u30C8\u3092\u9593\u9055\u3048\u3066\u3044\u305F\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -4062,12 +4066,12 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Of course
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3082\u3061\u308D\u3093\u3067\u3059\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: Will activate Victoria Love path
       - languageEnum: 1
-        LanguageGenericType: 
+        LanguageGenericType: "Victoria Love\u30EB\u30FC\u30C8\u3092\u8D77\u52D5\u3057\u307E\u3059\u3002"
     - PortGuid: cc7275ac-d921-4170-add5-b6d173e85718
       InputGuid: 6b6bbe4a-561e-4ad3-a033-370df2cc696e
       OutputGuid: 266c6953-c59b-4a0f-ad4b-3770326aa5b2
@@ -4075,12 +4079,12 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Should I?
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "\u305D\u3046\u3059\u3079\u304D\u3067\u3059\u304B\uFF1F"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: Will activate Victoria extort path
       - languageEnum: 1
-        LanguageGenericType: 
+        LanguageGenericType: "Victoria\u6050\u559D\u30EB\u30FC\u30C8\u3092\u8D77\u52D5\u3057\u307E\u3059\u3002"
     AudioClips:
     - languageEnum: 0
       LanguageGenericType: {fileID: 0}
@@ -4093,7 +4097,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Sorry can you please delete it and forget about this
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3054\u3081\u3093\u306A\u3055\u3044\u3001\u3053\u308C\u3092\u524A\u9664\u3057\u3066\u3001\u3053\u306E\u3053\u3068\u306F\u5FD8\u308C\u3066\u3082\u3089\u3048\u307E\u3059\u304B\uFF1F"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -4109,13 +4113,13 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: No worries, I'll delete it
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5927\u4E08\u592B\u3067\u3059\u3001\u79C1\u304C\u524A\u9664\u3057\u307E\u3059\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: Will activate Victoria Love path and dissable extort
           path
       - languageEnum: 1
-        LanguageGenericType: 
+        LanguageGenericType: "Victoria Love\u30EB\u30FC\u30C8\u3092\u8D77\u52D5\u3057\u3001\u6050\u559D\u30EB\u30FC\u30C8\u3092\u7121\u52B9\u306B\u3057\u307E\u3059\u3002"
     - PortGuid: 67afef36-2644-4399-8ab9-85dc7ac7f3eb
       InputGuid: 8af4ce02-3cba-4565-9f17-235db82b6ae0
       OutputGuid: ca6d1348-6523-4f1a-b2ff-b2584404f64a
@@ -4123,12 +4127,12 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: I will keep it to myself
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "\u81EA\u5206\u3060\u3051\u306E\u79D8\u5BC6\u306B\u3057\u3066\u304A\u304D\u307E\u3059\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: Will activate Victoria extort path
       - languageEnum: 1
-        LanguageGenericType: 
+        LanguageGenericType: "Victoria\u6050\u559D\u30EB\u30FC\u30C8\u3092\u8D77\u52D5\u3057\u307E\u3059\u3002"
     AudioClips:
     - languageEnum: 0
       LanguageGenericType: {fileID: 0}
@@ -4141,7 +4145,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Or at least keep it to yourself. It was a mistake
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3082\u3057\u304F\u306F\u3001\u5C11\u306A\u304F\u3068\u3082\u81EA\u5206\u3060\u3051\u306E\u79D8\u5BC6\u306B\u3057\u3066\u304A\u3044\u3066\u3002\u9593\u9055\u3044\u3060\u3063\u305F\u3093\u3060\u304B\u3089\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -4157,13 +4161,13 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: No worries
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u304A\u6C17\u306B\u306A\u3055\u3089\u306A\u3044\u3067\u304F\u3060\u3055\u3044\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: Will activate Victoria Love path and dissable extort
           path
       - languageEnum: 1
-        LanguageGenericType: 
+        LanguageGenericType: "Victoria Love\u30EB\u30FC\u30C8\u3092\u8D77\u52D5\u3057\u3001\u6050\u559D\u30EB\u30FC\u30C8\u3092\u7121\u52B9\u306B\u3057\u307E\u3059\u3002"
     - PortGuid: 15a1c673-2b58-474e-a7e2-b9a1c85a1bf8
       InputGuid: add048aa-3c13-4b39-8c1c-a324463a44ea
       OutputGuid: 8af4ce02-3cba-4565-9f17-235db82b6ae0
@@ -4171,12 +4175,12 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: But I'll keep it in mind that you'll do anything
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "\u3067\u3082\u3001\u3042\u306A\u305F\u304C\u4F55\u3067\u3082\u3059\u308B\u3063\u3066\u3053\u3068\u306F\u899A\u3048\u3066\u304A\u304D\u307E\u3059\u3088\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: Will activate Victoria extort path
       - languageEnum: 1
-        LanguageGenericType: 
+        LanguageGenericType: "Victoria\u6050\u559D\u30EB\u30FC\u30C8\u3092\u8D77\u52D5\u3057\u307E\u3059\u3002"
     AudioClips:
     - languageEnum: 0
       LanguageGenericType: {fileID: 0}
@@ -4189,7 +4193,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Thank you
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3069\u3046\u3044\u305F\u3057\u307E\u3057\u3066\u3002"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -4205,7 +4209,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: See you tomorrow
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u3067\u306F\u3001\u307E\u305F\u660E\u65E5\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -4239,7 +4243,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: In the morning is good
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u5348\u524D\u4E2D\u304C\u826F\u3044\u3067\u3059\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -4273,7 +4277,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Great ass
       - languageEnum: 1
-        LanguageGenericType: Choice 01
+        LanguageGenericType: "\u7D20\u6575\u306A\u30D2\u30C3\u30D7\u3060\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -4286,7 +4290,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Great ass, But yours is better
       - languageEnum: 1
-        LanguageGenericType: Choice 02
+        LanguageGenericType: "\u7D20\u6575\u306A\u30D2\u30C3\u30D7\u3060\u3001\u3067\u3082\u541B\u306E\u65B9\u304C\u3082\u3063\u3068\u826F\u3044\u3002"
       HintLanguage:
       - languageEnum: 0
         LanguageGenericType: 
@@ -4326,7 +4330,9 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: That's correct, my name is Dr. Markus Weber.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u306F\u3044\u3001\u305D\u3046\u3067\u3059\u3002\u79C1\u306FDr.
+        Markus Weber (\u30C9\u30AF\u30BF\u30FC\u30FB\u30DE\u30FC\u30AB\u30B9\u30FB\u30A6\u30A7\u30FC\u30D0\u30FC)
+        \u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -4358,7 +4364,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Nice to talk to you again.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u307E\u305F\u304A\u8A71\u3057\u3067\u304D\u3066\u5B09\u3057\u3044\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -4390,7 +4396,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I think we briefly spoke after your accident.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3042\u306A\u305F\u306E\u4E8B\u6545\u306E\u5F8C\u3001\u5C11\u3057\u3060\u3051\u304A\u8A71\u3057\u3057\u307E\u3057\u305F\u3088\u306D\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -4422,7 +4428,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Although you might not remember.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u899A\u3048\u3066\u3044\u3089\u3063\u3057\u3083\u3089\u306A\u3044\u304B\u3082\u3057\u308C\u307E\u305B\u3093\u304C\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -4454,7 +4460,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Well, that's great to hear.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3048\u3048\u3001\u305D\u308C\u306F\u826F\u304B\u3063\u305F\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -4486,7 +4492,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: No worries.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u6C17\u306B\u3057\u306A\u3044\u3067\u304F\u3060\u3055\u3044\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -4518,7 +4524,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: So let's get to the order of business.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3067\u306F\u3001\u672C\u984C\u306B\u5165\u308A\u307E\u3057\u3087\u3046\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -4550,7 +4556,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I understand how frustrating this must be.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u308C\u304C\u3069\u308C\u307B\u3069\u3082\u3069\u304B\u3057\u3044\u304B\u3001\u3088\u304F\u5206\u304B\u308A\u307E\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -4582,7 +4588,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: ' I highly recommend you not go off the medicine.'
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u85AC\u306E\u670D\u7528\u3092\u3084\u3081\u308B\u3053\u3068\u306F\u3001\u5F37\u304F\u304A\u52E7\u3081\u3057\u307E\u305B\u3093\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -4614,7 +4620,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: It's always the same with those leeches.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3042\u306E\u30CF\u30A4\u30A8\u30CA\u3069\u3082\u306F\u3044\u3064\u3082\u540C\u3058\u3067\u3059\u306D\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -4646,7 +4652,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: But
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3067\u3059\u304C\u3001"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -4679,7 +4685,7 @@ MonoBehaviour:
       LanguageGenericType: I think Aisha already told you, but going off the medicine
         can have adverse effects.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "Aisha\u3055\u3093\u304C\u65E2\u306B\u304A\u4F1D\u3048\u3057\u305F\u3068\u601D\u3044\u307E\u3059\u304C\u3001\u85AC\u3092\u3084\u3081\u308B\u3068\u60AA\u5F71\u97FF\u304C\u51FA\u308B\u53EF\u80FD\u6027\u304C\u3042\u308A\u307E\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -4712,7 +4718,7 @@ MonoBehaviour:
       LanguageGenericType: Good, now let's talk about some of those side effects
         you have been experiencing.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u7D50\u69CB\u3067\u3059\u3002\u3067\u306F\u3001\u3042\u306A\u305F\u304C\u7D4C\u9A13\u3055\u308C\u3066\u3044\u308B\u526F\u4F5C\u7528\u306B\u3064\u3044\u3066\u3001\u3044\u304F\u3064\u304B\u304A\u8A71\u3057\u3057\u307E\u3057\u3087\u3046\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -4745,7 +4751,7 @@ MonoBehaviour:
       LanguageGenericType: So you're saying your personality has changed since you
         got on the medication?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u85AC\u3092\u670D\u7528\u3057\u3066\u304B\u3089\u3001\u6027\u683C\u304C\u5909\u308F\u3063\u305F\u3068\u3044\u3046\u3053\u3068\u3067\u3059\u306D\uFF1F"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -4778,7 +4784,7 @@ MonoBehaviour:
       LanguageGenericType: Okay, because Aisha told me you have been experiencing
         some personality changes.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5206\u304B\u308A\u307E\u3057\u305F\u3002\u3068\u3044\u3046\u306E\u3082\u3001Aisha\u3055\u3093\u304C\u3001\u3042\u306A\u305F\u304C\u3044\u304F\u3064\u304B\u306E\u6027\u683C\u306E\u5909\u5316\u3092\u7D4C\u9A13\u3057\u3066\u3044\u308B\u3068\u79C1\u306B\u8A71\u3057\u305F\u304B\u3089\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -4811,7 +4817,7 @@ MonoBehaviour:
       LanguageGenericType: "It\u2019s still anecdotal for now, and we haven\u2019t
         confirmed a causal link, but it\u2019s being looked into."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u4ECA\u306E\u3068\u3053\u308D\u306F\u307E\u3060\u4F53\u9A13\u8AC7\u306B\u904E\u304E\u307E\u305B\u3093\u3057\u3001\u56E0\u679C\u95A2\u4FC2\u306F\u78BA\u8A8D\u3055\u308C\u3066\u3044\u307E\u305B\u3093\u304C\u3001\u8ABF\u67FB\u4E2D\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -4844,7 +4850,7 @@ MonoBehaviour:
       LanguageGenericType: Okay, yeah, I'm not really supposed to tell you this 'cause
         we can't really make any definitive statements yet, but...
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u3046\u3067\u3059\u306D\u3001\u307E\u3060\u65AD\u5B9A\u7684\u306A\u3053\u3068\u306F\u8A00\u3048\u306A\u3044\u306E\u3067\u3001\u672C\u6765\u306A\u3089\u3042\u306A\u305F\u306B\u304A\u4F1D\u3048\u3059\u3079\u304D\u3067\u306F\u306A\u3044\u306E\u3067\u3059\u304C..."
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -4877,7 +4883,7 @@ MonoBehaviour:
       LanguageGenericType: "You\u2019re not the only one reporting these kinds of
         personality shifts."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3053\u306E\u3088\u3046\u306A\u6027\u683C\u306E\u5909\u5316\u3092\u5831\u544A\u3057\u3066\u3044\u308B\u306E\u306F\u3001\u3042\u306A\u305F\u3060\u3051\u3067\u306F\u3042\u308A\u307E\u305B\u3093\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -4909,7 +4915,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "I get it. We\u2019re treading carefully."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5206\u304B\u308A\u307E\u3059\u3002\u614E\u91CD\u306B\u9032\u3081\u3066\u3044\u307E\u3059\u304B\u3089\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -4941,7 +4947,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "There\u2019s still a lot we don\u2019t know."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u307E\u3060\u5206\u304B\u3089\u306A\u3044\u3053\u3068\u304C\u305F\u304F\u3055\u3093\u3042\u308A\u307E\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -4973,7 +4979,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "Now, on to a slightly different topic\u2014"
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3055\u3066\u3001\u5C11\u3057\u8A71\u984C\u3092\u5909\u3048\u307E\u3057\u3066\u2015\u2015"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5005,7 +5011,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "No, you don\u2019t."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3044\u3044\u3048\u3001\u6301\u3063\u3066\u3044\u307E\u305B\u3093\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5038,7 +5044,7 @@ MonoBehaviour:
       LanguageGenericType: "Not messing\u2014just making sure they\u2019re paying
         something back for the mess they\u2019ve caused."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3075\u3056\u3051\u3066\u3044\u308B\u306E\u3067\u306F\u3042\u308A\u307E\u305B\u3093\u3002\u5F7C\u3089\u304C\u5F15\u304D\u8D77\u3053\u3057\u305F\u554F\u984C\u306B\u5BFE\u3057\u3066\u3001\u4F55\u304B\u3092\u511F\u3063\u3066\u3082\u3089\u3046\u3088\u3046\u306B\u3057\u3066\u3044\u308B\u3060\u3051\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5071,7 +5077,7 @@ MonoBehaviour:
       LanguageGenericType: "It\u2019s totally optional, so if you don't want it,
         just say so. You can just forget I ever made this proposition."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3053\u308C\u306F\u5168\u304F\u306E\u4EFB\u610F\u306A\u306E\u3067\u3001\u3082\u3057\u671B\u307E\u306A\u3044\u3088\u3046\u3067\u3057\u305F\u3089\u3001\u305D\u3046\u304A\u3063\u3057\u3083\u3063\u3066\u304F\u3060\u3055\u3044\u3002\u79C1\u304C\u3053\u306E\u63D0\u6848\u3092\u3057\u305F\u3053\u3068\u81EA\u4F53\u3001\u5FD8\u308C\u3066\u3044\u305F\u3060\u3044\u3066\u7D50\u69CB\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5104,7 +5110,7 @@ MonoBehaviour:
       LanguageGenericType: But before you do, let me just show you a picture of the
         nurse I had in mind for the job.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3067\u3059\u304C\u3001\u305D\u306E\u524D\u306B\u3001\u3053\u306E\u4ED5\u4E8B\u306B\u8003\u3048\u3066\u3044\u308B\u770B\u8B77\u5E2B\u306E\u5199\u771F\u3092\u5C11\u3057\u304A\u898B\u305B\u3055\u305B\u3066\u304F\u3060\u3055\u3044\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5136,7 +5142,8 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Here, her name is Victoria.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3053\u3061\u3089\u3067\u3059\u3002\u5F7C\u5973\u306E\u540D\u524D\u306FVictoria
+        (\u30F4\u30A3\u30AF\u30C8\u30EA\u30A2) \u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5168,7 +5175,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: So what do you say?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u308C\u3067\u3001\u3069\u3046\u3055\u308C\u307E\u3059\u304B\uFF1F"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5201,7 +5208,7 @@ MonoBehaviour:
       LanguageGenericType: "Basic physical therapy check-ins. Someone comes by, asks
         if you\u2019re stretching. That sort of thing."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u57FA\u672C\u7684\u306A\u7406\u5B66\u7642\u6CD5\u306E\u305F\u3081\u306E\u78BA\u8A8D\u3067\u3059\u3002\u8AB0\u304B\u304C\u6765\u3066\u3001\u30B9\u30C8\u30EC\u30C3\u30C1\u3092\u3057\u3066\u3044\u308B\u304B\u306A\u3069\u3092\u5C0B\u306D\u307E\u3059\u3002\u305D\u306E\u3088\u3046\u306A\u3053\u3068\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5233,7 +5240,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "That\u2019s the spirit."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u306E\u610F\u6C17\u8FBC\u307F\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5265,7 +5272,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Does that sound good to you?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u308C\u306F\u826F\u3044\u8A71\u3060\u3068\u601D\u308F\u308C\u307E\u3059\u304B\uFF1F"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5298,7 +5305,7 @@ MonoBehaviour:
       LanguageGenericType: "I\u2019ll be giving her your contact info later today
         so she can plan an intake with you."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5F7C\u5973\u304C\u3042\u306A\u305F\u3068\u9762\u8AC7\u306E\u4E88\u5B9A\u3092\u7D44\u3081\u308B\u3088\u3046\u306B\u3001\u4ECA\u65E5\u306E\u3053\u306E\u5F8C\u3067\u5F7C\u5973\u306B\u3042\u306A\u305F\u306E\u9023\u7D61\u5148\u3092\u6E21\u3057\u307E\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5330,7 +5337,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Ok, no worries.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5206\u304B\u308A\u307E\u3057\u305F\u3002\u5FC3\u914D\u3044\u308A\u307E\u305B\u3093\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5362,7 +5369,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Just thought it would be of help to you.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3042\u306A\u305F\u306E\u304A\u5F79\u306B\u7ACB\u3066\u308B\u304B\u3068\u601D\u3063\u305F\u3060\u3051\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5394,7 +5401,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Well, that was all for today.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3055\u3066\u3001\u672C\u65E5\u306F\u3053\u308C\u3067\u5168\u3066\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5426,7 +5433,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Great.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u7D50\u69CB\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5458,7 +5465,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Talk to you soon.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u307E\u305F\u8FD1\u3044\u3046\u3061\u306B\u304A\u8A71\u3057\u3057\u307E\u3057\u3087\u3046\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5490,7 +5497,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Good morning.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u304A\u306F\u3088\u3046\u3054\u3056\u3044\u307E\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5522,7 +5529,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Not yet.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u307E\u3060\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5555,7 +5562,7 @@ MonoBehaviour:
       LanguageGenericType: Well, I think I set something off with the pictures from
         yesterday.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3048\u3048\u3068\u3001\u6628\u65E5\u306E\u5199\u771F\u306E\u305B\u3044\u3067\u3001\u4F55\u304B\u5F15\u304D\u8D77\u3053\u3057\u3066\u3057\u307E\u3063\u305F\u3088\u3046\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5587,7 +5594,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Yeah?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3048\u3048\uFF1F"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5619,7 +5626,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Hmm, I did, yes.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3046\u30FC\u3093\u3001\u305D\u3046\u3057\u307E\u3057\u305F\u3001\u306F\u3044\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5651,7 +5658,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Not really, no. Hihi.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3044\u3048\u3001\u7279\u306B\u4F55\u3082\u3042\u308A\u307E\u305B\u3093\u3002\u306F\u306F\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5683,7 +5690,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Of course I should.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3082\u3061\u308D\u3093\u3001\u305D\u3046\u3059\u3079\u304D\u3067\u3059\u306D\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5716,7 +5723,7 @@ MonoBehaviour:
       LanguageGenericType: He told me he wants to meet with me tomorrow for a wet
         surprise.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5F7C\u306F\u660E\u65E5\u3001\u300Cwet surprise (\u30A6\u30A7\u30C3\u30C8\u30FB\u30B5\u30D7\u30E9\u30A4\u30BA)\u300D\u306E\u305F\u3081\u306B\u79C1\u3068\u4F1A\u3044\u305F\u3044\u3068\u8A00\u3044\u307E\u3057\u305F\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5748,7 +5755,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Hihi, such a little pervert.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u306F\u306F\u3001\u672C\u5F53\u306B\u5C0F\u3055\u306A\u5909\u614B\u3067\u3059\u306D\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5780,7 +5787,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Hihi, such a pervert.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u306F\u306F\u3001\u672C\u5F53\u306B\u5909\u614B\u3067\u3059\u306D\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5812,7 +5819,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Maybe you can help me pick.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3082\u3057\u304B\u3057\u305F\u3089\u3001\u9078\u3076\u306E\u3092\u624B\u4F1D\u3063\u3066\u304F\u308C\u308B\u304B\u3082\u3057\u308C\u307E\u305B\u3093\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5844,7 +5851,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: What a great idea.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u306A\u3093\u3066\u7D20\u6674\u3089\u3057\u3044\u30A2\u30A4\u30C7\u30A2\u3067\u3057\u3087\u3046\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5876,7 +5883,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Since you were also so helpful yesterday.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u6628\u65E5\u3082\u3068\u3066\u3082\u89AA\u5207\u306B\u52A9\u3051\u3066\u304F\u308C\u305F\u306E\u3067\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5908,7 +5915,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Give me a second.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5C11\u3005\u304A\u5F85\u3061\u304F\u3060\u3055\u3044\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -5940,12 +5947,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "I\u2019m back."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u304A\u5F85\u305F\u305B\u3057\u307E\u3057\u305F\u3002\u623B\u308A\u307E\u3057\u305F\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 10 minutes later...
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "10\u5206\u5F8C..."
     Timelapse: 
     Duration: 2
     Delay: 0
@@ -5972,7 +5979,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Here are two good options.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3053\u308C\u304C\u4E8C\u3064\u306E\u826F\u3044\u9078\u629E\u80A2\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6002,9 +6009,9 @@ MonoBehaviour:
     AvatarType: 0
     Texts:
     - languageEnum: 0
-      LanguageGenericType: Here is option one.
+      LanguageGenericType: Here are two good options.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3053\u308C\u304C\u4E8C\u3064\u306E\u826F\u3044\u9078\u629E\u80A2\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6036,7 +6043,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Keeping it a bit civil, I see.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5C11\u3057\u306F\u793C\u5100\u6B63\u3057\u304F\u3057\u3066\u3044\u308B\u3088\u3046\u3067\u3059\u306D\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6068,7 +6075,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Again?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u307E\u305F\u3067\u3059\u304B\uFF1F"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6100,7 +6107,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: You're being such a pervert again....
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u307E\u305F\u5909\u614B\u306B\u306A\u3063\u3066\u3044\u307E\u3059\u3088..."
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6132,7 +6139,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Sent.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u9001\u308A\u307E\u3057\u305F\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6164,7 +6171,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I think you're a lost cause
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3042\u306A\u305F\u306F\u3082\u3046\u624B\u9045\u308C\u3060\u3068\u601D\u3044\u307E\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6196,7 +6203,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Izzy is nagging me about going to the pool.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "Izzy\u304C\u30D7\u30FC\u30EB\u306B\u884C\u3053\u3046\u3068\u3057\u3064\u3053\u304F\u8A00\u3063\u3066\u304F\u308B\u3093\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6228,7 +6235,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Okay.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5206\u304B\u308A\u307E\u3057\u305F\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6260,7 +6267,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "OMG, babe, I\u2019m so sorry."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3042\u3042\u3001\u3054\u3081\u3093\u306A\u3055\u3044\u3001\u30CF\u30CB\u30FC\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6293,7 +6300,7 @@ MonoBehaviour:
       LanguageGenericType: I know, but I just feel like I should be there for you
         right now.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5206\u304B\u3063\u3066\u3044\u307E\u3059\u3002\u3067\u3082\u3001\u79C1\u306F\u4ECA\u3001\u3042\u306A\u305F\u306E\u305D\u3070\u306B\u3044\u308B\u3079\u304D\u3060\u3068\u611F\u3058\u308B\u306E\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6326,7 +6333,7 @@ MonoBehaviour:
       LanguageGenericType: "Don\u2019t say myself. This is us. We need to get the
         money together."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u300C\u79C1\u81EA\u8EAB\u300D\u3068\u306F\u8A00\u308F\u306A\u3044\u3067\u3002\u3053\u308C\u306F\u300C\u79C1\u305F\u3061\u300D\u306E\u3053\u3068\u3088\u3002\u79C1\u305F\u3061\u3067\u304A\u91D1\u3092\u96C6\u3081\u308B\u5FC5\u8981\u304C\u3042\u308B\u306E\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6358,7 +6365,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Thanks.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3042\u308A\u304C\u3068\u3046\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6390,7 +6397,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I was thinking...
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u8003\u3048\u3066\u3044\u305F\u306E\u3067\u3059\u304C..."
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6423,7 +6430,8 @@ MonoBehaviour:
       LanguageGenericType: "I\u2019m not talking about going full OnlyFans or anything.
         Just... testing boundaries a bit."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5225\u306BOnlyFans\u307F\u305F\u3044\u306A\u3053\u3068\u3092\u3059\u308B\u308F\u3051\u3058\u3083\u306A\u3044\u306E\u3002\u305F\u3060...
+        \u5C11\u3057\u5883\u754C\u7DDA\u3092\u8A66\u3057\u3066\u3044\u308B\u3060\u3051\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6456,7 +6464,7 @@ MonoBehaviour:
       LanguageGenericType: "I know. I know it sounds crazy. But it\u2019s not like
         I\u2019d be doing anything I\u2019m not okay with. I\u2019d still be in control."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5206\u304B\u3063\u3066\u3044\u308B\u308F\u3002\u99AC\u9E7F\u3052\u3066\u3044\u308B\u3088\u3046\u306B\u805E\u3053\u3048\u308B\u306E\u306F\u5206\u304B\u3063\u3066\u3044\u308B\u3002\u3067\u3082\u3001\u81EA\u5206\u304C\u5ACC\u306A\u3053\u3068\u306F\u3057\u306A\u3044\u308F\u3002\u79C1\u306F\u307E\u3060\u30B3\u30F3\u30C8\u30ED\u30FC\u30EB\u3067\u304D\u308B\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6489,7 +6497,7 @@ MonoBehaviour:
       LanguageGenericType: "But I wouldn\u2019t be. I\u2019m telling you because
         I\u2019ve actually thought about it."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3067\u3082\u3001\u79C1\u306F\u305D\u3046\u306A\u3089\u306A\u3044\u308F\u3002\u3042\u306A\u305F\u304C\u5FC3\u914D\u3057\u3066\u3044\u308B\u304B\u3089\u3001\u5B9F\u969B\u306B\u8003\u3048\u305F\u3053\u3068\u3092\u8A00\u3063\u3066\u3044\u308B\u306E\u3088\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6522,7 +6530,7 @@ MonoBehaviour:
       LanguageGenericType: "If it helps you, helps us, then I\u2019m willing to go
         for it."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3082\u3057\u305D\u308C\u304C\u3042\u306A\u305F\u3092\u52A9\u3051\u3001\u79C1\u305F\u3061\u3092\u52A9\u3051\u308B\u306A\u3089\u3001\u79C1\u306F\u559C\u3093\u3067\u3084\u308B\u3064\u3082\u308A\u3088\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6554,7 +6562,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "Since we\u2019re already going down that path a bit..."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3082\u3046\u305D\u306E\u9053\u306B\u5C11\u3057\u5165\u3063\u3066\u3044\u308B\u306E\u3060\u304B\u3089..."
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6586,7 +6594,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "I don\u2019t."
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u79C1\u306F\u305D\u3046\u306F\u601D\u3044\u307E\u305B\u3093\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6618,7 +6626,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I love you too.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u79C1\u3082\u611B\u3057\u3066\u3044\u308B\u308F\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6650,7 +6658,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Kisses.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u30AD\u30B9\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6682,7 +6690,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I will.
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u3046\u3057\u307E\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6714,7 +6722,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: "Wait\u2014what?!"
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5F85\u3063\u3066\u2015\u2015\u4F55\u3060\u3063\u3066\uFF1F\uFF01"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6746,7 +6754,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: seriously?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u672C\u6C17\u3067\u3059\u304B\uFF1F"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6778,7 +6786,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Three days?!
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u4E09\u65E5\u3082\u3067\u3059\u304B\uFF1F\uFF01"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6811,7 +6819,7 @@ MonoBehaviour:
       LanguageGenericType: No. That's not fair. I'm not just someone you update when
         it's convenient
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3044\u3044\u3048\u3002\u305D\u308C\u306F\u4E0D\u516C\u5E73\u3067\u3059\u3002\u79C1\u306F\u90FD\u5408\u306E\u826F\u3044\u3068\u304D\u306B\u3060\u3051\u5831\u544A\u3092\u53D7\u3051\u308B\u3088\u3046\u306A\u4EBA\u9593\u3067\u306F\u3042\u308A\u307E\u305B\u3093\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6843,7 +6851,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Then let me
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3067\u306F\u3001\u79C1\u306B\u3055\u305B\u3066\u304F\u3060\u3055\u3044\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6875,7 +6883,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Thanks
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3042\u308A\u304C\u3068\u3046\u3054\u3056\u3044\u307E\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6908,7 +6916,7 @@ MonoBehaviour:
       LanguageGenericType: Not porn, don't freak out. Just testing the limits of
         what I'm comfortable with
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u30DD\u30EB\u30CE\u3067\u306F\u3042\u308A\u307E\u305B\u3093\u3001\u614C\u3066\u306A\u3044\u3067\u3002\u305F\u3060\u3001\u81EA\u5206\u304C\u5FC3\u5730\u3088\u3044\u3068\u601D\u3048\u308B\u9650\u754C\u3092\u8A66\u3057\u3066\u3044\u308B\u3060\u3051\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6940,7 +6948,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: This isn't just about you
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3053\u308C\u306F\u3042\u306A\u305F\u3060\u3051\u306E\u554F\u984C\u3067\u306F\u3042\u308A\u307E\u305B\u3093\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -6972,7 +6980,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: It's about us
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u79C1\u305F\u3061\u306E\u554F\u984C\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7004,7 +7012,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: It won't
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u3046\u306F\u306A\u308A\u307E\u305B\u3093\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7037,7 +7045,7 @@ MonoBehaviour:
       LanguageGenericType: I'm not ashamed of my body, and I'm not going to post
         anything I'm not in control of
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u81EA\u5206\u306E\u4F53\u306B\u6065\u305A\u304B\u3057\u3044\u3068\u306F\u601D\u3063\u3066\u3044\u307E\u305B\u3093\u3057\u3001\u30B3\u30F3\u30C8\u30ED\u30FC\u30EB\u3067\u304D\u306A\u3044\u3082\u306E\u306F\u4F55\u3082\u6295\u7A3F\u3057\u307E\u305B\u3093\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7070,7 +7078,7 @@ MonoBehaviour:
       LanguageGenericType: I'm not. I'm doing it because I want to help. Because
         I can
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u79C1\u306F\u305D\u3046\u3067\u306F\u3042\u308A\u307E\u305B\u3093\u3002\u52A9\u3051\u305F\u3044\u304B\u3089\u3001\u3067\u304D\u308B\u304B\u3089\u3001\u3084\u3063\u3066\u3044\u308B\u306E\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7102,7 +7110,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Good. Then let me do what I think is right for us
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u826F\u3044\u308F\u3002\u306A\u3089\u3001\u79C1\u306B\u3068\u3063\u3066\u6B63\u3057\u3044\u3068\u601D\u3046\u3053\u3068\u3092\u3055\u305B\u3066\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7134,7 +7142,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Ey bro
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3088\u3046\u3001\u5144\u5F1F\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7166,7 +7174,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: How did it go?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3069\u3046\u3060\u3063\u305F\uFF1F"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7198,7 +7206,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: That's great to hear
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u308C\u3092\u805E\u3044\u3066\u826F\u304B\u3063\u305F\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7230,7 +7238,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Hmmm
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3046\u30FC\u3093"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7262,7 +7270,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Well I'm just happy you told her
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u307E\u3042\u3001\u5F7C\u5973\u306B\u8A71\u3057\u3066\u304F\u308C\u3066\u5B09\u3057\u3044\u3088\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7294,7 +7302,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I get it bro
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5206\u304B\u3063\u305F\u3088\u3001\u5144\u5F1F\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7326,7 +7334,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Yea, I agree
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3046\u3093\u3001\u79C1\u3082\u305D\u3046\u601D\u3046\u3088\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7358,7 +7366,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Hmm
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3046\u30FC\u3093"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7390,7 +7398,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I think you should have told her sooner
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3082\u3063\u3068\u65E9\u304F\u5F7C\u5973\u306B\u4F1D\u3048\u308B\u3079\u304D\u3060\u3063\u305F\u3068\u601D\u3046\u3088\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7422,7 +7430,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I have something for you by the way
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3068\u3053\u308D\u3067\u3001\u3042\u306A\u305F\u306B\u4F1D\u3048\u305F\u3044\u3053\u3068\u304C\u3042\u308A\u307E\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7454,7 +7462,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Here
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3053\u3061\u3089\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7486,7 +7494,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I got to go.  Talk to you later bro
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3082\u3046\u884C\u304B\u306A\u3044\u3068\u3002\u307E\u305F\u5F8C\u3067\u8A71\u305D\u3046\u3001\u5144\u5F1F\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7518,7 +7526,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Good afternoon
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3053\u3093\u306B\u3061\u306F\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7550,7 +7558,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: If you don't mind I want to keep it short for now
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3082\u3057\u3088\u308D\u3057\u3051\u308C\u3070\u3001\u4ECA\u306F\u624B\u77ED\u306B\u3057\u305F\u3044\u3068\u601D\u3044\u307E\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7582,7 +7590,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I heard from the doctor what you need help with
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3042\u306A\u305F\u304C\u624B\u52A9\u3051\u3092\u5FC5\u8981\u3068\u3057\u3066\u3044\u308B\u4EF6\u306F\u3001\u30C9\u30AF\u30BF\u30FC\u304B\u3089\u4F3A\u3044\u307E\u3057\u305F\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7614,7 +7622,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Great
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u7D50\u69CB\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7646,12 +7654,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I kept that nice and short
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u77ED\u304F\u6E08\u307E\u305B\u307E\u3057\u305F\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 2 minutes later...
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "2\u5206\u5F8C..."
     Timelapse: 
     Duration: 2
     Delay: 0
@@ -7678,7 +7686,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I'll be there in a jiffy
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3059\u3050\u306B\u53C2\u308A\u307E\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7710,7 +7718,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Wait no!
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u5F85\u3063\u3066\u3001\u3084\u3081\u3066\uFF01"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7742,7 +7750,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Please
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u304A\u9858\u3044\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7774,7 +7782,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I'll do anything. Please just delete the picture
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u4F55\u3067\u3082\u3057\u307E\u3059\u3002\u304A\u9858\u3044\u3067\u3059\u304B\u3089\u3001\u305D\u306E\u5199\u771F\u3092\u524A\u9664\u3057\u3066\u304F\u3060\u3055\u3044\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7806,7 +7814,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: hihi, thank you
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u306F\u306F\u3001\u3042\u308A\u304C\u3068\u3046\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7838,7 +7846,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Such a naughty boy
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u672C\u5F53\u306B\u3044\u305F\u305A\u3089\u3063\u5B50\u306D\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7870,7 +7878,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: and here is number 2
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305D\u3057\u3066\u3001\u3053\u308C\u304C2\u756A\u3067\u3059\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -7902,12 +7910,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: hehe
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3078\u3078"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 30 minutes later...
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "30\u5206\u5F8C..."
     Timelapse: 
     Duration: 2
     Delay: 0

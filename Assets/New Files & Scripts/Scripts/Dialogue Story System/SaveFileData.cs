@@ -18,7 +18,6 @@ public class SaveFileData
     public MediaData CustomBackgroundImage;
     public SystemLanguage CurrentLanguage = SystemLanguage.English;
     [NonSerialized] public GameSaveState CurrentState;
-    public int TotalChapters => CurrentState.Chapters.Count;
     public GameSaveState AutoSaveState;
     public List<GameSaveState> SaveStates;
     public List<MediaData> UnlockedMedia;
@@ -57,16 +56,21 @@ public class SaveFileData
     {
         public bool IsSaved;
         public string Name;
-        public List<ChapterSaveData> Chapters;
+        public ChapterSaveData LastChapter;
         public List<int> CompletedChapters;
         public List<GlobalSaveVariable> SavedVariables;
         public List<LikedSocialMediaPosts> LikedPosts;
         public GameSaveState()
         {
-            Chapters = new List<ChapterSaveData>();
+            LastChapter = new ChapterSaveData();
             LikedPosts = new List<LikedSocialMediaPosts>();
             CompletedChapters = new List<int>();
             SavedVariables = new List<GlobalSaveVariable>();
+        }
+
+        public bool IsChapterCompleted(int chapterIndex)
+        {
+            return CompletedChapters.Contains(chapterIndex);
         }
 
         public GameSaveState Clone()
@@ -75,32 +79,26 @@ public class SaveFileData
 
             newClone.CompletedChapters = new List<int>(CompletedChapters);
 
-            for (var index = 0; index < Chapters.Count; index++)
+            newClone.LastChapter = new ChapterSaveData()
             {
-                var item = Chapters[index];
-                var newChapter = new ChapterSaveData()
-                {
-                    CurrentGUID = item.CurrentGUID,
-                    Completed = item.Completed,
-                    FileIndex = item.FileIndex,
-                    FileName = item.FileName,
-                    StartID = item.StartID
-                };
+                CurrentGUID = LastChapter.CurrentGUID,
+                Completed = LastChapter.Completed,
+                FileIndex = LastChapter.FileIndex,
+                FileName = LastChapter.FileName,
+                StartID = LastChapter.StartID
+            };
 
-                foreach (var pastConv in item.PastCoversations)
+            foreach (var pastConv in LastChapter.PastCoversations)
+            {
+                newClone.LastChapter.PastCoversations.Add(new ChapterSaveData.PastCoversationData()
                 {
-                    newChapter.PastCoversations.Add(new ChapterSaveData.PastCoversationData()
-                    {
-                        GUID = pastConv.GUID,
-                        IsChoice = pastConv.IsChoice,
-                        SelectedChoice = pastConv.SelectedChoice, //Soon to be obsolete
-                        Text = pastConv.Text, //Soon to be obsolete
-                        Texts = pastConv.Texts,
-                        SelectedChoiceTexts = pastConv.SelectedChoiceTexts
-                    });
-                }
-
-                newClone.Chapters.Add(newChapter);
+                    GUID = pastConv.GUID,
+                    IsChoice = pastConv.IsChoice,
+                    SelectedChoice = pastConv.SelectedChoice, //Soon to be obsolete
+                    Text = pastConv.Text, //Soon to be obsolete
+                    Texts = pastConv.Texts,
+                    SelectedChoiceTexts = pastConv.SelectedChoiceTexts
+                });
             }
 
             foreach (var varible in SavedVariables)
@@ -144,21 +142,9 @@ public class SaveFileData
             saveFile.SaveStates.Add(new GameSaveState());
         }
 
-        int count = 0;
-
         saveFile.AutoSaveState = new GameSaveState();
         saveFile.AutoSaveState.SavedVariables = SaveAndLoadManager.Instance.ValueManager.ConvertSaveFile();
-        foreach (var item in DialogueChapterManager.Instance.StoryList)
-        {
-            saveFile.AutoSaveState.Chapters.Add(new ChapterSaveData()
-            {
-                CurrentGUID = "",
-                Completed = false,
-                FileIndex = count++,
-                FileName = $"{item.Story.name}",
-                StartID = item.StartID
-            });
-        }
+        saveFile.AutoSaveState.LastChapter = new ChapterSaveData();
 
         saveFile.UpdateMediaData(generateThumbnails: false);
 
@@ -192,25 +178,25 @@ public class SaveFileData
         }
 
         //If there is a discrepancy in the total number of chapters then we need to update the collection
-        if (newSaveFile.AutoSaveState.Chapters.Count > AutoSaveState.Chapters.Count)
-        {
-            //Loop forward from the last current chapter and add any missing to the list
-            for (var index = AutoSaveState.Chapters.Count; index < newSaveFile.AutoSaveState.Chapters.Count; index++)
-            {
-                var item = newSaveFile.AutoSaveState.Chapters[index];
-                AutoSaveState.Chapters.Add(new ChapterSaveData()
-                {
-                    CurrentGUID = "",
-                    Completed = false,
-                    FileIndex = index,
-                    FileName = $"{item.FileName}",
-                    StartID = item.StartID
-                });
+        // if (newSaveFile.AutoSaveState.Chapters.Count > AutoSaveState.Chapters.Count)
+        // {
+        //     //Loop forward from the last current chapter and add any missing to the list
+        //     for (var index = AutoSaveState.Chapters.Count; index < newSaveFile.AutoSaveState.Chapters.Count; index++)
+        //     {
+        //         var item = newSaveFile.AutoSaveState.Chapters[index];
+        //         AutoSaveState.Chapters.Add(new ChapterSaveData()
+        //         {
+        //             CurrentGUID = "",
+        //             Completed = false,
+        //             FileIndex = index,
+        //             FileName = $"{item.FileName}",
+        //             StartID = item.StartID
+        //         });
 
-            }
+        //     }
 
-            wasUpdated = true;
-        }
+        //     wasUpdated = true;
+        // }
 
         UpdateMediaData(generateThumbnails: true);
 
@@ -299,13 +285,7 @@ public class SaveFileData
         }
     }
 
-    public ChapterSaveData CurrentChapterData
-    {
-        get
-        {
-            return CurrentState.Chapters[DialogueChapterManager.Instance.CurrentChapter.ChapterIndex];
-        }
-    }
+    public ChapterSaveData CurrentChapterData => CurrentState.LastChapter;
 
     public void CompletedCurrentChapter()
     {
@@ -342,7 +322,7 @@ public class SaveFileData
 
     public void AddNode(BaseNodeData nodeData)
     {
-        if (SaveAndLoadManager.Instance.ReplayingCompletedChapter)
+        if (SaveAndLoadManager.Instance.ReplayingCompletedChapter || nodeData == null)
             return;
 
         if (CurrentChapterData.PastCoversations.Select(x => x.GUID).Contains(nodeData.NodeGuid))

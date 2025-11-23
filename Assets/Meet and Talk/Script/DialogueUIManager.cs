@@ -144,6 +144,57 @@ namespace MeetAndTalk
             return emptyList;
         }
 
+        public void PopulatePreviousMessage(List<LanguageGeneric<string>> texts, BaseNodeData _nodeData, MessageSource messageSource)
+        {
+            MessagingConversationPanel targetPanel = null;
+            var prefab = messageBubblePrefabs[(int)messageSource];
+            var text = texts.Find(x => x.languageEnum == GameManager.LOCALIZATION_MANAGER.SelectedLang()).LanguageGenericType;
+            string newText = GameManager.ToUTF32(text);
+
+            Regex regex = new Regex(@"\{(.*?)\}");
+            MatchEvaluator matchEvaluator = new MatchEvaluator(match =>
+            {
+                string OldText = match.Groups[1].Value;
+                return ChangeReplaceableText(OldText);
+            });
+
+            newText = regex.Replace(newText, matchEvaluator);
+
+            //Spawn the messaging bubbles
+            switch (messageSource)
+            {
+                case MessageSource.Player:
+                    switch (_nodeData)
+                    {
+                        case DialogueNodeData nd when _nodeData is DialogueNodeData:
+                            targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
+                            break;
+                        case DialogueChoiceNodeData nd when _nodeData is DialogueChoiceNodeData:
+                            targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
+                            break;
+                    }
+                    targetPanel.AddElement(_nodeData, prefab, newText, messageSource, false);
+                    break;
+                case MessageSource.Character:
+                    switch (_nodeData)
+                    {
+                        case DialogueChoiceNodeData nd when _nodeData is DialogueChoiceNodeData:
+                            {
+                                targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
+                                targetPanel.AddElement(_nodeData, prefab, newText, messageSource, false);
+                            }
+                            break;
+                        case DialogueNodeData nd when _nodeData is DialogueNodeData:
+                            {
+                                targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
+                                targetPanel.AddElement(_nodeData, prefab, newText, messageSource, false);
+                            }
+                            break;
+                    }
+                    break;
+            }
+        }
+
         public void SetFullText(List<LanguageGeneric<string>> texts, BaseNodeData _nodeData, MessageSource messageSource, bool notification = true, bool updateSave = true)
         {
             var text = texts.Find(x => x.languageEnum == GameManager.LOCALIZATION_MANAGER.SelectedLang()).LanguageGenericType;

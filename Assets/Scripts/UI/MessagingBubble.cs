@@ -12,18 +12,12 @@ public class MessagingBubble : MonoBehaviour
     [SerializeField, FormerlySerializedAs("image")] Image _image;
     [SerializeField] GameObject _imageContainer;
     [SerializeField] GameObject _videoContainer;
+    [SerializeField] Image _backgroundImage;
     [SerializeField] FullScreenMediaMessageViewer _mediaViewer;
-
-    public string Text => _label.text;
-
 
     CanvasGroup cg;
     RectTransform rect;
     RectTransform labelRect;
-
-    [SerializeField]
-    private Vector2 _padding;
-    [SerializeField] private Vector2 _imageAllowance;
 
     [Header("Video Clip Components")]
     [SerializeField] RawImage _videoImage;
@@ -167,18 +161,20 @@ public class MessagingBubble : MonoBehaviour
             _label.fontSize = 15;
             _label.fontStyle = FontStyles.Italic;
             //GetComponent<Image>().sprite = GameManager.Instance.MessagingCanvas.TimelapsePanelBackground;
-            GetComponent<Image>().color = Color.grey;
+            _backgroundImage.color = Color.grey;
         }
     }
 
     private void Update()
     {
-        rect.sizeDelta = _label.rectTransform.sizeDelta + _padding + (_image.gameObject.activeInHierarchy ? _imageAllowance : Vector2.zero);
         switch (MediaType)
         {
             case MediaType.Video:
                 if (VideoClip)
                 {
+                    if (_videoPreviewTexture != null)
+                        return;
+
                     _videoPreviewTexture = GameManager.Instance.GetVideoFrame(VideoClip).Item1;
                     _videoImage.texture = _videoPreviewTexture;
                 }

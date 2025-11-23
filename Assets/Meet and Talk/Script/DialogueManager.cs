@@ -14,6 +14,7 @@ namespace MeetAndTalk
     public class DialogueManager : DialogueGetData
     {
         public const float BASE_NODE_DISPLAY_TIME = 2;
+        public const float REPOPULATE_YIELD_COUNT = 10;
 
         [HideInInspector] public static DialogueManager Instance;
         public LocalizationManager localizationManager;
@@ -42,6 +43,13 @@ namespace MeetAndTalk
 
         private List<Coroutine> activeCoroutines = new List<Coroutine>();
         private Stack<BaseNodeData> _visitedNodes = new Stack<BaseNodeData>();
+
+        private bool _populatingHistory = false;
+        private bool _populatHistoryFailed = false;
+        private bool _dialogueStarted = false;
+        private bool _failLoadDialogShown = false;
+        private ChapterSaveData _chapterData;
+        [SerializeField] private RectTransform _loadingIndicator;
         private void Awake()
         {
             Instance = this;
@@ -54,6 +62,54 @@ namespace MeetAndTalk
             dialogueUIManager = DialogueUIManager.Instance;
 
             AudioSource = GetComponent<AudioSource>();
+        }
+
+        private void Update()
+        {
+            if (_dialogueStarted || dialogueContainer == null || _chapterData == null)
+            {
+                if (_dialogueStarted)
+                    _loadingIndicator.gameObject.SetActive(false);
+
+                return;
+            }
+
+            if (_populatingHistory)
+            {
+                _loadingIndicator.gameObject.SetActive(true);
+            }
+            else
+            {
+                _loadingIndicator.gameObject.SetActive(false);
+                if (_populatHistoryFailed)
+                {
+                    if (!_failLoadDialogShown)
+                    {
+                        _failLoadDialogShown = true;
+                        //The save file could not be loaded for this chapter, this implies that it is out of date with the latest verison.
+                        //Reset the game state and start the Player from the top of the chapter
+                        GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.INVALID_SAVE_DATA, () =>
+                        {
+                            //Reset the chapter data in the save file
+                            SaveAndLoadManager.Instance.ClearChapterData(_chapterData.FileIndex);
+
+                            OverlayCanvas.Instance.FadeToBlack(() =>
+                            {
+                                SaveAndLoadManager.Instance.LoadSave();
+                                GameManager.Instance.ResetGameState();
+                            });
+
+                        }, GameConstants.UIElementKeys.CONTINUE, args: null, twoButtonSetup: false);
+                    }
+                }
+                else if (!_dialogueStarted)
+                {
+                    Debug.Log("Loading Dialogue Completed");
+                    _dialogueStarted = true;
+                    CheckNodeType(GetNodeByGuid(_chapterData.CurrentGUID));
+                    StartDialogueEvent.Invoke();
+                }
+            }
         }
 
         /// <summary>
@@ -71,10 +127,12 @@ namespace MeetAndTalk
         /// Pozwala na przypisanie aktualnego dialogu
         /// </summary>
         /// <param name="dialogue"></param>
-        public void SetupDialogue(DialogueContainerSO dialogue)
+        public void SetupDialogue(DialogueContainerSO dialogue, ChapterSaveData chapterData)
         {
-            if (dialogue != null) dialogueContainer = dialogue;
-            else Debug.LogError("DialogueContainerSO.dialogue Object jest Pusty!");
+            if (dialogue != null)
+                dialogueContainer = dialogue;
+
+            _chapterData = chapterData;
         }
 
        // public void StartDialogue(DialogueContainerSO dialogue) { StartDialogue(dialogue, ""); }
@@ -87,45 +145,119 @@ namespace MeetAndTalk
             _visitedNodes = new Stack<BaseNodeData>();
 
             // Setup Dialogue
-            SetupDialogue(DialogueSO);
+            SetupDialogue(DialogueSO, chapterData);
 
             // Error: No Setup Dialogue
-            if (dialogueContainer == null) { Debug.LogError("Error: Dialogue Container SO is not assigned!"); }
+            if (dialogueContainer == null)
+                Debug.LogError("Error: Dialogue Container SO is not assigned!");
 
             // Check ID
-            if (dialogueContainer.StartNodeDatas.Count == 0) { Debug.LogError("Error: No Start Node in Dialogue Container!"); }
+            if (dialogueContainer.StartNodeDatas.Count == 0)
+                Debug.LogError("Error: No Start Node in Dialogue Container!");
 
-            if (chapterData.CurrentGUID == string.Empty || SaveAndLoadManager.Instance.ReplayingCompletedChapter)
+            if (string.IsNullOrEmpty(chapterData.CurrentGUID) || SaveAndLoadManager.Instance.ReplayingCompletedChapter)
             {
-                TriggerDialogueStart(chapterData);
+                _dialogueStarted = true;
+                TriggerDialogueStart(new ChapterSaveData());
+                StartDialogueEvent.Invoke();
             }
             else
             {
                 //Draw out all the conversation up until this point but it cannot be done with notifications
-                if (PopulateVisitedNodes(chapterData))
+                _populatingHistory = true;
+                _failLoadDialogShown = false;
+                Debug.Log("Loading Dialogue History...");
+                StartCoroutine(PopulateHistoryCoroutine(chapterData));
+            }
+        }
+
+        private IEnumerator PopulateHistoryCoroutine(ChapterSaveData chapterData)
+        {
+            bool loadSuccess = true;
+            var count = 0;
+            foreach (var item in chapterData.PastCoversations)
+            {
+                count++;
+                if (count >= REPOPULATE_YIELD_COUNT)
                 {
-                    CheckNodeType(GetNodeByGuid(chapterData.CurrentGUID));
+                    count = 0;
+                    yield return null;
                 }
-                else
+
+                var node = GetNodeByGuid(item.GUID);
+                if (node == null)
                 {
-                    //The save file could not be loaded for this chapter, this implies that it is out of date with the latest verison.
-                    //Reset the game state and start the Player from the top of the chapter
-                    GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.INVALID_SAVE_DATA, () =>
+                    //We failed to find the node by the GUID that was saved to file. This implies that their current chapter save data is invalid.
+                    //Eaxit to start the Player from the top of the chapter using the latest data
+                    loadSuccess = false;
+                    break;
+                }
+
+                if (item.GUID == chapterData.CurrentGUID)
+                {
+                    continue;
+                }
+
+                _visitedNodes.Push(node);
+                if (node.GetType() == typeof(DialogueChoiceNodeData) || node.GetType() == typeof(TimerChoiceNodeData))
+                {
+                    var dNode = (DialogueChoiceNodeData)node;
+                    if (item.SelectedChoice != "")
                     {
-                        //Reset the chapter data in the save file
-                        SaveAndLoadManager.Instance.ClearChapterData(chapterData.FileIndex);
-
-                        OverlayCanvas.Instance.FadeToBlack(() =>
+                        var found = false;
+                        //We have an old save that was made before localization. Compare the texts against the localized version and attempt to display the correct translation
+                        foreach (var lang in dNode.DialogueNodePorts)
                         {
-                            SaveAndLoadManager.Instance.LoadSave();
-                            GameManager.Instance.ResetGameState();
-                        });
+                            if (lang.TextLanguage.Any(x => x.LanguageGenericType == item.SelectedChoice))
+                            {
+                                //We found the matching selection from the port. Update and choose that
+                                item.SelectedChoiceTexts = lang.TextLanguage;
+                                found = true;
+                                break;
+                            }
+                        }
 
-                    }, GameConstants.UIElementKeys.CONTINUE, args: null, twoButtonSetup: false);
+                        if (!found)
+                        {
+                            item.SelectedChoiceTexts = dNode.DialogueNodePorts.First().TextLanguage;
+                        }
+                    }
+                }
+
+                //Update these to blank as we will be using the new LanguageGenerics
+                //Soon to be removed as obsolete
+                item.SelectedChoice = "";
+                item.Text = "";
+
+                switch (node)
+                {
+                    case EventNodeData:
+                        break;
+                    case DialogueNodeData nd:
+                        item.Texts = nd.Texts;
+                        dialogueUIManager.PopulatePreviousMessage(nd.Texts, node, DialogueUIManager.MessageSource.Character);
+                        break;
+                    case TimerChoiceNodeData tChoiceNode when node is TimerChoiceNodeData:
+                        if (tChoiceNode.RequireCharacterInput)
+                        {
+                            dialogueUIManager.PopulatePreviousMessage(tChoiceNode.TextType, node, DialogueUIManager.MessageSource.Character);
+                        }
+                        dialogueUIManager.PopulatePreviousMessage(item.SelectedChoiceTexts, tChoiceNode, DialogueUIManager.MessageSource.Player);
+                        tChoiceNode.SelectedChoice = item.SelectedChoiceTexts;
+                        break;
+                    case DialogueChoiceNodeData dChoiceNode when node is DialogueChoiceNodeData:
+                        if (dChoiceNode.RequireCharacterInput)
+                        {
+                            dialogueUIManager.PopulatePreviousMessage(dChoiceNode.TextType, node, DialogueUIManager.MessageSource.Character);
+                        }
+                        dialogueUIManager.PopulatePreviousMessage(item.SelectedChoiceTexts, dChoiceNode, DialogueUIManager.MessageSource.Player);
+                        dChoiceNode.SelectedChoice = item.SelectedChoiceTexts;
+                        break;
                 }
             }
 
-            StartDialogueEvent.Invoke();
+            _populatingHistory = false;
+            _populatHistoryFailed = !loadSuccess;
         }
 
         private void TriggerDialogueStart(ChapterSaveData chapterData)
@@ -277,78 +409,6 @@ namespace MeetAndTalk
 
                 CheckNodeType(targetNode);
             }
-        }
-
-        public bool PopulateVisitedNodes(ChapterSaveData savaData)
-        {
-            bool loadSuccess = true;
-            foreach (var item in savaData.PastCoversations)
-            {
-                var node = GetNodeByGuid(item.GUID);
-                if (node == null)
-                {
-                    //We failed to find the node by the GUID that was saved to file. This implies that their current chapter save data is invalid.
-                    //Eaxit to start the Player from the top of the chapter using the latest data
-                    loadSuccess = false;
-                    break;
-                }
-
-                if (item.GUID == savaData.CurrentGUID)
-                {
-                    continue;
-                }
-
-                _visitedNodes.Push(node);
-                if (node.GetType() == typeof(DialogueChoiceNodeData) || node.GetType() == typeof(TimerChoiceNodeData))
-                {
-                    var dNode = (DialogueChoiceNodeData)node;
-                    if (item.SelectedChoice != "")
-                    {
-                        var found = false;
-                        //We have an old save that was made before localization. Compare the texts against the localized version and attempt to display the correct translation
-                        foreach (var lang in dNode.DialogueNodePorts)
-                        {
-                            if (lang.TextLanguage.Any(x => x.LanguageGenericType == item.SelectedChoice))
-                            {
-                                //We found the matching selection from the port. Update and choose that
-                                item.SelectedChoiceTexts = lang.TextLanguage;
-                                found = true;
-                                break;
-                            }
-                        }
-
-                        if (!found)
-                        {
-                            item.SelectedChoiceTexts = dNode.DialogueNodePorts.First().TextLanguage;
-                        }
-                    }
-                }
-
-                //Update these to blank as we will be using the new LanguageGenerics
-                //Soon to be removed as obsolete
-                item.SelectedChoice = "";
-                item.Text = "";
-
-                switch (node)
-                {
-                    case EventNodeData:
-                        break;
-                    case DialogueNodeData nd:
-                        item.Texts = nd.Texts;
-                        dialogueUIManager.SetFullText(nd.Texts, node, DialogueUIManager.MessageSource.Character, false);
-                        break;
-                    case TimerChoiceNodeData tChoiceNode when node is TimerChoiceNodeData:
-                        dialogueUIManager.SetFullText(item.SelectedChoiceTexts, tChoiceNode, DialogueUIManager.MessageSource.Player, false);
-                        tChoiceNode.SelectedChoice = item.SelectedChoiceTexts;
-                        break;
-                    case DialogueChoiceNodeData dChoiceNode when node is DialogueChoiceNodeData:
-                        dialogueUIManager.SetFullText(item.SelectedChoiceTexts, dChoiceNode, DialogueUIManager.MessageSource.Player, false);
-                        dChoiceNode.SelectedChoice = item.SelectedChoiceTexts;
-                        break;
-                }
-            }
-
-            return loadSuccess;
         }
 
         public void CheckNodeType(BaseNodeData _baseNodeData)

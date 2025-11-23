@@ -14,6 +14,10 @@ public class ChapterSaveData
 
     public ChapterSaveData()
     {
+        FileName = "";
+        StartID = "";
+        CurrentGUID = "";
+        Completed = false;
         PastCoversations = new List<PastCoversationData>();
     }
 
