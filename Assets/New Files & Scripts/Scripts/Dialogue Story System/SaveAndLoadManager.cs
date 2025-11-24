@@ -58,7 +58,8 @@ public class SaveAndLoadManager : MonoBehaviour
 
         CurrentSave.CurrentState.SavedVariables = ValueManager.ConvertSaveFile();
 
-        //DialogueChapterManager.Instance.Show()
+        // Load the language from the save file
+        GameManager.Instance.ChangeLanguage(CurrentSave.CurrentLanguage);
     }
 
     public void StartGame()
@@ -181,9 +182,11 @@ public class SaveAndLoadManager : MonoBehaviour
 
                 CurrentSave.CurrentState.SavedVariables = ValueManager.ConvertSaveFile();
 
-                GameManager.Instance.ResetGameState();
-                DialogueChapterManager.Instance.TriggerStoryChapter(CurrentSave.CurrentState.CompletedChapters.Count);
+                AutoSave();
+
+                GameManager.Instance.ResetGameState(startDialogue: false);
                 GameManager.Instance.GalleryCanvas.Load();
+                DialogueChapterManager.Instance.TriggerStoryChapter(CurrentSave.CurrentState.CompletedChapters.Count);
             });
         }
         catch (Exception) { }
