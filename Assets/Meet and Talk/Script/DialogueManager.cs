@@ -160,6 +160,7 @@ namespace MeetAndTalk
                 //Draw out all the conversation up until this point but it cannot be done with notifications
                 _populatingHistory = true;
                 _failLoadDialogShown = false;
+                _dialogueStarted = false;
                 Debug.Log("Loading Dialogue History...");
                 StartCoroutine(PopulateHistoryCoroutine(chapterData));
             }

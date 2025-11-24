@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -33,11 +34,13 @@ namespace SaveMigrationSystem
             {
                 string line;
                 bool inChapterHistory = false;
-                StringBuilder lastChapter = new StringBuilder();
+                List<string> allChapters = new List<string>();
+                StringBuilder currentChapter = new StringBuilder();
                 int braceDepth = 0;
                 bool captureElement = false;
                 var checkField = $"\"{ARRAY_FIELD_OLD}\"";
                 var newField = $"\"{ARRAY_FIELD_NEW}\"";
+
                 while ((line = reader.ReadLine()) != null)
                 {
                     if (line.Contains(checkField))
@@ -81,14 +84,28 @@ namespace SaveMigrationSystem
                                 braceDepth--;
                                 if (braceDepth == 0)
                                 {
-                                    lastChapter.AppendLine(line);
+                                    currentChapter.AppendLine(line);
                                     captureElement = false;
+                                    // Store complete chapter
+                                    allChapters.Add(currentChapter.ToString());
+                                    currentChapter.Clear();
                                 }
                             }
                             else if (c == ']' && braceDepth == 0)
                             {
-                                // End of array - write last element without array brackets
-                                writer.Write($"{lastChapter.ToString().TrimEnd(',', '\n', '\r')},");
+                                // End of array - find last chapter with PastCoversations data
+                                string lastChapterWithData = FindLastChapterWithData(allChapters);
+
+                                if (!string.IsNullOrEmpty(lastChapterWithData))
+                                {
+                                    writer.Write($"{lastChapterWithData.TrimEnd(',', '\n', '\r')},");
+                                }
+                                else
+                                {
+                                    // No chapter with data, write empty object
+                                    writer.Write("{},");
+                                }
+
                                 writer.WriteLine();
                                 inChapterHistory = false;
                                 break;
@@ -100,9 +117,9 @@ namespace SaveMigrationSystem
                         {
                             if (braceDepth == 1 && line.Trim().StartsWith("{"))
                             {
-                                lastChapter.Clear();
+                                currentChapter.Clear();
                             }
-                            lastChapter.AppendLine(line);
+                            currentChapter.AppendLine(line);
                         }
                     }
                     else
@@ -117,6 +134,41 @@ namespace SaveMigrationSystem
             File.Delete(savePath + ".backup");
             File.Move(savePath, savePath + ".backup");
             File.Move(tempPath, savePath);
+        }
+
+        private static string FindLastChapterWithData(List<string> chapters)
+        {
+            // Search backwards through chapters
+            for (int i = chapters.Count - 1; i >= 0; i--)
+            {
+                string chapter = chapters[i];
+
+                // Check if PastCoversations array has content (not empty)
+                // Look for pattern: "PastCoversations": [ ... with content ... ]
+                int pastConvIndex = chapter.IndexOf("\"PastCoversations\"");
+
+                if (pastConvIndex != -1)
+                {
+                    // Find the array brackets after PastCoversations
+                    int openBracket = chapter.IndexOf('[', pastConvIndex);
+                    int closeBracket = chapter.IndexOf(']', openBracket);
+
+                    if (openBracket != -1 && closeBracket != -1)
+                    {
+                        // Get content between brackets
+                        string arrayContent = chapter.Substring(openBracket + 1, closeBracket - openBracket - 1).Trim();
+
+                        // Check if there's actual content (not just whitespace)
+                        if (!string.IsNullOrWhiteSpace(arrayContent))
+                        {
+                            return chapter;
+                        }
+                    }
+                }
+            }
+
+            // If no chapter with data found, return the last chapter or empty
+            return chapters.Count > 0 ? chapters[chapters.Count - 1] : string.Empty;
         }
     }
 }
