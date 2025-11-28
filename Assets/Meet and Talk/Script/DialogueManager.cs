@@ -96,7 +96,7 @@ namespace MeetAndTalk
                         GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.INVALID_SAVE_DATA, () =>
                         {
                             //Reset the chapter data in the save file
-                            SaveAndLoadManager.Instance.ClearChapterData(_chapterData.FileIndex);
+                            SaveAndLoadManager.Instance.ClearChapterData(resetBackground: true);
 
                             OverlayCanvas.Instance.FadeToBlack(() =>
                             {

@@ -1,6 +1,7 @@
 using MeetAndTalk;
 using MeetAndTalk.GlobalValue;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SaveAndLoadManager : MonoBehaviour
@@ -156,13 +157,18 @@ public class SaveAndLoadManager : MonoBehaviour
         catch (Exception) { }
     }
 
-    public void ClearChapterData(int chapterIndex)
+    public void ClearChapterData(bool resetBackground)
     {
         try
         {
             //Reset the chapter
-            CurrentSave.CurrentState.LastChapter = new ChapterSaveData();
-            GameManager.Instance.ResetBackgroundImage();
+            CurrentSave.CurrentState.LastChapter.PastCoversations = new List<ChapterSaveData.PastCoversationData>();
+            CurrentSave.CurrentState.LastChapter.CurrentGUID = "";
+            CurrentSave.CurrentState.LastChapter.Completed = false;
+
+            if (resetBackground)
+                GameManager.Instance.ResetBackgroundImage();
+
             AutoSave();
         }
         catch (Exception) { }
@@ -213,7 +219,10 @@ public class SaveAndLoadManager : MonoBehaviour
 
         LoadSave(0);
 
-        GameManager.Instance.ResetGameState(startDialogue);
         GameManager.Instance.ResetBackgroundImage();
+        GameManager.Instance.ResetGameState(startDialogue: false);
+
+        if (startDialogue)
+            StartGame();
     }
 }

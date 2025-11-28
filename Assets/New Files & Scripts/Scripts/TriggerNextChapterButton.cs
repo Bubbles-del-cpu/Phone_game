@@ -25,11 +25,11 @@ public class TriggerNextChapterButton : MonoBehaviour
     {
         OverlayCanvas.Instance.FadeToBlack(() =>
         {
-            GameManager.Instance.ResetGameState();
+            GameManager.Instance.ResetGameState(startDialogue: false);
+            var saveManager = SaveAndLoadManager.Instance;
 
-            var wasReplay = SaveAndLoadManager.Instance.ReplayingCompletedChapter;
-            var wasStandalone = SaveAndLoadManager.Instance.PlayingStandaloneChapter;
-            DialogueChapterManager.Instance.TriggerStoryChapter(SaveAndLoadManager.Instance.CurrentSave.CurrentState.CompletedChapters.Count);
+            var wasReplay = saveManager.ReplayingCompletedChapter;
+            var wasStandalone = saveManager.PlayingStandaloneChapter;
 
             //Open chapter selection
             if (wasStandalone)
@@ -39,6 +39,12 @@ public class TriggerNextChapterButton : MonoBehaviour
             else if (wasReplay)
             {
                 DialogueChapterManager.Instance.OpenChapterSelect();
+            }
+            else
+            {
+                var chapterNumber = saveManager.CurrentSave.CurrentState.CompletedChapters.Count;
+                saveManager.ClearChapterData(resetBackground: false);
+                DialogueChapterManager.Instance.TriggerStoryChapter(chapterNumber);
             }
         });
     }

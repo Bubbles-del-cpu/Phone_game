@@ -58,7 +58,7 @@ public class StoryChapterButton : MonoBehaviour
                 }
                 else
                 {
-                    DialogueChapterManager.Instance.TriggerStoryChapter(AssignedChapter, true);
+                    DialogueChapterManager.Instance.TriggerStoryChapterReplay(AssignedChapter);
                 }
             });
         }
@@ -83,7 +83,7 @@ public class StoryChapterButton : MonoBehaviour
                             }
                             else
                             {
-                                DialogueChapterManager.Instance.TriggerStoryChapter(AssignedChapter, true);
+                                DialogueChapterManager.Instance.TriggerStoryChapterReplay(AssignedChapter);
                             }
                         });
                     });

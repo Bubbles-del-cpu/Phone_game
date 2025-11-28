@@ -112,6 +112,7 @@ public class GalleryCanvas : UICanvas
 
         CreateButtons();
         CreateMediaButtons(SaveAndLoadManager.Instance.CurrentSave.UnlockedMedia);
+        DisplayGalleryPage(_currentMediaType, 0);
     }
 
     private void CreateButtons()

@@ -245,18 +245,16 @@ public class DialogueChapterManager : UICanvas
     /// Triggers a story chapter
     /// </summary>
     /// <param name="chapter">Chapter to trigger</param>
-    /// <param name="isChapterReplay">Flag to set if the chapter will be a replay (no data will be saved other than gallery unlocks in a replay)</param>
-    public void TriggerStoryChapter(ChapterData chapter, bool isChapterReplay = false)
+    public void TriggerStoryChapterReplay(ChapterData chapter)
     {
-        TriggerChapter(chapter, isChapterReplay, false);
+        TriggerChapter(chapter, isChapterReplay: true, isStandaloneChapter: false);
     }
 
     /// <summary>
     /// Triggers a story chapter based on the index/position of the chapter in the StoryList container
     /// </summary>
     /// <param name="chapterNumber">Position of the chapter in the StoryList</param>
-    /// <param name="isChapterReplay">Flag to set if the chapter will be a replay (no data will be saved other than gallery unlocks in a replay)</param>
-    public void TriggerStoryChapter(int chapterNumber, bool isChapterReplay = false)
+    public void TriggerStoryChapter(int chapterNumber)
     {
          if (chapterNumber >= StoryList.Count)
         {
@@ -264,7 +262,9 @@ public class DialogueChapterManager : UICanvas
             chapterNumber = StoryList.Count - 1;
         }
 
-        TriggerStoryChapter(StoryList[chapterNumber]);
+        var nextStory = StoryList[chapterNumber];
+        SaveAndLoadManager.Instance.CurrentSave.CurrentState.SetupForNewChapter(nextStory, chapterNumber);
+        TriggerChapter(nextStory, false, false);
     }
 
     public void UnlockAllChapters()

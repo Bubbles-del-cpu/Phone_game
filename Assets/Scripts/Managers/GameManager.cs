@@ -233,11 +233,12 @@ public class GameManager : MonoBehaviour
 
     public void ResetGameState(bool startDialogue = true)
     {
-        StartCoroutine(CoResetConversations(startDialogue));
 
         //Reset the navigation stack
         GalleryCanvas.ResetGalleryButtons();
         NavigationManager.Instance.ResetStack();
+
+        StartCoroutine(CoResetConversations(startDialogue));
     }
 
     IEnumerator CoResetConversations(bool startDialogue)

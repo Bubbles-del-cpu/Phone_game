@@ -68,6 +68,15 @@ public class SaveFileData
             SavedVariables = new List<GlobalSaveVariable>();
         }
 
+        public void SetupForNewChapter(DialogueChapterManager.ChapterData chapterData, int chapterIndex)
+        {
+            LastChapter.FileIndex = chapterIndex;
+            LastChapter.FileName = chapterData.Story.name;
+            LastChapter.StartID = "";
+
+            SaveAndLoadManager.Instance.AutoSave();
+        }
+
         public bool IsChapterCompleted(int chapterIndex)
         {
             return CompletedChapters.Contains(chapterIndex);
@@ -299,15 +308,15 @@ public class SaveFileData
         SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
     }
 
-    public void ClearCurrentChapter()
-    {
-        if (SaveAndLoadManager.Instance.ReplayingCompletedChapter)
-            return;
+    // public void ClearCurrentChapter()
+    // {
+    //     if (SaveAndLoadManager.Instance.ReplayingCompletedChapter)
+    //         return;
 
-        CurrentState.CompletedChapters.Remove(CurrentChapterData.FileIndex);
-        CurrentChapterData.CurrentGUID = "";
-        CurrentChapterData.Completed = false;
-    }
+    //     CurrentState.CompletedChapters.Remove(CurrentChapterData.FileIndex);
+    //     CurrentChapterData.CurrentGUID = "";
+    //     CurrentChapterData.Completed = false;
+    // }
 
     public void RemoveNode(BaseNodeData nodeData)
     {
