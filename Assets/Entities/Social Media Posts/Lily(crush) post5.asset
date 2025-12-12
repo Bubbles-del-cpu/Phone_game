@@ -10,19 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16f2ff71a9223194ebcfe1289e963392, type: 3}
-  m_Name: anon social post 3
-  m_EditorClassIdentifier: 
-  Character: {fileID: 11400000, guid: a6dcda5e591893944acddb37aaa5146b, type: 2}
+  m_Name: Lily(crush) post5
+  m_EditorClassIdentifier: Assembly-CSharp::SocialMediaPostSO
+  Character: {fileID: 11400000, guid: 44da74b3d308fdb4e9f9fdc127092247, type: 2}
   MessageTexts:
   - languageEnum: 0
-    LanguageGenericType: Making it wet
+    LanguageGenericType: Best vacation ever!
   - languageEnum: 1
     LanguageGenericType: 
   Message: 
   MediaType: 0
   GalleryVisibility: 0
-  Image: {fileID: 2658935345016537531, guid: 53c4a5995a6285d43acb158b1a81e427, type: 3}
+  Image: {fileID: 21300000, guid: 9bac85273dbc61c40b0e18165eaf737e, type: 3}
   Video: {fileID: 0}
   VideoThumbnail: {fileID: 0}
   NotBackgroundCapable: 0
-  Comments: []
+  Comments:
+  - Name: Izzy
+    Content: B****

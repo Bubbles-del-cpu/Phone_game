@@ -743,7 +743,11 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: []
+    SelectedChoice:
+    - languageEnum: 0
+      LanguageGenericType: I sure will doc
+    - languageEnum: 1
+      LanguageGenericType: "\u5FC5\u305A\u305D\u3046\u3059\u308B\u3088\u3001\u5148\u751F"
   - NodeGuid: 5e8da7c9-d444-4e21-8fc6-264247038d12
     Position: {x: 2646, y: 202}
     DialogueNodePorts:
@@ -811,7 +815,11 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: []
+    SelectedChoice:
+    - languageEnum: 0
+      LanguageGenericType: I'm feeling okay
+    - languageEnum: 1
+      LanguageGenericType: "\u307E\u3042\u307E\u3042\u3060\u3088"
   - NodeGuid: 81a3c227-0f5f-4cd4-b1b6-99032b07673e
     Position: {x: 1204, y: 197}
     DialogueNodePorts:
@@ -845,7 +853,11 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: []
+    SelectedChoice:
+    - languageEnum: 0
+      LanguageGenericType: Eh no, should I be feeling anything?
+    - languageEnum: 1
+      LanguageGenericType: "\u3048\uFF1F\u3044\u3084\u3001\u4F55\u304B\u611F\u3058\u308B\u306F\u305A\uFF1F"
   - NodeGuid: f848ac6b-fc39-4c6a-8c0f-f21279e4050a
     Position: {x: 1508, y: 200}
     DialogueNodePorts:
@@ -880,7 +892,11 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: []
+    SelectedChoice:
+    - languageEnum: 0
+      LanguageGenericType: Such as?
+    - languageEnum: 1
+      LanguageGenericType: "\u4F8B\u3048\u3070\uFF1F"
   - NodeGuid: 482f27d7-8990-4b88-b57f-f74fc7684e6e
     Position: {x: 3643, y: 213}
     DialogueNodePorts:
@@ -6324,7 +6340,11 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 1
-    SelectedChoice: []
+    SelectedChoice:
+    - languageEnum: 0
+      LanguageGenericType: Actually better then I expected
+    - languageEnum: 1
+      LanguageGenericType: "\u5B9F\u969B\u3001\u601D\u3063\u3066\u305F\u3088\u308A\u826F\u304B\u3063\u305F\u3002"
   - NodeGuid: f5bd1b49-a438-4a39-a417-fc501b3a946c
     Position: {x: 18436, y: 235}
     DialogueNodePorts:
@@ -6609,7 +6629,7 @@ MonoBehaviour:
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    DelayTimer: 0
+    DelayTimer: 2.0080261
   - NodeGuid: 290f5515-57c6-4c58-b805-bb88e799806f
     Position: {x: 3444, y: 213}
     DialogueNodePorts: []
@@ -6673,7 +6693,7 @@ MonoBehaviour:
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 11400000, guid: 68abc881c49113c4199fc3329049511e, type: 2}
-    DelayTimer: 2.0051155
+    DelayTimer: 2.000807
   - NodeGuid: e7d3dc0c-e963-4817-8ca2-ba1ea118fae3
     Position: {x: 1004, y: 196}
     DialogueNodePorts: []
@@ -6705,7 +6725,7 @@ MonoBehaviour:
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    DelayTimer: 0
+    DelayTimer: 2.0001254
   - NodeGuid: 4c8b09e6-f30b-4b46-bafa-aaef9b273ec4
     Position: {x: 1817, y: 197}
     DialogueNodePorts: []
@@ -6737,7 +6757,7 @@ MonoBehaviour:
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    DelayTimer: 0
+    DelayTimer: 2.000794
   - NodeGuid: 4b0f04e1-25b6-4cd3-b1c7-cf455ac6ea17
     Position: {x: 5053, y: 334}
     DialogueNodePorts: []
