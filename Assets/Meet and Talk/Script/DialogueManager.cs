@@ -529,7 +529,6 @@ namespace MeetAndTalk
             else
                 dialogueUIManager.UpdateAvatars(null, null, _nodeData.AvatarType);
 
-            dialogueUIManager.SkipButton.SetActive(true);
 
             //MakeButtons(_nodeData.Character, _nodeData, new List<DialogueNodePort>());
 
@@ -589,7 +588,6 @@ namespace MeetAndTalk
             else if (_nodeData.AvatarPos == AvatarPosition.Right) dialogueUIManager.UpdateAvatars(null, _nodeData.Character, _nodeData.AvatarType);
             else dialogueUIManager.UpdateAvatars(null, null, _nodeData.AvatarType);
 
-            dialogueUIManager.SkipButton.SetActive(true);
             //MakeButtons(_nodeData.Character, _nodeData, new List<DialogueNodePort>());
 
             _nodeChoiceInvoke = _nodeData;
@@ -676,7 +674,6 @@ namespace MeetAndTalk
             else if (_nodeData.AvatarPos == AvatarPosition.Right) dialogueUIManager.UpdateAvatars(null, _nodeData.Character, _nodeData.AvatarType);
             else dialogueUIManager.UpdateAvatars(null, null, _nodeData.AvatarType);
 
-            dialogueUIManager.SkipButton.SetActive(true);
             //MakeButtons(_nodeData.Character, _nodeData, new List<DialogueNodePort>());
 
             _nodeTimerInvoke = _nodeData;
@@ -763,13 +760,11 @@ namespace MeetAndTalk
         void ChoiceNode_GenerateChoice(DialogueCharacterSO _character, BaseNodeData nodeData)
         {
             MakeButtons(_character, nodeData, _nodeChoiceInvoke.DialogueNodePorts);
-            dialogueUIManager.SkipButton.SetActive(false);
         }
 
         void TimerNode_GenerateChoice(DialogueCharacterSO _character, BaseNodeData nodeData)
         {
             MakeTimerButtons(_character, nodeData, _nodeTimerInvoke.DialogueNodePorts, _nodeTimerInvoke.time);
-            dialogueUIManager.SkipButton.SetActive(false);
         }
 
         void TimerNode_NextNode()

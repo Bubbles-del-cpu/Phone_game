@@ -5,6 +5,12 @@ using MeetAndTalk;
 
 public class Notification : MonoBehaviour
 {
+    public enum NotificationType
+    {
+        Message,
+        SocialMedia
+    }
+
     [SerializeField] ProfileIcon icon;
     [SerializeField] TMP_Text nameLabel;
     [SerializeField] TMP_Text _label;
@@ -45,13 +51,16 @@ public class Notification : MonoBehaviour
         Type = type;
         Character = character;
         _destroyTimer = 0;
+        gameObject.SetActive(true);
     }
 
     private void Update()
     {
         _destroyTimer += Time.deltaTime;
         if (_destroyTimer >= DialogueUIManager.Instance.NotificationDisplayLength)
-            Destroy(gameObject);
+        {
+            DialogueUIManagerObjectPool.Instance.ReturnNotification(this);
+        }
     }
 
     void OnClicked()
@@ -68,7 +77,7 @@ public class Notification : MonoBehaviour
                 break;
         }
 
-        Destroy(gameObject);
+        DialogueUIManagerObjectPool.Instance.ReturnNotification(this);
     }
 
     public NotificationType Type
@@ -77,7 +86,10 @@ public class Notification : MonoBehaviour
         set
         {
             _type = value;
-            typeIcons[(int)value].enabled = true;
+            for(var index = 0; index < typeIcons.Length; index++)
+            {
+                typeIcons[index].enabled = index == (int)value;
+            }
         }
     }
 
@@ -90,11 +102,5 @@ public class Notification : MonoBehaviour
             icon.Character = value;
             nameLabel.text = value.name;
         }
-    }
-
-    public enum NotificationType
-    {
-        Message,
-        SocialMedia
     }
 }
