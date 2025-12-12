@@ -57,6 +57,9 @@ public class MatchChildScaleAutomatic : MonoBehaviour
         Vector2 tempSize = Vector2.zero;
         for (int i = 0; i < _children.Count; i++)
         {
+            if (_children[i] == null || _children[i].gameObject == null)
+                continue;
+
             if (_children[i].gameObject.activeInHierarchy == false)
                 continue;
 

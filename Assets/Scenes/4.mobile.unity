@@ -525,6 +525,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c91a6aa2d973b47ad1c09d42444203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!84 &442224070
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 6
+  m_Width: 512
+  m_Height: 512
+  m_AntiAliasing: 1
+  m_MipCount: -1
+  m_DepthStencilFormat: 0
+  m_ColorFormat: 4
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 1
+  m_UseDynamicScale: 0
+  m_UseDynamicScaleExplicit: 0
+  m_BindMS: 0
+  m_EnableCompatibleFormat: 1
+  m_EnableRandomWrite: 0
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_Dimension: 2
+  m_VolumeDepth: 1
+  m_ShadowSamplingMode: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,6 +737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnableTypeWriting: 0
   typingSpeed: 50
+  MessagingBubbleFadeInSpeed: 5
   showSeparateName: 0
   clearNameColor: 0
   nameLabel: {fileID: 0}
@@ -707,7 +745,6 @@ MonoBehaviour:
   - {fileID: -560124380822035508, guid: e6dd4f8d630506f4da4be5ef771f8da3, type: 3}
   - {fileID: 3954011325100662673, guid: 4960776013bf232498dc769dacdad8e0, type: 3}
   dialogueCanvas: {fileID: 1381356466}
-  SkipButton: {fileID: 1022792845}
   _displayHints: 0
   MessagePanelAutoScrollSpeed: 4
   NotificationDisplayLength: 2
@@ -716,7 +753,6 @@ MonoBehaviour:
   _batchReplaceText: 1
   _singleNotificationOnly: 0
   ButtonPrefab: {fileID: -2090798969861149810, guid: aabebb1b3ddde5b469b80e84510cdaf5, type: 3}
-  notificationPrefab: {fileID: 4561581163258094175, guid: 069a83a6c6813c14390b2211bf281582, type: 3}
   NotificationCanvas: {fileID: 545350490}
   notificationsContainer: {fileID: 1390809904}
   HideIfLeftAvatarEmpty: []
@@ -828,48 +864,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1022792845 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2122499949247441826, guid: c5f3ccdf2e98fb4479d922c1cfe2e4c2, type: 3}
-  m_PrefabInstance: {fileID: 4210423045467949735}
-  m_PrefabAsset: {fileID: 0}
---- !u!84 &1092995478
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 6
-  m_Width: 512
-  m_Height: 512
-  m_AntiAliasing: 1
-  m_MipCount: -1
-  m_DepthStencilFormat: 0
-  m_ColorFormat: 4
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 1
-  m_UseDynamicScale: 0
-  m_UseDynamicScaleExplicit: 0
-  m_BindMS: 0
-  m_EnableCompatibleFormat: 1
-  m_EnableRandomWrite: 0
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_Dimension: 2
-  m_VolumeDepth: 1
-  m_ShadowSamplingMode: 2
 --- !u!114 &1145815081 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3290901230098535562, guid: c5f3ccdf2e98fb4479d922c1cfe2e4c2, type: 3}
@@ -1059,7 +1053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 350345338180909069, guid: c5f3ccdf2e98fb4479d922c1cfe2e4c2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000030517578
+      value: 0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 449929797849184337, guid: c5f3ccdf2e98fb4479d922c1cfe2e4c2, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1111,7 +1105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1275259689352721178, guid: c5f3ccdf2e98fb4479d922c1cfe2e4c2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000030517578
+      value: 0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 1421868367393508646, guid: c5f3ccdf2e98fb4479d922c1cfe2e4c2, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1195,7 +1189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2217087485821206204, guid: c5f3ccdf2e98fb4479d922c1cfe2e4c2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000022888184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2388707802648787580, guid: c5f3ccdf2e98fb4479d922c1cfe2e4c2, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1831,7 +1825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8437412003316872245, guid: c5f3ccdf2e98fb4479d922c1cfe2e4c2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000030517578
+      value: 0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 8515781037718278714, guid: c5f3ccdf2e98fb4479d922c1cfe2e4c2, type: 3}
       propertyPath: m_Camera
@@ -1848,6 +1842,10 @@ PrefabInstance:
     - target: {fileID: 8547208821406714258, guid: c5f3ccdf2e98fb4479d922c1cfe2e4c2, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8625717038225897957, guid: c5f3ccdf2e98fb4479d922c1cfe2e4c2, type: 3}
+      propertyPath: _messageBubblePoolSize
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8732792597955792322, guid: c5f3ccdf2e98fb4479d922c1cfe2e4c2, type: 3}
       propertyPath: m_AnchorMax.y

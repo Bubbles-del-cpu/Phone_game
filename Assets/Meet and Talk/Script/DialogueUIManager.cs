@@ -24,6 +24,7 @@ namespace MeetAndTalk
         [Header("Type Writing")]                    // Premium Feature
         public bool EnableTypeWriting = false;      // Premium Feature
         public float typingSpeed = 50.0f;           // Premium Feature
+        public float MessagingBubbleFadeInSpeed = 2f;
 
         [Header("Dialogue UI")]
         public bool showSeparateName = false;
@@ -32,7 +33,6 @@ namespace MeetAndTalk
         public MessagingBubble[] messageBubblePrefabs;
         [Space()]
         public UICanvas dialogueCanvas;
-        public GameObject SkipButton;
         [SerializeField] bool _displayHints;
         public bool DisplayHints
         {
@@ -59,6 +59,7 @@ namespace MeetAndTalk
         private bool _singleNotificationOnly = false;
 
         private Dictionary<DialogueCharacterSO, Notification> _notificationDictionary = new();
+        public Dictionary<DialogueCharacterSO, Notification> NotificationDictionary => _notificationDictionary;
 
         private DialogueCharacterSO _lastNotificationCharacter;
         private float _lastNotificationTime;
@@ -67,8 +68,6 @@ namespace MeetAndTalk
         public MessagingResponseButton ButtonPrefab;
 
         [Header("Component References")]
-
-        [SerializeField] Notification notificationPrefab;
         public Canvas NotificationCanvas;
         [SerializeField] RectTransform notificationsContainer;
         //public UIPanel ButtonContainer;
@@ -143,7 +142,7 @@ namespace MeetAndTalk
                     Destroy(child.gameObject);
 
                 targetPanel.RemoveElements(count);
-                if (count >= targetPanel.ChildCount)
+                if (targetPanel.ChildCount == 0)
                     emptyList.Add(character);
             }
 
@@ -180,7 +179,7 @@ namespace MeetAndTalk
                             targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
                             break;
                     }
-                    targetPanel.AddElement(_nodeData, prefab, newText, messageSource, false);
+                    targetPanel.AddElement(_nodeData, newText, messageSource, false);
                     break;
                 case MessageSource.Character:
                     switch (_nodeData)
@@ -188,13 +187,13 @@ namespace MeetAndTalk
                         case DialogueChoiceNodeData nd when _nodeData is DialogueChoiceNodeData:
                             {
                                 targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
-                                targetPanel.AddElement(_nodeData, prefab, newText, messageSource, false);
+                                targetPanel.AddElement(_nodeData, newText, messageSource, false);
                             }
                             break;
                         case DialogueNodeData nd when _nodeData is DialogueNodeData:
                             {
                                 targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
-                                targetPanel.AddElement(_nodeData, prefab, newText, messageSource, false);
+                                targetPanel.AddElement(_nodeData, newText, messageSource, false);
                             }
                             break;
                     }
@@ -274,7 +273,7 @@ namespace MeetAndTalk
                             targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
                             break;
                     }
-                    targetPanel.AddElement(_nodeData, prefab, newText, messageSource, notification);
+                    targetPanel.AddElement(_nodeData, newText, messageSource, notification);
                     break;
                 case MessageSource.Character:
                     switch (_nodeData)
@@ -282,13 +281,13 @@ namespace MeetAndTalk
                         case DialogueChoiceNodeData nd when _nodeData is DialogueChoiceNodeData:
                             {
                                 targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
-                                targetPanel.AddElement(_nodeData, prefab, newText, messageSource, notification);
+                                targetPanel.AddElement(_nodeData, newText, messageSource, notification);
                             }
                             break;
                         case DialogueNodeData nd when _nodeData is DialogueNodeData:
                             {
                                 targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
-                                targetPanel.AddElement(_nodeData, prefab, newText, messageSource, notification);
+                                targetPanel.AddElement(_nodeData, newText, messageSource, notification);
 
                                 SaveAndLoadManager.Instance.CurrentSave.UnlockMedia(nd);
                                 GameManager.Instance.GalleryCanvas.UnlockMediaButton(nd, reloadedGallery: true);
@@ -322,28 +321,35 @@ namespace MeetAndTalk
                 if (lastNotifcation)
                 {
                     _notificationDictionary.Remove(lastNotifcation.Character);
-                    lastNotifcation.gameObject.SetActive(false);
-                    Destroy(lastNotifcation.gameObject);
+                    DialogueUIManagerObjectPool.Instance.ReturnNotification(lastNotifcation);
                 }
             }
 
             if (_batchNotifications)
             {
-                if (_notificationDictionary.ContainsKey(character) && _notificationDictionary[character] != null)
+                if (_notificationDictionary.ContainsKey(character))
                 {
-                    if (_batchReplaceText)
+                    var characterNotification = _notificationDictionary[character];
+                    if (characterNotification != null && characterNotification.transform.parent == notificationsContainer)
                     {
-                        _notificationDictionary[character].Setup(type, character, label);
+                        if (_batchReplaceText)
+                        {
+                            characterNotification.Setup(type, character, label);
+                            return;
+                        }
                     }
-
-                    return;
+                    else
+                    {
+                        _notificationDictionary.Remove(character);
+                    }
                 }
             }
 
             _lastNotificationTime = Time.time;
             _lastNotificationCharacter = character;
 
-            Notification notification = Instantiate(notificationPrefab, notificationsContainer);
+            var notification = DialogueUIManagerObjectPool.Instance.GetNotification();
+            notification.transform.SetParent(notificationsContainer, false);
             notification.Setup(type, character, label);
 
             if (!_notificationDictionary.ContainsKey(character))
