@@ -45,7 +45,6 @@ public class GalleryHelper
         }
 
         SaveAndLoadManager.Instance.CurrentSave.UnlockAllMedia();
-        SaveAndLoadManager.Instance.AutoSave();
         GameManager.Instance.GalleryCanvas.RefreshGalleryPage();
     }
 

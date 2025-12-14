@@ -3978,9 +3978,11 @@ MonoBehaviour:
   _sourceImage: {fileID: 3290901230098535562}
   _blurSize: 8.4
   _iterations: 13
-  _fixedTextureSize: 512
+  _fixedTextureSize: 256
   _useDynamicTextureSize: 0
   _updateEveryFrame: 0
+  _useMobileOptimization: 0
+  _mobileLockedOverlaySprite: {fileID: 21300000, guid: b8c73a358ad0a22499b5d92e5f505fb3, type: 3}
 --- !u!114 &8232523969619486165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5164,6 +5166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueUIManagerObjectPool
   _messageBubblePoolSize: 200
+  _messageBubblePoolIncreaseSize: 10
   _leftMessageBubblePrefab: {fileID: 1212670274187705281, guid: e6dd4f8d630506f4da4be5ef771f8da3, type: 3}
   _rightMessageBubblePrefab: {fileID: 6787264105411250076, guid: 4960776013bf232498dc769dacdad8e0, type: 3}
   _leftMessageBubblePoolContainer: {fileID: 332390598270649988}
@@ -19999,7 +20002,6 @@ GameObject:
   - component: {fileID: 1235065871597624715}
   - component: {fileID: 4811083716097225704}
   - component: {fileID: 4982822169056781302}
-  - component: {fileID: 3751097399236283695}
   - component: {fileID: 3340484494268482396}
   m_Layer: 5
   m_Name: Object Pool Container
@@ -20007,7 +20009,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1235065871597624715
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20068,21 +20070,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3751097399236283695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5069461415632118946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 543cfbaf07897424c933666870b48edc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isOpenOnStart: 1
-  openAlpha: 1
-  closeButton: {fileID: 0}
 --- !u!225 &3340484494268482396
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -20091,9 +20078,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5069461415632118946}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &5080943168707844442
 GameObject:

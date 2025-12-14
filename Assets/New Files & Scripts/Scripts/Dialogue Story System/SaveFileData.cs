@@ -73,8 +73,6 @@ public class SaveFileData
             LastChapter.FileIndex = chapterIndex;
             LastChapter.FileName = chapterData.Story.name;
             LastChapter.StartID = "";
-
-            SaveAndLoadManager.Instance.AutoSave();
         }
 
         public bool IsChapterCompleted(int chapterIndex)
@@ -215,7 +213,7 @@ public class SaveFileData
             Debug.Log($"[SaveAndLoadManager] Save file detected differences between current and latest. Chapters and save variables has been updated for slot {SaveFileSlot}");
         }
 
-        SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
+        //SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
     }
 
     public void UpdateMediaData(bool generateThumbnails)
@@ -305,7 +303,7 @@ public class SaveFileData
             CurrentState.CompletedChapters.Add(CurrentChapterData.FileIndex);
 
         CurrentChapterData.Completed = true;
-        SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
+        //SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
     }
 
     // public void ClearCurrentChapter()
@@ -424,8 +422,8 @@ public class SaveFileData
             }
         }
 
-        if (save)
-            SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
+        //if (save)
+            //SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
     }
 
     private void UnlockMedia(string fileName, bool save = true)
@@ -436,8 +434,8 @@ public class SaveFileData
             item.LockedState = MediaLockState.Unlocked;
         }
 
-        if (save)
-            SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
+        //if (save)
+            //SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
     }
 
     public void UnlockAllMedia(bool save = true)
@@ -447,8 +445,8 @@ public class SaveFileData
             item.LockedState = MediaLockState.Unlocked;
         }
 
-        if (save)
-            SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
+        //if (save)
+            //SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
     }
 
     public void LikePost(BaseNodeData nodeData, bool state)

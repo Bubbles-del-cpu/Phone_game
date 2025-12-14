@@ -136,7 +136,6 @@ public class GameManager : MonoBehaviour
                 //Set the system language in the GameManager
                 LOCALIZATION_MANAGER.selectedLang = (SystemLanguage)Enum.Parse(typeof(SystemLanguage), lang);
                 SaveAndLoadManager.Instance.CurrentSave.CurrentLanguage = LOCALIZATION_MANAGER.selectedLang;
-                SaveAndLoadManager.Instance.AutoSave();
             }
         });
     }
@@ -195,7 +194,7 @@ public class GameManager : MonoBehaviour
                     SaveAndLoadManager.Instance.CurrentSave.CustomBackgroundImage = item;
 
                     if (save)
-                        SaveAndLoadManager.Instance.AutoSave();
+                        SaveAndLoadManager.SaveToJson(SaveAndLoadManager.Instance.CurrentSave, SaveAndLoadManager.Instance.CurrentSaveSlot);
                     break;
                 }
             }
@@ -260,8 +259,7 @@ public class GameManager : MonoBehaviour
 
         foreach (var item in FindObjectsByType<Notification>(FindObjectsSortMode.None))
         {
-            item.gameObject.SetActive(false);
-            Destroy(item);
+            DialogueUIManagerObjectPool.Instance.ReturnNotification(item);
         }
 
         //Double call to messaging canvas close in order to shut the contants window AND the message window

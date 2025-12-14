@@ -127,6 +127,7 @@ namespace MeetAndTalk
                 dialogueContainer = dialogue;
 
             _chapterData = chapterData;
+            PopulateDictionary();
         }
 
        // public void StartDialogue(DialogueContainerSO dialogue) { StartDialogue(dialogue, ""); }
@@ -283,7 +284,6 @@ namespace MeetAndTalk
             OverlayCanvas.Instance.FadeToBlack(() =>
             {
                 CoRollback();
-                SaveAndLoadManager.Instance.AutoSave();
             }, .25f, .25f);
         }
 
@@ -412,7 +412,6 @@ namespace MeetAndTalk
                 return;
 
             SaveAndLoadManager.Instance.CurrentSave.AddNode(_baseNodeData);
-            SaveAndLoadManager.Instance.AutoSave();
 
             _visitedNodes.Push(_baseNodeData);
             switch (_baseNodeData)
@@ -476,6 +475,7 @@ namespace MeetAndTalk
             //Debug.Log("XXXX" + _nodeData.TrueGUID + "XXXX");
             CheckNodeType(GetNodeByGuid(manager.IfTrue(ValueName, Operations, OperationValue) ? _nodeData.TrueGUID : _nodeData.FalseGUID));
         }
+
         private void RunNode(DialogueNodeData _nodeData)
         {
             //IEnumerator delaytmp()
@@ -710,7 +710,6 @@ namespace MeetAndTalk
                 tempAction += () =>
                 {
                     SaveAndLoadManager.Instance.CurrentSave.MakeChoice(nodeData, nodePort.TextLanguage);
-                    SaveAndLoadManager.Instance.AutoSave();
                     CheckNodeType(GetNodeByGuid(nodePort.InputGuid));
                 };
 
@@ -741,7 +740,6 @@ namespace MeetAndTalk
                 {
                     StopAllTrackedCoroutines();
                     SaveAndLoadManager.Instance.CurrentSave.MakeChoice(nodeData, nodePort.TextLanguage);
-                    SaveAndLoadManager.Instance.AutoSave();
                     CheckNodeType(GetNodeByGuid(nodePort.InputGuid));
                 };
 

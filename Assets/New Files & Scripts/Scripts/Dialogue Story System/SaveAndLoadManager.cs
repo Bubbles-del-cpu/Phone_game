@@ -32,12 +32,24 @@ public class SaveAndLoadManager : MonoBehaviour
     private void Awake()
     {
         GameManager.Instance.ChangeLanguage(CurrentSave.CurrentLanguage);
+        ValueManager.LoadFile();
     }
 
     private void Start()
     {
         LoadSave(0);
         DialogueUIManager.Instance.DisplayHints = CurrentSave.DisplayHints;
+    }
+
+    private void OnApplicationQuit()
+    {
+        if (!SaveAndLoadManager.Instance.ReplayingCompletedChapter)
+        {
+            CurrentSave.CurrentState.SavedVariables = ValueManager.ConvertSaveFile();
+            CurrentSave.AutoSaveState = CurrentSave.CurrentState.Clone();
+        }
+
+        SaveToJson(CurrentSave, CurrentSaveSlot);
     }
 
     public void LoadSave(int slot = 0)
@@ -69,21 +81,11 @@ public class SaveAndLoadManager : MonoBehaviour
         DialogueChapterManager.Instance.TriggerStoryChapter(CurrentSave.CurrentState.CompletedChapters.Count);
     }
 
-    public void AutoSave()
-    {
-        if (!SaveAndLoadManager.Instance.ReplayingCompletedChapter)
-        {
-            CurrentSave.CurrentState.SavedVariables = ValueManager.ConvertSaveFile();
-            CurrentSave.AutoSaveState = CurrentSave.CurrentState.Clone();
-        }
-
-        SaveToJson(CurrentSave, CurrentSaveSlot);
-    }
-
     [ContextMenu("Save to Json")]
     public static void SaveToJson(SaveFileData saveData, int saveSlot)
     {
         string data = JsonUtility.ToJson(saveData, true);
+        Debug.Log($"[SaveAndLoadManager] Saving to slot {saveSlot}. File Location: {GetPath(saveSlot)}");
         System.IO.File.WriteAllText(GetPath(saveSlot), data);
     }
 
@@ -152,7 +154,7 @@ public class SaveAndLoadManager : MonoBehaviour
             CurrentSave.SaveStates[slot].IsSaved = true;
             CurrentSave.SaveStates[slot].Name = name;
 
-            AutoSave();
+            SaveAndLoadManager.SaveToJson(CurrentSave, CurrentSaveSlot);
         }
         catch (Exception) { }
     }
@@ -168,8 +170,6 @@ public class SaveAndLoadManager : MonoBehaviour
 
             if (resetBackground)
                 GameManager.Instance.ResetBackgroundImage();
-
-            AutoSave();
         }
         catch (Exception) { }
     }
@@ -188,8 +188,6 @@ public class SaveAndLoadManager : MonoBehaviour
 
                 CurrentSave.CurrentState.SavedVariables = ValueManager.ConvertSaveFile();
 
-                AutoSave();
-
                 GameManager.Instance.ResetGameState(startDialogue: false);
                 GameManager.Instance.GalleryCanvas.Load();
                 DialogueChapterManager.Instance.TriggerStoryChapter(CurrentSave.CurrentState.CompletedChapters.Count);
@@ -204,8 +202,6 @@ public class SaveAndLoadManager : MonoBehaviour
         {
             CurrentSave.SaveStates[saveSlot].IsSaved = false;
             CurrentSave.SaveStates[saveSlot] = new SaveFileData.GameSaveState();
-
-            AutoSave();
         }
         catch (Exception) { }
     }

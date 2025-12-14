@@ -37,26 +37,26 @@ public class SocialMediaCanvas : UICanvas
     }
 
     public void PostToSocialMedia(SocialMediaPostSO _data, DialogueNodeData nodeData, bool showNotification = true)
-{
-    Debug.Log($"Attempting to post to social media. Prefab valid: {socialMediaPostPrefab != null}, Container valid: {socialMediaPostsContainer != null}");
-    if (socialMediaPostPrefab == null || socialMediaPostsContainer == null)
     {
-        Debug.LogError("Cannot post! Missing prefab or container reference on SocialMediaCanvas!");
-        return;
-    }
+        Debug.Log($"Attempting to post to social media. Prefab valid: {socialMediaPostPrefab != null}, Container valid: {socialMediaPostsContainer != null}");
+        if (socialMediaPostPrefab == null || socialMediaPostsContainer == null)
+        {
+            Debug.LogError("Cannot post! Missing prefab or container reference on SocialMediaCanvas!");
+            return;
+        }
 
-    SocialMediaPost post = Instantiate(socialMediaPostPrefab, socialMediaPostsContainer);
-    Debug.Log($"Instantiated post: {post.name}", post.gameObject); // Log the instance
+        SocialMediaPost post = Instantiate(socialMediaPostPrefab, socialMediaPostsContainer);
+        Debug.Log($"Instantiated post: {post.name}", post.gameObject); // Log the instance
 
-    try // Add temporary error catching for SetData
-    {
-        post.SetData(_data, nodeData, showNotification);
+        try // Add temporary error catching for SetData
+        {
+            post.SetData(_data, nodeData, showNotification);
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError($"Error calling SetData on new post: {ex.Message}\n{ex.StackTrace}", post.gameObject);
+        }
     }
-    catch (System.Exception ex)
-    {
-        Debug.LogError($"Error calling SetData on new post: {ex.Message}\n{ex.StackTrace}", post.gameObject);
-    }
-}
 
 
     public void Clear()

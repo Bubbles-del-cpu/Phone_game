@@ -3,35 +3,31 @@ using UnityEngine.UI;
 using MeetAndTalk;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO.Compression;
 using TMPro;
-using Unity.VisualScripting;
 using System;
 
 public class MessagingConversationPanel : UIPanel
 {
     private struct MessageBubbleInfo
     {
-        public Transform Container;
-        public int Index;
         public DialogueUIManager.MessageSource Source;
+        public string NodeGUID;
         public string Text;
-        public BaseNodeData NodeData;
         public bool Hidden;
-        public bool IsDisplayed;
 
-        public void SendToPanel()
+        public void SendToPanel(MessagingConversationPanel panel)
         {
-            var containerSource = (DialogueUIManager.MessageSource)Index;
-            switch (NodeData)
+            var containerSource = Source;
+            var node = DialogueManager.Instance.GetNodeByGuid(NodeGUID);
+            switch (node)
             {
-                case DialogueNodeData nd when NodeData is DialogueNodeData:
+                case DialogueNodeData nd when node is DialogueNodeData:
                     {
                         if (nd.GetTimeLapse().Length > 0)
                         {
                             //MessagingBubble _timelapseBubble = Instantiate(BubblePrefab, Container);
                             var timelapseBubble = DialogueUIManagerObjectPool.Instance.GetMessageBubble(containerSource);
-                            timelapseBubble.transform.SetParent(Container, false);
+                            timelapseBubble.transform.SetParent(panel._messageContainers[0].transform, false);
                             timelapseBubble.Init(Hidden, nd.GetTimeLapse(), timelapse: true, Source);
                         }
 
@@ -40,13 +36,13 @@ public class MessagingConversationPanel : UIPanel
                         {
                             //var bubble = Instantiate(BubblePrefab, Container);
                             var bubble = DialogueUIManagerObjectPool.Instance.GetMessageBubble(containerSource);
-                            bubble.transform.SetParent(Container, false);
+                            bubble.transform.SetParent(panel._messageContainers[0].transform, false);
                             bubble.Init(Hidden, Text, timelapse: false, Source);
                             bubble.SetupMediaViewer(nd);
                         }
                     }
                     break;
-                case DialogueChoiceNodeData nd when NodeData is DialogueChoiceNodeData:
+                case DialogueChoiceNodeData nd when node is DialogueChoiceNodeData:
                     {
                         //Add element
                         if (Text != string.Empty && Text[0] != '*')
@@ -54,7 +50,7 @@ public class MessagingConversationPanel : UIPanel
                             //Frist character is the special action character so don't send the message
                             //var bubble = Instantiate(BubblePrefab, Container);
                             var bubble = DialogueUIManagerObjectPool.Instance.GetMessageBubble(containerSource);
-                            bubble.transform.SetParent(Container, false);
+                            bubble.transform.SetParent(panel._messageContainers[0].transform, false);
                             bubble.Init(Source != containerSource, Text, timelapse: false, Source);
                         }
                     }
@@ -63,19 +59,18 @@ public class MessagingConversationPanel : UIPanel
         }
     }
 
-    [SerializeField] RectTransform[] messageBubbleContainers;
     [SerializeField] MessagingResponsesPanel responsesPanel;
     [SerializeField] ScrollRect _scrollView;
     [SerializeField] RectTransform _contentContainer;
     [SerializeField] private ProfileIcon _characterIcon;
     [SerializeField] private TMP_Text _characterName;
     [SerializeField] private MatchChildScaleAutomatic[] _messageContainers;
-    DialogueCharacterSO character;
+    private DialogueCharacterSO _character;
 
+    public MessagingResponsesPanel ResponsesPanel { get { return responsesPanel; } }
+    public DialogueCharacterSO Character { get { return _character; } set { _character = value; } }
     private List<MessageBubbleInfo> _messageBubbleInfosLeft = new List<MessageBubbleInfo>();
-    private List<MessageBubbleInfo> _messageBubbleInfosRight = new List<MessageBubbleInfo>();
-
-    public int ChildCount => messageBubbleContainers[0].transform.childCount;
+    public int ChildCount => _messageContainers[0].transform.childCount;
 
     public override void Awake()
     {
@@ -94,10 +89,7 @@ public class MessagingConversationPanel : UIPanel
             for(var index = 0; index < _messageBubbleInfosLeft.Count; index++)
             {
                 var leftInfo = _messageBubbleInfosLeft[index];
-                leftInfo.SendToPanel();
-
-                var rightInfo = _messageBubbleInfosRight[index];
-                rightInfo.SendToPanel();
+                leftInfo.SendToPanel(this);
 
                 count++;
                 if (count >= maxLoops)
@@ -113,9 +105,9 @@ public class MessagingConversationPanel : UIPanel
             UpdateChildContainers();
         }
 
-        _characterIcon.Character = character;
-        _characterName.text = character.name;
-        GameManager.Instance.SetNewMessage(character, false);
+        _characterIcon.Character = _character;
+        _characterName.text = _character.name;
+        GameManager.Instance.SetNewMessage(_character, false);
 
         yield return new WaitForSeconds(_delay);
         base.Open();
@@ -129,87 +121,48 @@ public class MessagingConversationPanel : UIPanel
 
     public void RemoveElements(int count)
     {
-        for (var cIndex = 0; cIndex < MessageBubbleContainers.Length; cIndex++)
+        var container = _messageContainers[0];
+        var index = 0;
+        while (index < count)
         {
-            var container = MessageBubbleContainers[cIndex];
-            var containerSource = (DialogueUIManager.MessageSource)cIndex;
-            var index = 0;
-            while (index < count)
+            try
             {
-                try
-                {
-                    var item = container.transform.GetChild(container.transform.childCount - 1);
-                    var bubble = item.GetComponent<MessagingBubble>();
-                    DialogueUIManagerObjectPool.Instance.ReturnMessageBubble(bubble, containerSource);
-                    switch(containerSource)
-                    {
-                        case DialogueUIManager.MessageSource.Character:
-                            _messageBubbleInfosLeft.RemoveAt(_messageBubbleInfosLeft.Count - 1);
-                            break;
-                        case DialogueUIManager.MessageSource.Player:
-                            _messageBubbleInfosRight.RemoveAt(_messageBubbleInfosRight.Count - 1);
-                            break;
-                    }
+                var item = container.transform.GetChild(container.transform.childCount - 1);
+                var bubble = item.GetComponent<MessagingBubble>();
+                var messageInfo = _messageBubbleInfosLeft[_messageBubbleInfosLeft.Count - 1];
+                DialogueUIManagerObjectPool.Instance.ReturnMessageBubble(bubble, messageInfo.Source);
+                _messageBubbleInfosLeft.RemoveAt(_messageBubbleInfosLeft.Count - 1);
 
-                    index++;
-                }
-                catch (Exception ex)
-                {
-                    Debug.LogError($"Failed to clear conversation panel for {character.name}. Error: {ex.Message}");
-                    break;
-                }
+                index++;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"Failed to clear conversation panel for {_character.name}. Error: {ex.Message}");
+                break;
             }
         }
 
         UpdateChildContainers();
     }
 
-    public void AddElement(BaseNodeData nodeData, string text, DialogueUIManager.MessageSource source, bool notification)
+    public void AddElement(BaseNodeData nodeData, string text, DialogueUIManager.MessageSource source)
     {
-        //var wasNearBottom = ShouldAutoScroll();
-        for (var index = 0; index < MessageBubbleContainers.Length; index++)
+        var newBubbleData = new MessageBubbleInfo()
         {
-            var container = MessageBubbleContainers[index];
-            var containerSource = (DialogueUIManager.MessageSource)index;
+            Source = source,
+            NodeGUID = nodeData.NodeGuid,
+            Text = text,
+            Hidden = false
+        };
 
-            //Both panels recieve the same message - this allows both "sides" to scroll to the same locations without issue
-            //Depending on the source one side will be hidden and one will be visible.
-            var hidden = source != containerSource;
+        _messageBubbleInfosLeft.Add(newBubbleData);
 
-            switch (nodeData)
-            {
-                case DialogueNodeData nd when nodeData is DialogueNodeData:
-                    {
-                        if (nd.Post != null && containerSource == DialogueUIManager.MessageSource.Character)
-                        {
-                            GameManager.Instance.SocialMediaCanvas.PostToSocialMedia(nd.Post, nd, notification);
-                        }
-                    }
-                    break;
-            }
-
-            var newBubbleData = new MessageBubbleInfo()
-            {
-                Container = container,
-                Index = index,
-                Source = source,
-                Text = text,
-                NodeData = nodeData,
-                Hidden = hidden
-            };
-
-            if (containerSource == DialogueUIManager.MessageSource.Character)
-                _messageBubbleInfosLeft.Add(newBubbleData);
-            else
-                _messageBubbleInfosRight.Add(newBubbleData);
-
-            if (IsOpen)
-            {
-                newBubbleData.SendToPanel();
-                Canvas.ForceUpdateCanvases();
-                ScrollToBottom();
-                UpdateChildContainers();
-            }
+        if (IsOpen)
+        {
+            newBubbleData.SendToPanel(this);
+            Canvas.ForceUpdateCanvases();
+            ScrollToBottom();
+            UpdateChildContainers();
         }
     }
 
@@ -259,7 +212,6 @@ public class MessagingConversationPanel : UIPanel
     {
         if (IsOpen)
         {
-            Debug.Log($"{_contentContainer.rect.height} vs {_scrollView.viewport.rect.height}");
             if (_contentContainer.rect.height > _scrollView.viewport.rect.height)
             {
                 //Alter the anchors to keep the scroll at the bottom if content is larger than the viewport
@@ -273,23 +225,21 @@ public class MessagingConversationPanel : UIPanel
                     rect.anchorMax = new Vector2(1, 0);
                     rect.pivot = new Vector2(0.5f, 0);
                 }
-
-                Debug.Log("Anchors set to bottom");
             }
         }
     }
 
     private void ClearMessageBubbles()
     {
-        for(var index = 0; index < messageBubbleContainers.Length; index++)
+        var item = _messageContainers[0].transform;
+        var index = 0;
+        while(item.childCount > 0)
         {
-            var item = messageBubbleContainers[index];
-            DialogueUIManager.MessageSource containerSource = (DialogueUIManager.MessageSource)index;
-            while(item.childCount > 0)
-            {
-                var child = item.GetChild(0);
-                DialogueUIManagerObjectPool.Instance.ReturnMessageBubble(child.GetComponent<MessagingBubble>(), containerSource);
-            }
+            var child = item.GetChild(0);
+            var messageInfo = _messageBubbleInfosLeft[index];
+            DialogueUIManagerObjectPool.Instance.ReturnMessageBubble(child.GetComponent<MessagingBubble>(), messageInfo.Source);
+
+            index++;
         }
     }
 
@@ -300,10 +250,4 @@ public class MessagingConversationPanel : UIPanel
             item.UpdateSize();
         }
     }
-
-    public RectTransform[] MessageBubbleContainers { get { return messageBubbleContainers; } }
-
-    public MessagingResponsesPanel ResponsesPanel { get { return responsesPanel; } }
-
-    public DialogueCharacterSO Character { get { return character; } set { character = value; } }
 }

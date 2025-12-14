@@ -30,7 +30,10 @@ public class Notification : MonoBehaviour
     {
         _button = GetComponent<Button>();
         _button.onClick.AddListener(() => OnClicked());
-        closeButton.onClick.AddListener(() => Destroy(gameObject));
+        closeButton.onClick.AddListener(() =>
+        {
+            DialogueUIManagerObjectPool.Instance.ReturnNotification(this);
+        });
 
         _cg = GetComponent<CanvasGroup>();
         _cg.alpha = 1;

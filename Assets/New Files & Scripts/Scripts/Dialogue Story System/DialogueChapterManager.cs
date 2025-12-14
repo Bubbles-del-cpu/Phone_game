@@ -163,7 +163,6 @@ public class DialogueChapterManager : UICanvas
 
     public void ReturnToChapterSelection()
     {
-        SaveAndLoadManager.Instance.AutoSave();
         if (SaveAndLoadManager.Instance.ReplayingCompletedChapter)
         {
             SaveAndLoadManager.Instance.LoadSave(SaveAndLoadManager.Instance.CurrentSaveSlot);
@@ -272,7 +271,6 @@ public class DialogueChapterManager : UICanvas
         GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.CHAPTER_UNLOCK_WARNING, () =>
         {
             SaveAndLoadManager.Instance.CurrentSave.ForceUnlockAllChapters = true;
-            SaveAndLoadManager.Instance.AutoSave();
             OpenChapterSelect();
         });
     }

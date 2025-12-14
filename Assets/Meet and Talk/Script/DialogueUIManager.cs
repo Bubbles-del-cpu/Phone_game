@@ -154,84 +154,30 @@ namespace MeetAndTalk
         {
             MessagingConversationPanel targetPanel = null;
             var prefab = messageBubblePrefabs[(int)messageSource];
-            var text = texts.Find(x => x.languageEnum == GameManager.LOCALIZATION_MANAGER.SelectedLang()).LanguageGenericType;
-            string newText = GameManager.ToUTF32(text);
-
-            Regex regex = new Regex(@"\{(.*?)\}");
-            MatchEvaluator matchEvaluator = new MatchEvaluator(match =>
+            switch (_nodeData)
             {
-                string OldText = match.Groups[1].Value;
-                return ChangeReplaceableText(OldText);
-            });
-
-            newText = regex.Replace(newText, matchEvaluator);
-
-            //Spawn the messaging bubbles
-            switch (messageSource)
-            {
-                case MessageSource.Player:
-                    switch (_nodeData)
-                    {
-                        case DialogueNodeData nd when _nodeData is DialogueNodeData:
-                            targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
-                            break;
-                        case DialogueChoiceNodeData nd when _nodeData is DialogueChoiceNodeData:
-                            targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
-                            break;
-                    }
-                    targetPanel.AddElement(_nodeData, newText, messageSource, false);
+                case DialogueNodeData nd when _nodeData is DialogueNodeData:
+                    targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
                     break;
-                case MessageSource.Character:
-                    switch (_nodeData)
-                    {
-                        case DialogueChoiceNodeData nd when _nodeData is DialogueChoiceNodeData:
-                            {
-                                targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
-                                targetPanel.AddElement(_nodeData, newText, messageSource, false);
-                            }
-                            break;
-                        case DialogueNodeData nd when _nodeData is DialogueNodeData:
-                            {
-                                targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
-                                targetPanel.AddElement(_nodeData, newText, messageSource, false);
-                            }
-                            break;
-                    }
+                case DialogueChoiceNodeData nd when _nodeData is DialogueChoiceNodeData:
+                    targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
                     break;
             }
+            targetPanel.AddElement(_nodeData,DialogueLocalizationHelper.GetConvertedText(DialogueLocalizationHelper.GetText(texts)), messageSource);
         }
 
-        public void SetFullText(List<LanguageGeneric<string>> texts, BaseNodeData _nodeData, MessageSource messageSource, bool notification = true, bool updateSave = true)
+        public void SetFullText(List<LanguageGeneric<string>> texts, BaseNodeData nodeData, MessageSource messageSource, bool notification = true, bool updateSave = true)
         {
-            var text = texts.Find(x => x.languageEnum == GameManager.LOCALIZATION_MANAGER.SelectedLang()).LanguageGenericType;
-            string newText = GameManager.ToUTF32(text);
-
-            Regex regex = new Regex(@"\{(.*?)\}");
-            MatchEvaluator matchEvaluator = new MatchEvaluator(match =>
-            {
-                string OldText = match.Groups[1].Value;
-                return ChangeReplaceableText(OldText);
-            });
-
-            newText = regex.Replace(newText, matchEvaluator);
-
-            if (updateSave && messageSource == 0)
-            {
-                SaveAndLoadManager.Instance.CurrentSave.UpdateText(_nodeData, texts);
-                SaveAndLoadManager.Instance.AutoSave();
-            }
-
             MessagingConversationPanel targetPanel = null;
-            var prefab = messageBubblePrefabs[(int)messageSource];
 
             //Notifcation if required
             if (messageSource == MessageSource.Character)
             {
-                switch (_nodeData)
+                switch (nodeData)
                 {
-                    case DialogueNodeData nd when _nodeData is DialogueNodeData:
-                        var notificationText = newText;
-                        if (newText == string.Empty)
+                    case DialogueNodeData nd when nodeData is DialogueNodeData:
+                        var notificationText = DialogueLocalizationHelper.GetConvertedText(DialogueLocalizationHelper.GetText(nd.Texts));
+                        if (notificationText == string.Empty)
                         {
                             if (nd.Image != null || nd.Video != null)
                             {
@@ -248,11 +194,13 @@ namespace MeetAndTalk
 
                         GameManager.Instance.SetNewMessage(nd.Character);
                         break;
-                    case DialogueChoiceNodeData nd when _nodeData is DialogueChoiceNodeData:
+                    case DialogueChoiceNodeData nd when nodeData is DialogueChoiceNodeData:
                         if (nd.RequireCharacterInput)
                         {
                             if (notification)
-                                SpawnNotification(Notification.NotificationType.Message, nd.Character, newText);
+                                SpawnNotification(Notification.NotificationType.Message,
+                                    nd.Character,
+                                    DialogueLocalizationHelper.GetConvertedText(DialogueLocalizationHelper.GetText(nd.TextType)));
 
                             GameManager.Instance.SetNewMessage(nd.Character);
                         }
@@ -260,42 +208,27 @@ namespace MeetAndTalk
                 }
             }
 
-            //Spawn the messaging bubbles
-            switch (messageSource)
+            if (updateSave && messageSource == MessageSource.Character)
             {
-                case MessageSource.Player:
-                    switch (_nodeData)
-                    {
-                        case DialogueNodeData nd when _nodeData is DialogueNodeData:
-                            targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
-                            break;
-                        case DialogueChoiceNodeData nd when _nodeData is DialogueChoiceNodeData:
-                            targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
-                            break;
-                    }
-                    targetPanel.AddElement(_nodeData, newText, messageSource, notification);
-                    break;
-                case MessageSource.Character:
-                    switch (_nodeData)
-                    {
-                        case DialogueChoiceNodeData nd when _nodeData is DialogueChoiceNodeData:
-                            {
-                                targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
-                                targetPanel.AddElement(_nodeData, newText, messageSource, notification);
-                            }
-                            break;
-                        case DialogueNodeData nd when _nodeData is DialogueNodeData:
-                            {
-                                targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
-                                targetPanel.AddElement(_nodeData, newText, messageSource, notification);
+                SaveAndLoadManager.Instance.CurrentSave.UpdateText(nodeData, texts);
+            }
 
-                                SaveAndLoadManager.Instance.CurrentSave.UnlockMedia(nd);
-                                GameManager.Instance.GalleryCanvas.UnlockMediaButton(nd, reloadedGallery: true);
-                            }
-                            break;
+            //Spawn the messaging bubbles
+            switch (nodeData)
+            {
+                case DialogueNodeData nd when nodeData is DialogueNodeData:
+                    targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
+                    if (nd.Post != null)
+                    {
+                        GameManager.Instance.SocialMediaCanvas.PostToSocialMedia(nd.Post, nd, notification);
                     }
+                    break;
+                case DialogueChoiceNodeData nd when nodeData is DialogueChoiceNodeData:
+                    targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
                     break;
             }
+
+            targetPanel.AddElement(nodeData, DialogueLocalizationHelper.GetConvertedText(DialogueLocalizationHelper.GetText(texts)), messageSource);
         }
 
         public void SpawnNotification(Notification.NotificationType type, DialogueCharacterSO character, string label)
@@ -349,13 +282,16 @@ namespace MeetAndTalk
             _lastNotificationCharacter = character;
 
             var notification = DialogueUIManagerObjectPool.Instance.GetNotification();
-            notification.transform.SetParent(notificationsContainer, false);
-            notification.Setup(type, character, label);
+            if (notification != null)
+            {
+                notification.transform.SetParent(notificationsContainer, false);
+                notification.Setup(type, character, label);
 
-            if (!_notificationDictionary.ContainsKey(character))
-                _notificationDictionary.Add(character, null);
+                if (!_notificationDictionary.ContainsKey(character))
+                    _notificationDictionary.Add(character, null);
 
-            _notificationDictionary[character] = notification;
+                _notificationDictionary[character] = notification;
+            }
         }
 
         public void SetButtons(DialogueCharacterSO character, BaseNodeData baseNode, List<List<LanguageGeneric<string>>> texts, List<List<LanguageGeneric<string>>> hints, List<UnityAction> unityActions, bool showTimer)
@@ -385,29 +321,6 @@ namespace MeetAndTalk
             }
 
             _panel.ResponsesPanel.Open();
-        }
-
-        string ChangeReplaceableText(string text)
-        {
-            GlobalValueManager manager = Resources.Load<GlobalValueManager>("GlobalValue");
-            manager.LoadFile();
-
-            string TextToReplace = "[Error Value]";
-            /* Global Value */
-            for (int i = 0; i < manager.IntValues.Count; i++) { if (text == manager.IntValues[i].ValueName) TextToReplace = manager.IntValues[i].Value.ToString(); }
-            for (int i = 0; i < manager.FloatValues.Count; i++) { if (text == manager.FloatValues[i].ValueName) TextToReplace = manager.FloatValues[i].Value.ToString(); }
-            for (int i = 0; i < manager.BoolValues.Count; i++) { if (text == manager.BoolValues[i].ValueName) TextToReplace = manager.BoolValues[i].Value.ToString(); }
-            for (int i = 0; i < manager.StringValues.Count; i++) { if (text == manager.StringValues[i].ValueName) TextToReplace = manager.StringValues[i].Value; }
-
-            //
-            if(text.Contains(","))
-            {
-                string[] tmp = text.Split(',');
-                for (int i = 0; i < manager.IntValues.Count; i++) { if (tmp[0] == manager.IntValues[i].ValueName) TextToReplace = Mathf.Abs(manager.IntValues[i].Value - (int)System.Convert.ChangeType(tmp[1], typeof(int))).ToString(); }
-                for (int i = 0; i < manager.FloatValues.Count; i++) { if (tmp[0] == manager.FloatValues[i].ValueName) TextToReplace = Mathf.Abs(manager.FloatValues[i].Value - (int)System.Convert.ChangeType(tmp[1], typeof(int))).ToString(); }
-            }
-
-            return TextToReplace;
         }
 
         string RemoveRichTextTags(string input)

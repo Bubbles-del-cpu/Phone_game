@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using MeetAndTalk;
 using UnityEngine;
 
 public class ObjectPool<T> where T : Component
@@ -25,14 +24,14 @@ public class ObjectPool<T> where T : Component
         _poolContainer = poolContainer;
 
         // Initialize the object pool
-        DialogueUIManagerObjectPool.Instance.StartCoroutine(CreateObjects());
+        DialogueUIManagerObjectPool.Instance.StartCoroutine(CreateObjects(_startingSize));
     }
 
-    private IEnumerator CreateObjects()
+    private IEnumerator CreateObjects(int amount)
     {
         var countBeforePause = 20;
         var count = 0;
-        for (int index = 0; index < _increaseSize; index++)
+        for (int index = 0; index < amount; index++)
         {
             _availableObjects.Add(CreateNewObject());
             count++;
@@ -48,8 +47,6 @@ public class ObjectPool<T> where T : Component
     {
         var obj = GameObject.Instantiate(_prefab, _poolContainer);
         var component = obj.GetComponent<T>();
-        obj.gameObject.SetActive(false);
-
         _allObjects.Add(component);
         return component;
     }
@@ -62,8 +59,6 @@ public class ObjectPool<T> where T : Component
         if (!_availableObjects.Contains(obj))
         {
             obj.gameObject.transform.SetParent(_poolContainer);
-            obj.gameObject.SetActive(false);
-
             _availableObjects.Add(obj);
         }
     }
@@ -73,11 +68,7 @@ public class ObjectPool<T> where T : Component
         if (_availableObjects.Count <= 0)
         {
             // Pool is empty, create some extras as they are needed
-            for (int i = 0; i < _increaseSize; i++)
-            {
-                Debug.LogWarning($"Object Pool of type {typeof(T)} is empty, increasing pool size by {_increaseSize}");
-                _availableObjects.Add(CreateNewObject());
-            }
+            DialogueUIManagerObjectPool.Instance.StartCoroutine(CreateObjects(_increaseSize));
         }
 
         T obj = _availableObjects[0];
