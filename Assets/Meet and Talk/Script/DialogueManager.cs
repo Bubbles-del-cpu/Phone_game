@@ -305,7 +305,7 @@ namespace MeetAndTalk
                     {
                         case DialogueNodeData nd:
                             if (!rollbackList.ContainsKey(nd.Character))
-                                rollbackList.Add(nd.Character, 1);
+                                rollbackList.Add(nd.Character, 0);
 
                             if (nd.GetText() != string.Empty || nd.Image != null || nd.Video != null)
                                 rollbackList[nd.Character] += 1;

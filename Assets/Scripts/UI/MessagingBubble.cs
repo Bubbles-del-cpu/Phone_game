@@ -16,10 +16,13 @@ public class MessagingBubble : MonoBehaviour
     [SerializeField] Image _backgroundImage;
     [SerializeField] FullScreenMediaMessageViewer _mediaViewer;
 
-    CanvasGroup cg;
-    RectTransform rect;
-    RectTransform labelRect;
+    CanvasGroup _cg;
+    RectTransform _rect;
+    RectTransform _labelRect;
     private MessageSource _source;
+    private string _guid;
+    public string NodeGUID => _guid;
+    public MessageSource Source => _source;
 
     [Header("Video Clip Components")]
     [SerializeField] RawImage _videoImage;
@@ -41,11 +44,11 @@ public class MessagingBubble : MonoBehaviour
         }
     }
 
-    public void Init(bool hide, string text, bool timelapse, MessageSource containerSource)
+    public void Init(bool hide, string text, bool timelapse, string guid, MessageSource containerSource)
     {
-        cg = GetComponent<CanvasGroup>();
-        rect = GetComponent<RectTransform>();
-        labelRect = _label.GetComponent<RectTransform>();
+        _cg = GetComponent<CanvasGroup>();
+        _rect = GetComponent<RectTransform>();
+        _labelRect = _label.GetComponent<RectTransform>();
 
         transform.parent.parent.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(
             RectTransform.Axis.Vertical,
@@ -53,16 +56,13 @@ public class MessagingBubble : MonoBehaviour
             );
 
 
-        cg.alpha = 0;
         gameObject.SetActive(true);
 
-        //GetComponentInParent<ScrollRect>().verticalNormalizedPosition = 0f;
-        Message = text;
+        _guid = guid;
         _source = containerSource;
+        _cg.alpha = 0;
+        Message = text;
         IsTimelapse = timelapse;
-
-        // LayoutRebuilder.ForceRebuildLayoutImmediate(rect);
-        // LayoutRebuilder.ForceRebuildLayoutImmediate(transform.parent.GetComponent<RectTransform>());
 
         StartCoroutine(COEnable(hide));
     }
@@ -125,17 +125,17 @@ public class MessagingBubble : MonoBehaviour
 
     private IEnumerator COEnable(bool hide)
     {
-        cg.alpha = 0;
+        _cg.alpha = 0;
         yield return null;
         if (!hide)
         {
-            while (cg.alpha < 1)
+            while (_cg.alpha < 1)
             {
-                cg.alpha += Time.deltaTime * DialogueUIManager.Instance.MessagingBubbleFadeInSpeed;
+                _cg.alpha += Time.deltaTime * DialogueUIManager.Instance.MessagingBubbleFadeInSpeed;
                 yield return null;
             }
 
-            cg.alpha = 1;
+            _cg.alpha = 1;
         }
     }
 
@@ -146,18 +146,18 @@ public class MessagingBubble : MonoBehaviour
             _label.text = value;
             _label.gameObject.SetActive(value != string.Empty);
 
-            LayoutRebuilder.ForceRebuildLayoutImmediate(rect);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(_rect);
 
             if (_label.GetPreferredValues().x > DialogueUIManager.Instance.MaxMessageSize - GameManager.Instance.MessagingCanvas.BubbleMarginRight)
             {
                 //labelRect.GetComponent<ContentSizeFitter>().enabled = false;
-                labelRect.GetComponent<LayoutElement>().enabled = true;
-                labelRect.GetComponent<LayoutElement>().preferredWidth = DialogueUIManager.Instance.MaxMessageSize;
+                _labelRect.GetComponent<LayoutElement>().enabled = true;
+                _labelRect.GetComponent<LayoutElement>().preferredWidth = DialogueUIManager.Instance.MaxMessageSize;
             }
             else
             {
                 //labelRect.GetComponent<ContentSizeFitter>().enabled = true;
-                labelRect.GetComponent<LayoutElement>().enabled = false;
+                _labelRect.GetComponent<LayoutElement>().enabled = false;
             }
 
             //if (labelRect.sizeDelta.x > GetComponentInParent<CanvasScaler>().referenceResolution.x - GameManager.Instance.MessagingCanvas.BubbleMarginRight)
