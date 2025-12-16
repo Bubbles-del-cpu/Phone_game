@@ -23,11 +23,15 @@ public class SaveAndLoadManager : MonoBehaviour
         return $"{Application.persistentDataPath}/slot{saveSlot}_SaveData.json";
     }
 
+    public int SuggestMaxSaveStates;
     [HideInInspector] public int CurrentSaveSlot;
     public bool ReplayingCompletedChapter;
     public bool PlayingStandaloneChapter;
     public SaveFileData CurrentSave;
     public GlobalValueManager ValueManager;
+
+    [Header("Prefabs")]
+    [SerializeField] private SaveStateDialogBox _saveDialogPrefab;
 
     private void Awake()
     {
@@ -138,6 +142,9 @@ public class SaveAndLoadManager : MonoBehaviour
     {
         try
         {
+            if (CurrentSave.SaveStates.Count <= saveSlot)
+                return false;
+
             return CurrentSave.SaveStates[saveSlot].IsSaved;
         }
         catch (Exception)
@@ -146,14 +153,21 @@ public class SaveAndLoadManager : MonoBehaviour
         }
     }
 
-    public void CreateSaveState(int slot, string name)
+    public void CreateSaveState(int slot, string name = "")
     {
         try
         {
-            CurrentSave.SaveStates[slot] = CurrentSave.CurrentState.Clone();
-            CurrentSave.SaveStates[slot].IsSaved = true;
-            CurrentSave.SaveStates[slot].Name = name;
+            if (SaveStateExists(slot))
+            {
+                CurrentSave.SaveStates[slot] = CurrentSave.CurrentState.Clone();
+            }
+            else
+            {
+                CurrentSave.SaveStates.Add(CurrentSave.CurrentState.Clone());
+            }
 
+            CurrentSave.SaveStates[slot].Name = name == string.Empty ? $"Save slot {slot + 1}" : name;
+            CurrentSave.SaveStates[slot].IsSaved = true;
             SaveAndLoadManager.SaveToJson(CurrentSave, CurrentSaveSlot);
         }
         catch (Exception) { }
@@ -200,10 +214,27 @@ public class SaveAndLoadManager : MonoBehaviour
     {
         try
         {
-            CurrentSave.SaveStates[saveSlot].IsSaved = false;
-            CurrentSave.SaveStates[saveSlot] = new SaveFileData.GameSaveState();
+            CurrentSave.SaveStates.RemoveAt(saveSlot);
+            SaveAndLoadManager.SaveToJson(CurrentSave, CurrentSaveSlot);
         }
         catch (Exception) { }
+    }
+
+    /// <summary>s
+    /// Displays the save state dialog for the specified slot
+    /// </summary>
+    /// <param name="slotNumber">Save slot number</param>
+    /// <param name="actionOnSubmit">Action to perform on submit</param>
+    public void DisplaySaveStateDialog(int slotNumber, Action actionOnSubmit = null)
+    {
+        var newDialog = Instantiate(_saveDialogPrefab);
+        newDialog.Setup(slotNumber);
+        newDialog.OnSubmit.AddListener(() =>
+        {
+            actionOnSubmit?.Invoke();
+        });
+
+        OverlayCanvas.Instance.ShowDialog(newDialog.gameObject);
     }
 
     public void StartNewSave(bool startDialogue = true)
