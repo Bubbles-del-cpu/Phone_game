@@ -144,11 +144,6 @@ public class SaveFileData
         saveFile.DisplayHints = false;
 
         saveFile.SaveStates = new List<GameSaveState>();
-        for (var index = 0; index < 4; index++)
-        {
-            saveFile.SaveStates.Add(new GameSaveState());
-        }
-
         saveFile.AutoSaveState = new GameSaveState();
         saveFile.AutoSaveState.SavedVariables = SaveAndLoadManager.Instance.ValueManager.ConvertSaveFile();
         saveFile.AutoSaveState.LastChapter = new ChapterSaveData();
@@ -423,7 +418,7 @@ public class SaveFileData
         }
 
         //if (save)
-            //SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
+        //SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
     }
 
     private void UnlockMedia(string fileName, bool save = true)
@@ -435,7 +430,7 @@ public class SaveFileData
         }
 
         //if (save)
-            //SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
+        //SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
     }
 
     public void UnlockAllMedia(bool save = true)
@@ -446,7 +441,7 @@ public class SaveFileData
         }
 
         //if (save)
-            //SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
+        //SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
     }
 
     public void LikePost(BaseNodeData nodeData, bool state)

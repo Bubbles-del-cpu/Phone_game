@@ -45,7 +45,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] GalleryCanvas galleryCanvas;
     [SerializeField] ContactsCanvas contactsCanvas;
     [SerializeField] SocialMediaCanvas socialMediaCanvas;
-    [SerializeField] UICanvas settingsCanvas;
     [SerializeField] OverlayCanvas overlayCanvas;
 
     [Header("Config")]
@@ -255,7 +254,7 @@ public class GameManager : MonoBehaviour
         //Restart the dialogue trees
         yield return new WaitForSecondsRealtime(.1f);
 
-        settingsCanvas.Close();
+        SettingsCanvas.Instance.Close();
 
         foreach (var item in FindObjectsByType<Notification>(FindObjectsSortMode.None))
         {
@@ -264,6 +263,7 @@ public class GameManager : MonoBehaviour
 
         //Double call to messaging canvas close in order to shut the contants window AND the message window
         messagingCanvas.Close();
+        MainMenuCanvas.Instance.ClearButtons();
 
         if (startDialogue)
             StartCoroutine(CoStartDialogue());
@@ -362,7 +362,6 @@ public class GameManager : MonoBehaviour
     public GalleryCanvas GalleryCanvas { get { return galleryCanvas; } }
     public ContactsCanvas ContactsCanvas { get { return contactsCanvas; } }
     public SocialMediaCanvas SocialMediaCanvas { get { return socialMediaCanvas; } }
-    public UICanvas SettingsCanvas { get { return settingsCanvas; } }
 
     public class CharacterData
     {

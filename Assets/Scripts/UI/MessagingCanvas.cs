@@ -91,6 +91,35 @@ public class MessagingCanvas : UICanvas
         conversationsPanel.Open();
     }
 
+    /// <summary>
+    /// Sets a new message for the character on the messaging canvas
+    /// </summary>
+    /// <param name="storyCharacter">The story character associated with the messaging canvas</param>
+    /// <param name="_character"></param>
+    /// <param name="messageSeen"></param>
+    public void SetNewNotification(DialogueCharacterSO _character, bool responseNotification = false, bool messageSeen = true)
+    {
+        var conversationButton = GetConversationButton(_character);
+        if (messageSeen)
+            conversationButton.transform.SetAsFirstSibling();
+
+        if (responseNotification)
+        {
+            MainMenuCanvas.Instance.SetMessagingAppNotification(_character, messageSeen, isResponseNotification: true);
+            conversationButton.HasResponseReady = !messageSeen;
+            conversationButton.HasNewMessage = false;
+        }
+        else
+        {
+            if (GetConversationPanel(_character).IsOpen && messageSeen == false)
+                return;
+
+            MainMenuCanvas.Instance.SetMessagingAppNotification(_character, messageSeen, isResponseNotification: false);
+            conversationButton.HasNewMessage = !messageSeen;
+            conversationButton.HasResponseReady = false;
+        }
+    }
+
     private void CheckCharacter(DialogueCharacterSO character)
     {
         if (!seenCharacters.Contains(character))

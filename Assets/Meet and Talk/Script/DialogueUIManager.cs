@@ -2,8 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
-using System.Text.RegularExpressions;
-using MeetAndTalk.GlobalValue;
+using UnityEditor.Localization.Plugins.XLIFF.V12;
 
 namespace MeetAndTalk
 {
@@ -44,33 +43,14 @@ namespace MeetAndTalk
             }
         }
 
+        [Header("Dynamic Dialogue UI")]
+        public MessagingResponseButton ButtonPrefab;
+
         [Header("Message & Notification Settings")]
         public float MessagePanelAutoScrollSpeed = 4;
         public float NotificationDisplayLength = 2;
         public float MaxMessageSize = 200;
 
-        [SerializeField, Tooltip("Batches notifications from a single character into a single notification.")]
-        private bool _batchNotifications = false;
-
-        [SerializeField, Tooltip("Batched notifications will have their text updated to show the latest message but a new notification is not created.")]
-        private bool _batchReplaceText = false;
-
-        [SerializeField, Tooltip("Limits the number of notifications that can be displayed on the screen to 1")]
-        private bool _singleNotificationOnly = false;
-
-        private Dictionary<DialogueCharacterSO, Notification> _notificationDictionary = new();
-        public Dictionary<DialogueCharacterSO, Notification> NotificationDictionary => _notificationDictionary;
-
-        private DialogueCharacterSO _lastNotificationCharacter;
-        private float _lastNotificationTime;
-
-        [Header("Dynamic Dialogue UI")]
-        public MessagingResponseButton ButtonPrefab;
-
-        [Header("Component References")]
-        public Canvas NotificationCanvas;
-        [SerializeField] RectTransform notificationsContainer;
-        //public UIPanel ButtonContainer;
 
         [Header("Hide IF Condition")]
         public List<GameObject> HideIfLeftAvatarEmpty = new List<GameObject>();         // Premium Feature
@@ -104,7 +84,7 @@ namespace MeetAndTalk
         {
             foreach (GameObject obj in HideIfLeftAvatarEmpty)
             {
-                if (obj != null) { obj.SetActive(left!=null); }
+                if (obj != null) { obj.SetActive(left != null); }
             }
             foreach (GameObject obj in HideIfRightAvatarEmpty)
             {
@@ -163,7 +143,7 @@ namespace MeetAndTalk
                     targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
                     break;
             }
-            targetPanel.AddElement(_nodeData,DialogueLocalizationHelper.GetConvertedText(DialogueLocalizationHelper.GetText(texts)), messageSource);
+            targetPanel.AddElement(_nodeData, DialogueLocalizationHelper.GetConvertedText(DialogueLocalizationHelper.GetText(texts)), messageSource);
         }
 
         public void SetFullText(List<LanguageGeneric<string>> texts, BaseNodeData nodeData, MessageSource messageSource, bool notification = true, bool updateSave = true)
@@ -183,13 +163,13 @@ namespace MeetAndTalk
                             {
                                 notificationText = $"has sent a new {(nd.MediaType == MediaType.Sprite ? "picture" : "video")}";
                                 if (notification)
-                                    SpawnNotification(Notification.NotificationType.Message, nd.Character, notificationText);
+                                    NotificationCanvas.Instance.SpawnNotification(Notification.NotificationType.Message, nd.Character, notificationText);
                             }
                         }
                         else
                         {
                             if (notification)
-                                SpawnNotification(Notification.NotificationType.Message, nd.Character, notificationText);
+                                NotificationCanvas.Instance.SpawnNotification(Notification.NotificationType.Message, nd.Character, notificationText);
                         }
 
                         GameManager.Instance.SetNewMessage(nd.Character);
@@ -198,7 +178,7 @@ namespace MeetAndTalk
                         if (nd.RequireCharacterInput)
                         {
                             if (notification)
-                                SpawnNotification(Notification.NotificationType.Message,
+                                NotificationCanvas.Instance.SpawnNotification(Notification.NotificationType.Message,
                                     nd.Character,
                                     DialogueLocalizationHelper.GetConvertedText(DialogueLocalizationHelper.GetText(nd.TextType)));
 
@@ -214,83 +194,55 @@ namespace MeetAndTalk
             }
 
             //Spawn the messaging bubbles
-            switch (nodeData)
+            switch (messageSource)
             {
-                case DialogueNodeData nd when nodeData is DialogueNodeData:
-                    targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
-                    if (nd.Post != null)
+                case MessageSource.Player:
                     {
-                        GameManager.Instance.SocialMediaCanvas.PostToSocialMedia(nd.Post, nd, notification);
-                    }
-                    break;
-                case DialogueChoiceNodeData nd when nodeData is DialogueChoiceNodeData:
-                    targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
-                    break;
-            }
-
-            targetPanel.AddElement(nodeData, DialogueLocalizationHelper.GetConvertedText(DialogueLocalizationHelper.GetText(texts)), messageSource);
-        }
-
-        public void SpawnNotification(Notification.NotificationType type, DialogueCharacterSO character, string label)
-        {
-            switch (type)
-            {
-                default:
-                    GameManager.Instance.PlayReceiveTextFX();
-                    if (GameManager.Instance.MessagingCanvas.GetConversationPanel(character).IsOpen)
-                        return;
-                    break;
-                case Notification.NotificationType.SocialMedia:
-                    GameManager.Instance.PlayNotificationFX();
-                    if (GameManager.Instance.SocialMediaCanvas.IsOpen)
-                        return;
-                    break;
-            }
-
-            //Remove the last notifcation if it is still there
-            if (_singleNotificationOnly)
-            {
-                var lastNotifcation = FindFirstObjectByType<Notification>();
-                if (lastNotifcation)
-                {
-                    _notificationDictionary.Remove(lastNotifcation.Character);
-                    DialogueUIManagerObjectPool.Instance.ReturnNotification(lastNotifcation);
-                }
-            }
-
-            if (_batchNotifications)
-            {
-                if (_notificationDictionary.ContainsKey(character))
-                {
-                    var characterNotification = _notificationDictionary[character];
-                    if (characterNotification != null && characterNotification.transform.parent == notificationsContainer)
-                    {
-                        if (_batchReplaceText)
+                        switch (nodeData)
                         {
-                            characterNotification.Setup(type, character, label);
-                            return;
+                            case DialogueNodeData nd when nodeData is DialogueNodeData:
+                                SocialMediaCanvas.PostToSoicalMediaApp(nd.Post, nd, showNotification: true);
+                                targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
+                                break;
+                            case DialogueChoiceNodeData nd when nodeData is DialogueChoiceNodeData:
+                                targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
+                                break;
                         }
+                        var newText = DialogueLocalizationHelper.GetConvertedText(DialogueLocalizationHelper.GetText(texts));
+                        targetPanel.AddElement(nodeData, newText, messageSource);
                     }
-                    else
+                    break;
+                case MessageSource.Character:
                     {
-                        _notificationDictionary.Remove(character);
+                        switch (nodeData)
+                        {
+                            case DialogueNodeData nd:
+                                {
+                                    SocialMediaCanvas.PostToSoicalMediaApp(nd.Post, nd, showNotification: true);
+                                    targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
+
+                                    //Unlock any media associated with this node
+                                    var saveData = SaveAndLoadManager.Instance.CurrentSave;
+                                    saveData.UnlockMedia(nd);
+                                    GameManager.Instance.GalleryCanvas.UnlockMediaButton(nd, reloadedGallery: true);
+                                    if (notification)
+                                        GameManager.Instance.MessagingCanvas.SetNewNotification(nd.Character, responseNotification: false, messageSeen: false);
+                                }
+                                break;
+                            case DialogueChoiceNodeData nd:
+                                {
+                                    targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
+
+                                    if (notification)
+                                        GameManager.Instance.MessagingCanvas.SetNewNotification(nd.Character, responseNotification: true, messageSeen: false);
+                                }
+                                break;
+                        }
+
+                        var newText = DialogueLocalizationHelper.GetConvertedText(DialogueLocalizationHelper.GetText(texts));
+                        targetPanel.AddElement(nodeData, newText, messageSource);
                     }
-                }
-            }
-
-            _lastNotificationTime = Time.time;
-            _lastNotificationCharacter = character;
-
-            var notification = DialogueUIManagerObjectPool.Instance.GetNotification();
-            if (notification != null)
-            {
-                notification.transform.SetParent(notificationsContainer, false);
-                notification.Setup(type, character, label);
-
-                if (!_notificationDictionary.ContainsKey(character))
-                    _notificationDictionary.Add(character, null);
-
-                _notificationDictionary[character] = notification;
+                    break;
             }
         }
 
@@ -313,11 +265,12 @@ namespace MeetAndTalk
             for (int i = 0; i < texts.Count; i++)
             {
                 MessagingResponseButton btn = Instantiate(ButtonPrefab, _panel.ResponsesPanel.ResponseButtonsContainer.transform);
-                btn.Init(baseNode, texts[i], hints[i], _panel.ResponsesPanel, () =>
+                btn.Init(baseNode, texts[i], hints[i], _panel.ResponsesPanel,
+                () =>
                 {
-                    GameManager.Instance.MessagingCanvas.GetConversationButton(character).HasResponseReady = false;
-
-                }, unityActions[i]);
+                    GameManager.Instance.MessagingCanvas.SetNewNotification(character, responseNotification: true, messageSeen: true);
+                },
+                unityActions[i]);
             }
 
             _panel.ResponsesPanel.Open();

@@ -41,7 +41,7 @@ public class MessagingConversationPanel : UIPanel
     {
         var item = _messageContainers[0].transform;
         var index = 0;
-        while(item.childCount > 0)
+        while (item.childCount > 0)
         {
             var child = item.GetChild(0);
             var messageInfo = _messageBubbleInfosLeft[index];
@@ -60,7 +60,7 @@ public class MessagingConversationPanel : UIPanel
         {
             var count = 0;
             var maxLoops = 30;
-            for(var index = 0; index < _messageBubbleInfosLeft.Count; index++)
+            for (var index = 0; index < _messageBubbleInfosLeft.Count; index++)
             {
                 var leftInfo = _messageBubbleInfosLeft[index];
                 leftInfo.SendToPanel(this);
@@ -82,7 +82,7 @@ public class MessagingConversationPanel : UIPanel
         _characterIcon.Character = _character;
         _characterName.text = _character.name;
         GameManager.Instance.SetNewMessage(_character, false);
-
+        MainMenuCanvas.Instance.SetMessagingAppNotification(_character, messageSeen: true);
         yield return new WaitForSeconds(_delay);
         base.Open();
     }
@@ -156,7 +156,7 @@ public class MessagingConversationPanel : UIPanel
             Canvas.ForceUpdateCanvases();
             _scrollView.verticalNormalizedPosition = 0;
         }
-        catch (System.Exception){}
+        catch (System.Exception) { }
     }
 
     private void Update()
@@ -169,7 +169,7 @@ public class MessagingConversationPanel : UIPanel
                 _contentContainer.anchorMin = new Vector2(0, 0);
                 _contentContainer.anchorMax = new Vector2(1, 0);
                 _contentContainer.pivot = new Vector2(0.5f, 0);
-                foreach(var item in _messageContainers)
+                foreach (var item in _messageContainers)
                 {
                     var rect = item.GetComponent<RectTransform>();
                     rect.anchorMin = new Vector2(0, 0);
