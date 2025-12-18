@@ -4,6 +4,7 @@ using TMPro;
 using MeetAndTalk;
 using System;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 
 public class SocialMediaCanvas : UICanvas
 {
@@ -36,6 +37,11 @@ public class SocialMediaCanvas : UICanvas
             Destroy(item);
     }
 
+    public static void PostToSoicalMediaApp(SocialMediaPostSO _data, DialogueNodeData nodeData, bool showNotification = true)
+    {
+        GameManager.Instance.SocialMediaCanvas.PostToSocialMedia(_data, nodeData, showNotification);
+    }
+
     public void PostToSocialMedia(SocialMediaPostSO _data, DialogueNodeData nodeData, bool showNotification = true)
     {
         Debug.Log($"Attempting to post to social media. Prefab valid: {socialMediaPostPrefab != null}, Container valid: {socialMediaPostsContainer != null}");
@@ -56,12 +62,16 @@ public class SocialMediaCanvas : UICanvas
         {
             Debug.LogError($"Error calling SetData on new post: {ex.Message}\n{ex.StackTrace}", post.gameObject);
         }
+
+        // Note: The social media canvas is different than messages as all posts are tied to the assigned character rather than a specific dialogue character
+        // Pass the assigned story character's character data for notification purposes
+        MainMenuCanvas.Instance.SetSocialMediaAppNotification(nodeData.Character, postSeen: false);
     }
 
 
     public void Clear()
     {
-        for(var index = 0; index < socialMediaPostsContainer.childCount; index++)
+        for (var index = 0; index < socialMediaPostsContainer.childCount; index++)
         {
             Destroy(socialMediaPostsContainer.GetChild(index).gameObject, .5f);
         }
@@ -70,6 +80,9 @@ public class SocialMediaCanvas : UICanvas
     public override void Open()
     {
         base.Open();
-        //GameManager.Instance.MessagingCanvas.Close();
+
+        // Note: The social media canvas is different than messages as all posts are tied to the assigned character rather than a specific dialogue character
+        // Pass the assigned story character's character data for notification purposes
+        MainMenuCanvas.Instance.SetSocialMediaAppNotification(null, postSeen: true);
     }
 }

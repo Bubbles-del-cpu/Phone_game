@@ -263,6 +263,7 @@ public class GameManager : MonoBehaviour
 
         //Double call to messaging canvas close in order to shut the contants window AND the message window
         messagingCanvas.Close();
+        MainMenuCanvas.Instance.ClearButtons();
 
         if (startDialogue)
             StartCoroutine(CoStartDialogue());

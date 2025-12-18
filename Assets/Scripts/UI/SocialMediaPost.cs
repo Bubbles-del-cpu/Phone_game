@@ -53,7 +53,7 @@ public class SocialMediaPost : MonoBehaviour
     IEnumerator CoSpawnNotification(SocialMediaPostSO value)
     {
         yield return new WaitForSeconds(1f);
-        DialogueUIManager.Instance.SpawnNotification(Notification.NotificationType.SocialMedia, value.Character, DialogueLocalizationHelper.GetText(value.MessageTexts));
+        NotificationCanvas.Instance.SpawnNotification(Notification.NotificationType.SocialMedia, value.Character, DialogueLocalizationHelper.GetText(value.MessageTexts));
     }
 
     public void SetData(SocialMediaPostSO data, DialogueNodeData nodeData, bool showNotification)
@@ -140,17 +140,17 @@ public class SocialMediaPost : MonoBehaviour
     /// <param name="post"></param>
     private void PopulateComments(SocialMediaPostSO post)
     {
-         // Added null checks
+        // Added null checks
         if (post == null || post.Comments == null || _commentPrefab == null || _commentsSection == null)
         {
             LogError($"Cannot populate comments! Post: {post}, CommentsList: {post?.Comments}, Prefab: {_commentPrefab}, Section: {_commentsSection}");
             return;
         }
 
-         // Clear existing comments first? Optional, but often needed.
-         // foreach (Transform child in _commentsSection) { Destroy(child.gameObject); }
+        // Clear existing comments first? Optional, but often needed.
+        // foreach (Transform child in _commentsSection) { Destroy(child.gameObject); }
 
-        for(var index = 0; index < post.Comments.Count; index++)
+        for (var index = 0; index < post.Comments.Count; index++)
         {
             if (post.Comments[index] != null)
             {
