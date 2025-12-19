@@ -42,6 +42,7 @@ public class TriggerNextChapterButton : MonoBehaviour
             }
             else
             {
+
                 var chapterNumber = saveManager.CurrentSave.CurrentState.CompletedChapters.Count;
                 saveManager.ClearChapterData(resetBackground: false);
                 DialogueChapterManager.Instance.TriggerStoryChapter(chapterNumber);

@@ -255,7 +255,7 @@ public class DialogueChapterManager : UICanvas
     /// <param name="chapterNumber">Position of the chapter in the StoryList</param>
     public void TriggerStoryChapter(int chapterNumber)
     {
-         if (chapterNumber >= StoryList.Count)
+        if (chapterNumber >= StoryList.Count)
         {
             //We have completed all chapters. Maybe do something here but for now just load the last chapter
             chapterNumber = StoryList.Count - 1;

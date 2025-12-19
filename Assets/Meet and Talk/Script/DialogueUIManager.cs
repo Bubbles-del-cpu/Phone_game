@@ -201,7 +201,8 @@ namespace MeetAndTalk
                         switch (nodeData)
                         {
                             case DialogueNodeData nd when nodeData is DialogueNodeData:
-                                SocialMediaCanvas.PostToSoicalMediaApp(nd.Post, nd, showNotification: true);
+                                if (nd.Post != null)
+                                    SocialMediaCanvas.PostToSoicalMediaApp(nd.Post, nd, showNotification: true);
                                 targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
                                 break;
                             case DialogueChoiceNodeData nd when nodeData is DialogueChoiceNodeData:
@@ -218,7 +219,8 @@ namespace MeetAndTalk
                         {
                             case DialogueNodeData nd:
                                 {
-                                    SocialMediaCanvas.PostToSoicalMediaApp(nd.Post, nd, showNotification: true);
+                                    if (nd.Post != null)
+                                        SocialMediaCanvas.PostToSoicalMediaApp(nd.Post, nd, showNotification: true);
                                     targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
 
                                     //Unlock any media associated with this node

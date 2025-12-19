@@ -130,7 +130,7 @@ namespace MeetAndTalk
             PopulateDictionary();
         }
 
-       // public void StartDialogue(DialogueContainerSO dialogue) { StartDialogue(dialogue, ""); }
+        // public void StartDialogue(DialogueContainerSO dialogue) { StartDialogue(dialogue, ""); }
         //public void StartDialogue(string ID) { StartDialogue(null, ID); }
         //public void StartDialogue() { StartDialogue(null, ""); }
         public void StartDialogue(DialogueContainerSO DialogueSO, ChapterSaveData chapterData)
@@ -165,6 +165,8 @@ namespace MeetAndTalk
                 Debug.Log("Loading Dialogue History...");
                 StartCoroutine(PopulateHistoryCoroutine(chapterData));
             }
+
+            SaveAndLoadManager.Save();
         }
 
         private IEnumerator PopulateHistoryCoroutine(ChapterSaveData chapterData)
@@ -321,7 +323,7 @@ namespace MeetAndTalk
                                 rollbackList.Add(choiceNode.Character, 0);
 
                             //Removes the text from the character that is displayed before the choice
-                            if(choiceNode.RequireCharacterInput)
+                            if (choiceNode.RequireCharacterInput)
                                 rollbackList[choiceNode.Character] += 1;
 
                             if (ignoreFirstChoice)
@@ -484,7 +486,7 @@ namespace MeetAndTalk
             //    DialogueNode_NextNode();
             //}
 
-           // if (_nodeData.Delay != 0) StartTrackedCoroutine(delaytmp()); ;
+            // if (_nodeData.Delay != 0) StartTrackedCoroutine(delaytmp()); ;
 
             lastDialogueNodeData = currentDialogueNodeData;
             currentDialogueNodeData = _nodeData;
@@ -604,7 +606,7 @@ namespace MeetAndTalk
                 ChoiceNode_GenerateChoice(_nodeData.Character, _nodeData);
             }
 
-            StartTrackedCoroutine(tmp());;
+            StartTrackedCoroutine(tmp()); ;
 
             if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null) AudioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
         }
@@ -636,7 +638,7 @@ namespace MeetAndTalk
                     CheckNodeType(GetNodeByGuid(lastDialogueNodeData.NodeGuid));
                     break;
                 case EndNodeType.ReturnToStart:
-                    CheckNodeType(GetNextNode(dialogueContainer.StartNodeDatas[Random.Range(0,dialogueContainer.StartNodeDatas.Count)]));
+                    CheckNodeType(GetNextNode(dialogueContainer.StartNodeDatas[Random.Range(0, dialogueContainer.StartNodeDatas.Count)]));
                     break;
                 case EndNodeType.StartDialogue:
                     StartDialogue(_nodeData.Dialogue, SaveAndLoadManager.Instance.CurrentSave.CurrentChapterData);
@@ -684,7 +686,7 @@ namespace MeetAndTalk
             {
                 //yield return new WaitForSecondsRealtime(_nodeData.Duration);
                 _nodeData.Reset();
-                while(_nodeData.ShouldDelay())
+                while (_nodeData.ShouldDelay())
                 {
                     yield return new WaitForEndOfFrame();
                 }
@@ -692,7 +694,7 @@ namespace MeetAndTalk
                 TimerNode_GenerateChoice(_nodeData.Character, _nodeData);
             }
 
-            StartTrackedCoroutine(tmp());;
+            StartTrackedCoroutine(tmp()); ;
 
             if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null) AudioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
 
@@ -826,7 +828,7 @@ namespace MeetAndTalk
             dialogueUIManager.dialogueCanvas.Close();
             EndDialogueEvent.Invoke();
 
-StopAllTrackedCoroutines();
+            StopAllTrackedCoroutines();
 
             // Reset Audio
             AudioSource.Stop();

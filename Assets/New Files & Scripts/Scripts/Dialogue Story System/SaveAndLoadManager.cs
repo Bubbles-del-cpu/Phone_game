@@ -93,6 +93,12 @@ public class SaveAndLoadManager : MonoBehaviour
         System.IO.File.WriteAllText(GetPath(saveSlot), data);
     }
 
+    public static void Save()
+    {
+        Instance.CurrentSave.AutoSaveState = Instance.CurrentSave.CurrentState.Clone();
+        SaveToJson(Instance.CurrentSave, Instance.CurrentSaveSlot);
+    }
+
     [ContextMenu("Load from Json")]
     public static SaveFileData LoadFromJson(int saveSlot)
     {

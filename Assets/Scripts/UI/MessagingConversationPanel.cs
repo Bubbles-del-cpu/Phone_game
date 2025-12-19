@@ -44,8 +44,8 @@ public class MessagingConversationPanel : UIPanel
         while (item.childCount > 0)
         {
             var child = item.GetChild(0);
-            var messageInfo = _messageBubbleInfosLeft[index];
-            DialogueUIManagerObjectPool.Instance.ReturnMessageBubble(child.GetComponent<MessagingBubble>(), messageInfo.Source);
+            var bubble = child.GetComponent<MessagingBubble>();
+            DialogueUIManagerObjectPool.Instance.ReturnMessageBubble(bubble, bubble.Source);
 
             index++;
         }
