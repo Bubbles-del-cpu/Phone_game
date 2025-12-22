@@ -91,6 +91,7 @@ namespace MeetAndTalk
                     if (!_failLoadDialogShown)
                     {
                         _failLoadDialogShown = true;
+                        _populatHistoryFailed = false;
                         //The save file could not be loaded for this chapter, this implies that it is out of date with the latest verison.
                         //Reset the game state and start the Player from the top of the chapter
                         GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.INVALID_SAVE_DATA, () =>

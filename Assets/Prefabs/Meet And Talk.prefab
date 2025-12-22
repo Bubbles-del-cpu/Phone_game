@@ -27924,6 +27924,104 @@ MonoBehaviour:
         m_WaitForCompletion: 0
         m_LocalVariables: []
       OptionSetting2: false
+  - Story: {fileID: 11400000, guid: 9dece1ce1aa3de941818140ddf07f0e4, type: 2}
+    StartID: 
+    ChapterIndex: 0
+    IsStoryChapter: 0
+    ReplaySettings:
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 10148775941169152
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Value:
+        ValueName: Continue_math
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 10149008259473408
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      OptionSetting1: true
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 10148971538341888
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      OptionSetting2: false
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 10148210532212736
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Value:
+        ValueName: khalid_meet
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:25c33b9c4e890044482bdbe4669d5c2f
+        m_TableEntryReference:
+          m_KeyId: 9340416000
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      OptionSetting1: true
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:25c33b9c4e890044482bdbe4669d5c2f
+        m_TableEntryReference:
+          m_KeyId: 235388235776
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      OptionSetting2: false
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 279327764480
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Value:
+        ValueName: DOM_LVL
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52484340674560
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      OptionSetting1: 110
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52539290251264
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      OptionSetting2: 90
   StandaloneChapters:
   - Story: {fileID: 11400000, guid: d4c97dc564b9dab409c930d50f4456ab, type: 2}
     StartID: 

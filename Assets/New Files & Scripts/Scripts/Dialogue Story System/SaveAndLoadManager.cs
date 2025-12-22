@@ -187,9 +187,13 @@ public class SaveAndLoadManager : MonoBehaviour
             CurrentSave.CurrentState.LastChapter.PastCoversations = new List<ChapterSaveData.PastCoversationData>();
             CurrentSave.CurrentState.LastChapter.CurrentGUID = "";
             CurrentSave.CurrentState.LastChapter.Completed = false;
+            CurrentSave.CurrentState.LastChapter.FileName = string.Empty;
+            CurrentSave.CurrentState.LastChapter.FileIndex = -1;
 
             if (resetBackground)
                 GameManager.Instance.ResetBackgroundImage();
+
+            SaveAndLoadManager.Save();
         }
         catch (Exception) { }
     }
