@@ -2,7 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
+#if UNITY_EDITOR
 using UnityEditor.Localization.Plugins.XLIFF.V12;
+#endif
 
 namespace MeetAndTalk
 {

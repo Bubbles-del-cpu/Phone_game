@@ -4,7 +4,9 @@ using TMPro;
 using MeetAndTalk;
 using System;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor.Experimental.GraphView;
+#endif
 
 public class SocialMediaCanvas : UICanvas
 {
