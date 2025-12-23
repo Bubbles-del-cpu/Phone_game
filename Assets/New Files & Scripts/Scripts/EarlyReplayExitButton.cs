@@ -11,6 +11,7 @@ public class EarlyReplayExitButton : MonoBehaviour
         _button = GetComponent<Button>();
         _button.onClick.AddListener(OnClick);
     }
+
     private void OnClick()
     {
         GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.EARLY_REPLAY_EXIT, () =>

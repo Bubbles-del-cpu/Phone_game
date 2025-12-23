@@ -20,12 +20,8 @@ public class MainMenuCanvas : MonoBehaviour
     [SerializeField] private GameAppButton _socialMediaAppButton;
     [SerializeField] private GameAppButton _galleryAppButton;
     [SerializeField] private GameAppButton _settingsAppButton;
-    
-    // 1. ADDED: The missing button reference for Standalone Chapters
-    [SerializeField] private GameAppButton _standaloneChapterButton; 
-    
-    // (Optional: Kept this if you still use it)
-    [SerializeField] private GameAppButton _replayAppButton; 
+    [SerializeField] private GameAppButton _standaloneChapterButton;
+    [SerializeField] private GameAppButton _replayAppButton;
 
     private List<GameAppButton> _allButtons;
 
@@ -38,31 +34,23 @@ public class MainMenuCanvas : MonoBehaviour
         }
         _instance = this;
 
-        // 2. UPDATED: Add the new button to the list for easier clearing
-        _allButtons = new List<GameAppButton> 
-        { 
-            _messagingAppButton, 
-            _socialMediaAppButton, 
-            _galleryAppButton, 
-            _settingsAppButton, 
+        _allButtons = new List<GameAppButton>
+        {
+            _messagingAppButton,
+            _socialMediaAppButton,
+            _galleryAppButton,
+            _settingsAppButton,
             _replayAppButton,
-            _standaloneChapterButton // Added here
+            _standaloneChapterButton
         };
 
         // Setup button listeners
-        if(_messagingAppButton) _messagingAppButton.OnClick.AddListener(OpenMessagingApp);
-        if(_socialMediaAppButton) _socialMediaAppButton.OnClick.AddListener(OpenSocialMediaApp);
-        if(_galleryAppButton) _galleryAppButton.OnClick.AddListener(OpenGalleryApp);
-        if(_settingsAppButton) _settingsAppButton.OnClick.AddListener(OpenSettingsApp);
-        
-        // 3. UPDATED: Ensure Replay points to the correct method
-        if(_replayAppButton) _replayAppButton.OnClick.AddListener(OpenReplayApp);
-
-        // 4. UPDATED: Add listener for the new button
-        if (_standaloneChapterButton) 
-        {
-            _standaloneChapterButton.OnClick.AddListener(OpenStandaloneChapter);
-        }
+        if (_messagingAppButton) _messagingAppButton.OnClick.AddListener(OpenMessagingApp);
+        if (_socialMediaAppButton) _socialMediaAppButton.OnClick.AddListener(OpenSocialMediaApp);
+        if (_galleryAppButton) _galleryAppButton.OnClick.AddListener(OpenGalleryApp);
+        if (_settingsAppButton) _settingsAppButton.OnClick.AddListener(OpenSettingsApp);
+        if (_replayAppButton) _replayAppButton.OnClick.AddListener(OpenReplayApp);
+        if (_standaloneChapterButton) _standaloneChapterButton.OnClick.AddListener(OpenStandaloneChapter);
     }
 
     private void OnDestroy()
@@ -72,8 +60,6 @@ public class MainMenuCanvas : MonoBehaviour
         if (_galleryAppButton) _galleryAppButton.OnClick.RemoveListener(OpenGalleryApp);
         if (_settingsAppButton) _settingsAppButton.OnClick.RemoveListener(OpenSettingsApp);
         if (_replayAppButton) _replayAppButton.OnClick.RemoveListener(OpenReplayApp);
-        
-        // 5. UPDATED: Clean up listener
         if (_standaloneChapterButton) _standaloneChapterButton.OnClick.RemoveListener(OpenStandaloneChapter);
     }
 
@@ -91,19 +77,8 @@ public class MainMenuCanvas : MonoBehaviour
     private void OpenSocialMediaApp() => GameManager.Instance.SocialMediaCanvas.Open();
     private void OpenGalleryApp() => GameManager.Instance.GalleryCanvas.Open();
     private void OpenSettingsApp() => SettingsCanvas.Instance.Open();
-    
-    // 6. FIX: Point to the specific method that loads Story Chapters
-    // Previously this was just .Open(), which confused the manager.
-    private void OpenReplayApp() 
-    {
-        DialogueChapterManager.Instance.OpenChapterSelect();
-    }
-
-    // 7. FIX: Point to the specific method that loads Standalone Chapters
-    private void OpenStandaloneChapter()
-    {
-        DialogueChapterManager.Instance.OpenStandaloneChapterSelect();
-    }
+    private void OpenReplayApp() => DialogueChapterManager.Instance.OpenChapterSelect();
+    private void OpenStandaloneChapter() => DialogueChapterManager.Instance.OpenStandaloneChapterSelect();
 
     #endregion
 

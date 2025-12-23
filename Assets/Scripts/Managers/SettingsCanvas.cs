@@ -31,6 +31,7 @@ public class SettingsCanvas : UICanvas
     [SerializeField] private Button _addNewSaveButton;
     [SerializeField] private GameObject _saveStateWarning;
     [SerializeField] private GameObject _noSaveStatesMessage;
+    [SerializeField] private GameObject _earlyReplayExitButton;
 
     [Header("Prefabs")]
     [SerializeField] private SaveStateButton _saveStateEntryPrefab;
@@ -77,6 +78,9 @@ public class SettingsCanvas : UICanvas
         {
             SetView((int)CurrentView.Settings);
         }
+
+        if (_earlyReplayExitButton)
+            _earlyReplayExitButton.SetActive(SaveAndLoadManager.Instance.ReplayingCompletedChapter);
     }
 
     /// <summary>
