@@ -140,6 +140,8 @@ namespace MeetAndTalk
             {
                 case DialogueNodeData nd when _nodeData is DialogueNodeData:
                     targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
+                    if (nd.Post != null)
+                        SocialMediaCanvas.PostToSoicalMediaApp(nd.Post, nd, showNotification: false);
                     break;
                 case DialogueChoiceNodeData nd when _nodeData is DialogueChoiceNodeData:
                     targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
