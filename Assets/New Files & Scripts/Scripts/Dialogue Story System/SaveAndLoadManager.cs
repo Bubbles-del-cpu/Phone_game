@@ -77,6 +77,9 @@ public class SaveAndLoadManager : MonoBehaviour
 
         // Load the language from the save file
         GameManager.Instance.ChangeLanguage(CurrentSave.CurrentLanguage);
+
+        // Populate the save states in the settings canvas
+        SettingsCanvas.Instance.PopulateSaveStates(CurrentSave.SaveStates);
     }
 
     public void StartGame()
