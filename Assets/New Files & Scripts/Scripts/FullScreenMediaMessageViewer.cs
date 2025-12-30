@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 public class FullScreenMediaMessageViewer : MonoBehaviour, IPointerClickHandler
 {
     private MediaType _type => _isSocialMediaPost ? _assignedNode.Post.MediaType : _assignedNode.MediaType;
+    [SerializeField] private bool _openedFromGallery;
 
     private DialogueNodeData _assignedNode;
     private bool _isSocialMediaPost;
@@ -18,24 +19,15 @@ public class FullScreenMediaMessageViewer : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        //try
-        //{
-            var galleryCanvas = GameManager.Instance.GalleryCanvas;
-            switch (_type)
-            {
-                case MediaType.Sprite:
-                    galleryCanvas.OpenImage(_assignedNode, openedFromMessage: true, _isSocialMediaPost);
-                    break;
-                case MediaType.Video:
-                    galleryCanvas.OpenVideo(_assignedNode, openedFromMessage: true, _isSocialMediaPost);
-                    break;
-            }
-        //}
-        // catch (System.Exception e)
-        // {
-        //     Debug.LogError("Gallery Canvas is not assigned in Game Manager.");
-        //     Debug.LogError(e.Message);
-        //     return;
-        // }
+        var galleryCanvas = GameManager.Instance.GalleryCanvas;
+        switch (_type)
+        {
+            case MediaType.Sprite:
+                galleryCanvas.OpenImage(_assignedNode, _openedFromGallery, _isSocialMediaPost);
+                break;
+            case MediaType.Video:
+                galleryCanvas.OpenVideo(_assignedNode, _openedFromGallery, _isSocialMediaPost);
+                break;
+        }
     }
 }

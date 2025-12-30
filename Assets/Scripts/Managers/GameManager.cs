@@ -189,7 +189,7 @@ public class GameManager : MonoBehaviour
             {
                 if (item.FileName == targetFileName)
                 {
-                    SaveAndLoadManager.Instance.CurrentSave.UnlockMedia(nodeData, false);
+                    SaveAndLoadManager.Instance.CurrentSave.UnlockMedia(nodeData, item.IsLinearPathUnlock);
                     SaveAndLoadManager.Instance.CurrentSave.CustomBackgroundImage = item;
 
                     if (save)

@@ -1714,7 +1714,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11.3
+  m_fontSize: 11.15
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3124,11 +3124,11 @@ MonoBehaviour:
   _children: []
   _autoUpdate: 1
   _autoCollectChildren: 1
+  _padding: {x: 0, y: 6}
+  _paddingPerChild: 1
+  _useSizeOnly: 0
   _computeTotalY: 1
   _computeTotalX: 0
-  _paddingPerChild: 1
-  _includeWidth: 0
-  _padding: {x: 0, y: 6}
 --- !u!1 &1164383347399448586
 GameObject:
   m_ObjectHideFlags: 0
@@ -8993,8 +8993,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5bb7d15d6540641ae90bf09d7a9923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  socialMediaPostPrefab: {fileID: 6619704965765484665, guid: ec12ca90fbe319a4e956ae874984881e, type: 3}
-  socialMediaPostsContainer: {fileID: 350345338180909069}
+  _socialMediaPostPrefab: {fileID: 6619704965765484665, guid: ec12ca90fbe319a4e956ae874984881e, type: 3}
+  _socialMediaPostsContainer: {fileID: 350345338180909069}
+  _socialMediaPage: {fileID: 0}
+  _profilePageButtonContainer: {fileID: 0}
+  _profilePageButtonPrefab: {fileID: 0}
 --- !u!1 &2594616176272469532
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,6 +19,7 @@ namespace MeetAndTalk
         public Color textColor = new Color(.8f, .8f, .8f, 1);
         [Header("Profile Images")]
         public List<CharacterSprite> Avatars;
+        public SocialMediaProfileSO SocialMediaProfile;
 
         public string HexColor()
         {

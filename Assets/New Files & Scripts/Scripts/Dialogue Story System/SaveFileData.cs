@@ -32,13 +32,14 @@ public class SaveFileData
         public string Name;
     }
 
-    [System.Serializable]
+    [Serializable]
     public class MediaData
     {
         public string NodeGUID = string.Empty;
         public string FileName = string.Empty;
         public int ChapterIndex;
         public bool IsSocialMediaPost;
+        public bool IsLinearPathUnlock;
         public bool NotBackgroundCapable;
         public ChapterType ChapterType;
         public MediaLockState LockedState;
@@ -261,10 +262,10 @@ public class SaveFileData
                         switch (item.LockedState)
                         {
                             case MediaLockState.Unknown:
-                                UnlockMedia((DialogueNodeData)node, false);
+                                UnlockMedia((DialogueNodeData)node, item.IsLinearPathUnlock);
                                 break;
                             case MediaLockState.Unlocked:
-                                UnlockMedia((DialogueNodeData)node, false);
+                                UnlockMedia((DialogueNodeData)node, item.IsLinearPathUnlock);
                                 break;
                         }
                     }
@@ -275,7 +276,7 @@ public class SaveFileData
                     {
                         case MediaLockState.Unknown:
                         case MediaLockState.Unlocked:
-                            UnlockMedia(item.FileName, false);
+                            UnlockMedia(item.FileName, item.IsLinearPathUnlock);
                             break;
                     }
                 }
@@ -364,6 +365,7 @@ public class SaveFileData
                 ChapterIndex = chapterData.ChapterIndex,
                 ChapterType = chapterData.IsStoryChapter ? ChapterType.Story : ChapterType.Standalone,
                 LockedState = MediaLockState.Locked,
+                IsLinearPathUnlock = false,
                 NotBackgroundCapable = nodeData.NotBackgroundCapable,
                 IsSocialMediaPost = false,
                 Node = nodeData
@@ -386,6 +388,7 @@ public class SaveFileData
                     ChapterType = chapterData.IsStoryChapter ? ChapterType.Story : ChapterType.Standalone,
                     LockedState = MediaLockState.Locked,
                     NotBackgroundCapable = nodeData.Post.NotBackgroundCapable,
+                    IsLinearPathUnlock = false,
                     IsSocialMediaPost = true,
                     Node = nodeData
                 });
@@ -397,7 +400,7 @@ public class SaveFileData
         return true;
     }
 
-    public void UnlockMedia(DialogueNodeData nodeData, bool save = true)
+    public void UnlockMedia(DialogueNodeData nodeData, bool linearPath)
     {
         var item = UnlockedMedia.FirstOrDefault(x => x.FileName == nodeData.MediaFileName);
         if (item != null)
@@ -405,6 +408,7 @@ public class SaveFileData
             //We found the media, unlock it
             item.LockedState = MediaLockState.Unlocked;
             item.FileName = nodeData.MediaFileName;
+            item.IsLinearPathUnlock = linearPath;
         }
 
         if (nodeData.Post != null)
@@ -414,6 +418,7 @@ public class SaveFileData
             {
                 socialItem.FileName = nodeData.Post.MediaFileName;
                 socialItem.LockedState = MediaLockState.Unlocked;
+                socialItem.IsLinearPathUnlock = linearPath;
             }
         }
 
@@ -421,12 +426,13 @@ public class SaveFileData
         //SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
     }
 
-    private void UnlockMedia(string fileName, bool save = true)
+    private void UnlockMedia(string fileName, bool linearPath)
     {
         var item = UnlockedMedia.FirstOrDefault(x => x.FileName == fileName);
         if (item != null)
         {
             item.LockedState = MediaLockState.Unlocked;
+            item.IsLinearPathUnlock = linearPath;
         }
 
         //if (save)

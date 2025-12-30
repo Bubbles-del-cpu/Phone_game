@@ -45,6 +45,20 @@ public class SocialMediaPost : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// The character associated with this social media post
+    /// </summary>
+    public DialogueCharacterSO Character
+    {
+        get
+        {
+            if (_tiedNode.Post != null && _tiedNode.Post.Character != null)
+                return _tiedNode.Post.Character;
+
+            return _tiedNode.Character;
+        }
+    }
+
     private void LogError(string message, Object context = null)
     {
         Debug.LogError($"[SocialMediaPost] {message}", context ?? this.gameObject);

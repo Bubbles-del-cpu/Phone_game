@@ -8,7 +8,7 @@ public class GalleryHelper
     private string _salt;
     private string _hash;
     private int _refLength;
-    public GalleryHelper(GalleryCanvas.GalleryUnlockData data, string pass)
+    public GalleryHelper(GalleryUnlockData data, string pass)
     {
         _salt = data.Salt;
         _hash = data.Hash;

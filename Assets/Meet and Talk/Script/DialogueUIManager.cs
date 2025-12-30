@@ -229,7 +229,7 @@ namespace MeetAndTalk
 
                                     //Unlock any media associated with this node
                                     var saveData = SaveAndLoadManager.Instance.CurrentSave;
-                                    saveData.UnlockMedia(nd);
+                                    saveData.UnlockMedia(nd, SaveAndLoadManager.Instance.ReplayingCompletedChapter == false);
                                     GameManager.Instance.GalleryCanvas.UnlockMediaButton(nd, reloadedGallery: true);
                                     if (notification)
                                         GameManager.Instance.MessagingCanvas.SetNewNotification(nd.Character, responseNotification: false, messageSeen: false);
