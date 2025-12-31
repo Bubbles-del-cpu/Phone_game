@@ -27,6 +27,7 @@ public class SocialMediaCanvas : UICanvas
     [SerializeField] private SocialMediaProfilePage _socialMediaPage;
     [SerializeField] private RectTransform _profilePageButtonContainer;
     [SerializeField] private GameObject _profilePageButtonPrefab;
+    [SerializeField] private GameObject _noPostsWarning;
 
     /// <summary>
     /// Dictionary to keep track of profile buttons for each character
@@ -37,6 +38,10 @@ public class SocialMediaCanvas : UICanvas
     /// </summary>
     private Dictionary<DialogueCharacterSO, List<SocialMediaPost>> _characterPosts = new Dictionary<DialogueCharacterSO, List<SocialMediaPost>>();
 
+    private void Update()
+    {
+        _noPostsWarning.SetActive(_socialMediaPostsContainer.childCount == 0);
+    }
 
     public void RemovePosts(int count)
     {
@@ -117,7 +122,7 @@ public class SocialMediaCanvas : UICanvas
     /// Adds a profile button for the character if it doesn't already exist
     /// </summary>
     /// <param name="postData">Social media post data</param>
-    private void AddProfileButton(SocialMediaPostSO postData)
+    public void AddProfileButton(SocialMediaPostSO postData)
     {
         if (_profileButtons.ContainsKey(postData.Character))
             return;

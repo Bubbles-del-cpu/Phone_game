@@ -231,7 +231,6 @@ public class GameManager : MonoBehaviour
 
     public void ResetGameState(bool startDialogue = true)
     {
-
         //Reset the navigation stack
         GalleryCanvas.ResetGalleryButtons();
         NavigationManager.Instance.ResetStack();

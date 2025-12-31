@@ -42,11 +42,14 @@ public class TriggerNextChapterButton : MonoBehaviour
             }
             else
             {
-
                 var chapterNumber = saveManager.CurrentSave.CurrentState.CompletedChapters.Count;
                 saveManager.ClearChapterData(resetBackground: false);
                 DialogueChapterManager.Instance.TriggerStoryChapter(chapterNumber);
             }
+
+            // Returning to linear path mode so both flags should be false
+            saveManager.ReplayingCompletedChapter = false;
+            saveManager.PlayingStandaloneChapter = false;
         });
     }
 }

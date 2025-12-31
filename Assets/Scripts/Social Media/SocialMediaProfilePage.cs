@@ -7,18 +7,22 @@ using UnityEngine.UI;
 public class SocialMediaProfilePage : MonoBehaviour
 {
     [SerializeField] private CanvasGroup _canvasGroup;
+    [SerializeField] private RectTransform _galleryContainer;
     [SerializeField] private Image _profileIcon;
     [SerializeField] private Image _profileImage;
     [SerializeField] private TMP_Text _profileName;
     [SerializeField] private TMP_Text _profileDescription;
-    [SerializeField] private RectTransform _galleryContainer;
+    [SerializeField] private TMP_Text _followerCountText;
+    [SerializeField] private TMP_Text _followingCountText;
 
     #region Properties
+    public RectTransform GalleryContainer => _galleryContainer;
     public Image ProfileIcon => _profileIcon;
     public Image ProfileImage => _profileImage;
     public TMP_Text ProfileName => _profileName;
     public TMP_Text ProfileDescription => _profileDescription;
-    public RectTransform GalleryContainer => _galleryContainer;
+    public TMP_Text FollowerCountText => _followerCountText;
+    public TMP_Text FollowingCountText => _followingCountText;
     #endregion
 
     [Header("Gallery Item Prefabs")]
@@ -45,6 +49,7 @@ public class SocialMediaProfilePage : MonoBehaviour
     /// <param name="character">The character whose social media profile data will be used to initialize the page</param>
     public void OpenProfile(DialogueCharacterSO character)
     {
+        ClearProfilePage();
         character.SocialMediaProfile.SetupProfilePage(this);
 
         // Populate the gallery with the items relating to this profile
@@ -83,6 +88,14 @@ public class SocialMediaProfilePage : MonoBehaviour
         _canvasGroup.interactable = false;
         _canvasGroup.blocksRaycasts = false;
 
+        ClearProfilePage();
+    }
+
+    /// <summary>
+    /// Clears the profile page by returning all gallery items to their respective pools
+    /// </summary>
+    private void ClearProfilePage()
+    {
         // Return all gallery items to their respective pools
         foreach (var item in _galleryItems)
         {

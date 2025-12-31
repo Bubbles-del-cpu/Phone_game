@@ -17,6 +17,13 @@ public class SocialMediaProfileButton : MonoBehaviour
 
     private void OnButtonClicked()
     {
+        if (SaveAndLoadManager.Instance.ReplayingCompletedChapter)
+        {
+            // In replays we cannot access the social media profile pages
+            GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.WARNING_SOCIAL_MEDIA_ACCESS_DURING_REPLAY, null, GameConstants.UIElementKeys.CONTINUE, null, false);
+            return;
+        }
+
         var command = new SocialMediaProfileOpenCommand(_assignedCharacter);
         NavigationManager.Instance.InvokeCommand(command, allowUndo: true);
     }

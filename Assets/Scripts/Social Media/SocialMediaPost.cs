@@ -7,7 +7,7 @@ using System.Collections;
 
 public class SocialMediaPost : MonoBehaviour
 {
-    [SerializeField] ProfileIcon icon;
+    [SerializeField] SocialMediaProfileButton profileButton;
     [SerializeField] TMP_Text nameLabel;
     [SerializeField] TMP_Text postLabel;
     [SerializeField] Image postImage;
@@ -79,17 +79,17 @@ public class SocialMediaPost : MonoBehaviour
         }
 
         // Ensure component references are valid before proceeding
-        if (icon == null || nameLabel == null || postLabel == null || postImage == null || _mediaViewer == null)
+        if (profileButton == null || nameLabel == null || postLabel == null || postImage == null || _mediaViewer == null)
         {
-            LogError($"SetData has missing component references! Icon: {icon}, NameLabel: {nameLabel}, PostLabel: {postLabel}, PostImage: {postImage}, MediaViewer: {_mediaViewer}");
+            LogError($"SetData has missing component references! Icon: {profileButton}, NameLabel: {nameLabel}, PostLabel: {postLabel}, PostImage: {postImage}, MediaViewer: {_mediaViewer}");
             return;
         }
 
         // Added null check for safety
         if (data.Character != null)
         {
-            icon.Character = data.Character;
-            nameLabel.text = data.Character.name;
+            profileButton.Initialize(data.Character);
+            nameLabel.text = data.Character.GetName();
         }
         else
         {

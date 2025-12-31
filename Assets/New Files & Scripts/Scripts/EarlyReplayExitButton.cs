@@ -16,6 +16,10 @@ public class EarlyReplayExitButton : MonoBehaviour
     {
         GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.EARLY_REPLAY_EXIT, () =>
         {
+            // Returning to linear path mode so both flags should be false
+            SaveAndLoadManager.Instance.ReplayingCompletedChapter = false;
+            SaveAndLoadManager.Instance.PlayingStandaloneChapter = false;
+
             DialogueChapterManager.Instance.CompleteChapterReplayEarly();
         });
     }
