@@ -20,6 +20,7 @@ public class SocialMediaPostSO : ScriptableObject
     public List<LanguageGeneric<string>> MessageTexts;
     [HideInInspector] public string Message;
     public MediaType MediaType;
+    public MediaTargetPlatform TargetPlatform;
     public GalleryDisplay GalleryVisibility;
     public Sprite Image;
     public VideoClip Video;
@@ -46,5 +47,18 @@ public class SocialMediaPostSO : ScriptableObject
     /// List of social media comments that are attached to this post
     /// </summary>
     public List<SocialMediaComment> Comments;
+
+    public void SpawnNotification()
+    {
+        switch (TargetPlatform)
+        {
+            case MediaTargetPlatform.SpicySocialMediaPost:
+                NotificationCanvas.Instance.SpawnNotification(Notification.NotificationType.SpicySocialMedia, Character, DialogueLocalizationHelper.GetText(MessageTexts));
+                return;
+            case MediaTargetPlatform.SocialMediaPost:
+                NotificationCanvas.Instance.SpawnNotification(Notification.NotificationType.SocialMedia, Character, DialogueLocalizationHelper.GetText(MessageTexts));
+                break;
+        }
+    }
 
 }

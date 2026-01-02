@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GalleryCanvas galleryCanvas;
     [SerializeField] ContactsCanvas contactsCanvas;
     [SerializeField] SocialMediaCanvas socialMediaCanvas;
+    [SerializeField] SpicySocialMediaCanvas spicySocialMediaCanvas;
     [SerializeField] OverlayCanvas overlayCanvas;
 
     [Header("Config")]
@@ -248,6 +249,7 @@ public class GameManager : MonoBehaviour
         DialogueManager.Instance.DisplaySpeedMultipler = DialogueManager.ResponseSpeed.X1;
 
         socialMediaCanvas.Clear();
+        spicySocialMediaCanvas.Clear();
         messagingCanvas.Close();
 
         //Restart the dialogue trees
@@ -361,6 +363,7 @@ public class GameManager : MonoBehaviour
     public GalleryCanvas GalleryCanvas { get { return galleryCanvas; } }
     public ContactsCanvas ContactsCanvas { get { return contactsCanvas; } }
     public SocialMediaCanvas SocialMediaCanvas { get { return socialMediaCanvas; } }
+    public SpicySocialMediaCanvas SpicySocialMediaCanvas { get { return spicySocialMediaCanvas; } }
 
     public class CharacterData
     {

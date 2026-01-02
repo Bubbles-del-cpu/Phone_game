@@ -18,6 +18,7 @@ public class MainMenuCanvas : MonoBehaviour
     [Header("App Buttons")]
     [SerializeField] private GameAppButton _messagingAppButton;
     [SerializeField] private GameAppButton _socialMediaAppButton;
+    [SerializeField] private GameAppButton _spicySocialMediaAppButton;
     [SerializeField] private GameAppButton _galleryAppButton;
     [SerializeField] private GameAppButton _settingsAppButton;
     [SerializeField] private GameAppButton _standaloneChapterButton;
@@ -47,6 +48,7 @@ public class MainMenuCanvas : MonoBehaviour
         // Setup button listeners
         if (_messagingAppButton) _messagingAppButton.OnClick.AddListener(OpenMessagingApp);
         if (_socialMediaAppButton) _socialMediaAppButton.OnClick.AddListener(OpenSocialMediaApp);
+        if (_spicySocialMediaAppButton) _spicySocialMediaAppButton.OnClick.AddListener(OpenSpicySocialMediaApp);
         if (_galleryAppButton) _galleryAppButton.OnClick.AddListener(OpenGalleryApp);
         if (_settingsAppButton) _settingsAppButton.OnClick.AddListener(OpenSettingsApp);
         if (_replayAppButton) _replayAppButton.OnClick.AddListener(OpenReplayApp);
@@ -57,6 +59,7 @@ public class MainMenuCanvas : MonoBehaviour
     {
         if (_messagingAppButton) _messagingAppButton.OnClick.RemoveListener(OpenMessagingApp);
         if (_socialMediaAppButton) _socialMediaAppButton.OnClick.RemoveListener(OpenSocialMediaApp);
+        if (_spicySocialMediaAppButton) _spicySocialMediaAppButton.OnClick.RemoveListener(OpenSpicySocialMediaApp);
         if (_galleryAppButton) _galleryAppButton.OnClick.RemoveListener(OpenGalleryApp);
         if (_settingsAppButton) _settingsAppButton.OnClick.RemoveListener(OpenSettingsApp);
         if (_replayAppButton) _replayAppButton.OnClick.RemoveListener(OpenReplayApp);
@@ -75,6 +78,7 @@ public class MainMenuCanvas : MonoBehaviour
 
     private void OpenMessagingApp() => GameManager.Instance.MessagingCanvas.Open();
     private void OpenSocialMediaApp() => GameManager.Instance.SocialMediaCanvas.Open();
+    private void OpenSpicySocialMediaApp() => GameManager.Instance.SpicySocialMediaCanvas.Open();
     private void OpenGalleryApp() => GameManager.Instance.GalleryCanvas.Open();
     private void OpenSettingsApp() => SettingsCanvas.Instance.Open();
     private void OpenReplayApp() => DialogueChapterManager.Instance.OpenChapterSelect();
@@ -112,6 +116,16 @@ public class MainMenuCanvas : MonoBehaviour
             _socialMediaAppButton.RemoveNotifications(character);
         else
             _socialMediaAppButton.AddNotification(character);
+    }
+
+    public void SetSpicySocialMediaAppNotification(DialogueCharacterSO character, bool postSeen)
+    {
+        if (_spicySocialMediaAppButton == null) return;
+
+        if (postSeen)
+            _spicySocialMediaAppButton.RemoveNotifications(character);
+        else
+            _spicySocialMediaAppButton.AddNotification(character);
     }
 
     #endregion

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: Social Media App_ja-JP
+  m_Name: Social Media Apps_ja-JP
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
   m_LocaleId:
     m_Code: ja-JP
@@ -36,6 +36,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 14122720391168
     m_Localized: NO SOCIAL POSTS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 780969522720768
+    m_Localized: Subscribers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 798665383571456
+    m_Localized: Spicy_TestName_jp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 798694865334272
+    m_Localized: Spicy_Test description text that is longer that it should be?_jp
     m_Metadata:
       m_Items: []
   references:

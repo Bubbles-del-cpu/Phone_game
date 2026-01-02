@@ -191,7 +191,7 @@ public class DialogueChapterManager : UICanvas
             TriggerStoryChapter(SaveAndLoadManager.Instance.CurrentSave.CurrentState.CompletedChapters.Count);
 
             //Open chapter selection
-            OpenChapterSelect();
+            //OpenChapterSelect();
         });
     }
 

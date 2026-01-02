@@ -20,6 +20,7 @@ namespace MeetAndTalk
         [Header("Profile Images")]
         public List<CharacterSprite> Avatars;
         public SocialMediaProfileSO SocialMediaProfile;
+        public SocialMediaProfileSO SpicySocialMediaProfile;
 
         public string HexColor()
         {

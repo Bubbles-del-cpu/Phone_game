@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using MeetAndTalk;
 using TMPro;
@@ -6,14 +7,14 @@ using UnityEngine.UI;
 
 public class SocialMediaProfilePage : MonoBehaviour
 {
-    [SerializeField] private CanvasGroup _canvasGroup;
-    [SerializeField] private RectTransform _galleryContainer;
-    [SerializeField] private Image _profileIcon;
-    [SerializeField] private Image _profileImage;
-    [SerializeField] private TMP_Text _profileName;
-    [SerializeField] private TMP_Text _profileDescription;
-    [SerializeField] private TMP_Text _followerCountText;
-    [SerializeField] private TMP_Text _followingCountText;
+    [SerializeField] protected CanvasGroup _canvasGroup;
+    [SerializeField] protected RectTransform _galleryContainer;
+    [SerializeField] protected Image _profileIcon;
+    [SerializeField] protected Image _profileImage;
+    [SerializeField] protected TMP_Text _profileName;
+    [SerializeField] protected TMP_Text _profileDescription;
+    [SerializeField] protected TMP_Text _followerCountText;
+    [SerializeField] protected TMP_Text _followingCountText;
 
     #region Properties
     public RectTransform GalleryContainer => _galleryContainer;
@@ -26,16 +27,17 @@ public class SocialMediaProfilePage : MonoBehaviour
     #endregion
 
     [Header("Gallery Item Prefabs")]
-    [SerializeField] private GameObject _galleryImageButtonPrefab;
-    [SerializeField] private GameObject _galleryVideoButtonPrefab;
-    [SerializeField] private RectTransform _galleryImagePoolParent;
-    [SerializeField] private RectTransform _galleryVideoPoolParent;
+    [SerializeField] protected GameObject _galleryImageButtonPrefab;
+    [SerializeField] protected GameObject _galleryVideoButtonPrefab;
+    [SerializeField] protected RectTransform _galleryImagePoolParent;
+    [SerializeField] protected RectTransform _galleryVideoPoolParent;
 
-    private ObjectPool<GalleryImageButton> _galleryImagePool;
-    private ObjectPool<GalleryVideoButton> _galleryVideoPool;
-    private List<GalleryButtonBase> _galleryItems;
+    protected ObjectPool<GalleryImageButton> _galleryImagePool;
+    protected ObjectPool<GalleryVideoButton> _galleryVideoPool;
+    protected List<GalleryButtonBase> _galleryItems;
+    protected virtual Func<GalleryMediaItem, bool> _galleryItemFilter => p => p.IsLinearPathUnlock == true && p.TargetPlatform == MediaTargetPlatform.SocialMediaPost;
 
-    private int _galleryItemPool = 50;
+    protected int _galleryItemPool = 50;
     private void Awake()
     {
         _galleryItems = new List<GalleryButtonBase>();
@@ -47,14 +49,14 @@ public class SocialMediaProfilePage : MonoBehaviour
     /// Initializes and opens the profile page with the given character's social media profile data
     /// </summary>
     /// <param name="character">The character whose social media profile data will be used to initialize the page</param>
-    public void OpenProfile(DialogueCharacterSO character)
+    public virtual void OpenProfile(DialogueCharacterSO character)
     {
         ClearProfilePage();
         character.SocialMediaProfile.SetupProfilePage(this);
 
         // Populate the gallery with the items relating to this profile
         var galleryCanvas = GameManager.Instance.GalleryCanvas;
-        var (imageItems, videoItems) = galleryCanvas.GetGalleryItems(character, p => p.IsLinearPathUnlock == true && p.IsSocialMediaPost == true);
+        var (imageItems, videoItems) = galleryCanvas.GetGalleryItems(character, _galleryItemFilter);
 
         foreach (var item in imageItems)
         {
@@ -94,7 +96,7 @@ public class SocialMediaProfilePage : MonoBehaviour
     /// <summary>
     /// Clears the profile page by returning all gallery items to their respective pools
     /// </summary>
-    private void ClearProfilePage()
+    protected void ClearProfilePage()
     {
         // Return all gallery items to their respective pools
         foreach (var item in _galleryItems)

@@ -3,6 +3,13 @@ using MeetAndTalk;
 using UnityEngine;
 using UnityEngine.Video;
 
+public enum MediaTargetPlatform
+{
+    SocialMediaPost,
+    SpicySocialMediaPost,
+    Gallery,
+}
+
 [Serializable]
 public class GalleryMediaItem
 {
@@ -25,7 +32,8 @@ public class GalleryMediaItem
         _ => string.Empty,
     };
 
-    public bool IsSocialMediaPost;
+    public bool IsSocialMediaPost => TargetPlatform == MediaTargetPlatform.SocialMediaPost || TargetPlatform == MediaTargetPlatform.SpicySocialMediaPost;
+    public MediaTargetPlatform TargetPlatform;
     public MediaType MediaType;
     public Sprite Image;
     public VideoClip Video;

@@ -13,6 +13,7 @@ public class SocialMediaPost : MonoBehaviour
     [SerializeField] Image postImage;
     [SerializeField] FullScreenMediaMessageViewer _mediaViewer;
 
+
     [Header("Post Comment Components")]
     [SerializeField] RectTransform _commentsSection;
     [SerializeField] SocialMediaPostComment _commentPrefab;
@@ -62,12 +63,6 @@ public class SocialMediaPost : MonoBehaviour
     private void LogError(string message, Object context = null)
     {
         Debug.LogError($"[SocialMediaPost] {message}", context ?? this.gameObject);
-    }
-
-    IEnumerator CoSpawnNotification(SocialMediaPostSO value)
-    {
-        yield return new WaitForSeconds(1f);
-        NotificationCanvas.Instance.SpawnNotification(Notification.NotificationType.SocialMedia, value.Character, DialogueLocalizationHelper.GetText(value.MessageTexts));
     }
 
     public void SetData(SocialMediaPostSO data, DialogueNodeData nodeData, bool showNotification)
@@ -132,9 +127,7 @@ public class SocialMediaPost : MonoBehaviour
         }
 
         _tiedNode = nodeData; // nodeData might be null if previous check failed, handle accordingly if needed later
-
-        if (showNotification)
-            StartCoroutine(CoSpawnNotification(data)); // Assumes data is not null
+        data.SpawnNotification();
     }
 
     public void ToggleCommentDisplay()

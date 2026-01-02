@@ -8,6 +8,7 @@ public class SocialMediaProfileButton : MonoBehaviour
     public Image Icon => _icon;
     [SerializeField] private Button _button;
     [SerializeField] private DialogueCharacterSO _assignedCharacter;
+    [SerializeField] private MediaTargetPlatform _platform;
 
 
     private void Awake()
@@ -24,7 +25,7 @@ public class SocialMediaProfileButton : MonoBehaviour
             return;
         }
 
-        var command = new SocialMediaProfileOpenCommand(_assignedCharacter);
+        var command = new SocialMediaProfileOpenCommand(_assignedCharacter, _platform);
         NavigationManager.Instance.InvokeCommand(command, allowUndo: true);
     }
 

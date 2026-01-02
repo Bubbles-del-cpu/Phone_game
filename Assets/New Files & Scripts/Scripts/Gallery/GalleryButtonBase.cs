@@ -68,13 +68,17 @@ public abstract class GalleryButtonBase : MonoBehaviour
             return;
         }
 
-        if (isSocialMediaPost)
+        gameObject.SetActive(true);
+        if (isFromGallery)
         {
-            gameObject.SetActive(nodeData.Post.GalleryVisibility == GalleryDisplay.Display);
-        }
-        else
-        {
-            gameObject.SetActive(nodeData.GalleryVisibility == GalleryDisplay.Display);
+            if (isSocialMediaPost)
+            {
+                gameObject.SetActive(nodeData.Post.GalleryVisibility == GalleryDisplay.Display);
+            }
+            else
+            {
+                gameObject.SetActive(nodeData.GalleryVisibility == GalleryDisplay.Display);
+            }
         }
 
         _assignedNode = nodeData;

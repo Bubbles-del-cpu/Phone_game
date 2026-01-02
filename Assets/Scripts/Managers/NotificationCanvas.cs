@@ -52,6 +52,11 @@ public class NotificationCanvas : UICanvas
                 if (GameManager.Instance.SocialMediaCanvas.IsOpen)
                     return;
                 break;
+            case Notification.NotificationType.SpicySocialMedia:
+                GameManager.Instance.PlayNotificationFX();
+                if (GameManager.Instance.SpicySocialMediaCanvas.IsOpen)
+                    return;
+                break;
         }
 
         //Remove the last notifcation if it is still there

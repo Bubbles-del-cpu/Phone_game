@@ -17,7 +17,7 @@ public class ResponseSpeedButton : MonoBehaviour
             var value = (int)MeetAndTalk.DialogueManager.Instance.DisplaySpeedMultipler;
             MeetAndTalk.DialogueManager.Instance.DisplaySpeedMultipler = (MeetAndTalk.DialogueManager.ResponseSpeed)(value << 1);
 
-            if (MeetAndTalk.DialogueManager.Instance.DisplaySpeedMultipler > MeetAndTalk.DialogueManager.ResponseSpeed.X4)
+            if (MeetAndTalk.DialogueManager.Instance.DisplaySpeedMultipler > MeetAndTalk.DialogueManager.ResponseSpeed.X8)
                 MeetAndTalk.DialogueManager.Instance.DisplaySpeedMultipler = MeetAndTalk.DialogueManager.ResponseSpeed.X1;
         });
     }

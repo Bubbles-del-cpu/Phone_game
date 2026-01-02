@@ -8,7 +8,8 @@ public class Notification : MonoBehaviour
     public enum NotificationType
     {
         Message,
-        SocialMedia
+        SocialMedia,
+        SpicySocialMedia
     }
 
     [SerializeField] ProfileIcon icon;
@@ -44,6 +45,7 @@ public class Notification : MonoBehaviour
         switch (type)
         {
             case NotificationType.SocialMedia:
+            case NotificationType.SpicySocialMedia:
                 _label.text = "has made a new post";
                 break;
             case NotificationType.Message:
@@ -68,15 +70,16 @@ public class Notification : MonoBehaviour
 
     void OnClicked()
     {
-        switch(_type)
+        switch (Type)
         {
             default:
-                //GameManager.Instance.SocialMediaCanvas.Close();
                 GameManager.Instance.MessagingCanvas.Open(_character, fromNotification: true);
                 break;
             case NotificationType.SocialMedia:
-                //GameManager.Instance.MessagingCanvas.Close();
                 GameManager.Instance.SocialMediaCanvas.Open();
+                break;
+            case NotificationType.SpicySocialMedia:
+                GameManager.Instance.SpicySocialMediaCanvas.Open();
                 break;
         }
 
@@ -89,7 +92,7 @@ public class Notification : MonoBehaviour
         set
         {
             _type = value;
-            for(var index = 0; index < typeIcons.Length; index++)
+            for (var index = 0; index < typeIcons.Length; index++)
             {
                 typeIcons[index].enabled = index == (int)value;
             }

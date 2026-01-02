@@ -8,37 +8,23 @@ using UnityEngine.Serialization;
 
 public class SocialMediaCanvas : UICanvas
 {
-    private static SocialMediaCanvas _instance;
-    public static SocialMediaCanvas Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = FindFirstObjectByType<SocialMediaCanvas>();
-            }
-
-            return _instance;
-        }
-    }
-
-    [SerializeField, FormerlySerializedAs("socialMediaPostPrefab")] private SocialMediaPost _socialMediaPostPrefab;
-    [SerializeField, FormerlySerializedAs("socialMediaPostsContainer")] private RectTransform _socialMediaPostsContainer;
-    [SerializeField] private SocialMediaProfilePage _socialMediaPage;
-    [SerializeField] private RectTransform _profilePageButtonContainer;
-    [SerializeField] private GameObject _profilePageButtonPrefab;
-    [SerializeField] private GameObject _noPostsWarning;
+    [SerializeField, FormerlySerializedAs("socialMediaPostPrefab")] protected SocialMediaPost _socialMediaPostPrefab;
+    [SerializeField, FormerlySerializedAs("socialMediaPostsContainer")] protected RectTransform _socialMediaPostsContainer;
+    [SerializeField] protected SocialMediaProfilePage _socialMediaPage;
+    [SerializeField] protected RectTransform _profilePageButtonContainer;
+    [SerializeField] protected GameObject _profilePageButtonPrefab;
+    [SerializeField] protected GameObject _noPostsWarning;
 
     /// <summary>
     /// Dictionary to keep track of profile buttons for each character
     /// </summary>
-    private Dictionary<DialogueCharacterSO, SocialMediaProfileButton> _profileButtons = new Dictionary<DialogueCharacterSO, SocialMediaProfileButton>();
+    protected Dictionary<DialogueCharacterSO, SocialMediaProfileButton> _profileButtons = new Dictionary<DialogueCharacterSO, SocialMediaProfileButton>();
     /// <summary>
     /// Dictionary to keep track of posts for each character
     /// </summary>
-    private Dictionary<DialogueCharacterSO, List<SocialMediaPost>> _characterPosts = new Dictionary<DialogueCharacterSO, List<SocialMediaPost>>();
+    protected Dictionary<DialogueCharacterSO, List<SocialMediaPost>> _characterPosts = new Dictionary<DialogueCharacterSO, List<SocialMediaPost>>();
 
-    private void Update()
+    protected virtual void Update()
     {
         _noPostsWarning.SetActive(_socialMediaPostsContainer.childCount == 0);
     }
@@ -81,12 +67,12 @@ public class SocialMediaCanvas : UICanvas
         }
     }
 
-    public static void PostToSoicalMediaApp(SocialMediaPostSO _data, DialogueNodeData nodeData, bool showNotification = true)
+    public static void PostToFeed(SocialMediaPostSO _data, DialogueNodeData nodeData, bool showNotification = true)
     {
-        GameManager.Instance.SocialMediaCanvas.PostToSocialMedia(_data, nodeData, showNotification);
+        GameManager.Instance.SocialMediaCanvas.PostToFeedCanvas(_data, nodeData, showNotification);
     }
 
-    public void PostToSocialMedia(SocialMediaPostSO _data, DialogueNodeData nodeData, bool showNotification = true)
+    protected virtual void PostToFeedCanvas(SocialMediaPostSO _data, DialogueNodeData nodeData, bool showNotification = true)
     {
         Debug.Log($"Attempting to post to social media. Prefab valid: {_socialMediaPostPrefab != null}, Container valid: {_socialMediaPostsContainer != null}");
         if (_socialMediaPostPrefab == null || _socialMediaPostsContainer == null)
@@ -180,7 +166,11 @@ public class SocialMediaCanvas : UICanvas
 
     public override void Open()
     {
-        base.Open();
+        if (_canvas != null)
+        {
+            var command = new PanelOpenCommand(this, openState: true);
+            NavigationManager.Instance.InvokeCommand(command, allowUndo: true);
+        }
 
         // Note: The social media canvas is different than messages as all posts are tied to the assigned character rather than a specific dialogue character
         // Pass the assigned story character's character data for notification purposes

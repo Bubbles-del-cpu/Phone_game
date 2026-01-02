@@ -38,7 +38,8 @@ public class SaveFileData
         public string NodeGUID = string.Empty;
         public string FileName = string.Empty;
         public int ChapterIndex;
-        public bool IsSocialMediaPost;
+        public MediaTargetPlatform TargetPlatform;
+        public bool IsSocialMediaPost => TargetPlatform == MediaTargetPlatform.SocialMediaPost || TargetPlatform == MediaTargetPlatform.SpicySocialMediaPost;
         public bool IsLinearPathUnlock;
         public bool NotBackgroundCapable;
         public ChapterType ChapterType;
@@ -243,7 +244,6 @@ public class SaveFileData
 
         //Collect all new gallery content and update any existing if required
         CollectMediaFromChapters(mediaCopy, generateThumbnails);
-        //CollectMediaFromChapters(DialogueChapterManager.Instance.StandaloneChapters, mediaCopy.Where(x => !x.ChapterType));
     }
 
     private void CollectMediaFromChapters(IEnumerable<MediaData> saveFileData, bool generateThumbnails)
@@ -285,9 +285,17 @@ public class SaveFileData
                             * Display a profile button for a character even if the character hasn't performed a social media post this chapter
                             * This is only relevant for save file load as the chapter repopulation will handle it chapter posts and thus profile button creation
                             */
-                            if (dialogueNode.Post != null)
+                            if (dialogueNode.Post != null && item.IsLinearPathUnlock)
                             {
-                                SocialMediaCanvas.Instance.AddProfileButton(dialogueNode.Post);
+                                switch (dialogueNode.Post.TargetPlatform)
+                                {
+                                    case MediaTargetPlatform.SocialMediaPost:
+                                        GameManager.Instance.SocialMediaCanvas.AddProfileButton(dialogueNode.Post);
+                                        break;
+                                    case MediaTargetPlatform.SpicySocialMediaPost:
+                                        GameManager.Instance.SpicySocialMediaCanvas.AddProfileButton(dialogueNode.Post);
+                                        break;
+                                }
                             }
                             break;
                     }
@@ -379,7 +387,7 @@ public class SaveFileData
                 LockedState = MediaLockState.Locked,
                 IsLinearPathUnlock = false,
                 NotBackgroundCapable = nodeData.NotBackgroundCapable,
-                IsSocialMediaPost = false,
+                TargetPlatform = MediaTargetPlatform.Gallery,
                 Node = nodeData
             });
 
@@ -401,7 +409,7 @@ public class SaveFileData
                     LockedState = MediaLockState.Locked,
                     NotBackgroundCapable = nodeData.Post.NotBackgroundCapable,
                     IsLinearPathUnlock = false,
-                    IsSocialMediaPost = true,
+                    TargetPlatform = nodeData.Post.TargetPlatform,
                     Node = nodeData
                 });
 

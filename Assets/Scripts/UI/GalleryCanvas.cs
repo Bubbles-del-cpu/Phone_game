@@ -2,10 +2,8 @@ using UnityEngine;
 using TMPro;
 using MeetAndTalk;
 using System.Collections.Generic;
-using UnityEngine.Video;
 using System.Collections;
 using System.Linq;
-using Unity.Collections;
 using UnityEngine.UI;
 using System;
 
@@ -325,14 +323,14 @@ public class GalleryCanvas : UICanvas
                         var imageData = new GalleryMediaItem()
                         {
                             Node = nd,
-                            IsSocialMediaPost = mediaData.IsSocialMediaPost,
                             MediaType = mediaData.IsSocialMediaPost ? nd.Post.MediaType : nd.MediaType,
                             Image = mediaData.IsSocialMediaPost ? nd.Post.Image : nd.Image,
                             Video = mediaData.IsSocialMediaPost ? nd.Post.Video : nd.Video,
                             VideoThumbnail = mediaData.IsSocialMediaPost ? nd.Post.VideoThumbnail : nd.VideoThumbnail,
                             ChapterData = chapter,
                             LockState = mediaData.LockedState,
-                            IsLinearPathUnlock = mediaData.IsLinearPathUnlock
+                            IsLinearPathUnlock = mediaData.IsLinearPathUnlock,
+                            TargetPlatform = mediaData.TargetPlatform
                         };
 
                         switch (type)
@@ -356,14 +354,14 @@ public class GalleryCanvas : UICanvas
                         var imageData = new GalleryMediaItem()
                         {
                             Node = nd,
-                            IsSocialMediaPost = mediaData.IsSocialMediaPost,
                             MediaType = mediaData.IsSocialMediaPost ? nd.Post.MediaType : nd.MediaType,
                             Image = mediaData.IsSocialMediaPost ? nd.Post.Image : nd.Image,
                             Video = mediaData.IsSocialMediaPost ? nd.Post.Video : nd.Video,
                             VideoThumbnail = mediaData.IsSocialMediaPost ? nd.Post.VideoThumbnail : nd.VideoThumbnail,
                             ChapterData = chapter,
                             LockState = mediaData.LockedState,
-                            IsLinearPathUnlock = mediaData.IsLinearPathUnlock
+                            IsLinearPathUnlock = mediaData.IsLinearPathUnlock,
+                            TargetPlatform = mediaData.TargetPlatform
                         };
 
                         var type = mediaData.IsSocialMediaPost ? nd.Post.MediaType : nd.MediaType;
@@ -381,47 +379,6 @@ public class GalleryCanvas : UICanvas
             }
         }
     }
-
-    // private IEnumerator CoCreateMediaButtons(IEnumerable<SaveFileData.MediaData> saveFileData)
-    // {
-    //     //Unlock the gallery content, initially everything will start out as locked
-    //     var count = 0;
-    //     foreach (var mediaData in saveFileData)
-    //     {
-    //         switch (mediaData.ChapterType)
-    //         {
-    //             case ChapterType.Story:
-    //                 {
-    //                     var chapter = DialogueChapterManager.Instance.StoryList[mediaData.ChapterIndex];
-    //                     var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, mediaData.NodeGUID);
-    //                     AddMediaButton(chapter, (DialogueNodeData)node);
-    //                     switch (mediaData.LockedState)
-    //                     {
-    //                         case MediaLockState.Unlocked:
-    //                             UnlockMediaButton((DialogueNodeData)node);
-    //                             break;
-    //                     }
-    //                 }
-    //                 break;
-    //             case ChapterType.Standalone:
-    //                 {
-    //                     var chapter = DialogueChapterManager.Instance.StandaloneChapters[mediaData.ChapterIndex];
-    //                     var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, mediaData.NodeGUID);
-    //                     AddMediaButton(chapter, (DialogueNodeData)node);
-    //                     switch (mediaData.LockedState)
-    //                     {
-    //                         case MediaLockState.Unlocked:
-    //                             UnlockMediaButton((DialogueNodeData)node);
-    //                             break;
-    //                     }
-    //                 }
-    //                 break;
-    //         }
-    //         count++;
-    //         if (count % 5 == 0)
-    //             yield return new WaitForEndOfFrame();
-    //     }
-    // }
 
     public override void Open()
     {

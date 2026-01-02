@@ -3,17 +3,27 @@ using MeetAndTalk;
 public class SocialMediaProfileOpenCommand : ICommand
 {
     private DialogueCharacterSO _character;
-    public SocialMediaProfileOpenCommand(DialogueCharacterSO character)
+    private SocialMediaCanvas _canvas;
+    public SocialMediaProfileOpenCommand(DialogueCharacterSO character, MediaTargetPlatform platform)
     {
         _character = character;
+        switch (platform)
+        {
+            case MediaTargetPlatform.SocialMediaPost:
+                _canvas = GameManager.Instance.SocialMediaCanvas;
+                break;
+            case MediaTargetPlatform.SpicySocialMediaPost:
+                _canvas = GameManager.Instance.SpicySocialMediaCanvas;
+                break;
+        }
     }
     public void Execute()
     {
-        SocialMediaCanvas.Instance.OpenProfilePage(_character);
+        _canvas.OpenProfilePage(_character);
     }
 
     public void Undo()
     {
-        SocialMediaCanvas.Instance.CloseProfilePage();
+        _canvas.CloseProfilePage();
     }
 }
