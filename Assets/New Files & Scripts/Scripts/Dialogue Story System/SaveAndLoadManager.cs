@@ -177,7 +177,7 @@ public class SaveAndLoadManager : MonoBehaviour
 
             CurrentSave.SaveStates[slot].Name = name == string.Empty ? $"Save slot {slot + 1}" : name;
             CurrentSave.SaveStates[slot].IsSaved = true;
-            SaveAndLoadManager.SaveToJson(CurrentSave, CurrentSaveSlot);
+            SaveToJson(CurrentSave, CurrentSaveSlot);
         }
         catch (Exception) { }
     }
@@ -228,7 +228,7 @@ public class SaveAndLoadManager : MonoBehaviour
         try
         {
             CurrentSave.SaveStates.RemoveAt(saveSlot);
-            SaveAndLoadManager.SaveToJson(CurrentSave, CurrentSaveSlot);
+            SaveToJson(CurrentSave, CurrentSaveSlot);
         }
         catch (Exception) { }
     }
