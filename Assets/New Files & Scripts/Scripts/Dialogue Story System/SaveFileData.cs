@@ -32,17 +32,43 @@ public class SaveFileData
         public string Name;
     }
 
-    [System.Serializable]
+    [Serializable]
     public class MediaData
     {
         public string NodeGUID = string.Empty;
         public string FileName = string.Empty;
         public int ChapterIndex;
-        public bool IsSocialMediaPost;
+        public MediaTargetPlatform TargetPlatform;
+        public bool IsSocialMediaPost => TargetPlatform == MediaTargetPlatform.SocialMediaPost || TargetPlatform == MediaTargetPlatform.SpicySocialMediaPost;
+        public bool IsLinearPathUnlock;
         public bool NotBackgroundCapable;
         public ChapterType ChapterType;
         public MediaLockState LockedState;
         [NonSerialized] public DialogueNodeData Node;
+
+        /// <summary>
+        /// Gets the node associated with this media data
+        /// </summary>
+        /// <returns>The node data associated with this media data</returns>
+        public BaseNodeData GetNode()
+        {
+            // If the node has already been set, return it
+            if (Node != null)
+                return Node;
+
+            // Otherwise, find the node based on the chapter and GUID
+            var chapter = DialogueChapterManager.Instance.StoryList[ChapterIndex];
+            switch (ChapterType)
+            {
+                case ChapterType.Standalone:
+                    chapter = DialogueChapterManager.Instance.StandaloneChapters[ChapterIndex];
+                    break;
+
+            }
+
+            var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, NodeGUID);
+            return node;
+        }
     }
 
     [System.Serializable]
@@ -218,7 +244,6 @@ public class SaveFileData
 
         //Collect all new gallery content and update any existing if required
         CollectMediaFromChapters(mediaCopy, generateThumbnails);
-        //CollectMediaFromChapters(DialogueChapterManager.Instance.StandaloneChapters, mediaCopy.Where(x => !x.ChapterType));
     }
 
     private void CollectMediaFromChapters(IEnumerable<MediaData> saveFileData, bool generateThumbnails)
@@ -244,45 +269,41 @@ public class SaveFileData
         {
             try
             {
-                if (item.FileName == string.Empty)
-                {
-                    var chapter = DialogueChapterManager.Instance.StoryList[item.ChapterIndex];
-                    switch (item.ChapterType)
-                    {
-                        case ChapterType.Standalone:
-                            chapter = DialogueChapterManager.Instance.StandaloneChapters[item.ChapterIndex];
-                            break;
-
-                    }
-
-                    var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, item.NodeGUID);
-                    if (node != null)
-                    {
-                        switch (item.LockedState)
-                        {
-                            case MediaLockState.Unknown:
-                                UnlockMedia((DialogueNodeData)node, false);
-                                break;
-                            case MediaLockState.Unlocked:
-                                UnlockMedia((DialogueNodeData)node, false);
-                                break;
-                        }
-                    }
-                }
-                else
+                // If the file name is empty, we need to get the node and unlock based on that
+                var node = item.GetNode();
+                if (node != null)
                 {
                     switch (item.LockedState)
                     {
-                        case MediaLockState.Unknown:
                         case MediaLockState.Unlocked:
-                            UnlockMedia(item.FileName, false);
+                            var dialogueNode = (DialogueNodeData)node;
+                            UnlockMedia(dialogueNode, item.IsLinearPathUnlock);
+                            UnlockMedia(dialogueNode, item.IsLinearPathUnlock);
+
+                            /* Check if the media is a social media post and make sure the profile button exists on the social media canvas
+                            * Because the social media app now contains profile buttons that should exist across chapters, its possible that we need to
+                            * Display a profile button for a character even if the character hasn't performed a social media post this chapter
+                            * This is only relevant for save file load as the chapter repopulation will handle it chapter posts and thus profile button creation
+                            */
+                            if (dialogueNode.Post != null && item.IsLinearPathUnlock)
+                            {
+                                switch (dialogueNode.Post.TargetPlatform)
+                                {
+                                    case MediaTargetPlatform.SocialMediaPost:
+                                        GameManager.Instance.SocialMediaCanvas.AddProfileButton(dialogueNode.Post);
+                                        break;
+                                    case MediaTargetPlatform.SpicySocialMediaPost:
+                                        GameManager.Instance.SpicySocialMediaCanvas.AddProfileButton(dialogueNode.Post);
+                                        break;
+                                }
+                            }
                             break;
                     }
                 }
             }
             catch (Exception ex)
             {
-                Debug.LogError($"Valied to collect media from chapter. {ex.Message}");
+                Debug.LogError($"Failed to collect media from chapter. {ex.Message}");
             }
         }
     }
@@ -364,8 +385,9 @@ public class SaveFileData
                 ChapterIndex = chapterData.ChapterIndex,
                 ChapterType = chapterData.IsStoryChapter ? ChapterType.Story : ChapterType.Standalone,
                 LockedState = MediaLockState.Locked,
+                IsLinearPathUnlock = false,
                 NotBackgroundCapable = nodeData.NotBackgroundCapable,
-                IsSocialMediaPost = false,
+                TargetPlatform = MediaTargetPlatform.Gallery,
                 Node = nodeData
             });
 
@@ -386,7 +408,8 @@ public class SaveFileData
                     ChapterType = chapterData.IsStoryChapter ? ChapterType.Story : ChapterType.Standalone,
                     LockedState = MediaLockState.Locked,
                     NotBackgroundCapable = nodeData.Post.NotBackgroundCapable,
-                    IsSocialMediaPost = true,
+                    IsLinearPathUnlock = false,
+                    TargetPlatform = nodeData.Post.TargetPlatform,
                     Node = nodeData
                 });
 
@@ -397,7 +420,12 @@ public class SaveFileData
         return true;
     }
 
-    public void UnlockMedia(DialogueNodeData nodeData, bool save = true)
+    /// <summary>
+    /// Unlocks media in the save file based on the provided node data
+    /// </summary>
+    /// <param name="nodeData">The node data containing media information</param>
+    /// <param name="linearPath">Indicates if the unlock is part of a linear path (non-replay unlock)</param>
+    public void UnlockMedia(DialogueNodeData nodeData, bool linearPath)
     {
         var item = UnlockedMedia.FirstOrDefault(x => x.FileName == nodeData.MediaFileName);
         if (item != null)
@@ -405,6 +433,7 @@ public class SaveFileData
             //We found the media, unlock it
             item.LockedState = MediaLockState.Unlocked;
             item.FileName = nodeData.MediaFileName;
+            item.IsLinearPathUnlock = linearPath;
         }
 
         if (nodeData.Post != null)
@@ -414,23 +443,9 @@ public class SaveFileData
             {
                 socialItem.FileName = nodeData.Post.MediaFileName;
                 socialItem.LockedState = MediaLockState.Unlocked;
+                socialItem.IsLinearPathUnlock = linearPath;
             }
         }
-
-        //if (save)
-        //SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
-    }
-
-    private void UnlockMedia(string fileName, bool save = true)
-    {
-        var item = UnlockedMedia.FirstOrDefault(x => x.FileName == fileName);
-        if (item != null)
-        {
-            item.LockedState = MediaLockState.Unlocked;
-        }
-
-        //if (save)
-        //SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
     }
 
     public void UnlockAllMedia(bool save = true)

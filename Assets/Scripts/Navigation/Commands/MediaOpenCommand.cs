@@ -1,11 +1,11 @@
 public class MediaOpenCommand : PanelOpenCommand
 {
     private UIPanel targetPanel;
-    private bool _openFromConversation;
-    public MediaOpenCommand(UICanvas canvasPanel, bool openState, UIPanel targetMediaPanel, bool openedFromConversation) : base(canvasPanel, openState)
+    private bool _openedFromGallery;
+    public MediaOpenCommand(UICanvas canvasPanel, bool openState, UIPanel targetMediaPanel, bool openedFromGallery) : base(canvasPanel, openState)
     {
         targetPanel = targetMediaPanel;
-        _openFromConversation = openedFromConversation;
+        _openedFromGallery = openedFromGallery;
     }
 
     protected override void Open()
@@ -17,11 +17,11 @@ public class MediaOpenCommand : PanelOpenCommand
     protected override void Close()
     {
         var galleryCanvas = (GalleryCanvas)_panel;
-        galleryCanvas.Close(_openFromConversation);
+        galleryCanvas.Close(!_openedFromGallery);
 
         targetPanel.Close();
 
-        if (!_openFromConversation)
+        if (_openedFromGallery)
             NavigationManager.Instance.PanelOpenCount -= 1;
     }
 }

@@ -34,20 +34,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: c7cbc9723ae0f174cba60146f0cc8e0e, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: ....
     - languageEnum: 1
       LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   - NodeGuid: 66b88041-874f-45b1-807d-31c0c1684433
     Position: {x: 369, y: 176}
@@ -60,20 +66,26 @@ MonoBehaviour:
     Character: {fileID: 11400000, guid: c7cbc9723ae0f174cba60146f0cc8e0e, type: 2}
     AvatarPos: 0
     AvatarType: 0
-    TextType:
+    Texts:
     - languageEnum: 0
       LanguageGenericType: Testing
     - languageEnum: 1
       LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
     Duration: 2
     Delay: 0
-    PostMediaType: 0
+    MediaType: 0
     Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    Timelapse: 
     DelayTimer: 0
   TimerChoiceNodeDatas: []
   EndNodeDatas:

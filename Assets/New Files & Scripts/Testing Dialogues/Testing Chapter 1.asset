@@ -21,22 +21,22 @@ MonoBehaviour:
     TargetNodeGuid: 8bf161df-ba23-46bc-a294-c1458e3ba1ec
   - BaseNodeGuid: 47f743e7-0ea8-4c28-b070-6d72147cddf7
     TargetNodeGuid: e91e1c83-c709-4a3b-843c-7799be562d16
-  - BaseNodeGuid: c8314cdc-c54c-427d-890c-f05d1f5e7381
-    TargetNodeGuid: 711cb3e0-8bf1-4109-ae8b-c0642f957495
   - BaseNodeGuid: 2cabc52e-a0fe-4b88-a4d6-ffc65816aa9d
     TargetNodeGuid: e91e1c83-c709-4a3b-843c-7799be562d16
-  - BaseNodeGuid: 8bf161df-ba23-46bc-a294-c1458e3ba1ec
-    TargetNodeGuid: f4badca5-642e-4aec-b39f-a0220ffb703b
   - BaseNodeGuid: a064da96-88ff-4109-8ae6-94e093dfc775
     TargetNodeGuid: 47f743e7-0ea8-4c28-b070-6d72147cddf7
   - BaseNodeGuid: bbe413e1-e741-414c-8fa9-b4f95492d425
     TargetNodeGuid: a064da96-88ff-4109-8ae6-94e093dfc775
-  - BaseNodeGuid: e9aeba71-6677-4371-8120-a0800f78f54e
-    TargetNodeGuid: 83276e85-bc91-40cf-ad46-298e9877dfa0
   - BaseNodeGuid: b2caca91-cbaf-44ea-9c38-80a76cc145d4
     TargetNodeGuid: e9aeba71-6677-4371-8120-a0800f78f54e
+  - BaseNodeGuid: e9aeba71-6677-4371-8120-a0800f78f54e
+    TargetNodeGuid: 83276e85-bc91-40cf-ad46-298e9877dfa0
   - BaseNodeGuid: 83276e85-bc91-40cf-ad46-298e9877dfa0
     TargetNodeGuid: 15bb8031-c172-4c62-a631-da81299dcefc
+  - BaseNodeGuid: 8bf161df-ba23-46bc-a294-c1458e3ba1ec
+    TargetNodeGuid: f4badca5-642e-4aec-b39f-a0220ffb703b
+  - BaseNodeGuid: c8314cdc-c54c-427d-890c-f05d1f5e7381
+    TargetNodeGuid: 711cb3e0-8bf1-4109-ae8b-c0642f957495
   - BaseNodeGuid: f4badca5-642e-4aec-b39f-a0220ffb703b
     TargetNodeGuid: bbe413e1-e741-414c-8fa9-b4f95492d425
   - BaseNodeGuid: f4badca5-642e-4aec-b39f-a0220ffb703b
@@ -132,9 +132,13 @@ MonoBehaviour:
     Delay: 0
     Timelapse: 
     RequireCharacterInput: 0
-    SelectedChoice: []
+    SelectedChoice:
+    - languageEnum: 0
+      LanguageGenericType: Choice 01
+    - languageEnum: 1
+      LanguageGenericType: Choice 01
   - NodeGuid: 15bb8031-c172-4c62-a631-da81299dcefc
-    Position: {x: 868, y: 170}
+    Position: {x: 776, y: 120}
     DialogueNodePorts:
     - PortGuid: 4e82f0b0-a307-4b96-8dff-f598f2f06800
       InputGuid: 969f11fc-21db-41f4-a941-888b6e413ab2
@@ -182,7 +186,7 @@ MonoBehaviour:
     RequireCharacterInput: 1
     SelectedChoice:
     - languageEnum: 0
-      LanguageGenericType: this is a really long message lets see what happens
+      LanguageGenericType: 
     - languageEnum: 1
       LanguageGenericType: Choice 02
   DialogueNodeDatas:
@@ -217,39 +221,7 @@ MonoBehaviour:
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    DelayTimer: 2.0200987
-  - NodeGuid: c8314cdc-c54c-427d-890c-f05d1f5e7381
-    Position: {x: 1447, y: 708}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    Texts:
-    - languageEnum: 0
-      LanguageGenericType: Another dialogue line
-    - languageEnum: 1
-      LanguageGenericType: 
-    Timelapses:
-    - languageEnum: 0
-      LanguageGenericType: 
-    - languageEnum: 1
-      LanguageGenericType: 
-    Timelapse: 
-    Duration: 2
-    Delay: 0
-    MediaType: 0
-    Image: {fileID: 0}
-    Video: {fileID: 0}
-    VideoThumbnail: {fileID: 0}
-    NotBackgroundCapable: 0
-    GalleryVisibility: 0
-    Post: {fileID: 0}
-    DelayTimer: 0
+    DelayTimer: 2.016284
   - NodeGuid: 2cabc52e-a0fe-4b88-a4d6-ffc65816aa9d
     Position: {x: 2107, y: 693}
     DialogueNodePorts: []
@@ -281,39 +253,7 @@ MonoBehaviour:
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    DelayTimer: 0
-  - NodeGuid: 8bf161df-ba23-46bc-a294-c1458e3ba1ec
-    Position: {x: 1193, y: 195}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    Texts:
-    - languageEnum: 0
-      LanguageGenericType: just surviving?
-    - languageEnum: 1
-      LanguageGenericType: japanese text
-    Timelapses:
-    - languageEnum: 0
-      LanguageGenericType: 
-    - languageEnum: 1
-      LanguageGenericType: 
-    Timelapse: 
-    Duration: 2
-    Delay: 0
-    MediaType: 0
-    Image: {fileID: 0}
-    Video: {fileID: 0}
-    VideoThumbnail: {fileID: 0}
-    NotBackgroundCapable: 0
-    GalleryVisibility: 0
-    Post: {fileID: 0}
-    DelayTimer: 2.025151
+    DelayTimer: 10.007532
   - NodeGuid: a064da96-88ff-4109-8ae6-94e093dfc775
     Position: {x: 2124, y: 196}
     DialogueNodePorts: []
@@ -345,7 +285,7 @@ MonoBehaviour:
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    DelayTimer: 6.0039644
+    DelayTimer: 6.0062475
   - NodeGuid: bbe413e1-e741-414c-8fa9-b4f95492d425
     Position: {x: 1853, y: 196}
     DialogueNodePorts: []
@@ -376,74 +316,10 @@ MonoBehaviour:
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
-    Post: {fileID: 0}
-    DelayTimer: 4.022844
-  - NodeGuid: e9aeba71-6677-4371-8120-a0800f78f54e
-    Position: {x: 569, y: 195}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    Texts:
-    - languageEnum: 0
-      LanguageGenericType: long time no talk
-    - languageEnum: 1
-      LanguageGenericType: japanese text
-    Timelapses:
-    - languageEnum: 0
-      LanguageGenericType: 
-    - languageEnum: 1
-      LanguageGenericType: 
-    Timelapse: 
-    Duration: 2
-    Delay: 0
-    MediaType: 0
-    Image: {fileID: 0}
-    Video: {fileID: 32900000, guid: c23a88aeb39e2f6439b08259dec3773d, type: 3}
-    VideoThumbnail: {fileID: 0}
-    NotBackgroundCapable: 0
-    GalleryVisibility: 0
-    Post: {fileID: 0}
-    DelayTimer: 3.4385412
-  - NodeGuid: b2caca91-cbaf-44ea-9c38-80a76cc145d4
-    Position: {x: 308, y: 195}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    Texts:
-    - languageEnum: 0
-      LanguageGenericType: hello! \u1F600 \u1F600 \u1F600
-    - languageEnum: 1
-      LanguageGenericType: japanese text
-    Timelapses:
-    - languageEnum: 0
-      LanguageGenericType: 
-    - languageEnum: 1
-      LanguageGenericType: 
-    Timelapse: 
-    Duration: 2
-    Delay: 0
-    MediaType: 0
-    Image: {fileID: 21300000, guid: 7d8cd788e22bedb4e8ae5ab4cfe53f09, type: 3}
-    Video: {fileID: 0}
-    VideoThumbnail: {fileID: 0}
-    NotBackgroundCapable: 0
-    GalleryVisibility: 0
-    Post: {fileID: 0}
-    DelayTimer: 3.4911585
+    Post: {fileID: 11400000, guid: 26ebac88adae42541b48993217c197a1, type: 2}
+    DelayTimer: 4.013082
   - NodeGuid: 83276e85-bc91-40cf-ad46-298e9877dfa0
-    Position: {x: 848, y: 745}
+    Position: {x: 500, y: -46}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -473,7 +349,135 @@ MonoBehaviour:
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
-    DelayTimer: 3.4385412
+    DelayTimer: 2.0028944
+  - NodeGuid: 8bf161df-ba23-46bc-a294-c1458e3ba1ec
+    Position: {x: 1190, y: 144}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: just surviving?
+    - languageEnum: 1
+      LanguageGenericType: japanese text
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 11400000, guid: eb138877c58468442b655355d1754919, type: 2}
+    DelayTimer: 2.030388
+  - NodeGuid: e9aeba71-6677-4371-8120-a0800f78f54e
+    Position: {x: 205, y: -23}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: long time no talk
+    - languageEnum: 1
+      LanguageGenericType: japanese text
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 32900000, guid: c23a88aeb39e2f6439b08259dec3773d, type: 3}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 2.0473464
+  - NodeGuid: b2caca91-cbaf-44ea-9c38-80a76cc145d4
+    Position: {x: -112, y: -23}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: hello! \u1F600 \u1F600 \u1F600
+    - languageEnum: 1
+      LanguageGenericType: japanese text
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 21300000, guid: 7d8cd788e22bedb4e8ae5ab4cfe53f09, type: 3}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 2.0455678
+  - NodeGuid: c8314cdc-c54c-427d-890c-f05d1f5e7381
+    Position: {x: 1190, y: 728}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c9e8e94be1dbf9b4da1b2fd941c31ea2, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Another dialogue line
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 11400000, guid: 87442179d7eeea9439b95a0a5f0c4eb6, type: 2}
+    DelayTimer: 2.008877
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: e91e1c83-c709-4a3b-843c-7799be562d16
@@ -487,7 +491,7 @@ MonoBehaviour:
     - DialogueEventSO: {fileID: 11400000, guid: da12c9c9e4233bb48a505b564e762abf, type: 2}
   StartNodeDatas:
   - NodeGuid: afc3b39e-a378-41e4-9a04-992b933c24fe
-    Position: {x: 92, y: 195}
+    Position: {x: -164, y: 122}
     startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []

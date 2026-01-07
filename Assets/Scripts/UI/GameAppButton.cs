@@ -12,6 +12,28 @@ public class GameAppButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] private Image _notificationIcon;
     [SerializeField] private Image _responseNotificationIcon;
 
+    [Header("Notification Counts")]
+    [SerializeField] private int _notificationCount;
+    [SerializeField] private int _responseNotificationCount;
+
+    /// <summary>
+    /// Indicates whether there is a notification for this app
+    /// </summary>
+    private bool HasNotification
+    {
+        get => _notificationIcon.gameObject.activeInHierarchy;
+        set => _notificationIcon.gameObject.SetActive(value);
+    }
+
+    /// <summary>
+    /// Indicates whether there is a response notification for this app
+    /// </summary>
+    private bool HasResponseNotification
+    {
+        get => _responseNotificationIcon.gameObject.activeInHierarchy;
+        set => _responseNotificationIcon.gameObject.SetActive(value);
+    }
+
     private Dictionary<DialogueCharacterSO, int> _notificationDictionary = new Dictionary<DialogueCharacterSO, int>();
     private Dictionary<DialogueCharacterSO, int> _responseNotificationDictionary = new Dictionary<DialogueCharacterSO, int>();
 
@@ -44,6 +66,11 @@ public class GameAppButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                 }
             }
         }
+    }
+
+    private void Awake()
+    {
+        _button = GetComponent<Button>();
     }
 
     public void AddNotification(DialogueCharacterSO character)
@@ -119,32 +146,6 @@ public class GameAppButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         _responseNotificationCount = 0;
         HasNotification = false;
         HasResponseNotification = false;
-    }
-
-    /// <summary>
-    /// Indicates whether there is a notification for this app
-    /// </summary>
-    private bool HasNotification
-    {
-        get => _notificationIcon.gameObject.activeInHierarchy;
-        set => _notificationIcon.gameObject.SetActive(value);
-    }
-
-    /// <summary>
-    /// Indicates whether there is a response notification for this app
-    /// </summary>
-    private bool HasResponseNotification
-    {
-        get => _responseNotificationIcon.gameObject.activeInHierarchy;
-        set => _responseNotificationIcon.gameObject.SetActive(value);
-    }
-
-    [SerializeField] private int _notificationCount;
-    [SerializeField] private int _responseNotificationCount;
-
-    private void Awake()
-    {
-        _button = GetComponent<Button>();
     }
 
     public void OnPointerEnter(PointerEventData eventData)

@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GalleryCanvas galleryCanvas;
     [SerializeField] ContactsCanvas contactsCanvas;
     [SerializeField] SocialMediaCanvas socialMediaCanvas;
+    [SerializeField] SpicySocialMediaCanvas spicySocialMediaCanvas;
     [SerializeField] OverlayCanvas overlayCanvas;
 
     [Header("Config")]
@@ -189,7 +190,7 @@ public class GameManager : MonoBehaviour
             {
                 if (item.FileName == targetFileName)
                 {
-                    SaveAndLoadManager.Instance.CurrentSave.UnlockMedia(nodeData, false);
+                    SaveAndLoadManager.Instance.CurrentSave.UnlockMedia(nodeData, item.IsLinearPathUnlock);
                     SaveAndLoadManager.Instance.CurrentSave.CustomBackgroundImage = item;
 
                     if (save)
@@ -231,7 +232,6 @@ public class GameManager : MonoBehaviour
 
     public void ResetGameState(bool startDialogue = true)
     {
-
         //Reset the navigation stack
         GalleryCanvas.ResetGalleryButtons();
         NavigationManager.Instance.ResetStack();
@@ -249,6 +249,7 @@ public class GameManager : MonoBehaviour
         DialogueManager.Instance.DisplaySpeedMultipler = DialogueManager.ResponseSpeed.X1;
 
         socialMediaCanvas.Clear();
+        spicySocialMediaCanvas.Clear();
         messagingCanvas.Close();
 
         //Restart the dialogue trees
@@ -362,6 +363,7 @@ public class GameManager : MonoBehaviour
     public GalleryCanvas GalleryCanvas { get { return galleryCanvas; } }
     public ContactsCanvas ContactsCanvas { get { return contactsCanvas; } }
     public SocialMediaCanvas SocialMediaCanvas { get { return socialMediaCanvas; } }
+    public SpicySocialMediaCanvas SpicySocialMediaCanvas { get { return spicySocialMediaCanvas; } }
 
     public class CharacterData
     {

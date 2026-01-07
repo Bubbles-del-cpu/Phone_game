@@ -141,7 +141,17 @@ namespace MeetAndTalk
                 case DialogueNodeData nd when _nodeData is DialogueNodeData:
                     targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
                     if (nd.Post != null)
-                        SocialMediaCanvas.PostToSoicalMediaApp(nd.Post, nd, showNotification: false);
+                    {
+                        switch (nd.Post.TargetPlatform)
+                        {
+                            case MediaTargetPlatform.SpicySocialMediaPost:
+                                SpicySocialMediaCanvas.PostToFeed(nd.Post, nd, showNotification: false);
+                                break;
+                            case MediaTargetPlatform.SocialMediaPost:
+                                SocialMediaCanvas.PostToFeed(nd.Post, nd, showNotification: false);
+                                break;
+                        }
+                    }
                     break;
                 case DialogueChoiceNodeData nd when _nodeData is DialogueChoiceNodeData:
                     targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
@@ -206,7 +216,17 @@ namespace MeetAndTalk
                         {
                             case DialogueNodeData nd when nodeData is DialogueNodeData:
                                 if (nd.Post != null)
-                                    SocialMediaCanvas.PostToSoicalMediaApp(nd.Post, nd, showNotification: true);
+                                {
+                                    switch (nd.Post.TargetPlatform)
+                                    {
+                                        case MediaTargetPlatform.SpicySocialMediaPost:
+                                            SpicySocialMediaCanvas.PostToFeed(nd.Post, nd, showNotification: true);
+                                            break;
+                                        case MediaTargetPlatform.SocialMediaPost:
+                                            SocialMediaCanvas.PostToFeed(nd.Post, nd, showNotification: true);
+                                            break;
+                                    }
+                                }
                                 targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
                                 break;
                             case DialogueChoiceNodeData nd when nodeData is DialogueChoiceNodeData:
@@ -224,12 +244,22 @@ namespace MeetAndTalk
                             case DialogueNodeData nd:
                                 {
                                     if (nd.Post != null)
-                                        SocialMediaCanvas.PostToSoicalMediaApp(nd.Post, nd, showNotification: true);
+                                    {
+                                        switch (nd.Post.TargetPlatform)
+                                        {
+                                            case MediaTargetPlatform.SpicySocialMediaPost:
+                                                SpicySocialMediaCanvas.PostToFeed(nd.Post, nd, showNotification: true);
+                                                break;
+                                            case MediaTargetPlatform.SocialMediaPost:
+                                                SocialMediaCanvas.PostToFeed(nd.Post, nd, showNotification: true);
+                                                break;
+                                        }
+                                    }
                                     targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
 
                                     //Unlock any media associated with this node
                                     var saveData = SaveAndLoadManager.Instance.CurrentSave;
-                                    saveData.UnlockMedia(nd);
+                                    saveData.UnlockMedia(nd, SaveAndLoadManager.Instance.ReplayingCompletedChapter == false);
                                     GameManager.Instance.GalleryCanvas.UnlockMediaButton(nd, reloadedGallery: true);
                                     if (notification)
                                         GameManager.Instance.MessagingCanvas.SetNewNotification(nd.Character, responseNotification: false, messageSeen: false);

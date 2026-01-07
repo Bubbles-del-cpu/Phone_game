@@ -7,11 +7,12 @@ using System.Collections;
 
 public class SocialMediaPost : MonoBehaviour
 {
-    [SerializeField] ProfileIcon icon;
+    [SerializeField] SocialMediaProfileButton profileButton;
     [SerializeField] TMP_Text nameLabel;
     [SerializeField] TMP_Text postLabel;
     [SerializeField] Image postImage;
     [SerializeField] FullScreenMediaMessageViewer _mediaViewer;
+
 
     [Header("Post Comment Components")]
     [SerializeField] RectTransform _commentsSection;
@@ -45,15 +46,23 @@ public class SocialMediaPost : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// The character associated with this social media post
+    /// </summary>
+    public DialogueCharacterSO Character
+    {
+        get
+        {
+            if (_tiedNode.Post != null && _tiedNode.Post.Character != null)
+                return _tiedNode.Post.Character;
+
+            return _tiedNode.Character;
+        }
+    }
+
     private void LogError(string message, Object context = null)
     {
         Debug.LogError($"[SocialMediaPost] {message}", context ?? this.gameObject);
-    }
-
-    IEnumerator CoSpawnNotification(SocialMediaPostSO value)
-    {
-        yield return new WaitForSeconds(1f);
-        NotificationCanvas.Instance.SpawnNotification(Notification.NotificationType.SocialMedia, value.Character, DialogueLocalizationHelper.GetText(value.MessageTexts));
     }
 
     public void SetData(SocialMediaPostSO data, DialogueNodeData nodeData, bool showNotification)
@@ -65,17 +74,17 @@ public class SocialMediaPost : MonoBehaviour
         }
 
         // Ensure component references are valid before proceeding
-        if (icon == null || nameLabel == null || postLabel == null || postImage == null || _mediaViewer == null)
+        if (profileButton == null || nameLabel == null || postLabel == null || postImage == null || _mediaViewer == null)
         {
-            LogError($"SetData has missing component references! Icon: {icon}, NameLabel: {nameLabel}, PostLabel: {postLabel}, PostImage: {postImage}, MediaViewer: {_mediaViewer}");
+            LogError($"SetData has missing component references! Icon: {profileButton}, NameLabel: {nameLabel}, PostLabel: {postLabel}, PostImage: {postImage}, MediaViewer: {_mediaViewer}");
             return;
         }
 
         // Added null check for safety
         if (data.Character != null)
         {
-            icon.Character = data.Character;
-            nameLabel.text = data.Character.name;
+            profileButton.Initialize(data.Character);
+            nameLabel.text = data.Character.GetName();
         }
         else
         {
@@ -118,9 +127,7 @@ public class SocialMediaPost : MonoBehaviour
         }
 
         _tiedNode = nodeData; // nodeData might be null if previous check failed, handle accordingly if needed later
-
-        if (showNotification)
-            StartCoroutine(CoSpawnNotification(data)); // Assumes data is not null
+        data.SpawnNotification();
     }
 
     public void ToggleCommentDisplay()

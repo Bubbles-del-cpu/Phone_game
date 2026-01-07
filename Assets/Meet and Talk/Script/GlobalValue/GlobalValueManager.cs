@@ -65,7 +65,7 @@ namespace MeetAndTalk.GlobalValue
         {
             foreach (var item in savedVariables)
             {
-                switch(item.Type)
+                switch (item.Type)
                 {
                     case GlobalValueType.Bool:
                         {
@@ -463,7 +463,7 @@ namespace MeetAndTalk.GlobalValue
             EditorGUILayout.BeginVertical("helpbox", GUILayout.Height(48));
             Rect titleRect = EditorGUILayout.GetControlRect();
             EditorGUI.DrawPreviewTexture(new Rect(titleRect.x - 3, titleRect.y - 3, 48, 48), Resources.Load($"Icon/{IconName}") as Texture);
-            EditorGUI.LabelField(new Rect(titleRect.x + 50, titleRect.y +6, titleRect.width - 56, 16), $"List of {objectName} Value", EditorStyles.boldLabel);
+            EditorGUI.LabelField(new Rect(titleRect.x + 50, titleRect.y + 6, titleRect.width - 56, 16), $"List of {objectName} Value", EditorStyles.boldLabel);
             EditorGUI.LabelField(new Rect(titleRect.x + 50, titleRect.y + 22, titleRect.width - 56, 12), $"[{count}] Value Available", EditorStyles.miniLabel);
             EditorGUILayout.EndVertical();
 
@@ -707,6 +707,13 @@ namespace MeetAndTalk.GlobalValue
         public string ValueName;
     }
 
+    [System.Serializable]
+    public class GlobalBoolValueCheck
+    {
+        public string ValueName;
+        public bool TargetValue;
+    }
+
     #endregion
     #region Custom Property Drawer
 
@@ -731,7 +738,7 @@ namespace MeetAndTalk.GlobalValue
 
             /* Load Index */
             int index = 0;
-            for(int i = 0; i < tmp.Count; i++) {  if (tmp[i] == property.FindPropertyRelative("ValueName").stringValue) { index = i; } }
+            for (int i = 0; i < tmp.Count; i++) { if (tmp[i] == property.FindPropertyRelative("ValueName").stringValue) { index = i; } }
 
             Rect valueNameRect = new Rect(position.x, position.y, position.width * 0.4f, EditorGUIUtility.singleLineHeight);
             Rect operationRect = new Rect(position.x + position.width * 0.4f, position.y, position.width * 0.4f, EditorGUIUtility.singleLineHeight);
@@ -787,6 +794,39 @@ namespace MeetAndTalk.GlobalValue
             property.FindPropertyRelative("ValueName").stringValue = tmp[index];
 
             //EditorGUIUtility.labelWidth = originalLabelWidth;
+            EditorGUI.EndProperty();
+        }
+    }
+
+    [CustomPropertyDrawer(typeof(GlobalBoolValueCheck))]
+    public class GlobalBoolValueCheckDrawer : PropertyDrawer
+    {
+        public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+        {
+            return EditorGUIUtility.singleLineHeight * 2f + 2;
+        }
+        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+        {
+            EditorGUI.BeginProperty(position, label, property);
+
+            /* Load Values */
+            List<string> tmp = new List<string>();
+            GlobalValueManager manager = Resources.Load<GlobalValueManager>("GlobalValue");
+            manager.LoadFile();
+
+            for (int i = 0; i < manager.BoolValues.Count; i++) { tmp.Add(manager.BoolValues[i].ValueName); }
+
+            /* Load Index */
+            int index = 0;
+            for (int i = 0; i < tmp.Count; i++) { if (tmp[i] == property.FindPropertyRelative("ValueName").stringValue) { index = i; } }
+
+            Rect valueNameRect = new Rect(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight);
+            Rect toggleRect = new Rect(position.x + EditorGUIUtility.labelWidth + 2, position.y + EditorGUIUtility.singleLineHeight + 2, position.width, EditorGUIUtility.singleLineHeight);
+
+            index = EditorGUI.Popup(valueNameRect, "Global Flag", index, tmp.ToArray());
+            property.FindPropertyRelative("ValueName").stringValue = tmp[index];
+            property.FindPropertyRelative("TargetValue").boolValue = EditorGUI.ToggleLeft(toggleRect, "Target Value", property.FindPropertyRelative("TargetValue").boolValue);
+
             EditorGUI.EndProperty();
         }
     }
@@ -963,5 +1003,5 @@ namespace MeetAndTalk.GlobalValue
         }
     }
 #endif
-#endregion
+    #endregion
 }

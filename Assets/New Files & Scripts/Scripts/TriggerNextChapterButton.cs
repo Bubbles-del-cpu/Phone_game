@@ -31,6 +31,7 @@ public class TriggerNextChapterButton : MonoBehaviour
             var wasReplay = saveManager.ReplayingCompletedChapter;
             var wasStandalone = saveManager.PlayingStandaloneChapter;
 
+            GameManager.Instance.ResetGameState(false);
             //Open chapter selection
             if (wasStandalone)
             {
@@ -40,13 +41,14 @@ public class TriggerNextChapterButton : MonoBehaviour
             {
                 DialogueChapterManager.Instance.OpenChapterSelect();
             }
-            else
-            {
 
-                var chapterNumber = saveManager.CurrentSave.CurrentState.CompletedChapters.Count;
-                saveManager.ClearChapterData(resetBackground: false);
-                DialogueChapterManager.Instance.TriggerStoryChapter(chapterNumber);
-            }
+            var chapterNumber = saveManager.CurrentSave.CurrentState.CompletedChapters.Count;
+            saveManager.ClearChapterData(resetBackground: false);
+            DialogueChapterManager.Instance.TriggerStoryChapter(chapterNumber);
+
+            // Returning to linear path mode so both flags should be false
+            saveManager.ReplayingCompletedChapter = false;
+            saveManager.PlayingStandaloneChapter = false;
         });
     }
 }
