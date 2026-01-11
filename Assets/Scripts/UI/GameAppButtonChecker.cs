@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class GameAppButtonChecker : MonoBehaviour
 {
-    public GameObject GameAppButton;
+    public GameAppButton GameAppButton;
     public GlobalBoolValueCheck UnlockVariable;
 
     private void Update()
     {
-        GameAppButton.SetActive(SaveAndLoadManager.Instance.ValueManager.IfTrue(UnlockVariable.ValueName, GlobalValueIFOperations.Equal, UnlockVariable.TargetValue.ToString()));
+        GameAppButton.Interactable = SaveAndLoadManager.Instance.ValueManager.IfTrue(UnlockVariable.ValueName, GlobalValueIFOperations.Equal, UnlockVariable.TargetValue.ToString());
     }
 }
