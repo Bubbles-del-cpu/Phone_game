@@ -13,10 +13,19 @@ MonoBehaviour:
   m_Name: Lily_spicy_post_tits
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
-  Message: I can make em bounce for you
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: I can make em bounce for you
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 0
+  TargetPlatform: 0
+  GalleryVisibility: 0
   Image: {fileID: 5403628277695459647, guid: 777afd10057b5e349bce3e1d7d07d80b, type: 3}
   Video: {fileID: 0}
+  VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments:
   - Name: Izzy
     Content: Sheesh
