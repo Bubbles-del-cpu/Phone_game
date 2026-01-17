@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d1de3e3b282584469cbfef3b2670157, type: 3}
-  m_Name: GalleryUnlockConfig
-  m_EditorClassIdentifier: 
-  _codeHash: TkSxNnTLZukqcSrg4OVWBWxOZAb/enbda+RzjOGyedE=
-  _salt: saltysalty
-  _reference: 12
-  plainTextCode: 
+  m_Script: {fileID: 11500000, guid: 9a3c40296a03ed2468520a2aca709d32, type: 3}
+  m_Name: SHow_app_true
+  m_EditorClassIdentifier: Assembly-CSharp::MeetAndTalk.Event.GlobalValueEvent
+  Operation:
+    ValueName: spicy_app_active
+    Operation: 4
+    OperationValue: 1

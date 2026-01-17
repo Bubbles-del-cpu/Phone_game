@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 407eb4cc0bfc7094eadd8f0ca39b4838, type: 3}
-  m_Name: Izzy social page
+  m_Name: Math&Babes spicy social page
   m_EditorClassIdentifier: Assembly-CSharp::SocialMediaProfileSO
-  _profileImage: {fileID: 21300000, guid: 26037a83e437b3e469a990b498a2cc6c, type: 3}
-  _miniProfileIcon: {fileID: 21300000, guid: 26037a83e437b3e469a990b498a2cc6c, type: 3}
+  _profileImage: {fileID: 21300000, guid: 21c81bf0a322a7845aa59687bbb64a66, type: 3}
+  _miniProfileIcon: {fileID: 21300000, guid: 21c81bf0a322a7845aa59687bbb64a66, type: 3}
   _profileName:
     m_TableReference:
       m_TableCollectionName: GUID:083609bc7b88c5541948e6a631972216
     m_TableEntryReference:
-      m_KeyId: 5606206771093504
+      m_KeyId: 6311033520054272
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -27,14 +27,14 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:083609bc7b88c5541948e6a631972216
     m_TableEntryReference:
-      m_KeyId: 5607447119060992
+      m_KeyId: 6311104101801984
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  _followerCount: 2578
-  _followingCount: 67
-  _profileColor: {r: 0.9716981, g: 0.01375042, b: 0.58967596, a: 1}
+  _followerCount: 69
+  _followingCount: 0
+  _profileColor: {r: 0, g: 0.60473037, b: 1, a: 1}
   references:
     version: 2
     RefIds: []
