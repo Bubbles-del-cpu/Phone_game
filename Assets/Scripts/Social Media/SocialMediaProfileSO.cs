@@ -10,6 +10,7 @@ public class SocialMediaProfileSO : ScriptableObject
     [SerializeField] private LocalizedString _profileDescription;
     [SerializeField] private int _followerCount;
     [SerializeField] private int _followingCount;
+    [SerializeField] private Color _profileColor = Color.magenta;
 
     /// <summary>
     /// Setup the profile page with the data from this social media profile
@@ -23,6 +24,7 @@ public class SocialMediaProfileSO : ScriptableObject
         profilePage.ProfileDescription.text = _profileDescription.GetLocalizedString();
         profilePage.FollowerCountText.text = _followerCount.ToString();
         profilePage.FollowingCountText.text = _followingCount.ToString();
+        profilePage.ProfileBackground.color = _profileColor;
     }
 
     /// <summary>

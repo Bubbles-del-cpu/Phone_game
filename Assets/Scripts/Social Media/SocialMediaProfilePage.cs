@@ -11,6 +11,7 @@ public class SocialMediaProfilePage : MonoBehaviour
     [SerializeField] protected RectTransform _galleryContainer;
     [SerializeField] protected Image _profileIcon;
     [SerializeField] protected Image _profileImage;
+    [SerializeField] protected Image _profileBackground;
     [SerializeField] protected TMP_Text _profileName;
     [SerializeField] protected TMP_Text _profileDescription;
     [SerializeField] protected TMP_Text _followerCountText;
@@ -20,6 +21,7 @@ public class SocialMediaProfilePage : MonoBehaviour
     public RectTransform GalleryContainer => _galleryContainer;
     public Image ProfileIcon => _profileIcon;
     public Image ProfileImage => _profileImage;
+    public Image ProfileBackground => _profileBackground;
     public TMP_Text ProfileName => _profileName;
     public TMP_Text ProfileDescription => _profileDescription;
     public TMP_Text FollowerCountText => _followerCountText;
