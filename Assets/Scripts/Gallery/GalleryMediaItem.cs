@@ -5,9 +5,9 @@ using UnityEngine.Video;
 
 public enum MediaTargetPlatform
 {
+    Gallery,
     SocialMediaPost,
     SpicySocialMediaPost,
-    Gallery,
 }
 
 [Serializable]

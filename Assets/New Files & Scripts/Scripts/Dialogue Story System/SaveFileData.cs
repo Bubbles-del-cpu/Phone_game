@@ -10,7 +10,7 @@ using UnityEngine;
 [Serializable]
 public class SaveFileData
 {
-    public static string SAVE_FILE_VERSION = "0.10";
+    public static string SAVE_FILE_VERSION = "0.15.beta";
     public string Version;
     public int SaveFileSlot;
     public bool ForceUnlockAllChapters;
@@ -39,7 +39,7 @@ public class SaveFileData
         public string FileName = string.Empty;
         public int ChapterIndex;
         public MediaTargetPlatform TargetPlatform;
-        public bool IsSocialMediaPost => TargetPlatform == MediaTargetPlatform.SocialMediaPost || TargetPlatform == MediaTargetPlatform.SpicySocialMediaPost;
+        public bool IsSocialMediaPost;
         public bool IsLinearPathUnlock;
         public bool NotBackgroundCapable;
         public ChapterType ChapterType;
@@ -191,7 +191,6 @@ public class SaveFileData
         var oldVersion = Version;
         if (Version != newSaveFile.Version)
         {
-            Version = newSaveFile.Version;
             wasUpdated = true;
         }
 
@@ -228,13 +227,38 @@ public class SaveFileData
 
         UpdateMediaData(generateThumbnails: true);
 
+        // Check the background image data to make sure we account for the new target platform
+        if (wasUpdated && newSaveFile.Version == "0.15.beta")
+        {
+            // This version added the MediaTargetPlatform enum change as well as the SpicySocialMediaPost option
+            if (CustomBackgroundImage != null)
+            {
+                Debug.Log($"[SaveAndLoadManager] Updating custom background image target platform for save slot {SaveFileSlot} from version {oldVersion} to {newSaveFile.Version}");
+                if (CustomBackgroundImage.IsSocialMediaPost && CustomBackgroundImage.TargetPlatform == MediaTargetPlatform.Gallery)
+                {
+                    // Update to SocialMediaPost target platform
+                    // If the image is a social media post but the target platform is still Gallery, update it. It cannot be SpicySocialMediaPost at this specific point
+                    // As this social media app wasn't present in earlier versions
+                    Debug.Log($"[SaveAndLoadManager] Updating custom background image target platform to SocialMediaPost for save slot {SaveFileSlot}");
+                    CustomBackgroundImage.TargetPlatform = MediaTargetPlatform.SocialMediaPost;
+                }
+                else
+                {
+                    // Ensure Gallery target platform for non-social media posts
+                    Debug.Log($"[SaveAndLoadManager] Setting custom background image target platform to Gallery for save slot {SaveFileSlot}");
+                    CustomBackgroundImage.TargetPlatform = MediaTargetPlatform.Gallery;
+                }
+            }
+        }
+
         if (wasUpdated)
         {
             //Save the file so that it is instantly updated with the new change and output a message to the debugger
             Debug.Log($"[SaveAndLoadManager] Save file detected differences between current and latest. Chapters and save variables has been updated for slot {SaveFileSlot}");
         }
 
-        //SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
+        // Update the version
+        Version = newSaveFile.Version;
     }
 
     public void UpdateMediaData(bool generateThumbnails)
@@ -388,6 +412,7 @@ public class SaveFileData
                 IsLinearPathUnlock = false,
                 NotBackgroundCapable = nodeData.NotBackgroundCapable,
                 TargetPlatform = MediaTargetPlatform.Gallery,
+                IsSocialMediaPost = false,
                 Node = nodeData
             });
 
@@ -410,6 +435,7 @@ public class SaveFileData
                     NotBackgroundCapable = nodeData.Post.NotBackgroundCapable,
                     IsLinearPathUnlock = false,
                     TargetPlatform = nodeData.Post.TargetPlatform,
+                    IsSocialMediaPost = true,
                     Node = nodeData
                 });
 

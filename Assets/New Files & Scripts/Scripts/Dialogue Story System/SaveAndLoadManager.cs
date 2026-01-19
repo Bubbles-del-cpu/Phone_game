@@ -124,12 +124,21 @@ public class SaveAndLoadManager : MonoBehaviour
 
             if (saveFileData.CustomBackgroundImage.NodeGUID != string.Empty)
             {
-                var chapter = saveFileData.CustomBackgroundImage.ChapterType == ChapterType.Story ?
-                    DialogueChapterManager.Instance.StoryList[saveFileData.CustomBackgroundImage.ChapterIndex] :
-                    DialogueChapterManager.Instance.StandaloneChapters[saveFileData.CustomBackgroundImage.ChapterIndex];
+                try
+                {
+                    var chapter = saveFileData.CustomBackgroundImage.ChapterType == ChapterType.Story ?
+                        DialogueChapterManager.Instance.StoryList[saveFileData.CustomBackgroundImage.ChapterIndex] :
+                        DialogueChapterManager.Instance.StandaloneChapters[saveFileData.CustomBackgroundImage.ChapterIndex];
 
-                var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, saveFileData.CustomBackgroundImage.NodeGUID);
-                GameManager.Instance.SetBackgroundImage((DialogueNodeData)node, saveFileData.CustomBackgroundImage.IsSocialMediaPost);
+                    var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, saveFileData.CustomBackgroundImage.NodeGUID);
+                    var dialogueNode = node as DialogueNodeData;
+                    GameManager.Instance.SetBackgroundImage(dialogueNode, saveFileData.CustomBackgroundImage.IsSocialMediaPost && dialogueNode.Post != null);
+                }
+                catch (Exception)
+                {
+                    Debug.LogError($"[SaveAndLoadManager] Failed to load custom background image from save file for slot {saveSlot}. Reverting to default background.");
+                    GameManager.Instance.SetBackgroundImage(GameManager.Instance.DefaultBackgroundSprite);
+                }
             }
             else
             {
