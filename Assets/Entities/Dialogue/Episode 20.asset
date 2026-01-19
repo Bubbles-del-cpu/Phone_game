@@ -27,6 +27,10 @@ MonoBehaviour:
     TargetNodeGuid: 0683dd83-7eb0-41f0-ae15-3a46b0b829a6
   - BaseNodeGuid: c48161b0-5442-4f6e-94a9-4d177c0ddf05
     TargetNodeGuid: 07b084ee-6ee5-4669-8f5c-46eefd342cdf
+  - BaseNodeGuid: 8327f93a-308e-4626-8d7b-8d8a505ec9ec
+    TargetNodeGuid: fddedd96-9e66-46c9-adfe-9bcebeab7815
+  - BaseNodeGuid: 748d9cc3-8a1b-491c-b669-13eb028923eb
+    TargetNodeGuid: cdc869b1-3ef3-4c5b-94c8-4b7a428f69dd
   - BaseNodeGuid: f715e7bb-569d-4f67-ae57-fb31f4106abe
     TargetNodeGuid: 68679d0f-dfde-4cea-a36e-18ce0df7d6d1
   - BaseNodeGuid: f715e7bb-569d-4f67-ae57-fb31f4106abe
@@ -43,12 +47,22 @@ MonoBehaviour:
     TargetNodeGuid: 5c5d4802-2de0-4daa-b3d4-8c0fc765b781
   - BaseNodeGuid: 11c5294e-d689-46bf-b0b2-29ca2fc6bc7b
     TargetNodeGuid: 71014e5c-ba38-4165-88ff-5b5d3fbffead
-  - BaseNodeGuid: ab289706-7377-4db7-9716-bc7e6a5fdc5a
-    TargetNodeGuid: da77283e-c165-4c07-86a4-8665c4d2db47
   - BaseNodeGuid: da77283e-c165-4c07-86a4-8665c4d2db47
     TargetNodeGuid: c9c98e0b-aed3-43aa-851b-bbc2a406b19d
   - BaseNodeGuid: da77283e-c165-4c07-86a4-8665c4d2db47
     TargetNodeGuid: 76357e05-1d6b-4ef1-b6da-ef907968372f
+  - BaseNodeGuid: ab289706-7377-4db7-9716-bc7e6a5fdc5a
+    TargetNodeGuid: da77283e-c165-4c07-86a4-8665c4d2db47
+  - BaseNodeGuid: ab289706-7377-4db7-9716-bc7e6a5fdc5a
+    TargetNodeGuid: 6c2e66b6-20e6-4db8-9264-5fde984fa2f0
+  - BaseNodeGuid: c583f024-6e53-43b5-851d-ba800918d536
+    TargetNodeGuid: 0909f6b4-aa97-4b7b-92fb-e08b1090e1a7
+  - BaseNodeGuid: c583f024-6e53-43b5-851d-ba800918d536
+    TargetNodeGuid: 1e6773e4-8607-4ed8-b0d5-a3d0c87abe11
+  - BaseNodeGuid: 6c2e66b6-20e6-4db8-9264-5fde984fa2f0
+    TargetNodeGuid: c583f024-6e53-43b5-851d-ba800918d536
+  - BaseNodeGuid: 6c2e66b6-20e6-4db8-9264-5fde984fa2f0
+    TargetNodeGuid: e50b9ede-1812-48fb-845a-d1e490e83fce
   - BaseNodeGuid: 9a13de11-ac8c-4e8f-991b-6b09f4ba4db6
     TargetNodeGuid: 55ebfe55-f07b-4465-b2fb-3c379b656efa
   - BaseNodeGuid: 1dc2daf7-8008-4e44-a826-92e1d12ac2e7
@@ -121,10 +135,6 @@ MonoBehaviour:
     TargetNodeGuid: ab77ed52-c407-40af-b926-fe378dd96c18
   - BaseNodeGuid: ab77ed52-c407-40af-b926-fe378dd96c18
     TargetNodeGuid: 7f2719cd-31ff-49ac-bcdc-347ff540af59
-  - BaseNodeGuid: 84da60c9-182f-421a-8bde-9f9677cca216
-    TargetNodeGuid: aa2ea5d4-8b44-4fe6-a16b-4357f4de250b
-  - BaseNodeGuid: 68679d0f-dfde-4cea-a36e-18ce0df7d6d1
-    TargetNodeGuid: aa2ea5d4-8b44-4fe6-a16b-4357f4de250b
   - BaseNodeGuid: d20b8b3c-0cf9-487e-bc41-2ec0a7eeee58
     TargetNodeGuid: c9f4bc31-20d8-4c0d-b5b0-28dd4f81f1e4
   - BaseNodeGuid: c9f4bc31-20d8-4c0d-b5b0-28dd4f81f1e4
@@ -251,10 +261,6 @@ MonoBehaviour:
     TargetNodeGuid: 2ed04f34-9bf1-46fe-8cb2-05b40a2651e1
   - BaseNodeGuid: 2ed04f34-9bf1-46fe-8cb2-05b40a2651e1
     TargetNodeGuid: 11c5294e-d689-46bf-b0b2-29ca2fc6bc7b
-  - BaseNodeGuid: 71014e5c-ba38-4165-88ff-5b5d3fbffead
-    TargetNodeGuid: af6d028a-0f6f-41d4-86c8-b2bfd00c7b8d
-  - BaseNodeGuid: 5c5d4802-2de0-4daa-b3d4-8c0fc765b781
-    TargetNodeGuid: af6d028a-0f6f-41d4-86c8-b2bfd00c7b8d
   - BaseNodeGuid: 1170defb-04c3-4802-b34a-1f2dd3f3d701
     TargetNodeGuid: 95366728-1111-4c25-9871-42b928cffcb7
   - BaseNodeGuid: 95366728-1111-4c25-9871-42b928cffcb7
@@ -353,6 +359,270 @@ MonoBehaviour:
     TargetNodeGuid: 00d8fee0-60b0-4f23-afbe-e6ef42f8335c
   - BaseNodeGuid: 00d8fee0-60b0-4f23-afbe-e6ef42f8335c
     TargetNodeGuid: d30a3153-f889-40f6-8188-4876c80724c1
+  - BaseNodeGuid: d30a3153-f889-40f6-8188-4876c80724c1
+    TargetNodeGuid: 1b72c413-afe3-4290-8a10-2dbd3d92ea10
+  - BaseNodeGuid: 5c5d4802-2de0-4daa-b3d4-8c0fc765b781
+    TargetNodeGuid: af6d028a-0f6f-41d4-86c8-b2bfd00c7b8d
+  - BaseNodeGuid: 71014e5c-ba38-4165-88ff-5b5d3fbffead
+    TargetNodeGuid: af6d028a-0f6f-41d4-86c8-b2bfd00c7b8d
+  - BaseNodeGuid: 835da878-284c-4998-9186-81ef6155b1e9
+    TargetNodeGuid: 71c1da8c-a820-4628-89b4-17f6bcb12372
+  - BaseNodeGuid: e852eac3-9a6e-4a09-8f48-0e482d0e084f
+    TargetNodeGuid: 3a62bc80-b6b0-4697-aae3-40bcd1a91f4a
+  - BaseNodeGuid: 8ef0b7d2-57dc-426d-98f9-44f1cf8aa138
+    TargetNodeGuid: 797eada9-55c3-4bae-8b84-ab567bbb72a8
+  - BaseNodeGuid: 797eada9-55c3-4bae-8b84-ab567bbb72a8
+    TargetNodeGuid: 878d923b-49bc-42bb-9483-469786f8078f
+  - BaseNodeGuid: 878d923b-49bc-42bb-9483-469786f8078f
+    TargetNodeGuid: b66793df-a4fa-4597-a574-47e026037668
+  - BaseNodeGuid: 2aa55f95-7cea-4483-ad88-08c355e28c2c
+    TargetNodeGuid: 8ef0b7d2-57dc-426d-98f9-44f1cf8aa138
+  - BaseNodeGuid: 04f6f917-8771-4b39-a909-59178dddd38f
+    TargetNodeGuid: b601a6c9-05e4-40ac-a3d0-0ff88085cdc8
+  - BaseNodeGuid: b601a6c9-05e4-40ac-a3d0-0ff88085cdc8
+    TargetNodeGuid: 44b19354-9f48-4121-8e30-3c1ca013bbdb
+  - BaseNodeGuid: 9d3d3f04-6ad0-4339-8a30-7bb282149719
+    TargetNodeGuid: 48717d71-c2cc-48f7-a452-f652af7b06a7
+  - BaseNodeGuid: 48717d71-c2cc-48f7-a452-f652af7b06a7
+    TargetNodeGuid: 92d42fa9-03e5-48a7-9c26-d2f8524ce662
+  - BaseNodeGuid: 3e349c40-da78-4c64-9dd0-e19805d358e9
+    TargetNodeGuid: e637d21d-7dfa-4c23-9d98-8370116e7d2d
+  - BaseNodeGuid: e637d21d-7dfa-4c23-9d98-8370116e7d2d
+    TargetNodeGuid: 06d5eb3a-a1d6-48da-9045-b39505623423
+  - BaseNodeGuid: 06d5eb3a-a1d6-48da-9045-b39505623423
+    TargetNodeGuid: ea3c2a5e-a24b-482d-895a-908e878adc0b
+  - BaseNodeGuid: def8294e-95ca-401a-9e45-ebed7635f139
+    TargetNodeGuid: 39627460-fa9c-4384-a7b9-1ee24f5243d5
+  - BaseNodeGuid: 39627460-fa9c-4384-a7b9-1ee24f5243d5
+    TargetNodeGuid: abd203a1-a41d-4c6d-b9ed-25cd21b468ea
+  - BaseNodeGuid: abd203a1-a41d-4c6d-b9ed-25cd21b468ea
+    TargetNodeGuid: bfacb5f6-4b8c-4d9a-9c75-5a733c085dad
+  - BaseNodeGuid: 465bc0e9-f63f-4419-a012-99b3664d0d16
+    TargetNodeGuid: 3867f519-0621-4f93-a64a-10e723fbf839
+  - BaseNodeGuid: 3867f519-0621-4f93-a64a-10e723fbf839
+    TargetNodeGuid: 6d1b85f7-b492-406c-94d6-636af7406077
+  - BaseNodeGuid: a3f2b03d-df52-4f75-b5a3-af20e714b479
+    TargetNodeGuid: b70e5be4-8a46-4bb1-9aeb-dd2f6c83da38
+  - BaseNodeGuid: b70e5be4-8a46-4bb1-9aeb-dd2f6c83da38
+    TargetNodeGuid: 215dc0f4-8ee3-4abf-8d52-1c44d074e049
+  - BaseNodeGuid: c96ad59f-bb8f-437a-b400-646523f1eec4
+    TargetNodeGuid: 4d00e7ee-a49f-405a-ae17-24637eaa3895
+  - BaseNodeGuid: 9143b7eb-1f26-4832-a80b-51607b9b374d
+    TargetNodeGuid: c96ad59f-bb8f-437a-b400-646523f1eec4
+  - BaseNodeGuid: 76357e05-1d6b-4ef1-b6da-ef907968372f
+    TargetNodeGuid: e5173525-0735-40de-814b-612b7847c653
+  - BaseNodeGuid: c9c98e0b-aed3-43aa-851b-bbc2a406b19d
+    TargetNodeGuid: f26a4690-e3cd-429f-aeed-584be6152dd5
+  - BaseNodeGuid: 051e175c-2b5f-4c67-b0a8-216cb6cd8899
+    TargetNodeGuid: 33e8c0a8-de9d-4ba2-ab9a-0cf9882d054d
+  - BaseNodeGuid: 6c83b032-1b5a-4205-b382-84b1da372adc
+    TargetNodeGuid: 45279795-2a19-480a-b611-fdc29fe74d12
+  - BaseNodeGuid: 29da9332-9876-4e49-88c4-6c0026342b3a
+    TargetNodeGuid: b6d66627-b680-4d6a-b769-635fb24cb0ed
+  - BaseNodeGuid: b6d66627-b680-4d6a-b769-635fb24cb0ed
+    TargetNodeGuid: 27ee1849-f6d8-479f-82cb-869c7dfb3313
+  - BaseNodeGuid: b3f0d9cb-dfc3-488e-98ab-1e1d67d5ceb6
+    TargetNodeGuid: 40da9ec5-85bb-49f3-99f8-72e7b5459c33
+  - BaseNodeGuid: 46eb1f6b-a3ec-4186-89f3-58b5c9735745
+    TargetNodeGuid: 0822d5ed-83a7-40b2-88b9-01bc6e172e3a
+  - BaseNodeGuid: bc89593f-696c-4801-a12b-d73021f849f7
+    TargetNodeGuid: 5a473ad8-237f-4912-a10f-dece908d61bd
+  - BaseNodeGuid: 3f78bd55-6246-47df-9dab-02c64fd951c9
+    TargetNodeGuid: dc49547e-030a-464e-8583-6e5cbc15ebb9
+  - BaseNodeGuid: 4a8be52c-ba6d-4f0f-b3bb-84e67a7f0f4c
+    TargetNodeGuid: 3f78bd55-6246-47df-9dab-02c64fd951c9
+  - BaseNodeGuid: 700600f3-9e12-4351-8266-53dc5df937da
+    TargetNodeGuid: 4febeb02-84aa-4713-a8ef-ddd0f27cd473
+  - BaseNodeGuid: ece1f8fa-dda8-4dbb-8060-c221b492d1b9
+    TargetNodeGuid: 78295e92-2135-4682-8219-f2a1a683ca4a
+  - BaseNodeGuid: 80e88954-fa79-484b-abe5-c7ee1e5734c3
+    TargetNodeGuid: 66521806-79a1-465e-8b69-beab7c465432
+  - BaseNodeGuid: 7c89051c-46d9-4ce2-8600-4d2b87c43a8a
+    TargetNodeGuid: 3e7ac920-2c82-4610-bd9b-20cd710ec346
+  - BaseNodeGuid: 3e7ac920-2c82-4610-bd9b-20cd710ec346
+    TargetNodeGuid: 12f51e39-57f7-4dac-a9b7-0b71abeb0743
+  - BaseNodeGuid: 2cc1916b-2461-400d-b1fd-89869893b531
+    TargetNodeGuid: 1340e5ce-f4aa-4ecb-b10f-7b57031ce04c
+  - BaseNodeGuid: 7745a428-bd9a-4298-a7d5-a603bec1b140
+    TargetNodeGuid: 86cd4bdd-5975-484f-9cf5-174901dfbd3f
+  - BaseNodeGuid: 0b4c105b-b1ea-49c8-9d9a-ec166ca3b6f3
+    TargetNodeGuid: af5dde9c-f58c-44ae-ad8f-05729f3052cc
+  - BaseNodeGuid: b32a98f8-a8d3-4721-9071-96bf092b490b
+    TargetNodeGuid: 199f5076-df17-4288-abf6-51d4f9a24ee6
+  - BaseNodeGuid: 2158d7f6-b8ff-4a53-8051-bdae1d456884
+    TargetNodeGuid: 4ecdc9f4-e535-4db7-9670-735294d090ad
+  - BaseNodeGuid: 4ecdc9f4-e535-4db7-9670-735294d090ad
+    TargetNodeGuid: 74dc1932-18e0-4056-84ad-7a056cc6989d
+  - BaseNodeGuid: 03fccd47-c4f9-44bf-b9cc-0d66f8402b84
+    TargetNodeGuid: 2c7561cf-36b6-4026-b8f9-633306990a31
+  - BaseNodeGuid: d922edef-c665-4b2d-b696-ece1f0362729
+    TargetNodeGuid: d8b964b2-2fd9-4188-baf2-e92ed4102393
+  - BaseNodeGuid: 74af9bb8-a9c7-4714-a825-2771c19aef87
+    TargetNodeGuid: 199f5076-df17-4288-abf6-51d4f9a24ee6
+  - BaseNodeGuid: 199f5076-df17-4288-abf6-51d4f9a24ee6
+    TargetNodeGuid: aacb1ba4-2aa3-4697-a129-fd889d235ad4
+  - BaseNodeGuid: e7348669-d117-4122-b74b-e4eb60e9eaac
+    TargetNodeGuid: 10bbfd17-4e7c-4170-835e-583235ccb448
+  - BaseNodeGuid: a116046b-986c-4412-b6f7-401a2a378127
+    TargetNodeGuid: af71151d-5d56-47a6-a92c-7cc59a85b123
+  - BaseNodeGuid: af71151d-5d56-47a6-a92c-7cc59a85b123
+    TargetNodeGuid: 61b7e125-0b85-4655-96d1-61f2d32474f0
+  - BaseNodeGuid: 61b7e125-0b85-4655-96d1-61f2d32474f0
+    TargetNodeGuid: c53d4b90-4cd9-4c5c-acdb-f6c7b877a20a
+  - BaseNodeGuid: f3e7c402-5cde-4bab-b707-d92fb200a088
+    TargetNodeGuid: 6c2e66b6-20e6-4db8-9264-5fde984fa2f0
+  - BaseNodeGuid: 68679d0f-dfde-4cea-a36e-18ce0df7d6d1
+    TargetNodeGuid: aa2ea5d4-8b44-4fe6-a16b-4357f4de250b
+  - BaseNodeGuid: 84da60c9-182f-421a-8bde-9f9677cca216
+    TargetNodeGuid: aa2ea5d4-8b44-4fe6-a16b-4357f4de250b
+  - BaseNodeGuid: 0909f6b4-aa97-4b7b-92fb-e08b1090e1a7
+    TargetNodeGuid: 628b7c3d-015a-4b0a-8c4b-cc4f4a630e19
+  - BaseNodeGuid: 2e699aa1-d67c-48bc-86ad-a4e5fc04a4e0
+    TargetNodeGuid: 409a2d8b-4a79-4c3f-b10f-5c3d0f1ecd74
+  - BaseNodeGuid: 409a2d8b-4a79-4c3f-b10f-5c3d0f1ecd74
+    TargetNodeGuid: a2a89484-3966-4a74-8c3f-4d2bad493e19
+  - BaseNodeGuid: 6185bf28-a6c7-47ca-a1ad-dea96773f394
+    TargetNodeGuid: 6fdc2499-35f7-41c2-91f6-68cdfce8b581
+  - BaseNodeGuid: 75bc7709-1a55-488f-8f10-f782ee20c932
+    TargetNodeGuid: 6185bf28-a6c7-47ca-a1ad-dea96773f394
+  - BaseNodeGuid: 6fdc2499-35f7-41c2-91f6-68cdfce8b581
+    TargetNodeGuid: 367e7738-7870-42fb-9abc-9ec910735985
+  - BaseNodeGuid: 367e7738-7870-42fb-9abc-9ec910735985
+    TargetNodeGuid: 8327f93a-308e-4626-8d7b-8d8a505ec9ec
+  - BaseNodeGuid: fddedd96-9e66-46c9-adfe-9bcebeab7815
+    TargetNodeGuid: 1d970efd-f691-48c4-b256-54f55965920f
+  - BaseNodeGuid: 1d970efd-f691-48c4-b256-54f55965920f
+    TargetNodeGuid: 10b88d69-c13d-48f5-9f1c-c298ce4f6ced
+  - BaseNodeGuid: 679bcdff-4265-49f5-ac1d-0e426f32d56d
+    TargetNodeGuid: 1d970efd-f691-48c4-b256-54f55965920f
+  - BaseNodeGuid: 6b6ca205-f367-44e7-ba1b-4c60cbed215b
+    TargetNodeGuid: b8e4059c-75cb-4bd8-9adf-8e87ab170a0f
+  - BaseNodeGuid: b8e4059c-75cb-4bd8-9adf-8e87ab170a0f
+    TargetNodeGuid: 0249b05e-363b-42a2-9619-df920bf3a422
+  - BaseNodeGuid: 0249b05e-363b-42a2-9619-df920bf3a422
+    TargetNodeGuid: 87362269-9a93-4b33-97ed-66f70de6e4f1
+  - BaseNodeGuid: 42838a7b-84bf-4ded-8396-b314c4aa81b9
+    TargetNodeGuid: 31bc38d8-949f-45a2-9cf7-47c76af4aea1
+  - BaseNodeGuid: 31bc38d8-949f-45a2-9cf7-47c76af4aea1
+    TargetNodeGuid: be9aec90-29f8-4424-b358-b78177c9913a
+  - BaseNodeGuid: be9aec90-29f8-4424-b358-b78177c9913a
+    TargetNodeGuid: de7d9bbf-1f18-48ee-819e-849faa1a17fc
+  - BaseNodeGuid: ca5ebca0-3b89-4494-957b-6a75710ba284
+    TargetNodeGuid: 4d55781c-1201-4125-9f41-547ef8be1cbb
+  - BaseNodeGuid: 4d55781c-1201-4125-9f41-547ef8be1cbb
+    TargetNodeGuid: c76d5c25-d971-4cfa-bcfe-8e24e84554aa
+  - BaseNodeGuid: c76d5c25-d971-4cfa-bcfe-8e24e84554aa
+    TargetNodeGuid: 4d4fc80b-9e59-4e3b-ad47-df42504ccaa6
+  - BaseNodeGuid: c44ac576-a1a5-4f8a-9c25-266668b33b38
+    TargetNodeGuid: ca5ebca0-3b89-4494-957b-6a75710ba284
+  - BaseNodeGuid: 1e6773e4-8607-4ed8-b0d5-a3d0c87abe11
+    TargetNodeGuid: f346d301-9f37-4a0f-b386-8e6e54795e06
+  - BaseNodeGuid: bd82e8a1-661d-40b7-9755-2fa45123b640
+    TargetNodeGuid: 478bb153-2221-4a2a-971a-6bedeb00eb70
+  - BaseNodeGuid: c38e5944-33f3-4f22-a6a6-13f1b057b079
+    TargetNodeGuid: 01dd3435-c371-4d31-9f09-a1092063c22c
+  - BaseNodeGuid: 6f407dd6-ca2c-4d86-bc88-13e757f8ae6c
+    TargetNodeGuid: c9e3e2fa-caba-49ee-98c6-38d0af9ef7c4
+  - BaseNodeGuid: 901a2e6b-8de7-4839-adc9-48058727c228
+    TargetNodeGuid: fc4a03fa-e703-4400-bc20-ea117ea2df90
+  - BaseNodeGuid: fc4a03fa-e703-4400-bc20-ea117ea2df90
+    TargetNodeGuid: 800f3901-ab90-4c6b-93b8-986df89a3f6e
+  - BaseNodeGuid: 736f81ed-04e2-4bb9-a620-f63c35cf6253
+    TargetNodeGuid: d2f98aba-2ff1-4915-99de-72a2eff35396
+  - BaseNodeGuid: b7fc0419-e230-42d7-ae8d-899c610dda8f
+    TargetNodeGuid: 898837fb-9d1f-4627-a63a-3ae1c3f04247
+  - BaseNodeGuid: 7236f2ea-604e-4d63-a518-afd77393d067
+    TargetNodeGuid: 496962ce-9e3e-4acc-a225-39224730703a
+  - BaseNodeGuid: 24cf8532-8665-457d-9348-e9eeac9757fe
+    TargetNodeGuid: 7236f2ea-604e-4d63-a518-afd77393d067
+  - BaseNodeGuid: 47480151-6ea7-479a-87c0-3199b784b292
+    TargetNodeGuid: beed6e53-fb9f-4d52-9afa-65a0bb5336e9
+  - BaseNodeGuid: 76dfe1c3-f89d-4a7d-9481-9f84486c4ac2
+    TargetNodeGuid: c2e0a9be-56c7-42d4-8cf4-90b890e1f150
+  - BaseNodeGuid: 60cf490c-8ef1-4dbd-9161-419923d100bc
+    TargetNodeGuid: 38a38054-7a4d-4f69-9a14-6a894f3936d3
+  - BaseNodeGuid: 38a38054-7a4d-4f69-9a14-6a894f3936d3
+    TargetNodeGuid: dfdc9146-8604-4ff7-949e-7bbad2c04893
+  - BaseNodeGuid: 8c74170c-fc2a-446c-b471-7608293d7c45
+    TargetNodeGuid: 60cf490c-8ef1-4dbd-9161-419923d100bc
+  - BaseNodeGuid: 18e79b4a-41cb-4380-ae01-cbeb925ae603
+    TargetNodeGuid: 8c7c1c91-2190-4bbb-9f4b-f6db3afd58ff
+  - BaseNodeGuid: 1acbff0b-0b9c-42e7-89a5-c727bef2e752
+    TargetNodeGuid: dc7553f4-966f-48c2-8e6c-cc7be5a84a19
+  - BaseNodeGuid: f88d0db4-a309-4941-a2b6-427f8ab84612
+    TargetNodeGuid: 5b9cd2f4-8e7a-48b8-b00c-cf3125eb2de8
+  - BaseNodeGuid: dc7553f4-966f-48c2-8e6c-cc7be5a84a19
+    TargetNodeGuid: f88d0db4-a309-4941-a2b6-427f8ab84612
+  - BaseNodeGuid: 33e0766c-f062-4b2c-b6a8-71d576fdfcd2
+    TargetNodeGuid: 3cd09155-9359-41a0-868e-ca17f69b80aa
+  - BaseNodeGuid: 4be5aa5f-20a6-4c82-9943-9a9bc92256d8
+    TargetNodeGuid: 8a43e0df-8bbe-45aa-b194-8527b68be469
+  - BaseNodeGuid: 8a43e0df-8bbe-45aa-b194-8527b68be469
+    TargetNodeGuid: 2cde6dc2-168f-45ab-ac54-233cadb81656
+  - BaseNodeGuid: 9a6bfa78-31e6-4315-b29b-e3d256693f8d
+    TargetNodeGuid: e2ba1baa-e4a1-46b0-862c-dfaaf249aba7
+  - BaseNodeGuid: e2ba1baa-e4a1-46b0-862c-dfaaf249aba7
+    TargetNodeGuid: ff173038-5c93-4955-a1e5-4d96772dcb1d
+  - BaseNodeGuid: ff173038-5c93-4955-a1e5-4d96772dcb1d
+    TargetNodeGuid: 42b365de-d3a1-4e80-99c8-90b68ccfe7df
+  - BaseNodeGuid: cdc869b1-3ef3-4c5b-94c8-4b7a428f69dd
+    TargetNodeGuid: a6585a5a-8c87-493a-9fdd-98680717b058
+  - BaseNodeGuid: a6585a5a-8c87-493a-9fdd-98680717b058
+    TargetNodeGuid: f255df2e-a9df-4f4a-812c-4d4c9a84ae22
+  - BaseNodeGuid: e50b9ede-1812-48fb-845a-d1e490e83fce
+    TargetNodeGuid: bfbe503e-9c58-4b38-89d4-35d75168e3f1
+  - BaseNodeGuid: c23d403d-2ab1-46d5-b485-2887ee85550f
+    TargetNodeGuid: cb873553-732b-4b4c-a57b-18a94e1b08dc
+  - BaseNodeGuid: 1373a939-8646-4244-9e5f-8a4b606c708f
+    TargetNodeGuid: 55dddc0d-db97-454e-8a10-b751fe38dfd5
+  - BaseNodeGuid: 55dddc0d-db97-454e-8a10-b751fe38dfd5
+    TargetNodeGuid: 9e8c7b95-0930-4dbe-a28f-a9f3109d1cb0
+  - BaseNodeGuid: e9a7833f-d61c-434a-b5d2-a0b17dc74124
+    TargetNodeGuid: f696e944-4d44-4950-b82d-4fa980ad5fc8
+  - BaseNodeGuid: cbc2b1ec-90fa-4528-b34c-27bf0d98d9a1
+    TargetNodeGuid: f0d365d1-3103-4575-87b5-07a7ba01c774
+  - BaseNodeGuid: f0d365d1-3103-4575-87b5-07a7ba01c774
+    TargetNodeGuid: c946fe6b-d005-43e8-8561-d79b2115a3fd
+  - BaseNodeGuid: c946fe6b-d005-43e8-8561-d79b2115a3fd
+    TargetNodeGuid: 86e39a96-7c35-4af0-a0d4-830ea3a0179f
+  - BaseNodeGuid: b22974c0-d218-47da-bd8e-0ae0f294e1dd
+    TargetNodeGuid: 81197307-cc31-4a93-900c-9fd16a678baf
+  - BaseNodeGuid: 2aa3261c-7943-4c21-b93a-65f7ca7562d3
+    TargetNodeGuid: 81197307-cc31-4a93-900c-9fd16a678baf
+  - BaseNodeGuid: 0553d502-6f9b-4c98-871d-0f40e471688b
+    TargetNodeGuid: b7fc0419-e230-42d7-ae8d-899c610dda8f
+  - BaseNodeGuid: 81197307-cc31-4a93-900c-9fd16a678baf
+    TargetNodeGuid: 1cfaf877-35fd-4365-bb2e-3574bbf57449
+  - BaseNodeGuid: 82e74586-a220-4691-8323-1fe23a95bc57
+    TargetNodeGuid: 80e31327-3a7d-49ee-a5f0-a62eb73433cc
+  - BaseNodeGuid: a8b47a16-ae14-45db-ad7e-ac7498593b41
+    TargetNodeGuid: 938c7f29-c2e2-469c-8fb6-479528b0f1f5
+  - BaseNodeGuid: 938c7f29-c2e2-469c-8fb6-479528b0f1f5
+    TargetNodeGuid: 9e4cde58-0d9d-4729-a794-5d9e6b79a866
+  - BaseNodeGuid: 69e80ff6-6397-4a1f-9a77-0ed108a67698
+    TargetNodeGuid: a73f5a06-bfb9-4be0-8ac1-edb529485e6b
+  - BaseNodeGuid: 109ae49c-31d5-4a4b-954e-b489ff980ff9
+    TargetNodeGuid: 69e80ff6-6397-4a1f-9a77-0ed108a67698
+  - BaseNodeGuid: 2c66d32a-681b-4f4c-ab33-8880c9116759
+    TargetNodeGuid: 330639d2-e997-4e9c-9543-484f1c4d3297
+  - BaseNodeGuid: 9b145343-4696-4498-bbfc-2657d8613065
+    TargetNodeGuid: 478d3570-5525-4394-a9b6-d1491375176c
+  - BaseNodeGuid: 330639d2-e997-4e9c-9543-484f1c4d3297
+    TargetNodeGuid: 9b145343-4696-4498-bbfc-2657d8613065
+  - BaseNodeGuid: 478d3570-5525-4394-a9b6-d1491375176c
+    TargetNodeGuid: c7c8c000-6681-42c9-ae22-4690517f1a8b
+  - BaseNodeGuid: c7c8c000-6681-42c9-ae22-4690517f1a8b
+    TargetNodeGuid: badd48ff-b947-4c12-b943-8b2f5d7c694e
+  - BaseNodeGuid: badd48ff-b947-4c12-b943-8b2f5d7c694e
+    TargetNodeGuid: 111e353a-a67f-4dd8-ad42-24a2402c52e7
+  - BaseNodeGuid: e68cc923-871e-43d2-baab-44e6edf35551
+    TargetNodeGuid: c420829d-404d-470f-9c78-06897ab983a2
+  - BaseNodeGuid: 68e48042-c8a1-4362-bc5f-2b0473f92855
+    TargetNodeGuid: 0ccd6075-96d0-40bd-9669-32d34d954fd3
+  - BaseNodeGuid: 0ccd6075-96d0-40bd-9669-32d34d954fd3
+    TargetNodeGuid: ae4caeb7-f861-43bc-b140-5434be9133af
+  - BaseNodeGuid: 80e31327-3a7d-49ee-a5f0-a62eb73433cc
+    TargetNodeGuid: 8048d8fc-17df-41c9-99ab-05a494d7afa2
   - BaseNodeGuid: fba9e589-d6f9-48cc-9557-6ea96d9d18d7
     TargetNodeGuid: 9a13de11-ac8c-4e8f-991b-6b09f4ba4db6
   - BaseNodeGuid: fba9e589-d6f9-48cc-9557-6ea96d9d18d7
@@ -561,118 +831,60 @@ MonoBehaviour:
     TargetNodeGuid: 41f41d1b-ab38-4980-afe7-037a8cafc246
   - BaseNodeGuid: 41f41d1b-ab38-4980-afe7-037a8cafc246
     TargetNodeGuid: 89ab824d-1f99-420f-91b8-773b1c1b6893
-  - BaseNodeGuid: d30a3153-f889-40f6-8188-4876c80724c1
-    TargetNodeGuid: 1b72c413-afe3-4290-8a10-2dbd3d92ea10
   - BaseNodeGuid: 1b72c413-afe3-4290-8a10-2dbd3d92ea10
     TargetNodeGuid: 0e684702-a256-4537-8894-97d42b62b8b9
   - BaseNodeGuid: 0e684702-a256-4537-8894-97d42b62b8b9
     TargetNodeGuid: 46ea9bd1-35bd-457c-94fd-69e963a10d5c
-  - BaseNodeGuid: 46ea9bd1-35bd-457c-94fd-69e963a10d5c
-    TargetNodeGuid: 42bb888f-7807-4233-a63a-ff091e15b56f
   - BaseNodeGuid: 42bb888f-7807-4233-a63a-ff091e15b56f
     TargetNodeGuid: 835da878-284c-4998-9186-81ef6155b1e9
-  - BaseNodeGuid: 835da878-284c-4998-9186-81ef6155b1e9
-    TargetNodeGuid: 71c1da8c-a820-4628-89b4-17f6bcb12372
+  - BaseNodeGuid: 46ea9bd1-35bd-457c-94fd-69e963a10d5c
+    TargetNodeGuid: 42bb888f-7807-4233-a63a-ff091e15b56f
   - BaseNodeGuid: 71c1da8c-a820-4628-89b4-17f6bcb12372
     TargetNodeGuid: e852eac3-9a6e-4a09-8f48-0e482d0e084f
-  - BaseNodeGuid: e852eac3-9a6e-4a09-8f48-0e482d0e084f
-    TargetNodeGuid: 3a62bc80-b6b0-4697-aae3-40bcd1a91f4a
   - BaseNodeGuid: 3a62bc80-b6b0-4697-aae3-40bcd1a91f4a
     TargetNodeGuid: 2aa55f95-7cea-4483-ad88-08c355e28c2c
-  - BaseNodeGuid: 2aa55f95-7cea-4483-ad88-08c355e28c2c
-    TargetNodeGuid: 8ef0b7d2-57dc-426d-98f9-44f1cf8aa138
-  - BaseNodeGuid: 8ef0b7d2-57dc-426d-98f9-44f1cf8aa138
-    TargetNodeGuid: 797eada9-55c3-4bae-8b84-ab567bbb72a8
-  - BaseNodeGuid: 797eada9-55c3-4bae-8b84-ab567bbb72a8
-    TargetNodeGuid: 878d923b-49bc-42bb-9483-469786f8078f
-  - BaseNodeGuid: 878d923b-49bc-42bb-9483-469786f8078f
-    TargetNodeGuid: b66793df-a4fa-4597-a574-47e026037668
   - BaseNodeGuid: b66793df-a4fa-4597-a574-47e026037668
     TargetNodeGuid: 7c1fbc12-0762-44ba-88fc-f032b8af3613
   - BaseNodeGuid: 7c1fbc12-0762-44ba-88fc-f032b8af3613
     TargetNodeGuid: 04f6f917-8771-4b39-a909-59178dddd38f
-  - BaseNodeGuid: 04f6f917-8771-4b39-a909-59178dddd38f
-    TargetNodeGuid: b601a6c9-05e4-40ac-a3d0-0ff88085cdc8
-  - BaseNodeGuid: b601a6c9-05e4-40ac-a3d0-0ff88085cdc8
-    TargetNodeGuid: 44b19354-9f48-4121-8e30-3c1ca013bbdb
   - BaseNodeGuid: 44b19354-9f48-4121-8e30-3c1ca013bbdb
     TargetNodeGuid: aa7b87a6-5b88-4798-b2d4-0bff638bf7cc
   - BaseNodeGuid: aa7b87a6-5b88-4798-b2d4-0bff638bf7cc
     TargetNodeGuid: 685405ec-84bd-4782-a8b4-697dd5f1e14e
   - BaseNodeGuid: 685405ec-84bd-4782-a8b4-697dd5f1e14e
     TargetNodeGuid: 9d3d3f04-6ad0-4339-8a30-7bb282149719
-  - BaseNodeGuid: 9d3d3f04-6ad0-4339-8a30-7bb282149719
-    TargetNodeGuid: 48717d71-c2cc-48f7-a452-f652af7b06a7
-  - BaseNodeGuid: 48717d71-c2cc-48f7-a452-f652af7b06a7
-    TargetNodeGuid: 92d42fa9-03e5-48a7-9c26-d2f8524ce662
   - BaseNodeGuid: 92d42fa9-03e5-48a7-9c26-d2f8524ce662
     TargetNodeGuid: 787ce478-bfe4-4f0f-a182-d6f8da808f2f
   - BaseNodeGuid: 787ce478-bfe4-4f0f-a182-d6f8da808f2f
     TargetNodeGuid: 3e349c40-da78-4c64-9dd0-e19805d358e9
-  - BaseNodeGuid: 3e349c40-da78-4c64-9dd0-e19805d358e9
-    TargetNodeGuid: e637d21d-7dfa-4c23-9d98-8370116e7d2d
-  - BaseNodeGuid: e637d21d-7dfa-4c23-9d98-8370116e7d2d
-    TargetNodeGuid: 06d5eb3a-a1d6-48da-9045-b39505623423
-  - BaseNodeGuid: 06d5eb3a-a1d6-48da-9045-b39505623423
-    TargetNodeGuid: ea3c2a5e-a24b-482d-895a-908e878adc0b
   - BaseNodeGuid: ea3c2a5e-a24b-482d-895a-908e878adc0b
     TargetNodeGuid: def8294e-95ca-401a-9e45-ebed7635f139
-  - BaseNodeGuid: def8294e-95ca-401a-9e45-ebed7635f139
-    TargetNodeGuid: 39627460-fa9c-4384-a7b9-1ee24f5243d5
-  - BaseNodeGuid: 39627460-fa9c-4384-a7b9-1ee24f5243d5
-    TargetNodeGuid: abd203a1-a41d-4c6d-b9ed-25cd21b468ea
-  - BaseNodeGuid: abd203a1-a41d-4c6d-b9ed-25cd21b468ea
-    TargetNodeGuid: bfacb5f6-4b8c-4d9a-9c75-5a733c085dad
   - BaseNodeGuid: bfacb5f6-4b8c-4d9a-9c75-5a733c085dad
     TargetNodeGuid: ae001504-1dfc-436e-a92a-d3f4173cd2f7
   - BaseNodeGuid: ae001504-1dfc-436e-a92a-d3f4173cd2f7
     TargetNodeGuid: 465bc0e9-f63f-4419-a012-99b3664d0d16
-  - BaseNodeGuid: 465bc0e9-f63f-4419-a012-99b3664d0d16
-    TargetNodeGuid: 3867f519-0621-4f93-a64a-10e723fbf839
-  - BaseNodeGuid: 3867f519-0621-4f93-a64a-10e723fbf839
-    TargetNodeGuid: 6d1b85f7-b492-406c-94d6-636af7406077
   - BaseNodeGuid: 6d1b85f7-b492-406c-94d6-636af7406077
     TargetNodeGuid: 206f4a8a-07c4-44d5-a383-4ad1fee3ced4
   - BaseNodeGuid: 206f4a8a-07c4-44d5-a383-4ad1fee3ced4
     TargetNodeGuid: a3f2b03d-df52-4f75-b5a3-af20e714b479
-  - BaseNodeGuid: a3f2b03d-df52-4f75-b5a3-af20e714b479
-    TargetNodeGuid: b70e5be4-8a46-4bb1-9aeb-dd2f6c83da38
-  - BaseNodeGuid: b70e5be4-8a46-4bb1-9aeb-dd2f6c83da38
-    TargetNodeGuid: 215dc0f4-8ee3-4abf-8d52-1c44d074e049
-  - BaseNodeGuid: 215dc0f4-8ee3-4abf-8d52-1c44d074e049
-    TargetNodeGuid: 9143b7eb-1f26-4832-a80b-51607b9b374d
-  - BaseNodeGuid: 9143b7eb-1f26-4832-a80b-51607b9b374d
-    TargetNodeGuid: c96ad59f-bb8f-437a-b400-646523f1eec4
-  - BaseNodeGuid: c96ad59f-bb8f-437a-b400-646523f1eec4
-    TargetNodeGuid: 4d00e7ee-a49f-405a-ae17-24637eaa3895
   - BaseNodeGuid: 215dc0f4-8ee3-4abf-8d52-1c44d074e049
     TargetNodeGuid: f3e7c402-5cde-4bab-b707-d92fb200a088
-  - BaseNodeGuid: 76357e05-1d6b-4ef1-b6da-ef907968372f
-    TargetNodeGuid: e5173525-0735-40de-814b-612b7847c653
-  - BaseNodeGuid: c9c98e0b-aed3-43aa-851b-bbc2a406b19d
-    TargetNodeGuid: f26a4690-e3cd-429f-aeed-584be6152dd5
+  - BaseNodeGuid: 215dc0f4-8ee3-4abf-8d52-1c44d074e049
+    TargetNodeGuid: 9143b7eb-1f26-4832-a80b-51607b9b374d
   - BaseNodeGuid: f26a4690-e3cd-429f-aeed-584be6152dd5
     TargetNodeGuid: a1394ef3-4267-4287-9e11-1915fa86003b
   - BaseNodeGuid: a1394ef3-4267-4287-9e11-1915fa86003b
     TargetNodeGuid: 96ffde65-73c1-4d33-9fca-8712d2a440e5
   - BaseNodeGuid: 96ffde65-73c1-4d33-9fca-8712d2a440e5
     TargetNodeGuid: 051e175c-2b5f-4c67-b0a8-216cb6cd8899
-  - BaseNodeGuid: 051e175c-2b5f-4c67-b0a8-216cb6cd8899
-    TargetNodeGuid: 33e8c0a8-de9d-4ba2-ab9a-0cf9882d054d
   - BaseNodeGuid: 33e8c0a8-de9d-4ba2-ab9a-0cf9882d054d
     TargetNodeGuid: 55b8f934-2dcd-4bf9-a2ab-83295b9a9894
   - BaseNodeGuid: 55b8f934-2dcd-4bf9-a2ab-83295b9a9894
     TargetNodeGuid: 6c83b032-1b5a-4205-b382-84b1da372adc
-  - BaseNodeGuid: 6c83b032-1b5a-4205-b382-84b1da372adc
-    TargetNodeGuid: 45279795-2a19-480a-b611-fdc29fe74d12
   - BaseNodeGuid: 45279795-2a19-480a-b611-fdc29fe74d12
     TargetNodeGuid: 5771a718-bc13-4564-b2a0-3051ac788c0f
   - BaseNodeGuid: 5771a718-bc13-4564-b2a0-3051ac788c0f
     TargetNodeGuid: 29da9332-9876-4e49-88c4-6c0026342b3a
-  - BaseNodeGuid: 29da9332-9876-4e49-88c4-6c0026342b3a
-    TargetNodeGuid: b6d66627-b680-4d6a-b769-635fb24cb0ed
-  - BaseNodeGuid: b6d66627-b680-4d6a-b769-635fb24cb0ed
-    TargetNodeGuid: 27ee1849-f6d8-479f-82cb-869c7dfb3313
   - BaseNodeGuid: 27ee1849-f6d8-479f-82cb-869c7dfb3313
     TargetNodeGuid: 7e7ce52f-f877-4109-a821-7a4d88964b72
   - BaseNodeGuid: 7e7ce52f-f877-4109-a821-7a4d88964b72
@@ -690,9 +902,9 @@ MonoBehaviour:
   - BaseNodeGuid: b302ca66-fdaa-46e2-9de1-9dfb8c04df4c
     TargetNodeGuid: c6cc2026-2eae-492f-9562-7539815c56df
   - BaseNodeGuid: c6cc2026-2eae-492f-9562-7539815c56df
-    TargetNodeGuid: 4ae9f4ad-5b0f-4d5a-b126-98aecef190dd
-  - BaseNodeGuid: c6cc2026-2eae-492f-9562-7539815c56df
     TargetNodeGuid: 5643a33b-e700-48aa-baf5-c2472ceef5d0
+  - BaseNodeGuid: c6cc2026-2eae-492f-9562-7539815c56df
+    TargetNodeGuid: 4ae9f4ad-5b0f-4d5a-b126-98aecef190dd
   - BaseNodeGuid: 5643a33b-e700-48aa-baf5-c2472ceef5d0
     TargetNodeGuid: f1d1eb8d-a140-4ddf-b24a-856b62335bcf
   - BaseNodeGuid: f1d1eb8d-a140-4ddf-b24a-856b62335bcf
@@ -702,91 +914,67 @@ MonoBehaviour:
   - BaseNodeGuid: eac5b80d-787b-408a-8c27-f73e677ac623
     TargetNodeGuid: 383f462b-8991-4eaf-a9cb-4babe225763a
   - BaseNodeGuid: 383f462b-8991-4eaf-a9cb-4babe225763a
+    TargetNodeGuid: d29a1c55-091f-4fbc-8341-800b6cb6166a
+  - BaseNodeGuid: 383f462b-8991-4eaf-a9cb-4babe225763a
     TargetNodeGuid: 62904981-d148-4ec6-81fb-eb3d34096d88
   - BaseNodeGuid: 62904981-d148-4ec6-81fb-eb3d34096d88
     TargetNodeGuid: a5345d18-789d-4bb7-8737-2c98ed1a5074
   - BaseNodeGuid: a5345d18-789d-4bb7-8737-2c98ed1a5074
     TargetNodeGuid: b3f0d9cb-dfc3-488e-98ab-1e1d67d5ceb6
-  - BaseNodeGuid: b3f0d9cb-dfc3-488e-98ab-1e1d67d5ceb6
-    TargetNodeGuid: 40da9ec5-85bb-49f3-99f8-72e7b5459c33
   - BaseNodeGuid: 40da9ec5-85bb-49f3-99f8-72e7b5459c33
     TargetNodeGuid: 84e0ae2d-7b64-4489-8cc6-0de17b18d4c4
   - BaseNodeGuid: 84e0ae2d-7b64-4489-8cc6-0de17b18d4c4
     TargetNodeGuid: fae041eb-17d2-4db5-9aad-1260202ddca8
-  - BaseNodeGuid: 383f462b-8991-4eaf-a9cb-4babe225763a
-    TargetNodeGuid: d29a1c55-091f-4fbc-8341-800b6cb6166a
   - BaseNodeGuid: d29a1c55-091f-4fbc-8341-800b6cb6166a
     TargetNodeGuid: 46eb1f6b-a3ec-4186-89f3-58b5c9735745
-  - BaseNodeGuid: 46eb1f6b-a3ec-4186-89f3-58b5c9735745
-    TargetNodeGuid: 0822d5ed-83a7-40b2-88b9-01bc6e172e3a
+  - BaseNodeGuid: 0822d5ed-83a7-40b2-88b9-01bc6e172e3a
+    TargetNodeGuid: 2cc1916b-2461-400d-b1fd-89869893b531
   - BaseNodeGuid: 0822d5ed-83a7-40b2-88b9-01bc6e172e3a
     TargetNodeGuid: 25448e27-6ad4-4459-9a61-836a2c97b767
   - BaseNodeGuid: 25448e27-6ad4-4459-9a61-836a2c97b767
     TargetNodeGuid: bc89593f-696c-4801-a12b-d73021f849f7
-  - BaseNodeGuid: bc89593f-696c-4801-a12b-d73021f849f7
-    TargetNodeGuid: 5a473ad8-237f-4912-a10f-dece908d61bd
   - BaseNodeGuid: 5a473ad8-237f-4912-a10f-dece908d61bd
     TargetNodeGuid: 4a8be52c-ba6d-4f0f-b3bb-84e67a7f0f4c
-  - BaseNodeGuid: 4a8be52c-ba6d-4f0f-b3bb-84e67a7f0f4c
-    TargetNodeGuid: 3f78bd55-6246-47df-9dab-02c64fd951c9
-  - BaseNodeGuid: 3f78bd55-6246-47df-9dab-02c64fd951c9
-    TargetNodeGuid: dc49547e-030a-464e-8583-6e5cbc15ebb9
-  - BaseNodeGuid: dc49547e-030a-464e-8583-6e5cbc15ebb9
-    TargetNodeGuid: 8a4341a0-23cd-416e-b711-c6c74c83d6c3
   - BaseNodeGuid: 8a4341a0-23cd-416e-b711-c6c74c83d6c3
     TargetNodeGuid: 700600f3-9e12-4351-8266-53dc5df937da
-  - BaseNodeGuid: 700600f3-9e12-4351-8266-53dc5df937da
-    TargetNodeGuid: 4febeb02-84aa-4713-a8ef-ddd0f27cd473
+  - BaseNodeGuid: dc49547e-030a-464e-8583-6e5cbc15ebb9
+    TargetNodeGuid: 8a4341a0-23cd-416e-b711-c6c74c83d6c3
   - BaseNodeGuid: 4febeb02-84aa-4713-a8ef-ddd0f27cd473
     TargetNodeGuid: ece1f8fa-dda8-4dbb-8060-c221b492d1b9
-  - BaseNodeGuid: ece1f8fa-dda8-4dbb-8060-c221b492d1b9
-    TargetNodeGuid: 78295e92-2135-4682-8219-f2a1a683ca4a
   - BaseNodeGuid: 78295e92-2135-4682-8219-f2a1a683ca4a
     TargetNodeGuid: 80e88954-fa79-484b-abe5-c7ee1e5734c3
-  - BaseNodeGuid: 80e88954-fa79-484b-abe5-c7ee1e5734c3
-    TargetNodeGuid: 66521806-79a1-465e-8b69-beab7c465432
   - BaseNodeGuid: 66521806-79a1-465e-8b69-beab7c465432
     TargetNodeGuid: 7c89051c-46d9-4ce2-8600-4d2b87c43a8a
-  - BaseNodeGuid: 7c89051c-46d9-4ce2-8600-4d2b87c43a8a
-    TargetNodeGuid: 3e7ac920-2c82-4610-bd9b-20cd710ec346
-  - BaseNodeGuid: 3e7ac920-2c82-4610-bd9b-20cd710ec346
-    TargetNodeGuid: 12f51e39-57f7-4dac-a9b7-0b71abeb0743
   - BaseNodeGuid: 12f51e39-57f7-4dac-a9b7-0b71abeb0743
     TargetNodeGuid: 7faaeb0c-984c-4ed9-bc96-a865e85e4b52
   - BaseNodeGuid: 7faaeb0c-984c-4ed9-bc96-a865e85e4b52
     TargetNodeGuid: fae041eb-17d2-4db5-9aad-1260202ddca8
-  - BaseNodeGuid: 0822d5ed-83a7-40b2-88b9-01bc6e172e3a
-    TargetNodeGuid: 2cc1916b-2461-400d-b1fd-89869893b531
-  - BaseNodeGuid: 2cc1916b-2461-400d-b1fd-89869893b531
-    TargetNodeGuid: 1340e5ce-f4aa-4ecb-b10f-7b57031ce04c
   - BaseNodeGuid: 1340e5ce-f4aa-4ecb-b10f-7b57031ce04c
     TargetNodeGuid: 2dae7435-e7e0-4a6c-a9b3-d02b54d18427
   - BaseNodeGuid: 2dae7435-e7e0-4a6c-a9b3-d02b54d18427
     TargetNodeGuid: fae041eb-17d2-4db5-9aad-1260202ddca8
-  - BaseNodeGuid: 4ae9f4ad-5b0f-4d5a-b126-98aecef190dd
-    TargetNodeGuid: 300aff3b-d102-43f8-aa44-702c018b5c39
   - BaseNodeGuid: fae041eb-17d2-4db5-9aad-1260202ddca8
+    TargetNodeGuid: 300aff3b-d102-43f8-aa44-702c018b5c39
+  - BaseNodeGuid: 4ae9f4ad-5b0f-4d5a-b126-98aecef190dd
     TargetNodeGuid: 300aff3b-d102-43f8-aa44-702c018b5c39
   - BaseNodeGuid: 300aff3b-d102-43f8-aa44-702c018b5c39
     TargetNodeGuid: 7745a428-bd9a-4298-a7d5-a603bec1b140
-  - BaseNodeGuid: 7745a428-bd9a-4298-a7d5-a603bec1b140
-    TargetNodeGuid: 86cd4bdd-5975-484f-9cf5-174901dfbd3f
   - BaseNodeGuid: 86cd4bdd-5975-484f-9cf5-174901dfbd3f
     TargetNodeGuid: 8260824f-cd4e-449d-b604-2fe5471577ef
   - BaseNodeGuid: 86cd4bdd-5975-484f-9cf5-174901dfbd3f
     TargetNodeGuid: 5d796f9d-47e5-4f91-a9d8-eaf887f97e33
+  - BaseNodeGuid: 8260824f-cd4e-449d-b604-2fe5471577ef
+    TargetNodeGuid: 199f5076-df17-4288-abf6-51d4f9a24ee6
   - BaseNodeGuid: 5d796f9d-47e5-4f91-a9d8-eaf887f97e33
     TargetNodeGuid: 0b4c105b-b1ea-49c8-9d9a-ec166ca3b6f3
-  - BaseNodeGuid: 0b4c105b-b1ea-49c8-9d9a-ec166ca3b6f3
-    TargetNodeGuid: af5dde9c-f58c-44ae-ad8f-05729f3052cc
   - BaseNodeGuid: af5dde9c-f58c-44ae-ad8f-05729f3052cc
     TargetNodeGuid: 52eea94e-8b56-4f15-b8df-595813aa2184
+  - BaseNodeGuid: af5dde9c-f58c-44ae-ad8f-05729f3052cc
+    TargetNodeGuid: 660e704f-3ec7-4e3f-97f7-ce64ae03bf68
   - BaseNodeGuid: 52eea94e-8b56-4f15-b8df-595813aa2184
     TargetNodeGuid: ab09bb01-4d14-4f1e-b1f3-e3b8d1adb71e
   - BaseNodeGuid: ab09bb01-4d14-4f1e-b1f3-e3b8d1adb71e
     TargetNodeGuid: b32a98f8-a8d3-4721-9071-96bf092b490b
-  - BaseNodeGuid: af5dde9c-f58c-44ae-ad8f-05729f3052cc
-    TargetNodeGuid: 660e704f-3ec7-4e3f-97f7-ce64ae03bf68
   - BaseNodeGuid: 660e704f-3ec7-4e3f-97f7-ce64ae03bf68
     TargetNodeGuid: 58240de1-32b1-40c9-bd8b-80d4bd217e11
   - BaseNodeGuid: 58240de1-32b1-40c9-bd8b-80d4bd217e11
@@ -799,20 +987,12 @@ MonoBehaviour:
     TargetNodeGuid: ae75e2ce-1a3f-4bdb-a9ab-a8cdd33e8c82
   - BaseNodeGuid: ae75e2ce-1a3f-4bdb-a9ab-a8cdd33e8c82
     TargetNodeGuid: 2158d7f6-b8ff-4a53-8051-bdae1d456884
-  - BaseNodeGuid: 2158d7f6-b8ff-4a53-8051-bdae1d456884
-    TargetNodeGuid: 4ecdc9f4-e535-4db7-9670-735294d090ad
-  - BaseNodeGuid: 4ecdc9f4-e535-4db7-9670-735294d090ad
-    TargetNodeGuid: 74dc1932-18e0-4056-84ad-7a056cc6989d
   - BaseNodeGuid: 74dc1932-18e0-4056-84ad-7a056cc6989d
     TargetNodeGuid: 9282fd0d-f500-46cd-9b63-4e718aaaf0e6
   - BaseNodeGuid: 9282fd0d-f500-46cd-9b63-4e718aaaf0e6
     TargetNodeGuid: 03fccd47-c4f9-44bf-b9cc-0d66f8402b84
-  - BaseNodeGuid: 03fccd47-c4f9-44bf-b9cc-0d66f8402b84
-    TargetNodeGuid: 2c7561cf-36b6-4026-b8f9-633306990a31
   - BaseNodeGuid: 2c7561cf-36b6-4026-b8f9-633306990a31
     TargetNodeGuid: d922edef-c665-4b2d-b696-ece1f0362729
-  - BaseNodeGuid: d922edef-c665-4b2d-b696-ece1f0362729
-    TargetNodeGuid: d8b964b2-2fd9-4188-baf2-e92ed4102393
   - BaseNodeGuid: d8b964b2-2fd9-4188-baf2-e92ed4102393
     TargetNodeGuid: e6818efa-dea9-4428-9f7f-a9b0f3bd8835
   - BaseNodeGuid: e6818efa-dea9-4428-9f7f-a9b0f3bd8835
@@ -825,18 +1005,12 @@ MonoBehaviour:
     TargetNodeGuid: a51baf00-1b52-4472-a958-7010bb805b9e
   - BaseNodeGuid: a51baf00-1b52-4472-a958-7010bb805b9e
     TargetNodeGuid: 74af9bb8-a9c7-4714-a825-2771c19aef87
-  - BaseNodeGuid: 74af9bb8-a9c7-4714-a825-2771c19aef87
-    TargetNodeGuid: 199f5076-df17-4288-abf6-51d4f9a24ee6
-  - BaseNodeGuid: 199f5076-df17-4288-abf6-51d4f9a24ee6
-    TargetNodeGuid: aacb1ba4-2aa3-4697-a129-fd889d235ad4
-  - BaseNodeGuid: aacb1ba4-2aa3-4697-a129-fd889d235ad4
-    TargetNodeGuid: 9753ab4e-c79e-40e7-91be-064992b7450d
-  - BaseNodeGuid: e7348669-d117-4122-b74b-e4eb60e9eaac
-    TargetNodeGuid: 10bbfd17-4e7c-4170-835e-583235ccb448
-  - BaseNodeGuid: 10bbfd17-4e7c-4170-835e-583235ccb448
-    TargetNodeGuid: 108c709c-7e97-42e3-8de3-1cb363b651cb
   - BaseNodeGuid: 9753ab4e-c79e-40e7-91be-064992b7450d
     TargetNodeGuid: e7348669-d117-4122-b74b-e4eb60e9eaac
+  - BaseNodeGuid: aacb1ba4-2aa3-4697-a129-fd889d235ad4
+    TargetNodeGuid: 9753ab4e-c79e-40e7-91be-064992b7450d
+  - BaseNodeGuid: 10bbfd17-4e7c-4170-835e-583235ccb448
+    TargetNodeGuid: 108c709c-7e97-42e3-8de3-1cb363b651cb
   - BaseNodeGuid: 108c709c-7e97-42e3-8de3-1cb363b651cb
     TargetNodeGuid: ae998f14-a5a4-4567-a893-cafcd5568090
   - BaseNodeGuid: ae998f14-a5a4-4567-a893-cafcd5568090
@@ -847,12 +1021,12 @@ MonoBehaviour:
     TargetNodeGuid: cc255a16-c114-465d-b239-f031745f6f75
   - BaseNodeGuid: cc255a16-c114-465d-b239-f031745f6f75
     TargetNodeGuid: f7a1d1a1-b50a-4385-89b1-ebc68a258113
-  - BaseNodeGuid: f7a1d1a1-b50a-4385-89b1-ebc68a258113
-    TargetNodeGuid: 59a27003-3eee-4859-8f9c-66af47d663e3
   - BaseNodeGuid: 59a27003-3eee-4859-8f9c-66af47d663e3
     TargetNodeGuid: e2b40e33-dee3-4a46-a745-bb600b4a4a86
   - BaseNodeGuid: e2b40e33-dee3-4a46-a745-bb600b4a4a86
     TargetNodeGuid: 466f8b0a-d02a-4919-9dc2-a066f52f3320
+  - BaseNodeGuid: f7a1d1a1-b50a-4385-89b1-ebc68a258113
+    TargetNodeGuid: 59a27003-3eee-4859-8f9c-66af47d663e3
   - BaseNodeGuid: 466f8b0a-d02a-4919-9dc2-a066f52f3320
     TargetNodeGuid: c64c9060-e527-45bf-aac4-f4d919aae077
   - BaseNodeGuid: c64c9060-e527-45bf-aac4-f4d919aae077
@@ -863,12 +1037,6 @@ MonoBehaviour:
     TargetNodeGuid: 92033c3e-b470-47bb-81f3-6c91e1de4931
   - BaseNodeGuid: 92033c3e-b470-47bb-81f3-6c91e1de4931
     TargetNodeGuid: a116046b-986c-4412-b6f7-401a2a378127
-  - BaseNodeGuid: a116046b-986c-4412-b6f7-401a2a378127
-    TargetNodeGuid: af71151d-5d56-47a6-a92c-7cc59a85b123
-  - BaseNodeGuid: af71151d-5d56-47a6-a92c-7cc59a85b123
-    TargetNodeGuid: 61b7e125-0b85-4655-96d1-61f2d32474f0
-  - BaseNodeGuid: 61b7e125-0b85-4655-96d1-61f2d32474f0
-    TargetNodeGuid: c53d4b90-4cd9-4c5c-acdb-f6c7b877a20a
   - BaseNodeGuid: c53d4b90-4cd9-4c5c-acdb-f6c7b877a20a
     TargetNodeGuid: af7ad677-2ea3-4dd5-bbcf-110c165a3925
   - BaseNodeGuid: af7ad677-2ea3-4dd5-bbcf-110c165a3925
@@ -877,198 +1045,72 @@ MonoBehaviour:
     TargetNodeGuid: 7233db7c-9a58-4476-a6ee-9142b1e369d1
   - BaseNodeGuid: 7233db7c-9a58-4476-a6ee-9142b1e369d1
     TargetNodeGuid: 6397b81e-b9fd-4f8e-8288-ffa5e5f09758
-  - BaseNodeGuid: b32a98f8-a8d3-4721-9071-96bf092b490b
-    TargetNodeGuid: 199f5076-df17-4288-abf6-51d4f9a24ee6
-  - BaseNodeGuid: f3e7c402-5cde-4bab-b707-d92fb200a088
-    TargetNodeGuid: 6c2e66b6-20e6-4db8-9264-5fde984fa2f0
   - BaseNodeGuid: 4d00e7ee-a49f-405a-ae17-24637eaa3895
     TargetNodeGuid: 6c2e66b6-20e6-4db8-9264-5fde984fa2f0
   - BaseNodeGuid: 6397b81e-b9fd-4f8e-8288-ffa5e5f09758
     TargetNodeGuid: 6c2e66b6-20e6-4db8-9264-5fde984fa2f0
-  - BaseNodeGuid: ab289706-7377-4db7-9716-bc7e6a5fdc5a
-    TargetNodeGuid: 6c2e66b6-20e6-4db8-9264-5fde984fa2f0
-  - BaseNodeGuid: 6c2e66b6-20e6-4db8-9264-5fde984fa2f0
-    TargetNodeGuid: c583f024-6e53-43b5-851d-ba800918d536
-  - BaseNodeGuid: c583f024-6e53-43b5-851d-ba800918d536
-    TargetNodeGuid: 0909f6b4-aa97-4b7b-92fb-e08b1090e1a7
-  - BaseNodeGuid: 0909f6b4-aa97-4b7b-92fb-e08b1090e1a7
-    TargetNodeGuid: 628b7c3d-015a-4b0a-8c4b-cc4f4a630e19
   - BaseNodeGuid: 628b7c3d-015a-4b0a-8c4b-cc4f4a630e19
     TargetNodeGuid: 2e699aa1-d67c-48bc-86ad-a4e5fc04a4e0
-  - BaseNodeGuid: 2e699aa1-d67c-48bc-86ad-a4e5fc04a4e0
-    TargetNodeGuid: 409a2d8b-4a79-4c3f-b10f-5c3d0f1ecd74
-  - BaseNodeGuid: 409a2d8b-4a79-4c3f-b10f-5c3d0f1ecd74
-    TargetNodeGuid: a2a89484-3966-4a74-8c3f-4d2bad493e19
   - BaseNodeGuid: a2a89484-3966-4a74-8c3f-4d2bad493e19
     TargetNodeGuid: 75bc7709-1a55-488f-8f10-f782ee20c932
-  - BaseNodeGuid: 75bc7709-1a55-488f-8f10-f782ee20c932
-    TargetNodeGuid: 6185bf28-a6c7-47ca-a1ad-dea96773f394
-  - BaseNodeGuid: 6185bf28-a6c7-47ca-a1ad-dea96773f394
-    TargetNodeGuid: 6fdc2499-35f7-41c2-91f6-68cdfce8b581
-  - BaseNodeGuid: 6fdc2499-35f7-41c2-91f6-68cdfce8b581
-    TargetNodeGuid: 367e7738-7870-42fb-9abc-9ec910735985
-  - BaseNodeGuid: 367e7738-7870-42fb-9abc-9ec910735985
-    TargetNodeGuid: 8327f93a-308e-4626-8d7b-8d8a505ec9ec
-  - BaseNodeGuid: 8327f93a-308e-4626-8d7b-8d8a505ec9ec
-    TargetNodeGuid: fddedd96-9e66-46c9-adfe-9bcebeab7815
-  - BaseNodeGuid: fddedd96-9e66-46c9-adfe-9bcebeab7815
-    TargetNodeGuid: 1d970efd-f691-48c4-b256-54f55965920f
-  - BaseNodeGuid: 1d970efd-f691-48c4-b256-54f55965920f
-    TargetNodeGuid: 10b88d69-c13d-48f5-9f1c-c298ce4f6ced
-  - BaseNodeGuid: 10b88d69-c13d-48f5-9f1c-c298ce4f6ced
-    TargetNodeGuid: 679bcdff-4265-49f5-ac1d-0e426f32d56d
-  - BaseNodeGuid: 679bcdff-4265-49f5-ac1d-0e426f32d56d
-    TargetNodeGuid: 1d970efd-f691-48c4-b256-54f55965920f
   - BaseNodeGuid: 10b88d69-c13d-48f5-9f1c-c298ce4f6ced
     TargetNodeGuid: 6b6ca205-f367-44e7-ba1b-4c60cbed215b
-  - BaseNodeGuid: 6b6ca205-f367-44e7-ba1b-4c60cbed215b
-    TargetNodeGuid: b8e4059c-75cb-4bd8-9adf-8e87ab170a0f
-  - BaseNodeGuid: b8e4059c-75cb-4bd8-9adf-8e87ab170a0f
-    TargetNodeGuid: 0249b05e-363b-42a2-9619-df920bf3a422
-  - BaseNodeGuid: 0249b05e-363b-42a2-9619-df920bf3a422
-    TargetNodeGuid: 87362269-9a93-4b33-97ed-66f70de6e4f1
+  - BaseNodeGuid: 10b88d69-c13d-48f5-9f1c-c298ce4f6ced
+    TargetNodeGuid: 679bcdff-4265-49f5-ac1d-0e426f32d56d
   - BaseNodeGuid: 87362269-9a93-4b33-97ed-66f70de6e4f1
     TargetNodeGuid: 42838a7b-84bf-4ded-8396-b314c4aa81b9
-  - BaseNodeGuid: 42838a7b-84bf-4ded-8396-b314c4aa81b9
-    TargetNodeGuid: 31bc38d8-949f-45a2-9cf7-47c76af4aea1
-  - BaseNodeGuid: 31bc38d8-949f-45a2-9cf7-47c76af4aea1
-    TargetNodeGuid: be9aec90-29f8-4424-b358-b78177c9913a
-  - BaseNodeGuid: be9aec90-29f8-4424-b358-b78177c9913a
-    TargetNodeGuid: de7d9bbf-1f18-48ee-819e-849faa1a17fc
-  - BaseNodeGuid: c76d5c25-d971-4cfa-bcfe-8e24e84554aa
-    TargetNodeGuid: 4d4fc80b-9e59-4e3b-ad47-df42504ccaa6
   - BaseNodeGuid: de7d9bbf-1f18-48ee-819e-849faa1a17fc
     TargetNodeGuid: c44ac576-a1a5-4f8a-9c25-266668b33b38
-  - BaseNodeGuid: c44ac576-a1a5-4f8a-9c25-266668b33b38
-    TargetNodeGuid: ca5ebca0-3b89-4494-957b-6a75710ba284
-  - BaseNodeGuid: ca5ebca0-3b89-4494-957b-6a75710ba284
-    TargetNodeGuid: 4d55781c-1201-4125-9f41-547ef8be1cbb
-  - BaseNodeGuid: 4d55781c-1201-4125-9f41-547ef8be1cbb
-    TargetNodeGuid: c76d5c25-d971-4cfa-bcfe-8e24e84554aa
-  - BaseNodeGuid: c583f024-6e53-43b5-851d-ba800918d536
-    TargetNodeGuid: 1e6773e4-8607-4ed8-b0d5-a3d0c87abe11
-  - BaseNodeGuid: 1e6773e4-8607-4ed8-b0d5-a3d0c87abe11
-    TargetNodeGuid: f346d301-9f37-4a0f-b386-8e6e54795e06
   - BaseNodeGuid: f346d301-9f37-4a0f-b386-8e6e54795e06
     TargetNodeGuid: c9120139-1234-4bde-bbdc-a77ec27ed793
   - BaseNodeGuid: c9120139-1234-4bde-bbdc-a77ec27ed793
     TargetNodeGuid: bd82e8a1-661d-40b7-9755-2fa45123b640
-  - BaseNodeGuid: bd82e8a1-661d-40b7-9755-2fa45123b640
-    TargetNodeGuid: 478bb153-2221-4a2a-971a-6bedeb00eb70
   - BaseNodeGuid: 478bb153-2221-4a2a-971a-6bedeb00eb70
     TargetNodeGuid: ce7f4fc8-77fa-40e7-86c3-79c4f972e26e
   - BaseNodeGuid: ce7f4fc8-77fa-40e7-86c3-79c4f972e26e
     TargetNodeGuid: 28a17fe2-bdc7-4f39-9f6c-b0c213ba41b0
   - BaseNodeGuid: 28a17fe2-bdc7-4f39-9f6c-b0c213ba41b0
     TargetNodeGuid: c38e5944-33f3-4f22-a6a6-13f1b057b079
-  - BaseNodeGuid: c38e5944-33f3-4f22-a6a6-13f1b057b079
-    TargetNodeGuid: 01dd3435-c371-4d31-9f09-a1092063c22c
-  - BaseNodeGuid: 01dd3435-c371-4d31-9f09-a1092063c22c
-    TargetNodeGuid: 98d87720-13d0-4f8b-9ff0-8f213402d86a
-  - BaseNodeGuid: 98d87720-13d0-4f8b-9ff0-8f213402d86a
-    TargetNodeGuid: fae43a9c-1ee9-485b-9055-fc1e5ce94f71
-  - BaseNodeGuid: fae43a9c-1ee9-485b-9055-fc1e5ce94f71
-    TargetNodeGuid: 6f407dd6-ca2c-4d86-bc88-13e757f8ae6c
-  - BaseNodeGuid: 6f407dd6-ca2c-4d86-bc88-13e757f8ae6c
-    TargetNodeGuid: c9e3e2fa-caba-49ee-98c6-38d0af9ef7c4
   - BaseNodeGuid: c9e3e2fa-caba-49ee-98c6-38d0af9ef7c4
     TargetNodeGuid: 901a2e6b-8de7-4839-adc9-48058727c228
-  - BaseNodeGuid: 901a2e6b-8de7-4839-adc9-48058727c228
-    TargetNodeGuid: fc4a03fa-e703-4400-bc20-ea117ea2df90
-  - BaseNodeGuid: fc4a03fa-e703-4400-bc20-ea117ea2df90
-    TargetNodeGuid: 800f3901-ab90-4c6b-93b8-986df89a3f6e
   - BaseNodeGuid: 800f3901-ab90-4c6b-93b8-986df89a3f6e
     TargetNodeGuid: 736f81ed-04e2-4bb9-a620-f63c35cf6253
-  - BaseNodeGuid: 736f81ed-04e2-4bb9-a620-f63c35cf6253
-    TargetNodeGuid: d2f98aba-2ff1-4915-99de-72a2eff35396
+  - BaseNodeGuid: fae43a9c-1ee9-485b-9055-fc1e5ce94f71
+    TargetNodeGuid: 6f407dd6-ca2c-4d86-bc88-13e757f8ae6c
   - BaseNodeGuid: d2f98aba-2ff1-4915-99de-72a2eff35396
     TargetNodeGuid: 0553d502-6f9b-4c98-871d-0f40e471688b
-  - BaseNodeGuid: 0553d502-6f9b-4c98-871d-0f40e471688b
-    TargetNodeGuid: b7fc0419-e230-42d7-ae8d-899c610dda8f
-  - BaseNodeGuid: b7fc0419-e230-42d7-ae8d-899c610dda8f
-    TargetNodeGuid: 898837fb-9d1f-4627-a63a-3ae1c3f04247
   - BaseNodeGuid: 898837fb-9d1f-4627-a63a-3ae1c3f04247
     TargetNodeGuid: 24cf8532-8665-457d-9348-e9eeac9757fe
-  - BaseNodeGuid: 24cf8532-8665-457d-9348-e9eeac9757fe
-    TargetNodeGuid: 7236f2ea-604e-4d63-a518-afd77393d067
-  - BaseNodeGuid: 7236f2ea-604e-4d63-a518-afd77393d067
-    TargetNodeGuid: 496962ce-9e3e-4acc-a225-39224730703a
   - BaseNodeGuid: 496962ce-9e3e-4acc-a225-39224730703a
     TargetNodeGuid: 47480151-6ea7-479a-87c0-3199b784b292
-  - BaseNodeGuid: 47480151-6ea7-479a-87c0-3199b784b292
-    TargetNodeGuid: beed6e53-fb9f-4d52-9afa-65a0bb5336e9
   - BaseNodeGuid: beed6e53-fb9f-4d52-9afa-65a0bb5336e9
     TargetNodeGuid: 76dfe1c3-f89d-4a7d-9481-9f84486c4ac2
-  - BaseNodeGuid: 76dfe1c3-f89d-4a7d-9481-9f84486c4ac2
-    TargetNodeGuid: c2e0a9be-56c7-42d4-8cf4-90b890e1f150
   - BaseNodeGuid: c2e0a9be-56c7-42d4-8cf4-90b890e1f150
     TargetNodeGuid: 8c74170c-fc2a-446c-b471-7608293d7c45
-  - BaseNodeGuid: 8c74170c-fc2a-446c-b471-7608293d7c45
-    TargetNodeGuid: 60cf490c-8ef1-4dbd-9161-419923d100bc
-  - BaseNodeGuid: 60cf490c-8ef1-4dbd-9161-419923d100bc
-    TargetNodeGuid: 38a38054-7a4d-4f69-9a14-6a894f3936d3
-  - BaseNodeGuid: 38a38054-7a4d-4f69-9a14-6a894f3936d3
-    TargetNodeGuid: dfdc9146-8604-4ff7-949e-7bbad2c04893
   - BaseNodeGuid: dfdc9146-8604-4ff7-949e-7bbad2c04893
     TargetNodeGuid: 18e79b4a-41cb-4380-ae01-cbeb925ae603
-  - BaseNodeGuid: 18e79b4a-41cb-4380-ae01-cbeb925ae603
-    TargetNodeGuid: 8c7c1c91-2190-4bbb-9f4b-f6db3afd58ff
   - BaseNodeGuid: 8c7c1c91-2190-4bbb-9f4b-f6db3afd58ff
     TargetNodeGuid: 1acbff0b-0b9c-42e7-89a5-c727bef2e752
-  - BaseNodeGuid: 1acbff0b-0b9c-42e7-89a5-c727bef2e752
-    TargetNodeGuid: dc7553f4-966f-48c2-8e6c-cc7be5a84a19
-  - BaseNodeGuid: dc7553f4-966f-48c2-8e6c-cc7be5a84a19
-    TargetNodeGuid: f88d0db4-a309-4941-a2b6-427f8ab84612
-  - BaseNodeGuid: f88d0db4-a309-4941-a2b6-427f8ab84612
-    TargetNodeGuid: 5b9cd2f4-8e7a-48b8-b00c-cf3125eb2de8
   - BaseNodeGuid: 5b9cd2f4-8e7a-48b8-b00c-cf3125eb2de8
     TargetNodeGuid: b4d52f0d-1431-48b5-83ab-6d46a98c548e
   - BaseNodeGuid: b4d52f0d-1431-48b5-83ab-6d46a98c548e
     TargetNodeGuid: 96c2ff28-7b3a-45c5-97e8-1675dfd9ce69
   - BaseNodeGuid: 96c2ff28-7b3a-45c5-97e8-1675dfd9ce69
     TargetNodeGuid: 33e0766c-f062-4b2c-b6a8-71d576fdfcd2
-  - BaseNodeGuid: 33e0766c-f062-4b2c-b6a8-71d576fdfcd2
-    TargetNodeGuid: 3cd09155-9359-41a0-868e-ca17f69b80aa
   - BaseNodeGuid: 3cd09155-9359-41a0-868e-ca17f69b80aa
     TargetNodeGuid: 10d85e3e-476c-42d0-9774-adaf7b9cc210
   - BaseNodeGuid: 10d85e3e-476c-42d0-9774-adaf7b9cc210
     TargetNodeGuid: 4be5aa5f-20a6-4c82-9943-9a9bc92256d8
-  - BaseNodeGuid: 4be5aa5f-20a6-4c82-9943-9a9bc92256d8
-    TargetNodeGuid: 8a43e0df-8bbe-45aa-b194-8527b68be469
-  - BaseNodeGuid: 8a43e0df-8bbe-45aa-b194-8527b68be469
-    TargetNodeGuid: 2cde6dc2-168f-45ab-ac54-233cadb81656
   - BaseNodeGuid: 2cde6dc2-168f-45ab-ac54-233cadb81656
     TargetNodeGuid: 9a6bfa78-31e6-4315-b29b-e3d256693f8d
-  - BaseNodeGuid: 9a6bfa78-31e6-4315-b29b-e3d256693f8d
-    TargetNodeGuid: e2ba1baa-e4a1-46b0-862c-dfaaf249aba7
-  - BaseNodeGuid: e2ba1baa-e4a1-46b0-862c-dfaaf249aba7
-    TargetNodeGuid: ff173038-5c93-4955-a1e5-4d96772dcb1d
-  - BaseNodeGuid: ff173038-5c93-4955-a1e5-4d96772dcb1d
-    TargetNodeGuid: 42b365de-d3a1-4e80-99c8-90b68ccfe7df
   - BaseNodeGuid: 42b365de-d3a1-4e80-99c8-90b68ccfe7df
     TargetNodeGuid: 748d9cc3-8a1b-491c-b669-13eb028923eb
-  - BaseNodeGuid: 748d9cc3-8a1b-491c-b669-13eb028923eb
-    TargetNodeGuid: cdc869b1-3ef3-4c5b-94c8-4b7a428f69dd
-  - BaseNodeGuid: cdc869b1-3ef3-4c5b-94c8-4b7a428f69dd
-    TargetNodeGuid: a6585a5a-8c87-493a-9fdd-98680717b058
-  - BaseNodeGuid: a6585a5a-8c87-493a-9fdd-98680717b058
-    TargetNodeGuid: f255df2e-a9df-4f4a-812c-4d4c9a84ae22
-  - BaseNodeGuid: 6c2e66b6-20e6-4db8-9264-5fde984fa2f0
-    TargetNodeGuid: e50b9ede-1812-48fb-845a-d1e490e83fce
-  - BaseNodeGuid: e50b9ede-1812-48fb-845a-d1e490e83fce
-    TargetNodeGuid: bfbe503e-9c58-4b38-89d4-35d75168e3f1
-  - BaseNodeGuid: bfbe503e-9c58-4b38-89d4-35d75168e3f1
-    TargetNodeGuid: 4c6b2047-1c7f-48b5-b278-314a9cf3878e
   - BaseNodeGuid: 4c6b2047-1c7f-48b5-b278-314a9cf3878e
     TargetNodeGuid: c23d403d-2ab1-46d5-b485-2887ee85550f
-  - BaseNodeGuid: c23d403d-2ab1-46d5-b485-2887ee85550f
-    TargetNodeGuid: cb873553-732b-4b4c-a57b-18a94e1b08dc
+  - BaseNodeGuid: bfbe503e-9c58-4b38-89d4-35d75168e3f1
+    TargetNodeGuid: 4c6b2047-1c7f-48b5-b278-314a9cf3878e
   - BaseNodeGuid: cb873553-732b-4b4c-a57b-18a94e1b08dc
     TargetNodeGuid: 1373a939-8646-4244-9e5f-8a4b606c708f
-  - BaseNodeGuid: 1373a939-8646-4244-9e5f-8a4b606c708f
-    TargetNodeGuid: 55dddc0d-db97-454e-8a10-b751fe38dfd5
-  - BaseNodeGuid: 55dddc0d-db97-454e-8a10-b751fe38dfd5
-    TargetNodeGuid: 9e8c7b95-0930-4dbe-a28f-a9f3109d1cb0
   - BaseNodeGuid: 9e8c7b95-0930-4dbe-a28f-a9f3109d1cb0
     TargetNodeGuid: e7712fa3-1893-4c6c-83e7-1c97901c6fac
   - BaseNodeGuid: e7712fa3-1893-4c6c-83e7-1c97901c6fac
@@ -1077,82 +1119,38 @@ MonoBehaviour:
     TargetNodeGuid: 21bfa677-4d20-4172-be8f-2ab96cb61a8b
   - BaseNodeGuid: 21bfa677-4d20-4172-be8f-2ab96cb61a8b
     TargetNodeGuid: e9a7833f-d61c-434a-b5d2-a0b17dc74124
-  - BaseNodeGuid: e9a7833f-d61c-434a-b5d2-a0b17dc74124
-    TargetNodeGuid: f696e944-4d44-4950-b82d-4fa980ad5fc8
   - BaseNodeGuid: f696e944-4d44-4950-b82d-4fa980ad5fc8
     TargetNodeGuid: cbc2b1ec-90fa-4528-b34c-27bf0d98d9a1
-  - BaseNodeGuid: cbc2b1ec-90fa-4528-b34c-27bf0d98d9a1
-    TargetNodeGuid: f0d365d1-3103-4575-87b5-07a7ba01c774
-  - BaseNodeGuid: f0d365d1-3103-4575-87b5-07a7ba01c774
-    TargetNodeGuid: c946fe6b-d005-43e8-8561-d79b2115a3fd
-  - BaseNodeGuid: c946fe6b-d005-43e8-8561-d79b2115a3fd
-    TargetNodeGuid: 86e39a96-7c35-4af0-a0d4-830ea3a0179f
   - BaseNodeGuid: 86e39a96-7c35-4af0-a0d4-830ea3a0179f
     TargetNodeGuid: 7b8b1c59-d6e3-49d0-b373-4ec1932dc433
   - BaseNodeGuid: 7b8b1c59-d6e3-49d0-b373-4ec1932dc433
-    TargetNodeGuid: b22974c0-d218-47da-bd8e-0ae0f294e1dd
-  - BaseNodeGuid: 7b8b1c59-d6e3-49d0-b373-4ec1932dc433
     TargetNodeGuid: 2aa3261c-7943-4c21-b93a-65f7ca7562d3
-  - BaseNodeGuid: b22974c0-d218-47da-bd8e-0ae0f294e1dd
-    TargetNodeGuid: 81197307-cc31-4a93-900c-9fd16a678baf
-  - BaseNodeGuid: 2aa3261c-7943-4c21-b93a-65f7ca7562d3
-    TargetNodeGuid: 81197307-cc31-4a93-900c-9fd16a678baf
-  - BaseNodeGuid: 81197307-cc31-4a93-900c-9fd16a678baf
-    TargetNodeGuid: 1cfaf877-35fd-4365-bb2e-3574bbf57449
+  - BaseNodeGuid: 7b8b1c59-d6e3-49d0-b373-4ec1932dc433
+    TargetNodeGuid: b22974c0-d218-47da-bd8e-0ae0f294e1dd
   - BaseNodeGuid: 1cfaf877-35fd-4365-bb2e-3574bbf57449
     TargetNodeGuid: 82e74586-a220-4691-8323-1fe23a95bc57
-  - BaseNodeGuid: 82e74586-a220-4691-8323-1fe23a95bc57
-    TargetNodeGuid: 80e31327-3a7d-49ee-a5f0-a62eb73433cc
-  - BaseNodeGuid: 80e31327-3a7d-49ee-a5f0-a62eb73433cc
-    TargetNodeGuid: 8048d8fc-17df-41c9-99ab-05a494d7afa2
   - BaseNodeGuid: 8048d8fc-17df-41c9-99ab-05a494d7afa2
     TargetNodeGuid: a8b47a16-ae14-45db-ad7e-ac7498593b41
-  - BaseNodeGuid: a8b47a16-ae14-45db-ad7e-ac7498593b41
-    TargetNodeGuid: 938c7f29-c2e2-469c-8fb6-479528b0f1f5
-  - BaseNodeGuid: 938c7f29-c2e2-469c-8fb6-479528b0f1f5
-    TargetNodeGuid: 9e4cde58-0d9d-4729-a794-5d9e6b79a866
   - BaseNodeGuid: 9e4cde58-0d9d-4729-a794-5d9e6b79a866
     TargetNodeGuid: 0a834d86-5a99-42a5-bdc4-6af73fe7d939
   - BaseNodeGuid: 0a834d86-5a99-42a5-bdc4-6af73fe7d939
     TargetNodeGuid: 508766ed-014e-4fdc-972b-391490684f48
   - BaseNodeGuid: 508766ed-014e-4fdc-972b-391490684f48
     TargetNodeGuid: 109ae49c-31d5-4a4b-954e-b489ff980ff9
-  - BaseNodeGuid: 109ae49c-31d5-4a4b-954e-b489ff980ff9
-    TargetNodeGuid: 69e80ff6-6397-4a1f-9a77-0ed108a67698
-  - BaseNodeGuid: 69e80ff6-6397-4a1f-9a77-0ed108a67698
-    TargetNodeGuid: a73f5a06-bfb9-4be0-8ac1-edb529485e6b
   - BaseNodeGuid: a73f5a06-bfb9-4be0-8ac1-edb529485e6b
     TargetNodeGuid: 2c66d32a-681b-4f4c-ab33-8880c9116759
-  - BaseNodeGuid: 2c66d32a-681b-4f4c-ab33-8880c9116759
-    TargetNodeGuid: 330639d2-e997-4e9c-9543-484f1c4d3297
-  - BaseNodeGuid: 330639d2-e997-4e9c-9543-484f1c4d3297
-    TargetNodeGuid: 9b145343-4696-4498-bbfc-2657d8613065
-  - BaseNodeGuid: 9b145343-4696-4498-bbfc-2657d8613065
-    TargetNodeGuid: 478d3570-5525-4394-a9b6-d1491375176c
-  - BaseNodeGuid: 478d3570-5525-4394-a9b6-d1491375176c
-    TargetNodeGuid: c7c8c000-6681-42c9-ae22-4690517f1a8b
-  - BaseNodeGuid: c7c8c000-6681-42c9-ae22-4690517f1a8b
-    TargetNodeGuid: badd48ff-b947-4c12-b943-8b2f5d7c694e
-  - BaseNodeGuid: badd48ff-b947-4c12-b943-8b2f5d7c694e
-    TargetNodeGuid: 111e353a-a67f-4dd8-ad42-24a2402c52e7
   - BaseNodeGuid: 111e353a-a67f-4dd8-ad42-24a2402c52e7
     TargetNodeGuid: 7231c95e-b33c-45a5-8b35-b579af1f2057
   - BaseNodeGuid: 7231c95e-b33c-45a5-8b35-b579af1f2057
     TargetNodeGuid: e68cc923-871e-43d2-baab-44e6edf35551
-  - BaseNodeGuid: e68cc923-871e-43d2-baab-44e6edf35551
-    TargetNodeGuid: c420829d-404d-470f-9c78-06897ab983a2
   - BaseNodeGuid: c420829d-404d-470f-9c78-06897ab983a2
     TargetNodeGuid: c8979a06-8e75-4ab6-a753-951d9d8b596a
   - BaseNodeGuid: c8979a06-8e75-4ab6-a753-951d9d8b596a
     TargetNodeGuid: 68e48042-c8a1-4362-bc5f-2b0473f92855
-  - BaseNodeGuid: 68e48042-c8a1-4362-bc5f-2b0473f92855
-    TargetNodeGuid: 0ccd6075-96d0-40bd-9669-32d34d954fd3
-  - BaseNodeGuid: 0ccd6075-96d0-40bd-9669-32d34d954fd3
-    TargetNodeGuid: ae4caeb7-f861-43bc-b140-5434be9133af
   - BaseNodeGuid: ae4caeb7-f861-43bc-b140-5434be9133af
     TargetNodeGuid: 6aed37ef-b0d7-4592-b9c0-cb8c881b9991
-  - BaseNodeGuid: 8260824f-cd4e-449d-b604-2fe5471577ef
-    TargetNodeGuid: 199f5076-df17-4288-abf6-51d4f9a24ee6
+  - BaseNodeGuid: 01dd3435-c371-4d31-9f09-a1092063c22c
+    TargetNodeGuid: fae43a9c-1ee9-485b-9055-fc1e5ce94f71
   DialogueChoiceNodeDatas:
   - NodeGuid: fba9e589-d6f9-48cc-9557-6ea96d9d18d7
     Position: {x: 626, y: 618}
@@ -16116,7 +16114,7 @@ MonoBehaviour:
     MediaType: 1
     Image: {fileID: 0}
     Video: {fileID: 32900000, guid: 34c6ed48619a3a947ab39a8d8ebf0528, type: 3}
-    VideoThumbnail: {fileID: 0}
+    VideoThumbnail: {fileID: 21300000, guid: 371e89fe91aedbc4e81eab57538b403c, type: 3}
     NotBackgroundCapable: 0
     GalleryVisibility: 0
     Post: {fileID: 0}
@@ -16546,7 +16544,7 @@ MonoBehaviour:
       LanguageGenericType: {fileID: 0}
     - languageEnum: 1
       LanguageGenericType: {fileID: 0}
-    Character: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
     Texts:
@@ -16987,70 +16985,6 @@ MonoBehaviour:
     GalleryVisibility: 0
     Post: {fileID: 0}
     DelayTimer: 0
-  - NodeGuid: 01dd3435-c371-4d31-9f09-a1092063c22c
-    Position: {x: 75096, y: 596}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    Texts:
-    - languageEnum: 0
-      LanguageGenericType: And I want to make it right
-    - languageEnum: 1
-      LanguageGenericType: 
-    Timelapses:
-    - languageEnum: 0
-      LanguageGenericType: 
-    - languageEnum: 1
-      LanguageGenericType: 
-    Timelapse: 
-    Duration: 2
-    Delay: 0
-    MediaType: 0
-    Image: {fileID: 0}
-    Video: {fileID: 0}
-    VideoThumbnail: {fileID: 0}
-    NotBackgroundCapable: 0
-    GalleryVisibility: 0
-    Post: {fileID: 0}
-    DelayTimer: 0
-  - NodeGuid: c38e5944-33f3-4f22-a6a6-13f1b057b079
-    Position: {x: 74896, y: 596}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    Texts:
-    - languageEnum: 0
-      LanguageGenericType: I know I did
-    - languageEnum: 1
-      LanguageGenericType: 
-    Timelapses:
-    - languageEnum: 0
-      LanguageGenericType: 
-    - languageEnum: 1
-      LanguageGenericType: 
-    Timelapse: 
-    Duration: 2
-    Delay: 0
-    MediaType: 0
-    Image: {fileID: 0}
-    Video: {fileID: 0}
-    VideoThumbnail: {fileID: 0}
-    NotBackgroundCapable: 0
-    GalleryVisibility: 0
-    Post: {fileID: 0}
-    DelayTimer: 0
   - NodeGuid: 6f407dd6-ca2c-4d86-bc88-13e757f8ae6c
     Position: {x: 75796, y: 716}
     DialogueNodePorts: []
@@ -17173,39 +17107,6 @@ MonoBehaviour:
     Delay: 0
     MediaType: 0
     Image: {fileID: 21300000, guid: e84c043b65d900c438f697f9989bfb10, type: 3}
-    Video: {fileID: 0}
-    VideoThumbnail: {fileID: 0}
-    NotBackgroundCapable: 0
-    GalleryVisibility: 0
-    Post: {fileID: 0}
-    DelayTimer: 0
-  - NodeGuid: 98d87720-13d0-4f8b-9ff0-8f213402d86a
-    Position: {x: 75296, y: 596}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    Texts:
-    - languageEnum: 0
-      LanguageGenericType: Math and I are not going to start the Amateur profile
-        thing
-    - languageEnum: 1
-      LanguageGenericType: 
-    Timelapses:
-    - languageEnum: 0
-      LanguageGenericType: 
-    - languageEnum: 1
-      LanguageGenericType: 
-    Timelapse: 
-    Duration: 2
-    Delay: 0
-    MediaType: 0
-    Image: {fileID: 0}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
@@ -18245,7 +18146,7 @@ MonoBehaviour:
       LanguageGenericType: {fileID: 0}
     - languageEnum: 1
       LanguageGenericType: {fileID: 0}
-    Character: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
     AvatarPos: 0
     AvatarType: 0
     Texts:
@@ -18263,70 +18164,6 @@ MonoBehaviour:
     Delay: 0
     MediaType: 0
     Image: {fileID: 0}
-    Video: {fileID: 0}
-    VideoThumbnail: {fileID: 0}
-    NotBackgroundCapable: 0
-    GalleryVisibility: 0
-    Post: {fileID: 0}
-    DelayTimer: 0
-  - NodeGuid: 80e31327-3a7d-49ee-a5f0-a62eb73433cc
-    Position: {x: 78592, y: 1701}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 0}
-    AvatarPos: 0
-    AvatarType: 0
-    Texts:
-    - languageEnum: 0
-      LanguageGenericType: The glasses were just big (;
-    - languageEnum: 1
-      LanguageGenericType: 
-    Timelapses:
-    - languageEnum: 0
-      LanguageGenericType: 
-    - languageEnum: 1
-      LanguageGenericType: 
-    Timelapse: 
-    Duration: 2
-    Delay: 0
-    MediaType: 0
-    Image: {fileID: 0}
-    Video: {fileID: 0}
-    VideoThumbnail: {fileID: 0}
-    NotBackgroundCapable: 0
-    GalleryVisibility: 0
-    Post: {fileID: 0}
-    DelayTimer: 0
-  - NodeGuid: a8b47a16-ae14-45db-ad7e-ac7498593b41
-    Position: {x: 79092, y: 1701}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    Texts:
-    - languageEnum: 0
-      LanguageGenericType: Yeaaaa sooo...
-    - languageEnum: 1
-      LanguageGenericType: 
-    Timelapses:
-    - languageEnum: 0
-      LanguageGenericType: 
-    - languageEnum: 1
-      LanguageGenericType: 
-    Timelapse: 
-    Duration: 2
-    Delay: 0
-    MediaType: 0
-    Image: {fileID: 21300000, guid: 3db22656a59300e43b772a7aefe31cb7, type: 3}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
@@ -18711,6 +18548,134 @@ MonoBehaviour:
     Delay: 0
     MediaType: 0
     Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 80e31327-3a7d-49ee-a5f0-a62eb73433cc
+    Position: {x: 78592, y: 1701}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: The glasses were just big (;
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 01dd3435-c371-4d31-9f09-a1092063c22c
+    Position: {x: 75236, y: 609}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: And I want to make it right
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: c38e5944-33f3-4f22-a6a6-13f1b057b079
+    Position: {x: 74964, y: 609}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: I know I did
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: a8b47a16-ae14-45db-ad7e-ac7498593b41
+    Position: {x: 79092, y: 1701}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Yeaaaa sooo...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 21300000, guid: 3db22656a59300e43b772a7aefe31cb7, type: 3}
     Video: {fileID: 0}
     VideoThumbnail: {fileID: 0}
     NotBackgroundCapable: 0
