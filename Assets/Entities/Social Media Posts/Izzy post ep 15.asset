@@ -13,12 +13,19 @@ MonoBehaviour:
   m_Name: Izzy post ep 15
   m_EditorClassIdentifier: 
   Character: {fileID: 11400000, guid: 8f6af30f1ed271b4aac60c69e0824cfb, type: 2}
-  Message: Seems like she had a busy day. Completely exhausted
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: Seems like she had a busy day. Completely exhausted
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 0
+  TargetPlatform: 1
   GalleryVisibility: 0
   Image: {fileID: 7861576494422377451, guid: 31c5b23e9c3a763409097789d34396eb, type: 3}
   Video: {fileID: 0}
   VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
   Comments:
   - Name: Dr.Markus Weber
     Content: Sleep thight beauty
