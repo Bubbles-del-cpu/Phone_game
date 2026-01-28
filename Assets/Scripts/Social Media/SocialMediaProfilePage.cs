@@ -55,7 +55,19 @@ public class SocialMediaProfilePage : MonoBehaviour
     {
         ClearProfilePage();
         character.SocialMediaProfile.SetupProfilePage(this);
+        PopulateGallery(character);
 
+        _canvasGroup.alpha = 1;
+        _canvasGroup.interactable = true;
+        _canvasGroup.blocksRaycasts = true;
+    }
+
+    /// <summary>
+    /// Populates the gallery with the items related to the given character
+    /// </summary>
+    /// <param name="character"></param>
+    protected virtual void PopulateGallery(DialogueCharacterSO character)
+    {
         // Populate the gallery with the items relating to this profile
         var galleryCanvas = GameManager.Instance.GalleryCanvas;
         var (imageItems, videoItems) = galleryCanvas.GetGalleryItems(character, _galleryItemFilter);
@@ -77,10 +89,6 @@ public class SocialMediaProfilePage : MonoBehaviour
             videoButton.transform.SetParent(_galleryContainer, false);
             _galleryItems.Add(videoButton);
         }
-
-        _canvasGroup.alpha = 1;
-        _canvasGroup.interactable = true;
-        _canvasGroup.blocksRaycasts = true;
     }
 
     /// <summary>

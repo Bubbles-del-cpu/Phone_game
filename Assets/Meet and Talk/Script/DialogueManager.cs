@@ -300,6 +300,7 @@ namespace MeetAndTalk
 
             Dictionary<DialogueCharacterSO, int> rollbackList = new();
             var socialPostRollbackCount = 0;
+            var spicyPostRollbackCount = 0;
             while (!targetFound)
             {
                 if (_visitedNodes.TryPop(out BaseNodeData node))
@@ -318,7 +319,17 @@ namespace MeetAndTalk
                                 rollbackList[nd.Character] += 1;
 
                             if (nd.Post != null)
-                                socialPostRollbackCount++;
+                            {
+                                switch (nd.Post.TargetPlatform)
+                                {
+                                    case MediaTargetPlatform.SocialMediaPost:
+                                        socialPostRollbackCount++;
+                                        break;
+                                    case MediaTargetPlatform.SpicySocialMediaPost:
+                                        spicyPostRollbackCount++;
+                                        break;
+                                }
+                            }
                             break;
                         case DialogueChoiceNodeData choiceNode:
                             if (!rollbackList.ContainsKey(choiceNode.Character))
@@ -367,9 +378,10 @@ namespace MeetAndTalk
                 }
             }
 
-            var emptyList = DialogueUIManager.Instance.Rollback(rollbackList);
             GameManager.Instance.SocialMediaCanvas.RemovePosts(socialPostRollbackCount);
+            GameManager.Instance.SpicySocialMediaCanvas.RemovePosts(spicyPostRollbackCount);
 
+            var emptyList = DialogueUIManager.Instance.Rollback(rollbackList);
             if (emptyList.Count > 0)
             {
                 //Note: If empty list has any elements at least 1 will be the current character conversation panel
