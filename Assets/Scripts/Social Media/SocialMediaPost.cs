@@ -60,6 +60,11 @@ public class SocialMediaPost : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// The DialogueNodeData associated with this social media post
+    /// </summary>
+    public DialogueNodeData AssignedNodeData => _tiedNode;
+
     private void LogError(string message, Object context = null)
     {
         Debug.LogError($"[SocialMediaPost] {message}", context ?? this.gameObject);

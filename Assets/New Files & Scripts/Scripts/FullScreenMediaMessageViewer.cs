@@ -23,10 +23,10 @@ public class FullScreenMediaMessageViewer : MonoBehaviour, IPointerClickHandler
         switch (_type)
         {
             case MediaType.Sprite:
-                galleryCanvas.OpenImage(_assignedNode, _openedFromGallery, _isSocialMediaPost);
+                galleryCanvas.OpenImage(_assignedNode, _openedFromGallery, _isSocialMediaPost, includeScrubHistory: false);
                 break;
             case MediaType.Video:
-                galleryCanvas.OpenVideo(_assignedNode, _openedFromGallery, _isSocialMediaPost);
+                galleryCanvas.OpenVideo(_assignedNode, _openedFromGallery, _isSocialMediaPost, includeScrubHistory: false);
                 break;
         }
     }

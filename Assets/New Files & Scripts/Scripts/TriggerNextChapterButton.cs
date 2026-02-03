@@ -1,3 +1,4 @@
+using MeetAndTalk;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,6 +22,18 @@ public class TriggerNextChapterButton : MonoBehaviour
         _cg.blocksRaycasts = _cg.interactable;
     }
 
+#if UNITY_EDITOR
+    [ContextMenu("[DEBUG] Trigger Next Chapter")]
+    /// <summary>
+    /// Debug method to trigger the next chapter
+    /// </summary>
+    private void DEBUG_Trigger()
+    {
+        // Should only be used in editor to test next chapter trigger logic
+        SaveAndLoadManager.Instance.CurrentSave.CompletedCurrentChapter();
+        OnButtonClick();
+    }
+#endif
     void OnButtonClick()
     {
         OverlayCanvas.Instance.FadeToBlack(() =>
@@ -44,6 +57,9 @@ public class TriggerNextChapterButton : MonoBehaviour
 
             var chapterNumber = saveManager.CurrentSave.CurrentState.CompletedChapters.Count;
             saveManager.ClearChapterData(resetBackground: false);
+
+            // Populate any seen characters before starting the dialogue
+            DialogueManager.Instance.PopulateConversationButtons();
             DialogueChapterManager.Instance.TriggerStoryChapter(chapterNumber);
 
             // Returning to linear path mode so both flags should be false

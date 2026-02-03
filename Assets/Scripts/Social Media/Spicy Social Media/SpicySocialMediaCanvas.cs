@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class SpicySocialMediaCanvas : SocialMediaCanvas
 {
-    public new static void PostToFeed(SocialMediaPostSO _data, DialogueNodeData nodeData, bool showNotification = true)
+    public new static void PostToFeed(SocialMediaPostSO _data, DialogueNodeData nodeData, bool showNotification, bool adjustSaveData)
     {
-        GameManager.Instance.SpicySocialMediaCanvas.PostToFeedCanvas(_data, nodeData, showNotification);
+        GameManager.Instance.SpicySocialMediaCanvas.PostToFeedCanvas(_data, nodeData, showNotification, adjustSaveData);
     }
 
-    protected override void PostToFeedCanvas(SocialMediaPostSO _data, DialogueNodeData nodeData, bool showNotification = true)
+    protected override void PostToFeedCanvas(SocialMediaPostSO _data, DialogueNodeData nodeData, bool showNotification, bool adjustSaveData)
     {
         Debug.Log($"Attempting to post to social media. Prefab valid: {_socialMediaPostPrefab != null}, Container valid: {_socialMediaPostsContainer != null}");
         if (_socialMediaPostPrefab == null || _socialMediaPostsContainer == null)
@@ -19,20 +19,7 @@ public class SpicySocialMediaCanvas : SocialMediaCanvas
             return;
         }
 
-        SocialMediaPost post = Instantiate(_socialMediaPostPrefab, _socialMediaPostsContainer);
-        Debug.Log($"Instantiated post: {post.name}", post.gameObject); // Log the instance
-
-        try // Add temporary error catching for SetData
-        {
-            post.SetData(_data, nodeData, showNotification);
-
-            _characterPosts.TryAdd(_data.Character, new List<SocialMediaPost>());
-            _characterPosts[_data.Character].Add(post);
-        }
-        catch (Exception ex)
-        {
-            Debug.LogError($"Error calling SetData on new post: {ex.Message}\n{ex.StackTrace}", post.gameObject);
-        }
+        CreateNewSocialMediaPost(_data, nodeData, showNotification, adjustSaveData);
 
         // Note: The social media canvas is different than messages as all posts are tied to the assigned character rather than a specific dialogue character
         // Pass the assigned story character's character data for notification purposes

@@ -113,6 +113,22 @@ public class GalleryCanvas : UICanvas
         return (imageItems, videoItems);
     }
 
+    /// <summary>
+    /// Gets a specific gallery item by its GUID
+    /// </summary>
+    /// <param name="guid">The GUID of the gallery item</param>
+    /// <param name="isSocialMediaPost">Indicates if the item is a social media post</param>
+    /// <returns>The gallery media item if found; otherwise, null</returns>
+    public GalleryMediaItem GetGalleryItem(string guid, bool isSocialMediaPost)
+    {
+        var item = _galleryImageItems.FirstOrDefault(x => x.Node.NodeGuid == guid && x.IsSocialMediaPost == isSocialMediaPost);
+        if (item != null)
+            return item;
+
+        item = _galleryVideoItems.FirstOrDefault(x => x.Node.NodeGuid == guid && x.IsSocialMediaPost == isSocialMediaPost);
+        return item;
+    }
+
     public void RefreshGalleryPage()
     {
         DisplayGalleryPage(_currentMediaType, _currentMediaType == MediaType.Sprite ? _imagePageNumber : _videoPageNumber);
@@ -395,73 +411,6 @@ public class GalleryCanvas : UICanvas
         Open();
     }
 
-    // private void SpawnMediaButton(DialogueChapterManager.ChapterData chapterData, DialogueNodeData nodeData)
-    // {
-    //     if (nodeData == null)
-    //         return;
-
-
-    //     switch (nodeData.MediaType)
-    //     {
-    //         case MediaType.Sprite:
-    //             if (nodeData.Image != null)
-    //                 SpawnButton(chapterData, nodeData, nodeData.Image, isSocialMediaPost: false);
-    //             break;
-    //         case MediaType.Video:
-    //             if (nodeData.Video != null)
-    //                 SpawnButton(chapterData, nodeData, nodeData.Video, isSocialMediaPost: false);
-    //             break;
-    //     }
-
-    //     if (nodeData.Post != null)
-    //     {
-    //         if (!_unlockedSocialMediaImages.Contains(nodeData.Post.GetHashCode()))
-    //         {
-    //             _unlockedSocialMediaImages.Add(nodeData.Post.GetHashCode());
-    //             switch (nodeData.Post.MediaType)
-    //             {
-    //                 case MediaType.Sprite:
-    //                     SpawnButton(chapterData, nodeData, nodeData.Post.Image, isSocialMediaPost: true);
-    //                     break;
-    //                 case MediaType.Video:
-    //                     SpawnButton(chapterData, nodeData, nodeData.Post.Video, isSocialMediaPost: true);
-    //                     break;
-    //             }
-    //         }
-    //     }
-
-    //     _buttonGuids.Add(nodeData.NodeGuid);
-    // }
-
-    // private void SpawnButton(DialogueChapterManager.ChapterData chapterData, DialogueNodeData node, UnityEngine.Object data, bool isSocialMediaPost)
-    // {
-    //     switch (data)
-    //     {
-    //         case VideoClip videoClip:
-    //             {
-    //                 if (!_galleryButtons.Select(x => x.FileName).Contains(videoClip.name))
-    //                 {
-    //                     var videoButton = Instantiate(videoButtonPrefab, videoButtonsContainer);
-    //                     videoButton.Setup(chapterData, node, isSocialMediaPost);
-
-    //                     _galleryButtons.Add(videoButton);
-    //                 }
-    //             }
-    //             break;
-    //         case Sprite image:
-    //             {
-    //                 if (!_galleryButtons.Select(x => x.FileName).Contains(image.name))
-    //                 {
-    //                     var imageButton = Instantiate(imageButtonPrefab, imageButtonsContainer);
-    //                     imageButton.Setup(chapterData, node, isSocialMediaPost);
-
-    //                     _galleryButtons.Add(imageButton);
-    //                 }
-    //             }
-    //             break;
-    //     }
-    // }
-
     public void ShowGalleryTable(MediaType type)
     {
         _galleryImageContainer.SetActive(type == MediaType.Sprite);
@@ -506,32 +455,57 @@ public class GalleryCanvas : UICanvas
         }
     }
 
-    public void OpenImage(DialogueNodeData nodeData, bool openedFromGallery = false, bool isSocialMediaPost = false)
+    public void OpenImage(DialogueNodeData nodeData, bool openedFromGallery = false, bool isSocialMediaPost = false, bool includeScrubHistory = false)
     {
         if (nodeData == null)
             return;
 
         ShowGalleryTable(MediaType.Sprite);
 
-        fullScreenMedia.Setup(nodeData, isSocialMediaPost);
+        var galleryMedia = _galleryImageItems.FirstOrDefault(x => x.Node == nodeData && x.IsSocialMediaPost == isSocialMediaPost);
+        if (galleryMedia == null || galleryMedia.LockState == MediaLockState.Locked)
+            return;
 
+        fullScreenMedia.SetupWithScrubHistory(galleryMedia, includeScrubHistory ? GetScrubHistory(galleryMedia, openedFromGallery) : null);
         StartCoroutine(CoOpenMediaPanel(fullScreenMedia, openedFromGallery));
 
         _imageOpenFromMessage = openedFromGallery;
     }
 
-    public void OpenVideo(DialogueNodeData nodeData, bool openedFromGallery = false, bool isSocialMediaPost = false)
+    public void OpenVideo(DialogueNodeData nodeData, bool openedFromGallery = false, bool isSocialMediaPost = false, bool includeScrubHistory = false)
     {
         if (nodeData == null)
             return;
 
         ShowGalleryTable(MediaType.Video);
 
-        fullScreenMedia.Setup(nodeData, isSocialMediaPost);
+        var galleryMedia = _galleryVideoItems.FirstOrDefault(x => x.Node == nodeData && x.IsSocialMediaPost == isSocialMediaPost);
+        if (galleryMedia == null || galleryMedia.LockState == MediaLockState.Locked)
+            return;
 
+        fullScreenMedia.SetupWithScrubHistory(galleryMedia, includeScrubHistory ? GetScrubHistory(galleryMedia, openedFromGallery) : null);
         StartCoroutine(CoOpenMediaPanel(fullScreenMedia, openedFromGallery));
 
         _imageOpenFromMessage = openedFromGallery;
+    }
+
+    private List<GalleryMediaItem> GetScrubHistory(GalleryMediaItem item, bool openedFromGallery)
+    {
+        if (openedFromGallery)
+            return _currentMediaType == MediaType.Sprite ?
+                _galleryImageItems.Where(x => x.LockState == MediaLockState.Unlocked).ToList() :
+                _galleryVideoItems.Where(x => x.LockState == MediaLockState.Unlocked).ToList();
+
+        switch (item.TargetPlatform)
+        {
+            case MediaTargetPlatform.SocialMediaPost:
+            case MediaTargetPlatform.SpicySocialMediaPost:
+                return _currentMediaType == MediaType.Sprite ?
+                    _galleryImageItems.Where(x => x.LockState == MediaLockState.Unlocked && x.IsSocialMediaPost && x.Character == item.Character && x.TargetPlatform == item.TargetPlatform).ToList() :
+                    _galleryVideoItems.Where(x => x.LockState == MediaLockState.Unlocked && x.IsSocialMediaPost && x.Character == item.Character && x.TargetPlatform == item.TargetPlatform).ToList();
+        }
+
+        return null;
     }
 
     private IEnumerator CoOpenMediaPanel(UIPanel panel, bool openedFromGallery)

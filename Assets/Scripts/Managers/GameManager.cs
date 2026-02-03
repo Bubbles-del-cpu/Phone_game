@@ -230,27 +230,47 @@ public class GameManager : MonoBehaviour
         overlayCanvas.ShowDialog(popup);
     }
 
+    /// <summary>
+    /// Reset the game state and clears the social media canvases
+    /// Should be used when moving from one story chapter to another. Will not clear the social media canvases
+    /// </summary>
+    /// <param name="startDialogue"></param>
     public void ResetGameState(bool startDialogue = true)
     {
         //Reset the navigation stack
         GalleryCanvas.ResetGalleryButtons();
         NavigationManager.Instance.ResetStack();
 
+        //Clear the messages within each conversation panel
+        messagingCanvas.ClearConversations();
+
         StartCoroutine(CoResetConversations(startDialogue));
+    }
+
+    /// <summary>
+    /// Hard reset the game state and clears the social media canvases
+    /// Should be used when clearing the save, moving to a replay, exiting a replay or changing save slots
+    /// </summary>
+    /// <param name="startDialogue"></param>
+    public void HardResetGameState(bool startDialogue = true)
+    {
+        DialogueManager.Instance.DisplaySpeedMultipler = DialogueManager.ResponseSpeed.X1;
+
+        // Clear the social media canvases
+        socialMediaCanvas.ClearProfileButtons();
+        spicySocialMediaCanvas.ClearProfileButtons();
+
+        socialMediaCanvas.ClearSocialFeed();
+        spicySocialMediaCanvas.ClearSocialFeed();
+
+        messagingCanvas.Close();
+
+        ResetGameState(startDialogue);
     }
 
     IEnumerator CoResetConversations(bool startDialogue)
     {
         NextChapterReady = false;
-
-        //Clear the messages within each conversation panel
-        messagingCanvas.ClearConversations();
-
-        DialogueManager.Instance.DisplaySpeedMultipler = DialogueManager.ResponseSpeed.X1;
-
-        socialMediaCanvas.Clear();
-        spicySocialMediaCanvas.Clear();
-        messagingCanvas.Close();
 
         //Restart the dialogue trees
         yield return new WaitForSecondsRealtime(.1f);
@@ -267,7 +287,9 @@ public class GameManager : MonoBehaviour
         MainMenuCanvas.Instance.ClearButtons();
 
         if (startDialogue)
+        {
             StartCoroutine(CoStartDialogue());
+        }
     }
 
     IEnumerator CoStartDialogue()
@@ -336,7 +358,7 @@ public class GameManager : MonoBehaviour
 
     public void SetNewMessage(DialogueCharacterSO _character, bool _value = true)
     {
-        if (MessagingCanvas.GetConversationPanel(_character).IsOpen && _value)
+        if (_value && MessagingCanvas.GetConversationPanel(_character).IsOpen)
             return;
 
         hasNewMessage[_character] = _value;

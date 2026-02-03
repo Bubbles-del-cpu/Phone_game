@@ -14,6 +14,7 @@ public class SocialMediaCanvas : UICanvas
     [SerializeField] protected RectTransform _profilePageButtonContainer;
     [SerializeField] protected GameObject _profilePageButtonPrefab;
     [SerializeField] protected GameObject _noPostsWarning;
+    [SerializeField] protected int _currentPostCount => _socialMediaPostsContainer.childCount;
 
     /// <summary>
     /// Dictionary to keep track of profile buttons for each character
@@ -27,6 +28,21 @@ public class SocialMediaCanvas : UICanvas
     protected virtual void Update()
     {
         _noPostsWarning.SetActive(_socialMediaPostsContainer.childCount == 0);
+    }
+
+    public virtual void PopulateHistory(List<string> visiblePostGuids)
+    {
+        if (visiblePostGuids == null || visiblePostGuids.Count == 0)
+            return;
+
+        foreach (var postGuid in visiblePostGuids)
+        {
+            var galleryItem = GameManager.Instance.GalleryCanvas.GetGalleryItem(postGuid, true);
+            if (galleryItem != null && galleryItem.Node != null && galleryItem.Node.Post != null)
+            {
+                PostToFeed(galleryItem.Node.Post, galleryItem.Node, showNotification: false, adjustSaveData: false);
+            }
+        }
     }
 
     public void RemovePosts(int count)
@@ -47,6 +63,9 @@ public class SocialMediaCanvas : UICanvas
                 item.gameObject.SetActive(false);
                 _characterPosts[post.Character].Remove(post);
 
+                // Remove from save data
+                SaveAndLoadManager.Instance.CurrentSave.RemoveSocialMediaPost(post.AssignedNodeData);
+
                 destroyList.Add(item.gameObject);
             }
             catch (Exception ex)
@@ -57,7 +76,9 @@ public class SocialMediaCanvas : UICanvas
         }
 
         foreach (var item in destroyList)
+        {
             Destroy(item);
+        }
 
         // Remove any profile buttons for characters that no longer have posts
         foreach (var kvp in _characterPosts)
@@ -67,12 +88,12 @@ public class SocialMediaCanvas : UICanvas
         }
     }
 
-    public static void PostToFeed(SocialMediaPostSO _data, DialogueNodeData nodeData, bool showNotification = true)
+    public static void PostToFeed(SocialMediaPostSO _data, DialogueNodeData nodeData, bool showNotification, bool adjustSaveData)
     {
-        GameManager.Instance.SocialMediaCanvas.PostToFeedCanvas(_data, nodeData, showNotification);
+        GameManager.Instance.SocialMediaCanvas.PostToFeedCanvas(_data, nodeData, showNotification, adjustSaveData);
     }
 
-    protected virtual void PostToFeedCanvas(SocialMediaPostSO _data, DialogueNodeData nodeData, bool showNotification = true)
+    protected virtual void PostToFeedCanvas(SocialMediaPostSO _data, DialogueNodeData nodeData, bool showNotification, bool adjustSaveData)
     {
         Debug.Log($"Attempting to post to social media. Prefab valid: {_socialMediaPostPrefab != null}, Container valid: {_socialMediaPostsContainer != null}");
         if (_socialMediaPostPrefab == null || _socialMediaPostsContainer == null)
@@ -81,27 +102,54 @@ public class SocialMediaCanvas : UICanvas
             return;
         }
 
-        SocialMediaPost post = Instantiate(_socialMediaPostPrefab, _socialMediaPostsContainer);
-        Debug.Log($"Instantiated post: {post.name}", post.gameObject); // Log the instance
-
-        try // Add temporary error catching for SetData
-        {
-            post.SetData(_data, nodeData, showNotification);
-
-            _characterPosts.TryAdd(_data.Character, new List<SocialMediaPost>());
-            _characterPosts[_data.Character].Add(post);
-        }
-        catch (Exception ex)
-        {
-            Debug.LogError($"Error calling SetData on new post: {ex.Message}\n{ex.StackTrace}", post.gameObject);
-        }
+        CreateNewSocialMediaPost(_data, nodeData, showNotification, adjustSaveData);
 
         // Note: The social media canvas is different than messages as all posts are tied to the assigned character rather than a specific dialogue character
         // Pass the assigned story character's character data for notification purposes
-        MainMenuCanvas.Instance.SetSocialMediaAppNotification(nodeData.Character, postSeen: false);
+        if (showNotification)
+            MainMenuCanvas.Instance.SetSocialMediaAppNotification(nodeData.Character, postSeen: false);
 
         // Check and add a profile button to the profile page button container if it doesn't already exist
         AddProfileButton(_data);
+    }
+
+    /// <summary>
+    /// Creates a new social media post and adds it to the feed. If the maximum post count is reached, removes the oldest post.
+    /// </summary>
+    /// <param name="postData">Social media post data</param>
+    /// <param name="nodeData">Node data associated with the post</param>
+    /// <param name="showNotification">Whether to show a notification for the new post</param>
+    protected virtual void CreateNewSocialMediaPost(SocialMediaPostSO postData, DialogueNodeData nodeData, bool showNotification, bool adjustSaveData)
+    {
+        // Check for maximum post count and remove oldest posts if necessary
+        if (_currentPostCount >= DialogueManager.Instance.MaximumNumberOfSocialPosts)
+        {
+            // Delete the oldest post
+            var item = _socialMediaPostsContainer.transform.GetChild(0);
+            var oldPost = item.GetComponent<SocialMediaPost>();
+            if (oldPost != null)
+            {
+                item.gameObject.SetActive(false);
+                _characterPosts[oldPost.Character].Remove(oldPost);
+
+                // Remove from save data
+                if (adjustSaveData)
+                    SaveAndLoadManager.Instance.CurrentSave.RemoveSocialMediaPost(oldPost.AssignedNodeData);
+
+                Destroy(item.gameObject);
+            }
+        }
+
+        var post = Instantiate(_socialMediaPostPrefab, _socialMediaPostsContainer);
+        post.name = $"Post_{postData.Character.GetName()}_{nodeData.NodeGuid}";
+        post.SetData(postData, nodeData, showNotification);
+
+        _characterPosts.TryAdd(postData.Character, new List<SocialMediaPost>());
+        _characterPosts[postData.Character].Add(post);
+
+        Debug.Log($"Instantiated post: {post.name}", post.gameObject); // Log the instance
+        if (adjustSaveData)
+            SaveAndLoadManager.Instance.CurrentSave.AddSocialMediaPost(nodeData);
     }
 
     /// <summary>
@@ -156,7 +204,17 @@ public class SocialMediaCanvas : UICanvas
         _socialMediaPage.CloseProfile();
     }
 
-    public void Clear()
+    public void ClearProfileButtons()
+    {
+        foreach (var item in _profileButtons)
+        {
+            Destroy(item.Value.gameObject);
+        }
+
+        _profileButtons.Clear();
+    }
+
+    public void ClearSocialFeed()
     {
         for (var index = 0; index < _socialMediaPostsContainer.childCount; index++)
         {

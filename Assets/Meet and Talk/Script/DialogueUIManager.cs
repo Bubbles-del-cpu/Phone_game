@@ -140,18 +140,7 @@ namespace MeetAndTalk
             {
                 case DialogueNodeData nd when _nodeData is DialogueNodeData:
                     targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
-                    if (nd.Post != null)
-                    {
-                        switch (nd.Post.TargetPlatform)
-                        {
-                            case MediaTargetPlatform.SpicySocialMediaPost:
-                                SpicySocialMediaCanvas.PostToFeed(nd.Post, nd, showNotification: false);
-                                break;
-                            case MediaTargetPlatform.SocialMediaPost:
-                                SocialMediaCanvas.PostToFeed(nd.Post, nd, showNotification: false);
-                                break;
-                        }
-                    }
+                    //Note: Social media posts are handled elsewhere so we don't need to worry about them here see PopulateHistory in SocialMediaCanvas.cs
                     break;
                 case DialogueChoiceNodeData nd when _nodeData is DialogueChoiceNodeData:
                     targetPanel = GameManager.Instance.MessagingCanvas.GetConversationPanel(nd.Character);
@@ -220,10 +209,10 @@ namespace MeetAndTalk
                                     switch (nd.Post.TargetPlatform)
                                     {
                                         case MediaTargetPlatform.SpicySocialMediaPost:
-                                            SpicySocialMediaCanvas.PostToFeed(nd.Post, nd, showNotification: true);
+                                            SpicySocialMediaCanvas.PostToFeed(nd.Post, nd, showNotification: true, adjustSaveData: true);
                                             break;
                                         case MediaTargetPlatform.SocialMediaPost:
-                                            SocialMediaCanvas.PostToFeed(nd.Post, nd, showNotification: true);
+                                            SocialMediaCanvas.PostToFeed(nd.Post, nd, showNotification: true, adjustSaveData: true);
                                             break;
                                     }
                                 }
@@ -248,10 +237,10 @@ namespace MeetAndTalk
                                         switch (nd.Post.TargetPlatform)
                                         {
                                             case MediaTargetPlatform.SpicySocialMediaPost:
-                                                SpicySocialMediaCanvas.PostToFeed(nd.Post, nd, showNotification: true);
+                                                SpicySocialMediaCanvas.PostToFeed(nd.Post, nd, showNotification: true, adjustSaveData: true);
                                                 break;
                                             case MediaTargetPlatform.SocialMediaPost:
-                                                SocialMediaCanvas.PostToFeed(nd.Post, nd, showNotification: true);
+                                                SocialMediaCanvas.PostToFeed(nd.Post, nd, showNotification: true, adjustSaveData: true);
                                                 break;
                                         }
                                     }

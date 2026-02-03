@@ -53,8 +53,6 @@ public class MessagingCanvas : UICanvas
     {
         foreach (var item in conversations)
         {
-            item.Value.Close();
-            item.Value.Clear();
             Destroy(item.Value.gameObject);
         }
 
@@ -63,9 +61,11 @@ public class MessagingCanvas : UICanvas
             Destroy(item.Value.gameObject);
         }
 
-        seenCharacters.Clear();
         buttons.Clear();
+        seenCharacters.Clear();
         conversations.Clear();
+
+        _noContactsMessage.SetActive(true);
     }
 
     public override void Open()
@@ -87,8 +87,10 @@ public class MessagingCanvas : UICanvas
     {
         CheckCharacter(_character);
 
-        conversations[_character].Open();
-        conversationsPanel.Open();
+        conversations[_character].OpenWithAction(() =>
+        {
+            conversationsPanel.Open();
+        });
     }
 
     /// <summary>
@@ -120,7 +122,11 @@ public class MessagingCanvas : UICanvas
         }
     }
 
-    private void CheckCharacter(DialogueCharacterSO character)
+    /// <summary>
+    /// Checks if the character has been seen before and creates conversation button and panel if not
+    /// </summary>
+    /// <param name="character">Dialogue character to check</param>
+    public void CheckCharacter(DialogueCharacterSO character)
     {
         if (!seenCharacters.Contains(character))
         {

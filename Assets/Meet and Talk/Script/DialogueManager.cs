@@ -42,6 +42,7 @@ namespace MeetAndTalk
             X8 = 8
         }
         public ResponseSpeed DisplaySpeedMultipler;
+        public int MaximumNumberOfSocialPosts;
         public float PostChoiceDelay;
 
         public UnityEvent StartDialogueEvent;
@@ -103,7 +104,7 @@ namespace MeetAndTalk
                             OverlayCanvas.Instance.FadeToBlack(() =>
                             {
                                 SaveAndLoadManager.Instance.LoadSave();
-                                GameManager.Instance.ResetGameState();
+                                GameManager.Instance.HardResetGameState();
                             });
 
                         }, GameConstants.UIElementKeys.CONTINUE, args: null, twoButtonSetup: false);
@@ -171,9 +172,26 @@ namespace MeetAndTalk
             SaveAndLoadManager.Save();
         }
 
+        public void PopulateConversationButtons()
+        {
+            var seenCharacters = SaveAndLoadManager.Instance.CurrentSave.CurrentState.SeenCharacterIDs;
+            foreach (var seenCharacter in seenCharacters)
+            {
+                var dialogueCharacter = DialogueChapterManager.Instance.AllDialogueCharacters.Find(x => x.ID == seenCharacter.CharacterID);
+                if (dialogueCharacter != null)
+                {
+                    GameManager.Instance.MessagingCanvas.CheckCharacter(dialogueCharacter);
+                }
+            }
+        }
+
         private IEnumerator PopulateHistoryCoroutine(ChapterSaveData chapterData)
         {
             bool loadSuccess = true;
+
+            // Before populating the past conversations, loop over the seen characater list and create message buttons for them
+            PopulateConversationButtons();
+
             var count = 0;
             foreach (var item in chapterData.PastCoversations)
             {
@@ -255,6 +273,11 @@ namespace MeetAndTalk
                         break;
                 }
             }
+
+            // Populate social media history from save data
+            var saveData = SaveAndLoadManager.Instance.CurrentSave;
+            GameManager.Instance.SocialMediaCanvas.PopulateHistory(saveData.CurrentState.LastVisibleSocialMediaPosts);
+            GameManager.Instance.SpicySocialMediaCanvas.PopulateHistory(saveData.CurrentState.LastVisibleSpicySocialMediaPosts);
 
             _populatingHistory = false;
             _populatHistoryFailed = !loadSuccess;

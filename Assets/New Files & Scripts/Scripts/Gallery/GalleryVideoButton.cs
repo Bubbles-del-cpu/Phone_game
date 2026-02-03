@@ -31,6 +31,6 @@ public class GalleryVideoButton : GalleryButtonBase
 
     public override void GalleryButtonClicked()
     {
-        GameManager.Instance.GalleryCanvas.OpenVideo(_assignedNode, _isFromGallery, isSocialMediaPost: _isSocialMediaPost);
+        GameManager.Instance.GalleryCanvas.OpenVideo(_assignedNode, _isFromGallery, isSocialMediaPost: _isSocialMediaPost, includeScrubHistory: true);
     }
 }

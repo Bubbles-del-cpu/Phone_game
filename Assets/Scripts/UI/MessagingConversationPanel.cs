@@ -23,21 +23,33 @@ public class MessagingConversationPanel : UIPanel
     public int ChildCount => _messageContainers[0].transform.childCount;
     private float _delay = .05f;
 
+    public void OpenWithAction(Action onComplete)
+    {
+        transform.SetAsLastSibling();
+        StartCoroutine(OpenDelay(onComplete));
+    }
 
     public override void Open()
     {
         transform.SetAsLastSibling();
-        StartCoroutine(OpenDelay());
+        StartCoroutine(OpenDelay(null));
     }
 
     public override void Close()
     {
         base.Close();
+
         GameManager.Instance.MessagingCanvas.ConversationClosed();
         Clear();
     }
 
-    public void Clear()
+    public void CloseAndWipeHistory()
+    {
+        base.Close();
+        Clear(wipeHistory: true);
+    }
+
+    public void Clear(bool wipeHistory = false)
     {
         var item = _messageContainers[0].transform;
         var index = 0;
@@ -50,10 +62,15 @@ public class MessagingConversationPanel : UIPanel
             index++;
         }
 
+        if (wipeHistory)
+        {
+            _messageBubbleInfosLeft.Clear();
+        }
+
         UpdateChildContainers();
     }
 
-    private IEnumerator OpenDelay()
+    private IEnumerator OpenDelay(Action onComplete)
     {
         yield return new WaitForSeconds(_delay);
         if (!IsOpen)
@@ -85,6 +102,7 @@ public class MessagingConversationPanel : UIPanel
         MainMenuCanvas.Instance.SetMessagingAppNotification(_character, messageSeen: true);
         yield return new WaitForSeconds(_delay);
         base.Open();
+        onComplete?.Invoke();
     }
 
     public void RemoveElements(int count)

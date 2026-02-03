@@ -224,7 +224,7 @@ public class SaveAndLoadManager : MonoBehaviour
 
                 CurrentSave.CurrentState.SavedVariables = ValueManager.ConvertSaveFile();
 
-                GameManager.Instance.ResetGameState(startDialogue: false);
+                GameManager.Instance.HardResetGameState(startDialogue: false);
                 GameManager.Instance.GalleryCanvas.Load();
                 DialogueChapterManager.Instance.TriggerStoryChapter(CurrentSave.CurrentState.CompletedChapters.Count);
             });
@@ -269,7 +269,7 @@ public class SaveAndLoadManager : MonoBehaviour
         LoadSave(0);
 
         GameManager.Instance.ResetBackgroundImage();
-        GameManager.Instance.ResetGameState(startDialogue: false);
+        GameManager.Instance.HardResetGameState(startDialogue: false);
 
         if (startDialogue)
             StartGame();

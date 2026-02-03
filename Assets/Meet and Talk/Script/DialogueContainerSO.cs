@@ -294,6 +294,7 @@ namespace MeetAndTalk
     {
         public string NodeGuid;
         public Vector2 Position;
+        public virtual DialogueCharacterSO AssignedCharacter => null;
     }
 
     [System.Serializable]
@@ -301,6 +302,7 @@ namespace MeetAndTalk
     {
         public List<DialogueNodePort> DialogueNodePorts;
         public List<LanguageGeneric<AudioClip>> AudioClips;
+        public override DialogueCharacterSO AssignedCharacter => Character;
         public DialogueCharacterSO Character;
         public AvatarPosition AvatarPos;
         public AvatarType AvatarType;
@@ -346,6 +348,7 @@ namespace MeetAndTalk
     {
         public List<DialogueNodePort> DialogueNodePorts;
         public List<LanguageGeneric<AudioClip>> AudioClips;
+        public override DialogueCharacterSO AssignedCharacter => Character;
         public DialogueCharacterSO Character;
         public AvatarPosition AvatarPos;
         public AvatarType AvatarType;

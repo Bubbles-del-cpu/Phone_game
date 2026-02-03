@@ -28,6 +28,6 @@ public class GalleryImageButton : GalleryButtonBase
 
     public override void GalleryButtonClicked()
     {
-        GameManager.Instance.GalleryCanvas.OpenImage(_assignedNode, _isFromGallery, isSocialMediaPost: _isSocialMediaPost);
+        GameManager.Instance.GalleryCanvas.OpenImage(_assignedNode, _isFromGallery, isSocialMediaPost: _isSocialMediaPost, includeScrubHistory: true);
     }
 }

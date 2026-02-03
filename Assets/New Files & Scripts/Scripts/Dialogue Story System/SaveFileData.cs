@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Collections;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 [Serializable]
@@ -86,12 +87,19 @@ public class SaveFileData
         public List<int> CompletedChapters;
         public List<GlobalSaveVariable> SavedVariables;
         public List<LikedSocialMediaPosts> LikedPosts;
+        public List<SeenCharacterSaveData> SeenCharacterIDs;
+        public List<string> LastVisibleSocialMediaPosts;
+        public List<string> LastVisibleSpicySocialMediaPosts;
+
         public GameSaveState()
         {
             LastChapter = new ChapterSaveData();
             LikedPosts = new List<LikedSocialMediaPosts>();
             CompletedChapters = new List<int>();
             SavedVariables = new List<GlobalSaveVariable>();
+            SeenCharacterIDs = new List<SeenCharacterSaveData>();
+            LastVisibleSocialMediaPosts = new List<string>();
+            LastVisibleSpicySocialMediaPosts = new List<string>();
         }
 
         public void SetupForNewChapter(DialogueChapterManager.ChapterData chapterData, int chapterIndex)
@@ -120,6 +128,25 @@ public class SaveFileData
                 FileName = LastChapter.FileName,
                 StartID = LastChapter.StartID
             };
+
+            foreach (var character in SeenCharacterIDs)
+            {
+                newClone.SeenCharacterIDs.Add(new SeenCharacterSaveData()
+                {
+                    CharacterID = character.CharacterID,
+                    TimesSeen = character.TimesSeen
+                });
+            }
+
+            foreach (var post in LastVisibleSocialMediaPosts)
+            {
+                newClone.LastVisibleSocialMediaPosts.Add(post);
+            }
+
+            foreach (var post in LastVisibleSpicySocialMediaPosts)
+            {
+                newClone.LastVisibleSpicySocialMediaPosts.Add(post);
+            }
 
             foreach (var pastConv in LastChapter.PastCoversations)
             {
@@ -174,6 +201,10 @@ public class SaveFileData
         saveFile.AutoSaveState.SavedVariables = SaveAndLoadManager.Instance.ValueManager.ConvertSaveFile();
         saveFile.AutoSaveState.LastChapter = new ChapterSaveData();
 
+        saveFile.AutoSaveState.LastVisibleSocialMediaPosts = new List<string>();
+        saveFile.AutoSaveState.LastVisibleSpicySocialMediaPosts = new List<string>();
+        saveFile.AutoSaveState.SeenCharacterIDs = new List<SeenCharacterSaveData>();
+
         saveFile.UpdateMediaData(generateThumbnails: false);
 
         return saveFile;
@@ -203,27 +234,6 @@ public class SaveFileData
                 wasUpdated = true;
             }
         }
-
-        //If there is a discrepancy in the total number of chapters then we need to update the collection
-        // if (newSaveFile.AutoSaveState.Chapters.Count > AutoSaveState.Chapters.Count)
-        // {
-        //     //Loop forward from the last current chapter and add any missing to the list
-        //     for (var index = AutoSaveState.Chapters.Count; index < newSaveFile.AutoSaveState.Chapters.Count; index++)
-        //     {
-        //         var item = newSaveFile.AutoSaveState.Chapters[index];
-        //         AutoSaveState.Chapters.Add(new ChapterSaveData()
-        //         {
-        //             CurrentGUID = "",
-        //             Completed = false,
-        //             FileIndex = index,
-        //             FileName = $"{item.FileName}",
-        //             StartID = item.StartID
-        //         });
-
-        //     }
-
-        //     wasUpdated = true;
-        // }
 
         UpdateMediaData(generateThumbnails: true);
 
@@ -346,16 +356,6 @@ public class SaveFileData
         //SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
     }
 
-    // public void ClearCurrentChapter()
-    // {
-    //     if (SaveAndLoadManager.Instance.ReplayingCompletedChapter)
-    //         return;
-
-    //     CurrentState.CompletedChapters.Remove(CurrentChapterData.FileIndex);
-    //     CurrentChapterData.CurrentGUID = "";
-    //     CurrentChapterData.Completed = false;
-    // }
-
     public void RemoveNode(BaseNodeData nodeData)
     {
         if (SaveAndLoadManager.Instance.ReplayingCompletedChapter)
@@ -365,6 +365,19 @@ public class SaveFileData
             return;
 
         CurrentChapterData.PastCoversations.RemoveAll(x => x.GUID == nodeData.NodeGuid);
+        if (nodeData.AssignedCharacter != null)
+        {
+            // Decrement seen character count or remove if zero
+            if (CurrentState.SeenCharacterIDs.Select(x => x.CharacterID).Contains(nodeData.AssignedCharacter.ID))
+            {
+                var seenCharData = CurrentState.SeenCharacterIDs.First(x => x.CharacterID == nodeData.AssignedCharacter.ID);
+                seenCharData.TimesSeen -= 1;
+                if (seenCharData.TimesSeen <= 0)
+                {
+                    CurrentState.SeenCharacterIDs.RemoveAll(x => x.CharacterID == nodeData.AssignedCharacter.ID);
+                }
+            }
+        }
     }
 
     public void AddNode(BaseNodeData nodeData)
@@ -382,23 +395,97 @@ public class SaveFileData
             GUID = nodeData.NodeGuid,
         };
 
-        switch (nodeData)
+        // Record seen character, create a new one or increment existing
+        if (nodeData.AssignedCharacter != null)
         {
-            case TimerChoiceNodeData:
-                newConversation.IsChoice = true;
-                break;
-            case DialogueChoiceNodeData:
-                newConversation.IsChoice = true;
-                break;
+            // Record seen character, create a new one or increment existing
+            if (CurrentState.SeenCharacterIDs.Select(x => x.CharacterID).Contains(nodeData.AssignedCharacter.ID))
+            {
+                var seenCharData = CurrentState.SeenCharacterIDs.First(x => x.CharacterID == nodeData.AssignedCharacter.ID);
+                seenCharData.TimesSeen += 1;
+            }
+            else
+            {
+                // Add new seen character entry
+                CurrentState.SeenCharacterIDs.Add(new SeenCharacterSaveData()
+                {
+                    CharacterID = nodeData.AssignedCharacter.ID,
+                    TimesSeen = 1
+                });
+            }
         }
 
         CurrentChapterData.CurrentGUID = nodeData.NodeGuid;
         CurrentChapterData.PastCoversations.Add(newConversation);
     }
 
+    /// <summary>
+    /// Adds a social media post to the list of visible posts in the save file
+    /// </summary>
+    /// <param name="nodeData">The dialogue node data containing the social media post to add.</param>
+    public void AddSocialMediaPost(DialogueNodeData nodeData)
+    {
+        if (SaveAndLoadManager.Instance.ReplayingCompletedChapter)
+            return;
+
+        if (nodeData.Post == null)
+            return;
+
+        switch (nodeData.Post.TargetPlatform)
+        {
+            case MediaTargetPlatform.SocialMediaPost:
+                if (CurrentState.LastVisibleSocialMediaPosts.Count >= DialogueManager.Instance.MaximumNumberOfSocialPosts)
+                {
+                    // Remove the oldest post
+                    CurrentState.LastVisibleSocialMediaPosts.RemoveAt(0);
+                }
+
+                CurrentState.LastVisibleSocialMediaPosts.Add(nodeData.NodeGuid);
+                break;
+            case MediaTargetPlatform.SpicySocialMediaPost:
+                if (CurrentState.LastVisibleSpicySocialMediaPosts.Count >= DialogueManager.Instance.MaximumNumberOfSocialPosts)
+                {
+                    // Remove the oldest post
+                    CurrentState.LastVisibleSpicySocialMediaPosts.RemoveAt(0);
+                }
+
+                CurrentState.LastVisibleSpicySocialMediaPosts.Add(nodeData.NodeGuid);
+                break;
+        }
+    }
+
+    /// <summary>
+    /// Removes a social media post from the list of visible posts in the save file
+    /// </summary>
+    /// <param name="nodeData">The dialogue node data containing the social media post to remove.</param>
+    public void RemoveSocialMediaPost(DialogueNodeData nodeData)
+    {
+        if (SaveAndLoadManager.Instance.ReplayingCompletedChapter)
+            return;
+
+        if (nodeData.Post == null)
+            return;
+
+        switch (nodeData.Post.TargetPlatform)
+        {
+            case MediaTargetPlatform.SocialMediaPost:
+                if (CurrentState.LastVisibleSocialMediaPosts.Contains(nodeData.NodeGuid))
+                {
+                    CurrentState.LastVisibleSocialMediaPosts.RemoveAll(x => x == nodeData.NodeGuid);
+                }
+                break;
+            case MediaTargetPlatform.SpicySocialMediaPost:
+                if (CurrentState.LastVisibleSpicySocialMediaPosts.Contains(nodeData.NodeGuid))
+                {
+                    CurrentState.LastVisibleSpicySocialMediaPosts.RemoveAll(x => x == nodeData.NodeGuid);
+                }
+                break;
+        }
+    }
+
     public bool AddMedia(DialogueChapterManager.ChapterData chapterData, DialogueNodeData nodeData)
     {
-        var postData = UnlockedMedia.FirstOrDefault(x => x.FileName == nodeData.MediaFileName);
+        var postData = UnlockedMedia.FirstOrDefault(x => x.NodeGUID == nodeData.NodeGuid && x.FileName == nodeData.MediaFileName);
         if (postData == null && nodeData.MediaFileName != string.Empty)
         {
             //Add Post
@@ -421,7 +508,7 @@ public class SaveFileData
 
         if (nodeData.Post != null)
         {
-            var socialPostData = UnlockedMedia.FirstOrDefault(x => x.FileName == nodeData.Post.MediaFileName);
+            var socialPostData = UnlockedMedia.FirstOrDefault(x => x.NodeGUID == nodeData.NodeGuid && x.FileName == nodeData.Post.MediaFileName);
             if (socialPostData == null && nodeData.Post.MediaFileName != string.Empty)
             {
                 //Add social post
@@ -453,7 +540,7 @@ public class SaveFileData
     /// <param name="linearPath">Indicates if the unlock is part of a linear path (non-replay unlock)</param>
     public void UnlockMedia(DialogueNodeData nodeData, bool linearPath)
     {
-        var item = UnlockedMedia.FirstOrDefault(x => x.FileName == nodeData.MediaFileName);
+        var item = UnlockedMedia.FirstOrDefault(x => x.NodeGUID == nodeData.NodeGuid && x.FileName == nodeData.MediaFileName);
         if (item != null)
         {
             //We found the media, unlock it
@@ -464,7 +551,7 @@ public class SaveFileData
 
         if (nodeData.Post != null)
         {
-            var socialItem = UnlockedMedia.FirstOrDefault(x => x.FileName == nodeData.Post.MediaFileName);
+            var socialItem = UnlockedMedia.FirstOrDefault(x => x.NodeGUID == nodeData.NodeGuid && x.FileName == nodeData.Post.MediaFileName);
             if (socialItem != null)
             {
                 socialItem.FileName = nodeData.Post.MediaFileName;

@@ -32,7 +32,7 @@ public class LocalizationLanguageDropdown : MonoBehaviour
                     OverlayCanvas.Instance.FadeToBlack(() =>
                     {
                         GameManager.Instance.ChangeLanguage(newLanguage);
-                        GameManager.Instance.ResetGameState();
+                        GameManager.Instance.HardResetGameState();
 
                         _previousLanguageIndex = index;
                         _dropdown.SetValueWithoutNotify(index);

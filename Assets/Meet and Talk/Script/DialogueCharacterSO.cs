@@ -9,6 +9,7 @@ namespace MeetAndTalk
     [CreateAssetMenu(menuName = "Dialogue/New Dialogue Character")]
     public class DialogueCharacterSO : ScriptableObject
     {
+        public string ID => this.name;
         [Header("Name")]
         public List<LanguageGeneric<string>> characterName;
         public GlobalValueClass CustomizedName;

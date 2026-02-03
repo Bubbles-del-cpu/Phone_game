@@ -49,6 +49,7 @@ public class DialogueChapterManager : UICanvas
         }
     }
 
+    public List<DialogueCharacterSO> AllDialogueCharacters;
     public List<ChapterData> StoryList;
     public List<ChapterData> StandaloneChapters;
     public DialogueCharacterSO CurrentStory;
@@ -168,7 +169,7 @@ public class DialogueChapterManager : UICanvas
             SaveAndLoadManager.Instance.LoadSave(SaveAndLoadManager.Instance.CurrentSaveSlot);
         }
 
-        GameManager.Instance.ResetGameState();
+        GameManager.Instance.HardResetGameState();
         Open(OPEN_DELAY);
     }
 
@@ -187,7 +188,7 @@ public class DialogueChapterManager : UICanvas
     {
         OverlayCanvas.Instance.FadeToBlack(() =>
         {
-            GameManager.Instance.ResetGameState(false);
+            GameManager.Instance.HardResetGameState(false);
             TriggerStoryChapter(SaveAndLoadManager.Instance.CurrentSave.CurrentState.CompletedChapters.Count);
 
             //Open chapter selection
