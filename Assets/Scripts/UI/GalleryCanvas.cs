@@ -6,6 +6,7 @@ using System.Collections;
 using System.Linq;
 using UnityEngine.UI;
 using System;
+using Unity.VisualScripting;
 
 public class GalleryCanvas : UICanvas
 {
@@ -38,7 +39,6 @@ public class GalleryCanvas : UICanvas
 
     [SerializeField] private List<GalleryMediaItem> _galleryImageItems;
     [SerializeField] private List<GalleryMediaItem> _galleryVideoItems;
-    private bool _imageOpenFromMessage = false;
     [NonSerialized] public GalleryUnlockData UnlockData;
 
     protected override void Awake()
@@ -75,6 +75,31 @@ public class GalleryCanvas : UICanvas
         CreateButtons();
         CreateMediaButtons(SaveAndLoadManager.Instance.CurrentSave.UnlockedMedia);
         DisplayGalleryPage(_currentMediaType, 0);
+    }
+
+    /// <summary>
+    /// Refreshes the gallery content based on a list of rolled back nodes, locking any media associated with those nodes
+    /// </summary>
+    /// <param name="rolledBackNodes">List of DialogueNodeData representing the nodes that have been rolled back</param>
+    public void RefreshGalleryContentForRollback(List<DialogueNodeData> rolledBackNodes)
+    {
+        var mediaToLock = new List<GalleryMediaItem>();
+        foreach (var node in rolledBackNodes)
+        {
+            foreach (var item in _galleryImageItems.Where(x => x.Node == node))
+            {
+                item.LockState = MediaLockState.Locked;
+                item.IsLinearPathUnlock = false;
+            }
+
+            foreach (var item in _galleryVideoItems.Where(x => x.Node == node))
+            {
+                item.LockState = MediaLockState.Locked;
+                item.IsLinearPathUnlock = false;
+            }
+        }
+
+        RefreshGalleryPage();
     }
 
     private void CreateButtons()
@@ -134,12 +159,12 @@ public class GalleryCanvas : UICanvas
         DisplayGalleryPage(_currentMediaType, _currentMediaType == MediaType.Sprite ? _imagePageNumber : _videoPageNumber);
     }
 
-    public void UnlockMedia(string guid, bool reloadedGallery)
+    public void UnlockMedia(string nodeGUID, string fileName, bool reloadedGallery)
     {
-        if (string.IsNullOrEmpty(guid))
+        if (string.IsNullOrEmpty(nodeGUID) || string.IsNullOrEmpty(fileName))
             return;
 
-        UnlockedGalleryMediaButton(guid, reloadedGallery);
+        UnlockedGalleryMediaButton(nodeGUID, fileName, reloadedGallery);
     }
 
     public void UnlockMediaButton(DialogueNodeData nodeData, bool reloadedGallery)
@@ -147,23 +172,23 @@ public class GalleryCanvas : UICanvas
         if (nodeData == null)
             return;
 
-        UnlockedGalleryMediaButton(nodeData.MediaFileName, reloadedGallery);
+        UnlockedGalleryMediaButton(nodeData.NodeGuid, nodeData.MediaFileName, reloadedGallery);
         if (nodeData.Post != null)
         {
-            UnlockedGalleryMediaButton(nodeData.Post.MediaFileName, reloadedGallery);
+            UnlockedGalleryMediaButton(nodeData.NodeGuid, nodeData.Post.MediaFileName, reloadedGallery);
         }
     }
 
-    private void UnlockedGalleryMediaButton(string fileName, bool reloadedGallery)
+    private void UnlockedGalleryMediaButton(string nodeGUID, string fileName, bool reloadedGallery)
     {
         //Find and unlocked the button on the gallery canvas
-        var content = _galleryImageItems.FirstOrDefault(x => x.FileName == fileName);
+        var content = _galleryImageItems.FirstOrDefault(x => x.Node.NodeGuid == nodeGUID && x.FileName == fileName);
         if (content != null)
         {
             content.LockState = MediaLockState.Unlocked;
         }
 
-        var videoContent = _galleryVideoItems.FirstOrDefault(x => x.FileName == fileName);
+        var videoContent = _galleryVideoItems.FirstOrDefault(x => x.Node.NodeGuid == nodeGUID && x.FileName == fileName);
         if (videoContent != null)
         {
             videoContent.LockState = MediaLockState.Unlocked;
@@ -468,8 +493,6 @@ public class GalleryCanvas : UICanvas
 
         fullScreenMedia.SetupWithScrubHistory(galleryMedia, includeScrubHistory ? GetScrubHistory(galleryMedia, openedFromGallery) : null);
         StartCoroutine(CoOpenMediaPanel(fullScreenMedia, openedFromGallery));
-
-        _imageOpenFromMessage = openedFromGallery;
     }
 
     public void OpenVideo(DialogueNodeData nodeData, bool openedFromGallery = false, bool isSocialMediaPost = false, bool includeScrubHistory = false)
@@ -485,8 +508,6 @@ public class GalleryCanvas : UICanvas
 
         fullScreenMedia.SetupWithScrubHistory(galleryMedia, includeScrubHistory ? GetScrubHistory(galleryMedia, openedFromGallery) : null);
         StartCoroutine(CoOpenMediaPanel(fullScreenMedia, openedFromGallery));
-
-        _imageOpenFromMessage = openedFromGallery;
     }
 
     private List<GalleryMediaItem> GetScrubHistory(GalleryMediaItem item, bool openedFromGallery)

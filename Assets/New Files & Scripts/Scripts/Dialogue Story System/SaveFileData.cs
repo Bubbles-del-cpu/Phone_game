@@ -544,9 +544,7 @@ public class SaveFileData
         if (item != null)
         {
             //We found the media, unlock it
-            item.LockedState = MediaLockState.Unlocked;
-            item.FileName = nodeData.MediaFileName;
-            item.IsLinearPathUnlock = linearPath;
+            SetLockState(nodeData.MediaFileName, item, MediaLockState.Unlocked, linearPath);
         }
 
         if (nodeData.Post != null)
@@ -554,11 +552,39 @@ public class SaveFileData
             var socialItem = UnlockedMedia.FirstOrDefault(x => x.NodeGUID == nodeData.NodeGuid && x.FileName == nodeData.Post.MediaFileName);
             if (socialItem != null)
             {
-                socialItem.FileName = nodeData.Post.MediaFileName;
-                socialItem.LockedState = MediaLockState.Unlocked;
-                socialItem.IsLinearPathUnlock = linearPath;
+                SetLockState(nodeData.Post.MediaFileName, socialItem, MediaLockState.Unlocked, linearPath);
             }
         }
+    }
+
+    /// <summary>
+    /// Rolls back the unlock of media in the save file based on the provided node data
+    /// </summary>
+    /// <param name="nodeData">The node data containing media information</param>
+    public void RollbackUnlockMedia(DialogueNodeData nodeData)
+    {
+        var item = UnlockedMedia.FirstOrDefault(x => x.NodeGUID == nodeData.NodeGuid && x.FileName == nodeData.MediaFileName);
+        if (item != null)
+        {
+            //We found the media, unlock it
+            SetLockState(nodeData.MediaFileName, item, MediaLockState.Locked, false);
+        }
+
+        if (nodeData.Post != null)
+        {
+            var socialItem = UnlockedMedia.FirstOrDefault(x => x.NodeGUID == nodeData.NodeGuid && x.FileName == nodeData.Post.MediaFileName);
+            if (socialItem != null)
+            {
+                SetLockState(nodeData.Post.MediaFileName, socialItem, MediaLockState.Locked, false);
+            }
+        }
+    }
+
+    private void SetLockState(string fileName, MediaData item, MediaLockState state, bool linearPath)
+    {
+        item.FileName = fileName;
+        item.LockedState = state;
+        item.IsLinearPathUnlock = linearPath;
     }
 
     public void UnlockAllMedia(bool save = true)

@@ -324,6 +324,7 @@ namespace MeetAndTalk
             Dictionary<DialogueCharacterSO, int> rollbackList = new();
             var socialPostRollbackCount = 0;
             var spicyPostRollbackCount = 0;
+            var rolledbackNodes = new List<DialogueNodeData>();
             while (!targetFound)
             {
                 if (_visitedNodes.TryPop(out BaseNodeData node))
@@ -353,6 +354,25 @@ namespace MeetAndTalk
                                         break;
                                 }
                             }
+
+                            // Rollback any media unlocks associated with this node
+                            SaveAndLoadManager.Instance.CurrentSave.RollbackUnlockMedia(nd);
+                            rolledbackNodes.Add(nd);
+
+                            // Rollback any notifications associated with this node
+                            MainMenuCanvas.Instance.SetMessagingAppNotification(nd.Character, true);
+                            if (nd.Post != null)
+                            {
+                                switch (nd.Post.TargetPlatform)
+                                {
+                                    case MediaTargetPlatform.SocialMediaPost:
+                                        MainMenuCanvas.Instance.SetSocialMediaAppNotification(nd.Character, true);
+                                        break;
+                                    case MediaTargetPlatform.SpicySocialMediaPost:
+                                        MainMenuCanvas.Instance.SetSpicySocialMediaAppNotification(nd.Character, true);
+                                        break;
+                                }
+                            }
                             break;
                         case DialogueChoiceNodeData choiceNode:
                             if (!rollbackList.ContainsKey(choiceNode.Character))
@@ -376,6 +396,9 @@ namespace MeetAndTalk
 
                                 targetNode = choiceNode;
                             }
+
+                            // Rollback any notifications associated with this choice node
+                            MainMenuCanvas.Instance.SetMessagingAppNotification(choiceNode.Character, true, true);
                             break;
                         case EventNodeData eventNode:
                             foreach (var item in eventNode.EventScriptableObjects)
@@ -403,6 +426,9 @@ namespace MeetAndTalk
 
             GameManager.Instance.SocialMediaCanvas.RemovePosts(socialPostRollbackCount);
             GameManager.Instance.SpicySocialMediaCanvas.RemovePosts(spicyPostRollbackCount);
+
+            // Refresh the gallery on rollback to ensure that any unlocked media that is being rolled back is reflected in the gallery immediately
+            GameManager.Instance.GalleryCanvas.RefreshGalleryContentForRollback(rolledbackNodes);
 
             var emptyList = DialogueUIManager.Instance.Rollback(rollbackList);
             if (emptyList.Count > 0)
