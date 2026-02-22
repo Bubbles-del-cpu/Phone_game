@@ -259,8 +259,9 @@ public class SaveAndLoadManager : MonoBehaviour
         OverlayCanvas.Instance.ShowDialog(newDialog.gameObject);
     }
 
-    public void StartNewSave(bool startDialogue = true)
+    public void StartNewSave(bool startDialogue = true, bool clearGallery = true)
     {
+        var oldGallery = CurrentSave.UnlockedMedia;
         System.IO.File.Delete(GetPath(0));
 
         //Reset and clear the global value manager so that it can be loaded in fresh for the new save
@@ -270,6 +271,12 @@ public class SaveAndLoadManager : MonoBehaviour
 
         GameManager.Instance.ResetBackgroundImage();
         GameManager.Instance.HardResetGameState(startDialogue: false);
+        if (!clearGallery)
+        {
+            // Restore the old gallery if we are not clearing it for the new save
+            CurrentSave.UnlockedMedia = oldGallery;
+            Save();
+        }
 
         if (startDialogue)
             StartGame();

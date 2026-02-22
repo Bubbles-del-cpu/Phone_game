@@ -121,7 +121,7 @@ public class OverlayCanvas : UICanvas
         _fadeState = FadeState.FADE_OUT;
         _fade = true;
 
-        _fadeTime = timeToFadeOverride == -1 ?  _timeToFade : timeToFadeOverride;
+        _fadeTime = timeToFadeOverride == -1 ? _timeToFade : timeToFadeOverride;
         _holdTime = fadeHoldTimeOverride == -1 ? _fadeHoldTime : fadeHoldTimeOverride;
 
         actionOnFade = postEvent;
