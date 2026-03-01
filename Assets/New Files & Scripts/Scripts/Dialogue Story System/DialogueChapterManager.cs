@@ -180,7 +180,7 @@ public class DialogueChapterManager : UICanvas
 
     public void ShowChapterCompleteDialog()
     {
-        StartCoroutine(CoShowDialog());
+        StartCoroutine(CoShowChapterCompleteDialog());
     }
 
     public void CompleteChapterReplayEarly()
@@ -195,13 +195,13 @@ public class DialogueChapterManager : UICanvas
         });
     }
 
-    private IEnumerator CoShowDialog()
+    private IEnumerator CoShowChapterCompleteDialog()
     {
         yield return new WaitForSeconds(.5f);
 
         var wasReplaying = SaveAndLoadManager.Instance.ReplayingCompletedChapter;
 
-        if (SaveAndLoadManager.Instance.CurrentSave.CurrentState.CompletedChapters.Count >= StoryList.Count)
+        if (SaveAndLoadManager.Instance.CurrentSave.CurrentState.CompletedChapters.Count + 1 >= StoryList.Count)
         {
             //We have completed the last chapter.
             GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.ALL_CHAPTERS_COMPLETE, eventToTrigger: null, GameConstants.UIElementKeys.CONTINUE, args: null, twoButtonSetup: false);
