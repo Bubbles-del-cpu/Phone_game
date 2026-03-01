@@ -132,7 +132,8 @@ public class SocialMediaPost : MonoBehaviour
         }
 
         _tiedNode = nodeData; // nodeData might be null if previous check failed, handle accordingly if needed later
-        data.SpawnNotification();
+        if (showNotification)
+            data.SpawnNotification();
     }
 
     public void ToggleCommentDisplay()

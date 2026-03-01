@@ -497,7 +497,7 @@ namespace MeetAndTalk
                     RunNode(nodeData);
                     break;
                 case EndNodeData nodeData:
-                    DialogueChapterManager.Instance.CompleteCurrentChapter();
+                    DialogueChapterManager.Instance.ShowChapterCompleteDialog();
 
                     RunNode(nodeData);
                     break;

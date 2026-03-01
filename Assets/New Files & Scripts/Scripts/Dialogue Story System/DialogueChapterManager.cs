@@ -178,9 +178,8 @@ public class DialogueChapterManager : UICanvas
         Close();
     }
 
-    public void CompleteCurrentChapter()
+    public void ShowChapterCompleteDialog()
     {
-        SaveAndLoadManager.Instance.CurrentSave.CompletedCurrentChapter();
         StartCoroutine(CoShowDialog());
     }
 

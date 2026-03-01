@@ -40,6 +40,7 @@ public class TriggerNextChapterButton : MonoBehaviour
         {
             GameManager.Instance.ResetGameState(startDialogue: false);
             var saveManager = SaveAndLoadManager.Instance;
+            saveManager.CurrentSave.CompletedCurrentChapter();
 
             var wasReplay = saveManager.ReplayingCompletedChapter;
             var wasStandalone = saveManager.PlayingStandaloneChapter;

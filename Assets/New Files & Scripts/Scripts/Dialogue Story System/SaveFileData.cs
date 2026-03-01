@@ -60,14 +60,20 @@ public class SaveFileData
                 return Node;
 
             // Otherwise, find the node based on the chapter and GUID
-            var chapter = DialogueChapterManager.Instance.StoryList[ChapterIndex];
+            DialogueChapterManager.ChapterData chapter = null;
             switch (ChapterType)
             {
                 case ChapterType.Standalone:
                     chapter = DialogueChapterManager.Instance.StandaloneChapters[ChapterIndex];
                     break;
+                case ChapterType.Story:
+                    chapter = DialogueChapterManager.Instance.StoryList[ChapterIndex];
+                    break;
 
             }
+
+            if (chapter == null)
+                return null;
 
             var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, NodeGUID);
             return node;
@@ -238,6 +244,12 @@ public class SaveFileData
         }
 
         UpdateMediaData(generateThumbnails: true);
+        if (AutoSaveState.CompletedChapters.Contains(AutoSaveState.LastChapter.FileIndex))
+        {
+            // This should'nt ever occur, this was old functionality that has been altered.
+            // If the chapter is "complete" but the last chapter contains the same file index then just remove it from the completed chapters list
+            AutoSaveState.CompletedChapters.Remove(AutoSaveState.LastChapter.FileIndex);
+        }
 
         // Check the background image data to make sure we account for the new target platform
         if (wasUpdated && newSaveFile.Version == "0.15.beta")
@@ -355,7 +367,6 @@ public class SaveFileData
             CurrentState.CompletedChapters.Add(CurrentChapterData.FileIndex);
 
         CurrentChapterData.Completed = true;
-        //SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
     }
 
     public void RemoveNode(BaseNodeData nodeData)

@@ -18738,7 +18738,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 322.90137, y: -24}
-  m_SizeDelta: {x: 0, y: 48}
+  m_SizeDelta: {x: 64, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2636192785651977962
 CanvasRenderer:
@@ -23555,7 +23555,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 82.180275, y: -24}
-  m_SizeDelta: {x: 0, y: 48}
+  m_SizeDelta: {x: 64, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5938757517318327261
 CanvasRenderer:
@@ -27317,6 +27317,78 @@ MonoBehaviour:
         m_WaitForCompletion: 0
         m_LocalVariables: []
       OptionSetting2: true
+  - Story: {fileID: 11400000, guid: 81be7d67747b60d41ac2e90a30a2b5d2, type: 2}
+    StartID: 
+    ChapterIndex: 0
+    IsStoryChapter: 0
+    ReplaySettings:
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 10148775941169152
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Value:
+        ValueName: Continue_math
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 10149008259473408
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      OptionSetting1: true
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 10148971538341888
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      OptionSetting2: false
+    - DialogueTitleString:
+        m_TableReference:
+          m_TableCollectionName: GUID:3d91e3b2ed1e10c49b5038adb5ed935e
+        m_TableEntryReference:
+          m_KeyId: 35019703237795840
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      Value:
+        ValueName: Docter_Medicine_denied
+      Option1TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52649986322432
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      OptionSetting1: false
+      Option2TextString:
+        m_TableReference:
+          m_TableCollectionName: GUID:32ad38854b40c1b48a0ef5f170e80c9a
+        m_TableEntryReference:
+          m_KeyId: 52698598305792
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      OptionSetting2: true
+  - Story: {fileID: 11400000, guid: 41e96ff20320f5a4382d4a0c44f11307, type: 2}
+    StartID: 
+    ChapterIndex: 0
+    IsStoryChapter: 0
+    ReplaySettings: []
   StandaloneChapters:
   - Story: {fileID: 11400000, guid: d4c97dc564b9dab409c930d50f4456ab, type: 2}
     StartID: 
@@ -27931,7 +28003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 817171651702199073, guid: 50cd9c0dfcb5f654ead7e820d2c02c8f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 240.00027
+      value: 288.0003
       objectReference: {fileID: 0}
     - target: {fileID: 877820288413009441, guid: 50cd9c0dfcb5f654ead7e820d2c02c8f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -27955,7 +28027,7 @@ PrefabInstance:
       objectReference: {fileID: 2462679177656418470}
     - target: {fileID: 3807044017032835696, guid: 50cd9c0dfcb5f654ead7e820d2c02c8f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 240.00003
+      value: 288.00003
       objectReference: {fileID: 0}
     - target: {fileID: 3943316464168662361, guid: 50cd9c0dfcb5f654ead7e820d2c02c8f, type: 3}
       propertyPath: m_Name
@@ -29359,11 +29431,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8333455860251554306, guid: 069a0f437cfc51b49a6fc3ed5394a07c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 240.00003
+      value: 288.00003
       objectReference: {fileID: 0}
     - target: {fileID: 8877501374946664513, guid: 069a0f437cfc51b49a6fc3ed5394a07c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 240.00027
+      value: 288.0003
       objectReference: {fileID: 0}
     - target: {fileID: 9120257064855636362, guid: 069a0f437cfc51b49a6fc3ed5394a07c, type: 3}
       propertyPath: m_Pivot.x

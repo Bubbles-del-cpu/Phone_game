@@ -8,8 +8,6 @@ using UnityEditor.Callbacks;
 using MeetAndTalk.Nodes;
 using MeetAndTalk.Localization;
 using MeetAndTalk.Settings;
-using System.Linq;
-using System.Security.Cryptography;
 using System.Collections.Generic;
 
 namespace MeetAndTalk.Editor
@@ -18,7 +16,7 @@ namespace MeetAndTalk.Editor
     public class DialogueEditorWindow : EditorWindow
     {
         private DialogueContainerSO currentDialogueContainer;
-        public DialogueGraphView graphView {get; private set;}
+        public DialogueGraphView graphView { get; private set; }
         private DialogueSaveAndLoad saveAndLoad;
 
         private LocalizationEnum languageEnum = LocalizationEnum.English;
@@ -82,13 +80,13 @@ namespace MeetAndTalk.Editor
         private Dictionary<Event.DialogueEventSO, int> _eventDictionary;
         public void RepopulateEventSOs()
         {
-            foreach(var item in saveAndLoad.GetNodes<EventNode>())
+            foreach (var item in saveAndLoad.GetNodes<EventNode>())
                 item.LoadValueInToField();
         }
 
         public bool IsEventScriptableObjectPresent(Event.DialogueEventSO eventData)
         {
-           return saveAndLoad.IsEventScriptableObjectPresent(eventData);
+            return saveAndLoad.IsEventScriptableObjectPresent(eventData);
         }
 
         private void GenerateToolbar()
@@ -288,7 +286,7 @@ namespace MeetAndTalk.Editor
         }
         private void Language(LocalizationEnum _language, ToolbarMenu _toolbarMenu)
         {
-            toolbarMenu.text =  _language.ToString() + "";
+            toolbarMenu.text = _language.ToString() + "";
             languageEnum = _language;
             graphView.LanguageReload();
         }
