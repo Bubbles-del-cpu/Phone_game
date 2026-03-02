@@ -10,6 +10,21 @@ public class SpicySocialMediaCanvas : SocialMediaCanvas
         GameManager.Instance.SpicySocialMediaCanvas.PostToFeedCanvas(_data, nodeData, showNotification, adjustSaveData);
     }
 
+    public override void PopulateHistory(List<string> visiblePostGuids)
+    {
+        if (visiblePostGuids == null || visiblePostGuids.Count == 0)
+            return;
+
+        foreach (var postGuid in visiblePostGuids)
+        {
+            var galleryItem = GameManager.Instance.GalleryCanvas.GetGalleryItem(postGuid, true);
+            if (galleryItem != null && galleryItem.Node != null && galleryItem.Node.Post != null)
+            {
+                PostToFeed(galleryItem.Node.Post, galleryItem.Node, showNotification: false, adjustSaveData: false);
+            }
+        }
+    }
+
     protected override void PostToFeedCanvas(SocialMediaPostSO _data, DialogueNodeData nodeData, bool showNotification, bool adjustSaveData)
     {
         Debug.Log($"Attempting to post to social media. Prefab valid: {_socialMediaPostPrefab != null}, Container valid: {_socialMediaPostsContainer != null}");

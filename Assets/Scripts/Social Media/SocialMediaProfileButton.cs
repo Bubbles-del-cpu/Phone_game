@@ -29,9 +29,9 @@ public class SocialMediaProfileButton : MonoBehaviour
         NavigationManager.Instance.InvokeCommand(command, allowUndo: true);
     }
 
-    public void Initialize(DialogueCharacterSO character)
+    public void Initialize(DialogueCharacterSO character, SocialMediaProfileSO profile)
     {
         _assignedCharacter = character;
-        _assignedCharacter.SocialMediaProfile.SetupProfileButton(this);
+        profile.SetupProfileButton(this);
     }
 }

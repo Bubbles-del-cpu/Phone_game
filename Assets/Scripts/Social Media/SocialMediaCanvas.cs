@@ -156,7 +156,7 @@ public class SocialMediaCanvas : UICanvas
     /// Adds a profile button for the character if it doesn't already exist
     /// </summary>
     /// <param name="postData">Social media post data</param>
-    public void AddProfileButton(SocialMediaPostSO postData)
+    public virtual void AddProfileButton(SocialMediaPostSO postData)
     {
         if (_profileButtons.ContainsKey(postData.Character))
             return;
@@ -164,7 +164,8 @@ public class SocialMediaCanvas : UICanvas
         var buttonObj = Instantiate(_profilePageButtonPrefab, _profilePageButtonContainer);
         var buttonComp = buttonObj.GetComponent<SocialMediaProfileButton>();
         _profileButtons[postData.Character] = buttonComp;
-        buttonComp.Initialize(postData.Character);
+        buttonComp.Initialize(postData.Character,
+            postData.TargetPlatform == MediaTargetPlatform.SpicySocialMediaPost ? postData.Character.SpicySocialMediaProfile : postData.Character.SocialMediaProfile);
     }
 
     /// <summary>

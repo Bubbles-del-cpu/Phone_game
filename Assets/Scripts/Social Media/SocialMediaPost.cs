@@ -88,7 +88,9 @@ public class SocialMediaPost : MonoBehaviour
         // Added null check for safety
         if (data.Character != null)
         {
-            profileButton.Initialize(data.Character);
+            profileButton.Initialize(data.Character,
+                data.TargetPlatform == MediaTargetPlatform.SpicySocialMediaPost ? data.Character.SpicySocialMediaProfile : data.Character.SocialMediaProfile
+            );
             nameLabel.text = data.Character.GetName();
         }
         else
