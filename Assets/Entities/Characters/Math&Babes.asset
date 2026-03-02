@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76bf2ff3652a68438d37775da7ebe79, type: 3}
+  m_Name: Math&Babes
+  m_EditorClassIdentifier: Assembly-CSharp::MeetAndTalk.DialogueCharacterSO
+  characterName:
+  - languageEnum: 0
+    LanguageGenericType: Math&Babes
+  - languageEnum: 1
+    LanguageGenericType: Math&Babes
+  CustomizedName:
+    ValueName: 
+    LastValue: 
+  UseGlobalValue: 0
+  Images: []
+  textColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+  Avatars:
+  - type: 0
+    LeftPosition: {fileID: 21300000, guid: 21c81bf0a322a7845aa59687bbb64a66, type: 3}
+    RightPosition: {fileID: 21300000, guid: 21c81bf0a322a7845aa59687bbb64a66, type: 3}
+  SocialMediaProfile: {fileID: 11400000, guid: 221c571236e33304181b744a9ee6e89f, type: 2}
+  SpicySocialMediaProfile: {fileID: 11400000, guid: 90e273d9ff66a4b48b46e2c4ee7efd85, type: 2}

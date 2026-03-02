@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c76bf2ff3652a68438d37775da7ebe79, type: 3}
-  m_Name: Math
-  m_EditorClassIdentifier: 
+  m_Name: Math&Lily
+  m_EditorClassIdentifier: Assembly-CSharp::MeetAndTalk.DialogueCharacterSO
   characterName:
   - languageEnum: 0
-    LanguageGenericType: Math
+    LanguageGenericType: Math&Lily
   - languageEnum: 1
-    LanguageGenericType: Math
+    LanguageGenericType: Math&Lily
   CustomizedName:
-    ValueName: PlayerName
+    ValueName: 
     LastValue: 
   UseGlobalValue: 0
   Images: []
   textColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
   Avatars:
   - type: 0
-    LeftPosition: {fileID: -613523758346725417, guid: febdecaee0578164f8fe3d3266e50a52, type: 3}
-    RightPosition: {fileID: -613523758346725417, guid: febdecaee0578164f8fe3d3266e50a52, type: 3}
-  SocialMediaProfile: {fileID: 11400000, guid: 459882e2d4610d0419bf855e22418777, type: 2}
-  SpicySocialMediaProfile: {fileID: 0}
+    LeftPosition: {fileID: 21300000, guid: 4c9f81f1c5ea7e244bee44bcbfcebdfa, type: 3}
+    RightPosition: {fileID: 21300000, guid: 4c9f81f1c5ea7e244bee44bcbfcebdfa, type: 3}
+  SocialMediaProfile: {fileID: 11400000, guid: eb66143b72ba1d046895eb9c750ee8d1, type: 2}
+  SpicySocialMediaProfile: {fileID: 11400000, guid: 07b0384738eae3d4c8ed2c31461822cd, type: 2}

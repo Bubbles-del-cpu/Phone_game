@@ -151,7 +151,7 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 0.16.beta
+  bundleVersion: 0.16.1.beta
   preloadedAssets:
   - {fileID: 0}
   - {fileID: 11400000, guid: 109eefa76c44f744999f0b1a0dfa708f, type: 2}
@@ -772,7 +772,7 @@ PlayerSettings:
   platformArchitecture: {}
   scriptingBackend:
     Android: 1
-    Standalone: 0
+    Standalone: 1
   il2cppCompilerConfiguration: {}
   il2cppCodeGeneration: {}
   il2cppStacktraceInformation: {}
