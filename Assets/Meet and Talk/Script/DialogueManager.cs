@@ -42,6 +42,23 @@ namespace MeetAndTalk
             X8 = 8
         }
         public ResponseSpeed DisplaySpeedMultipler;
+        [SerializeField] private bool _dialoguePaused = false;
+        /// <summary>
+        /// When true, the dialogue is paused and will not progress until unpaused.
+        /// </summary>
+        public bool Paused
+        {
+            get
+            {
+                return _dialoguePaused;
+            }
+            set
+            {
+                _dialoguePaused = value;
+                Time.timeScale = _dialoguePaused ? 0 : 1;
+            }
+        }
+
         public int MaximumNumberOfSocialPosts;
         public float PostChoiceDelay;
 

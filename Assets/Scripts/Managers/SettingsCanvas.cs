@@ -113,7 +113,7 @@ public class SettingsCanvas : UICanvas
     /// Populates the save states in the save states view
     /// </summary>
     /// <param name="saveStates">List of save states to populate</param>
-    public void PopulateSaveStates(List<SaveFileData.GameSaveState> saveStates)
+    public void PopulateSaveStates(List<GameSaveState> saveStates)
     {
         for (var index = 0; index < _saveStateButtons.Count; index++)
         {

@@ -6,6 +6,7 @@ public class FullScreenMediaMessageViewer : MonoBehaviour, IPointerClickHandler
 {
     private MediaType _type => _isSocialMediaPost ? _assignedNode.Post.MediaType : _assignedNode.MediaType;
     [SerializeField] private bool _openedFromGallery;
+    [SerializeField] private GameObject _playButton;
 
     private DialogueNodeData _assignedNode;
     private bool _isSocialMediaPost;
@@ -15,6 +16,7 @@ public class FullScreenMediaMessageViewer : MonoBehaviour, IPointerClickHandler
         _assignedNode = nodeData;
         _isSocialMediaPost = isSocialMediaPost;
         gameObject.SetActive(true);
+        _playButton.SetActive(_type == MediaType.Video);
     }
 
     public void OnPointerClick(PointerEventData eventData)

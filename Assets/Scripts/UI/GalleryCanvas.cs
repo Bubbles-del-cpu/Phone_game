@@ -30,6 +30,8 @@ public class GalleryCanvas : UICanvas
     [SerializeField] private int _imagePageNumber = 0;
     [SerializeField] private int _videoPageNumber = 0;
     [SerializeField] private int _buttonsPerPage = 20;
+    [SerializeField] private bool _autoplayVideosOnOpen = true;
+    [SerializeField] private float _mediaPlayDelay = 0.15f;
     [SerializeField] private List<GalleryImageButton> _imageButtons;
     [SerializeField] private List<GalleryVideoButton> _videoButtons;
     [SerializeField] private MediaType _currentMediaType = MediaType.Sprite;
@@ -346,7 +348,7 @@ public class GalleryCanvas : UICanvas
         UpdateUnlockedCount();
     }
 
-    private void CreateMediaButtons(IEnumerable<SaveFileData.MediaData> saveFileData)
+    private void CreateMediaButtons(IEnumerable<MediaData> saveFileData)
     {
         _galleryImageItems = new List<GalleryMediaItem>();
         _galleryVideoItems = new List<GalleryMediaItem>();
@@ -387,6 +389,8 @@ public class GalleryCanvas : UICanvas
                     break;
                 case ChapterType.Standalone:
                     {
+                        if (mediaData.ChapterIndex >= DialogueChapterManager.Instance.StandaloneChapters.Count)
+                            continue;
 
                         var chapter = DialogueChapterManager.Instance.StandaloneChapters[mediaData.ChapterIndex];
                         var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, mediaData.NodeGUID);
@@ -507,6 +511,10 @@ public class GalleryCanvas : UICanvas
             return;
 
         fullScreenMedia.SetupWithScrubHistory(galleryMedia, includeScrubHistory ? GetScrubHistory(galleryMedia, openedFromGallery) : null);
+        if (_autoplayVideosOnOpen && galleryMedia.MediaType == MediaType.Video)
+        {
+            fullScreenMedia.OnPlayClick(_mediaPlayDelay);
+        }
         StartCoroutine(CoOpenMediaPanel(fullScreenMedia, openedFromGallery));
     }
 

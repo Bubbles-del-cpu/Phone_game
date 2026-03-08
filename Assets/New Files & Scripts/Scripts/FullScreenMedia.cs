@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using MeetAndTalk;
 using Unity.VisualScripting;
@@ -22,7 +23,7 @@ public class FullScreenMedia : UIPanel
 
     public override void Awake()
     {
-        _playButton.onClick.AddListener(OnPlayClick);
+        _playButton.onClick.AddListener(() => OnPlayClick(0));
         _nextButton.onClick.AddListener(OnNextClick);
         _previousButton.onClick.AddListener(OnPreviousClick);
     }
@@ -171,9 +172,16 @@ public class FullScreenMedia : UIPanel
         SetupMediaViewer(_scrubMediaItems[_currentScrubIndex]);
     }
 
-    public void OnPlayClick()
+    public void OnPlayClick(float delay = 0)
     {
-        GameManager.Instance.MainVideoPlayer.PlayVideo(_clipToPlay);
+        if (_clipToPlay == null)
+            return;
+        StartCoroutine(CoPlayVideoWithDelay(delay));
     }
 
+    private IEnumerator CoPlayVideoWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        GameManager.Instance.MainVideoPlayer.PlayVideo(_clipToPlay);
+    }
 }

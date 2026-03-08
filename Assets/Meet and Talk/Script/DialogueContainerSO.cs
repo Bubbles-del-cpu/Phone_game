@@ -323,7 +323,7 @@ namespace MeetAndTalk
 
         public virtual bool ShouldDelay()
         {
-            _delayTimer += (Time.unscaledDeltaTime * (float)DialogueManager.Instance.DisplaySpeedMultipler);
+            _delayTimer += Time.deltaTime * (float)DialogueManager.Instance.DisplaySpeedMultipler;
             if (_delayTimer <= Duration)
                 return true;
 
