@@ -99,7 +99,6 @@ public class FullScreenMedia : UIPanel
     {
         _backgroundSetButton.gameObject.SetActive(false);
         _currentMediaType = galleryItem.MediaType;
-        bool backgroundCapable = galleryItem.IsSocialMediaPost ? !galleryItem.Node.Post.NotBackgroundCapable : !galleryItem.Node.NotBackgroundCapable;
         switch (galleryItem.MediaType)
         {
             case MediaType.Sprite:
@@ -107,8 +106,8 @@ public class FullScreenMedia : UIPanel
                 _image.preserveAspect = true;
 
                 //Setup the background set button
-                _backgroundSetButton.gameObject.SetActive(backgroundCapable);
-                if (backgroundCapable)
+                _backgroundSetButton.gameObject.SetActive(galleryItem.IsBackgroundCapable);
+                if (galleryItem.IsBackgroundCapable)
                     _backgroundSetButton.Setup(galleryItem.Node, galleryItem.IsSocialMediaPost);
 
                 break;

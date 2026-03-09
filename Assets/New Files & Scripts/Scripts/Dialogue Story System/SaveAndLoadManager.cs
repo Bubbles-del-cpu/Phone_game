@@ -262,6 +262,7 @@ public class SaveAndLoadManager : MonoBehaviour
     public void StartNewSave(bool startDialogue = true, bool clearGallery = true)
     {
         var oldGallery = CurrentSave.UnlockedMedia;
+        var oldBaseSocialMediaProfileItems = CurrentSave.UnlockedBaseSocialMediaProfileItems;
         System.IO.File.Delete(GetPath(0));
 
         //Reset and clear the global value manager so that it can be loaded in fresh for the new save
@@ -275,6 +276,7 @@ public class SaveAndLoadManager : MonoBehaviour
         {
             // Restore the old gallery if we are not clearing it for the new save
             CurrentSave.UnlockedMedia = oldGallery;
+            CurrentSave.UnlockedBaseSocialMediaProfileItems = oldBaseSocialMediaProfileItems;
             Save();
         }
 

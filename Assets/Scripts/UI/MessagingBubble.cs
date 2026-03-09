@@ -120,7 +120,7 @@ public class MessagingBubble : MonoBehaviour
             SetContainerSize(_videoImage.texture.width, _videoImage.texture.height, _videoContainer.GetComponent<RectTransform>());
         }
 
-        _mediaViewer.Setup(nodeData, false);
+        _mediaViewer.Setup(nodeData.NodeGuid, nodeData.MediaType == MediaType.Video ? video.name : postImage.name, nodeData.MediaType, isSocialMediaPost: false);
     }
 
     private IEnumerator COEnable(bool hide)

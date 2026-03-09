@@ -13,7 +13,6 @@ public class MediaData
     public bool NotBackgroundCapable;
     public ChapterType ChapterType;
     public MediaLockState LockedState;
-    public bool BaseSocialMediaProfileItem;
     [NonSerialized] public DialogueNodeData Node;
 
     /// <summary>

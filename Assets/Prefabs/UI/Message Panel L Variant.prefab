@@ -935,9 +935,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3733679436926361743, guid: e0b926486914c414d96b841fd4b77068, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5038586552234332598, guid: e0b926486914c414d96b841fd4b77068, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5168919253631292326, guid: e0b926486914c414d96b841fd4b77068, type: 3}
       propertyPath: m_Name
       value: Media Viewer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5168919253631292326, guid: e0b926486914c414d96b841fd4b77068, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

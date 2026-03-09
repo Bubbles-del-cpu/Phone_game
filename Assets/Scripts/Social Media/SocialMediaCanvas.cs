@@ -153,9 +153,9 @@ public class SocialMediaCanvas : UICanvas
     }
 
     /// <summary>
-    /// Adds a profile button for the character if it doesn't already exist
+    /// Adds a profile button for the specified post data if one doesn't already exist, and unlocks any associated gallery media items.
     /// </summary>
-    /// <param name="postData">Social media post data</param>
+    /// <param name="postData">The social media post data for which to add a profile button.</param>
     public virtual void AddProfileButton(SocialMediaPostSO postData)
     {
         if (_profileButtons.ContainsKey(postData.Character))
@@ -164,15 +164,28 @@ public class SocialMediaCanvas : UICanvas
         var buttonObj = Instantiate(_profilePageButtonPrefab, _profilePageButtonContainer);
         var buttonComp = buttonObj.GetComponent<SocialMediaProfileButton>();
         _profileButtons[postData.Character] = buttonComp;
-        buttonComp.Initialize(postData.Character,
-            postData.TargetPlatform == MediaTargetPlatform.SpicySocialMediaPost ? postData.Character.SpicySocialMediaProfile : postData.Character.SocialMediaProfile);
+        buttonComp.Initialize(postData.Character, postData.Character.SocialMediaProfile);
+
+        var galleryItems = postData.Character.SocialMediaProfile.GetBaseGalleryMediaData(postData.Character, MediaTargetPlatform.SocialMediaPost);
+
+        // Unlock the gallery media items
+        foreach (var mediaData in galleryItems)
+        {
+            if (!SaveAndLoadManager.Instance.ReplayingCompletedChapter)
+                SaveAndLoadManager.Instance.CurrentSave.UnlockMedia(mediaData.NodeGUID, mediaData.FileName, linearPath: true);
+
+            GameManager.Instance.GalleryCanvas.UnlockMedia(mediaData.NodeGUID, mediaData.FileName, reloadedGallery: false);
+        }
+
+        // Refresh the gallery page to reflect the changes and ensure any unlocked media are shown as unlocked
+        GameManager.Instance.GalleryCanvas.RefreshGalleryPage();
     }
 
     /// <summary>
-    /// Removes the profile button for the specified character
+    /// Removes the profile button for the specified character and rolls back any associated gallery media item unlocks in the save data.
     /// </summary>
-    /// <param name="character">Character whose profile button should be removed</param>
-    private void RemoveProfileButton(DialogueCharacterSO character)
+    /// <param name="character">The character for which to remove the profile button.</param>
+    protected virtual void RemoveProfileButton(DialogueCharacterSO character)
     {
         if (!_profileButtons.ContainsKey(character))
             return;
@@ -181,6 +194,16 @@ public class SocialMediaCanvas : UICanvas
         Destroy(buttonComp.gameObject);
 
         _profileButtons.Remove(character);
+
+        // Remove any associated gallery media items from the save data
+        var galleryItems = character.SocialMediaProfile.GetBaseGalleryMediaData(character, MediaTargetPlatform.SocialMediaPost);
+        foreach (var mediaData in galleryItems)
+        {
+            SaveAndLoadManager.Instance.CurrentSave.RollbackUnlockMedia(mediaData.NodeGUID, mediaData.FileName);
+        }
+
+        // Refresh the gallery page to reflect the changes and ensure any rolled back media are shown as locked again
+        GameManager.Instance.GalleryCanvas.RefreshGalleryPage();
     }
 
     public void OpenProfilePage(DialogueCharacterSO character)

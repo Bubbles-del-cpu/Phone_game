@@ -6,6 +6,7 @@ using System.Linq;
 using Unity.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Video;
 
 [Serializable]
 public class SaveFileData
@@ -21,6 +22,7 @@ public class SaveFileData
     public GameSaveState AutoSaveState;
     public List<GameSaveState> SaveStates;
     public List<MediaData> UnlockedMedia;
+    public List<SocialBaseItemMediaData> UnlockedBaseSocialMediaProfileItems;
 
     [System.Serializable]
     public class GlobalSaveVariable
@@ -47,6 +49,7 @@ public class SaveFileData
         saveFile.SaveFileSlot = slot;
         saveFile.CurrentLanguage = DialogueManager.Instance.localizationManager.selectedLang;
         saveFile.UnlockedMedia = new List<MediaData>();
+        saveFile.UnlockedBaseSocialMediaProfileItems = new List<SocialBaseItemMediaData>();
         saveFile.ForceUnlockAllChapters = false;
         saveFile.DisplayHints = false;
 
@@ -134,73 +137,130 @@ public class SaveFileData
     public void UpdateMediaData(bool generateThumbnails)
     {
         var mediaCopy = new List<MediaData>(UnlockedMedia);
+        var baseSocialMediaProfileItemsCopy = new List<SocialBaseItemMediaData>(UnlockedBaseSocialMediaProfileItems);
         UnlockedMedia.Clear();
+        UnlockedBaseSocialMediaProfileItems.Clear();
 
         //Collect all new gallery content and update any existing if required
-        CollectMediaFromChapters(mediaCopy, generateThumbnails);
+        CollectMediaFromChapters(mediaCopy, baseSocialMediaProfileItemsCopy, generateThumbnails);
     }
 
-    private void CollectMediaFromChapters(IEnumerable<MediaData> saveFileData, bool generateThumbnails)
+    private void CollectMediaFromChapters(IEnumerable<MediaData> saveFileData, IEnumerable<SocialBaseItemMediaData> baseSocialMediaProfileItems, bool generateThumbnails)
     {
         //Add all the gallery content, initially everything will start out as locked
+        var activeSocialMediaCharacters = new List<DialogueCharacterSO>();
         foreach (var chapter in DialogueChapterManager.Instance.StoryList)
         {
             foreach (var dialogueNode in chapter.Story.DialogueNodeDatas)
+            {
+                if (dialogueNode.Post != null && dialogueNode.Post.Character != null && !activeSocialMediaCharacters.Contains(dialogueNode.Post.Character))
+                {
+                    activeSocialMediaCharacters.Add(dialogueNode.Post.Character);
+                }
+
                 AddMedia(chapter, dialogueNode);
+            }
         }
 
         foreach (var chapter in DialogueChapterManager.Instance.StandaloneChapters)
         {
             foreach (var dialogueNode in chapter.Story.DialogueNodeDatas)
+            {
+                if (dialogueNode.Post != null && dialogueNode.Post.Character != null && !activeSocialMediaCharacters.Contains(dialogueNode.Post.Character))
+                {
+                    activeSocialMediaCharacters.Add(dialogueNode.Post.Character);
+                }
+
                 AddMedia(chapter, dialogueNode);
+            }
+        }
+
+        foreach (var character in activeSocialMediaCharacters)
+        {
+            // Add any base profile media items for the character that may be locked in the gallery
+            if (character.SocialMediaProfile != null)
+            {
+                // Note: Not using GetBaseGalleryMediaData here as we want to have access to the video clup in order to produce the thumbnail if required
+                foreach (var mediaData in character.SocialMediaProfile.BaseGalleryMediaItems)
+                {
+                    UnlockedBaseSocialMediaProfileItems.Add(character.SocialMediaProfile.ConvertBaseGalleryItemToMediaData(character, mediaData, MediaTargetPlatform.SocialMediaPost));
+                    if (mediaData.MediaType == MediaType.Video)
+                    {
+                        GameManager.Instance.SetVideoFrame(mediaData.MediaObject as VideoClip, mediaData.CustomThumbnail as Sprite);
+                    }
+                }
+            }
+
+            if (character.SpicySocialMediaProfile != null)
+            {
+                // Note: Not using GetBaseGalleryMediaData here as we want to have access to the video clup in order to produce the thumbnail if required
+                foreach (var mediaData in character.SpicySocialMediaProfile.BaseGalleryMediaItems)
+                {
+                    UnlockedBaseSocialMediaProfileItems.Add(character.SpicySocialMediaProfile.ConvertBaseGalleryItemToMediaData(character, mediaData, MediaTargetPlatform.SpicySocialMediaPost));
+                    if (mediaData.MediaType == MediaType.Video)
+                    {
+                        GameManager.Instance.SetVideoFrame(mediaData.MediaObject as VideoClip, mediaData.CustomThumbnail as Sprite);
+                    }
+                }
+            }
         }
 
         if (generateThumbnails)
             GameManager.Instance.GenerateThumbnails();
 
+        foreach (var item in baseSocialMediaProfileItems)
+        {
+            switch (item.LockedState)
+            {
+                case MediaLockState.Unlocked:
+                    UnlockMedia(item.NodeGUID, item.FileName, item.IsLinearPathUnlock);
+                    break;
+            }
+        }
+
         //Take the current saved media and buttons and unlock them based on our save file data
         foreach (var item in saveFileData)
         {
-            try
+            //try
+            //{
+            // If the file name is empty, we need to get the node and unlock based on that
+            var node = item.GetNode();
+            if (node != null)
             {
-                // If the file name is empty, we need to get the node and unlock based on that
-                var node = item.GetNode();
-                if (node != null)
+                switch (item.LockedState)
                 {
-                    switch (item.LockedState)
-                    {
-                        case MediaLockState.Unlocked:
-                            var dialogueNode = (DialogueNodeData)node;
-                            UnlockMedia(dialogueNode, item.IsLinearPathUnlock);
-                            UnlockMedia(dialogueNode, item.IsLinearPathUnlock);
+                    case MediaLockState.Unlocked:
+                        var dialogueNode = (DialogueNodeData)node;
+                        UnlockMedia(dialogueNode, item.IsLinearPathUnlock);
+                        UnlockMedia(dialogueNode, item.IsLinearPathUnlock);
 
-                            /* Check if the media is a social media post and make sure the profile button exists on the social media canvas
-                            * Because the social media app now contains profile buttons that should exist across chapters, its possible that we need to
-                            * Display a profile button for a character even if the character hasn't performed a social media post this chapter
-                            * This is only relevant for save file load as the chapter repopulation will handle it chapter posts and thus profile button creation
-                            */
-                            if (dialogueNode.Post != null && item.IsLinearPathUnlock)
-                            {
-                                switch (dialogueNode.Post.TargetPlatform)
-                                {
-                                    case MediaTargetPlatform.SocialMediaPost:
-                                        GameManager.Instance.SocialMediaCanvas.AddProfileButton(dialogueNode.Post);
-                                        break;
-                                    case MediaTargetPlatform.SpicySocialMediaPost:
-                                        GameManager.Instance.SpicySocialMediaCanvas.AddProfileButton(dialogueNode.Post);
-                                        break;
-                                }
-                            }
-                            break;
-                    }
+                        /* Check if the media is a social media post and make sure the profile button exists on the social media canvas
+                        * Because the social media app now contains profile buttons that should exist across chapters, its possible that we need to
+                        * Display a profile button for a character even if the character hasn't performed a social media post this chapter
+                        * This is only relevant for save file load as the chapter repopulation will handle it chapter posts and thus profile button creation
+                        */
+                        // if (dialogueNode.Post != null && item.IsLinearPathUnlock)
+                        // {
+                        //     switch (dialogueNode.Post.TargetPlatform)
+                        //     {
+                        //         case MediaTargetPlatform.SocialMediaPost:
+                        //             GameManager.Instance.SocialMediaCanvas.AddProfileButton(dialogueNode.Post);
+                        //             break;
+                        //         case MediaTargetPlatform.SpicySocialMediaPost:
+                        //             GameManager.Instance.SpicySocialMediaCanvas.AddProfileButton(dialogueNode.Post);
+                        //             break;
+                        //     }
+                        // }
+                        break;
                 }
             }
-            catch (Exception ex)
-            {
-                Debug.LogError($"Failed to collect media from chapter. {ex.Message}");
-            }
         }
+        //catch (Exception ex)
+        //{
+        //Debug.LogError($"Failed to collect media from chapter. {ex.Message}");
+        //}
     }
+    //}
 
     public ChapterSaveData CurrentChapterData => CurrentState.LastChapter;
 
@@ -403,7 +463,7 @@ public class SaveFileData
         if (item != null)
         {
             //We found the media, unlock it
-            SetLockState(nodeData.MediaFileName, item, MediaLockState.Unlocked, linearPath);
+            UnlockMedia(nodeData.NodeGuid, nodeData.MediaFileName, linearPath);
         }
 
         if (nodeData.Post != null)
@@ -411,8 +471,25 @@ public class SaveFileData
             var socialItem = UnlockedMedia.FirstOrDefault(x => x.NodeGUID == nodeData.NodeGuid && x.FileName == nodeData.Post.MediaFileName);
             if (socialItem != null)
             {
-                SetLockState(nodeData.Post.MediaFileName, socialItem, MediaLockState.Unlocked, linearPath);
+                UnlockMedia(nodeData.NodeGuid, nodeData.Post.MediaFileName, linearPath);
             }
+        }
+    }
+
+    public void UnlockMedia(string nodeGUID, string fileName, bool linearPath)
+    {
+        var item = UnlockedMedia.FirstOrDefault(x => x.NodeGUID == nodeGUID && x.FileName == fileName);
+        if (item != null)
+        {
+            //We found the media, unlock it
+            SetLockState(fileName, item, MediaLockState.Unlocked, linearPath);
+        }
+
+        item = UnlockedBaseSocialMediaProfileItems.FirstOrDefault(x => x.NodeGUID == nodeGUID && x.FileName == fileName);
+        if (item != null)
+        {
+            //We found the media, unlock it
+            SetLockState(fileName, item, MediaLockState.Unlocked, linearPath);
         }
     }
 
@@ -426,7 +503,7 @@ public class SaveFileData
         if (item != null)
         {
             //We found the media, unlock it
-            SetLockState(nodeData.MediaFileName, item, MediaLockState.Locked, false);
+            RollbackUnlockMedia(nodeData.NodeGuid, nodeData.MediaFileName);
         }
 
         if (nodeData.Post != null)
@@ -434,8 +511,25 @@ public class SaveFileData
             var socialItem = UnlockedMedia.FirstOrDefault(x => x.NodeGUID == nodeData.NodeGuid && x.FileName == nodeData.Post.MediaFileName);
             if (socialItem != null)
             {
-                SetLockState(nodeData.Post.MediaFileName, socialItem, MediaLockState.Locked, false);
+                RollbackUnlockMedia(nodeData.NodeGuid, nodeData.Post.MediaFileName);
             }
+        }
+    }
+
+    public void RollbackUnlockMedia(string nodeGUID, string fileName)
+    {
+        var item = UnlockedMedia.FirstOrDefault(x => x.NodeGUID == nodeGUID && x.FileName == fileName);
+        if (item != null)
+        {
+            //We found the media, lock it
+            SetLockState(fileName, item, MediaLockState.Locked, false);
+        }
+
+        item = UnlockedBaseSocialMediaProfileItems.FirstOrDefault(x => x.NodeGUID == nodeGUID && x.FileName == fileName);
+        if (item != null)
+        {
+            //We found the media, lock it
+            SetLockState(fileName, item, MediaLockState.Locked, false);
         }
     }
 

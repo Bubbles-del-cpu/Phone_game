@@ -37,7 +37,8 @@ public class SocialMediaProfilePage : MonoBehaviour
     protected ObjectPool<GalleryImageButton> _galleryImagePool;
     protected ObjectPool<GalleryVideoButton> _galleryVideoPool;
     protected List<GalleryButtonBase> _galleryItems;
-    protected virtual Func<GalleryMediaItem, bool> _galleryItemFilter => p => p.IsLinearPathUnlock == true && p.TargetPlatform == MediaTargetPlatform.SocialMediaPost;
+    protected virtual Func<GalleryMediaItem, bool> _galleryItemFilter => p => p.IsLinearPathUnlock == true && p.TargetPlatform == MediaTargetPlatform.SocialMediaPost && !p.IsBaseSocialMediaProfileItem;
+    protected virtual Func<GalleryMediaItem, bool> _baseGalleryItemFilter => p => p.IsLinearPathUnlock == true && p.TargetPlatform == MediaTargetPlatform.SocialMediaPost && p.IsBaseSocialMediaProfileItem;
 
     protected int _galleryItemPool = 50;
     private void Awake()
@@ -68,9 +69,15 @@ public class SocialMediaProfilePage : MonoBehaviour
     /// <param name="character"></param>
     protected virtual void PopulateGallery(DialogueCharacterSO character)
     {
-        // Populate the gallery with the items relating to this profile
+        // Populate the gallery with the items relating to this profile, start with the base items first
+        PopulateGalleryWithFilter(character, _baseGalleryItemFilter);
+        PopulateGalleryWithFilter(character, _galleryItemFilter);
+    }
+
+    protected void PopulateGalleryWithFilter(DialogueCharacterSO character, Func<GalleryMediaItem, bool> filter)
+    {
         var galleryCanvas = GameManager.Instance.GalleryCanvas;
-        var (imageItems, videoItems) = galleryCanvas.GetGalleryItems(character, _galleryItemFilter);
+        var (imageItems, videoItems) = galleryCanvas.GetGalleryItems(character, filter);
 
         foreach (var item in imageItems)
         {

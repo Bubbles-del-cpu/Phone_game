@@ -6,7 +6,6 @@ using System.Collections;
 using System.Linq;
 using UnityEngine.UI;
 using System;
-using Unity.VisualScripting;
 
 public class GalleryCanvas : UICanvas
 {
@@ -43,6 +42,8 @@ public class GalleryCanvas : UICanvas
     [SerializeField] private List<GalleryMediaItem> _galleryVideoItems;
     [NonSerialized] public GalleryUnlockData UnlockData;
 
+    private bool _buttonsCreated = false;
+
     protected override void Awake()
     {
         base.Awake();
@@ -75,7 +76,7 @@ public class GalleryCanvas : UICanvas
         _videoPageNumber = 0;
 
         CreateButtons();
-        CreateMediaButtons(SaveAndLoadManager.Instance.CurrentSave.UnlockedMedia);
+        CreateMediaButtons(SaveAndLoadManager.Instance.CurrentSave.UnlockedMedia, SaveAndLoadManager.Instance.CurrentSave.UnlockedBaseSocialMediaProfileItems);
         DisplayGalleryPage(_currentMediaType, 0);
     }
 
@@ -106,6 +107,7 @@ public class GalleryCanvas : UICanvas
 
     private void CreateButtons()
     {
+        _buttonsCreated = true;
         for (var index = 0; index < _buttonsPerPage; index++)
         {
             var imageButton = Instantiate(imageButtonPrefab, imageButtonsContainer);
@@ -148,16 +150,19 @@ public class GalleryCanvas : UICanvas
     /// <returns>The gallery media item if found; otherwise, null</returns>
     public GalleryMediaItem GetGalleryItem(string guid, bool isSocialMediaPost)
     {
-        var item = _galleryImageItems.FirstOrDefault(x => x.Node.NodeGuid == guid && x.IsSocialMediaPost == isSocialMediaPost);
+        var item = _galleryImageItems.FirstOrDefault(x => x.NodeGuid == guid && x.IsSocialMediaPost == isSocialMediaPost);
         if (item != null)
             return item;
 
-        item = _galleryVideoItems.FirstOrDefault(x => x.Node.NodeGuid == guid && x.IsSocialMediaPost == isSocialMediaPost);
+        item = _galleryVideoItems.FirstOrDefault(x => x.NodeGuid == guid && x.IsSocialMediaPost == isSocialMediaPost);
         return item;
     }
 
     public void RefreshGalleryPage()
     {
+        if (!_buttonsCreated)
+            return;
+
         DisplayGalleryPage(_currentMediaType, _currentMediaType == MediaType.Sprite ? _imagePageNumber : _videoPageNumber);
     }
 
@@ -184,16 +189,18 @@ public class GalleryCanvas : UICanvas
     private void UnlockedGalleryMediaButton(string nodeGUID, string fileName, bool reloadedGallery)
     {
         //Find and unlocked the button on the gallery canvas
-        var content = _galleryImageItems.FirstOrDefault(x => x.Node.NodeGuid == nodeGUID && x.FileName == fileName);
+        var content = _galleryImageItems.FirstOrDefault(x => x.NodeGuid == nodeGUID && x.FileName == fileName);
         if (content != null)
         {
             content.LockState = MediaLockState.Unlocked;
+            content.IsLinearPathUnlock = SaveAndLoadManager.Instance.ReplayingCompletedChapter == false;
         }
 
-        var videoContent = _galleryVideoItems.FirstOrDefault(x => x.Node.NodeGuid == nodeGUID && x.FileName == fileName);
+        var videoContent = _galleryVideoItems.FirstOrDefault(x => x.NodeGuid == nodeGUID && x.FileName == fileName);
         if (videoContent != null)
         {
             videoContent.LockState = MediaLockState.Unlocked;
+            videoContent.IsLinearPathUnlock = SaveAndLoadManager.Instance.ReplayingCompletedChapter == false;
         }
 
         if (reloadedGallery)
@@ -310,7 +317,7 @@ public class GalleryCanvas : UICanvas
                         }
 
                         var data = items[i];
-                        button.Setup(data.ChapterData, data.Node, data.IsSocialMediaPost, isFromGallery: true);
+                        button.Setup(data, isFromGallery: true);
                         if (data.LockState == MediaLockState.Unlocked)
                             button.Unlocked = true;
                         else
@@ -333,7 +340,7 @@ public class GalleryCanvas : UICanvas
                         }
 
                         var data = items[i];
-                        button.Setup(data.ChapterData, data.Node, data.IsSocialMediaPost, isFromGallery: true);
+                        button.Setup(data, isFromGallery: true);
                         if (data.LockState == MediaLockState.Unlocked)
                             button.Unlocked = true;
                         else
@@ -348,10 +355,29 @@ public class GalleryCanvas : UICanvas
         UpdateUnlockedCount();
     }
 
-    private void CreateMediaButtons(IEnumerable<MediaData> saveFileData)
+    private void CreateMediaButtons(IEnumerable<MediaData> saveFileData, IEnumerable<SocialBaseItemMediaData> baseSocialMediaProfileItems)
     {
         _galleryImageItems = new List<GalleryMediaItem>();
         _galleryVideoItems = new List<GalleryMediaItem>();
+
+        foreach (var mediaData in baseSocialMediaProfileItems)
+        {
+            switch (mediaData)
+            {
+                case SocialBaseItemMediaData sMd:
+                    switch (sMd.MediaType)
+                    {
+                        case MediaType.Sprite:
+                            _galleryImageItems.Add(GalleryMediaItem.GetGalleryMediaItem(sMd));
+                            break;
+                        case MediaType.Video:
+                            _galleryVideoItems.Add(GalleryMediaItem.GetGalleryMediaItem(sMd));
+                            break;
+                    }
+                    continue;
+            }
+        }
+
         foreach (var mediaData in saveFileData)
         {
             switch (mediaData.ChapterType)
@@ -362,21 +388,8 @@ public class GalleryCanvas : UICanvas
                         var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, mediaData.NodeGUID);
                         var nd = (DialogueNodeData)node;
 
-                        var type = mediaData.IsSocialMediaPost ? nd.Post.MediaType : nd.MediaType;
-                        var imageData = new GalleryMediaItem()
-                        {
-                            Node = nd,
-                            MediaType = mediaData.IsSocialMediaPost ? nd.Post.MediaType : nd.MediaType,
-                            Image = mediaData.IsSocialMediaPost ? nd.Post.Image : nd.Image,
-                            Video = mediaData.IsSocialMediaPost ? nd.Post.Video : nd.Video,
-                            VideoThumbnail = mediaData.IsSocialMediaPost ? nd.Post.VideoThumbnail : nd.VideoThumbnail,
-                            ChapterData = chapter,
-                            LockState = mediaData.LockedState,
-                            IsLinearPathUnlock = mediaData.IsLinearPathUnlock,
-                            TargetPlatform = mediaData.TargetPlatform
-                        };
-
-                        switch (type)
+                        var imageData = new GalleryMediaItem(nd, mediaData, chapter);
+                        switch (imageData.MediaType)
                         {
                             case MediaType.Sprite:
                                 _galleryImageItems.Add(imageData);
@@ -396,21 +409,8 @@ public class GalleryCanvas : UICanvas
                         var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, mediaData.NodeGUID);
                         var nd = (DialogueNodeData)node;
 
-                        var imageData = new GalleryMediaItem()
-                        {
-                            Node = nd,
-                            MediaType = mediaData.IsSocialMediaPost ? nd.Post.MediaType : nd.MediaType,
-                            Image = mediaData.IsSocialMediaPost ? nd.Post.Image : nd.Image,
-                            Video = mediaData.IsSocialMediaPost ? nd.Post.Video : nd.Video,
-                            VideoThumbnail = mediaData.IsSocialMediaPost ? nd.Post.VideoThumbnail : nd.VideoThumbnail,
-                            ChapterData = chapter,
-                            LockState = mediaData.LockedState,
-                            IsLinearPathUnlock = mediaData.IsLinearPathUnlock,
-                            TargetPlatform = mediaData.TargetPlatform
-                        };
-
-                        var type = mediaData.IsSocialMediaPost ? nd.Post.MediaType : nd.MediaType;
-                        switch (type)
+                        var imageData = new GalleryMediaItem(nd, mediaData, chapter);
+                        switch (imageData.MediaType)
                         {
                             case MediaType.Sprite:
                                 _galleryImageItems.Add(imageData);
@@ -484,14 +484,14 @@ public class GalleryCanvas : UICanvas
         }
     }
 
-    public void OpenImage(DialogueNodeData nodeData, bool openedFromGallery = false, bool isSocialMediaPost = false, bool includeScrubHistory = false)
+    public void OpenImage(string nodeGuid, string fileName, bool openedFromGallery = false, bool isSocialMediaPost = false, bool includeScrubHistory = false)
     {
-        if (nodeData == null)
+        if (string.IsNullOrEmpty(nodeGuid))
             return;
 
         ShowGalleryTable(MediaType.Sprite);
 
-        var galleryMedia = _galleryImageItems.FirstOrDefault(x => x.Node == nodeData && x.IsSocialMediaPost == isSocialMediaPost);
+        var galleryMedia = _galleryImageItems.FirstOrDefault(x => x.NodeGuid == nodeGuid && x.FileName == fileName && x.IsSocialMediaPost == isSocialMediaPost);
         if (galleryMedia == null || galleryMedia.LockState == MediaLockState.Locked)
             return;
 
@@ -499,14 +499,14 @@ public class GalleryCanvas : UICanvas
         StartCoroutine(CoOpenMediaPanel(fullScreenMedia, openedFromGallery));
     }
 
-    public void OpenVideo(DialogueNodeData nodeData, bool openedFromGallery = false, bool isSocialMediaPost = false, bool includeScrubHistory = false)
+    public void OpenVideo(string nodeGuid, string fileName, bool openedFromGallery = false, bool isSocialMediaPost = false, bool includeScrubHistory = false)
     {
-        if (nodeData == null)
+        if (string.IsNullOrEmpty(nodeGuid))
             return;
 
         ShowGalleryTable(MediaType.Video);
 
-        var galleryMedia = _galleryVideoItems.FirstOrDefault(x => x.Node == nodeData && x.IsSocialMediaPost == isSocialMediaPost);
+        var galleryMedia = _galleryVideoItems.FirstOrDefault(x => x.NodeGuid == nodeGuid && x.FileName == fileName && x.IsSocialMediaPost == isSocialMediaPost);
         if (galleryMedia == null || galleryMedia.LockState == MediaLockState.Locked)
             return;
 

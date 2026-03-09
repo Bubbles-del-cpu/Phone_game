@@ -4,31 +4,34 @@ using UnityEngine.EventSystems;
 
 public class FullScreenMediaMessageViewer : MonoBehaviour, IPointerClickHandler
 {
-    private MediaType _type => _isSocialMediaPost ? _assignedNode.Post.MediaType : _assignedNode.MediaType;
-    [SerializeField] private bool _openedFromGallery;
+    private MediaType _postType;
     [SerializeField] private GameObject _playButton;
-
-    private DialogueNodeData _assignedNode;
     private bool _isSocialMediaPost;
+    private string _fileName;
+    private string _nodeGuid;
 
-    public void Setup(DialogueNodeData nodeData, bool isSocialMediaPost)
+    public void Setup(string nodeGuid, string fileName, MediaType postType, bool isSocialMediaPost)
     {
-        _assignedNode = nodeData;
+        _nodeGuid = nodeGuid;
+        _fileName = fileName;
         _isSocialMediaPost = isSocialMediaPost;
+        _postType = postType;
         gameObject.SetActive(true);
-        _playButton.SetActive(_type == MediaType.Video);
+
+        if (_playButton != null)
+            _playButton.SetActive(_postType == MediaType.Video);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         var galleryCanvas = GameManager.Instance.GalleryCanvas;
-        switch (_type)
+        switch (_postType)
         {
             case MediaType.Sprite:
-                galleryCanvas.OpenImage(_assignedNode, _openedFromGallery, _isSocialMediaPost, includeScrubHistory: false);
+                galleryCanvas.OpenImage(_nodeGuid, _fileName, openedFromGallery: false, _isSocialMediaPost, includeScrubHistory: false);
                 break;
             case MediaType.Video:
-                galleryCanvas.OpenVideo(_assignedNode, _openedFromGallery, _isSocialMediaPost, includeScrubHistory: false);
+                galleryCanvas.OpenVideo(_nodeGuid, _fileName, openedFromGallery: false, _isSocialMediaPost, includeScrubHistory: false);
                 break;
         }
     }

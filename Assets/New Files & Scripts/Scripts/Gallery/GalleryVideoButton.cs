@@ -1,4 +1,5 @@
 using System.Collections;
+using System.IO;
 using MeetAndTalk;
 using TMPro;
 using UnityEngine;
@@ -28,9 +29,24 @@ public class GalleryVideoButton : GalleryButtonBase
         _lockedImage.ApplyBlur();
     }
 
+    public override void SetupForBaseSocialProfileItem(GalleryMediaItem item, bool isFromGallery)
+    {
+        base.SetupForBaseSocialProfileItem(item, isFromGallery);
+
+        _clip = item.Video;
+        _fallbackThumbnail = item.VideoThumbnail;
+        if (_fallbackThumbnail != null)
+        {
+            _videoPreviewSprite = _fallbackThumbnail;
+        }
+
+        _image.sprite = _videoPreviewSprite;
+        _lockedImage.ApplyBlur();
+    }
+
 
     public override void GalleryButtonClicked()
     {
-        GameManager.Instance.GalleryCanvas.OpenVideo(_assignedNode, _isFromGallery, isSocialMediaPost: _isSocialMediaPost, includeScrubHistory: true);
+        GameManager.Instance.GalleryCanvas.OpenVideo(AssignedGUID, FileName, _isFromGallery, isSocialMediaPost: _isSocialMediaPost, includeScrubHistory: true);
     }
 }

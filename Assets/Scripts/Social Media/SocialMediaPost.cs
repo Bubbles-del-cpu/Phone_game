@@ -119,7 +119,7 @@ public class SocialMediaPost : MonoBehaviour
 
         postImage.sprite = spriteToAssign; // Assign the determined sprite
         postImage.preserveAspect = true;
-        _mediaViewer.Setup(nodeData, isSocialMediaPost: true);
+        _mediaViewer.Setup(nodeData.NodeGuid, data.MediaType == MediaType.Video ? data.Video.name : data.Image.name, data.MediaType, isSocialMediaPost: true);
 
         PopulateComments(data); // Assumes data is not null based on earlier check
 

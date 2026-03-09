@@ -26,8 +26,16 @@ public class GalleryImageButton : GalleryButtonBase
         _lockedImage.ApplyBlur();
     }
 
+    public override void SetupForBaseSocialProfileItem(GalleryMediaItem item, bool isFromGallery)
+    {
+        base.SetupForBaseSocialProfileItem(item, isFromGallery);
+
+        _image.sprite = item.Image;
+        _lockedImage.ApplyBlur();
+    }
+
     public override void GalleryButtonClicked()
     {
-        GameManager.Instance.GalleryCanvas.OpenImage(_assignedNode, _isFromGallery, isSocialMediaPost: _isSocialMediaPost, includeScrubHistory: true);
+        GameManager.Instance.GalleryCanvas.OpenImage(AssignedGUID, FileName, _isFromGallery, isSocialMediaPost: _isSocialMediaPost, includeScrubHistory: true);
     }
 }

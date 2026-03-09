@@ -3,7 +3,8 @@ using MeetAndTalk;
 
 public class SpicySocialMediaProfilePage : SocialMediaProfilePage
 {
-    protected override Func<GalleryMediaItem, bool> _galleryItemFilter => p => p.IsLinearPathUnlock == true && p.TargetPlatform == MediaTargetPlatform.SpicySocialMediaPost;
+    protected override Func<GalleryMediaItem, bool> _galleryItemFilter => p => p.IsLinearPathUnlock == true && p.TargetPlatform == MediaTargetPlatform.SpicySocialMediaPost && !p.IsBaseSocialMediaProfileItem;
+    protected override Func<GalleryMediaItem, bool> _baseGalleryItemFilter => p => p.IsLinearPathUnlock == true && p.TargetPlatform == MediaTargetPlatform.SpicySocialMediaPost && p.IsBaseSocialMediaProfileItem;
 
     public override void OpenProfile(DialogueCharacterSO character)
     {
