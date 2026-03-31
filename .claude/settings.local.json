@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -1 *.meta)",
+      "Bash(ls -1 *.asset)",
+      "Bash(for file:*)",
+      "Bash(do echo:*)",
+      "Read(//c/Users/dajof/Desktop/TASTY SOAP BUBBLES/unity nts game/New NTS game/**)",
+      "Bash(done)",
+      "Bash(ls:*)",
+      "Bash(python gen_ep23.py)"
+    ]
+  }
+}
