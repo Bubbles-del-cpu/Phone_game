@@ -201,7 +201,8 @@ public class DialogueChapterManager : UICanvas
 
         var wasReplaying = SaveAndLoadManager.Instance.ReplayingCompletedChapter;
 
-        if (SaveAndLoadManager.Instance.CurrentSave.CurrentState.CompletedChapters.Count + 1 >= StoryList.Count)
+        var completedChapterIndex = SaveAndLoadManager.Instance.CurrentSave.CurrentState.LastChapter.FileIndex;
+        if (completedChapterIndex + 1 >= StoryList.Count)
         {
             //We have completed the last chapter.
             GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.ALL_CHAPTERS_COMPLETE, eventToTrigger: null, GameConstants.UIElementKeys.CONTINUE, args: null, twoButtonSetup: false);
