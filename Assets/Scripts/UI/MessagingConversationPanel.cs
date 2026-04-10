@@ -72,7 +72,7 @@ public class MessagingConversationPanel : UIPanel
 
     private IEnumerator OpenDelay(Action onComplete)
     {
-        yield return new WaitForSeconds(_delay);
+        yield return new WaitForSecondsRealtime(_delay);
         if (!IsOpen)
         {
             var count = 0;
@@ -90,7 +90,7 @@ public class MessagingConversationPanel : UIPanel
                 }
             }
 
-            yield return new WaitForSeconds(_delay);
+            yield return new WaitForSecondsRealtime(_delay);
             Canvas.ForceUpdateCanvases();
             ScrollToBottom();
             UpdateChildContainers();
@@ -100,7 +100,7 @@ public class MessagingConversationPanel : UIPanel
         _characterName.text = _character.name;
         GameManager.Instance.SetNewMessage(_character, false);
         MainMenuCanvas.Instance.SetMessagingAppNotification(_character, messageSeen: true);
-        yield return new WaitForSeconds(_delay);
+        yield return new WaitForSecondsRealtime(_delay);
         base.Open();
         onComplete?.Invoke();
     }
