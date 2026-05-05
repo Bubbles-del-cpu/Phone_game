@@ -32,6 +32,9 @@ public class SocialMediaCanvas : UICanvas
 
     public virtual void PopulateHistory(List<string> visiblePostGuids)
     {
+        // Clear the feed before populating with posts from save data
+        ClearSocialFeed();
+
         if (visiblePostGuids == null || visiblePostGuids.Count == 0)
             return;
 

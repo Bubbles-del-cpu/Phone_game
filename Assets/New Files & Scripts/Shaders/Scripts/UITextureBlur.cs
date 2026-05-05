@@ -9,6 +9,7 @@ public class UITextureBlur : MonoBehaviour
     [SerializeField] private Material _blurMaterial;
     [SerializeField] private Texture _sourceTexture;
     [SerializeField] private Image _sourceImage;
+    public Image SourceImage => _sourceImage;
     private Texture _targetTexture => _sourceImage != null && _sourceImage.sprite != null ? _sourceImage.sprite.texture : _sourceTexture;
     [SerializeField] [Range(0f, 20f)] private float _blurSize = 2f;
     [SerializeField][Range(1, 20)] private int _iterations = 2;
@@ -163,6 +164,15 @@ public class UITextureBlur : MonoBehaviour
             DestroyRT(_tempRT2);
 
             _tempRT2 = null;
+        }
+    }
+
+    public void SetBlurSprite(Sprite sprite)
+    {
+        if (sprite != null)
+        {
+            _sourceImage.sprite = sprite;
+            ApplyBlur();
         }
     }
 

@@ -56,7 +56,7 @@ public class TriggerNextChapterButton : MonoBehaviour
                 DialogueChapterManager.Instance.OpenChapterSelect();
             }
 
-            var chapterNumber = saveManager.CurrentSave.CurrentState.CompletedChapters.Count;
+            var chapterNumber = saveManager.CurrentSave.CurrentState.LastChapter.FileIndex + 1;
             saveManager.ClearChapterData(resetBackground: false);
 
             // Populate any seen characters before starting the dialogue

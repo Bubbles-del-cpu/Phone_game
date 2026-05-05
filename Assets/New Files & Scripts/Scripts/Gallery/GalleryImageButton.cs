@@ -23,7 +23,8 @@ public class GalleryImageButton : GalleryButtonBase
 
         (Sprite image, bool backgroundCapable) mediaData = nodeData.GetNodeImageData(isSocialMediaPost);
         _image.sprite = mediaData.image;
-        _lockedImage.ApplyBlur();
+        _lockedImage.SetBlurSprite(mediaData.image);
+        _lockedImage.SourceImage.enabled = Unlocked;
     }
 
     public override void SetupForBaseSocialProfileItem(GalleryMediaItem item, bool isFromGallery)
@@ -31,7 +32,8 @@ public class GalleryImageButton : GalleryButtonBase
         base.SetupForBaseSocialProfileItem(item, isFromGallery);
 
         _image.sprite = item.Image;
-        _lockedImage.ApplyBlur();
+        _lockedImage.SetBlurSprite(item.Image);
+        _lockedImage.SourceImage.enabled = Unlocked;
     }
 
     public override void GalleryButtonClicked()
