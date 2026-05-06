@@ -13,7 +13,10 @@
       "Bash(git:*)",
       "Bash(xargs grep:*)",
       "Bash(python gen_ep24.py)",
-      "Bash(python -c ' *)"
+      "Bash(python -c ' *)",
+      "Bash(grep -E \"\\\\.\\(asset|txt|py\\)$|^total\")",
+      "Bash(read f *)",
+      "Bash(python3 gen_ep24.5.py)"
     ]
   }
 }
