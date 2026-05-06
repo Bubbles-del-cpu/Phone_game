@@ -837,7 +837,7 @@ g_end = end(y=0)
 
 # Start → IF tag_along
 links.append((g_start, g_if_tag))
-g_if_tag_node = ifn(VAR_TAG_ALONG, g_dave_morning_post, g_ls_we_at_marina,
+g_if_tag_node = ifn(VAR_TAG_ALONG, g_ls_we_at_marina, g_dave_morning_post,
                     preset_guid=g_if_tag, y=0)
 
 # NO YACHT PATH
@@ -861,7 +861,7 @@ chain(g_ls_we_at_marina, g_ls_oh_my_god, g_ls_knew_money, g_mc_what,
       g_ls_we_all_know, g_ls_wink, g_ls_butler, g_ls_on_it, g_mc_pro)
 
 # IF lisa_know #1 — lily intro
-g_if_lk1_node = ifn(VAR_LISA_KNOW, g_ls_dinner_move, g_ls_lily_taking,
+g_if_lk1_node = ifn(VAR_LISA_KNOW, g_ls_lily_taking, g_ls_dinner_move,
                     preset_guid=g_if_lk1, y=0)
 links.append((g_mc_pro, g_if_lk1_node))
 chain(g_ls_lily_taking, g_ls_lily_wine_pic, g_ls_excited_ns,
@@ -877,7 +877,7 @@ chain(g_ls_dish_1a, g_ls_dish_1b, g_ls_dessert_next)
 chain(g_ls_dessert_next, g_ls_dessert_pic, g_mc_amazing, g_ls_so_good)
 
 # IF lisa_know #2 — lily dessert
-g_if_lk2_node = ifn(VAR_LISA_KNOW, g_mc_whats_next, g_ls_lily_dessert,
+g_if_lk2_node = ifn(VAR_LISA_KNOW, g_ls_lily_dessert, g_mc_whats_next,
                     preset_guid=g_if_lk2, y=0)
 links.append((g_ls_so_good, g_if_lk2_node))
 chain(g_ls_lily_dessert, g_ls_lily_agrees, g_mc_whats_next)
@@ -894,11 +894,11 @@ chain(g_ls_all_for_it, g_d_pole_pic, g_mc_yep_pole, g_d_yea_yacht,
       g_d_crazy, g_mc_yea_d, g_d_mia_chick, g_d_gonna_show, g_d_standing_pole)
 
 # IF lisa_know #3 — lily near Dave
-g_if_lk_dave_node = ifn(VAR_LISA_KNOW, g_d_getting_started, g_mc_lily_q,
+g_if_lk_dave_node = ifn(VAR_LISA_KNOW, g_mc_lily_q, g_d_getting_started,
                          preset_guid=g_if_lk_dave, y=0)
 links.append((g_d_standing_pole, g_if_lk_dave_node))
 chain(g_mc_lily_q, g_d_lily_good1)
-g_if_dl_dave_node = ifn(VAR_DAVE_LILY, g_d_getting_started, g_d_sitting_next,
+g_if_dl_dave_node = ifn(VAR_DAVE_LILY, g_d_sitting_next, g_d_getting_started,
                          preset_guid=g_if_dl_dave, y=600)
 links.append((g_d_lily_good1, g_if_dl_dave_node))
 chain(g_d_sitting_next, g_d_lily_selfie_pic, g_d_getting_started)
@@ -923,7 +923,7 @@ chain(g_mc_lisa_q1, g_d_walked_up, g_d_fuck_dude, g_d_pulled_lisa,
       g_mc_where_lisa, g_d_below, g_d_cant_really, g_d_focus)
 
 # IF lisa_know #4 — Lily watching Mia video
-g_if_lk_mia_vid_node = ifn(VAR_LISA_KNOW, g_ls_hey_bd, g_mc_lily_watch,
+g_if_lk_mia_vid_node = ifn(VAR_LISA_KNOW, g_mc_lily_watch, g_ls_hey_bd,
                              preset_guid=g_if_lk_mia_vid, y=0)
 links.append((g_d_focus, g_if_lk_mia_vid_node))
 chain(g_mc_lily_watch, g_d_lily_still, g_d_still_here, g_d_watching,
@@ -938,10 +938,10 @@ chain(g_ls_hey_bd, g_mc_where_bd, g_ls_room, g_mc_a_room,
       g_ls_hmm, g_ls_cryptic)
 
 # Nested IF: lisa_know && dave_lily
-g_if_lk_dl_node = ifn(VAR_LISA_KNOW, g_ls_back_below, g_if_dl_inner,
+g_if_lk_dl_node = ifn(VAR_LISA_KNOW, g_if_dl_inner, g_ls_back_below,
                        preset_guid=g_if_lk_dl, y=0)
 links.append((g_ls_cryptic, g_if_lk_dl_node))
-g_if_dl_inner_node = ifn(VAR_DAVE_LILY, g_ls_back_below, g_ls_lily_care,
+g_if_dl_inner_node = ifn(VAR_DAVE_LILY, g_ls_lily_care, g_ls_back_below,
                           preset_guid=g_if_dl_inner, y=600)
 chain(g_ls_lily_care, g_ls_or_just_mia)
 links.append((g_ls_or_just_mia, g_c_care))
@@ -991,7 +991,7 @@ chain(g_d_yea_skill,
       g_ls_but2)
 
 # IF lisa_know #5 — lily section vs pushing head
-g_if_lk_lily3_node = ifn(VAR_LISA_KNOW, g_ls_pushing, g_ls_lily_upstairs,
+g_if_lk_lily3_node = ifn(VAR_LISA_KNOW, g_ls_lily_upstairs, g_ls_pushing,
                            preset_guid=g_if_lk_lily3, y=0)
 links.append((g_ls_but2, g_if_lk_lily3_node))
 
@@ -1016,7 +1016,7 @@ chain(g_ls_lily_upstairs, g_ls_all_alone, g_ls_waste, g_ls_maybe_text,
       g_mc_special_att, g_l_same_dave, g_mc_dave_knows, g_l_oh_my)
 
 # IF dave_lily inside lily section
-g_if_dl_lily_node = ifn(VAR_DAVE_LILY, g_c_lily_nodl, g_c_lily_dl,
+g_if_dl_lily_node = ifn(VAR_DAVE_LILY, g_c_lily_dl, g_c_lily_nodl,
                          preset_guid=g_if_dl_lily, y=600)
 links.append((g_l_oh_my, g_if_dl_lily_node))
 
@@ -1034,7 +1034,7 @@ chain(g_l_almost, g_l_almost2, g_l_can_hear, g_mc_what_hear,
       g_l_not_far, g_l_hear_sloppy, g_l_going_in, g_mc_keep_posted, g_l_i_will)
 
 # IF lily_join
-g_if_join_node = ifn(VAR_LILY_JOIN, g_l_doorway, g_l_in_room,
+g_if_join_node = ifn(VAR_LILY_JOIN, g_l_in_room, g_l_doorway,
                      preset_guid=g_if_join, y=600)
 links.append((g_l_i_will, g_if_join_node))
 
@@ -1085,7 +1085,7 @@ chain(g_d_storm, g_d_captain, g_d_bad_weather, g_d_bad_weather2,
       g_mc_ok_d, g_d_yea_good, g_d_chaotic, g_d_talk_back,
       g_ls_storm, g_ls_turn_around, g_ls_talk_marina)
 
-g_if_lk_conv_node = ifn(VAR_LISA_KNOW, g_mc_still_lisa, g_l_hey_storm,
+g_if_lk_conv_node = ifn(VAR_LISA_KNOW, g_l_hey_storm, g_mc_still_lisa,
                          preset_guid=g_if_lk_conv, y=0)
 links.append((g_ls_talk_marina, g_if_lk_conv_node))
 
