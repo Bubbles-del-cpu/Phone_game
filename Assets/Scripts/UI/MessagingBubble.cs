@@ -78,10 +78,16 @@ public class MessagingBubble : MonoBehaviour
 
         _videoContainer.SetActive(false);
         _imageContainer.SetActive(false);
+
+        if (_mediaViewer != null)
+            _mediaViewer.gameObject.SetActive(false);
     }
 
     public void SetupMediaViewer(DialogueNodeData nodeData)
     {
+        if (_mediaViewer != null)
+            _mediaViewer.gameObject.SetActive(false);
+
         if (nodeData == null)
             return;
 
