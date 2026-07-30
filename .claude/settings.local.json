@@ -20,7 +20,29 @@
       "Bash(python gen_ep24.5.py)",
       "Bash(find ./Library/PackageCache/com.unity.localization* -name \"*ep23*\" -o -name \"*ep24*\")",
       "Bash(Get-ChildItem *)",
-      "Bash(grep -E \"\\\\.asset$\")"
+      "Bash(grep -E \"\\\\.asset$\")",
+      "Bash(python *)",
+      "Bash(pip install *)",
+      "Bash(git show *)",
+      "Read(//tmp/**)",
+      "Bash(awk '/^  DialogueNodeDatas:/{f=1} f{print} /^  TimerChoiceNodeDatas:/{exit}' \"Episode 24.asset\")",
+      "Bash(awk '/^  DialogueChoiceNodeDatas:/{f=1} f{print} /^  DialogueNodeDatas:/{exit}' \"Episode 24.asset\")",
+      "Bash(awk '/^  EventNodeDatas:/{f=1} f{print} /^  StartNodeDatas:/{exit}' \"Episode 24.asset\")",
+      "Bash(awk '/^  IfNodeDatas:/{f=1} f{print} /^  SpyNodeDatas:/{exit}' \"Episode 24.asset\")",
+      "Bash(grep -c \"InputGuid: $\" \"Episode 26.asset\")",
+      "Bash(grep -cE \"\\(True|False\\)GUID: $\" \"Episode 26.asset\")",
+      "Bash(awk '/^  DialogueNodeDatas:/{f=1} f{print} /Post:/{if\\(f\\)c++} c>=1{exit}' \"Episode 24.asset\")",
+      "Bash(awk '/^  DialogueChoiceNodeDatas:/{f=1} f{print} f&&/SelectedChoice:/{c++} c>=1{exit}' \"Episode 24.asset\")",
+      "Bash(awk 'BEGIN{RS=\"  - NodeGuid:\"} /Video: \\\\{fileID: 32900000/{print \"  - NodeGuid:\"$0; exit}' \"Episode 24.asset\")",
+      "Bash(awk 'BEGIN{RS=\"  - NodeGuid:\"} /Post: \\\\{fileID: 11400000/{print \"  - NodeGuid:\"$0; exit}' \"Episode 24.asset\")",
+      "Bash(awk '/^ DialogueChoiceNodeDatas:/{f=1} f&&/SelectedChoice:/{print;exit} f' \"Episode 26.asset\")",
+      "Bash(awk '/^ DialogueChoiceNodeDatas:/{f=1} f{print} f&&/SelectedChoice:/{c++} c>=1{exit}' \"Episode 26.asset\")",
+      "Bash(awk 'BEGIN{RS=\"  - NodeGuid:\"} /Video: \\\\{fileID: 32900000/{print \"  - NodeGuid:\"$0; exit}' \"Episode 26.asset\")",
+      "Bash(awk 'BEGIN{RS=\"  - NodeGuid:\"} /Post: \\\\{fileID: 11400000/{print \"  - NodeGuid:\"$0; exit}' \"Episode 26.asset\")",
+      "Bash(awk '/EventNodeDatas:/{f=1} f{print} f&&/DialogueEventSO/{c++} c>=1{exit}' \"Episode 26.asset\")",
+      "Bash(awk '/IfNodeDatas:/{f=1} f{print} f&&/FalseGUID/{c++} c>=1{exit}' \"Episode 26.asset\")",
+      "Bash(awk '/EndNodeDatas:/{f=1} f{print} f&&/Dialogue:/{c++} c>=1{exit}' \"Episode 26.asset\")",
+      "Bash(awk 'BEGIN{RS=\"  - NodeGuid:\"} /Post: \\\\{fileID: 11400000/{print \"NODE:\"; for\\(i=1;i<=NF;i++\\){} ; print $0; exit}' \"Assets/Entities/Dialogue/Episode 24.asset\")"
     ]
   }
 }

@@ -1,0 +1,475 @@
+EPISODE 26: Victoria's Paths (Love & Extortion) - Master Script
+if home_care == true && victoria_extort == false (LOVE PATH)
+
+(Early Afternoon...)
+
+(Victoria's chat)
+V: Hey...
+V: I just got to my car.
+V: I know I literally just walked out your door five minutes ago...
+V: But I miss you already.
+
+CHOICE:
+Option 1: I miss you too.
+M: I miss you too, Victoria. You did a really great job today.
+V: Thank you...
+V: That makes me so happy to hear.
+
+Option 2: Already?
+M: Already? You barely just pulled out of the driveway.
+V: I know... I'm sorry.
+V: I just really enjoyed our session today.
+
+(Continue for both)
+V: I'm just so happy with your progress.
+V: You're putting so much more weight on your leg now.
+V: I... I hope I wasn't pushing you too hard with the stretches.
+M: Not at all. I handled them perfectly fine.
+M: Knowing what my reward was going to be definitely gave me some extra motivation.
+V: Oh...
+V: Haha... yes...
+V: I think my hand is actually still a little cramped.
+M: You didn't seem to be complaining while you were stroking me.
+V: I wasn't! I... I really enjoyed it.
+V: I didn't plan on doing that while still in my uniform, though...
+V: But you just looked at me...
+V: And my professional boundaries kind of just... melted.
+V: I'm sorry if it was a bit sudden...
+M: Never apologize for that. I loved it.
+M: I actually took some pictures while you were taking care of me.
+V: You did...?
+V: Oh gosh...
+V: Let me see? If that's okay...
+M: (Picture LOVE_1: POV shot looking down at Victoria. She is wearing her fitted white nurse uniform, looking up with big, slightly shy eyes as her hands firmly grip the MC's cock.)
+V: Oh my god...
+V: I... I look so eager for you.
+V: I can't believe my name tag is visible in that...
+M: You look perfect. And you took care of it so incredibly well.
+M: (Picture LOVE_2: Close-up of Victoria still in her nurse outfit. A messy, thick load of cum is covering her hands and the front of her uniform. She is smiling softly and proudly up at the camera.)
+V: Oh... wow...
+V: I look like such a mess...
+V: But a happy mess.
+V: I loved every second of it.
+V: Did I do good for you today...?
+M: You did amazing. Best physical therapy session I've ever had.
+V: I'm so glad...
+M: Now, about what I mentioned before you left...
+M: Since my leg is doing so well, I think it's time I take my favorite nurse out properly.
+M: Clear your schedule for tonight.
+V: Wait... really?
+V: Like... a real date?
+M: A real, fancy date. I want to treat you.
+V: Oh my god...
+V: I am so excited...
+V: My heart is literally racing right now.
+V: I... I haven't been on a real date in so long.
+V: What is the dress code...? Where are we going?
+M: It's a surprise. Just dress to impress.
+V: Oh! Okay...
+V: I am going to tear my closet apart right now.
+V: Give me a little bit to put something together, please?
+M: Take your time. Send me a picture when you find something.
+V: I will!
+
+(1 hour later...)
+V: (Picture LOVE_3: Selfie of Victoria in her bedroom. The bed is covered in five different dresses, and shoes are scattered all over the floor. She looks overwhelmed but has a bright smile.)
+V: I might have torn my closet apart a little too much...
+M: Looks like a warzone.
+V: It is! But I want everything to be perfect.
+V: Actually... Dr. Weber just called me while I was trying things on.
+V: He asked me to come into the office tonight to file some late paperwork.
+V: But I told him no! Because I'm going out with you.
+
+CHOICE:
+Option 1: How did he react?
+M: How did he react to that?
+V: He was pretty annoyed... grumbling about "employee loyalty" and dedication.
+V: I just imagined the veins popping on his shiny bald head and almost laughed on the phone.
+V: It doesn't matter anyway. The only thing that matters to me tonight is you.
+
+Option 2: Good girl.
+M: Good girl. He doesn't own your free time.
+V: He definitely doesn't. Tonight is just for us.
+
+(Continue for both)
+V: Okay...
+V: I think I finally found the one...
+V: I'm a little nervous, to be honest...
+V: (Picture LOVE_4: Selfie of Victoria in her bedroom mirror. The mess is pushed aside. She is wearing a stunning, elegant, dark red evening dress that hugs her curves gracefully. She has a soft, hopeful smile.)
+V: What do you think...?
+V: Is this nice enough for my hero?
+V: Or is it too much...? I can change if it's too much...
+
+CHOICE:
+Option 1: Breathtaking
+M: You look absolutely breathtaking, Victoria.
+V: You really think so...?
+V: Thank you so much... that makes me feel so much better.
+
+Option 2: Taking it off
+M: It looks amazing, but I'm mostly thinking about how I'm going to take it off you later.
+V: Oh...
+V: Haha... well...
+V: If you want to... I think I'd really like that.
+
+(Continue for both)
+V: I'm going to finish getting my makeup ready...
+V: I'll see you at 7:00! ❤️
+
+(JUMP TO DATE)
+
+CHOICE: Present Victoria with the diamond necklace during dinner?
+Option 1: Give her the necklace. (Set victoria_ending_path = true)
+Option 2: Just enjoy the dinner. (Set victoria_ending_path = false)
+
+(SOCIAL MEDIA POSTS)
+
+if victoria_ending_path == true
+(SOCIAL POST — VICTORIA [SP_VIC_2_necklace]: A selfie taken across the table. Victoria is leaning in next to the MC, but the MC's face is perfectly hidden behind her raised wine glass. She is proudly wearing a delicate new diamond necklace. Caption: "He spoils me entirely too much... I am the luckiest girl in the world 🥺🍷💍")
+
+else (victoria_ending_path == false)
+(SOCIAL POST — VICTORIA [SP_VIC_1_nonecklace]: A selfie taken across the table. Victoria is leaning in next to the MC, but the MC's face is perfectly hidden behind her raised wine glass. She has a huge, genuine smile. Caption: "The most perfect evening with my hero 🥺🍷✨")
+
+(JUMP TO AFTER THE DATE - AT MC'S HOUSE)
+
+(3 hours later...)
+(Victoria's chat)
+V: Hey...
+M: You're texting me from my own bathroom?
+V: I know... I'm sorry.
+V: Are you waiting for me in bed...?
+M: I am. You've been in there for ten minutes, Victoria. What's taking so long?
+V: I'm sorry! I'm just getting your surprise ready...
+M: Another surprise?
+
+if victoria_ending_path == true
+V: You just... you spoiled me so much tonight.
+V: The dinner... the beautiful necklace...
+V: I felt so underdressed next to how amazing you were.
+
+else (victoria_ending_path == false)
+V: You just... you spoiled me so much tonight.
+V: The dinner was so amazing...
+V: I felt so underdressed next to how amazing you were.
+
+(Continue for both)
+V: So I wanted to make sure I gave you something special in return...
+V: I bought this specifically for tonight.
+V: I hope you like it...
+V: (Picture LOVE_5: Mirror selfie of Victoria in the MC's bathroom. She has taken off the evening dress and is wearing a brand new, incredibly sexy and romantic white lace lingerie set. She looks shy, holding her phone with both hands.)
+V: Is it okay...?
+M: Wow... Victoria.
+M: It's more than okay.
+M: Stop texting and get out here right now.
+V: Okay...
+V: I'm coming... ❤️
+
+(JUMP TO LATER THAT NIGHT)
+
+(2:30 AM...)
+(Victoria's chat)
+V: Hey...
+V: I just walked through my front door.
+M: You made it back safe. I miss you in my bed already.
+V: I miss you too... so much.
+V: I can still smell your cologne on my skin...
+V: Tonight was...
+V: I don't even have the words for it.
+M: You don't need them. I had an amazing time with you.
+V: You made me feel so special...
+V: I've never had anyone look at me the way you did across that table.
+V: I felt like I was dreaming.
+
+if victoria_ending_path == true
+V: And I haven't taken the necklace off...
+V: I'm going to sleep in it tonight.
+M: It looks beautiful on you.
+M: But coming back to my place was definitely the highlight of the night for me.
+
+else (victoria_ending_path == false)
+M: I'm glad you enjoyed it as much as I did.
+M: But coming back to my place was definitely the highlight of the night for me.
+
+(Continue for both)
+V: It really was...
+V: Everything just felt so right with you.
+V: I felt so safe.
+V: I wanted to feel you as deep as possible...
+V: Is it okay if I send you a video we took...?
+M: Of course. Send it.
+V: (Video LOVE_1: A slow, highly sensual video of Victoria riding the MC in the missionary position. She is holding his hands, leaning down to kiss him softly. The lighting is dim and romantic. She looks timid but entirely devoted, making deep, affectionate eye contact.)
+M: God... watching that brings it all right back. You were so tight.
+V: I... I couldn't stop looking into your eyes.
+V: It felt like it was just the two of us in the whole world.
+M: (Picture LOVE_6: A POV picture of Victoria lying underneath the MC, her hair spread out on the pillow. She is biting her lip with a look of pure bliss, her eyes half-closed as he is deep inside her.)
+V: Oh thats right before we started
+V: God I'm looking shy
+M: It was cute
+V: I've never felt a connection like that before...
+V: I didn't want it to end.
+V: And I really loved feeling you finish inside me...
+V: It felt so warm... and perfect.
+V: (Picture LOVE_7: A post-sex selfie. Victoria is lying on the MC's chest, her hair delightfully messy. The sheets are pulled down just enough to show a messy creampie leaking onto the bed. She is resting her chin on his chest with a gentle smile.)
+M: You're making me want to drive over there and bring you right back.
+V: Haha... that's very tempting...
+V: But I think your leg really needs to rest after all the "exercises" we did tonight!
+V: I don't want to overwork my favorite patient...
+V: Thank you again for the most perfect evening.
+V: You really are my hero.
+V: I love you... so much.
+M: I love you too, Victoria. Sleep well.
+V: I will... goodnight. ❤️
+
+(END OF VICTORIA LOVE SCENE)
+
+if home_care == true && victoria_extort == true (EXTORT PATH)
+
+(Early Afternoon...)
+
+(Victoria's chat)
+V: I... I just got to my car.
+V: I'm leaving your driveway now...
+M: Did you swallow all of your practice material today?
+V: I... yes.
+V: I did exactly what you told me to do.
+M: Good. I expect my nurse to follow all of my medical instructions.
+M: I took some pictures to document your progress.
+V: You took pictures again...?
+V: Please don't show those to anyone...
+M: That depends entirely on your behavior, Victoria.
+M: (Picture EXTORT_1: POV shot looking down at Victoria. She is wearing her white nurse uniform, but her expression is strained and submissive as she deepthroats the MC's cock.)
+M: You look like you're actually starting to enjoy your mandatory training.
+V: I... I just want to make sure you're satisfied.
+V: So you don't send anything to him...
+M: (Picture EXTORT_2: Close-up of Victoria in her nurse outfit. A thick load of cum is covering her lips, and some is dripping down her chin. She looks humiliated, eyes cast downward.)
+M: You took it like a good girl today.
+V: Thank you...
+V: Um...
+V: Since I did so well today... I was wondering if I could ask you for a favor...?
+M: You don't ask me for favors. But go ahead.
+V: I'm sorry... I know.
+V: It's just... tonight is my boyfriend's birthday.
+V: He made reservations at a really nice restaurant for us weeks ago.
+V: I was hoping... if it's okay with you... that I could just have the night off?
+V: Just for tonight...?
+M: A birthday dinner. How romantic.
+M: You can go.
+V: Oh... really?!
+V: Thank you so much! I promise I'll make it up to you tomorrow—
+M: I wasn't finished, Victoria.
+V: ...Oh. I'm sorry.
+M: You can go to dinner with him. But I am picking your outfit.
+M: That black dress you wore last week. The one that barely covers your thighs.
+M: And no panties.
+M: But before you put it on, take a black marker. Write "Slut" on your ass.
+V: What?!
+V: Please, no... what if it bleeds through the fabric? What if he sees it when I'm changing later?!
+M: You better hope he doesn't.
+M: You have 45 minutes to send me the picture of the writing, Victoria.
+V: Okay...
+V: I'll do it. I'm sorry.
+
+(45 minutes later...)
+V: (Picture EXTORT_3: Close-up mirror selfie of Victoria's bare ass cheek. Written in thick black marker are the words "Slut". She is looking over her shoulder, her face flushed with deep humiliation.)
+V: I did it.
+M: Perfect. Now put the dress on.
+V: (Picture EXTORT_4: Selfie of Victoria in her bedroom. She is wearing the incredibly tight, short black dress, lifting the hem just enough to prove she is bare underneath. Her face is red.)
+V: He's waiting for me downstairs.
+V: I feel so exposed... knowing what's written under here. The fabric is riding up every time I take a step.
+M: Keep your phone on your lap under the table.
+V: Okay...
+
+(JUMP TO THE RESTAURANT)
+
+(8:00 PM...)
+V: We just sat down...
+V: He keeps telling me how beautiful I look, but he noticed how short the dress is.
+V: He asked me to pull it down. I told him I couldn't.
+M: Good girl. Send me a picture of the birthday boy.
+V: I... I can't take a picture right now, the waiter is here.
+M: I said send me a picture, Victoria. Now.
+V: Okay... please don't be mad.
+V: (Picture EXTORT_5: A blurry, sneaky picture taken from under the edge of the table. You can see her boyfriend sitting across from her, looking at a menu, completely oblivious.)
+M: He has no idea what a slut his girlfriend really is.
+V: Please don't call me that...
+M: Tell him you need some fresh air.
+M: Go out the back exit into the alley behind the kitchen.
+V: The alley? Why...?
+M: Because I'm parked in it.
+M: You have two minutes before I walk into the main dining room and show him my phone.
+V: What?! You're here?!
+V: Oh my god... please, no...
+V: Okay! I'm coming! Please just stay outside!
+
+(JUMP TO ALLEY OUTSIDE THE RESTAURANT)
+
+(Picture EXTORT_6: POV shot of Victoria stepping out into a dark, dirty alley behind the restaurant. The warm light from the kitchen door illuminates her tight black dress. She looks terrified, wrapping her arms around herself.)
+(Video EXTORT_1: A rough, POV video filmed in the dark alley. The MC has Victoria pressed hard against the brick wall, her dress shoved up around her waist. The words "Slut" are clearly visible on her bare ass cheek. He is fucking her aggressively. She is crying softly, her hands flat against the brick, but her hips are instinctively pushing back against him, taking the full length of his cock.)
+
+Choice 1: Cum in her mouth (Set vic_alley_climax_loc = "mouth")
+Choice 2: Cum inside her pussy (Set vic_alley_climax_loc = "pussy")
+
+if vic_alley_climax_loc == "mouth"
+(Picture EXTORT_7: A harsh flash photo taken in the dark alley. Victoria is kneeling on the wet pavement, her dress hitched up over her hips, clearly showing the "Slut" text on her cheek. A thick, messy load of cum covers her lips, tongue, and chin. She is looking away, visibly crying.)
+
+else if vic_alley_climax_loc == "pussy"
+(Picture EXTORT_7: A harsh flash photo taken in the dark alley. Victoria's dress is bunched around her waist, the "Slut" text clearly visible on her ass cheek. A messy creampie is oozing out of her exposed pussy, dripping down her inner thighs. She is looking away, visibly crying.)
+
+(JUMP TO 15 MINUTES LATER)
+
+(Victoria's chat)
+V: I'm locked in the restaurant bathroom...
+V: My hands are shaking so badly I can barely type.
+V: I can't get my breathing under control. I feel so sick...
+V: Anyone could have walked out that door and seen us.
+M: But they didn't. You took it perfectly. My cock is still throbbing.
+
+if vic_alley_climax_loc == "mouth"
+V: I'm terrified he's going to smell it on my breath... I've washed my mouth three times but I can still taste you.
+M: Stop washing. I want you to sit back down at that table tasting like me.
+
+else if vic_alley_climax_loc == "pussy"
+V: I'm trying to clean myself up with toilet paper, but it keeps dripping out of me. I'm terrified it's going to run down my leg at the table.
+M: Stop wiping. I want it inside you when you sit back across from him.
+
+(Continue for both)
+V: He texted asking why I was gone so long and why my makeup was smudged.
+V: I told him the food wasn't sitting right.
+M: Good.
+M: Now, about how he's going to celebrate his birthday when you go back to his place tonight.
+V: He said he wanted to be intimate tonight.
+V: Please... can I just tell him I'm too tired? I'm so exhausted and sore from what you just did to me.
+
+CHOICE: Push her further?
+Option 1: Force him to eat it. (Set vic_bf_eat = true)
+Option 2: Sloppy seconds. (Set vic_bf_eat = false)
+
+if vic_bf_eat == true
+M: No. When you get back to his place, you are going to spread your legs and make him eat you out.
+V: WHAT?!
+V: No! Please... I'm begging you!
+
+if vic_alley_climax_loc == "pussy"
+V: He'll know! You finished inside of me! He'll taste your cum!
+M: Tell him you're extra wet for his birthday.
+
+else if vic_alley_climax_loc == "mouth"
+V: He'll know something is wrong! My mouth still tastes like you, I can't kiss him to lead him down there!
+M: Figure it out. Tell him you want him to focus on your pussy for his birthday.
+
+(Continue for vic_bf_eat == true)
+V: Please, don't make me do this... it's going to ruin everything.
+M: If you don't do exactly what I say, I am sending the video from the alley to his phone right now.
+V: ...
+V: You are a monster.
+V: I'll do it. I'll make him do it. Please just don't ruin his life.
+M: Good girl. Text me when he's down there.
+
+else if vic_bf_eat == false
+M: No. You are going to let him fuck you.
+
+if vic_alley_climax_loc == "pussy"
+M: I want you to feel him inside you and know that you are taking him while you're still completely full of my cum.
+V: That's disgusting... He'll feel the squish... he'll know I'm completely blown out.
+
+else if vic_alley_climax_loc == "mouth"
+M: I want you to let him fuck you while you still have my taste in your mouth.
+V: That's disgusting... I'm so sore from the alley, I can't pretend this is romantic for him.
+
+(Continue for vic_bf_eat == false)
+V: Please, just let me go to sleep. I've done enough...
+M: Do it, or the alley video goes to his phone.
+V: ...
+V: I'll do it. I'll just close my eyes and pretend it's over.
+M: Good girl. Text me when he's done.
+
+(JUMP TO LATER THAT NIGHT - 1:00 AM)
+
+(Victoria's chat)
+if vic_bf_eat == true
+V: He's doing it...
+V: (Picture EXTORT_8: Selfie of Victoria lying back against the pillows in her dark bedroom. She is biting her lip in distress, a single tear running down her cheek. The sheets are pushed down just out of frame.)
+V: He thinks I'm just looking at my phone because I'm overwhelmed.
+V: He said I tasted different... I told him it was just my perfume.
+M: Prove it.
+M: I want to see him eating my cum.
+V: I can't!
+V: If I point the camera down, he might look up and see the screen!
+M: Do it, Victoria. Or I send him the alley video right now while he's between your legs.
+V: ...
+V: Please...
+V: (Picture EXTORT_9: A shaky, low-angle selfie taken looking down her own body. Victoria's bare legs are spread wide, and the top of her boyfriend's head is clearly visible, buried between her thighs. He is completely oblivious.)
+M: Good girl. I knew you were an obedient nurse.
+V: I was crying the entire time.
+V: He finally stopped... he kissed me, swallowed it, and smiled at me.
+V: I feel so entirely broken.
+V: I belong to you now. I know that.
+
+else if vic_bf_eat == false
+V: He's asleep.
+M: Did you follow my instructions?
+V: Yes. I let him do it.
+
+if vic_alley_climax_loc == "pussy"
+V: Every time he thrust into me, I could feel your mess squishing inside of me.
+
+else if vic_alley_climax_loc == "mouth"
+V: Every time he kissed me while he was thrusting, I could still taste you.
+
+(Continue for vic_bf_eat == false)
+V: It was the most humiliating thing I've ever experienced.
+V: I feel so entirely broken.
+V: I belong to you now. I know that.
+
+(Continue for all EXTORT paths)
+M: I'll see you for your next shift, Victoria. Don't be late.
+V: Yes... I'll see you then.
+
+(END OF VICTORIA EXTORT SCENE)
+
+EPISODE 26: VICTORIA ASSET LIST
+SOCIAL POSTS (2)
+
+SP_VIC_1_nonecklace (Love Path - Variable): A selfie taken across the table. Victoria is leaning in next to the MC, but the MC's face is perfectly hidden behind her raised wine glass. She has a huge, genuine smile. Caption: "The most perfect evening with my hero 🥺🍷✨" DONE
+
+SP_VIC_2_necklace (Love Path - Variable): A selfie taken across the table. Victoria is leaning in next to the MC, but the MC's face is perfectly hidden behind her raised wine glass. She is proudly wearing a delicate new diamond necklace. Caption: "He spoils me entirely too much... I am the luckiest girl in the world 🥺🍷💍" DONE
+
+PICTURES (16)
+
+Picture LOVE_1: POV shot looking down at Victoria. She is wearing her fitted white nurse uniform, looking up shyly as her hands grip the MC's cock.
+
+Picture LOVE_2: Close-up of Victoria in her nurse outfit, a thick load of cum covering her hands and uniform front, smiling softly.
+
+Picture LOVE_3: Selfie of Victoria in her bedroom. The bed is covered in five different dresses, and shoes are scattered on the floor. She looks overwhelmed but smiling. DONE
+
+Picture LOVE_4: Selfie of Victoria in her bedroom mirror. She is wearing a stunning, elegant, dark red evening dress. DONE
+
+Picture LOVE_5: Mirror selfie of Victoria in the MC's bathroom wearing a sexy, romantic white lace lingerie set.
+
+Picture LOVE_6: POV picture of Victoria lying underneath the MC in missionary, her hair spread on the pillow, looking up with pure bliss. DONE
+
+Picture LOVE_7: A post-sex selfie. Victoria lying on the MC's chest, hair messy, with a visible, messy creampie leaking onto the bedsheets. DONE
+
+Picture EXTORT_1: POV shot looking down at Victoria. She is wearing her white nurse uniform, deepthroating the MC's cock with a strained, submissive expression. DONE
+
+Picture EXTORT_2: Close-up of Victoria in her nurse outfit, a thick load of cum covering her lips and chin. She looks humiliated. DONE
+
+Picture EXTORT_3: Close-up mirror selfie of Victoria's bare ass cheek. Written in thick black marker are the words "Slut". Humiliated expression. DONE
+
+Picture EXTORT_4: Selfie of Victoria in her bedroom. She is wearing an incredibly tight, short black dress, lifting the hem to prove she is completely bare underneath. Flushed face. DONE
+
+Picture EXTORT_5: A blurry, sneaky picture taken from under the edge of the table. You can see her boyfriend sitting across from her, looking at a menu, completely oblivious.
+
+Picture EXTORT_6: POV shot of Victoria stepping out into a dark, dirty alley behind the restaurant. The warm light from the kitchen door illuminates her tight black dress. She looks terrified. DONE
+
+Picture EXTORT_7 (Variable - Mouth or Pussy): A harsh flash photo taken in the dark alley showing the "Slut" text on her ass. Depending on the choice, she either has a messy creampie leaking from her pussy, or a heavy load covering her mouth while she kneels on the pavement. DONE
+
+Picture EXTORT_8: Selfie of Victoria lying back against the pillows in her dark bedroom, biting her lip in distress with a single tear running down her cheek. DONE
+
+Picture EXTORT_9: A shaky, low-angle selfie taken looking down her own body. Victoria's bare legs are spread wide, and the top of her boyfriend's head is clearly visible, buried between her thighs. DONE
+
+VIDEOS (2)
+
+Video LOVE_1: A slow, highly sensual video of Victoria riding the MC in missionary, holding hands and making deep, affectionate eye contact. DONE
+
+Video EXTORT_1: A rough, POV video filmed in the dark alley. The MC has Victoria pressed hard against the brick wall, fucking her aggressively, with the words "Slut" visible on her ass. DONE

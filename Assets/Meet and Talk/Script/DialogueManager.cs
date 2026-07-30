@@ -493,6 +493,19 @@ namespace MeetAndTalk
             if (GameManager.Instance.ResettingSave)
                 return;
 
+            if (_baseNodeData == null)
+            {
+                // Safeguard against a dialogue path that ends without reaching an End node
+                // (e.g. a node with no outgoing connection, or a chapter missing its End node).
+                // GetNextNode/GetNodeByGuid return null in that case, which would otherwise fall
+                // through the switch below and silently stop the dialogue - NextChapterReady is
+                // never set, leaving the player stranded with no way to progress to the next chapter.
+                // Treat the dead-end like reaching an End node so the Next Chapter button still appears.
+                Debug.LogWarning($"[DialogueManager] Dialogue '{(dialogueContainer != null ? dialogueContainer.name : "<unknown>")}' reached a dead-end with no End node. Triggering chapter complete as a fallback so progression isn't blocked.");
+                DialogueChapterManager.Instance.ShowChapterCompleteDialog();
+                return;
+            }
+
             SaveAndLoadManager.Instance.CurrentSave.AddNode(_baseNodeData);
 
             _visitedNodes.Push(_baseNodeData);
