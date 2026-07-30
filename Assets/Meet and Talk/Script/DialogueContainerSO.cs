@@ -401,6 +401,12 @@ namespace MeetAndTalk
 
         public bool ShouldDelay()
         {
+            // Dialogue messages use unscaled time so they can keep their normal pacing
+            // independently of the rest of the game. Explicitly gate that timer here,
+            // because Time.timeScale = 0 does not affect Time.unscaledDeltaTime.
+            if (DialogueManager.Instance.Paused)
+                return true;
+
             DelayTimer += (Time.unscaledDeltaTime * (float)DialogueManager.Instance.DisplaySpeedMultipler);
             if (DelayTimer <= Duration)
                 return true;
