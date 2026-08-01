@@ -2343,7 +2343,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Potential option to deny uping the dose
       - languageEnum: 1
-        LanguageGenericType: 
+        LanguageGenericType: "\u6295\u4E0E\u91CF\u3092\u5897\u52A0\u3059\u308B\u3053\u3068\u3092\u62D2\u5426\u3059\u308B\u53EF\u80FD\u6027"
     AudioClips:
     - languageEnum: 0
       LanguageGenericType: {fileID: 0}
@@ -5748,7 +5748,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Extra picture
       - languageEnum: 1
-        LanguageGenericType: 
+        LanguageGenericType: "\u8FFD\u52A0\u306E\u753B\u50CF\u3002"
     - PortGuid: 5816b6e6-c621-43e1-ba7d-6217fb874115
       InputGuid: 8e6a4407-5655-42be-bde2-deb109ad45b9
       OutputGuid: 82233479-ea46-4d84-896d-4ee3b4e91e87
@@ -6952,7 +6952,7 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Stay on the medicated path
       - languageEnum: 1
-        LanguageGenericType: 
+        LanguageGenericType: "\u85AC\u306E\u9053\u306B \u7559\u307E\u3063\u3066\u304F\u3060\u3055\u3044"
     - PortGuid: a2fd627d-f772-45aa-b33d-529f1e414ae6
       InputGuid: e78b27ee-3b38-441f-9e6c-743eeffdede6
       OutputGuid: 310ba791-d787-4d02-988a-781d3a038569
@@ -6966,7 +6966,8 @@ MonoBehaviour:
       - languageEnum: 0
         LanguageGenericType: Dont go down the medicated path and choose for clarity
       - languageEnum: 1
-        LanguageGenericType: 
+        LanguageGenericType: "\u85AC\u306E\u9053\u306B\u8E0F\u307F\u51FA\u3055\u306A\u3044\u3067
+          \u660E\u78BA\u6027\u3092\u9078\u629E\u3059\u308B"
     AudioClips:
     - languageEnum: 0
       LanguageGenericType: {fileID: 0}
@@ -7081,7 +7082,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I just fell asleep...
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u305F\u3060\u5BDD\u843D\u3061\u3057\u305F\u3060\u3051\u2026"
     Duration: 2
     Delay: 0
     Timelapse: 
@@ -10987,7 +10988,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: A little after Lily left for the mall with Leo...
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u30EA\u30EA\u30FC\u304C\u30EC\u30AA\u3068\u30B7\u30E7\u30C3\u30D4\u30F3\u30B0\u30E2\u30FC\u30EB\u3078\u884C\u3063\u305F\u5F8C"
     Timelapse: 
     Duration: 2
     Delay: 0
@@ -19329,7 +19330,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Patient 1942 I am your docter. I want the best for you
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u60A3\u8005\u3055\u3093 1942 \u79C1\u306F\u3042\u306A\u305F\u306E\u533B\u8005\u3067\u3059"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -19362,7 +19363,8 @@ MonoBehaviour:
       LanguageGenericType: You have to trust me if I tell you that not uping the
         dose is a BIG mistake
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u85AC\u3092 \u5897\u3084\u3059\u3053\u3068\u304C\u9593\u9055\u3044\u3060\u3068
+        \u8A00\u3063\u3066\u304F\u308C"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -19394,7 +19396,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Good, Aisha is on her way. Be ready
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u30AA\u30FC\u30B7\u30E3\u304C\u6765\u308B\u305E \u6E96\u5099\u3092"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -19426,7 +19428,8 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: You are making a big mistake patient 1942
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u9593\u9055\u3044\u3092\u72AF\u3057\u3066\u3044\u308B
+        1942\u5E74"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -19458,12 +19461,12 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Oh Im so sorry baby
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u3042\u3042\u3001\u672C\u5F53\u306B\u3054\u3081\u3093\u306A\u3055\u3044\u3001\u30D9\u30A4\u30D3\u30FC\u3002"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: The next morning...
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u7FCC\u671D\u2026"
     Timelapse: 
     Duration: 2
     Delay: 0
@@ -19522,7 +19525,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: uh... No baby I just fell asleep thats all
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u8D64\u3061\u3083\u3093\u306F\u3044\u306A\u3044 \u5BDD\u3066\u3057\u307E\u3063\u305F\u3060\u3051"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -19554,7 +19557,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: ...baby w why are you so angry...
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "...\u30D9\u30A4\u30D3\u30FC \u6012\u3063\u3066\u308B\u306E\u306F\u306A\u305C..."
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -19586,7 +19589,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: Did something happen?
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "\u4F55\u304B\u3042\u3063\u305F\u306E\u304B?"
     Timelapses:
     - languageEnum: 0
       LanguageGenericType: 
@@ -19623,7 +19626,7 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: 10 minutes later...
     - languageEnum: 1
-      LanguageGenericType: 
+      LanguageGenericType: "10\u5206\u5F8C\u2026"
     Timelapse: 
     Duration: 2
     Delay: 0

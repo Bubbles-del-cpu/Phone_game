@@ -151,7 +151,7 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 0.19.1.beta
+  bundleVersion: 0.20.1.beta
   preloadedAssets:
   - {fileID: 0}
   - {fileID: 11400000, guid: 109eefa76c44f744999f0b1a0dfa708f, type: 2}
@@ -772,7 +772,7 @@ PlayerSettings:
   platformArchitecture: {}
   scriptingBackend:
     Android: 1
-    Standalone: 1
+    Standalone: 0
   il2cppCompilerConfiguration: {}
   il2cppCodeGeneration: {}
   il2cppStacktraceInformation: {}
@@ -879,7 +879,7 @@ PlayerSettings:
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 6
   captureStartupLogs: {}
-  activeInputHandler: 2
+  activeInputHandler: 1
   windowsGamepadBackendHint: 0
   cloudProjectId: 58a4cf75-1c30-4514-b50f-bc859272786e
   framebufferDepthMemorylessMode: 0

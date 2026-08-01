@@ -1,0 +1,1065 @@
+NTS HM EP 27
+Leo reveals a painting nobody knew he was making. He tells the MC and swears him to secrecy.
+Lily is kept in the dark all day and finds out in the room, with the sheet coming off.
+The class sees it, then the viewing. Sem returns. The MC decides whether he stays after.
+Ends on the fork. Continues in EP 27.5.
+
+NTR paths get a short arcade beat at the top of this file and continue
+into a second short block at the top of EP 27.5. The main episode is
+NTS only.
+
+
+=============================================================
+(if math_continue == true) — NTR PATHS — PART 1 OF 2
+=============================================================
+
+No Leo content here. Lily is just out for the afternoon, so the player
+still hears from her today. Part 2 (the post, and Math) opens EP 27.5.
+The duck in NTR_2 is planted here and pays off there IN DIALOGUE ONLY —
+it is not in the EP 27.5 post. Do not add it to that render.
+
+  docter_medicine_denied == false  OPEN / WILLING CUCK — she names Math
+  docter_medicine_denied == true   SECRET NTR — her and Izzy. Math is
+                                   there, never comes up, never texts.
+
+
+Timelaps: In the afternoon
+(Lily texts the MC)
+
+if docter_medicine_denied == false (OPEN NTR / CUCK)
+L: Baby guess what we're doing
+M: Surprise me
+L: An ARCADE
+L: Math found this huge old one down by the water
+L: Izzy is already talking trash about air hockey
+L: Its all neon and it smells like 1996
+L: (Picture NTR_1: Lily selfie in an arcade, neon and screen light across her face, rows of machines behind her, big grin.)
+
+else (SECRET NTR)
+L: Baby guess what me and Izzy are doing
+M: Surprise me
+L: An ARCADE
+L: She found this huge old one down by the water
+L: Its all neon and it smells like 1996
+L: (Picture NTR_1: Lily selfie in an arcade, neon and screen light across her face, rows of machines behind her, big grin.)
+M: Just you two?
+L: Just us two
+L: Why
+M: No reason
+L: hihi
+
+(Continue for both)
+(2 hours later...)
+L: I WON SOMETHING
+L: (Picture NTR_2: A cheap yellow plush duck from a claw machine, held up in Lily's hand, arcade lights behind it.)
+L: 40 euros in the claw machine for a 2 euro duck
+M: Worth it
+L: Completely worth it
+L: He's coming home with me
+L: Okay we're going to get food after this
+L: I'll text you when we're back
+M: Have fun baby
+L: <3
+
+(CONTINUE IN EP 27.5 — NTR block)
+
+
+=============================================================
+(else — math_continue == false) — NTS PATH — MAIN EPISODE
+=============================================================
+
+CONTINUITY NOTE — READ BEFORE EDITING
+This is NOT the EP 19 canvas (emerald green dress, one two hour sitting,
+closed out inside EP 19). This is a second canvas, started the night of the
+EP 23 class and worked in secret for THREE DAYS, from Leo's own reference
+photo of that class — the one he texted the MC on the day (EP 23, Picture
+8 / 9, gated on undress_full_ep23). The MC has already seen the moment it
+is of. Never write "weeks" or "months" in this episode.
+
+WHO KNOWS WHAT, AND WHEN — the spine of Act 1 and Act 2.
+  LEO      everything. Has held it from everyone for three days.
+  THE MC   told in Act 1 that there is a painting and what it depicts, but
+           has not seen it. Leo asks him to stay vague with Lily and he
+           agrees — from there he is keeping a secret from his own wife, on
+           another man's instruction, and enjoying it.
+  LILY     told only that there is a surprise and a viewing. Not that it is
+           a painting, not that it is of her. She dresses all day for an
+           unknown event. At the studio she works out there is a canvas on
+           her own; Leo refuses to confirm even that.
+  THE CLASS at six. The neighbourhood at seven.
+
+So: she cannot reference "a painting", "on a wall" or the subject before
+Act 2, and her boutique realisation only lands AFTER the reveal. The MC
+having known all day pays off when she works it out. Let her be annoyed.
+Do not have him apologise.
+
+
+ACT 1 — THE INVITE
+
+Timelaps: (Early morning)
+(Leo texts the MC from his own phone, before Lily is awake)
+LEO: Are you up
+M: Yo Leo. Everything okay?
+LEO: Fine. I need to show you something before she wakes up.
+LEO: (Picture 1: A sheeted canvas on an easel in Leo's studio, early morning light, two empty coffee cups on a stool beside it.)
+M: What is that
+LEO: Three days of not sleeping. Finished it around 3 last night.
+M: Painting what?
+LEO: You remember the photo I sent you from the class
+
+if undress_full_ep23 == true
+LEO: Her from behind. Middle of the room. Nothing on.
+LEO: Light coming on her
+
+else
+LEO: Her in the middle of the room in the white set, easels all around her
+LEO: Charcoal drawings of her on every one of them
+
+(Continue for both)
+M: I remember
+LEO: I started it that night. After she fell asleep.
+M: She doesn't know?
+LEO: Nobody knows. Not her, not the class, not you until thirty seconds ago.
+M: Why keep it quiet
+LEO: Because I didn't know if it was going to be any good
+LEO: The green dress took two hours. This one I started three times.
+LEO: That one was her posing. This one has five people looking at her, and me behind all of them looking at them look
+LEO: I want her to see it first. Before anyone.
+M: Before me too?
+LEO: You'll see it the same moment she does
+M: Are you gonna invite her over tonight?
+LEO: There's something else
+M:?
+
+if leo_humiliation == true
+LEO: I'm doing a viewing tonight. Small one, end of season.
+LEO: The class first, at six. Then whoever turns up off the street at seven.
+LEO: The painting goes on the wall. And your wife stands next to it.
+M: You already decided
+LEO: I did… and that's that
+
+else
+LEO: I do a small viewing at the end of every season. Fifteen, twenty people.
+LEO: I want the class in first though. Six o'clock, before the doors open.
+M: Why them first
+LEO: They were in the room. They're the only people alive who saw the real thing.
+LEO: And I want her standing next to it when they look at it
+LEO: That's a big ask so I'm asking you before I ask her
+M: You're asking me?
+LEO: She'll say yes if you're okay with it. She shouldn't have to guess whether you are.
+M: It sounds amazing
+LEO: Thanks man
+
+(Continue for both)
+LEO: She'll be up late today. I'll let you tell her.
+M: Me?
+LEO: Better coming from you
+M: Should I be vague or just tell her you have a painting
+LEO: Let's be vague more fun right
+LEO: (;
+
+(SOCIAL POST LEO 1 — REUSES PICTURE 1. Caption: "Tonight. 6 for the class, 7 for everyone else. One new piece. Wine is bad, come anyway.")
+(NOTE: this posts before Lily is awake. The MC watches the whole neighbourhood get invited to look at his wife roughly twenty minutes before she finds out the painting exists.)
+
+(About an hour later...)
+(Lily texts the MC)
+L: Good morning baby
+L: (Picture 2: Lily selfie in the hotel bed, hair everywhere, no makeup, one eye barely open, sleepy smile.)
+M: Morning beautiful
+M: Leo has a suprise for you
+L: ...
+L: He what
+M: A surprise. Thats all I'm allowed to say.
+L: Allowed
+L: ALLOWED?
+L: Since when do you take orders from Leo
+M: Since about an hour ago
+L: Is it bad
+M: Its very much not bad
+L: Then TELL ME
+L: I'll get it out of him
+M: He's sat on this three days without cracking
+L: Three DAYS?
+L: I've SEEN him. We've been texting non stop and he hasn't said one word
+M: That was the idea
+L: I'm going to kill both of you
+M: He's doing a viewing tonight. The class at six, everyone else at seven.
+L: The class
+M: The five from that day
+L: Oh my god
+M: And he wants you there. Standing next to it.
+L: Next to WHAT
+M: Nice try
+L: I love you but I hate you right now
+L: ...
+L: Babe
+
+CHOICE 1
+M: I told him yes
+L: Without asking me?
+M: Was I wrong?
+L: ...No
+L: No you weren't hihi
+L: I just needed a second
+
+CHOICE 2
+M: I told him it's your call
+L: I like that you said that
+L: But you know I'm going to ask what you want anyway
+M: I want you to do it
+L: Then say that first next time hihi
+
+(Continue for both)
+L: Okay. I'm doing it.
+L: I need to figure out what I'm wearing IMMEDIATELY
+M: You have all day
+L: Babe I am getting dressed for something and I do not know what it is
+L: I could be overdressed. I could be wildly underdressed.
+
+(A few hours later...)
+(Lily texts the MC)
+L: Options.
+L: (Picture 3: Two outfits laid out on the hotel bed — the black cocktail dress and the floral sundress, the white lace lingerie set laid beside the black one.)
+L: The safe one or the not safe one
+M: You already know which one you want
+L: I do. I want you to say it.
+
+CHOICE 1
+M: The black one
+L: Obviously the black one
+L: I just needed permission hihi
+
+CHOICE 2
+M: Whichever one Leo would pick
+L: You're not even pretending anymore
+M: No
+L: hihi. He'd pick the black one.
+
+(Continue for both)
+L: Then this goes under it
+L: (Picture 4: Lily mirror selfie in the white lace set from EP 25, hotel room, natural light, one hand on her hip.)
+L: Still fits (;
+M: You bought that the day before yesterday
+L: And I haven't worn it once. I was waiting for something to be worth it.
+L: (Picture 5: Close, low angle. Lily sitting back on the edge of the hotel bed in the same set, one leg drawn up, looking down into the camera in her own hand. The lace is doing very little.)
+L: Look at what I'm about to put a dress over
+M: Christ
+L: Its going to be under there the whole night babe
+L: While I stand in a room and talk to strangers about art
+L: (Picture 6: Lily in the black cocktail dress, zipped, heels on, full length in the hotel mirror. The lingerie is completely invisible underneath.)
+L: And nobody will even know
+M: I'll know
+L: You will. And Leo will.
+L: Thats the whole point isn't it
+
+if leo_humiliation == true
+L: Could be six people tonight. Could be sixty.
+L: And not one of them is going to know whats on under this
+L: Or who I put it on for
+M: Not for me
+L: No baby. Not for you.
+L: But you get to know about it. Thats your part.
+M: I'll take it
+L: Goodboy
+
+else
+L: I'm nervous
+M: You'll be amazing
+L: I dont even know what I'm nervous FOR
+L: Thats the worst part hihi
+L: Whatever it is he's been working on it three days
+L: I just want to do it justice
+M: You will
+L: Dont make me cry before my makeup
+
+(Continue for both)
+L: Car's here
+L: (Picture 7: Lily selfie in the back of a car, dressed, city going past the window behind her, nervous excited smile.)
+L: Wish me luck
+M: You don't need it
+L: Say it anyway
+M: Good luck baby
+L: <3
+
+
+ACT 2 — THE UNVEILING
+
+(30 minutes later...)
+(Lily texts the MC)
+L: I'm here. The studio looks completely different.
+L: (Picture 8: Leo's studio set up for a viewing. Easels gone, chairs to the walls, wine table, string lights. The covered canvas in the center.)
+L: He moved all the easels out. The room is the wrong shape without them.
+L: And theres a THING in the middle of it under a sheet
+M: Is there
+L: Babe I'm not stupid. Its a canvas.
+M: Did he say that
+L: He said "I'm not confirming anything until six o'clock"
+L: He is ENJOYING this. He's been enjoying it for three days.
+L: (Picture 9: Leo pouring red wine into two proper glasses, sleeves rolled to the elbow, paint still under his fingernails, small smile at the camera.)
+L: The plastic cups are for everyone else
+M: And the real glasses are for
+L: Us hihi
+L: Sorry. Him and me.
+M: You can say us
+L: He's telling me to put the phone down. He wants to do this properly.
+M: Go
+
+(20 minutes later...)
+(Lily texts the MC)
+L: babe
+M: Well?
+L: give me a second
+L: I'm actually shaking a little
+M: That good?
+L: Its ME
+L: He painted ME
+
+if undress_full_ep23 == true
+L: (Picture 10a: THE PAINTING — Lily from behind, bare, center of the studio, the five easels loose around her. Full brief in the asset list.)
+L: Its the second session
+L: Its the exact second I put the robe down
+L: He was BEHIND me babe. He never even had a canvas up that day.
+
+else
+L: (Picture 10b: THE PAINTING — Lily in the white set, center of the studio, the five easels loose around her. Full brief in the asset list.)
+L: Its the second session
+L: Its me walking back in without the robe
+L: He was BEHIND me babe. He never even had a canvas up that day.
+
+(Continue for both)
+M: He took a photo. He sent it to me.
+L: He what
+M: The day of the class. From his phone.
+L: ...
+L: So you've known since this morning
+M: I've known what it was of. Not what he did with it.
+L: You let me pick out a DRESS
+L: You let me sit in a car for half an hour guessing
+M: He asked me to be vague
+L: OF COURSE he did
+L: I'm not even angry. Thats the annoying part.
+L: Babe hold on
+L: Two days ago I was in a changing room sending him photos
+L: And he was texting me back BEGGING me to let him paint me in that lingerie
+M: I remember. You told me.
+L: He was already painting me
+L: Half a metre from this thing, half finished, asking me to sit for him
+L: Who DOES that
+L: (Picture 11: Lily from behind in the black dress, head tilted up, looking off-frame, picture light warm across her face and one bare shoulder. Canvas out of frame.)
+L: He took that one. He said "this is the part I wanted."
+M: Which part
+L: Me looking at it
+L: He said the painting was never the point
+L: The point was what my face does when I see myself the way he sees me
+M: He's good
+L: And its not even a painting of me
+M: Its not?
+L: Its a painting of a room looking at me
+L: Everyone in that class drew a body. He painted the looking.
+L: I've had a lot of pictures taken of me lately and they all felt like evidence of something
+M: And this doesn't
+L: This feels like someone looked at me for three days and decided I was worth the time
+M: I've spent years on you
+L: I know baby. I'm not saying it right.
+M: You are. I get it.
+L: (Picture 12: The brass nameplate, close up, screwed to the bottom of the frame. It reads: "LILY — SECOND SESSION")
+L: He made a plate for it babe
+
+if leo_humiliation == true
+L: He wants me to ask you something
+M: Go ahead
+L: Whether you're okay with your wife's body hanging on a wall for strangers
+L: And he wants you to answer him yourself. Not through me.
+M: He can ask me himself
+L: He said you'd say that
+L: He said "tell him I'm not asking, I'm giving him a chance to say it out loud"
+(You text Leo)
+M: Hang it
+LEO: That's it?
+M: Hang the painting, Leo
+LEO: Say the rest
+M: ...Hang my wife on your wall
+LEO: There he is
+LEO: Her name. My wall. My handwriting on the card too.
+LEO: You should be proud of her tonight. I mean that.
+
+else
+(Leo texts the MC from his own phone)
+LEO: She cried a bit. Don't tell her I told you.
+M: I won't
+LEO: I've painted a lot of people. Most of them look at the painting.
+LEO: She looked at it like it was a letter someone wrote her
+M: That's exactly what she said
+LEO: Then we're both right
+
+if undress_full_ep23 == true
+LEO: Second session. The one where the robe came off.
+else
+LEO: Second session. The one where she came back in without it.
+
+LEO: I thought about calling it something else. That's what it was.
+M: ...Thank you for putting it like that
+LEO: I don't dress up titles.
+
+(Continue for both)
+(set painting_public = true)
+
+(A little later...)
+(Lily texts the MC)
+L: They're here. All five of them.
+L: (Picture 13: THE PRIVATE PREVIEW — Marguerite up close with her glasses on, only the outer moulding in shot. Sem behind her, soft, turned away.)
+L: Gerard has said the word "brave" four times
+L: They keep looking from the painting to me and back
+M: Is that strange
+L: Its the strangest thing thats ever happened to me
+L: They were THERE. They drew it.
+L: And now they're looking at his version of them looking at it
+
+if undress_full_ep23 == true
+L: Marguerite took my hand and said "you were very brave that day and he has been very kind to you"
+L: And then I had to go stand by the window for a minute
+M: Was she right?
+L: About both. Yeah.
+
+else
+L: Marguerite took my hand and said "you were nervous that day. Its not in the painting."
+L: And then I had to go stand by the window for a minute
+M: Was she right?
+L: That I was nervous? God yes.
+L: That its not in the painting? I dont know how he did that.
+
+(Continue for both)
+L: Babe there's a thing though
+M: Go on
+L: Sem hasn't said a word
+L: He came in, looked at it for ten seconds, and then stopped looking at it
+M: Looking at what
+L: ...
+L: Me
+L: He's been looking at me the entire time
+
+(A few minutes later...)
+L: Okay he finally said something. To Leo, out loud, in front of everyone.
+L: He said "you were behind us the whole time"
+M: Meaning what
+L: Meaning we were all drawing her and you were watching us do it
+L: Everyone went quiet
+L: And Leo laughed and said "took you three days less than it took me"
+M: He clocked it in ten seconds
+L: Four people who have been drawing thirty years
+L: And the one who got it has been coming for three days
+
+
+ACT 3 — SEM, AND THE FORK
+
+(Lily texts the MC)
+L: People start arriving in an hour
+L: And I have to tell you some things about him before you hear them from anyone else
+M: About Sem
+L: His name is Sem
+L: He's been back once since the class. Leo ran a session two days ago.
+L: Same seat. Front row.
+L: Leo says he asked when the next one was before he'd even packed up
+
+if student_number == true
+L: And I have to tell you something else
+L: I still have his number. The actual bit of paper.
+L: I have never used it. Not one message. He's never heard from me.
+M: Not once
+L: Not once babe
+L: Its in the side pocket of my bag and I know exactly where it is
+L: I have taken it out and put it back more times than I want to tell you
+L: Nothing happened and I still feel like I did something
+M: Why
+L: Because I wanted to
+L: Three days of deciding not to, every day, on purpose
+L: Thats not the same as not wanting to
+L: Thats the part I should have told you
+M: You're telling me now
+L: Are you angry
+CHOICE 1
+M: No. I'm glad you told me.
+L: Okay
+L: I've been sick about it since yesterday
+CHOICE 2
+M: A little. Not about him. About the three days I didn't know.
+L: Thats completely fair
+L: I won't do that part again
+M: Then we're okay
+L: We're okay?
+M: We're okay
+(Continue for both)
+
+else
+L: And he's been asking about me
+M: Has he
+L: Leo says both times. The class, and the session two days ago.
+L: Not in a creepy way. He just asks, and then changes the subject.
+M: Twice in three days
+L: I threw his number away and he came back anyway
+CHOICE 1
+M: Do you regret throwing it away?
+L: ...A bit
+L: Is that allowed
+M: You're allowed to regret things
+L: Then a bit
+CHOICE 2
+M: You made the right call
+L: I did. I think I did.
+L: I just didn't expect to be in a room with him tonight
+(Continue for both)
+
+(Continue for all)
+L: (Picture 14: Sem's charcoal drawing of Lily, pinned to the studio wall — cropped tight to head and shoulders, nothing below. Full brief in the asset list.)
+L: Leo pinned that up next to the painting
+M: Sem drew that?
+L: On his FIRST EVER class babe
+L: Everyone else drew a shape with a head on it. He drew my face.
+(set sem_known = true)
+
+(A little later...)
+L: Okay so I talked to him properly
+M: And?
+L: He is not what I expected
+M: Nervous?
+L: Not even slightly
+L: I brought up the drawing, gave him the whole "you dont have to be embarrassed" thing
+L: And he just said "I'm not"
+M: ...
+L: (Picture 15: Sem and Lily by the wine table. He's mid-sentence, relaxed, one hand on the back of a chair. She's listening with her head slightly tilted.)
+L: He said he wasn't going to pretend he hadn't been looking
+L: He said everyone else in that room drew a shape
+L: And he drew me, because thats what he was actually looking at
+M: He said that to your face
+L: And then asked if I wanted a drink like it was nothing
+L: I've spent three days thinking of him as the sweet shy one
+L: He's just... not
+L: I said "you handed your number to a married woman"
+L: And he said "you were still holding it when you left"
+M: How did that land
+L: Badly babe. Very badly. In the good way.
+
+L: Okay I have to tell you something and you have to be normal about it
+M: I make no promises
+L: He sat down on the arm of the chair next to me
+L: And I looked. I did not mean to look. I looked.
+M: At what
+L: Babe he's enormous
+L: Thats not me being dramatic. I have never seen anything like it.
+M: ...
+L: I sat there with a glass of wine doing maths
+L: About a man I met three days ago
+L: While standing under a painting of myself
+M: Jesus
+L: And Leo saw me look
+L: Leo SAW ME LOOK and he laughed into his glass
+M: What did he say
+L: Nothing. He topped up my wine and walked off.
+L: I want to die
+
+if leo_humiliation == true
+L: (Picture 16a: Lily's face over the rim of her wine glass, looking off-camera, pupils wide.)
+L: I've spent three days being flattered by what I thought was a boy
+L: And it turns out I've been dealing with a grown man the whole time
+L: He hasn't mentioned it once by the way. Not a joke, not a look, nothing.
+L: He's just going to stand there being completely certain until somebody decides something
+M: And you like that
+L: I like it a lot
+L: You should probably know that before tonight
+
+else
+L: (Picture 16b: Lily's face over the rim of her wine glass, half a smile, looking off-camera.)
+L: And he hasn't said a word about it. Not one joke.
+L: He asked about you, by the way
+M: Me?
+L: What you do. How long we've been married.
+L: And he listened to the answers, which most people dont
+M: Does he know?
+L: About us? No.
+L: He knows I'm married. He doesn't know what that means here.
+
+(Continue for both)
+L: Anyway I'm going to hide in the back room and get my head straight
+M: Go breathe
+
+(Leo texts the MC from his own phone)
+LEO: Can I ask you something before the doors open
+M: Go ahead
+LEO: Sem
+LEO: He's not a kid and he's not a puppy. He's about your age and he knows his own mind.
+LEO: One class, one session, and he's asked about her at both
+LEO: He's never once said a word about her I'd have to repeat to you
+M: But
+LEO: But he'll be here until the last chair is stacked
+LEO: And she'll be here until the last glass is washed
+LEO: So at some point tonight it's the three of us in an empty room
+LEO: I'd rather you decide what that is now than have it decide itself at midnight
+M: You're asking if he can stay
+LEO: I'm asking if he can stay
+
+if leo_humiliation == true
+LEO: Before you answer, understand what you're choosing between
+LEO: If he stays, she gets a man who has wanted her since the day she took her robe off in my studio
+LEO: If he doesn't, she's alone with me
+LEO: And there's something she's been asking me for since the boutique that she hasn't had the nerve to ask you for
+M: What
+LEO: She'll tell you herself, if you send him home
+LEO: (;
+M: That's not fair
+LEO: No it isn't
+
+else
+LEO: Honest version
+LEO: If he stays it'll be good for both of them, and I'll make sure it's good for her
+LEO: If he goes home it's me and her, and there's something she wants to ask you first
+LEO: Either way nobody gets anything you didn't say yes to
+LEO: And she can stop it at any point, whichever way you go
+M: I know she can
+LEO: Good. Say it to her tonight anyway.
+
+(Continue for both)
+LEO: Your call. You've got twenty minutes.
+
+CHOICE 1 (set sem_stays = false) (hint: PATH A — Lily alone with Leo. You will not see Sem tonight.)
+M: Send him home when it's over
+LEO: Understood
+LEO: No argument?
+M: No argument
+LEO: I'll tell her
+LEO: She's going to be very happy with you
+
+CHOICE 2 (set sem_stays = true) (hint: PATH B — Sem stays. Leo and Sem both.)
+M: He can stay
+LEO: You're sure
+M: I'm sure
+LEO: Then he stays
+LEO: I'll look after her. And I'll make sure she's the one steering it.
+
+(if sem_stays == false) ------------- PATH A -------------
+
+(Lily texts the MC)
+L: Leo just came into the back room
+L: Did you two have a conversation about me
+M: We did
+L: And you said no to Sem staying
+M: I did
+L: Can I ask why
+CHOICE 1
+M: Because tonight is yours and Leo's.
+L: ...Yeah
+L: Thats exactly right actually
+L: He painted me for three days without telling anyone
+L: Tonight should be his
+CHOICE 2
+M: Because I want you to ask me for the thing you've been too scared to ask me for.
+L: He TOLD you?
+M: He told me there was something. Not what.
+L: Of course he didn't
+(Continue for both)
+L: Okay. I'm going to say it.
+L: I've been wanting to ask you something since the boutique.
+M: The lingerie
+L: The other thing
+M: ...The plug
+L: I bought it and put it in a drawer and I've looked at it about forty times in two days
+L: I brought it tonight. Its in my bag.
+M: Why haven't you asked
+L: Because of what it means
+M: Say it
+L: Because we never did that. You and me. In three years.
+L: And I want to. And I want to with him.
+L: And I can't do that without asking you first. I just can't.
+L: Say something please
+
+if leo_humiliation == true
+CHOICE 1
+M: Ask me properly.
+L: ...
+L: Please can I let Leo have me that way
+L: Please can I give him the one thing I never gave you
+L: Please baby
+M: Yes
+L: (Picture 17: Lily sitting on the back room counter, phone in hand, dress hitched to her thigh, face flushed, mouth slightly open — the exact second she read it.)
+L: oh my god
+L: OKAY
+CHOICE 2
+M: Yes. And I want to hear about every second of it.
+L: (Picture 17 — the second she reads it.)
+L: You will
+L: I'll tell you things you dont want to hear
+M: Tell me those first
+L: hihi. Goodboy.
+
+else
+CHOICE 1
+M: Yes. Of course yes.
+L: Just like that?
+M: I've been thinking about it since the boutique too
+L: (Picture 17 — the second she reads it.)
+L: We are so bad at being married hihi
+CHOICE 2
+M: Yes. But I want you sure it's what you want and not what he wants.
+L: Thats the kindest thing anyone has said to me this year
+L: Its what I want
+L: I wanted it before he ever mentioned it
+M: Then yes
+L: (Picture 17 — the second she reads it.)
+L: I love you so much
+
+(Continue for both)
+L: I'm going to put it in now. Before people arrive.
+M: Now?
+L: I have to stand in a room for three hours next to a painting of myself
+L: If I dont do it now I'll talk myself out of it at ten o'clock
+L: Leo's going to help. I asked him to.
+L: I'm not doing this to myself in a bathroom on the biggest night of my life
+L: Ten minutes
+
+(15 minutes later...)
+L: (Picture 19: Lily in the back room mirror, dress smoothed back down, hands flat against the front of it, biting her lip, very flushed. Nothing at all visible.)
+L: You genuinely cannot tell
+M: How does it feel
+L: Babe I can feel my own heartbeat in it
+L: I have to WALK. In heels. And talk to people about ART.
+M: You'll be fine
+L: I will NOT be fine
+L: I'll be extremely not fine and I'm going to love it
+L: (Picture 20: Close-up of Lily's face in the back room mirror, biting her lip, eyes bright.)
+L: Doors are open. People are coming in.
+M: Good luck baby
+L: <3
+
+(else — sem_stays == true) ------------- PATH B -------------
+
+(Lily texts the MC)
+L: Did you and Leo just talk about me
+M: We did. About Sem staying after.
+L: And?
+M: I said he can
+L: ...
+L: Just like that
+M: Leo asked me properly. I answered properly.
+L: I need to sit down
+L: (Picture 17: Lily sitting on an upturned crate in the studio back room, phone in both hands, dress on, staring at the floor. Overwhelmed but not unhappy.)
+L: Babe he doesn't know
+L: He's out there straightening chairs like there is no plan...
+M: Does that bother you
+L: It does something to me I guess
+M: Try to tell me what it does to you baby
+M: I wanne know
+L: I know how tonight is most likely gonna end... he has no clue… yet
+M: How does that feel
+L: Weird… weird and good… I think
+
+CHOICE 1
+M: You can stop it at any point tonight. Any point.
+L: I know
+L: Leo said the same thing twice
+L: You two are unbearable hihi
+L: Thank you though
+L: I'm not going to
+CHOICE 2
+M: Then hold it. All night. Don't tell him.
+L: You're enjoying this
+M: A little
+L: Okay. I'll hold it.
+
+(Continue for both)
+L: One thing though
+M: Go
+L: I'm not wearing the plug tonight
+M: I didn't ask you to
+L: I know. I'm telling you.
+L: I brought it. And its staying in my bag.
+M: Why
+L: Because thats a me and Leo thing and I'm not doing it in a room with someone else
+L: If that ever happens it happens quietly, and it happens with him
+M: Okay
+L: You're not disappointed?
+M: No. I think thats exactly right.
+
+if leo_humiliation == true
+L: You should know something else
+M: What
+L: Leo told me what you said. Word for word.
+L: "He can stay"
+L: Three words and you handed me to a man you've never met
+M: I know what I said
+L: I've read it about six times
+L: I'm going to think about those three words all night
+L: While I talk about brushstrokes with a woman called Marguerite
+L: Goodboy
+
+else
+L: Thank you for saying yes the way you said it
+M: How did I say it
+L: Like it wasn't a big deal. When it obviously is.
+L: You have no idea how much easier that makes tonight
+M: That was the idea
+L: I know it was
+L: I love you
+
+(Continue for both)
+L: Doors are open. People are coming in.
+L: (Picture 19: Sem from the back room doorway, unaware, hands in his pockets — his body squarely blocking the lit canvas, warm rim light on his shoulders.)
+L: He's been back to it four times tonight
+L: Completely relaxed. No idea what he's standing in the middle of.
+M: Not yet
+L: Not yet hihi
+
+(Continue for all — both paths)
+(CONTINUE IN EP 27.5)
+
+
+---------------------------------------------
+
+ASSET LIST — EP 27
+
+IMAGES
+
+NTR PATHS ONLY (math_continue == true)
+NTR_1. Lily selfie in an arcade, neon and screen DONE
+       light across her face, rows of machines
+       behind her, big grin.
+       (both NTR paths — same render)
+NTR_2. A cheap yellow plush duck from a claw
+       machine, held up in Lily's hand, arcade DONE
+       lights behind it.
+       (both NTR paths — same render)
+
+SHARED — ACT 1
+1.  Covered canvas on an easel in Leo's studio,
+    white sheet over it, early morning light,
+    two empty coffee cups on a stool.                      DONE
+    DOUBLES AS SOCIAL POST LEO 1 — same render,
+    posted forty minutes after Leo sends it.
+2.  Lily selfie in hotel bed, no makeup, hair        DONE
+    everywhere, one eye open, sleepy smile
+3.  Two outfits laid out on the hotel bed — the
+    black cocktail dress and the floral sundress,
+    the white lace lingerie set laid beside the       DONE
+    black one.
+    (only ONE lingerie set in frame, and it is
+    white — there is no black lingerie anywhere
+    in this episode)
+4.  Lily mirror selfie in the white lace set from
+    EP 25, hotel room, natural light, hand on hip     DONE
+5.  Close, low angle — Lily sitting back on the
+    edge of the hotel bed in the same set, one leg
+    drawn up, looking down into the camera in her
+    own hand. The lace is doing very little.
+    Hottest shot in Act 1 and the last look at the    DONE
+    lingerie before the dress goes on. SAME SET
+    AND LIGHT AS 4 — no wardrobe change, shoot
+    both together.
+6.  Lily in the black cocktail dress and heels,
+    full length in the hotel mirror, lingerie       DONE
+    completely invisible underneath
+7.  Lily selfie in the back of a car, dressed,
+    city going past the window, nervous excited    DONE
+    smile
+
+SHARED — ACT 2
+8.  Leo's studio set up for a viewing — easels
+    cleared out, chairs to the walls, wine table,          DONE
+    string lights, covered canvas in the center
+9.  Leo pouring red wine into two proper glasses,
+    sleeves rolled, paint under his fingernails          DONE
+10. THE PAINTING — hero asset, two variants.
+    Painted treatment of EP 23 Picture 8 / 9, so
+    the existing renders are the reference.
+    In both variants the five easels are painted
+    in loosely around her and only Lily is fully
+    resolved — the canvas is a picture of a room
+    looking at her, not a nude study.
+    10a (undress_full_ep23 true)  Lily from behind,
+        center of the studio, completely bare, DONE
+        light from the high windows
+    10b (undress_full_ep23 false) Lily center of
+        the studio in the white bra and panties,
+        charcoal drawings of her on the easels  DONE
+    (hero asset — reused in EP 27.5)
+11. Lily from behind in the black dress, head
+    tilted up, looking at something off-frame.
+    Picture light warm across the side of her  DONE
+    face and one bare shoulder.
+    CANVAS OUT OF FRAME.
+12. The brass nameplate close up, screwed to the    DONE
+    frame, reading "LILY — SECOND SESSION"
+13. THE PRIVATE PREVIEW — Marguerite about a foot
+    from the canvas, glasses on, peering up at it,
+    plastic cup forgotten in one hand. Shot from
+    beside the frame so ONLY THE OUTER MOULDING is  DONE
+    in shot; the painting is not visible. Behind
+    her and soft, Sem stands with his hands in his
+    pockets, turned away from the canvas.
+
+SHARED — ACT 3
+14. Sem's charcoal drawing of Lily from the EP 23
+    class, pinned to the studio wall — CROPPED
+    TIGHT TO HEAD AND SHOULDERS. Her face, the
+    line of her collarbone, the torn edge of the
+    paper, one drawing pin. Nothing below the
+    shoulders in frame. Student work, but careful     DONE
+    and confident, and the face is clearly hers.
+    (The crop is the point — "everyone else drew
+    a shape with a head on it, he drew my face".)
+15. Sem and Lily by the wine table. He's
+    mid-sentence, relaxed, one hand on the back of DONE
+    a chair. She's listening, head tilted.
+16. Lily's face over the rim of her wine glass,
+    looking off-camera. Two variants, same setup:
+    16a (leo_humiliation true)  pupils wide       DONE
+    16b (leo_humiliation false) half a smile
+
+PATH A ONLY — ACT 3
+17. Lily on the back room counter, phone in hand,
+    dress hitched, flushed, mouth slightly open —
+    the second she reads the yes.                        DONE
+    SINGLE RENDER, used on all four choice
+    branches.
+18. The plug out of the box on the back room        CUT — NOT CALLED
+    counter beside her clutch and a wine glass      IN SCRIPT
+19. Lily in the back room mirror, dress smoothed
+    down, hands flat against the front of it,      DONE
+    very flushed, nothing visible
+20. Close-up of Lily's face in the back room     DONE
+    mirror, biting her lip, eyes bright
+
+PATH B ONLY — ACT 3
+17. Lily on an upturned crate in the back room,    DONE
+    phone in both hands, staring at the floor
+18. The plug, still boxed, being pushed back into   CUT — NOT CALLED
+    her clutch, her hand closing the clasp          IN SCRIPT
+19. Sem from the back room doorway, unaware,
+    hands in his pockets, standing squarely
+    between camera and the lit wall so his body
+    BLOCKS THE CANVAS COMPLETELY. Warm rim light
+    around his shoulders.
+
+TOTAL: 25 renders (2 NTR + 18 shared + 3 PATH A
++ 2 PATH B). The social post needs no new art.
+(18 is cut on both paths and its number stays
+vacant — PATH A runs 17, 19, 20 and PATH B runs
+17, 19. Do not renumber into the gap; EP 27.5
+opens at 21 either way.)
+
+SOCIAL POSTS
+
+LEO 1. REUSES PICTURE 1 — the covered canvas,
+       sheet still over it, early morning light.
+       Caption: "Tonight. 6 for the class, 7 for
+       everyone else. One new piece. Wine is bad,   DONE
+       come anyway."
+       (Act 1, all paths — posts forty minutes
+       after Leo's texts and about twenty minutes
+       before Lily wakes, so the MC sees the
+       neighbourhood invited to look at his wife
+       before she knows the painting exists)
+
+(The Math and babes posts for the NTR paths are in
+ EP 27.5. Nothing posts during NTR Part 1.)
+
+---------------------------------------------
+
+VARIABLES IN
+math_continue                   true  = short arcade beat, then end node
+                                false = the main NTS episode
+docter_medicine_denied          NTR paths only — open cuck vs secret NTR
+leo_humiliation                 drives the permission dynamic throughout
+student_number                  EP 23 — did she keep the torn sketch paper
+undress_full_ep23               EP 23 — DETERMINES THE SUBJECT OF THE PAINTING
+                                and the wording of the nameplate reveal
+
+VARIABLES OUT
+painting_public = true          Act 2, all paths
+sem_known = true                Act 3, all paths
+sem_stays                       Act 3 — THE FORK, carries into EP 27.5
+
+---------------------------------------------
+
+NOTE ON SHOOTING THE PAINTING — READ BEFORE ADDING ANY SHOT
+The canvas is fully visible in exactly two places: Pictures 10a and 10b here (the
+unveiling), and EP 27.5's 23a and 23b (her standing beside it at the public
+opening). Nowhere else, in either episode. Both places are already doubled for
+the two painting variants, which is the constraint driving the rule: the
+painting has two versions, so any legible shot of it needs doubling too; a
+painted artwork rendered inside a photograph is the least reliable render in
+the project and has to match itself across every shot it appears in; and the
+dialogue says three times that the canvas isn't the subject (Pic 11 "the
+painting was never the point", Pic 13 "his version of them looking at it",
+Pic 14 "he drew my face").
+Everything else stays covered. In EP 27.5 that means 21 (wide), 22 (Gerard
+two-shot) and 26 (empty room, edge-on) keep the canvas out of frame — the
+reasons above still apply to them in full.
+
+Approved ways to imply it: reverse angle from behind the canvas; edge-on as a
+thin dark vertical; frame-edge crop (moulding, corner, nameplate); the picture
+light and its warm pool with the canvas out of frame; occlusion by heads and
+shoulders; reaction-only, her face carrying the beat; sheeted, pre-reveal only.
+Sem's charcoal drawing (Pic 14) follows the same rule — head and shoulders,
+nothing below.
+
+LEO IS NOT PHYSICALLY WITH HER AT ANY POINT BEFORE TONIGHT
+EP 25 is a texting scene on the NTS path. Lily shops alone (Izzy is asleep,
+EP 25:57). Leo's two contributions are both text — EP 25:100 and EP 25:132.
+By contrast, on the OPEN NTR branch she says of Math "He's like acctualy here"
+(EP 25:123). Do not write Leo into that scene in person. Her realisation in
+Act 2 is that he sent those messages standing next to the half-finished
+painting — that is the image, not him in a shop.
+Leo is established as fast: the green dress took two hours. This one took
+three days and three restarts, and that difference is the point.
+
+NOTE ON THE UNVEILING
+Two stages, in this order:
+1. Lily alone with Leo, nobody else in the building. "The point was what your
+   face does" lands here.
+2. The five from the class at six, before the doors open at seven — the only
+   people who saw the real thing. The four older students crowd it; Sem looks
+   for ten seconds, stops, and looks at Lily for the rest.
+The neighbourhood arrives at seven — EP 27.5 Act 4.
+Class roster, fixed by EP 23: three older women (one is Marguerite), one older
+man (Gerard), and Sem.
+
+NOTE ON SEM
+Sem is not the shy one. EP 23 canon: he looked at her more than anyone in the
+room, held eye contact when she caught him, and handed his number to a married
+woman who had just been naked in front of him.
+HE IS A GROWN MAN, ABOUT THE MC'S AGE. Leo says this out loud in Act 3 so it
+is in the script, not only in these notes. The class is an adult evening class
+at a private studio, not a school; Leo is nobody's teacher and Lily is a paid
+adult peer who can walk out whenever she likes.
+Play him composed and direct. He wanted her from that first class and says so
+plainly if asked. He is careful with her because he chooses to be, not because
+he is nervous. He never apologises for wanting her and he never pushes.
+TIMELINE: the class was THREE DAYS AGO — one class, one further session. His
+weight comes from immediacy, not duration.
+
+THEY HAVE NEVER TEXTED. NOT ONCE, ON EITHER BRANCH.
+He tore off a corner of sketch paper, wrote his number on it and handed it to
+her at the end of the class. That is the whole of their contact until tonight.
+She has never messaged him and he has no way to message her. student_number
+only decides whether she KEPT the paper (EP 23:314) or binned it (EP 23:322) —
+it does not mean they have been talking, and no line anywhere may imply a
+running conversation, a routine, or daily contact. They have been in the same
+room exactly twice: the class, and tonight. Lily was not at the session two
+days ago — Leo reports that one to her secondhand (EP 27:460, :496).
+On the true branch, the tension is that she kept it for three days and did not
+use it, and she says so to Sem tonight. Wanting to and not doing it is the
+beat. Do not soften it into having done it.
+
+SIZE — SEM IS THE BIGGEST SHE HAS EVER SEEN
+Bigger than Math, the previous benchmark (EP 10:535, and Math announced it
+himself). The point is the CONTRAST IN BEHAVIOUR, not the measurement: Math
+told her inside thirty seconds and made it her whole evening; Sem never
+mentions it, ever. If it comes up, she brings it up.
+TWO STAGES, NOT THREE:
+  1. EP 27 Act 3 — she notices at the wine table and SAYS IT in the same
+     scene. No deferral. Leo catches her looking and says nothing, which is
+     worse. She then notes that Sem hasn't mentioned it either.
+  2. EP 27.5 Act 5 PATH B — it becomes a physical problem and she has to
+     direct him through it. The Math comparison pays off there.
+On PATH A she never finds out what she turned down, and says so in EP 27.5
+Act 4. That is the point of that branch.
+(An older draft used three stages and held the payoff four thousand words.
+It killed the pace. Do not reinstate it.)

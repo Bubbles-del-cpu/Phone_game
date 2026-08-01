@@ -11,7 +11,7 @@ using UnityEngine.Video;
 [Serializable]
 public class SaveFileData
 {
-    public static string SAVE_FILE_VERSION = "0.15.beta";
+    public static string SAVE_FILE_VERSION = "0.20.beta";
     public string Version;
     public int SaveFileSlot;
     public bool ForceUnlockAllChapters;
@@ -101,7 +101,7 @@ public class SaveFileData
         }
 
         // Check the background image data to make sure we account for the new target platform
-        if (wasUpdated && newSaveFile.Version == "0.15.beta")
+        if (wasUpdated)
         {
             // This version added the MediaTargetPlatform enum change as well as the SpicySocialMediaPost option
             if (CustomBackgroundImage != null)

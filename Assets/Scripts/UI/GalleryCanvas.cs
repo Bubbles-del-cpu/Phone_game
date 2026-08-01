@@ -179,21 +179,32 @@ public class GalleryCanvas : UICanvas
         if (nodeData == null)
             return;
 
-        UnlockedGalleryMediaButton(nodeData.NodeGuid, nodeData.MediaFileName, reloadedGallery);
+        var mediaUnlocked = UnlockedGalleryMediaButton(nodeData.NodeGuid, nodeData.MediaFileName, false);
         if (nodeData.Post != null)
         {
-            UnlockedGalleryMediaButton(nodeData.NodeGuid, nodeData.Post.MediaFileName, reloadedGallery);
+            mediaUnlocked |= UnlockedGalleryMediaButton(nodeData.NodeGuid, nodeData.Post.MediaFileName, false);
+        }
+
+        if (reloadedGallery && mediaUnlocked)
+        {
+            DisplayGalleryPage(_currentMediaType, _currentMediaType == MediaType.Sprite ? _imagePageNumber : _videoPageNumber);
         }
     }
 
-    private void UnlockedGalleryMediaButton(string nodeGUID, string fileName, bool reloadedGallery)
+    private bool UnlockedGalleryMediaButton(string nodeGUID, string fileName, bool reloadedGallery)
     {
+        if (string.IsNullOrEmpty(nodeGUID) || string.IsNullOrEmpty(fileName))
+            return false;
+
+        var mediaUnlocked = false;
+
         //Find and unlocked the button on the gallery canvas
         var content = _galleryImageItems.FirstOrDefault(x => x.NodeGuid == nodeGUID && x.FileName == fileName);
         if (content != null)
         {
             content.LockState = MediaLockState.Unlocked;
             content.IsLinearPathUnlock = SaveAndLoadManager.Instance.ReplayingCompletedChapter == false;
+            mediaUnlocked = true;
         }
 
         var videoContent = _galleryVideoItems.FirstOrDefault(x => x.NodeGuid == nodeGUID && x.FileName == fileName);
@@ -201,15 +212,15 @@ public class GalleryCanvas : UICanvas
         {
             videoContent.LockState = MediaLockState.Unlocked;
             videoContent.IsLinearPathUnlock = SaveAndLoadManager.Instance.ReplayingCompletedChapter == false;
+            mediaUnlocked = true;
         }
 
-        if (reloadedGallery)
+        if (reloadedGallery && mediaUnlocked)
         {
-            var mediaBefore = _currentMediaType;
-            ResetGalleryButtons();
-            _currentMediaType = mediaBefore;
             DisplayGalleryPage(_currentMediaType, _currentMediaType == MediaType.Sprite ? _imagePageNumber : _videoPageNumber);
         }
+
+        return mediaUnlocked;
     }
 
     public void Close(bool imageOpenFromOutsideGallery)

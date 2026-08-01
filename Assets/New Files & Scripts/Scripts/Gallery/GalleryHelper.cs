@@ -26,14 +26,21 @@ public class GalleryHelper
         }
     }
 
+    public static bool MatchesCode(string inputCode, string salt, string expectedHash)
+    {
+        if (string.IsNullOrEmpty(inputCode) || string.IsNullOrEmpty(expectedHash))
+            return false;
+
+        return string.Equals(expectedHash, ComputeHash(inputCode, salt), StringComparison.Ordinal);
+    }
+
     private bool IsValidCode(string inputCode)
     {
 #if UNITY_EDITOR
         if (inputCode == "DEV UNLOCK")
             return true;
 #endif
-        string inputHash = ComputeHash(inputCode, _salt);
-        return string.Equals(_hash, inputHash, StringComparison.Ordinal);
+        return MatchesCode(inputCode, _salt, _hash);
     }
 
     public void Unlock()
@@ -46,6 +53,7 @@ public class GalleryHelper
 
         SaveAndLoadManager.Instance.CurrentSave.UnlockAllMedia();
         GameManager.Instance.GalleryCanvas.RefreshGalleryPage();
+        GameManager.Instance.GalleryCanvas.UnlockData.UnlockTriggered = false;
     }
 
 
