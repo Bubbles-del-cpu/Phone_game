@@ -1,0 +1,5758 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Christmas special - The miracle pill
+  m_EditorClassIdentifier: Assembly-CSharp::MeetAndTalk.DialogueContainerSO
+  AllowDialogueSave: 0
+  BlockingReopeningDialogue: 0
+  NodeLinkDatas:
+  - BaseNodeGuid: 9fd4aa76-f303-4168-bd2a-485e071541e4
+    TargetNodeGuid: a332a987-6f37-4439-b96e-c68aeddf8d01
+  - BaseNodeGuid: a332a987-6f37-4439-b96e-c68aeddf8d01
+    TargetNodeGuid: 2f1d16fa-089f-40fc-9d71-744adad242cc
+  - BaseNodeGuid: 2f1d16fa-089f-40fc-9d71-744adad242cc
+    TargetNodeGuid: ac0958af-a334-451b-a744-0239e69a9e7a
+  - BaseNodeGuid: ac0958af-a334-451b-a744-0239e69a9e7a
+    TargetNodeGuid: d8c942b8-5755-481f-938f-62fab1bd5fbc
+  - BaseNodeGuid: d8c942b8-5755-481f-938f-62fab1bd5fbc
+    TargetNodeGuid: 4fc4c4cb-f1aa-45d5-958a-9142cbab67f7
+  - BaseNodeGuid: b60b3105-a197-434f-8a8e-ec70fe300f35
+    TargetNodeGuid: 32c2c081-46f8-4b35-87ac-13b722fa758b
+  - BaseNodeGuid: d40c709a-9603-4cca-b1de-7aef10696ded
+    TargetNodeGuid: 9555ea36-97ab-4f63-bc52-480ba8fad6b3
+  - BaseNodeGuid: 9555ea36-97ab-4f63-bc52-480ba8fad6b3
+    TargetNodeGuid: 05417009-3cad-4a1c-b0aa-0c5637e00227
+  - BaseNodeGuid: 05417009-3cad-4a1c-b0aa-0c5637e00227
+    TargetNodeGuid: 51448ecd-b9e9-4856-b72d-4d4bb398ef3a
+  - BaseNodeGuid: 14c201ad-97ef-461c-9569-277f77d39055
+    TargetNodeGuid: d40c709a-9603-4cca-b1de-7aef10696ded
+  - BaseNodeGuid: 51448ecd-b9e9-4856-b72d-4d4bb398ef3a
+    TargetNodeGuid: 4268976d-85db-4c37-a4c7-69d9f646b33d
+  - BaseNodeGuid: 4268976d-85db-4c37-a4c7-69d9f646b33d
+    TargetNodeGuid: 13ba0bbd-a130-4021-9cb1-c3265703ce9a
+  - BaseNodeGuid: 13ba0bbd-a130-4021-9cb1-c3265703ce9a
+    TargetNodeGuid: 36c38c77-685d-40d9-817e-0d134acfba4e
+  - BaseNodeGuid: 36c38c77-685d-40d9-817e-0d134acfba4e
+    TargetNodeGuid: 947e96d6-08b2-49d6-b8cd-434c4ff36a61
+  - BaseNodeGuid: 56a4de34-2435-41d0-8a93-b39ccef0d9d6
+    TargetNodeGuid: 15b52a42-0c1e-4d8f-b3c9-8d39f2c0fd1a
+  - BaseNodeGuid: 98a27191-ef57-49f7-bb98-37fbaa05adfd
+    TargetNodeGuid: 69e9e8c4-770e-49f7-9318-a461de341306
+  - BaseNodeGuid: 69e9e8c4-770e-49f7-9318-a461de341306
+    TargetNodeGuid: d404ed89-971b-4571-bed6-e72e3c4fed04
+  - BaseNodeGuid: 6f31389c-a909-4109-ba41-72be8b42e01c
+    TargetNodeGuid: c5be9c9c-733e-42da-985f-ab7804afc45c
+  - BaseNodeGuid: c5be9c9c-733e-42da-985f-ab7804afc45c
+    TargetNodeGuid: 80aa262f-261f-4d16-a141-7e6afee1d192
+  - BaseNodeGuid: 80aa262f-261f-4d16-a141-7e6afee1d192
+    TargetNodeGuid: 256d2e4f-0742-49ec-ad1a-5cff5a0e2f8d
+  - BaseNodeGuid: aaaeecfd-a812-49dc-b236-f2315ac55a3f
+    TargetNodeGuid: b29ef727-13cc-4b78-bc47-914d501587f6
+  - BaseNodeGuid: c2a01424-318d-4440-bb23-de774718e1d4
+    TargetNodeGuid: e28a1603-6b51-45dd-99e2-db9b2f1c5127
+  - BaseNodeGuid: 8dd103ce-cdfb-46c8-ac2b-14e9defbf34f
+    TargetNodeGuid: 596fab18-3587-41e7-b46f-394214ca4c53
+  - BaseNodeGuid: b08ac749-523f-4c66-934e-6412301afa8b
+    TargetNodeGuid: 27bec458-dd54-4d51-8f10-69738aad4356
+  - BaseNodeGuid: 10799e20-51aa-4dd2-91ee-667a0ac1d608
+    TargetNodeGuid: b6d2de2e-27ab-4628-b8f5-eb9f046be59b
+  - BaseNodeGuid: b6d2de2e-27ab-4628-b8f5-eb9f046be59b
+    TargetNodeGuid: 2d099c3a-7855-4547-9f8d-a91d0e5ad0f5
+  - BaseNodeGuid: 5799e9ad-5556-420f-83d3-f25cdef31984
+    TargetNodeGuid: 10799e20-51aa-4dd2-91ee-667a0ac1d608
+  - BaseNodeGuid: 2d099c3a-7855-4547-9f8d-a91d0e5ad0f5
+    TargetNodeGuid: 6725bb0d-a0ac-4ae5-932f-88a5f7815bff
+  - BaseNodeGuid: 889d77db-0b03-4cb2-9c5e-9b57a038591a
+    TargetNodeGuid: e30e970a-c2f2-4da4-9f68-02d6ad41978b
+  - BaseNodeGuid: e593caf8-61c4-432d-bf5a-d18a54bdd3e4
+    TargetNodeGuid: 0e2a87dd-9e36-4982-9cc8-1fa1f2c4855c
+  - BaseNodeGuid: 0e2a87dd-9e36-4982-9cc8-1fa1f2c4855c
+    TargetNodeGuid: 889d77db-0b03-4cb2-9c5e-9b57a038591a
+  - BaseNodeGuid: 2b2730a3-7ffe-4b9c-9a7f-c849429bccdc
+    TargetNodeGuid: 5a26d83a-40c5-4f1a-811e-2376b6e81678
+  - BaseNodeGuid: 5a26d83a-40c5-4f1a-811e-2376b6e81678
+    TargetNodeGuid: f022e2a2-15f1-40fc-b843-62ce24145ddd
+  - BaseNodeGuid: f022e2a2-15f1-40fc-b843-62ce24145ddd
+    TargetNodeGuid: eddfc4e9-5b55-404d-821e-de94d0c31563
+  - BaseNodeGuid: d9c314a7-24f5-4203-90d5-7f3a3bbe4efc
+    TargetNodeGuid: b21c8a35-3336-4aa8-8dd3-fe303291dbe8
+  - BaseNodeGuid: afe10fd6-7fd1-4dff-be03-f0dcef230075
+    TargetNodeGuid: 230c5517-3fcb-4ff9-baa6-ff8750b9e710
+  - BaseNodeGuid: 74940915-9b83-4662-86cc-554f7a2a0425
+    TargetNodeGuid: b7a52a6b-395f-49f0-a1fe-bbd1a4077d7f
+  - BaseNodeGuid: f6091181-d4f6-4507-ba44-4b9fc0976f31
+    TargetNodeGuid: 743d502c-39cc-4042-a79e-79d093d8ec70
+  - BaseNodeGuid: 2cb16aba-4380-4416-81a0-13ec954b90ec
+    TargetNodeGuid: 4c24bda4-f11b-4006-8434-09f5341194fa
+  - BaseNodeGuid: b7a52a6b-395f-49f0-a1fe-bbd1a4077d7f
+    TargetNodeGuid: f6091181-d4f6-4507-ba44-4b9fc0976f31
+  - BaseNodeGuid: 743d502c-39cc-4042-a79e-79d093d8ec70
+    TargetNodeGuid: 2cb16aba-4380-4416-81a0-13ec954b90ec
+  - BaseNodeGuid: d1aa0dd1-4d9a-493d-b34b-99d9ade0d4df
+    TargetNodeGuid: 97a0477d-94a0-47b9-8b0a-a9f91e165d94
+  - BaseNodeGuid: 97a0477d-94a0-47b9-8b0a-a9f91e165d94
+    TargetNodeGuid: e1d94c92-976a-4b10-be66-ec79d98a9f1f
+  - BaseNodeGuid: 50edec2e-99b9-44ec-ac29-02015f80d4bb
+    TargetNodeGuid: 9a256523-c879-4880-9865-cf8ff232ecc1
+  - BaseNodeGuid: cd77deb8-3945-4cfc-b568-e0720cd1d252
+    TargetNodeGuid: 89cf2061-03fc-4d81-a6e2-c25c50b932f5
+  - BaseNodeGuid: bab065bb-1ac8-457e-9b37-f49cad578904
+    TargetNodeGuid: 8db97e50-dcad-422a-8bfb-37604b905deb
+  - BaseNodeGuid: 8db97e50-dcad-422a-8bfb-37604b905deb
+    TargetNodeGuid: eb4b59ea-d6db-462a-ab79-6ce964c1f8b3
+  - BaseNodeGuid: 2b726a9a-379b-4240-b03c-c5cecb63eb4a
+    TargetNodeGuid: c38b562b-db0c-47e3-8bd4-0b722ee556b3
+  - BaseNodeGuid: c38b562b-db0c-47e3-8bd4-0b722ee556b3
+    TargetNodeGuid: 63862d85-b985-4f3d-a199-539ec221a605
+  - BaseNodeGuid: 9782141b-bee6-4b93-9c2b-d6357eb16d2e
+    TargetNodeGuid: 11f00d9c-4201-46e2-8131-932a9aa0d966
+  - BaseNodeGuid: 11f00d9c-4201-46e2-8131-932a9aa0d966
+    TargetNodeGuid: c92b8592-c822-4de5-a75c-bc614fb5032d
+  - BaseNodeGuid: 63b63f04-1b4e-4736-a7c8-cf86e0725f9f
+    TargetNodeGuid: 45304721-2fd1-4121-ba3a-020c3736a6fe
+  - BaseNodeGuid: 45304721-2fd1-4121-ba3a-020c3736a6fe
+    TargetNodeGuid: 21a433d0-c592-4f6a-a4a1-e1d8ca2ff46f
+  - BaseNodeGuid: 05aff158-2b5d-4f46-8828-930fba9fc154
+    TargetNodeGuid: 5b98e263-6ac8-4714-b60b-d31c4072fa16
+  - BaseNodeGuid: 1d9f2ebf-7cda-4be9-b4b8-fae26398f6b2
+    TargetNodeGuid: cd21f4c8-f698-450b-baa0-d30fdf4a672a
+  - BaseNodeGuid: 5b98e263-6ac8-4714-b60b-d31c4072fa16
+    TargetNodeGuid: 1d9f2ebf-7cda-4be9-b4b8-fae26398f6b2
+  - BaseNodeGuid: f851bab1-4ce8-4c2c-a854-b8b8671c8063
+    TargetNodeGuid: 4ed24129-8c7b-407c-a49b-80cd4fbe3925
+  - BaseNodeGuid: 4ed24129-8c7b-407c-a49b-80cd4fbe3925
+    TargetNodeGuid: 3e938e24-22d4-4882-9aba-9f88854c5b14
+  - BaseNodeGuid: 3e938e24-22d4-4882-9aba-9f88854c5b14
+    TargetNodeGuid: 4d68df3a-886d-4eb4-a84c-e7c9d6fb4c40
+  - BaseNodeGuid: 7c4bd138-c10d-48df-80ab-8a3c12a4cac7
+    TargetNodeGuid: 69c0b74d-0fc3-4c30-aa86-dd636c397ea0
+  - BaseNodeGuid: 69c0b74d-0fc3-4c30-aa86-dd636c397ea0
+    TargetNodeGuid: 3c9311d7-a3a7-4716-ac17-2935be65fc47
+  - BaseNodeGuid: 58453682-c23e-4d2f-98c8-04208543dc8c
+    TargetNodeGuid: 0fe34481-0951-4d90-b204-d193bbfddb42
+  - BaseNodeGuid: 0fe34481-0951-4d90-b204-d193bbfddb42
+    TargetNodeGuid: ba41ef23-a4a3-4957-8bba-dde6b116aedf
+  - BaseNodeGuid: ba41ef23-a4a3-4957-8bba-dde6b116aedf
+    TargetNodeGuid: 0817bb24-334c-42b7-99bd-b8565b6b5c4a
+  - BaseNodeGuid: 0817bb24-334c-42b7-99bd-b8565b6b5c4a
+    TargetNodeGuid: 1c1cf498-e035-460b-9834-ca55e0b0e655
+  - BaseNodeGuid: 13e15934-52df-4644-828c-b3964cacbe8c
+    TargetNodeGuid: 8cfa8c8b-6591-48a8-b8fb-2de221cd83e9
+  - BaseNodeGuid: 8cfa8c8b-6591-48a8-b8fb-2de221cd83e9
+    TargetNodeGuid: fe746301-fa34-40b3-b41d-79e047b80de9
+  - BaseNodeGuid: fe746301-fa34-40b3-b41d-79e047b80de9
+    TargetNodeGuid: 45d18fb3-38d0-4b44-b041-462b0719c2c7
+  - BaseNodeGuid: 07cb81fb-96d6-4eff-ad19-3d255c1f5559
+    TargetNodeGuid: 13e15934-52df-4644-828c-b3964cacbe8c
+  - BaseNodeGuid: 96913296-6ee7-49e1-88ad-9648c0594ed3
+    TargetNodeGuid: 5f24465f-72a6-4ccf-8bb6-b6ec56cbfa20
+  - BaseNodeGuid: ab87abba-c53f-41c6-a9ef-c2143fc6e49c
+    TargetNodeGuid: 96913296-6ee7-49e1-88ad-9648c0594ed3
+  - BaseNodeGuid: 5f24465f-72a6-4ccf-8bb6-b6ec56cbfa20
+    TargetNodeGuid: b366ccde-58f5-4a5e-acf2-5106309073b6
+  - BaseNodeGuid: b366ccde-58f5-4a5e-acf2-5106309073b6
+    TargetNodeGuid: 3822bd2b-5c67-49d8-8b2d-611b99fd74d6
+  - BaseNodeGuid: 1f6a9caf-4a7e-43ae-aa36-89f14d62f749
+    TargetNodeGuid: f8d00618-674b-45e5-ad30-d1886b7c95bc
+  - BaseNodeGuid: bc631f39-5b08-4ac9-8cb4-58048e351c8a
+    TargetNodeGuid: b3851801-d817-443e-bdc2-c8a8e943bf96
+  - BaseNodeGuid: b3851801-d817-443e-bdc2-c8a8e943bf96
+    TargetNodeGuid: 1700e1b4-9f57-41e7-b1e5-8e6b124a9ad9
+  - BaseNodeGuid: 1700e1b4-9f57-41e7-b1e5-8e6b124a9ad9
+    TargetNodeGuid: f781f0c6-3428-4995-a06f-f653ecbf13b3
+  - BaseNodeGuid: f8d00618-674b-45e5-ad30-d1886b7c95bc
+    TargetNodeGuid: ee14120d-52f7-4e7e-9bf2-ecce60f8a596
+  - BaseNodeGuid: eda3051e-a728-43f5-8563-52bc7dfaeef6
+    TargetNodeGuid: bc631f39-5b08-4ac9-8cb4-58048e351c8a
+  - BaseNodeGuid: f781f0c6-3428-4995-a06f-f653ecbf13b3
+    TargetNodeGuid: f92e66fd-a724-4236-9933-56b34a454d2c
+  - BaseNodeGuid: ee14120d-52f7-4e7e-9bf2-ecce60f8a596
+    TargetNodeGuid: eda3051e-a728-43f5-8563-52bc7dfaeef6
+  - BaseNodeGuid: 32c2c081-46f8-4b35-87ac-13b722fa758b
+    TargetNodeGuid: d17e3c0c-c44f-4133-b26e-02c8fb23f6eb
+  - BaseNodeGuid: d17e3c0c-c44f-4133-b26e-02c8fb23f6eb
+    TargetNodeGuid: 95fc8da6-fb78-498f-8d4b-02675d7f657d
+  - BaseNodeGuid: 95fc8da6-fb78-498f-8d4b-02675d7f657d
+    TargetNodeGuid: 208ba16b-64dc-4d7a-916f-3056a5ff5abd
+  - BaseNodeGuid: 208ba16b-64dc-4d7a-916f-3056a5ff5abd
+    TargetNodeGuid: ade0ea22-a3cc-43c1-acd9-5db53152a6fe
+  - BaseNodeGuid: ade0ea22-a3cc-43c1-acd9-5db53152a6fe
+    TargetNodeGuid: 4e16c751-c093-44fe-942f-c4baf9b29c2e
+  - BaseNodeGuid: 4e16c751-c093-44fe-942f-c4baf9b29c2e
+    TargetNodeGuid: 14c201ad-97ef-461c-9569-277f77d39055
+  - BaseNodeGuid: 947e96d6-08b2-49d6-b8cd-434c4ff36a61
+    TargetNodeGuid: 56a4de34-2435-41d0-8a93-b39ccef0d9d6
+  - BaseNodeGuid: 15b52a42-0c1e-4d8f-b3c9-8d39f2c0fd1a
+    TargetNodeGuid: af250dfe-8332-41ad-baf8-cb1d6246efc1
+  - BaseNodeGuid: af250dfe-8332-41ad-baf8-cb1d6246efc1
+    TargetNodeGuid: ffeac53f-8ad1-4a8d-a686-dcd5745fd592
+  - BaseNodeGuid: ffeac53f-8ad1-4a8d-a686-dcd5745fd592
+    TargetNodeGuid: 98a27191-ef57-49f7-bb98-37fbaa05adfd
+  - BaseNodeGuid: d404ed89-971b-4571-bed6-e72e3c4fed04
+    TargetNodeGuid: e566bc6b-23b5-4262-9b5d-198b9f47d35b
+  - BaseNodeGuid: e566bc6b-23b5-4262-9b5d-198b9f47d35b
+    TargetNodeGuid: 3249007d-373a-42f6-b9f2-339f78656b68
+  - BaseNodeGuid: 3249007d-373a-42f6-b9f2-339f78656b68
+    TargetNodeGuid: 6f31389c-a909-4109-ba41-72be8b42e01c
+  - BaseNodeGuid: 256d2e4f-0742-49ec-ad1a-5cff5a0e2f8d
+    TargetNodeGuid: 12df7842-6fae-4e60-b4ea-25968b52e32d
+  - BaseNodeGuid: 12df7842-6fae-4e60-b4ea-25968b52e32d
+    TargetNodeGuid: aaaeecfd-a812-49dc-b236-f2315ac55a3f
+  - BaseNodeGuid: b29ef727-13cc-4b78-bc47-914d501587f6
+    TargetNodeGuid: 5982e56d-44e8-4ccb-86c8-7cb8e9b8038c
+  - BaseNodeGuid: 5982e56d-44e8-4ccb-86c8-7cb8e9b8038c
+    TargetNodeGuid: 9ec4b060-a220-4783-a8bd-799c1ba8fdf1
+  - BaseNodeGuid: 9ec4b060-a220-4783-a8bd-799c1ba8fdf1
+    TargetNodeGuid: c2a01424-318d-4440-bb23-de774718e1d4
+  - BaseNodeGuid: e28a1603-6b51-45dd-99e2-db9b2f1c5127
+    TargetNodeGuid: 8dd103ce-cdfb-46c8-ac2b-14e9defbf34f
+  - BaseNodeGuid: 5e3b8a38-1a54-48a7-b32f-a626cbe7eac5
+    TargetNodeGuid: b08ac749-523f-4c66-934e-6412301afa8b
+  - BaseNodeGuid: 596fab18-3587-41e7-b46f-394214ca4c53
+    TargetNodeGuid: 5e3b8a38-1a54-48a7-b32f-a626cbe7eac5
+  - BaseNodeGuid: 27bec458-dd54-4d51-8f10-69738aad4356
+    TargetNodeGuid: 1d5ae2dd-eed1-41f1-a56c-23ea5a31bc60
+  - BaseNodeGuid: 1d5ae2dd-eed1-41f1-a56c-23ea5a31bc60
+    TargetNodeGuid: 10d1c531-b5ad-435a-9f34-f55384230cee
+  - BaseNodeGuid: 10d1c531-b5ad-435a-9f34-f55384230cee
+    TargetNodeGuid: 5799e9ad-5556-420f-83d3-f25cdef31984
+  - BaseNodeGuid: 6725bb0d-a0ac-4ae5-932f-88a5f7815bff
+    TargetNodeGuid: e593caf8-61c4-432d-bf5a-d18a54bdd3e4
+  - BaseNodeGuid: 80fe4057-9337-451e-ab91-7ff05188c603
+    TargetNodeGuid: 2b2730a3-7ffe-4b9c-9a7f-c849429bccdc
+  - BaseNodeGuid: e30e970a-c2f2-4da4-9f68-02d6ad41978b
+    TargetNodeGuid: 80fe4057-9337-451e-ab91-7ff05188c603
+  - BaseNodeGuid: eddfc4e9-5b55-404d-821e-de94d0c31563
+    TargetNodeGuid: d9c314a7-24f5-4203-90d5-7f3a3bbe4efc
+  - BaseNodeGuid: 4fc4c4cb-f1aa-45d5-958a-9142cbab67f7
+    TargetNodeGuid: b60b3105-a197-434f-8a8e-ec70fe300f35
+  - BaseNodeGuid: b21c8a35-3336-4aa8-8dd3-fe303291dbe8
+    TargetNodeGuid: 88b7655a-a8e3-4d73-ae8f-d47e8cb54639
+  - BaseNodeGuid: 88b7655a-a8e3-4d73-ae8f-d47e8cb54639
+    TargetNodeGuid: d4032afb-5860-4772-8c41-740e93381883
+  - BaseNodeGuid: 4dcea189-b579-4476-b6fc-5948c66f4e7d
+    TargetNodeGuid: afe10fd6-7fd1-4dff-be03-f0dcef230075
+  - BaseNodeGuid: d4032afb-5860-4772-8c41-740e93381883
+    TargetNodeGuid: 4dcea189-b579-4476-b6fc-5948c66f4e7d
+  - BaseNodeGuid: 230c5517-3fcb-4ff9-baa6-ff8750b9e710
+    TargetNodeGuid: bc296b40-8d43-4f8e-a668-ec56549b7cc1
+  - BaseNodeGuid: bc296b40-8d43-4f8e-a668-ec56549b7cc1
+    TargetNodeGuid: 74940915-9b83-4662-86cc-554f7a2a0425
+  - BaseNodeGuid: 4c24bda4-f11b-4006-8434-09f5341194fa
+    TargetNodeGuid: d1aa0dd1-4d9a-493d-b34b-99d9ade0d4df
+  - BaseNodeGuid: e1d94c92-976a-4b10-be66-ec79d98a9f1f
+    TargetNodeGuid: 674a4747-c6cc-4d80-84de-2945cf61d18b
+  - BaseNodeGuid: 674a4747-c6cc-4d80-84de-2945cf61d18b
+    TargetNodeGuid: 50edec2e-99b9-44ec-ac29-02015f80d4bb
+  - BaseNodeGuid: 9a256523-c879-4880-9865-cf8ff232ecc1
+    TargetNodeGuid: cd77deb8-3945-4cfc-b568-e0720cd1d252
+  - BaseNodeGuid: 89cf2061-03fc-4d81-a6e2-c25c50b932f5
+    TargetNodeGuid: da7fa3eb-9cba-480c-afb0-bc27df0bb5d2
+  - BaseNodeGuid: da7fa3eb-9cba-480c-afb0-bc27df0bb5d2
+    TargetNodeGuid: df1090de-3bd2-4ca8-9ae6-2d8121280e4c
+  - BaseNodeGuid: df1090de-3bd2-4ca8-9ae6-2d8121280e4c
+    TargetNodeGuid: fc9af532-2f9c-4b50-9507-b015b3fa4292
+  - BaseNodeGuid: a4672805-6579-47b4-b598-f6eff2318a59
+    TargetNodeGuid: f016dd97-9272-432c-97ad-b983c551a544
+  - BaseNodeGuid: f016dd97-9272-432c-97ad-b983c551a544
+    TargetNodeGuid: bab065bb-1ac8-457e-9b37-f49cad578904
+  - BaseNodeGuid: fc9af532-2f9c-4b50-9507-b015b3fa4292
+    TargetNodeGuid: a4672805-6579-47b4-b598-f6eff2318a59
+  - BaseNodeGuid: eb4b59ea-d6db-462a-ab79-6ce964c1f8b3
+    TargetNodeGuid: 2b726a9a-379b-4240-b03c-c5cecb63eb4a
+  - BaseNodeGuid: 63862d85-b985-4f3d-a199-539ec221a605
+    TargetNodeGuid: 9782141b-bee6-4b93-9c2b-d6357eb16d2e
+  - BaseNodeGuid: c92b8592-c822-4de5-a75c-bc614fb5032d
+    TargetNodeGuid: 63b63f04-1b4e-4736-a7c8-cf86e0725f9f
+  - BaseNodeGuid: 21a433d0-c592-4f6a-a4a1-e1d8ca2ff46f
+    TargetNodeGuid: 0adfdc5b-03e8-4c30-bc15-9448fb6fbccf
+  - BaseNodeGuid: 0adfdc5b-03e8-4c30-bc15-9448fb6fbccf
+    TargetNodeGuid: bb9021e3-22af-4888-a7c3-80d111dabb37
+  - BaseNodeGuid: bb9021e3-22af-4888-a7c3-80d111dabb37
+    TargetNodeGuid: 05aff158-2b5d-4f46-8828-930fba9fc154
+  - BaseNodeGuid: cd21f4c8-f698-450b-baa0-d30fdf4a672a
+    TargetNodeGuid: b8ce0ed8-74b5-411e-8ab8-9c39878d54a5
+  - BaseNodeGuid: b8ce0ed8-74b5-411e-8ab8-9c39878d54a5
+    TargetNodeGuid: f851bab1-4ce8-4c2c-a854-b8b8671c8063
+  - BaseNodeGuid: 4d68df3a-886d-4eb4-a84c-e7c9d6fb4c40
+    TargetNodeGuid: 6a36611f-0e9f-4db1-9fba-0738ea8d0ee8
+  - BaseNodeGuid: 6a36611f-0e9f-4db1-9fba-0738ea8d0ee8
+    TargetNodeGuid: 7c4bd138-c10d-48df-80ab-8a3c12a4cac7
+  - BaseNodeGuid: 3c9311d7-a3a7-4716-ac17-2935be65fc47
+    TargetNodeGuid: fc3dd4f5-3cd3-42bb-88d8-2749d59e6739
+  - BaseNodeGuid: fc3dd4f5-3cd3-42bb-88d8-2749d59e6739
+    TargetNodeGuid: 22f4fb74-2f05-4fb6-8fd2-48c3390b1c63
+  - BaseNodeGuid: 22f4fb74-2f05-4fb6-8fd2-48c3390b1c63
+    TargetNodeGuid: 216d0868-5517-41e3-9a9d-6382f6deca1c
+  - BaseNodeGuid: 216d0868-5517-41e3-9a9d-6382f6deca1c
+    TargetNodeGuid: 27d46409-72c7-4bb8-8c75-52d0d0ec396a
+  - BaseNodeGuid: 27d46409-72c7-4bb8-8c75-52d0d0ec396a
+    TargetNodeGuid: 8c1c6a80-1b7f-4f2b-986c-f598c57fc0e3
+  - BaseNodeGuid: 8c1c6a80-1b7f-4f2b-986c-f598c57fc0e3
+    TargetNodeGuid: d7ab5803-20ab-4f35-abbc-d87277912970
+  - BaseNodeGuid: d7ab5803-20ab-4f35-abbc-d87277912970
+    TargetNodeGuid: dd26f838-185d-4cb6-bc22-3038a1b849c5
+  - BaseNodeGuid: dd26f838-185d-4cb6-bc22-3038a1b849c5
+    TargetNodeGuid: c3ade5ad-4f82-4638-8209-2fcf6afbbd53
+  - BaseNodeGuid: c3ade5ad-4f82-4638-8209-2fcf6afbbd53
+    TargetNodeGuid: dacd5958-6713-43bb-9c63-3f2cf529537f
+  - BaseNodeGuid: b5f39afa-3d62-43c8-a21a-91b2decbeecf
+    TargetNodeGuid: c193578c-05b4-4ca6-91bb-405cf4e25593
+  - BaseNodeGuid: bd0c714d-dd83-403f-b3f2-ee01b4c0ea45
+    TargetNodeGuid: 6e092b04-729f-45ef-9521-9e12c2b7a4ae
+  - BaseNodeGuid: dacd5958-6713-43bb-9c63-3f2cf529537f
+    TargetNodeGuid: b5f39afa-3d62-43c8-a21a-91b2decbeecf
+  - BaseNodeGuid: c193578c-05b4-4ca6-91bb-405cf4e25593
+    TargetNodeGuid: bd0c714d-dd83-403f-b3f2-ee01b4c0ea45
+  - BaseNodeGuid: 6e092b04-729f-45ef-9521-9e12c2b7a4ae
+    TargetNodeGuid: cd337563-a174-4cb2-becb-daf5adee4092
+  - BaseNodeGuid: cd337563-a174-4cb2-becb-daf5adee4092
+    TargetNodeGuid: 58453682-c23e-4d2f-98c8-04208543dc8c
+  - BaseNodeGuid: 1c1cf498-e035-460b-9834-ca55e0b0e655
+    TargetNodeGuid: 7529c99b-df91-4e9e-b232-0a656bbf2f14
+  - BaseNodeGuid: 7529c99b-df91-4e9e-b232-0a656bbf2f14
+    TargetNodeGuid: e49fc9d3-bc0c-44b1-870c-5b0bc1acb5a4
+  - BaseNodeGuid: e49fc9d3-bc0c-44b1-870c-5b0bc1acb5a4
+    TargetNodeGuid: 11e30ef1-1b22-4b8c-90aa-22686401711a
+  - BaseNodeGuid: 11e30ef1-1b22-4b8c-90aa-22686401711a
+    TargetNodeGuid: 59ed3f75-bd45-4c72-ad07-2d46c35d744c
+  - BaseNodeGuid: 59ed3f75-bd45-4c72-ad07-2d46c35d744c
+    TargetNodeGuid: 74a5907e-91e0-4c8d-8dc4-445363338ae2
+  - BaseNodeGuid: 74a5907e-91e0-4c8d-8dc4-445363338ae2
+    TargetNodeGuid: 771652ff-99e7-4bfd-8494-ecf647910a9c
+  - BaseNodeGuid: 771652ff-99e7-4bfd-8494-ecf647910a9c
+    TargetNodeGuid: 07cb81fb-96d6-4eff-ad19-3d255c1f5559
+  - BaseNodeGuid: 45d18fb3-38d0-4b44-b041-462b0719c2c7
+    TargetNodeGuid: 82281c18-3018-4032-8f19-a82c0c7d9f6d
+  - BaseNodeGuid: 82281c18-3018-4032-8f19-a82c0c7d9f6d
+    TargetNodeGuid: ed423235-84a4-4a08-92f5-1f0cd8f6bd72
+  - BaseNodeGuid: ed423235-84a4-4a08-92f5-1f0cd8f6bd72
+    TargetNodeGuid: 6a2e0755-e7b3-4f50-9bc4-110137e935d6
+  - BaseNodeGuid: 6a2e0755-e7b3-4f50-9bc4-110137e935d6
+    TargetNodeGuid: ab87abba-c53f-41c6-a9ef-c2143fc6e49c
+  - BaseNodeGuid: 3822bd2b-5c67-49d8-8b2d-611b99fd74d6
+    TargetNodeGuid: 1f6a9caf-4a7e-43ae-aa36-89f14d62f749
+  DialogueChoiceNodeDatas:
+  - NodeGuid: 32c2c081-46f8-4b35-87ac-13b722fa758b
+    Position: {x: 1875, y: 425}
+    DialogueNodePorts:
+    - PortGuid: 55d648dd-6d60-427e-b53b-39e797204036
+      InputGuid: d17e3c0c-c44f-4133-b26e-02c8fb23f6eb
+      OutputGuid: 32c2c081-46f8-4b35-87ac-13b722fa758b
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: This will be my loneliest Christmas ever
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: d17e3c0c-c44f-4133-b26e-02c8fb23f6eb
+    Position: {x: 2175, y: 425}
+    DialogueNodePorts:
+    - PortGuid: ad38692f-686f-49da-8f0c-e5b3894d9f14
+      InputGuid: 95fc8da6-fb78-498f-8d4b-02675d7f657d
+      OutputGuid: d17e3c0c-c44f-4133-b26e-02c8fb23f6eb
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: My wife is on the other side of the world... having
+          the time of her life
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 95fc8da6-fb78-498f-8d4b-02675d7f657d
+    Position: {x: 2475, y: 425}
+    DialogueNodePorts:
+    - PortGuid: dc094057-0fc6-4a3c-9675-f04da4aa154a
+      InputGuid: 208ba16b-64dc-4d7a-916f-3056a5ff5abd
+      OutputGuid: 95fc8da6-fb78-498f-8d4b-02675d7f657d
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: And I'm here. Stuck in this bed
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 208ba16b-64dc-4d7a-916f-3056a5ff5abd
+    Position: {x: 2775, y: 425}
+    DialogueNodePorts:
+    - PortGuid: 0901790a-5e39-4c62-98c8-68320d13b918
+      InputGuid: ade0ea22-a3cc-43c1-acd9-5db53152a6fe
+      OutputGuid: 208ba16b-64dc-4d7a-916f-3056a5ff5abd
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: "Barely able to walk 10 steps before collapsing because
+          of the pain\u2026"
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: ade0ea22-a3cc-43c1-acd9-5db53152a6fe
+    Position: {x: 3075, y: 425}
+    DialogueNodePorts:
+    - PortGuid: 438cd9fe-627e-4fa3-8207-580537c06833
+      InputGuid: 4e16c751-c093-44fe-942f-c4baf9b29c2e
+      OutputGuid: ade0ea22-a3cc-43c1-acd9-5db53152a6fe
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Merry Christmas to me
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 4e16c751-c093-44fe-942f-c4baf9b29c2e
+    Position: {x: 3561, y: 436}
+    DialogueNodePorts:
+    - PortGuid: 1ea44abc-29a1-4cf8-9e84-924223a5d2da
+      InputGuid: 14c201ad-97ef-461c-9569-277f77d39055
+      OutputGuid: 4e16c751-c093-44fe-942f-c4baf9b29c2e
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Uhm thanks doc. You didn't have to really
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 81edd899568472a43a26ef83c31d81a2, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Merry Christmas Eve, Patient 1942
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 1
+    SelectedChoice: []
+  - NodeGuid: 947e96d6-08b2-49d6-b8cd-434c4ff36a61
+    Position: {x: 5742, y: 449}
+    DialogueNodePorts:
+    - PortGuid: bdaa58ab-04d5-47a7-83e9-f2a0b1212948
+      InputGuid: 56a4de34-2435-41d0-8a93-b39ccef0d9d6
+      OutputGuid: 947e96d6-08b2-49d6-b8cd-434c4ff36a61
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Coming
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4633184ded7444943962e7d570a2109f, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Its freezing out here
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 1
+    SelectedChoice: []
+  - NodeGuid: 15b52a42-0c1e-4d8f-b3c9-8d39f2c0fd1a
+    Position: {x: 6579, y: 462}
+    DialogueNodePorts:
+    - PortGuid: 5b89e812-b83d-4046-be8b-369ad8aa30e5
+      InputGuid: af250dfe-8332-41ad-baf8-cb1d6246efc1
+      OutputGuid: 15b52a42-0c1e-4d8f-b3c9-8d39f2c0fd1a
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: "Just took the pill\u2026 I wonder what it will do to
+          me"
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: af250dfe-8332-41ad-baf8-cb1d6246efc1
+    Position: {x: 6879, y: 462}
+    DialogueNodePorts:
+    - PortGuid: ff8c59d1-621e-480f-835f-778976345199
+      InputGuid: ffeac53f-8ad1-4a8d-a686-dcd5745fd592
+      OutputGuid: af250dfe-8332-41ad-baf8-cb1d6246efc1
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Better go to sleep now...
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: ffeac53f-8ad1-4a8d-a686-dcd5745fd592
+    Position: {x: 7179, y: 462}
+    DialogueNodePorts:
+    - PortGuid: 78cfae48-c77b-4369-8ef8-f01e1f1a7811
+      InputGuid: 98a27191-ef57-49f7-bb98-37fbaa05adfd
+      OutputGuid: ffeac53f-8ad1-4a8d-a686-dcd5745fd592
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Its already late
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: d404ed89-971b-4571-bed6-e72e3c4fed04
+    Position: {x: 8124, y: 453}
+    DialogueNodePorts:
+    - PortGuid: a931997b-bb0d-4915-be86-9d6ad1ac29d1
+      InputGuid: e566bc6b-23b5-4262-9b5d-198b9f47d35b
+      OutputGuid: d404ed89-971b-4571-bed6-e72e3c4fed04
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: "Hey, goodmorning\u2026 Merry Christmas"
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Don't tell me you are sleeping in on Christmas morning
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 1
+    SelectedChoice: []
+  - NodeGuid: e566bc6b-23b5-4262-9b5d-198b9f47d35b
+    Position: {x: 8424, y: 453}
+    DialogueNodePorts:
+    - PortGuid: f7e2b28a-fcf8-4144-88eb-4d71699f87b2
+      InputGuid: 3249007d-373a-42f6-b9f2-339f78656b68
+      OutputGuid: e566bc6b-23b5-4262-9b5d-198b9f47d35b
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: '?'
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Don't say that yet
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 1
+    SelectedChoice: []
+  - NodeGuid: 3249007d-373a-42f6-b9f2-339f78656b68
+    Position: {x: 8724, y: 453}
+    DialogueNodePorts:
+    - PortGuid: 52a2be20-a630-4834-b9a0-76f5353acd07
+      InputGuid: 6f31389c-a909-4109-ba41-72be8b42e01c
+      OutputGuid: 3249007d-373a-42f6-b9f2-339f78656b68
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: What did you do?
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I did something crazy
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 1
+    SelectedChoice: []
+  - NodeGuid: 256d2e4f-0742-49ec-ad1a-5cff5a0e2f8d
+    Position: {x: 9665, y: 453}
+    DialogueNodePorts:
+    - PortGuid: 0f334c0b-f94d-462d-aa7a-05422e9a3fec
+      InputGuid: 12df7842-6fae-4e60-b4ea-25968b52e32d
+      OutputGuid: 256d2e4f-0742-49ec-ad1a-5cff5a0e2f8d
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: WHAT! No way
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 12df7842-6fae-4e60-b4ea-25968b52e32d
+    Position: {x: 9988, y: 453}
+    DialogueNodePorts:
+    - PortGuid: 99bc2cf0-cc78-463c-be77-7ad0e0c7159a
+      InputGuid: aaaeecfd-a812-49dc-b236-f2315ac55a3f
+      OutputGuid: 12df7842-6fae-4e60-b4ea-25968b52e32d
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: But my legs...
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I couldn't leave you alone on christmas! Come pick me
+        up!!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 1
+    SelectedChoice: []
+  - NodeGuid: b29ef727-13cc-4b78-bc47-914d501587f6
+    Position: {x: 10799, y: 453}
+    DialogueNodePorts:
+    - PortGuid: c1efada7-6abe-454c-ada3-2007a94bccad
+      InputGuid: 5982e56d-44e8-4ccb-86c8-7cb8e9b8038c
+      OutputGuid: b29ef727-13cc-4b78-bc47-914d501587f6
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Wait my legs
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 5982e56d-44e8-4ccb-86c8-7cb8e9b8038c
+    Position: {x: 11099, y: 453}
+    DialogueNodePorts:
+    - PortGuid: 3c6577e7-dfb4-4141-9adf-c45af1681cfa
+      InputGuid: 9ec4b060-a220-4783-a8bd-799c1ba8fdf1
+      OutputGuid: 5982e56d-44e8-4ccb-86c8-7cb8e9b8038c
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: They feel.... normal
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 9ec4b060-a220-4783-a8bd-799c1ba8fdf1
+    Position: {x: 11589, y: 453}
+    DialogueNodePorts:
+    - PortGuid: afb90b3b-0e15-4822-8f0e-bed72636886f
+      InputGuid: c2a01424-318d-4440-bb23-de774718e1d4
+      OutputGuid: 9ec4b060-a220-4783-a8bd-799c1ba8fdf1
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: "Babe my legs\u2026 They feel normal again"
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: e28a1603-6b51-45dd-99e2-db9b2f1c5127
+    Position: {x: 12089, y: 453}
+    DialogueNodePorts:
+    - PortGuid: fa28043d-10c0-4f6f-89ef-cfb2f6d8dbb1
+      InputGuid: 8dd103ce-cdfb-46c8-ac2b-14e9defbf34f
+      OutputGuid: e28a1603-6b51-45dd-99e2-db9b2f1c5127
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: on my way!
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Now get your fine cheeks in the car and come pick me up
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 1
+    SelectedChoice: []
+  - NodeGuid: 5e3b8a38-1a54-48a7-b32f-a626cbe7eac5
+    Position: {x: 13018, y: 453}
+    DialogueNodePorts:
+    - PortGuid: 31985788-73ab-40a7-befb-863d5fba1da6
+      InputGuid: b08ac749-523f-4c66-934e-6412301afa8b
+      OutputGuid: 5e3b8a38-1a54-48a7-b32f-a626cbe7eac5
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Lily... My wife who I love so dearly is here in my house
+          on Christmas
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 596fab18-3587-41e7-b46f-394214ca4c53
+    Position: {x: 12718, y: 453}
+    DialogueNodePorts:
+    - PortGuid: f366781d-27d4-4ae5-a379-836034923ba1
+      InputGuid: 5e3b8a38-1a54-48a7-b32f-a626cbe7eac5
+      OutputGuid: 596fab18-3587-41e7-b46f-394214ca4c53
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: I can't believe it
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 27bec458-dd54-4d51-8f10-69738aad4356
+    Position: {x: 13518, y: 453}
+    DialogueNodePorts:
+    - PortGuid: 1b29e0c1-72c5-45ff-8090-854605c3c363
+      InputGuid: 1d5ae2dd-eed1-41f1-a56c-23ea5a31bc60
+      OutputGuid: 27bec458-dd54-4d51-8f10-69738aad4356
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: This will be the best Christmas ever
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 1d5ae2dd-eed1-41f1-a56c-23ea5a31bc60
+    Position: {x: 13818, y: 453}
+    DialogueNodePorts:
+    - PortGuid: 0c3afd53-d1ea-46d0-99a5-b7d853088cbf
+      InputGuid: 10d1c531-b5ad-435a-9f34-f55384230cee
+      OutputGuid: 1d5ae2dd-eed1-41f1-a56c-23ea5a31bc60
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: "She went up to the bedroom\u2026"
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 10d1c531-b5ad-435a-9f34-f55384230cee
+    Position: {x: 14118, y: 453}
+    DialogueNodePorts:
+    - PortGuid: ed2b7325-1e9b-43a0-925f-a281b1a3da6d
+      InputGuid: 5799e9ad-5556-420f-83d3-f25cdef31984
+      OutputGuid: 10d1c531-b5ad-435a-9f34-f55384230cee
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: I wonder what she is planning
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 6725bb0d-a0ac-4ae5-932f-88a5f7815bff
+    Position: {x: 15661, y: 463}
+    DialogueNodePorts:
+    - PortGuid: a4e4a98d-cb08-469e-a513-fcdb4b4a03f9
+      InputGuid: e593caf8-61c4-432d-bf5a-d18a54bdd3e4
+      OutputGuid: 6725bb0d-a0ac-4ae5-932f-88a5f7815bff
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: "I missed you too\u2026 everything about you"
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I missed you so much
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 1
+    SelectedChoice: []
+  - NodeGuid: 80fe4057-9337-451e-ab91-7ff05188c603
+    Position: {x: 16861, y: 463}
+    DialogueNodePorts:
+    - PortGuid: c73cbb37-ca99-4d28-860f-d1570965a7f1
+      InputGuid: 2b2730a3-7ffe-4b9c-9a7f-c849429bccdc
+      OutputGuid: 80fe4057-9337-451e-ab91-7ff05188c603
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Are you almost at the groccery store?
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: e30e970a-c2f2-4da4-9f68-02d6ad41978b
+    Position: {x: 16561, y: 463}
+    DialogueNodePorts:
+    - PortGuid: e33db13e-8dd6-45a8-be7d-5ae6c45cfc5c
+      InputGuid: 80fe4057-9337-451e-ab91-7ff05188c603
+      OutputGuid: e30e970a-c2f2-4da4-9f68-02d6ad41978b
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: You know it
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Marking your territory? hihi
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 1
+    SelectedChoice: []
+  - NodeGuid: eddfc4e9-5b55-404d-821e-de94d0c31563
+    Position: {x: 17761, y: 463}
+    DialogueNodePorts:
+    - PortGuid: 4b342d91-ad7a-44ed-a215-9a79692326d7
+      InputGuid: d9c314a7-24f5-4203-90d5-7f3a3bbe4efc
+      OutputGuid: eddfc4e9-5b55-404d-821e-de94d0c31563
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Drive safe
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Roast, potatoes, the works!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 1
+    SelectedChoice: []
+  - NodeGuid: 4fc4c4cb-f1aa-45d5-958a-9142cbab67f7
+    Position: {x: 1195, y: 412}
+    DialogueNodePorts:
+    - PortGuid: ed025932-2a8c-40e5-8592-047436dc7c11
+      InputGuid: b60b3105-a197-434f-8a8e-ec70fe300f35
+      OutputGuid: 4fc4c4cb-f1aa-45d5-958a-9142cbab67f7
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Start the Christmas special
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c7cbc9723ae0f174cba60146f0cc8e0e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Last thing... This story is more focused on NTR... Have
+        fun
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 1
+    SelectedChoice: []
+  - NodeGuid: b21c8a35-3336-4aa8-8dd3-fe303291dbe8
+    Position: {x: 18534, y: 463}
+    DialogueNodePorts:
+    - PortGuid: 19f16e05-75fc-429a-baf6-2d5392e27ddb
+      InputGuid: 88b7655a-a8e3-4d73-ae8f-d47e8cb54639
+      OutputGuid: b21c8a35-3336-4aa8-8dd3-fe303291dbe8
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: She left to get groceries.
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 88b7655a-a8e3-4d73-ae8f-d47e8cb54639
+    Position: {x: 18834, y: 463}
+    DialogueNodePorts:
+    - PortGuid: 1dd16cc6-04c8-43bd-bb32-dab614270b0b
+      InputGuid: d4032afb-5860-4772-8c41-740e93381883
+      OutputGuid: 88b7655a-a8e3-4d73-ae8f-d47e8cb54639
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: I'm just lying here smelling her perfume on the pillows
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 4dcea189-b579-4476-b6fc-5948c66f4e7d
+    Position: {x: 19434, y: 463}
+    DialogueNodePorts:
+    - PortGuid: 334f7393-67c8-472c-af53-2ed3c4a6b507
+      InputGuid: afe10fd6-7fd1-4dff-be03-f0dcef230075
+      OutputGuid: 4dcea189-b579-4476-b6fc-5948c66f4e7d
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: It's perfect
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: d4032afb-5860-4772-8c41-740e93381883
+    Position: {x: 19134, y: 463}
+    DialogueNodePorts:
+    - PortGuid: ba477ef5-0a82-443b-bdc2-a8b0098e1e28
+      InputGuid: 4dcea189-b579-4476-b6fc-5948c66f4e7d
+      OutputGuid: d4032afb-5860-4772-8c41-740e93381883
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: I never thought I'd be this happy again
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 230c5517-3fcb-4ff9-baa6-ff8750b9e710
+    Position: {x: 20253, y: 463}
+    DialogueNodePorts:
+    - PortGuid: 583c011c-1bb0-4449-ae12-26e8a6a4c77e
+      InputGuid: bc296b40-8d43-4f8e-a668-ec56549b7cc1
+      OutputGuid: 230c5517-3fcb-4ff9-baa6-ff8750b9e710
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Who?
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: bc296b40-8d43-4f8e-a668-ec56549b7cc1
+    Position: {x: 20553, y: 463}
+    DialogueNodePorts:
+    - PortGuid: dc6d4379-6a52-4ac3-82b3-be0e419ec07f
+      InputGuid: 74940915-9b83-4662-86cc-554f7a2a0425
+      OutputGuid: bc296b40-8d43-4f8e-a668-ec56549b7cc1
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Oh wow, really?
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Paul! Our wedding photographer!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 1
+    SelectedChoice: []
+  - NodeGuid: 4c24bda4-f11b-4006-8434-09f5341194fa
+    Position: {x: 21881, y: 463}
+    DialogueNodePorts:
+    - PortGuid: b2d856d7-9599-449f-bfe4-533d46c79c2e
+      InputGuid: d1aa0dd1-4d9a-493d-b34b-99d9ade0d4df
+      OutputGuid: 4c24bda4-f11b-4006-8434-09f5341194fa
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: What?
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: e1d94c92-976a-4b10-be66-ec79d98a9f1f
+    Position: {x: 22581, y: 463}
+    DialogueNodePorts:
+    - PortGuid: 171d9a26-63d9-4659-8d3d-80b4fad508b7
+      InputGuid: 674a4747-c6cc-4d80-84de-2945cf61d18b
+      OutputGuid: e1d94c92-976a-4b10-be66-ec79d98a9f1f
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: That's really nice of him.
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: For free! He said consider it a gift for an old client
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 1
+    SelectedChoice: []
+  - NodeGuid: 674a4747-c6cc-4d80-84de-2945cf61d18b
+    Position: {x: 22881, y: 463}
+    DialogueNodePorts:
+    - PortGuid: 34efd82c-5987-421e-80a4-810f8b7eeb45
+      InputGuid: 50edec2e-99b9-44ec-ac29-02015f80d4bb
+      OutputGuid: 674a4747-c6cc-4d80-84de-2945cf61d18b
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: So is he coming to our place... or should I head somewhere?
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 9a256523-c879-4880-9865-cf8ff232ecc1
+    Position: {x: 23381, y: 463}
+    DialogueNodePorts:
+    - PortGuid: 84c6c76a-f96b-49dd-b3b9-d70ad518b9f7
+      InputGuid: cd77deb8-3945-4cfc-b568-e0720cd1d252
+      OutputGuid: 9a256523-c879-4880-9865-cf8ff232ecc1
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Oh okay... Thats still nice of him
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Its best if he just takes pictures of me... He only has
+        time right now he said.... Its christmas after all
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 1
+    SelectedChoice: []
+  - NodeGuid: 89cf2061-03fc-4d81-a6e2-c25c50b932f5
+    Position: {x: 23881, y: 451}
+    DialogueNodePorts:
+    - PortGuid: f5ca113c-1bee-4a8b-ae23-863387b11817
+      InputGuid: da7fa3eb-9cba-480c-afb0-bc27df0bb5d2
+      OutputGuid: 89cf2061-03fc-4d81-a6e2-c25c50b932f5
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Oh okay
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I'll send you the results!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 1
+    SelectedChoice: []
+  - NodeGuid: da7fa3eb-9cba-480c-afb0-bc27df0bb5d2
+    Position: {x: 24316, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 64f1d40f-2627-4524-8a58-89a1273f2f19
+      InputGuid: df1090de-3bd2-4ca8-9ae6-2d8121280e4c
+      OutputGuid: da7fa3eb-9cba-480c-afb0-bc27df0bb5d2
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Paul...
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: df1090de-3bd2-4ca8-9ae6-2d8121280e4c
+    Position: {x: 24616, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 5b0a4539-3ac5-4f74-87da-b98693fb1592
+      InputGuid: fc9af532-2f9c-4b50-9507-b015b3fa4292
+      OutputGuid: df1090de-3bd2-4ca8-9ae6-2d8121280e4c
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Its a bit strange but I guess he is just being nice
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: a4672805-6579-47b4-b598-f6eff2318a59
+    Position: {x: 25216, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 58abe6a8-044d-438a-bc20-8effbf6b5257
+      InputGuid: f016dd97-9272-432c-97ad-b983c551a544
+      OutputGuid: a4672805-6579-47b4-b598-f6eff2318a59
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: But why would only Lily get pictures taken....
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: f016dd97-9272-432c-97ad-b983c551a544
+    Position: {x: 25516, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 13c4cbe5-2252-4043-9c98-53a9aec2ed3e
+      InputGuid: bab065bb-1ac8-457e-9b37-f49cad578904
+      OutputGuid: f016dd97-9272-432c-97ad-b983c551a544
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Wouldn't it be better if we both took pictures
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: fc9af532-2f9c-4b50-9507-b015b3fa4292
+    Position: {x: 24916, y: 451}
+    DialogueNodePorts:
+    - PortGuid: d02d3e03-6cb0-4ed5-b6ce-24e779a4a0b6
+      InputGuid: a4672805-6579-47b4-b598-f6eff2318a59
+      OutputGuid: fc9af532-2f9c-4b50-9507-b015b3fa4292
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: He took great photos at the wedding
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: eb4b59ea-d6db-462a-ab79-6ce964c1f8b3
+    Position: {x: 26494, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 9f5a5ab3-d7a6-46f6-8a33-1e871753401b
+      InputGuid: 2b726a9a-379b-4240-b03c-c5cecb63eb4a
+      OutputGuid: eb4b59ea-d6db-462a-ab79-6ce964c1f8b3
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: You look beautiful, Lily
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: It looks so cool with the snow
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 1
+    SelectedChoice: []
+  - NodeGuid: 63862d85-b985-4f3d-a199-539ec221a605
+    Position: {x: 27194, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 82179d61-d8da-4db1-abda-941d4aa6732a
+      InputGuid: 9782141b-bee6-4b93-9c2b-d6357eb16d2e
+      OutputGuid: 63862d85-b985-4f3d-a199-539ec221a605
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Intimate? In the snow?
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: To show the passion we have
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 1
+    SelectedChoice: []
+  - NodeGuid: c92b8592-c822-4de5-a75c-bc614fb5032d
+    Position: {x: 28108, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 06468cf7-0a3b-45f3-98a6-5ad48a3415b9
+      InputGuid: 63b63f04-1b4e-4736-a7c8-cf86e0725f9f
+      OutputGuid: c92b8592-c822-4de5-a75c-bc614fb5032d
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Lily? You're going to freeze. Put your coat back on
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: He said the camera loves me
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 1
+    SelectedChoice: []
+  - NodeGuid: 21a433d0-c592-4f6a-a4a1-e1d8ca2ff46f
+    Position: {x: 29034, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 3276897c-d1b2-4c3c-a177-225173a4aa19
+      InputGuid: 0adfdc5b-03e8-4c30-bc15-9448fb6fbccf
+      OutputGuid: 21a433d0-c592-4f6a-a4a1-e1d8ca2ff46f
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Something feels wrong.
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 0adfdc5b-03e8-4c30-bc15-9448fb6fbccf
+    Position: {x: 29334, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 89bf2a8f-7db1-4f4f-9cde-8ed3982eace2
+      InputGuid: bb9021e3-22af-4888-a7c3-80d111dabb37
+      OutputGuid: 0adfdc5b-03e8-4c30-bc15-9448fb6fbccf
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Paul can keep me warm...?
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: bb9021e3-22af-4888-a7c3-80d111dabb37
+    Position: {x: 29634, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 128901a2-ce43-4fa8-80b5-16a6826c30e1
+      InputGuid: 05aff158-2b5d-4f46-8828-930fba9fc154
+      OutputGuid: bb9021e3-22af-4888-a7c3-80d111dabb37
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: My chest feels tight...
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: cd21f4c8-f698-450b-baa0-d30fdf4a672a
+    Position: {x: 30682, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 41746657-33fc-484a-afe5-add003da41ca
+      InputGuid: b8ce0ed8-74b5-411e-8ab8-9c39878d54a5
+      OutputGuid: cd21f4c8-f698-450b-baa0-d30fdf4a672a
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: What are you doing Lily?
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: b8ce0ed8-74b5-411e-8ab8-9c39878d54a5
+    Position: {x: 30982, y: 451}
+    DialogueNodePorts:
+    - PortGuid: ce3418c1-e136-44b9-9fae-838a21fec45d
+      InputGuid: f851bab1-4ce8-4c2c-a854-b8b8671c8063
+      OutputGuid: b8ce0ed8-74b5-411e-8ab8-9c39878d54a5
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Its like.... super cold out there
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 4d68df3a-886d-4eb4-a84c-e7c9d6fb4c40
+    Position: {x: 31882, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 4e54c5a6-359d-478b-81cc-4ff83b944602
+      InputGuid: 6a36611f-0e9f-4db1-9fba-0738ea8d0ee8
+      OutputGuid: 4d68df3a-886d-4eb4-a84c-e7c9d6fb4c40
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: LILY! STOP!
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 6a36611f-0e9f-4db1-9fba-0738ea8d0ee8
+    Position: {x: 32182, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 73e15d4b-2550-4d7d-b990-3b6e49edafd7
+      InputGuid: 7c4bd138-c10d-48df-80ab-8a3c12a4cac7
+      OutputGuid: 6a36611f-0e9f-4db1-9fba-0738ea8d0ee8
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: TELL HIM TO BACK OFF!
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 3c9311d7-a3a7-4716-ac17-2935be65fc47
+    Position: {x: 33065, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 7be18622-41f9-4f5f-b6a6-e2e3cc618153
+      InputGuid: fc3dd4f5-3cd3-42bb-88d8-2749d59e6739
+      OutputGuid: 3c9311d7-a3a7-4716-ac17-2935be65fc47
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: NO!!! PAUL!!!
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 72a8606f5b7cb824592f7940cd4da945, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: fc3dd4f5-3cd3-42bb-88d8-2749d59e6739
+    Position: {x: 33365, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 521a4053-d689-43c0-94c8-26f323c693ba
+      InputGuid: 22f4fb74-2f05-4fb6-8fd2-48c3390b1c63
+      OutputGuid: fc3dd4f5-3cd3-42bb-88d8-2749d59e6739
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 'Im... Im... Im '
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 72a8606f5b7cb824592f7940cd4da945, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 22f4fb74-2f05-4fb6-8fd2-48c3390b1c63
+    Position: {x: 33825, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 02faa4dd-653f-4426-a9d9-0368983e8685
+      InputGuid: 216d0868-5517-41e3-9a9d-6382f6deca1c
+      OutputGuid: 22f4fb74-2f05-4fb6-8fd2-48c3390b1c63
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: I need to find my car keys
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 216d0868-5517-41e3-9a9d-6382f6deca1c
+    Position: {x: 34125, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 201fccda-4681-47c5-85b3-83fe3ec0ce1e
+      InputGuid: 27d46409-72c7-4bb8-8c75-52d0d0ec396a
+      OutputGuid: 216d0868-5517-41e3-9a9d-6382f6deca1c
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: I can't breathe
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 27d46409-72c7-4bb8-8c75-52d0d0ec396a
+    Position: {x: 34425, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 92b8af78-9b84-422b-b309-1dac4c6e2b70
+      InputGuid: 8c1c6a80-1b7f-4f2b-986c-f598c57fc0e3
+      OutputGuid: 27d46409-72c7-4bb8-8c75-52d0d0ec396a
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: But Lily took the car
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 8c1c6a80-1b7f-4f2b-986c-f598c57fc0e3
+    Position: {x: 34725, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 3e380d4a-840b-427c-b8c2-1268de001ff8
+      InputGuid: d7ab5803-20ab-4f35-abbc-d87277912970
+      OutputGuid: 8c1c6a80-1b7f-4f2b-986c-f598c57fc0e3
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: The room is spinning
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: d7ab5803-20ab-4f35-abbc-d87277912970
+    Position: {x: 35025, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 454e4765-b463-4dd2-af20-f5dc28ec712e
+      InputGuid: dd26f838-185d-4cb6-bc22-3038a1b849c5
+      OutputGuid: d7ab5803-20ab-4f35-abbc-d87277912970
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: My legs... they won't move. They're heavy again
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: dd26f838-185d-4cb6-bc22-3038a1b849c5
+    Position: {x: 35325, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 4295112e-fd9f-43d5-a0d6-170f605a5b05
+      InputGuid: c3ade5ad-4f82-4638-8209-2fcf6afbbd53
+      OutputGuid: dd26f838-185d-4cb6-bc22-3038a1b849c5
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Did the pill stop working?
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: c3ade5ad-4f82-4638-8209-2fcf6afbbd53
+    Position: {x: 35625, y: 451}
+    DialogueNodePorts:
+    - PortGuid: a5cf48a8-eefd-4834-89c9-fdc730fbcd10
+      InputGuid: dacd5958-6713-43bb-9c63-3f2cf529537f
+      OutputGuid: c3ade5ad-4f82-4638-8209-2fcf6afbbd53
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: What's going on
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: b5f39afa-3d62-43c8-a21a-91b2decbeecf
+    Position: {x: 36225, y: 451}
+    DialogueNodePorts:
+    - PortGuid: e2f6feb0-4463-4a89-858f-cb4640eb6917
+      InputGuid: c193578c-05b4-4ca6-91bb-405cf4e25593
+      OutputGuid: b5f39afa-3d62-43c8-a21a-91b2decbeecf
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: My eye lids feel heavy
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: bd0c714d-dd83-403f-b3f2-ee01b4c0ea45
+    Position: {x: 36825, y: 451}
+    DialogueNodePorts:
+    - PortGuid: cb8b797e-15ed-485a-8217-7cbe929acf82
+      InputGuid: 6e092b04-729f-45ef-9521-9e12c2b7a4ae
+      OutputGuid: bd0c714d-dd83-403f-b3f2-ee01b4c0ea45
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: I need to... I need to close my eyes
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: dacd5958-6713-43bb-9c63-3f2cf529537f
+    Position: {x: 35925, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 2296032b-5b32-4d5d-8631-847985d34a66
+      InputGuid: b5f39afa-3d62-43c8-a21a-91b2decbeecf
+      OutputGuid: dacd5958-6713-43bb-9c63-3f2cf529537f
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: The pain... it's in my head now
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: c193578c-05b4-4ca6-91bb-405cf4e25593
+    Position: {x: 36525, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 495f2838-261c-4977-b6ba-4e48b2985598
+      InputGuid: bd0c714d-dd83-403f-b3f2-ee01b4c0ea45
+      OutputGuid: c193578c-05b4-4ca6-91bb-405cf4e25593
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: But I have to go to Lily
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 6e092b04-729f-45ef-9521-9e12c2b7a4ae
+    Position: {x: 37125, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 9a75db5a-14a8-4bbe-acc2-d15f6c0c6df1
+      InputGuid: cd337563-a174-4cb2-becb-daf5adee4092
+      OutputGuid: 6e092b04-729f-45ef-9521-9e12c2b7a4ae
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Just for a second
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: cd337563-a174-4cb2-becb-daf5adee4092
+    Position: {x: 37425, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 95c9d3c8-e2a5-41fc-a2e1-0edc41cdb6d5
+      InputGuid: 58453682-c23e-4d2f-98c8-04208543dc8c
+      OutputGuid: cd337563-a174-4cb2-becb-daf5adee4092
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Make it stop
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 1c1cf498-e035-460b-9834-ca55e0b0e655
+    Position: {x: 38682, y: 451}
+    DialogueNodePorts:
+    - PortGuid: a685dad9-4ea9-42a7-a70d-59236aaf1fa3
+      InputGuid: 7529c99b-df91-4e9e-b232-0a656bbf2f14
+      OutputGuid: 1c1cf498-e035-460b-9834-ca55e0b0e655
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: I'm awake
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 7529c99b-df91-4e9e-b232-0a656bbf2f14
+    Position: {x: 38982, y: 451}
+    DialogueNodePorts:
+    - PortGuid: ed4246f9-8c7e-4c80-95ae-c1f55926e337
+      InputGuid: e49fc9d3-bc0c-44b1-870c-5b0bc1acb5a4
+      OutputGuid: 7529c99b-df91-4e9e-b232-0a656bbf2f14
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: It hurts. God, it hurts
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: e49fc9d3-bc0c-44b1-870c-5b0bc1acb5a4
+    Position: {x: 39282, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 4aab1204-bd3e-4c3c-9652-10801642487a
+      InputGuid: 11e30ef1-1b22-4b8c-90aa-22686401711a
+      OutputGuid: e49fc9d3-bc0c-44b1-870c-5b0bc1acb5a4
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Wait...
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 11e30ef1-1b22-4b8c-90aa-22686401711a
+    Position: {x: 39582, y: 451}
+    DialogueNodePorts:
+    - PortGuid: f3dc76b3-dbca-45d3-ac2b-d16a4299cad3
+      InputGuid: 59ed3f75-bd45-4c72-ad07-2d46c35d744c
+      OutputGuid: 11e30ef1-1b22-4b8c-90aa-22686401711a
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: LILY!
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 59ed3f75-bd45-4c72-ad07-2d46c35d744c
+    Position: {x: 40160, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 6916905e-caf0-4405-840b-164c3101fbe9
+      InputGuid: 74a5907e-91e0-4c8d-8dc4-445363338ae2
+      OutputGuid: 59ed3f75-bd45-4c72-ad07-2d46c35d744c
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: LILY!
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 74a5907e-91e0-4c8d-8dc4-445363338ae2
+    Position: {x: 40460, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 600d07eb-cf54-499e-b147-c58c7f57d91e
+      InputGuid: 771652ff-99e7-4bfd-8494-ecf647910a9c
+      OutputGuid: 74a5907e-91e0-4c8d-8dc4-445363338ae2
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Are you okay?? Did Paul touch you??
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 771652ff-99e7-4bfd-8494-ecf647910a9c
+    Position: {x: 40760, y: 451}
+    DialogueNodePorts:
+    - PortGuid: b9097e48-8334-435d-89bf-cf5687f10a70
+      InputGuid: 07cb81fb-96d6-4eff-ad19-3d255c1f5559
+      OutputGuid: 771652ff-99e7-4bfd-8494-ecf647910a9c
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Please tell me you're safe!
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 45d18fb3-38d0-4b44-b041-462b0719c2c7
+    Position: {x: 41860, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 4d253efa-58aa-4b68-8bbf-943a555809fb
+      InputGuid: 82281c18-3018-4032-8f19-a82c0c7d9f6d
+      OutputGuid: 45d18fb3-38d0-4b44-b041-462b0719c2c7
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: I...
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: You're sounding crazy.... Did you have a bad dream?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 1
+    SelectedChoice: []
+  - NodeGuid: 82281c18-3018-4032-8f19-a82c0c7d9f6d
+    Position: {x: 42160, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 312122a1-5a8f-4acf-99d7-41ce83b669c7
+      InputGuid: ed423235-84a4-4a08-92f5-1f0cd8f6bd72
+      OutputGuid: 82281c18-3018-4032-8f19-a82c0c7d9f6d
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: I guess it was a dream
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: ed423235-84a4-4a08-92f5-1f0cd8f6bd72
+    Position: {x: 42460, y: 451}
+    DialogueNodePorts:
+    - PortGuid: c3488766-2003-47ad-a870-b91bb459020e
+      InputGuid: 6a2e0755-e7b3-4f50-9bc4-110137e935d6
+      OutputGuid: ed423235-84a4-4a08-92f5-1f0cd8f6bd72
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Yeah it was just a dream.
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Aww, are you okay baby
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 1
+    SelectedChoice: []
+  - NodeGuid: 6a2e0755-e7b3-4f50-9bc4-110137e935d6
+    Position: {x: 42760, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 092b8638-998c-4502-99c2-3ff225972167
+      InputGuid: ab87abba-c53f-41c6-a9ef-c2143fc6e49c
+      OutputGuid: 6a2e0755-e7b3-4f50-9bc4-110137e935d6
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: I thought you came home....
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  - NodeGuid: 3822bd2b-5c67-49d8-8b2d-611b99fd74d6
+    Position: {x: 44254, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 43429d45-6eab-46e8-8ee0-3dceefa21cdd
+      InputGuid: 1f6a9caf-4a7e-43ae-aa36-89f14d62f749
+      OutputGuid: 3822bd2b-5c67-49d8-8b2d-611b99fd74d6
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: '**End Christmas special'
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 81edd899568472a43a26ef83c31d81a2, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Merry Christmas, #1942
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 1
+    SelectedChoice: []
+  - NodeGuid: f92e66fd-a724-4236-9933-56b34a454d2c
+    Position: {x: 46419, y: 451}
+    DialogueNodePorts:
+    - PortGuid: 4dde4e21-1c52-4583-9af2-804fb67311b7
+      InputGuid: 
+      OutputGuid: 
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: ...
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+      HintLanguage:
+      - languageEnum: 0
+        LanguageGenericType: 
+      - languageEnum: 1
+        LanguageGenericType: 
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c7cbc9723ae0f174cba60146f0cc8e0e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 2
+    Delay: 0
+    Timelapse: 
+    RequireCharacterInput: 0
+    SelectedChoice: []
+  DialogueNodeDatas:
+  - NodeGuid: a332a987-6f37-4439-b96e-c68aeddf8d01
+    Position: {x: 395, y: 412}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c7cbc9723ae0f174cba60146f0cc8e0e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Welcome to the Christmas Special
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 2f1d16fa-089f-40fc-9d71-744adad242cc
+    Position: {x: 595, y: 412}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c7cbc9723ae0f174cba60146f0cc8e0e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 'First off, a quick disclaimer: These events are non-canon'
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: ac0958af-a334-451b-a744-0239e69a9e7a
+    Position: {x: 795, y: 412}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c7cbc9723ae0f174cba60146f0cc8e0e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: All characters depicted are at least 18+ years of age
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: d8c942b8-5755-481f-938f-62fab1bd5fbc
+    Position: {x: 995, y: 412}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c7cbc9723ae0f174cba60146f0cc8e0e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: You will see messages sent to "Notes." This represents
+        the Main Character speaking to himself or writing his thoughts
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: b60b3105-a197-434f-8a8e-ec70fe300f35
+    Position: {x: 1675, y: 425}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 1 day before christmas...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: d40c709a-9603-4cca-b1de-7aef10696ded
+    Position: {x: 4061, y: 436}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 81edd899568472a43a26ef83c31d81a2, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: I have dispatched a special "Elf" to your location
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 9555ea36-97ab-4f63-bc52-480ba8fad6b3
+    Position: {x: 4261, y: 436}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 81edd899568472a43a26ef83c31d81a2, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: She is carrying a Miracle pill. sssh dont tell your Insurance
+        about it
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 05417009-3cad-4a1c-b0aa-0c5637e00227
+    Position: {x: 4461, y: 436}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 81edd899568472a43a26ef83c31d81a2, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Just consider it a gift that will bring you joy this christmas
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 14c201ad-97ef-461c-9569-277f77d39055
+    Position: {x: 3861, y: 436}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 81edd899568472a43a26ef83c31d81a2, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: I think I do... You are my patient and I see it as my
+        duty to give you a merry christmas
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 51448ecd-b9e9-4856-b72d-4d4bb398ef3a
+    Position: {x: 4661, y: 436}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 81edd899568472a43a26ef83c31d81a2, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: I think the elf is almost at your door better start crawling
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 4268976d-85db-4c37-a4c7-69d9f646b33d
+    Position: {x: 5142, y: 449}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4633184ded7444943962e7d570a2109f, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Merry Christmas to my favorite patient!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 13ba0bbd-a130-4021-9cb1-c3265703ce9a
+    Position: {x: 5342, y: 449}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4633184ded7444943962e7d570a2109f, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 21300000, guid: 7197caf4ea1184a49a4dd8d8ebb223d6, type: 3}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 36c38c77-685d-40d9-817e-0d134acfba4e
+    Position: {x: 5542, y: 449}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4633184ded7444943962e7d570a2109f, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Better open the door quick
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 56a4de34-2435-41d0-8a93-b39ccef0d9d6
+    Position: {x: 6379, y: 462}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: On christmas eve...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 98a27191-ef57-49f7-bb98-37fbaa05adfd
+    Position: {x: 7703, y: 453}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: BABE!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: On christmas morning...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 69e9e8c4-770e-49f7-9318-a461de341306
+    Position: {x: 7912, y: 453}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: HELLO!?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 6f31389c-a909-4109-ba41-72be8b42e01c
+    Position: {x: 9024, y: 453}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: I bought a plain ticket back home
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: c5be9c9c-733e-42da-985f-ab7804afc45c
+    Position: {x: 9235, y: 453}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Im waiting at the airport right now for you to come pick
+        me up
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 80aa262f-261f-4d16-a141-7e6afee1d192
+    Position: {x: 9446, y: 453}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 21300000, guid: b4533994b07d1394b8a60b1e973dcc65, type: 3}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: aaaeecfd-a812-49dc-b236-f2315ac55a3f
+    Position: {x: 10599, y: 453}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: On christmas morning...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: c2a01424-318d-4440-bb23-de774718e1d4
+    Position: {x: 11889, y: 453}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Its a Christmas miracle babe
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 8dd103ce-cdfb-46c8-ac2b-14e9defbf34f
+    Position: {x: 12518, y: 453}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: After you picked up Lily...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: b08ac749-523f-4c66-934e-6412301afa8b
+    Position: {x: 13318, y: 453}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 11400000, guid: e97717fe64a40564393568b00137bdec, type: 2}
+    DelayTimer: 0
+  - NodeGuid: 10799e20-51aa-4dd2-91ee-667a0ac1d608
+    Position: {x: 14752, y: 453}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Its been so long
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: b6d2de2e-27ab-4628-b8f5-eb9f046be59b
+    Position: {x: 14952, y: 453}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 21300000, guid: 51235c3607d236046b5157889abca72d, type: 3}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 5799e9ad-5556-420f-83d3-f25cdef31984
+    Position: {x: 14552, y: 453}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Come up here
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: a little later...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 2d099c3a-7855-4547-9f8d-a91d0e5ad0f5
+    Position: {x: 15461, y: 463}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: That was... wow.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 60 minutes later...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 889d77db-0b03-4cb2-9c5e-9b57a038591a
+    Position: {x: 16361, y: 463}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 21300000, guid: 84c4072de323b054ab6c1c15b4f27a6c, type: 3}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: e593caf8-61c4-432d-bf5a-d18a54bdd3e4
+    Position: {x: 15961, y: 463}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 21300000, guid: 25b4873f6dc2ad442992f057d3f31f59, type: 3}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 0e2a87dd-9e36-4982-9cc8-1fa1f2c4855c
+    Position: {x: 16161, y: 463}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: And look at what you did to me...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 2b2730a3-7ffe-4b9c-9a7f-c849429bccdc
+    Position: {x: 17161, y: 463}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: There is a bit of trafic but I think il make it
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 5a26d83a-40c5-4f1a-811e-2376b6e81678
+    Position: {x: 17361, y: 463}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: "The shops close early today\u2026"
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: f022e2a2-15f1-40fc-b843-62ce24145ddd
+    Position: {x: 17561, y: 463}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: It would be a shame if I could not give you a proper Christmas
+        dinner
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: d9c314a7-24f5-4203-90d5-7f3a3bbe4efc
+    Position: {x: 18061, y: 463}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: I will be back before you know it (;
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: afe10fd6-7fd1-4dff-be03-f0dcef230075
+    Position: {x: 20053, y: 463}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Babe! You won't believe who I ran into at the store!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 30 minutes later...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 74940915-9b83-4662-86cc-554f7a2a0425
+    Position: {x: 20853, y: 463}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 72a8606f5b7cb824592f7940cd4da945, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Sup dude (;
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 21300000, guid: ff7bdfa4136866b4cbc8103a4f65082b, type: 3}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: f6091181-d4f6-4507-ba44-4b9fc0976f31
+    Position: {x: 21281, y: 463}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: He said he heard about... the accident
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 2cb16aba-4380-4416-81a0-13ec954b90ec
+    Position: {x: 21681, y: 463}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: He actually offered something crazy.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: b7a52a6b-395f-49f0-a1fe-bbd1a4077d7f
+    Position: {x: 21081, y: 463}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Yeah! We started talking and I told him you were home
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 743d502c-39cc-4042-a79e-79d093d8ec70
+    Position: {x: 21481, y: 463}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: He was really sweet about it
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: d1aa0dd1-4d9a-493d-b34b-99d9ade0d4df
+    Position: {x: 22181, y: 463}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: He has his camera gear in his car
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 97a0477d-94a0-47b9-8b0a-a9f91e165d94
+    Position: {x: 22381, y: 463}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: He said since we missed out on so much this year, he wants
+        to take a professional Christmas card photo for us
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 50edec2e-99b9-44ec-ac29-02015f80d4bb
+    Position: {x: 23181, y: 463}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Well since he is here right now and im also here...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: cd77deb8-3945-4cfc-b568-e0720cd1d252
+    Position: {x: 23681, y: 463}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: I know right? We are heading to a scenis spot now
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: bab065bb-1ac8-457e-9b37-f49cad578904
+    Position: {x: 26094, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Look!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 30 minutes later...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 8db97e50-dcad-422a-8bfb-37604b905deb
+    Position: {x: 26294, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 21300000, guid: 53074de9494f67c489e49940203daac9, type: 3}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 2b726a9a-379b-4240-b03c-c5cecb63eb4a
+    Position: {x: 26794, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Paul says the lighting is getting "moody" now
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: c38b562b-db0c-47e3-8bd4-0b722ee556b3
+    Position: {x: 26994, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: He wants to try something a bit more... "intimate."
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 9782141b-bee6-4b93-9c2b-d6357eb16d2e
+    Position: {x: 27708, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 15 minutes later...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 21300000, guid: 5bcfe3724dc068f45a1bfba27d429ed0, type: 3}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 11f00d9c-4201-46e2-8131-932a9aa0d966
+    Position: {x: 27908, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Paul said I needed to show more skin
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 63b63f04-1b4e-4736-a7c8-cf86e0725f9f
+    Position: {x: 28408, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Paul says he can keep me warm
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 45304721-2fd1-4121-ba3a-020c3736a6fe
+    Position: {x: 28834, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: While the shoot is taking place...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 05aff158-2b5d-4f46-8828-930fba9fc154
+    Position: {x: 30082, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 10 minutes later...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 21300000, guid: ccbce4f5351504448aaa06f88cddb894, type: 3}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 1d9f2ebf-7cda-4be9-b4b8-fae26398f6b2
+    Position: {x: 30482, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Do you agree?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 5b98e263-6ac8-4714-b60b-d31c4072fa16
+    Position: {x: 30282, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Paul said the chlothes were getting in the way of my real
+        beauty...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: f851bab1-4ce8-4c2c-a854-b8b8671c8063
+    Position: {x: 31282, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: No worries babe
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 4ed24129-8c7b-407c-a49b-80cd4fbe3925
+    Position: {x: 31482, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Paul knows a very good technique to keep me warm...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 3e938e24-22d4-4882-9aba-9f88854c5b14
+    Position: {x: 31682, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: From the inside
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 7c4bd138-c10d-48df-80ab-8a3c12a4cac7
+    Position: {x: 32482, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Its a little to late for that baby... Il be home soon
+        (;
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 69c0b74d-0fc3-4c30-aa86-dd636c397ea0
+    Position: {x: 32865, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 72a8606f5b7cb824592f7940cd4da945, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: ...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 21300000, guid: f0487eb238020d446b13501d7f67cb4f, type: 3}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 58453682-c23e-4d2f-98c8-04208543dc8c
+    Position: {x: 37882, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: ....
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 0fe34481-0951-4d90-b204-d193bbfddb42
+    Position: {x: 38082, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: ...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: ba41ef23-a4a3-4957-8bba-dde6b116aedf
+    Position: {x: 38282, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: ..
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 0817bb24-334c-42b7-99bd-b8565b6b5c4a
+    Position: {x: 38482, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: e134dc50ae8374e4081133ea86ee4d6b, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: morning...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 13e15934-52df-4644-828c-b3964cacbe8c
+    Position: {x: 41260, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Babe, are you okay?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 8cfa8c8b-6591-48a8-b8fb-2de221cd83e9
+    Position: {x: 41460, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Paul lives in our hometown... I'm literally on an island
+        in the Pacific
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: fe746301-fa34-40b3-b41d-79e047b80de9
+    Position: {x: 41660, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: I'm just getting ready for Christmas dinner with Dave,
+        Lisa and Izzy
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 07cb81fb-96d6-4eff-ad19-3d255c1f5559
+    Position: {x: 41060, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Paul?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 96913296-6ee7-49e1-88ad-9648c0594ed3
+    Position: {x: 43260, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Go back to sleep. I'll call you tomorrow. Merry Christmas.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: ab87abba-c53f-41c6-a9ef-c2143fc6e49c
+    Position: {x: 43060, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 7bd5d83a9443f8449b2f8346c4479558, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Aww, poor baby
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 5f24465f-72a6-4ccf-8bb6-b6ec56cbfa20
+    Position: {x: 43854, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 81edd899568472a43a26ef83c31d81a2, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: The comedown is always the hardest part
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: b366ccde-58f5-4a5e-acf2-5106309073b6
+    Position: {x: 44054, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 81edd899568472a43a26ef83c31d81a2, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: But admit it... for a few hours, you were happy.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 1f6a9caf-4a7e-43ae-aa36-89f14d62f749
+    Position: {x: 44819, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c7cbc9723ae0f174cba60146f0cc8e0e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Thank you for playing this christmas special... I hoped
+        that although it was short you still enjoyed it
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: bc631f39-5b08-4ac9-8cb4-58048e351c8a
+    Position: {x: 45619, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c7cbc9723ae0f174cba60146f0cc8e0e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 1
+    Image: {fileID: 0}
+    Video: {fileID: 32900000, guid: 758dda5278b858b4fa30be7234974535, type: 3}
+    VideoThumbnail: {fileID: 21300000, guid: cb4c9e20f66914a41b0f57086464d760, type: 3}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: b3851801-d817-443e-bdc2-c8a8e943bf96
+    Position: {x: 45819, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c7cbc9723ae0f174cba60146f0cc8e0e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: The set contains 9 images and 1 video
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: 1700e1b4-9f57-41e7-b1e5-8e6b124a9ad9
+    Position: {x: 46019, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c7cbc9723ae0f174cba60146f0cc8e0e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: 'If its still 2025 you can use the code: tastychristmas
+        to get 10% off on the set.'
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: f8d00618-674b-45e5-ad30-d1886b7c95bc
+    Position: {x: 45019, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c7cbc9723ae0f174cba60146f0cc8e0e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: I wish you a very happy christmas
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: eda3051e-a728-43f5-8563-52bc7dfaeef6
+    Position: {x: 45419, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c7cbc9723ae0f174cba60146f0cc8e0e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Here is a blurred preview video
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: f781f0c6-3428-4995-a06f-f653ecbf13b3
+    Position: {x: 46219, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c7cbc9723ae0f174cba60146f0cc8e0e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: Thank you
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  - NodeGuid: ee14120d-52f7-4e7e-9bf2-ecce60f8a596
+    Position: {x: 45219, y: 451}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: c7cbc9723ae0f174cba60146f0cc8e0e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    Texts:
+    - languageEnum: 0
+      LanguageGenericType: If you want to support me a little extra during the holidays
+        you can consider supporting me by buying the christmas image set of Lily
+        on my patreon
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapses:
+    - languageEnum: 0
+      LanguageGenericType: 
+    - languageEnum: 1
+      LanguageGenericType: 
+    Timelapse: 
+    Duration: 2
+    Delay: 0
+    MediaType: 0
+    Image: {fileID: 0}
+    Video: {fileID: 0}
+    VideoThumbnail: {fileID: 0}
+    NotBackgroundCapable: 0
+    GalleryVisibility: 0
+    Post: {fileID: 0}
+    DelayTimer: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas: []
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 9fd4aa76-f303-4168-bd2a-485e071541e4
+    Position: {x: 273, y: 611}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []

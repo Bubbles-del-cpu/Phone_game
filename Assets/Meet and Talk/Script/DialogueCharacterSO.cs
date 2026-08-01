@@ -9,6 +9,7 @@ namespace MeetAndTalk
     [CreateAssetMenu(menuName = "Dialogue/New Dialogue Character")]
     public class DialogueCharacterSO : ScriptableObject
     {
+        public string ID => this.name;
         [Header("Name")]
         public List<LanguageGeneric<string>> characterName;
         public GlobalValueClass CustomizedName;
@@ -19,6 +20,8 @@ namespace MeetAndTalk
         public Color textColor = new Color(.8f, .8f, .8f, 1);
         [Header("Profile Images")]
         public List<CharacterSprite> Avatars;
+        public SocialMediaProfileSO SocialMediaProfile;
+        public SocialMediaProfileSO SpicySocialMediaProfile;
 
         public string HexColor()
         {

@@ -294,6 +294,7 @@ namespace MeetAndTalk
     {
         public string NodeGuid;
         public Vector2 Position;
+        public virtual DialogueCharacterSO AssignedCharacter => null;
     }
 
     [System.Serializable]
@@ -301,6 +302,7 @@ namespace MeetAndTalk
     {
         public List<DialogueNodePort> DialogueNodePorts;
         public List<LanguageGeneric<AudioClip>> AudioClips;
+        public override DialogueCharacterSO AssignedCharacter => Character;
         public DialogueCharacterSO Character;
         public AvatarPosition AvatarPos;
         public AvatarType AvatarType;
@@ -321,7 +323,7 @@ namespace MeetAndTalk
 
         public virtual bool ShouldDelay()
         {
-            _delayTimer += (Time.unscaledDeltaTime * (float)DialogueManager.Instance.DisplaySpeedMultipler);
+            _delayTimer += Time.deltaTime * (float)DialogueManager.Instance.DisplaySpeedMultipler;
             if (_delayTimer <= Duration)
                 return true;
 
@@ -346,6 +348,7 @@ namespace MeetAndTalk
     {
         public List<DialogueNodePort> DialogueNodePorts;
         public List<LanguageGeneric<AudioClip>> AudioClips;
+        public override DialogueCharacterSO AssignedCharacter => Character;
         public DialogueCharacterSO Character;
         public AvatarPosition AvatarPos;
         public AvatarType AvatarType;
@@ -398,6 +401,12 @@ namespace MeetAndTalk
 
         public bool ShouldDelay()
         {
+            // Dialogue messages use unscaled time so they can keep their normal pacing
+            // independently of the rest of the game. Explicitly gate that timer here,
+            // because Time.timeScale = 0 does not affect Time.unscaledDeltaTime.
+            if (DialogueManager.Instance.Paused)
+                return true;
+
             DelayTimer += (Time.unscaledDeltaTime * (float)DialogueManager.Instance.DisplaySpeedMultipler);
             if (DelayTimer <= Duration)
                 return true;

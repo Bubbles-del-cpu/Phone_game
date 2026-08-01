@@ -62,6 +62,7 @@ sysinfo.txt
 *.aab
 *.unitypackage
 *.app
+/* builds/
 
 # Crashlytics generated file
 crashlytics-build.properties
@@ -98,4 +99,10 @@ New Sprites/New Tiles - Level up and corruption influence/Mountain LVL2.2.png
 New Sprites/New Tiles - Level up and corruption influence/Mountain LVL3.2.png
 Assets/Units/Enemies/Orc/Orc SO.asset.orig.meta
 
+Assets/GUPS/Obfuscator/Temp/
+Assets/GUPS/Obfuscator/Log/
+
 /.utmp/*
+mono_crash.0.0.json
+Assets/AddressableAssetsData/link.xml
+Assets/AddressableAssetsData/link.xml.meta

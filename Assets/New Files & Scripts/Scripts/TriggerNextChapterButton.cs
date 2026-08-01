@@ -1,3 +1,4 @@
+using MeetAndTalk;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,16 +22,30 @@ public class TriggerNextChapterButton : MonoBehaviour
         _cg.blocksRaycasts = _cg.interactable;
     }
 
+#if UNITY_EDITOR
+    [ContextMenu("[DEBUG] Trigger Next Chapter")]
+    /// <summary>
+    /// Debug method to trigger the next chapter
+    /// </summary>
+    private void DEBUG_Trigger()
+    {
+        // Should only be used in editor to test next chapter trigger logic
+        SaveAndLoadManager.Instance.CurrentSave.CompletedCurrentChapter();
+        OnButtonClick();
+    }
+#endif
     void OnButtonClick()
     {
         OverlayCanvas.Instance.FadeToBlack(() =>
         {
-            GameManager.Instance.ResetGameState();
+            GameManager.Instance.ResetGameState(startDialogue: false);
+            var saveManager = SaveAndLoadManager.Instance;
+            saveManager.CurrentSave.CompletedCurrentChapter();
 
-            var wasReplay = SaveAndLoadManager.Instance.ReplayingCompletedChapter;
-            var wasStandalone = SaveAndLoadManager.Instance.PlayingStandaloneChapter;
-            DialogueChapterManager.Instance.TriggerStoryChapter(SaveAndLoadManager.Instance.CurrentSave.CurrentState.CompletedChapters.Count);
+            var wasReplay = saveManager.ReplayingCompletedChapter;
+            var wasStandalone = saveManager.PlayingStandaloneChapter;
 
+            GameManager.Instance.ResetGameState(false);
             //Open chapter selection
             if (wasStandalone)
             {
@@ -40,6 +55,17 @@ public class TriggerNextChapterButton : MonoBehaviour
             {
                 DialogueChapterManager.Instance.OpenChapterSelect();
             }
+
+            var chapterNumber = saveManager.CurrentSave.CurrentState.LastChapter.FileIndex + 1;
+            saveManager.ClearChapterData(resetBackground: false);
+
+            // Populate any seen characters before starting the dialogue
+            DialogueManager.Instance.PopulateConversationButtons();
+            DialogueChapterManager.Instance.TriggerStoryChapter(chapterNumber);
+
+            // Returning to linear path mode so both flags should be false
+            saveManager.ReplayingCompletedChapter = false;
+            saveManager.PlayingStandaloneChapter = false;
         });
     }
 }

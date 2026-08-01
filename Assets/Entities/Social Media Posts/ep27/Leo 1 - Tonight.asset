@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f2ff71a9223194ebcfe1289e963392, type: 3}
+  m_Name: Leo 1 - Tonight
+  m_EditorClassIdentifier: Assembly-CSharp::SocialMediaPostSO
+  Character: {fileID: 11400000, guid: 6323b46c77e31894982815cddd266d24, type: 2}
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: Tonight. 6 for the class, 7 for everyone else. One new piece.
+      Wine is bad, come anyway.
+  - languageEnum: 1
+    LanguageGenericType: "\u4ECA\u591C\u3002\u30AF\u30E9\u30B9\u306F6\u6642\u3001\u4E00\u822C\u306F7\u6642\u3002\u65B0\u4F5C\u304C\u4E00\u70B9\u3002\u30EF\u30A4\u30F3\u306F\u307E\u305A\u3044\u3051\u3069\u3001\u305D\u308C\u3067\u3082\u6765\u3066\u3002"
+  Message: 
+  MediaType: 0
+  TargetPlatform: 1
+  GalleryVisibility: 0
+  Image: {fileID: 21300000, guid: bd4a89c361bb9e24ba03d081004eca99, type: 3}
+  Video: {fileID: 0}
+  VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
+  Comments: []

@@ -1,6 +1,7 @@
 using MeetAndTalk;
 using MeetAndTalk.GlobalValue;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SaveAndLoadManager : MonoBehaviour
@@ -22,21 +23,37 @@ public class SaveAndLoadManager : MonoBehaviour
         return $"{Application.persistentDataPath}/slot{saveSlot}_SaveData.json";
     }
 
+    public int SuggestMaxSaveStates;
     [HideInInspector] public int CurrentSaveSlot;
     public bool ReplayingCompletedChapter;
     public bool PlayingStandaloneChapter;
     public SaveFileData CurrentSave;
     public GlobalValueManager ValueManager;
 
+    [Header("Prefabs")]
+    [SerializeField] private SaveStateDialogBox _saveDialogPrefab;
+
     private void Awake()
     {
         GameManager.Instance.ChangeLanguage(CurrentSave.CurrentLanguage);
+        ValueManager.LoadFile();
     }
 
     private void Start()
     {
         LoadSave(0);
         DialogueUIManager.Instance.DisplayHints = CurrentSave.DisplayHints;
+    }
+
+    private void OnApplicationQuit()
+    {
+        if (!SaveAndLoadManager.Instance.ReplayingCompletedChapter)
+        {
+            CurrentSave.CurrentState.SavedVariables = ValueManager.ConvertSaveFile();
+            CurrentSave.AutoSaveState = CurrentSave.CurrentState.Clone();
+        }
+
+        SaveToJson(CurrentSave, CurrentSaveSlot);
     }
 
     public void LoadSave(int slot = 0)
@@ -60,6 +77,9 @@ public class SaveAndLoadManager : MonoBehaviour
 
         // Load the language from the save file
         GameManager.Instance.ChangeLanguage(CurrentSave.CurrentLanguage);
+
+        // Populate the save states in the settings canvas
+        SettingsCanvas.Instance.PopulateSaveStates(CurrentSave.SaveStates);
     }
 
     public void StartGame()
@@ -68,22 +88,18 @@ public class SaveAndLoadManager : MonoBehaviour
         DialogueChapterManager.Instance.TriggerStoryChapter(CurrentSave.CurrentState.CompletedChapters.Count);
     }
 
-    public void AutoSave()
-    {
-        if (!SaveAndLoadManager.Instance.ReplayingCompletedChapter)
-        {
-            CurrentSave.CurrentState.SavedVariables = ValueManager.ConvertSaveFile();
-            CurrentSave.AutoSaveState = CurrentSave.CurrentState.Clone();
-        }
-
-        SaveToJson(CurrentSave, CurrentSaveSlot);
-    }
-
     [ContextMenu("Save to Json")]
     public static void SaveToJson(SaveFileData saveData, int saveSlot)
     {
         string data = JsonUtility.ToJson(saveData, true);
+        Debug.Log($"[SaveAndLoadManager] Saving to slot {saveSlot}. File Location: {GetPath(saveSlot)}");
         System.IO.File.WriteAllText(GetPath(saveSlot), data);
+    }
+
+    public static void Save()
+    {
+        Instance.CurrentSave.AutoSaveState = Instance.CurrentSave.CurrentState.Clone();
+        SaveToJson(Instance.CurrentSave, Instance.CurrentSaveSlot);
     }
 
     [ContextMenu("Load from Json")]
@@ -108,12 +124,21 @@ public class SaveAndLoadManager : MonoBehaviour
 
             if (saveFileData.CustomBackgroundImage.NodeGUID != string.Empty)
             {
-                var chapter = saveFileData.CustomBackgroundImage.ChapterType == ChapterType.Story ?
-                    DialogueChapterManager.Instance.StoryList[saveFileData.CustomBackgroundImage.ChapterIndex] :
-                    DialogueChapterManager.Instance.StandaloneChapters[saveFileData.CustomBackgroundImage.ChapterIndex];
+                try
+                {
+                    var chapter = saveFileData.CustomBackgroundImage.ChapterType == ChapterType.Story ?
+                        DialogueChapterManager.Instance.StoryList[saveFileData.CustomBackgroundImage.ChapterIndex] :
+                        DialogueChapterManager.Instance.StandaloneChapters[saveFileData.CustomBackgroundImage.ChapterIndex];
 
-                var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, saveFileData.CustomBackgroundImage.NodeGUID);
-                GameManager.Instance.SetBackgroundImage((DialogueNodeData)node, saveFileData.CustomBackgroundImage.IsSocialMediaPost);
+                    var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, saveFileData.CustomBackgroundImage.NodeGUID);
+                    var dialogueNode = node as DialogueNodeData;
+                    GameManager.Instance.SetBackgroundImage(dialogueNode, saveFileData.CustomBackgroundImage.IsSocialMediaPost && dialogueNode.Post != null);
+                }
+                catch (Exception)
+                {
+                    Debug.LogError($"[SaveAndLoadManager] Failed to load custom background image from save file for slot {saveSlot}. Reverting to default background.");
+                    GameManager.Instance.SetBackgroundImage(GameManager.Instance.DefaultBackgroundSprite);
+                }
             }
             else
             {
@@ -135,6 +160,9 @@ public class SaveAndLoadManager : MonoBehaviour
     {
         try
         {
+            if (CurrentSave.SaveStates.Count <= saveSlot)
+                return false;
+
             return CurrentSave.SaveStates[saveSlot].IsSaved;
         }
         catch (Exception)
@@ -143,27 +171,41 @@ public class SaveAndLoadManager : MonoBehaviour
         }
     }
 
-    public void CreateSaveState(int slot, string name)
+    public void CreateSaveState(int slot, string name = "")
     {
         try
         {
-            CurrentSave.SaveStates[slot] = CurrentSave.CurrentState.Clone();
-            CurrentSave.SaveStates[slot].IsSaved = true;
-            CurrentSave.SaveStates[slot].Name = name;
+            if (SaveStateExists(slot))
+            {
+                CurrentSave.SaveStates[slot] = CurrentSave.CurrentState.Clone();
+            }
+            else
+            {
+                CurrentSave.SaveStates.Add(CurrentSave.CurrentState.Clone());
+            }
 
-            AutoSave();
+            CurrentSave.SaveStates[slot].Name = name == string.Empty ? $"Save slot {slot + 1}" : name;
+            CurrentSave.SaveStates[slot].IsSaved = true;
+            SaveToJson(CurrentSave, CurrentSaveSlot);
         }
         catch (Exception) { }
     }
 
-    public void ClearChapterData(int chapterIndex)
+    public void ClearChapterData(bool resetBackground)
     {
         try
         {
             //Reset the chapter
-            CurrentSave.CurrentState.LastChapter = new ChapterSaveData();
-            GameManager.Instance.ResetBackgroundImage();
-            AutoSave();
+            CurrentSave.CurrentState.LastChapter.PastCoversations = new List<ChapterSaveData.PastCoversationData>();
+            CurrentSave.CurrentState.LastChapter.CurrentGUID = "";
+            CurrentSave.CurrentState.LastChapter.Completed = false;
+            CurrentSave.CurrentState.LastChapter.FileName = string.Empty;
+            CurrentSave.CurrentState.LastChapter.FileIndex = -1;
+
+            if (resetBackground)
+                GameManager.Instance.ResetBackgroundImage();
+
+            SaveAndLoadManager.Save();
         }
         catch (Exception) { }
     }
@@ -182,9 +224,7 @@ public class SaveAndLoadManager : MonoBehaviour
 
                 CurrentSave.CurrentState.SavedVariables = ValueManager.ConvertSaveFile();
 
-                AutoSave();
-
-                GameManager.Instance.ResetGameState(startDialogue: false);
+                GameManager.Instance.HardResetGameState(startDialogue: false);
                 GameManager.Instance.GalleryCanvas.Load();
                 DialogueChapterManager.Instance.TriggerStoryChapter(CurrentSave.CurrentState.CompletedChapters.Count);
             });
@@ -196,16 +236,33 @@ public class SaveAndLoadManager : MonoBehaviour
     {
         try
         {
-            CurrentSave.SaveStates[saveSlot].IsSaved = false;
-            CurrentSave.SaveStates[saveSlot] = new SaveFileData.GameSaveState();
-
-            AutoSave();
+            CurrentSave.SaveStates.RemoveAt(saveSlot);
+            SaveToJson(CurrentSave, CurrentSaveSlot);
         }
         catch (Exception) { }
     }
 
-    public void StartNewSave(bool startDialogue = true)
+    /// <summary>s
+    /// Displays the save state dialog for the specified slot
+    /// </summary>
+    /// <param name="slotNumber">Save slot number</param>
+    /// <param name="actionOnSubmit">Action to perform on submit</param>
+    public void DisplaySaveStateDialog(int slotNumber, Action actionOnSubmit = null)
     {
+        var newDialog = Instantiate(_saveDialogPrefab);
+        newDialog.Setup(slotNumber);
+        newDialog.OnSubmit.AddListener(() =>
+        {
+            actionOnSubmit?.Invoke();
+        });
+
+        OverlayCanvas.Instance.ShowDialog(newDialog.gameObject);
+    }
+
+    public void StartNewSave(bool startDialogue = true, bool clearGallery = true)
+    {
+        var oldGallery = CurrentSave.UnlockedMedia;
+        var oldBaseSocialMediaProfileItems = CurrentSave.UnlockedBaseSocialMediaProfileItems;
         System.IO.File.Delete(GetPath(0));
 
         //Reset and clear the global value manager so that it can be loaded in fresh for the new save
@@ -213,7 +270,17 @@ public class SaveAndLoadManager : MonoBehaviour
 
         LoadSave(0);
 
-        GameManager.Instance.ResetGameState(startDialogue);
         GameManager.Instance.ResetBackgroundImage();
+        GameManager.Instance.HardResetGameState(startDialogue: false);
+        if (!clearGallery)
+        {
+            // Restore the old gallery if we are not clearing it for the new save
+            CurrentSave.UnlockedMedia = oldGallery;
+            CurrentSave.UnlockedBaseSocialMediaProfileItems = oldBaseSocialMediaProfileItems;
+            Save();
+        }
+
+        if (startDialogue)
+            StartGame();
     }
 }

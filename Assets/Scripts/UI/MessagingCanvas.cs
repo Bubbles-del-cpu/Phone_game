@@ -53,8 +53,6 @@ public class MessagingCanvas : UICanvas
     {
         foreach (var item in conversations)
         {
-            item.Value.Close();
-            item.Value.Clear();
             Destroy(item.Value.gameObject);
         }
 
@@ -63,9 +61,11 @@ public class MessagingCanvas : UICanvas
             Destroy(item.Value.gameObject);
         }
 
-        seenCharacters.Clear();
         buttons.Clear();
+        seenCharacters.Clear();
         conversations.Clear();
+
+        _noContactsMessage.SetActive(true);
     }
 
     public override void Open()
@@ -87,11 +87,46 @@ public class MessagingCanvas : UICanvas
     {
         CheckCharacter(_character);
 
-        conversations[_character].Open();
-        conversationsPanel.Open();
+        conversations[_character].OpenWithAction(() =>
+        {
+            conversationsPanel.Open();
+        });
     }
 
-    private void CheckCharacter(DialogueCharacterSO character)
+    /// <summary>
+    /// Sets a new message for the character on the messaging canvas
+    /// </summary>
+    /// <param name="storyCharacter">The story character associated with the messaging canvas</param>
+    /// <param name="_character"></param>
+    /// <param name="messageSeen"></param>
+    public void SetNewNotification(DialogueCharacterSO _character, bool responseNotification = false, bool messageSeen = true)
+    {
+        var conversationButton = GetConversationButton(_character);
+        if (messageSeen)
+            conversationButton.transform.SetAsFirstSibling();
+
+        if (responseNotification)
+        {
+            MainMenuCanvas.Instance.SetMessagingAppNotification(_character, messageSeen, isResponseNotification: true);
+            conversationButton.HasResponseReady = !messageSeen;
+            conversationButton.HasNewMessage = false;
+        }
+        else
+        {
+            if (GetConversationPanel(_character).IsOpen && messageSeen == false)
+                return;
+
+            MainMenuCanvas.Instance.SetMessagingAppNotification(_character, messageSeen, isResponseNotification: false);
+            conversationButton.HasNewMessage = !messageSeen;
+            conversationButton.HasResponseReady = false;
+        }
+    }
+
+    /// <summary>
+    /// Checks if the character has been seen before and creates conversation button and panel if not
+    /// </summary>
+    /// <param name="character">Dialogue character to check</param>
+    public void CheckCharacter(DialogueCharacterSO character)
     {
         if (!seenCharacters.Contains(character))
         {

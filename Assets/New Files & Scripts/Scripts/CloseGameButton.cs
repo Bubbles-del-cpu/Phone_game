@@ -32,11 +32,10 @@ public class CloseGameButton : MonoBehaviour
 
     private void ConfirmClose()
     {
-#if UNITY_STANDALONE
-        Application.Quit();
-#endif
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
 #endif
     }
 }

@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.Collections;
 using UnityEngine;
 
 namespace MeetAndTalk
@@ -8,26 +6,33 @@ namespace MeetAndTalk
     public class DialogueGetData : MonoBehaviour
     {
         [HideInInspector] public DialogueContainerSO dialogueContainer;
+        public Dictionary<string, (BaseNodeData, BaseNodeData)> NodeDataDictionary = new Dictionary<string, (BaseNodeData, BaseNodeData)>();
 
-        protected BaseNodeData GetNodeByGuid(string _targetNodeGuid)
+        protected void PopulateDictionary()
         {
-            return dialogueContainer.AllNodes.Find(node => node.NodeGuid == _targetNodeGuid);
-        }
-
-        protected BaseNodeData GetNodeByNodePort(DialogueNodePort _nodePort)
-        {
-            return dialogueContainer.AllNodes.Find(node => node.NodeGuid == _nodePort.InputGuid);
-        }
-
-        protected BaseNodeData GetNextNode(BaseNodeData _baseNodeData)
-        {
-            NodeLinkData nodeLinkData = dialogueContainer.NodeLinkDatas.Find(edge => edge.BaseNodeGuid == _baseNodeData.NodeGuid);
-            if (nodeLinkData != null)
+            NodeDataDictionary.Clear();
+            foreach (var node in dialogueContainer.AllNodes)
             {
-                return GetNodeByGuid(nodeLinkData.TargetNodeGuid);
+                NodeDataDictionary[node.NodeGuid] = (node, null);
             }
 
-            return null;
+            foreach (var link in dialogueContainer.NodeLinkDatas)
+            {
+                if (!NodeDataDictionary.ContainsKey(link.BaseNodeGuid))
+                    continue;
+
+                NodeDataDictionary[link.BaseNodeGuid] = (NodeDataDictionary[link.BaseNodeGuid].Item1, GetNodeByGuid(link.TargetNodeGuid));
+            }
+        }
+
+        public BaseNodeData GetNodeByGuid(string targetNodeGUID)
+        {
+            return NodeDataDictionary.ContainsKey(targetNodeGUID) ? NodeDataDictionary[targetNodeGUID].Item1 : null;
+        }
+
+        public BaseNodeData GetNextNode(BaseNodeData nodeData)
+        {
+            return NodeDataDictionary.ContainsKey(nodeData.NodeGuid) ? NodeDataDictionary[nodeData.NodeGuid].Item2 : null;
         }
     }
 }

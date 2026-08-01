@@ -49,6 +49,7 @@ public class DialogueChapterManager : UICanvas
         }
     }
 
+    public List<DialogueCharacterSO> AllDialogueCharacters;
     public List<ChapterData> StoryList;
     public List<ChapterData> StandaloneChapters;
     public DialogueCharacterSO CurrentStory;
@@ -163,13 +164,12 @@ public class DialogueChapterManager : UICanvas
 
     public void ReturnToChapterSelection()
     {
-        SaveAndLoadManager.Instance.AutoSave();
         if (SaveAndLoadManager.Instance.ReplayingCompletedChapter)
         {
             SaveAndLoadManager.Instance.LoadSave(SaveAndLoadManager.Instance.CurrentSaveSlot);
         }
 
-        GameManager.Instance.ResetGameState();
+        GameManager.Instance.HardResetGameState();
         Open(OPEN_DELAY);
     }
 
@@ -178,31 +178,31 @@ public class DialogueChapterManager : UICanvas
         Close();
     }
 
-    public void CompleteCurrentChapter()
+    public void ShowChapterCompleteDialog()
     {
-        SaveAndLoadManager.Instance.CurrentSave.CompletedCurrentChapter();
-        StartCoroutine(CoShowDialog());
+        StartCoroutine(CoShowChapterCompleteDialog());
     }
 
     public void CompleteChapterReplayEarly()
     {
         OverlayCanvas.Instance.FadeToBlack(() =>
         {
-            GameManager.Instance.ResetGameState(false);
+            GameManager.Instance.HardResetGameState(false);
             TriggerStoryChapter(SaveAndLoadManager.Instance.CurrentSave.CurrentState.CompletedChapters.Count);
 
             //Open chapter selection
-            OpenChapterSelect();
+            //OpenChapterSelect();
         });
     }
 
-    private IEnumerator CoShowDialog()
+    private IEnumerator CoShowChapterCompleteDialog()
     {
         yield return new WaitForSeconds(.5f);
 
         var wasReplaying = SaveAndLoadManager.Instance.ReplayingCompletedChapter;
 
-        if (SaveAndLoadManager.Instance.CurrentSave.CurrentState.CompletedChapters.Count >= StoryList.Count)
+        var completedChapterIndex = SaveAndLoadManager.Instance.CurrentSave.CurrentState.LastChapter.FileIndex;
+        if (completedChapterIndex + 1 >= StoryList.Count)
         {
             //We have completed the last chapter.
             GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.ALL_CHAPTERS_COMPLETE, eventToTrigger: null, GameConstants.UIElementKeys.CONTINUE, args: null, twoButtonSetup: false);
@@ -245,26 +245,26 @@ public class DialogueChapterManager : UICanvas
     /// Triggers a story chapter
     /// </summary>
     /// <param name="chapter">Chapter to trigger</param>
-    /// <param name="isChapterReplay">Flag to set if the chapter will be a replay (no data will be saved other than gallery unlocks in a replay)</param>
-    public void TriggerStoryChapter(ChapterData chapter, bool isChapterReplay = false)
+    public void TriggerStoryChapterReplay(ChapterData chapter)
     {
-        TriggerChapter(chapter, isChapterReplay, false);
+        TriggerChapter(chapter, isChapterReplay: true, isStandaloneChapter: false);
     }
 
     /// <summary>
     /// Triggers a story chapter based on the index/position of the chapter in the StoryList container
     /// </summary>
     /// <param name="chapterNumber">Position of the chapter in the StoryList</param>
-    /// <param name="isChapterReplay">Flag to set if the chapter will be a replay (no data will be saved other than gallery unlocks in a replay)</param>
-    public void TriggerStoryChapter(int chapterNumber, bool isChapterReplay = false)
+    public void TriggerStoryChapter(int chapterNumber)
     {
-         if (chapterNumber >= StoryList.Count)
+        if (chapterNumber >= StoryList.Count)
         {
             //We have completed all chapters. Maybe do something here but for now just load the last chapter
             chapterNumber = StoryList.Count - 1;
         }
 
-        TriggerStoryChapter(StoryList[chapterNumber]);
+        var nextStory = StoryList[chapterNumber];
+        SaveAndLoadManager.Instance.CurrentSave.CurrentState.SetupForNewChapter(nextStory, chapterNumber);
+        TriggerChapter(nextStory, false, false);
     }
 
     public void UnlockAllChapters()
@@ -272,7 +272,6 @@ public class DialogueChapterManager : UICanvas
         GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.CHAPTER_UNLOCK_WARNING, () =>
         {
             SaveAndLoadManager.Instance.CurrentSave.ForceUnlockAllChapters = true;
-            SaveAndLoadManager.Instance.AutoSave();
             OpenChapterSelect();
         });
     }

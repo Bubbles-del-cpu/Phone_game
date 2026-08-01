@@ -5,6 +5,7 @@ using UnityEngine.Video;
 using System.Collections;
 using UnityEngine.Serialization;
 using MeetAndTalk;
+using static MeetAndTalk.DialogueUIManager;
 
 public class MessagingBubble : MonoBehaviour
 {
@@ -15,9 +16,13 @@ public class MessagingBubble : MonoBehaviour
     [SerializeField] Image _backgroundImage;
     [SerializeField] FullScreenMediaMessageViewer _mediaViewer;
 
-    CanvasGroup cg;
-    RectTransform rect;
-    RectTransform labelRect;
+    CanvasGroup _cg;
+    RectTransform _rect;
+    RectTransform _labelRect;
+    private MessageSource _source;
+    private string _guid;
+    public string NodeGUID => _guid;
+    public MessageSource Source => _source;
 
     [Header("Video Clip Components")]
     [SerializeField] RawImage _videoImage;
@@ -39,29 +44,50 @@ public class MessagingBubble : MonoBehaviour
         }
     }
 
-    public void Init(bool hide, string text)
+    public void Init(bool hide, string text, bool timelapse, string guid, MessageSource containerSource)
     {
-        cg = GetComponent<CanvasGroup>();
-        rect = GetComponent<RectTransform>();
-        labelRect = _label.GetComponent<RectTransform>();
+        _cg = GetComponent<CanvasGroup>();
+        _rect = GetComponent<RectTransform>();
+        _labelRect = _label.GetComponent<RectTransform>();
 
         transform.parent.parent.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(
             RectTransform.Axis.Vertical,
             transform.parent.GetComponent<RectTransform>().rect.size.y + 50f
             );
 
-        //GetComponentInParent<ScrollRect>().verticalNormalizedPosition = 0f;
+
+        gameObject.SetActive(true);
+
+        _guid = guid;
+        _source = containerSource;
+        _cg.alpha = 0;
         Message = text;
-
-
-        LayoutRebuilder.ForceRebuildLayoutImmediate(rect);
-        LayoutRebuilder.ForceRebuildLayoutImmediate(transform.parent.GetComponent<RectTransform>());
+        IsTimelapse = timelapse;
 
         StartCoroutine(COEnable(hide));
     }
 
+    public void Clear()
+    {
+        Message = string.Empty;
+        VideoClip = null;
+        Image = null;
+
+        _videoImage.texture = null;
+        _videoPreviewTexture = null;
+
+        _videoContainer.SetActive(false);
+        _imageContainer.SetActive(false);
+
+        if (_mediaViewer != null)
+            _mediaViewer.gameObject.SetActive(false);
+    }
+
     public void SetupMediaViewer(DialogueNodeData nodeData)
     {
+        if (_mediaViewer != null)
+            _mediaViewer.gameObject.SetActive(false);
+
         if (nodeData == null)
             return;
 
@@ -100,16 +126,22 @@ public class MessagingBubble : MonoBehaviour
             SetContainerSize(_videoImage.texture.width, _videoImage.texture.height, _videoContainer.GetComponent<RectTransform>());
         }
 
-        _mediaViewer.Setup(nodeData, false);
+        _mediaViewer.Setup(nodeData.NodeGuid, nodeData.MediaType == MediaType.Video ? video.name : postImage.name, nodeData.MediaType, isSocialMediaPost: false);
     }
 
     private IEnumerator COEnable(bool hide)
     {
-        cg.alpha = 0;
-        yield return new WaitForEndOfFrame();
+        _cg.alpha = 0;
+        yield return null;
         if (!hide)
         {
-            cg.alpha = 1;
+            while (_cg.alpha < 1)
+            {
+                _cg.alpha += Time.deltaTime * DialogueUIManager.Instance.MessagingBubbleFadeInSpeed;
+                yield return null;
+            }
+
+            _cg.alpha = 1;
         }
     }
 
@@ -120,18 +152,18 @@ public class MessagingBubble : MonoBehaviour
             _label.text = value;
             _label.gameObject.SetActive(value != string.Empty);
 
-            LayoutRebuilder.ForceRebuildLayoutImmediate(rect);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(_rect);
 
             if (_label.GetPreferredValues().x > DialogueUIManager.Instance.MaxMessageSize - GameManager.Instance.MessagingCanvas.BubbleMarginRight)
             {
                 //labelRect.GetComponent<ContentSizeFitter>().enabled = false;
-                labelRect.GetComponent<LayoutElement>().enabled = true;
-                labelRect.GetComponent<LayoutElement>().preferredWidth = DialogueUIManager.Instance.MaxMessageSize;
+                _labelRect.GetComponent<LayoutElement>().enabled = true;
+                _labelRect.GetComponent<LayoutElement>().preferredWidth = DialogueUIManager.Instance.MaxMessageSize;
             }
             else
             {
                 //labelRect.GetComponent<ContentSizeFitter>().enabled = true;
-                labelRect.GetComponent<LayoutElement>().enabled = false;
+                _labelRect.GetComponent<LayoutElement>().enabled = false;
             }
 
             //if (labelRect.sizeDelta.x > GetComponentInParent<CanvasScaler>().referenceResolution.x - GameManager.Instance.MessagingCanvas.BubbleMarginRight)
@@ -157,11 +189,26 @@ public class MessagingBubble : MonoBehaviour
     {
         set
         {
-            if (!value) return;
-            _label.fontSize = 15;
-            _label.fontStyle = FontStyles.Italic;
-            //GetComponent<Image>().sprite = GameManager.Instance.MessagingCanvas.TimelapsePanelBackground;
-            _backgroundImage.color = Color.grey;
+            if (value)
+            {
+                _label.fontSize = 15;
+                _label.fontStyle = FontStyles.Italic;
+                _backgroundImage.color = Color.grey;
+            }
+            else
+            {
+                _label.fontSize = 18;
+                _label.fontStyle = FontStyles.Normal;
+                switch (_source)
+                {
+                    case MessageSource.Character:
+                        _backgroundImage.color = new Color(0, 0.08235294f, 0.2470588f);
+                        break;
+                    case MessageSource.Player:
+                        _backgroundImage.color = new Color(0.3490566f, 0.3490566f, 0.3490566f);
+                        break;
+                }
+            }
         }
     }
 

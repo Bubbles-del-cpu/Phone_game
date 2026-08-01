@@ -23,9 +23,7 @@ public class SaveStateButton : MonoBehaviour
     {
         _saveButton.onClick.AddListener(() =>
         {
-            var newDialog = Instantiate(_saveDialogPrefab);
-            newDialog.Setup(SlotNumber);
-            OverlayCanvas.Instance.ShowDialog(newDialog.gameObject);
+            SaveAndLoadManager.Instance.DisplaySaveStateDialog(SlotNumber);
         });
 
         _loadButton.onClick.AddListener(() =>
@@ -38,11 +36,24 @@ public class SaveStateButton : MonoBehaviour
             GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.SAVE_STATE_DELETE, () =>
             {
                 SaveAndLoadManager.Instance.ClearSaveStateSlot(SlotNumber);
+
+                // Refresh the save states in the settings canvas
+                SettingsCanvas.Instance.PopulateSaveStates(SaveAndLoadManager.Instance.CurrentSave.SaveStates);
             });
         });
     }
 
+    private void Start()
+    {
+        CheckLabel();
+    }
+
     private void Update()
+    {
+        CheckLabel();
+    }
+
+    private void CheckLabel()
     {
         var exists = _exists; //Prevent checking the SaveAndLoadManager get function so many times
         if (exists)

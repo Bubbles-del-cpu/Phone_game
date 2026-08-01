@@ -18,7 +18,6 @@ public class HintSettingsToggle : MonoBehaviour
             _button.onClick.AddListener(() =>
             {
                 DialogueUIManager.Instance.DisplayHints = !DialogueUIManager.Instance.DisplayHints;
-                SaveAndLoadManager.Instance.AutoSave();
                 _localizedSpriteEvent.AssetReference = DialogueUIManager.Instance.DisplayHints ? _enableSprite : _disableSprite;
             });
         }

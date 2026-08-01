@@ -98,13 +98,21 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 9059512144695394577
+  - m_Id: 28307543427870720
+    m_Localized: 'Social media profiles cannot be accessed during chapter replay. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47502580661317632
+    m_Localized: 'Are you sure you want to wipe your save? '
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
     - rid: 9059512144695394577
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries:
+        m_Entries: 
         m_SharedEntries:
         - id: 533422895104
         - id: 909404499968

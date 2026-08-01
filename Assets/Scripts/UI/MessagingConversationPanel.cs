@@ -3,177 +3,157 @@ using UnityEngine.UI;
 using MeetAndTalk;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO.Compression;
 using TMPro;
-using Unity.VisualScripting;
 using System;
 
 public class MessagingConversationPanel : UIPanel
 {
-    [SerializeField] RectTransform[] messageBubbleContainers;
     [SerializeField] MessagingResponsesPanel responsesPanel;
     [SerializeField] ScrollRect _scrollView;
     [SerializeField] RectTransform _contentContainer;
     [SerializeField] private ProfileIcon _characterIcon;
     [SerializeField] private TMP_Text _characterName;
     [SerializeField] private MatchChildScaleAutomatic[] _messageContainers;
-    DialogueCharacterSO character;
+    private DialogueCharacterSO _character;
 
-    public int ChildCount => messageBubbleContainers[0].transform.childCount;
+    public MessagingResponsesPanel ResponsesPanel { get { return responsesPanel; } }
+    public MatchChildScaleAutomatic[] MessageContainers { get { return _messageContainers; } }
+    public DialogueCharacterSO Character { get { return _character; } set { _character = value; } }
+    private List<MessageBubbleInfo> _messageBubbleInfosLeft = new List<MessageBubbleInfo>();
+    public int ChildCount => _messageContainers[0].transform.childCount;
+    private float _delay = .05f;
 
-    public override void Awake()
+    public void OpenWithAction(Action onComplete)
     {
-        base.Awake();
+        transform.SetAsLastSibling();
+        StartCoroutine(OpenDelay(onComplete));
     }
 
     public override void Open()
     {
-        base.Open();
-
         transform.SetAsLastSibling();
-
-        _characterIcon.Character = character;
-        _characterName.text = character.name;
-
-        GameManager.Instance.SetNewMessage(character, false);
-
-        ScrollToBottom();
-    }
-
-    public void RemoveElements(int count)
-    {
-        var objectList = new List<GameObject>();
-        for (var cIndex = 0; cIndex < MessageBubbleContainers.Length; cIndex++)
-        {
-            var index = 1;
-            var container = MessageBubbleContainers[cIndex];
-            while (index <= count)
-            {
-                try
-                {
-                    var item = container.transform.GetChild(container.transform.childCount - index);
-                    item.gameObject.SetActive(false);
-                    objectList.Add(item.gameObject);
-                    index++;
-                }
-                catch (Exception ex)
-                {
-                    Debug.LogError($"Failed to clear conversation panel for {character.name}. Error: {ex.Message}");
-                    break;
-                }
-            }
-        }
-
-        foreach (var obj in objectList)
-             Destroy(obj);
-
-        UpdateChildContainers();
-    }
-
-    public void AddElement(BaseNodeData nodeData, MessagingBubble prefab, string text, DialogueUIManager.MessageSource source, bool notification)
-    {
-        //var wasNearBottom = ShouldAutoScroll();
-        for (var index = 0; index < MessageBubbleContainers.Length; index++)
-        {
-            var container = MessageBubbleContainers[index];
-            var containerSource = (DialogueUIManager.MessageSource)index;
-
-            //Both panels recieve the same message - this allows both "sides" to scroll to the same locations without issue
-            //Depending on the source one side will be hidden and one will be visible.
-            var hidden = source != containerSource;
-
-            switch (nodeData)
-            {
-                case DialogueNodeData nd when nodeData is DialogueNodeData:
-                    {
-                        if (nd.GetTimeLapse().Length > 0)
-                        {
-                            MessagingBubble _timelapseBubble = Instantiate(prefab, container);
-                            _timelapseBubble.Init(hidden, nd.GetTimeLapse());
-                            _timelapseBubble.IsTimelapse = true;
-                        }
-
-                        //Add element after timelapse
-                        if (text != string.Empty || nd.Image != null || nd.Video != null)
-                        {
-                            var bubble = Instantiate(prefab, container);
-                            bubble.Init(hidden, text);
-                            bubble.SetupMediaViewer(nd);
-                        }
-
-                        if (nd.Post != null && containerSource == DialogueUIManager.MessageSource.Character)
-                        {
-                            GameManager.Instance.SocialMediaCanvas.PostToSocialMedia(nd.Post, nd, notification);
-                        }
-                    }
-                    break;
-                case DialogueChoiceNodeData nd when nodeData is DialogueChoiceNodeData:
-                    {
-                        //Add element
-                        if (text != string.Empty && text[0] != '*')
-                        {
-                            //Frist character is the special action character so don't send the message
-                            var bubble = Instantiate(prefab, container);
-                            bubble.Init(source != containerSource, text);
-                        }
-                    }
-                    break;
-            }
-        }
-
-        Canvas.ForceUpdateCanvases();
-        UpdateChildContainers();
-        StartCoroutine(CoAutoScrollToBottom());
-    }
-
-    IEnumerator CoAutoScrollToBottom(float delay = 0)
-    {
-        // Wait for layout to rebuild
-        yield return null;
-        yield return null;
-
-        if (delay > 0)
-            yield return new WaitForSeconds(delay);
-
-        while (_scrollView.verticalNormalizedPosition > 0)
-        {
-            yield return new WaitForEndOfFrame();
-            _scrollView.verticalNormalizedPosition -= DialogueUIManager.Instance.MessagePanelAutoScrollSpeed * Time.deltaTime;
-        }
-    }
-
-    public void ScrollToBottom()
-    {
-        try
-        {
-            Canvas.ForceUpdateCanvases();
-            _scrollView.verticalNormalizedPosition = 0;
-        }
-        catch (System.Exception){}
+        StartCoroutine(OpenDelay(null));
     }
 
     public override void Close()
     {
         base.Close();
+
         GameManager.Instance.MessagingCanvas.ConversationClosed();
+        Clear();
     }
 
-    public void Clear()
+    public void CloseAndWipeHistory()
     {
-        foreach(var item in messageBubbleContainers)
+        base.Close();
+        Clear(wipeHistory: true);
+    }
+
+    public void Clear(bool wipeHistory = false)
+    {
+        var item = _messageContainers[0].transform;
+        var index = 0;
+        while (item.childCount > 0)
         {
-            for(var index = 0; index < item.childCount; index++)
-            {
-                item.GetChild(index).gameObject.SetActive(false);
-                Destroy(item.GetChild(index).gameObject, 1);
-            }
+            var child = item.GetChild(0);
+            var bubble = child.GetComponent<MessagingBubble>();
+            DialogueUIManagerObjectPool.Instance.ReturnMessageBubble(bubble, bubble.Source);
+
+            index++;
         }
+
+        if (wipeHistory)
+        {
+            _messageBubbleInfosLeft.Clear();
+        }
+
         UpdateChildContainers();
     }
 
-    private void Update()
+    private IEnumerator OpenDelay(Action onComplete)
     {
-        _contentContainer.sizeDelta = new Vector2(_contentContainer.sizeDelta.x, messageBubbleContainers[0].sizeDelta.y);
+        yield return new WaitForSecondsRealtime(_delay);
+        if (!IsOpen)
+        {
+            var count = 0;
+            var maxLoops = 30;
+            for (var index = 0; index < _messageBubbleInfosLeft.Count; index++)
+            {
+                var leftInfo = _messageBubbleInfosLeft[index];
+                leftInfo.SendToPanel(this);
+
+                count++;
+                if (count >= maxLoops)
+                {
+                    count = 0;
+                    yield return null;
+                }
+            }
+
+            yield return new WaitForSecondsRealtime(_delay);
+            Canvas.ForceUpdateCanvases();
+            ScrollToBottom();
+            UpdateChildContainers();
+        }
+
+        _characterIcon.Character = _character;
+        _characterName.text = _character.name;
+        GameManager.Instance.SetNewMessage(_character, false);
+        MainMenuCanvas.Instance.SetMessagingAppNotification(_character, messageSeen: true);
+        yield return new WaitForSecondsRealtime(_delay);
+        base.Open();
+        onComplete?.Invoke();
+    }
+
+    public void RemoveElements(int count)
+    {
+        var container = _messageContainers[0];
+        var index = 0;
+        while (index < count)
+        {
+            try
+            {
+                if (container.transform.childCount == 0)
+                    break;
+
+                var item = container.transform.GetChild(container.transform.childCount - 1);
+                var bubble = item.GetComponent<MessagingBubble>();
+                DialogueUIManagerObjectPool.Instance.ReturnMessageBubble(bubble, bubble.Source);
+
+                // Its possible for more than 1 bubble to share the same GUID (timelapse + main message), so remove all that match
+                _messageBubbleInfosLeft.RemoveAll(info => info.NodeGUID == bubble.NodeGUID);
+
+                index++;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"Failed to clear conversation panel for {_character.name}. Error: {ex.Message}");
+                break;
+            }
+        }
+
+        UpdateChildContainers();
+    }
+
+    public void AddElement(BaseNodeData nodeData, string text, DialogueUIManager.MessageSource source)
+    {
+        var newBubbleData = new MessageBubbleInfo()
+        {
+            Source = source,
+            NodeGUID = nodeData.NodeGuid,
+            Text = text,
+            Hidden = false
+        };
+
+        _messageBubbleInfosLeft.Add(newBubbleData);
+
+        if (IsOpen)
+        {
+            newBubbleData.SendToPanel(this);
+            Canvas.ForceUpdateCanvases();
+            ScrollToBottom();
+            UpdateChildContainers();
+        }
     }
 
     private void UpdateChildContainers()
@@ -184,9 +164,37 @@ public class MessagingConversationPanel : UIPanel
         }
     }
 
-    public RectTransform[] MessageBubbleContainers { get { return messageBubbleContainers; } }
+    public void ScrollToBottom()
+    {
+        if (_scrollView.verticalNormalizedPosition == 0)
+            return;
 
-    public MessagingResponsesPanel ResponsesPanel { get { return responsesPanel; } }
+        try
+        {
+            Canvas.ForceUpdateCanvases();
+            _scrollView.verticalNormalizedPosition = 0;
+        }
+        catch (System.Exception) { }
+    }
 
-    public DialogueCharacterSO Character { get { return character; } set { character = value; } }
+    private void Update()
+    {
+        if (IsOpen)
+        {
+            if (_contentContainer.rect.height > _scrollView.viewport.rect.height)
+            {
+                //Alter the anchors to keep the scroll at the bottom if content is larger than the viewport
+                _contentContainer.anchorMin = new Vector2(0, 0);
+                _contentContainer.anchorMax = new Vector2(1, 0);
+                _contentContainer.pivot = new Vector2(0.5f, 0);
+                foreach (var item in _messageContainers)
+                {
+                    var rect = item.GetComponent<RectTransform>();
+                    rect.anchorMin = new Vector2(0, 0);
+                    rect.anchorMax = new Vector2(1, 0);
+                    rect.pivot = new Vector2(0.5f, 0);
+                }
+            }
+        }
+    }
 }

@@ -19,7 +19,9 @@ MonoBehaviour:
     LanguageGenericType: 
   CustomizedName:
     ValueName: PlayerName
+    LastValue: 
   UseGlobalValue: 1
+  Images: []
   textColor: {r: 0.592951, g: 0.28773582, b: 1, a: 1}
   Avatars:
   - type: 0
@@ -40,3 +42,5 @@ MonoBehaviour:
   - type: 5
     LeftPosition: {fileID: 21300000, guid: f1487b65f1fff7c4cb7b1da766ae6ff3, type: 3}
     RightPosition: {fileID: 21300000, guid: 5d843f28299f80f428a62c9b976360f1, type: 3}
+  SocialMediaProfile: {fileID: 11400000, guid: 459882e2d4610d0419bf855e22418777, type: 2}
+  SpicySocialMediaProfile: {fileID: 11400000, guid: 7a737a0f404325b45a2b9554b28f7796, type: 2}

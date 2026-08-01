@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GalleryCanvas galleryCanvas;
     [SerializeField] ContactsCanvas contactsCanvas;
     [SerializeField] SocialMediaCanvas socialMediaCanvas;
-    [SerializeField] UICanvas settingsCanvas;
+    [SerializeField] SpicySocialMediaCanvas spicySocialMediaCanvas;
     [SerializeField] OverlayCanvas overlayCanvas;
 
     [Header("Config")]
@@ -136,7 +136,6 @@ public class GameManager : MonoBehaviour
                 //Set the system language in the GameManager
                 LOCALIZATION_MANAGER.selectedLang = (SystemLanguage)Enum.Parse(typeof(SystemLanguage), lang);
                 SaveAndLoadManager.Instance.CurrentSave.CurrentLanguage = LOCALIZATION_MANAGER.selectedLang;
-                SaveAndLoadManager.Instance.AutoSave();
             }
         });
     }
@@ -191,11 +190,11 @@ public class GameManager : MonoBehaviour
             {
                 if (item.FileName == targetFileName)
                 {
-                    SaveAndLoadManager.Instance.CurrentSave.UnlockMedia(nodeData, false);
+                    SaveAndLoadManager.Instance.CurrentSave.UnlockMedia(nodeData, item.IsLinearPathUnlock);
                     SaveAndLoadManager.Instance.CurrentSave.CustomBackgroundImage = item;
 
                     if (save)
-                        SaveAndLoadManager.Instance.AutoSave();
+                        SaveAndLoadManager.SaveToJson(SaveAndLoadManager.Instance.CurrentSave, SaveAndLoadManager.Instance.CurrentSaveSlot);
                     break;
                 }
             }
@@ -231,43 +230,66 @@ public class GameManager : MonoBehaviour
         overlayCanvas.ShowDialog(popup);
     }
 
+    /// <summary>
+    /// Reset the game state and clears the social media canvases
+    /// Should be used when moving from one story chapter to another. Will not clear the social media canvases
+    /// </summary>
+    /// <param name="startDialogue"></param>
     public void ResetGameState(bool startDialogue = true)
     {
-        StartCoroutine(CoResetConversations(startDialogue));
-
         //Reset the navigation stack
         GalleryCanvas.ResetGalleryButtons();
         NavigationManager.Instance.ResetStack();
+
+        //Clear the messages within each conversation panel
+        messagingCanvas.ClearConversations();
+
+        StartCoroutine(CoResetConversations(startDialogue));
+    }
+
+    /// <summary>
+    /// Hard reset the game state and clears the social media canvases
+    /// Should be used when clearing the save, moving to a replay, exiting a replay or changing save slots
+    /// </summary>
+    /// <param name="startDialogue"></param>
+    public void HardResetGameState(bool startDialogue = true)
+    {
+        DialogueManager.Instance.DisplaySpeedMultipler = DialogueManager.ResponseSpeed.X1;
+
+        // Clear the social media canvases
+        socialMediaCanvas.ClearProfileButtons();
+        spicySocialMediaCanvas.ClearProfileButtons();
+
+        socialMediaCanvas.ClearSocialFeed();
+        spicySocialMediaCanvas.ClearSocialFeed();
+
+        messagingCanvas.Close();
+
+        ResetGameState(startDialogue);
     }
 
     IEnumerator CoResetConversations(bool startDialogue)
     {
         NextChapterReady = false;
 
-        //Clear the messages within each conversation panel
-        messagingCanvas.ClearConversations();
-
-        DialogueManager.Instance.DisplaySpeedMultipler = DialogueManager.ResponseSpeed.X1;
-
-        socialMediaCanvas.Clear();
-        messagingCanvas.Close();
-
         //Restart the dialogue trees
         yield return new WaitForSecondsRealtime(.1f);
 
-        settingsCanvas.Close();
+        SettingsCanvas.Instance.Close();
 
         foreach (var item in FindObjectsByType<Notification>(FindObjectsSortMode.None))
         {
-            item.gameObject.SetActive(false);
-            Destroy(item);
+            DialogueUIManagerObjectPool.Instance.ReturnNotification(item);
         }
 
         //Double call to messaging canvas close in order to shut the contants window AND the message window
         messagingCanvas.Close();
+        MainMenuCanvas.Instance.ClearButtons();
 
         if (startDialogue)
+        {
             StartCoroutine(CoStartDialogue());
+        }
     }
 
     IEnumerator CoStartDialogue()
@@ -336,7 +358,7 @@ public class GameManager : MonoBehaviour
 
     public void SetNewMessage(DialogueCharacterSO _character, bool _value = true)
     {
-        if (MessagingCanvas.GetConversationPanel(_character).IsOpen && _value)
+        if (_value && MessagingCanvas.GetConversationPanel(_character).IsOpen)
             return;
 
         hasNewMessage[_character] = _value;
@@ -363,7 +385,7 @@ public class GameManager : MonoBehaviour
     public GalleryCanvas GalleryCanvas { get { return galleryCanvas; } }
     public ContactsCanvas ContactsCanvas { get { return contactsCanvas; } }
     public SocialMediaCanvas SocialMediaCanvas { get { return socialMediaCanvas; } }
-    public UICanvas SettingsCanvas { get { return settingsCanvas; } }
+    public SpicySocialMediaCanvas SpicySocialMediaCanvas { get { return spicySocialMediaCanvas; } }
 
     public class CharacterData
     {

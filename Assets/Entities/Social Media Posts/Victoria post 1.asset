@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16f2ff71a9223194ebcfe1289e963392, type: 3}
+  m_Name: Victoria post 1
+  m_EditorClassIdentifier: Assembly-CSharp::SocialMediaPostSO
+  Character: {fileID: 11400000, guid: 4633184ded7444943962e7d570a2109f, type: 2}
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: Physical therapy looks a little different today!
+  - languageEnum: 1
+    LanguageGenericType: "\u4ECA\u65E5\u306E\u7406\u5B66\u7642\u6CD5\u306F\u3001\u3053\u308C\u307E\u3067\u3068\u306F\u5C11\u3057\u9055\u3063\u305F\u69D8\u5B50\u3067\u3059\uFF01"
+  Message: 
+  MediaType: 0
+  TargetPlatform: 1
+  GalleryVisibility: 0
+  Image: {fileID: 21300000, guid: e94e34e0b1a1817498c1925522caeb7a, type: 3}
+  Video: {fileID: 0}
+  VideoThumbnail: {fileID: 0}
+  NotBackgroundCapable: 0
+  Comments:
+  - Name: Dr.Markus Weber
+    Content: I liked the other physical things with you more

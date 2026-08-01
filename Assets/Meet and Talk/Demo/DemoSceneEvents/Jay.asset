@@ -19,7 +19,9 @@ MonoBehaviour:
     LanguageGenericType: 
   CustomizedName:
     ValueName: 
+    LastValue: 
   UseGlobalValue: 0
+  Images: []
   textColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
   Avatars:
   - type: 0
@@ -40,3 +42,5 @@ MonoBehaviour:
   - type: 5
     LeftPosition: {fileID: 0}
     RightPosition: {fileID: 0}
+  SocialMediaProfile: {fileID: 11400000, guid: 459882e2d4610d0419bf855e22418777, type: 2}
+  SpicySocialMediaProfile: {fileID: 11400000, guid: 7a737a0f404325b45a2b9554b28f7796, type: 2}

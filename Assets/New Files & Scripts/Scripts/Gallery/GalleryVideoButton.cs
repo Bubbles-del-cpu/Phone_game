@@ -1,4 +1,5 @@
 using System.Collections;
+using System.IO;
 using MeetAndTalk;
 using TMPro;
 using UnityEngine;
@@ -11,9 +12,9 @@ public class GalleryVideoButton : GalleryButtonBase
     private VideoClip _clip;
     public override string FileName => _clip.name;
 
-    public override void Setup(DialogueChapterManager.ChapterData chapterData, DialogueNodeData nodeData, bool isSocialMediaPost)
+    public override void Setup(DialogueChapterManager.ChapterData chapterData, DialogueNodeData nodeData, bool isSocialMediaPost, bool isFromGallery)
     {
-        base.Setup(chapterData, nodeData, isSocialMediaPost);
+        base.Setup(chapterData, nodeData, isSocialMediaPost, isFromGallery);
 
         (VideoClip clip, Sprite clipThumbnial) mediaData = nodeData.GetNodeVideoData(isSocialMediaPost);
 
@@ -28,32 +29,24 @@ public class GalleryVideoButton : GalleryButtonBase
         _lockedImage.ApplyBlur();
     }
 
+    public override void SetupForBaseSocialProfileItem(GalleryMediaItem item, bool isFromGallery)
+    {
+        base.SetupForBaseSocialProfileItem(item, isFromGallery);
+
+        _clip = item.Video;
+        _fallbackThumbnail = item.VideoThumbnail;
+        if (_fallbackThumbnail != null)
+        {
+            _videoPreviewSprite = _fallbackThumbnail;
+        }
+
+        _image.sprite = _videoPreviewSprite;
+        _lockedImage.ApplyBlur();
+    }
+
 
     public override void GalleryButtonClicked()
     {
-        GameManager.Instance.GalleryCanvas.OpenVideo(_assignedNode, openedFromMessage: false, isSocialMediaPost: _isSocialMediaPost);
-    }
-
-    private void FixedUpdate()
-    {
-        // if (_clip)
-        // {
-        //     if (_fallbackThumbnail == null)
-        //     {
-        //         _image.sprite = _fallbackThumbnail;
-        //         _lockedImage.ApplyBlur();
-        //     }
-        //     else
-        //     {
-        //         var frame = GameManager.Instance.GetVideoFrame(_clip);
-        //         _videoPreviewSprite = frame.Item2;
-        //         if ( _videoPreviewSprite == null)
-        //         {
-        //             _image.sprite = _videoPreviewSprite;
-        //             if (_videoPreviewSprite != null)
-        //                 _lockedImage.ApplyBlur();
-        //         }
-        //     }
-        // }
+        GameManager.Instance.GalleryCanvas.OpenVideo(AssignedGUID, FileName, _isFromGallery, isSocialMediaPost: _isSocialMediaPost, includeScrubHistory: true);
     }
 }

@@ -87,6 +87,8 @@ public class MessagingResponseButton : MonoBehaviour
     {
         GetComponentInParent<UIPanel>().Close();
 
+        // Unpause the dialogue manager when a response is chosen.
+        DialogueManager.Instance.Paused = false;
         DialogueManager.Instance.dialogueUIManager.SetFullText(_fullText, _assignedNode, DialogueUIManager.MessageSource.Player);
 
         yield return new WaitForSeconds(DialogueManager.Instance.PostChoiceDelay);

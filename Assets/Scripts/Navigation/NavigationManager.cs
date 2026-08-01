@@ -30,7 +30,7 @@ public class NavigationManager : MonoBehaviour
     private void Update()
     {
         _navigationCanvas.sortingOrder = PanelOpenCount + _offsetAmount;
-        DialogueUIManager.Instance.NotificationCanvas.sortingOrder = PanelOpenCount + _offsetAmount;
+        NotificationCanvas.Instance.Canvas.sortingOrder = PanelOpenCount + _offsetAmount;
     }
 
     public void ResetStack()

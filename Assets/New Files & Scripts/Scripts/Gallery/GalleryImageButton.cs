@@ -17,17 +17,27 @@ public class GalleryImageButton : GalleryButtonBase
 
     public override string FileName => _image.sprite.name;
 
-    public override void Setup(DialogueChapterManager.ChapterData chapterData, DialogueNodeData nodeData, bool isSocialMediaPost)
+    public override void Setup(DialogueChapterManager.ChapterData chapterData, DialogueNodeData nodeData, bool isSocialMediaPost, bool isFromGallery)
     {
-        base.Setup(chapterData, nodeData, isSocialMediaPost);
+        base.Setup(chapterData, nodeData, isSocialMediaPost, isFromGallery);
 
         (Sprite image, bool backgroundCapable) mediaData = nodeData.GetNodeImageData(isSocialMediaPost);
         _image.sprite = mediaData.image;
-        _lockedImage.ApplyBlur();
+        _lockedImage.SetBlurSprite(mediaData.image);
+        _lockedImage.SourceImage.enabled = Unlocked;
+    }
+
+    public override void SetupForBaseSocialProfileItem(GalleryMediaItem item, bool isFromGallery)
+    {
+        base.SetupForBaseSocialProfileItem(item, isFromGallery);
+
+        _image.sprite = item.Image;
+        _lockedImage.SetBlurSprite(item.Image);
+        _lockedImage.SourceImage.enabled = Unlocked;
     }
 
     public override void GalleryButtonClicked()
     {
-        GameManager.Instance.GalleryCanvas.OpenImage(_assignedNode, openedFromMessage: false, isSocialMediaPost: _isSocialMediaPost);
+        GameManager.Instance.GalleryCanvas.OpenImage(AssignedGUID, FileName, _isFromGallery, isSocialMediaPost: _isSocialMediaPost, includeScrubHistory: true);
     }
 }

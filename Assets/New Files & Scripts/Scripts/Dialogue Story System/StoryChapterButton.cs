@@ -14,7 +14,7 @@ public class StoryChapterButton : MonoBehaviour
     private TMP_Text _label;
 
     public DialogueChapterManager.ChapterData AssignedChapter { get; private set; }
-    public bool IsStandaloneChapterButton{ get; private set; }
+    public bool IsStandaloneChapterButton { get; private set; }
     public Color BaseColor;
     public Color CompletedColor;
 
@@ -51,14 +51,14 @@ public class StoryChapterButton : MonoBehaviour
             //We have to replay settings to just trigger the chapter instantly
             OverlayCanvas.Instance.FadeToBlack(() =>
             {
-                GameManager.Instance.ResetGameState(startDialogue: false);
+                GameManager.Instance.HardResetGameState(startDialogue: false);
                 if (IsStandaloneChapterButton)
                 {
                     DialogueChapterManager.Instance.TriggerStandaloneChapter(AssignedChapter);
                 }
                 else
                 {
-                    DialogueChapterManager.Instance.TriggerStoryChapter(AssignedChapter, true);
+                    DialogueChapterManager.Instance.TriggerStoryChapterReplay(AssignedChapter);
                 }
             });
         }
@@ -76,14 +76,14 @@ public class StoryChapterButton : MonoBehaviour
                     {
                         OverlayCanvas.Instance.FadeToBlack(() =>
                         {
-                            GameManager.Instance.ResetGameState(startDialogue: false);
+                            GameManager.Instance.HardResetGameState(startDialogue: false);
                             if (IsStandaloneChapterButton)
                             {
                                 DialogueChapterManager.Instance.TriggerStandaloneChapter(AssignedChapter);
                             }
                             else
                             {
-                                DialogueChapterManager.Instance.TriggerStoryChapter(AssignedChapter, true);
+                                DialogueChapterManager.Instance.TriggerStoryChapterReplay(AssignedChapter);
                             }
                         });
                     });

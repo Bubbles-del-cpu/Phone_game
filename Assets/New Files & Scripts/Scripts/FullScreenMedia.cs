@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using MeetAndTalk;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,13 +12,20 @@ public class FullScreenMedia : UIPanel
     [SerializeField] private RawImage _videoImage;
     [SerializeField] private MediaType _currentMediaType;
     [SerializeField] protected GallerySetBackgroundButton _backgroundSetButton;
+    [SerializeField] private Button _nextButton;
+    [SerializeField] private Button _previousButton;
 
     private VideoClip _clipToPlay;
     private Sprite _videoThumbnail;
+    private List<GalleryMediaItem> _scrubMediaItems;
+    private GalleryMediaItem _currentlyDisplayedItem;
+    private int _currentScrubIndex = -1;
 
-    public void OnPlayClick()
+    public override void Awake()
     {
-        GameManager.Instance.MainVideoPlayer.PlayVideo(_clipToPlay);
+        _playButton.onClick.AddListener(() => OnPlayClick(0));
+        _nextButton.onClick.AddListener(OnNextClick);
+        _previousButton.onClick.AddListener(OnPreviousClick);
     }
 
     private void Update()
@@ -86,44 +95,92 @@ public class FullScreenMedia : UIPanel
         return imageTransform.sizeDelta;
     }
 
-    public void Setup(DialogueNodeData nodeData, bool isSocialMediaPost)
+    private void SetupMediaViewer(GalleryMediaItem galleryItem)
     {
-        (MediaType type, Sprite image, VideoClip video, Sprite videoThumbnail, bool backgroundCapable) mediaData =
-            nodeData.GetNodeMediaData(isSocialMediaPost);
-
         _backgroundSetButton.gameObject.SetActive(false);
-        _currentMediaType = mediaData.type;
-        switch (mediaData.type)
+        _currentMediaType = galleryItem.MediaType;
+        switch (galleryItem.MediaType)
         {
             case MediaType.Sprite:
-                _image.sprite = mediaData.image;
+                _image.sprite = galleryItem.Image;
                 _image.preserveAspect = true;
 
                 //Setup the background set button
-                _backgroundSetButton.gameObject.SetActive(mediaData.backgroundCapable);
-                if (mediaData.backgroundCapable)
-                    _backgroundSetButton.Setup(nodeData, isSocialMediaPost);
+                _backgroundSetButton.gameObject.SetActive(galleryItem.IsBackgroundCapable);
+                if (galleryItem.IsBackgroundCapable)
+                    _backgroundSetButton.Setup(galleryItem.Node, galleryItem.IsSocialMediaPost);
 
                 break;
             case MediaType.Video:
-                if (mediaData.videoThumbnail == null)
+                if (galleryItem.VideoThumbnail == null)
                 {
-                    var texture = GameManager.Instance.GetVideoFrame(mediaData.video);
+                    var texture = GameManager.Instance.GetVideoFrame(galleryItem.Video);
                     _videoThumbnail = texture.Item2;
                 }
                 else
                 {
-                    _videoThumbnail = mediaData.videoThumbnail;
+                    _videoThumbnail = galleryItem.VideoThumbnail;
                 }
 
                 _image.sprite = _videoThumbnail;
                 _image.preserveAspect = true;
 
                 GameManager.Instance.MainVideoPlayer.Stop();
-                _clipToPlay = mediaData.video;
+                _clipToPlay = galleryItem.Video;
 
                 break;
         }
 
+        _currentlyDisplayedItem = galleryItem;
+    }
+
+    /// <summary>
+    /// Setups the media viewer with scrub history
+    /// </summary>
+    /// <param name="galleryItem">Target gallery item to display</param>
+    /// <param name="scrubItems">List of media items for scrubbing. Optional</param>
+    public void SetupWithScrubHistory(GalleryMediaItem galleryItem, List<GalleryMediaItem> scrubItems = null)
+    {
+        if (scrubItems != null)
+        {
+            _scrubMediaItems = scrubItems;
+            _currentScrubIndex = scrubItems.IndexOf(galleryItem);
+        }
+
+        _nextButton.gameObject.SetActive(scrubItems != null && scrubItems.Count > 1);
+        _previousButton.gameObject.SetActive(scrubItems != null && scrubItems.Count > 1);
+
+        SetupMediaViewer(galleryItem);
+    }
+
+    public void OnNextClick()
+    {
+        if (_scrubMediaItems == null || _scrubMediaItems.Count == 0)
+            return;
+
+        _currentScrubIndex = (_currentScrubIndex + 1) % _scrubMediaItems.Count;
+        SetupMediaViewer(_scrubMediaItems[_currentScrubIndex]);
+    }
+
+    public void OnPreviousClick()
+    {
+        if (_scrubMediaItems == null || _scrubMediaItems.Count == 0)
+            return;
+
+        _currentScrubIndex = (_currentScrubIndex - 1 + _scrubMediaItems.Count) % _scrubMediaItems.Count;
+        SetupMediaViewer(_scrubMediaItems[_currentScrubIndex]);
+    }
+
+    public void OnPlayClick(float delay = 0)
+    {
+        if (_clipToPlay == null)
+            return;
+        StartCoroutine(CoPlayVideoWithDelay(delay));
+    }
+
+    private IEnumerator CoPlayVideoWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        GameManager.Instance.MainVideoPlayer.PlayVideo(_clipToPlay);
     }
 }

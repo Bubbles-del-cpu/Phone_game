@@ -8,7 +8,7 @@ public class GalleryHelper
     private string _salt;
     private string _hash;
     private int _refLength;
-    public GalleryHelper(GalleryCanvas.GalleryUnlockData data, string pass)
+    public GalleryHelper(GalleryUnlockData data, string pass)
     {
         _salt = data.Salt;
         _hash = data.Hash;
@@ -26,14 +26,21 @@ public class GalleryHelper
         }
     }
 
+    public static bool MatchesCode(string inputCode, string salt, string expectedHash)
+    {
+        if (string.IsNullOrEmpty(inputCode) || string.IsNullOrEmpty(expectedHash))
+            return false;
+
+        return string.Equals(expectedHash, ComputeHash(inputCode, salt), StringComparison.Ordinal);
+    }
+
     private bool IsValidCode(string inputCode)
     {
 #if UNITY_EDITOR
         if (inputCode == "DEV UNLOCK")
             return true;
 #endif
-        string inputHash = ComputeHash(inputCode, _salt);
-        return string.Equals(_hash, inputHash, StringComparison.Ordinal);
+        return MatchesCode(inputCode, _salt, _hash);
     }
 
     public void Unlock()
@@ -41,12 +48,12 @@ public class GalleryHelper
         //Unlock the gallery buttons
         foreach (var item in SaveAndLoadManager.Instance.CurrentSave.UnlockedMedia)
         {
-            GameManager.Instance.GalleryCanvas.UnlockMedia(item.FileName, reloadedGallery: false);
+            GameManager.Instance.GalleryCanvas.UnlockMedia(item.NodeGUID, item.FileName, reloadedGallery: false);
         }
 
         SaveAndLoadManager.Instance.CurrentSave.UnlockAllMedia();
-        SaveAndLoadManager.Instance.AutoSave();
         GameManager.Instance.GalleryCanvas.RefreshGalleryPage();
+        GameManager.Instance.GalleryCanvas.UnlockData.UnlockTriggered = false;
     }
 
 

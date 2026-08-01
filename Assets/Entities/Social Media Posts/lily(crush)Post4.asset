@@ -13,8 +13,14 @@ MonoBehaviour:
   m_Name: lily(crush)Post4
   m_EditorClassIdentifier: Assembly-CSharp::SocialMediaPostSO
   Character: {fileID: 11400000, guid: 44da74b3d308fdb4e9f9fdc127092247, type: 2}
-  Message: " Mabye horror movies are not for me\u2026"
+  MessageTexts:
+  - languageEnum: 0
+    LanguageGenericType: " Mabye horror movies are not for me\u2026"
+  - languageEnum: 1
+    LanguageGenericType: 
+  Message: 
   MediaType: 0
+  TargetPlatform: 1
   GalleryVisibility: 0
   Image: {fileID: 7831637363194918400, guid: 62748935a5556664c8c717b41b9955ea, type: 3}
   Video: {fileID: 0}

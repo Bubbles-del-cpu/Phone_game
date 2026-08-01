@@ -9,6 +9,7 @@ public class UITextureBlur : MonoBehaviour
     [SerializeField] private Material _blurMaterial;
     [SerializeField] private Texture _sourceTexture;
     [SerializeField] private Image _sourceImage;
+    public Image SourceImage => _sourceImage;
     private Texture _targetTexture => _sourceImage != null && _sourceImage.sprite != null ? _sourceImage.sprite.texture : _sourceTexture;
     [SerializeField] [Range(0f, 20f)] private float _blurSize = 2f;
     [SerializeField][Range(1, 20)] private int _iterations = 2;
@@ -17,6 +18,11 @@ public class UITextureBlur : MonoBehaviour
 
     [Header("Optional: Auto-update")]
     [SerializeField] private bool _updateEveryFrame = false;
+
+    [Header("Mobile Optimization")]
+    [SerializeField] private bool _useMobileOptimization = false;
+    [SerializeField] protected Sprite _mobileLockedOverlaySprite;
+    private bool _mobileOptimizationEnabled = false;
 
     private RawImage _targetImage;
     private RenderTexture _tempRT1;
@@ -27,6 +33,12 @@ public class UITextureBlur : MonoBehaviour
 
     private void Start()
     {
+#if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
+        _mobileOptimizationEnabled = true;
+#else
+        _mobileOptimizationEnabled = false;
+#endif
+
         if (_blurMaterial == null)
         {
             Debug.LogWarning("[UITextureBlur] Blur material not assigned!");
@@ -55,11 +67,17 @@ public class UITextureBlur : MonoBehaviour
 
     public void ApplyBlur()
     {
-        if (_blurMaterial == null || _targetTexture == null)
-            return;
-
         if (_targetImage == null)
             _targetImage = GetComponent<RawImage>();
+
+        if (_mobileOptimizationEnabled)
+        {
+            _targetImage.texture = _mobileLockedOverlaySprite.texture;
+            return;
+        }
+
+        if (_blurMaterial == null || _targetTexture == null)
+            return;
 
         // int width = _blurTextureSize;
         // int height = _blurTextureSize;
@@ -149,6 +167,15 @@ public class UITextureBlur : MonoBehaviour
         }
     }
 
+    public void SetBlurSprite(Sprite sprite)
+    {
+        if (sprite != null)
+        {
+            _sourceImage.sprite = sprite;
+            ApplyBlur();
+        }
+    }
+
     private void OnDisable()
     {
         ReleaseRenderTextures();
@@ -162,15 +189,6 @@ public class UITextureBlur : MonoBehaviour
         {
             _resultRT.Release();
             DestroyRT(_resultRT);
-        }
-    }
-
-    public void SetSourceTarget(Image image)
-    {
-        if (image && image.sprite != null)
-        {
-            _sourceTexture = image.sprite.texture;
-            ApplyBlur();
         }
     }
 }

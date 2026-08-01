@@ -37,12 +37,17 @@ public class DialogWarningMessage : MonoBehaviour
             _localizedString.StringReference.SetReference(GameConstants.DialogTextKeys.DIALOGUE_TABLE_KEY, message_key);
         }
 
-        _onConfirm = eventToTrigger;
+        SetConfirmEvent(eventToTrigger);
         _confirmButtonLocalizedString.StringReference.SetReference(GameConstants.UIElementKeys.UI_ELEMENTS_TABLE_KEY, confirmButtonKey);
         _cancelButtonLocalizedString.StringReference.SetReference(GameConstants.UIElementKeys.UI_ELEMENTS_TABLE_KEY, cancelButtonKey);
 
         if (!twoButtonSetup)
             _cancelButton.gameObject.SetActive(false);
+    }
+
+    public void SetConfirmEvent(System.Action eventToTrigger)
+    {
+        _onConfirm = eventToTrigger;
     }
 
     public void OnConfirm()

@@ -12,7 +12,7 @@ public static class GameConstants
     public static class DialogTextKeys
     {
         public static string DIALOGUE_TABLE_KEY = "Dialog Prompts";
-        public static string CHAPTER_COMPLETE= "chapter_complete";
+        public static string CHAPTER_COMPLETE = "chapter_complete";
         public static string CHAPTER_REPLAY_COMPLETE = "chapter_replay_complete";
         public static string ALL_CHAPTERS_COMPLETE = "all_chapters_complete";
         public static string INVALID_SAVE_DATA = "invalid_save_data";
@@ -30,5 +30,6 @@ public static class GameConstants
         public static string GALLERY_CODE_SUCCESS = "gallery_code_success";
         public static string GALLERY_ITEM_LOCKED = "gallery_item_locked";
         public static string WARNING_LANGUAGE_CHANGE = "warning_language_change";
+        public static string WARNING_SOCIAL_MEDIA_ACCESS_DURING_REPLAY = "warning_social_media_access_during_replay";
     }
 }

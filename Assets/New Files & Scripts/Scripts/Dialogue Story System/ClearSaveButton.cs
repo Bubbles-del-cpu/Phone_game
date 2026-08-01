@@ -7,16 +7,31 @@ public class ClearSaveButton : MonoBehaviour
 {
     [SerializeField]
     private bool _displayDialog = true;
+    [SerializeField] private GameObject _dialogPrefab;
 
     [SerializeField] private bool _startNewGameAfterClear = true;
     public void Click()
     {
         if (_displayDialog)
         {
-            GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.CLEAR_SAVE, () =>
+            if (_dialogPrefab != null)
             {
-                FadeAndRestart();
-            });
+                // If we have a custom prefab assigned use that for the dialog instead of the default one
+                var dialog = Instantiate(_dialogPrefab);
+                if (dialog.TryGetComponent(out ClearSaveDialog clearSaveDialog))
+                {
+                    clearSaveDialog.Setup(_startNewGameAfterClear);
+                }
+                GameManager.Instance.DisplayPopup(dialog);
+            }
+            else
+            {
+                // If no custom prefab is assigned, use the default dialog
+                GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.CLEAR_SAVE, () =>
+                {
+                    FadeAndRestart();
+                });
+            }
         }
         else
         {
