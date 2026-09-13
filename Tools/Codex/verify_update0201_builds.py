@@ -6,12 +6,13 @@ from pathlib import Path
 
 
 PROJECT = Path(__file__).resolve().parents[2]
-BUILDS = PROJECT / "0.20.1.beta builds"
+VERSION = "0.20.2"
+BUILDS = PROJECT / f"{VERSION} builds"
 ARCHIVES = (
-    BUILDS / "Android" / "NTS Honeymoon 0.20.1.beta.apk",
-    BUILDS / "NTS Honeymoon 0.20.1.beta Windows.zip",
-    BUILDS / "NTS Honeymoon 0.20.1.beta Linux.zip",
-    BUILDS / "NTS Honeymoon 0.20.1.beta Mac.zip",
+    BUILDS / "Android" / f"NTS Honeymoon {VERSION}.apk",
+    BUILDS / f"NTS Honeymoon {VERSION} Windows.zip",
+    BUILDS / f"NTS Honeymoon {VERSION} Linux.zip",
+    BUILDS / f"NTS Honeymoon {VERSION} Mac.zip",
 )
 
 
@@ -25,8 +26,8 @@ for archive_path in ARCHIVES:
     print(f"Integrity OK: {archive_path.name}", flush=True)
 
 permission_checks = {
-    BUILDS / "NTS Honeymoon 0.20.1.beta Linux.zip": "NTS Honeymoon 0.20.1.beta.x86_64",
-    BUILDS / "NTS Honeymoon 0.20.1.beta Mac.zip": ".app/Contents/MacOS/NTS_HM",
+    BUILDS / f"NTS Honeymoon {VERSION} Linux.zip": f"NTS Honeymoon {VERSION}.x86_64",
+    BUILDS / f"NTS Honeymoon {VERSION} Mac.zip": ".app/Contents/MacOS/NTS_HM",
 }
 for archive_path, suffix in permission_checks.items():
     with zipfile.ZipFile(archive_path) as archive:

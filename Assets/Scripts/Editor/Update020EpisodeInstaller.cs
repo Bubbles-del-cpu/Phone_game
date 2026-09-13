@@ -62,7 +62,7 @@ public static class Update020EpisodeInstaller
     [MenuItem("Tools/NTS/Install Update 0.20 Episodes")]
     public static void Install()
     {
-        PlayerSettings.bundleVersion = "0.20.1.beta";
+        PlayerSettings.bundleVersion = "0.20.2";
         EnsureFolder(GeneratedFolder);
         EnsureFolder(VariablesFolder);
         EnsureFolder(PostsFolder);

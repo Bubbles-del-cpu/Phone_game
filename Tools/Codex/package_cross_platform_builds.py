@@ -7,13 +7,14 @@ from pathlib import Path
 
 
 PROJECT = Path(__file__).resolve().parents[2]
-BUILDS = PROJECT / "0.20.1.beta builds"
+VERSION = "0.20.2"
+BUILDS = PROJECT / f"{VERSION} builds"
 LINUX = BUILDS / "Linux"
 MAC = BUILDS / "Mac"
 WINDOWS = BUILDS / "Windows"
-LINUX_ZIP = BUILDS / "NTS Honeymoon 0.20.1.beta Linux.zip"
-MAC_ZIP = BUILDS / "NTS Honeymoon 0.20.1.beta Mac.zip"
-WINDOWS_ZIP = BUILDS / "NTS Honeymoon 0.20.1.beta Windows.zip"
+LINUX_ZIP = BUILDS / f"NTS Honeymoon {VERSION} Linux.zip"
+MAC_ZIP = BUILDS / f"NTS Honeymoon {VERSION} Mac.zip"
+WINDOWS_ZIP = BUILDS / f"NTS Honeymoon {VERSION} Windows.zip"
 
 MACH_O_MAGICS = {
     b"\xfe\xed\xfa\xce",
@@ -82,7 +83,7 @@ def main() -> None:
     if "linux" in targets:
         archive_directory(LINUX, LINUX_ZIP)
         print(f"Created {LINUX_ZIP.name} ({LINUX_ZIP.stat().st_size / 1024 / 1024:.2f} MB)", flush=True)
-        linux_mode = verify_permissions(LINUX_ZIP, "NTS Honeymoon 0.20.1.beta.x86_64")
+        linux_mode = verify_permissions(LINUX_ZIP, f"NTS Honeymoon {VERSION}.x86_64")
         print(f"Verified Linux executable mode {oct(linux_mode)}", flush=True)
 
     if "mac" in targets:
