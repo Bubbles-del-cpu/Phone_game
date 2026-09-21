@@ -7,13 +7,13 @@ from pathlib import Path
 
 
 PROJECT = Path(__file__).resolve().parents[2]
-VERSION = "0.20.2"
+VERSION = "0.21"
 BUILDS = PROJECT / f"{VERSION} builds"
 LINUX = BUILDS / "Linux"
 MAC = BUILDS / "Mac"
 WINDOWS = BUILDS / "Windows"
 LINUX_ZIP = BUILDS / f"NTS Honeymoon {VERSION} Linux.zip"
-MAC_ZIP = BUILDS / f"NTS Honeymoon {VERSION} Mac.zip"
+MAC_ZIP = BUILDS / f"NTS Honeymoon {VERSION} macOS.zip"
 WINDOWS_ZIP = BUILDS / f"NTS Honeymoon {VERSION} Windows.zip"
 
 MACH_O_MAGICS = {

@@ -1,0 +1,708 @@
+NTS HM EP 28.5 — WORKING DRAFT
+Split from Episode 28 after Chat 15.
+Requires dave_lily_pending == true and completion of the Episode 28 date route.
+Working chat numbers are retained from the original combined draft.
+The no-date route ends in Episode 28 and does not enter this episode.
+
+==================================================
+DATE ROUTE CONTINUATION — UNDERWATER DINNER AND HOTEL NIGHT
+==================================================
+
+--------------------------------------------------
+CHAT 16 — LISA'S DINNER WATCH
+
+(A little later...)
+
+(Lisa texts the MC)
+
+LI: Perfect view
+
+LI: (Sends a picture from her solo table: Lisa's plated first course and wine glass fill the foreground. Across the active illuminated dome, Lily stares delightedly at a school of silver fish crossing overhead while Dave watches her distraction with an amused smile.)
+
+M: You really can see everything
+LI: Including your wife making Dave try her food
+
+LI: (Sends a closer picture: Lily offers Dave a bite from her fork across the table. Dave leans forward to accept it while she smiles at him, with silver fish swimming behind them.)
+
+M: Still watching?
+LI: I was
+LI: Then my food arrived 😂
+
+(A few minutes later...)
+
+M: Lisa?
+LI: Worth it
+LI: Wait... Mia and her husband just walked in
+
+LI: (Sends a picture toward the restaurant entrance: Mia enters the underwater dome beside her tall, reserved husband. Mia has already recognized the group and smiles toward them. Her husband's attention is fixed directly on Lily.)
+
+(if ep24.5_lily_dave_blowjob == true)
+
+LI: Mia looked from Dave to Lily like she remembers exactly what she started
+
+(else if ep24.5_lily_join_lisa == true)
+
+LI: Mia looked at me, then Lily
+LI: She definitely remembers us disappearing below deck
+
+(Continue for both)
+
+M: Has Lily seen them?
+LI: She just did
+LI: She's heading for the bathroom
+
+CHAT 17 — LILY IN THE BATHROOM
+
+(A few minutes later...)
+
+(Lily texts the MC)
+
+L: Baby the yacht couple is here
+M: Lisa told me
+L: I needed a minute so I went to the bathroom
+
+L: (Sends a bathroom mirror selfie: Lily stands in her evening dress beneath the soft restroom lighting. She holds her green phone in front of the mirror while her free hand clutches the dress over her stomach. Her shoulders draw inward, her cheeks are flushed and she is visibly trying to control her fear.)
+
+M: Are you okay?
+
+(if Continue_math == true && Docter_Medicine_denied == true — SECRET NTR)
+
+L: Her husband is the man I was trapped below deck with
+M: The one who helped you during the storm?
+L: Yea
+M: Then why are you this uncomfortable?
+L: I don't know baby
+L: Having him watch me and Dave just feels strange
+
+(else — NTS / KNOWN CUCK)
+
+L: Seeing him brought back everything that happened between us in that room
+L: I don't want him sitting there watching me with Dave
+M: I understand baby
+
+(Continue for all)
+
+M: What do you want to do?
+L: Go back and finish my dinner with Dave
+M: Then do that
+L: Okay. I just needed a minute <3
+
+CHAT 18 — MIA SAYS HELLO
+
+(Shortly after...)
+
+(Lisa texts the MC)
+
+LI: Lily's back
+LI: Dave stood up when she returned
+LI: Mia came over alone and said this evening looked much calmer
+
+M: And her husband?
+LI: Stayed at their table
+LI: Lily looked at him once and he gave her one slow nod
+LI: Not a single word
+
+M: What did Mia say to them?
+LI: That Lily and Dave look good together
+LI: Dave turned red and Lily moved her chair closer to him
+LI: Mia wished them a good night and went back to her table
+
+M: Dinner survived then
+LI: Easily
+LI: Dessert is here now
+
+CHAT 19 — THEY'RE ALREADY GONE
+
+(Near the end of dinner...)
+
+(Lisa texts the MC)
+
+LI: I almost missed them leaving
+M: What happened?
+LI: I looked down at my dessert
+LI: By the time I looked up they were already walking out
+LI: Lily clearly wanted to get away from that couple
+
+M: Where are they going?
+LI: Back to the hotel I booked for me and Dave
+LI: But I booked a specific room for them tonight
+M: You booked them a room?
+LI: I also went into it yesterday to set something up for you
+M: For me?
+LI: Thats a surprise (;
+
+CHAT 20 — ON THE WAY TO THE HOTEL
+
+(A few minutes later...)
+
+(Lily texts the MC)
+
+L: We're heading back to Dave and Lisa's hotel
+M: You left quickly
+L: I didn't feel comfortable with that couple watching us
+M: Are you okay?
+L: Yea
+L: I just wanted to get out of there and spend the rest of the night with Dave
+
+L: He just got a room number from Lisa
+L: Apparently she booked something specific
+M: She told me there is a surprise waiting for me
+L: Now I'm worried hihi
+L: We're almost there baby <3
+
+--------------------------------------------------
+CHAT 21 — THE SPECIFIC ROOM
+
+(Later that evening...)
+
+(Lily texts the MC)
+
+L: We're inside baby
+L: Its beautiful
+L: Look
+
+L: (Sends a wide picture taken from the suite entrance: A luxurious hotel room with a large bed, warm lighting, a sitting area and floor-to-ceiling windows overlooking the lights outside. Dave stands near the windows in his white shirt and navy trousers, looking out at the view.)
+
+M: Lisa outdid herself
+L: I still can't see whatever she set up for you
+M: Neither can I
+L: Dave's going to take a shower
+
+(if Continue_math == false — NTS / LEO)
+
+L: Before he does...
+L: Are we still good baby?
+M: Yes
+L: If Dave and I have sex tonight...
+L: You're okay with that?
+M: Yes baby. I'm okay with it
+L: He brought condoms
+L: This conversation feels familiar hihi
+
+(if leo_raw == true)
+
+L: Last time you surprised me and let Leo go without one
+
+(else — leo_raw == false)
+
+L: Last time you told Leo to use one
+
+(Continue for both leo_raw paths)
+
+L: What about Dave?
+
+CHOICE 1 — USE A CONDOM
+(set ep28_dave_raw = false)
+
+M: He uses one
+L: Okay baby. I'll tell him
+
+CHOICE 2 — NO CONDOM
+(set ep28_dave_raw = true)
+
+M: He doesn't need one tonight
+L: Okay... I'll tell him hihi
+
+(else if Continue_math == true && Docter_Medicine_denied == true — SECRET NTR)
+
+(set ep28_dave_raw = false)
+
+L: Dave brought condoms
+L: Don't worry baby. He's using one
+M: Good
+
+(else — KNOWN CUCK)
+
+(set ep28_dave_raw = true)
+
+L: Dave won't be using a condom tonight
+L: I'm not asking this time baby
+M: I know
+
+(Continue for all)
+
+L: The shower is running
+L: I need to change
+
+(if ep28_pack_lingerie == true)
+
+L: Good thing I packed that set hihi
+M: The lingerie?
+L: Yea
+L: Give me a minute
+
+(A few minutes later...)
+
+L: (Sends a front-camera selfie from the hotel bed: Lily waits in the lingerie set she packed earlier, extending one arm toward her phone and looking into the lens with a nervous, excited smile. The closed bathroom door and its warm light are visible behind her.)
+
+L: Waiting for him on the bed
+M: You look beautiful
+L: The shower just stopped
+L: Phone down baby <3
+
+(else — ep28_pack_lingerie == false)
+
+L: I should have packed that set after all
+M: You don't need it
+L: Good answer hihi
+L: The room has a robe. I'll make that work
+
+(A few minutes later...)
+
+L: (Sends a front-camera selfie from the hotel bed: Lily waits in the hotel's soft robe, extending one arm toward her phone while her free hand holds the robe closed. She sits on the large bed with an excited smile, and the closed bathroom door is visible behind her.)
+
+L: Waiting for him on the bed
+M: You still look beautiful
+L: The shower just stopped
+L: Phone down baby <3
+
+CHAT 22 — LISA'S SURPRISE
+
+(A few minutes later...)
+
+(Lisa texts the MC)
+
+LI: Surprise time
+M: What did you do?
+LI: Look
+
+(if ep28_pack_lingerie == true)
+
+LI: (Sends a still image from a fixed camera mounted high in the hotel suite: The camera points directly toward the bed. Lily lies waiting in the lingerie set she packed, while Dave steps out of the open bathroom behind her wearing a towel around his waist and drying his damp hair with a second towel.)
+
+LI: Good thing you told her to pack that set (;
+
+(else — ep28_pack_lingerie == false)
+
+LI: (Sends a still image from a fixed camera mounted high in the hotel suite: The camera points directly toward the bed. Lily lies waiting in the closed hotel robe, while Dave steps out of the open bathroom behind her wearing a towel around his waist and drying his damp hair with a second towel.)
+
+LI: She made that hotel robe work (;
+
+(Continue for both)
+
+M: You installed a camera?
+LI: Yesterday
+LI: Thats what I set up for you
+M: They know I'm watching?
+LI: Of course
+LI: I made sure they both knew before I opened the feed
+M: So I can see everything?
+LI: Every part of the room that matters
+LI: I'll let you know if I see something interesting (;
+
+--------------------------------------------------
+CHAT 23 — THROUGH THE WALL
+
+(Ten minutes later...)
+
+(Lisa texts the MC)
+
+LI: I'm back in our room
+LI: Their room is right next door
+LI: I can hear them kissing through the wall
+
+M: Show me what the camera sees
+M: Please
+LI: No
+LI: You can wait a little longer
+M: Lisa...
+LI: Beg again or be patient (;
+
+CHOICE 1 — BEG AGAIN
+(No persistent variable. Unlocks one additional image.)
+
+M: Please Lisa
+M: Let me see
+LI: Better
+
+LI: (Sends a still image from the fixed room camera: Dave stands naked beside the bed and leans toward Lily with his bare back blocking almost the entire view. Lily's face and loose blonde hair remain visible beside him, but the duvet and Dave's body hide everything else.)
+
+M: I can mostly see Dave's back
+LI: I know
+LI: Thats the view right now (;
+
+CHOICE 2 — WAIT
+(No additional image.)
+
+M: Fine
+M: I'll wait
+LI: Good boy
+
+(Continue for both)
+
+LI: I'll tell you when the view improves
+
+--------------------------------------------------
+CHAT 24 — THE VIEW IMPROVES
+
+(Five minutes later...)
+
+(Lisa texts the MC)
+
+LI: Still waiting? (;
+
+CHOICE 1 — BE IMPATIENT
+(No persistent variable.)
+
+M: Not patiently
+M: Show me already
+LI: Knew it 😂
+
+CHOICE 2 — WAIT PATIENTLY
+(No persistent variable.)
+
+M: Yea
+M: I'll wait
+LI: Good boy
+
+(Continue for both)
+
+LI: Actually...
+LI: The view just improved
+
+LI: (Sends a video from the fixed room camera: Lily is already completely naked, kneeling in front of Dave beside the bed and performing oral sex on him. Dave stands facing her with one hand resting in her hair. The clip is framed from the high corner of the suite.)
+
+M: Fuck
+
+(if ep28_pack_lingerie == true)
+
+M: She's already completely naked
+LI: Wow
+LI: She already lost the lingerie (;
+
+(else — ep28_pack_lingerie == false)
+
+M: The robe is already gone
+LI: It didn't last long 😂
+
+(Continue for both)
+
+LI: Look at that cock...
+LI: Fuck my husband looks good
+LI: Lily has no idea how lucky she is
+M: Getting jealous?
+LI: A little
+LI: Thats still my husband standing there (;
+
+LI: Are you hard?
+
+CHOICE 1 — YES
+(No persistent variable.)
+
+M: Yes
+LI: I knew it
+LI: No touching yourself
+
+CHOICE 2 — NO
+(No persistent variable.)
+
+M: No
+LI: I don't believe you for a second
+LI: No touching anyway
+
+(Continue for both)
+
+M: Bossy
+LI: You're watching our spouses
+LI: Behave (;
+
+--------------------------------------------------
+CHAT 25 — THROUGH THE WALL
+
+(A few minutes later...)
+
+(Lisa texts the MC)
+
+LI: Oh...
+M: What?
+LI: I can hear them through the wall again
+LI: They're definitely going at it now
+M: What position?
+LI: I was wondering the same thing
+LI: Oh I see it
+LI: He loves that one
+M: Show me
+
+(if ep28_dave_raw == true)
+
+LI: (Sends a still image from the fixed room camera: Lily is completely naked on her hands and knees near the centre of the bed while Dave takes her from behind without a condom. Dave holds Lily's hair firmly in one hand and grips her hip with the other, controlling her movement in a dominant position.)
+
+(else — ep28_dave_raw == false)
+
+LI: (Sends a still image from the fixed room camera: Lily is completely naked on her hands and knees near the centre of the bed while Dave takes her from behind wearing a condom. Dave holds Lily's hair firmly in one hand and grips her hip with the other, controlling her movement in a dominant position.)
+
+(Continue for both)
+
+M: He's really holding her hair
+LI: He always does that when he stops holding back
+LI: You should hear the sounds she's making
+LI: Every few seconds she gets louder
+LI: Oh yea...
+LI: She has definitely already come at least once
+
+M: And you?
+LI: My hand is already between my legs
+M: You told me not to touch
+LI: That rule was for you (;
+
+LI: (Sends a selfie from the room next door: Lisa reclines against the headboard with her evening clothes pushed aside and one hand inside her underwear. Her face is flushed as she listens through the wall.)
+
+M: You're enjoying this as much as I am
+LI: Maybe more (;
+
+LI: I'm going to record a proper video
+M: How long?
+LI: Give me five minutes
+LI: I want enough to make it worth watching
+
+(Five minutes later...)
+
+M: Lisa?
+M: Where is it?
+LI: Oh fuck
+M: You forgot?
+LI: Completely
+LI: I was too busy watching them
+LI: And touching myself...
+LI: Starting it now
+LI: Promise
+
+(Five minutes later...)
+
+LI: There
+LI: Worth the wait
+
+(if ep28_dave_raw == true)
+
+LI: (Sends a video from the fixed room camera: Dave continues taking Lily from behind without a condom. He pulls her upper body much higher by her hair, holding her firmly against him while driving into her hard. Lily struggles to keep her hands beneath her as the bed moves under them.)
+
+(else — ep28_dave_raw == false)
+
+LI: (Sends a video from the fixed room camera: Dave continues taking Lily from behind while wearing a condom. He pulls her upper body much higher by her hair, holding her firmly against him while driving into her hard. Lily struggles to keep her hands beneath her as the bed moves under them.)
+
+(Continue for both)
+
+M: Fuck
+LI: Told you
+LI: He loves that position (;
+
+(Two minutes later...)
+
+LI: They switched positions
+LI: Lily is on her back now
+LI: And Dave is going hard...
+LI: Oh wow
+LI: He's really speeding up
+LI: I think he's—
+
+LI: Oh shit
+LI: He just came
+
+M: Show me
+
+LI: I didn't catch it
+LI: Fuck...
+LI: It happened too fast
+
+LI: Wait
+LI: Dave just sent me something
+LI: My husband coming in clutch (;
+
+(if ep28_dave_raw == true)
+
+LI: (Forwards an image Dave sent from his POV: Lily lies naked on her back across the rumpled white sheets, flushed and breathless, looking up toward his phone. The bottom edge catches part of Dave as he photographs the result after pulling out and finishing across Lily's lower stomach and between her thighs.)
+
+(else — ep28_dave_raw == false)
+
+LI: (Forwards a tighter image Dave sent from his POV: Lily lies naked on her back across the rumpled white sheets, flushed and breathless, looking up toward his phone. Dave remains outside the frame after removing the condom and finishing across Lily's lower stomach and between her thighs.)
+
+(Continue for both ep28_dave_raw paths)
+
+M: He actually took that for you?
+LI: Apparently he remembered who was running your media stream
+LI: Good boy (;
+
+--------------------------------------------------
+CHAT 26 — LILY AFTERWARD
+
+(A few minutes later...)
+
+(Lily texts the MC)
+
+L: Well...
+M: I saw
+L: All of it?
+M: Lisa made sure of that
+L: Of course she did...
+
+L: Dave went to take a shower
+L: I wanted to talk to you before he came back
+
+M: How are you feeling?
+L: A little shaky
+L: But good
+L: Really good...
+
+L: Was it what you wanted?
+M: Yes
+L: Good
+L: Because I wanted it too
+
+(if ep28_dave_raw == true)
+
+L: Can I ask you something?
+M: Always
+L: Did you want Dave to come inside me?
+M: Yes
+M: But only if you wanted it too
+L: I thought you did...
+L: He pulled out because we never agreed to that part
+L: But knowing you wanted it is making me think about it now
+L: He's still in the shower
+L: Should I join him?
+
+(else — ep28_dave_raw == false)
+
+L: He's still in the shower
+L: Should I join him?
+
+(CHOICE)
+
+CHOICE 1 — GO JOIN HIM
+(set ep28_join_shower = true)
+
+M: Go join him
+L: I was hoping you would say that
+L: Tell Lisa to keep watching (;
+
+CHOICE 2 — STAY IN BED
+(set ep28_join_shower = false)
+
+M: Stay in bed
+M: I think you've done enough for one night
+L: Probably a good idea
+L: My legs are still shaking...
+L: I'll wait for him here
+M: Get some sleep
+L: I love you
+M: I love you too
+
+--------------------------------------------------
+CHAT 27 — LISA AT THE CONNECTING DOOR
+
+(if ep28_join_shower == true)
+
+(A minute later...)
+
+(Lisa texts the MC)
+
+LI: Lily just walked into the bathroom
+M: Can you see them?
+LI: This is why I booked connecting rooms
+LI: I can see through the crack in the door
+LI: Quiet now...
+
+(if ep28_dave_raw == true)
+
+LI: Oh fuck
+LI: Dave just picked her up
+LI: Look at that
+LI: He lifted her like she weighs nothing
+LI: And he's still going just as hard
+LI: I told you my husband was strong (;
+M: You sound proud
+LI: Can you blame me?
+LI: That's my husband holding your wife against a wall
+
+LI: (Sends a still image taken through the narrow crack of the connecting door: Inside the steamy bathroom, Dave holds Lily face-to-face against the tiled shower wall. Lily wraps her arms and legs around him while he supports her entire weight beneath her thighs and has sex with her without a condom.)
+
+LI: He never even had to put her down
+LI: Fuck, he makes that look easy...
+LI: Well
+LI: You got what you wanted
+M: He came inside her
+LI: Every bit of it
+LI: Judging by her face, she wanted it just as much
+
+(A few minutes later...)
+
+(Lily texts the MC)
+
+L: Dave took this for you
+L: (Sends a tight close-up taken by Dave after lowering her onto her feet: Lily leans forward with her back to his phone while one of Dave's hands holds her ass. The close framing catches his cum beginning to seep out of her and run down her thighs.)
+L: So...
+L: That answers my earlier question
+M: Are you okay?
+L: Very okay
+L: And very full...
+L: I need to clean up before my legs give out
+
+(else — ep28_dave_raw == false)
+
+LI: She's on her knees
+LI: Apparently your wife wasn't finished yet
+LI: She is really going for it
+LI: I don't think Dave is going to last long after everything they already did
+LI: Actually...
+M: What?
+LI: That's my husband in there
+LI: I'm not spending the rest of this hiding behind a door (;
+M: Lisa?
+LI: Keep watching your messages
+
+(Lisa stops responding.)
+
+(A few minutes later...)
+
+(Lily texts the MC)
+
+L: Lisa decided watching wasn't enough...
+M: She joined you?
+L: She didn't exactly stop to ask (;
+L: Dave recorded the ending for you
+L: Don't say we never give you anything
+
+L: (Sends a POV video recorded by Dave: Lily and Lisa kneel together inside the shower, taking turns giving him oral sex. Dave finishes across both Lily and Lisa's faces while continuing to film them from his perspective.)
+
+L: And one more before we wash it off...
+L: (Sends a flushed front-camera selfie from the hotel bathroom: Lily and Lisa have pulled on white bathrobes and lean into the frame together with satisfied smiles. Dave's cum remains streaked across both of their faces.)
+M: You both look very pleased with yourselves
+L: We are
+L: But now we desperately need to clean ourselves up
+
+(Continue for both ep28_dave_raw paths)
+
+(End ep28_join_shower == true)
+
+--------------------------------------------------
+CHAT 28 — THEY'RE OUT
+
+(About forty minutes later...)
+
+(Lisa texts the MC)
+
+LI: It finally went quiet
+M: Are they okay?
+LI: More than okay
+LI: I opened the connecting door as quietly as I could
+LI: Look
+
+LI: (Sends a close picture she quietly took from beside the bed: Lily and Dave are fast asleep beneath the rumpled duvet. Lily is curled against Dave's chest with her head tucked beneath his chin while his arm remains wrapped around her. Both are completely passed out.)
+
+LI: They barely made it back into bed
+LI: Both completely passed out
+M: So that's all I'm getting tonight?
+LI: Afraid so
+LI: I don't think either of them is waking up anytime soon
+LI: You had quite the day
+M: So did you
+LI: Fair point (;
+LI: Goodnight
+M: Goodnight, Lisa
+
+--------------------------------------------------
+SESSION CHECKPOINT — EPISODE 28.5 MAIN DATE CONTINUATION COMPLETE
+Chats 16–28 are saved.
+Media production status is tracked in `EP28 continuity and variables.md`.
+A final wording/polish pass remains before Unity import.
+--------------------------------------------------

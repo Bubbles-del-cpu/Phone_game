@@ -36,7 +36,8 @@ public static class Update020EpisodeInstaller
     private const string VariablesFolder = "Assets/Entities/Variables/Update 0.20";
     private const string PostsFolder = "Assets/Entities/Social Media Posts/ep27";
     private const string GalleryConfigPath = "Assets/New Files & Scripts/GalleryUnlockConfig.asset";
-    private const string Update020GalleryCode = "BUBBLE TROUBLE";
+    private const string CurrentGameVersion = "0.21";
+    private const string CurrentGalleryCode = "lilyizzylisa";
 
     private const string LilyPath = "Assets/Entities/Characters/Lily.asset";
     private const string LeoPath = "Assets/Entities/Characters/Leo.asset";
@@ -62,7 +63,7 @@ public static class Update020EpisodeInstaller
     [MenuItem("Tools/NTS/Install Update 0.20 Episodes")]
     public static void Install()
     {
-        PlayerSettings.bundleVersion = "0.20.2";
+        PlayerSettings.bundleVersion = CurrentGameVersion;
         EnsureFolder(GeneratedFolder);
         EnsureFolder(VariablesFolder);
         EnsureFolder(PostsFolder);
@@ -98,24 +99,24 @@ public static class Update020EpisodeInstaller
         var config = RequireAsset<GalleryUnlockConfig>(GalleryConfigPath);
         var serializedConfig = new SerializedObject(config);
         serializedConfig.FindProperty("_codeHash").stringValue =
-            GalleryHelper.ComputeHash(Update020GalleryCode, config.Salt);
-        serializedConfig.FindProperty("_reference").intValue = Update020GalleryCode.Length;
+            GalleryHelper.ComputeHash(CurrentGalleryCode, config.Salt);
+        serializedConfig.FindProperty("_reference").intValue = CurrentGalleryCode.Length;
         serializedConfig.ApplyModifiedPropertiesWithoutUndo();
         EditorUtility.SetDirty(config);
     }
 
-    [MenuItem("Tools/NTS/Verify Update 0.20 Gallery Code")]
+    [MenuItem("Tools/NTS/Verify Current Gallery Code")]
     public static void VerifyGalleryCode()
     {
         var config = RequireAsset<GalleryUnlockConfig>(GalleryConfigPath);
-        var correctCodeWorks = config.Length == Update020GalleryCode.Length &&
-                               GalleryHelper.MatchesCode(Update020GalleryCode, config.Salt, config.Hash);
-        var incorrectCodeFails = !GalleryHelper.MatchesCode("BUBBLE TROUBLES", config.Salt, config.Hash);
+        var correctCodeWorks = config.Length == CurrentGalleryCode.Length &&
+                               GalleryHelper.MatchesCode(CurrentGalleryCode, config.Salt, config.Hash);
+        var incorrectCodeFails = !GalleryHelper.MatchesCode(CurrentGalleryCode + "x", config.Salt, config.Hash);
 
         if (!correctCodeWorks || !incorrectCodeFails)
-            throw new InvalidOperationException("Update 0.20 gallery code verification failed.");
+            throw new InvalidOperationException("Current gallery code verification failed.");
 
-        Debug.Log("[Update 0.20] Gallery code verification passed: correct code accepted and incorrect code rejected.");
+        Debug.Log("[Settings] Gallery code verification passed: correct code accepted and incorrect code rejected.");
     }
 
     private static void LoadJapaneseTranslations()
