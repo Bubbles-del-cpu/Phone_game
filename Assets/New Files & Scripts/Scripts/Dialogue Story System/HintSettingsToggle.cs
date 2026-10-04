@@ -11,25 +11,57 @@ public class HintSettingsToggle : MonoBehaviour
     [SerializeField] private LocalizedSprite _enableSprite;
     [SerializeField] private LocalizedSprite _disableSprite;
 
-    private void Awake()
+    private bool? _displayedHints;
+    private bool _listenerRegistered;
+
+    private void OnEnable()
     {
-        if (_button)
-        {
-            _button.onClick.AddListener(() =>
-            {
-                DialogueUIManager.Instance.DisplayHints = !DialogueUIManager.Instance.DisplayHints;
-                _localizedSpriteEvent.AssetReference = DialogueUIManager.Instance.DisplayHints ? _enableSprite : _disableSprite;
-            });
-        }
+        EnsureListener();
     }
 
-    private void Start()
+    private void OnDisable()
     {
-        _localizedSpriteEvent.AssetReference = DialogueUIManager.Instance.DisplayHints ? _enableSprite : _disableSprite;
+        if (_listenerRegistered && _button != null)
+            _button.onClick.RemoveListener(ToggleHints);
+        _listenerRegistered = false;
+    }
+
+    private void EnsureListener()
+    {
+        if (_listenerRegistered || _button == null)
+            return;
+
+        _button.onClick.AddListener(ToggleHints);
+        _listenerRegistered = true;
+    }
+
+    private void ToggleHints()
+    {
+        var saveManager = SaveAndLoadManager.Instance;
+        if (saveManager == null || saveManager.CurrentSave == null || DialogueUIManager.Instance == null)
+            return;
+
+        DialogueUIManager.Instance.DisplayHints = !DialogueUIManager.Instance.DisplayHints;
+        RefreshVisual();
+        SaveAndLoadManager.SaveToJson(saveManager.CurrentSave, saveManager.CurrentSaveSlot);
     }
 
     private void Update()
     {
-        _localizedSpriteEvent.AssetReference = DialogueUIManager.Instance.DisplayHints ? _enableSprite : _disableSprite;
+        EnsureListener();
+        RefreshVisual();
+    }
+
+    private void RefreshVisual()
+    {
+        if (_localizedSpriteEvent == null || DialogueUIManager.Instance == null)
+            return;
+
+        var showHints = DialogueUIManager.Instance.DisplayHints;
+        if (_displayedHints == showHints)
+            return;
+
+        _displayedHints = showHints;
+        _localizedSpriteEvent.AssetReference = showHints ? _enableSprite : _disableSprite;
     }
 }

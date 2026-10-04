@@ -24,9 +24,8 @@ public class PreparedVideoPlayer : MonoBehaviour
 
     public void PlayVideo(VideoClip clip)
     {
-        if (clip == null) return;
-
-        _player.Stop(); // Stop any existing video
+        Stop();
+        if (clip == null || !isActiveAndEnabled) return;
         _player.source = VideoSource.VideoClip;
         _player.clip = clip;
         _player.playOnAwake = false;
@@ -51,30 +50,33 @@ public class PreparedVideoPlayer : MonoBehaviour
 
         _player.Prepare();
 
-        while (!_player.isPrepared)
-        {
-            yield return null;
-        }
+    }
 
-        Debug.Log($"[PreparedVideoPlayer] Video prepared: {clip.name}");
-        _player.Play();
+    private void OnPrepared(VideoPlayer player)
+    {
+        player.prepareCompleted -= OnPrepared;
+        player.Play();
     }
 
     public void Stop()
     {
+        StopAllCoroutines();
+        if (_player == null)
+            return;
+
+        _player.prepareCompleted -= OnPrepared;
+        _player.errorReceived -= OnError;
         _player.Stop();
     }
 
-    void OnPrepared(VideoPlayer vp)
+    private void OnDisable()
     {
-        vp.prepareCompleted -= OnPrepared;
-        Debug.Log("[PreparedVideoPlayer] Video prepared, playing now");
-        vp.Play();
+        Stop();
     }
 
     void OnError(VideoPlayer vp, string message)
     {
         Debug.LogError($"[PreparedVideoPlayer] VIDEO ERROR: {message}");
-        vp.errorReceived -= OnError;
+        Stop();
     }
 }

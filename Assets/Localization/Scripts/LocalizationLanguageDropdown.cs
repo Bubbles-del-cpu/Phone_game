@@ -1,7 +1,9 @@
 using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
-
 
 /// <summary>
 /// A dropdown for selecting the localization language.
@@ -10,63 +12,103 @@ using UnityEngine.Localization.Settings;
 public class LocalizationLanguageDropdown : MonoBehaviour
 {
     [SerializeField] private CanvasGroup _canvasGroup;
-    [SerializeField] private TMPro.TMP_Dropdown _dropdown;
+    [SerializeField] private TMP_Dropdown _dropdown;
     [SerializeField] private bool _reloadGameOnChange;
 
+    private List<Locale> _locales;
     private int _previousLanguageIndex = -1;
 
-    void Awake()
+    private void OnEnable()
     {
+        LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
+    }
+
+    private void OnDisable()
+    {
+        LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
+    }
+
+    private IEnumerator Start()
+    {
+        _dropdown.interactable = false;
+        ShowDropDown(GameManager.Instance.EnableLanaguageSwitching);
+
+        // Locale assets may still be loading when this component becomes active.
+        yield return LocalizationSettings.InitializationOperation;
+        yield return null; // Let SaveAndLoadManager.Start load the saved preference.
+        while (LocalizationSettings.AvailableLocales.Locales.Count == 0)
+            yield return null;
+
+        _locales = new List<Locale>(LocalizationSettings.AvailableLocales.Locales);
         _dropdown.ClearOptions();
-        _previousLanguageIndex = 0;
-        _dropdown.onValueChanged.AddListener((index) =>
+        var options = new List<TMP_Dropdown.OptionData>();
+        foreach (var locale in _locales)
+            options.Add(new TMP_Dropdown.OptionData(locale.LocaleName.Split(' ')[0]));
+        _dropdown.AddOptions(options);
+
+        OnLocaleChanged(LocalizationSettings.SelectedLocale);
+        if (_previousLanguageIndex < 0 && _locales.Count > 0)
         {
-            _dropdown.SetValueWithoutNotify(_previousLanguageIndex);
+            _previousLanguageIndex = 0;
+            _dropdown.SetValueWithoutNotify(0);
+        }
 
-            var langauges = LocalizationSettings.AvailableLocales.Locales;
-            var newLanguage = langauges[index];
-            if (_reloadGameOnChange)
-            {
-                GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.WARNING_LANGUAGE_CHANGE, () =>
-                {
-                    OverlayCanvas.Instance.FadeToBlack(() =>
-                    {
-                        GameManager.Instance.ChangeLanguage(newLanguage);
-                        GameManager.Instance.HardResetGameState();
+        _dropdown.onValueChanged.AddListener(OnLanguageSelected);
+        _dropdown.interactable = _locales.Count > 0;
+    }
 
-                        _previousLanguageIndex = index;
-                        _dropdown.SetValueWithoutNotify(index);
-                    });
+    private void OnDestroy()
+    {
+        if (_dropdown != null)
+            _dropdown.onValueChanged.RemoveListener(OnLanguageSelected);
+    }
 
-                }, GameConstants.UIElementKeys.YES, new object[] { langauges[index].LocaleName });
-            }
-            else
-            {
-                GameManager.Instance.ChangeLanguage(newLanguage);
-                _previousLanguageIndex = index;
-                _dropdown.SetValueWithoutNotify(index);
-            }
-        });
+    private void OnLocaleChanged(Locale locale)
+    {
+        if (_locales == null || locale == null)
+            return;
 
-        foreach (var item in LocalizationSettings.AvailableLocales.Locales)
+        var index = _locales.IndexOf(locale);
+        if (index < 0)
+            return;
+
+        _previousLanguageIndex = index;
+        _dropdown.SetValueWithoutNotify(index);
+    }
+
+    private void OnLanguageSelected(int index)
+    {
+        if (_locales == null || index < 0 || index >= _locales.Count)
+            return;
+
+        // Keep the saved choice displayed while the restart confirmation is open.
+        _dropdown.SetValueWithoutNotify(_previousLanguageIndex);
+        if (index == _previousLanguageIndex)
+            return;
+
+        var newLanguage = _locales[index];
+        if (_reloadGameOnChange)
         {
-            _dropdown.options.Add(new TMPro.TMP_Dropdown.OptionData(item.LocaleName.Split(" ")[0].ToString()));
+            GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.WARNING_LANGUAGE_CHANGE, () =>
+            {
+                OverlayCanvas.Instance.FadeToBlack(() => ApplyLanguage(newLanguage, index, true));
+            }, GameConstants.UIElementKeys.YES, new object[] { newLanguage.LocaleName });
+        }
+        else
+        {
+            ApplyLanguage(newLanguage, index, false);
         }
     }
 
-    void Start()
+    private void ApplyLanguage(Locale locale, int index, bool resetGame)
     {
-        //Delay the start to allow time for the save file to be loaded and the current language to be read
-        StartCoroutine(CoStart());
-        ShowDropDown(GameManager.Instance.EnableLanaguageSwitching);
-    }
+        GameManager.Instance.ChangeLanguage(locale);
+        SaveAndLoadManager.SaveToJson(SaveAndLoadManager.Instance.CurrentSave, SaveAndLoadManager.Instance.CurrentSaveSlot);
+        if (resetGame)
+            GameManager.Instance.HardResetGameState();
 
-    private IEnumerator CoStart()
-    {
-        yield return new WaitForSeconds(0.1f);
-        var index = LocalizationSettings.AvailableLocales.Locales.FindIndex(x => x.LocaleName.StartsWith(SaveAndLoadManager.Instance.CurrentSave.CurrentLanguage.ToString()));
-        if (index != -1)
-            _dropdown.SetValueWithoutNotify(index);
+        _previousLanguageIndex = index;
+        _dropdown.SetValueWithoutNotify(index);
     }
 
     private void ShowDropDown(bool show)

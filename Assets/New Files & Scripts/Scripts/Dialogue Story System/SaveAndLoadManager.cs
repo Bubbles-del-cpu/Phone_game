@@ -1,8 +1,10 @@
 using MeetAndTalk;
 using MeetAndTalk.GlobalValue;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 
 public class SaveAndLoadManager : MonoBehaviour
 {
@@ -33,16 +35,16 @@ public class SaveAndLoadManager : MonoBehaviour
     [Header("Prefabs")]
     [SerializeField] private SaveStateDialogBox _saveDialogPrefab;
 
+    private Coroutine _languageLoadRoutine;
+
     private void Awake()
     {
-        GameManager.Instance.ChangeLanguage(CurrentSave.CurrentLanguage);
         ValueManager.LoadFile();
     }
 
     private void Start()
     {
         LoadSave(0);
-        DialogueUIManager.Instance.DisplayHints = CurrentSave.DisplayHints;
     }
 
     private void OnApplicationQuit()
@@ -75,11 +77,27 @@ public class SaveAndLoadManager : MonoBehaviour
 
         CurrentSave.CurrentState.SavedVariables = ValueManager.ConvertSaveFile();
 
-        // Load the language from the save file
-        GameManager.Instance.ChangeLanguage(CurrentSave.CurrentLanguage);
+        // Apply preferences whenever a save is loaded, including a newly started game.
+        DialogueUIManager.Instance.DisplayHints = CurrentSave.DisplayHints;
+        if (_languageLoadRoutine != null)
+            StopCoroutine(_languageLoadRoutine);
+        if (LocalizationSettings.InitializationOperation.IsDone && LocalizationSettings.AvailableLocales.Locales.Count > 0)
+            GameManager.Instance.ChangeLanguage(CurrentSave.CurrentLanguage);
+        else
+            _languageLoadRoutine = StartCoroutine(ApplySavedLanguageWhenReady(CurrentSave));
 
         // Populate the save states in the settings canvas
         SettingsCanvas.Instance.PopulateSaveStates(CurrentSave.SaveStates);
+    }
+
+    private IEnumerator ApplySavedLanguageWhenReady(SaveFileData loadedSave)
+    {
+        yield return LocalizationSettings.InitializationOperation;
+        while (LocalizationSettings.AvailableLocales.Locales.Count == 0)
+            yield return null;
+        if (CurrentSave == loadedSave)
+            GameManager.Instance.ChangeLanguage(loadedSave.CurrentLanguage);
+        _languageLoadRoutine = null;
     }
 
     public void StartGame()

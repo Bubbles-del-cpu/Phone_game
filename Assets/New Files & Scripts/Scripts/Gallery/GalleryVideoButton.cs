@@ -7,8 +7,6 @@ using UnityEngine.Video;
 
 public class GalleryVideoButton : GalleryButtonBase
 {
-    private Sprite _videoPreviewSprite;
-    private Sprite _fallbackThumbnail;
     private VideoClip _clip;
     public override string FileName => _clip.name;
 
@@ -19,14 +17,7 @@ public class GalleryVideoButton : GalleryButtonBase
         (VideoClip clip, Sprite clipThumbnial) mediaData = nodeData.GetNodeVideoData(isSocialMediaPost);
 
         _clip = mediaData.clip;
-        _fallbackThumbnail = mediaData.clipThumbnial;
-        if (_fallbackThumbnail != null)
-        {
-            _videoPreviewSprite = _fallbackThumbnail;
-        }
-
-        _image.sprite = _videoPreviewSprite;
-        _lockedImage.ApplyBlur();
+        SetThumbnail(mediaData.clipThumbnial);
     }
 
     public override void SetupForBaseSocialProfileItem(GalleryMediaItem item, bool isFromGallery)
@@ -34,16 +25,22 @@ public class GalleryVideoButton : GalleryButtonBase
         base.SetupForBaseSocialProfileItem(item, isFromGallery);
 
         _clip = item.Video;
-        _fallbackThumbnail = item.VideoThumbnail;
-        if (_fallbackThumbnail != null)
-        {
-            _videoPreviewSprite = _fallbackThumbnail;
-        }
-
-        _image.sprite = _videoPreviewSprite;
-        _lockedImage.ApplyBlur();
+        SetThumbnail(item.VideoThumbnail);
     }
 
+
+    private void SetThumbnail(Sprite thumbnail)
+    {
+        // Buttons are reused between pages; clear both previews for missing thumbnails.
+        _image.sprite = thumbnail;
+        if (_lockedImage.SourceImage != null)
+            _lockedImage.SourceImage.sprite = thumbnail;
+
+        if (thumbnail == null)
+            _lockedImage.GetComponent<UnityEngine.UI.RawImage>().texture = Texture2D.blackTexture;
+        else
+            _lockedImage.ApplyBlur();
+    }
 
     public override void GalleryButtonClicked()
     {

@@ -23,6 +23,7 @@ public class FullScreenMedia : UIPanel
 
     public override void Awake()
     {
+        base.Awake();
         _playButton.onClick.AddListener(() => OnPlayClick(0));
         _nextButton.onClick.AddListener(OnNextClick);
         _previousButton.onClick.AddListener(OnPreviousClick);
@@ -97,7 +98,10 @@ public class FullScreenMedia : UIPanel
 
     private void SetupMediaViewer(GalleryMediaItem galleryItem)
     {
+        StopAllCoroutines();
+        GameManager.Instance.MainVideoPlayer.Stop();
         _backgroundSetButton.gameObject.SetActive(false);
+        _clipToPlay = null;
         _currentMediaType = galleryItem.MediaType;
         switch (galleryItem.MediaType)
         {
@@ -141,11 +145,8 @@ public class FullScreenMedia : UIPanel
     /// <param name="scrubItems">List of media items for scrubbing. Optional</param>
     public void SetupWithScrubHistory(GalleryMediaItem galleryItem, List<GalleryMediaItem> scrubItems = null)
     {
-        if (scrubItems != null)
-        {
-            _scrubMediaItems = scrubItems;
-            _currentScrubIndex = scrubItems.IndexOf(galleryItem);
-        }
+        _scrubMediaItems = scrubItems;
+        _currentScrubIndex = scrubItems != null ? scrubItems.IndexOf(galleryItem) : -1;
 
         _nextButton.gameObject.SetActive(scrubItems != null && scrubItems.Count > 1);
         _previousButton.gameObject.SetActive(scrubItems != null && scrubItems.Count > 1);
@@ -171,16 +172,36 @@ public class FullScreenMedia : UIPanel
         SetupMediaViewer(_scrubMediaItems[_currentScrubIndex]);
     }
 
+    public override void Close()
+    {
+        CancelPlayback();
+        base.Close();
+    }
+
+    private void OnDisable()
+    {
+        CancelPlayback();
+    }
+
+    private void CancelPlayback()
+    {
+        StopAllCoroutines();
+        var manager = GameManager.Instance;
+        if (manager != null && manager.MainVideoPlayer != null)
+            manager.MainVideoPlayer.Stop();
+    }
+
     public void OnPlayClick(float delay = 0)
     {
-        if (_clipToPlay == null)
+        if (_clipToPlay == null || _currentMediaType != MediaType.Video)
             return;
+        StopAllCoroutines();
         StartCoroutine(CoPlayVideoWithDelay(delay));
     }
 
     private IEnumerator CoPlayVideoWithDelay(float delay)
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSecondsRealtime(delay);
         GameManager.Instance.MainVideoPlayer.PlayVideo(_clipToPlay);
     }
 }

@@ -543,12 +543,13 @@ public class SaveFileData
     public void UnlockAllMedia(bool save = true)
     {
         foreach (var item in UnlockedMedia)
-        {
             item.LockedState = MediaLockState.Unlocked;
-        }
 
-        //if (save)
-        //SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
+        foreach (var item in UnlockedBaseSocialMediaProfileItems)
+            item.LockedState = MediaLockState.Unlocked;
+
+        if (save)
+            SaveAndLoadManager.SaveToJson(this, SaveFileSlot);
     }
 
     public void LikePost(BaseNodeData nodeData, bool state)

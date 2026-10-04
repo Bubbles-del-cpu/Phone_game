@@ -50,7 +50,10 @@ public abstract class GalleryButtonBase : MonoBehaviour
     /// <param name="item"></param>
     public void Setup(GalleryMediaItem item, bool isFromGallery)
     {
-        // Call the main Setup method with the appropriate parameters
+        // Apply the incoming state before derived setup renders a reused button.
+        Unlocked = item.LockState == MediaLockState.Unlocked;
+        _lockedContainer.SetActive(!Unlocked);
+
         if (item.IsBaseSocialMediaProfileItem)
         {
             SetupForBaseSocialProfileItem(item, isFromGallery);

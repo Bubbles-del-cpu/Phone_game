@@ -45,14 +45,9 @@ public class GalleryHelper
 
     public void Unlock()
     {
-        //Unlock the gallery buttons
-        foreach (var item in SaveAndLoadManager.Instance.CurrentSave.UnlockedMedia)
-        {
-            GameManager.Instance.GalleryCanvas.UnlockMedia(item.NodeGUID, item.FileName, reloadedGallery: false);
-        }
-
+        // Persist the unlock before rebuilding the visible gallery.
         SaveAndLoadManager.Instance.CurrentSave.UnlockAllMedia();
-        GameManager.Instance.GalleryCanvas.RefreshGalleryPage();
+        GameManager.Instance.GalleryCanvas.Load();
         GameManager.Instance.GalleryCanvas.UnlockData.UnlockTriggered = false;
     }
 
@@ -81,7 +76,7 @@ public class GalleryHelper
         if (USED_PASS == "DEV UNLOCK")
             return true;
 #endif
-        return ComputeHash(USED_PASS, _salt).Length == _hash.Length;
+        return IsValidCode(USED_PASS);
     }
 
 }

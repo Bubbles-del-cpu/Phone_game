@@ -93,6 +93,8 @@ public class MessagingBubble : MonoBehaviour
 
         _videoContainer.SetActive(false);
         _imageContainer.SetActive(false);
+        MediaType = nodeData.MediaType;
+        VideoClip = null;
         Sprite postImage = null;
         VideoClip video = null;
         Sprite thumbnail = null;
@@ -121,12 +123,16 @@ public class MessagingBubble : MonoBehaviour
         }
         else
         {
-            _videoImage.texture = thumbnail == null ? GameManager.Instance.GetVideoFrame(video).Item1 : thumbnail.texture;
+            VideoClip = video;
+            _videoPreviewTexture = thumbnail != null ? thumbnail.texture : GameManager.Instance.GetVideoFrame(video).Item1;
+            _videoImage.texture = _videoPreviewTexture != null ? _videoPreviewTexture : Texture2D.blackTexture;
             _videoContainer.SetActive(true);
-            SetContainerSize(_videoImage.texture.width, _videoImage.texture.height, _videoContainer.GetComponent<RectTransform>());
+            SetContainerSize(video.width > 0 ? video.width : _videoImage.texture.width,
+                video.height > 0 ? video.height : _videoImage.texture.height,
+                _videoContainer.GetComponent<RectTransform>());
         }
 
-        _mediaViewer.Setup(nodeData.NodeGuid, nodeData.MediaType == MediaType.Video ? video.name : postImage.name, nodeData.MediaType, isSocialMediaPost: false);
+        _mediaViewer.Setup(nodeData, nodeData.MediaType == MediaType.Video ? video.name : postImage.name, nodeData.MediaType, isSocialMediaPost: false);
     }
 
     private IEnumerator COEnable(bool hide)
@@ -223,7 +229,8 @@ public class MessagingBubble : MonoBehaviour
                         return;
 
                     _videoPreviewTexture = GameManager.Instance.GetVideoFrame(VideoClip).Item1;
-                    _videoImage.texture = _videoPreviewTexture;
+                    if (_videoPreviewTexture != null)
+                        _videoImage.texture = _videoPreviewTexture;
                 }
                 break;
         }

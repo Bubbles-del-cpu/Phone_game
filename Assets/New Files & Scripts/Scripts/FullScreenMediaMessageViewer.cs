@@ -9,10 +9,12 @@ public class FullScreenMediaMessageViewer : MonoBehaviour, IPointerClickHandler
     private bool _isSocialMediaPost;
     private string _fileName;
     private string _nodeGuid;
+    private DialogueNodeData _sourceNode;
 
-    public void Setup(string nodeGuid, string fileName, MediaType postType, bool isSocialMediaPost)
+    public void Setup(DialogueNodeData sourceNode, string fileName, MediaType postType, bool isSocialMediaPost)
     {
-        _nodeGuid = nodeGuid;
+        _sourceNode = sourceNode;
+        _nodeGuid = sourceNode.NodeGuid;
         _fileName = fileName;
         _isSocialMediaPost = isSocialMediaPost;
         _postType = postType;
@@ -28,10 +30,10 @@ public class FullScreenMediaMessageViewer : MonoBehaviour, IPointerClickHandler
         switch (_postType)
         {
             case MediaType.Sprite:
-                galleryCanvas.OpenImage(_nodeGuid, _fileName, openedFromGallery: false, _isSocialMediaPost, includeScrubHistory: false);
+                galleryCanvas.OpenImage(_nodeGuid, _fileName, openedFromGallery: false, _isSocialMediaPost, includeScrubHistory: false, sourceNode: _sourceNode);
                 break;
             case MediaType.Video:
-                galleryCanvas.OpenVideo(_nodeGuid, _fileName, openedFromGallery: false, _isSocialMediaPost, includeScrubHistory: false);
+                galleryCanvas.OpenVideo(_nodeGuid, _fileName, openedFromGallery: false, _isSocialMediaPost, includeScrubHistory: false, sourceNode: _sourceNode);
                 break;
         }
     }
