@@ -26,22 +26,32 @@ public class MediaData
             return Node;
 
         // Otherwise, find the node based on the chapter and GUID
-        DialogueChapterManager.ChapterData chapter = null;
-        switch (ChapterType)
-        {
-            case ChapterType.Standalone:
-                chapter = DialogueChapterManager.Instance.StandaloneChapters[ChapterIndex];
-                break;
-            case ChapterType.Story:
-                chapter = DialogueChapterManager.Instance.StoryList[ChapterIndex];
-                break;
+        var chapters = ChapterType == ChapterType.Standalone
+            ? DialogueChapterManager.Instance.StandaloneChapters
+            : DialogueChapterManager.Instance.StoryList;
 
+        if (ChapterIndex >= 0 && ChapterIndex < chapters.Count && chapters[ChapterIndex] != null)
+        {
+            var node = DialogueNodeHelper.GetNodeByGuid(chapters[ChapterIndex].Story, NodeGUID);
+            if (node != null)
+                return node;
         }
 
-        if (chapter == null)
-            return null;
+        // Chapter positions can differ between versions (0.21 listed Prologue 5 before the Christmas special),
+        // so fall back to searching every chapter of this type and remember where the node was found
+        for (var index = 0; index < chapters.Count; index++)
+        {
+            if (index == ChapterIndex || chapters[index] == null)
+                continue;
 
-        var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, NodeGUID);
-        return node;
+            var node = DialogueNodeHelper.GetNodeByGuid(chapters[index].Story, NodeGUID);
+            if (node != null)
+            {
+                ChapterIndex = index;
+                return node;
+            }
+        }
+
+        return null;
     }
 }

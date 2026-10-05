@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 PROJECT = Path(__file__).resolve().parents[2]
-VERSION = "0.21"
+VERSION = "0.21.1"
 BUILDS = PROJECT / f"{VERSION} builds"
 ARCHIVES = (
     BUILDS / f"NTS Honeymoon {VERSION} Android.apk",

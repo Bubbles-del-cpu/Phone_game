@@ -206,7 +206,11 @@ public class SaveFileData
         }
 
         if (generateThumbnails)
+        {
+            var timer = System.Diagnostics.Stopwatch.StartNew();
             GameManager.Instance.GenerateThumbnails();
+            Debug.Log($"[LoadTiming] GenerateThumbnails {timer.ElapsedMilliseconds} ms");
+        }
 
         foreach (var item in baseSocialMediaProfileItems)
         {

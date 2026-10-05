@@ -36,7 +36,7 @@ public static class Update020EpisodeInstaller
     private const string VariablesFolder = "Assets/Entities/Variables/Update 0.20";
     private const string PostsFolder = "Assets/Entities/Social Media Posts/ep27";
     private const string GalleryConfigPath = "Assets/New Files & Scripts/GalleryUnlockConfig.asset";
-    private const string CurrentGameVersion = "0.21";
+    private const string CurrentGameVersion = "0.21.1";
     private const string CurrentGalleryCode = "lilyizzylisa";
 
     private const string LilyPath = "Assets/Entities/Characters/Lily.asset";

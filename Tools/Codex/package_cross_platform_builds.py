@@ -1,20 +1,23 @@
 from __future__ import annotations
 
 import argparse
+import shutil
 import stat
 import zipfile
 from pathlib import Path
 
 
 PROJECT = Path(__file__).resolve().parents[2]
-VERSION = "0.21"
+VERSION = "0.21.1"
 BUILDS = PROJECT / f"{VERSION} builds"
 LINUX = BUILDS / "Linux"
 MAC = BUILDS / "Mac"
 WINDOWS = BUILDS / "Windows"
+ANDROID_APK = BUILDS / "Android" / f"NTS Honeymoon {VERSION} Android.apk"
 LINUX_ZIP = BUILDS / f"NTS Honeymoon {VERSION} Linux.zip"
 MAC_ZIP = BUILDS / f"NTS Honeymoon {VERSION} macOS.zip"
 WINDOWS_ZIP = BUILDS / f"NTS Honeymoon {VERSION} Windows.zip"
+ANDROID_RELEASE = BUILDS / ANDROID_APK.name
 
 MACH_O_MAGICS = {
     b"\xfe\xed\xfa\xce",
@@ -45,6 +48,8 @@ def archive_directory(source: Path, destination: Path) -> None:
     ) as archive:
         for path in sorted(source.rglob("*")):
             relative = path.relative_to(source).as_posix()
+            if "_DoNotShip" in relative:
+                continue
             if path.is_dir():
                 info = zipfile.ZipInfo(relative.rstrip("/") + "/")
                 info.create_system = 3
@@ -76,7 +81,7 @@ def verify_permissions(archive_path: Path, expected_suffix: str) -> int:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("targets", nargs="*", choices=("linux", "mac", "windows"))
+    parser.add_argument("targets", nargs="*", choices=("linux", "mac", "windows", "android"))
     args = parser.parse_args()
     targets = set(args.targets or ("linux", "mac"))
 
@@ -95,6 +100,10 @@ def main() -> None:
     if "windows" in targets:
         archive_directory(WINDOWS, WINDOWS_ZIP)
         print(f"Created {WINDOWS_ZIP.name} ({WINDOWS_ZIP.stat().st_size / 1024 / 1024:.2f} MB)", flush=True)
+
+    if "android" in targets:
+        shutil.copy2(ANDROID_APK, ANDROID_RELEASE)
+        print(f"Copied {ANDROID_RELEASE.name} ({ANDROID_RELEASE.stat().st_size / 1024 / 1024:.2f} MB)", flush=True)
 
 
 if __name__ == "__main__":

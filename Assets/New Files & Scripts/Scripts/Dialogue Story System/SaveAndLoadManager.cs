@@ -138,18 +138,18 @@ public class SaveAndLoadManager : MonoBehaviour
 
             //When the save file is loaded, check it against the latest base save file
             //And update if there are any variables or chapters missing
-            saveFileData.ComparedAgainstLastest(SaveFileData.CreateBaseSave(saveSlot));
+            var timer = System.Diagnostics.Stopwatch.StartNew();
+            var baseSave = SaveFileData.CreateBaseSave(saveSlot);
+            Debug.Log($"[LoadTiming] CreateBaseSave {timer.ElapsedMilliseconds} ms");
+            timer.Restart();
+            saveFileData.ComparedAgainstLastest(baseSave);
+            Debug.Log($"[LoadTiming] ComparedAgainstLastest {timer.ElapsedMilliseconds} ms");
 
             if (saveFileData.CustomBackgroundImage.NodeGUID != string.Empty)
             {
                 try
                 {
-                    var chapter = saveFileData.CustomBackgroundImage.ChapterType == ChapterType.Story ?
-                        DialogueChapterManager.Instance.StoryList[saveFileData.CustomBackgroundImage.ChapterIndex] :
-                        DialogueChapterManager.Instance.StandaloneChapters[saveFileData.CustomBackgroundImage.ChapterIndex];
-
-                    var node = DialogueNodeHelper.GetNodeByGuid(chapter.Story, saveFileData.CustomBackgroundImage.NodeGUID);
-                    var dialogueNode = node as DialogueNodeData;
+                    var dialogueNode = saveFileData.CustomBackgroundImage.GetNode() as DialogueNodeData;
                     GameManager.Instance.SetBackgroundImage(dialogueNode, saveFileData.CustomBackgroundImage.IsSocialMediaPost && dialogueNode.Post != null);
                 }
                 catch (Exception)

@@ -200,11 +200,10 @@ public static class ProloguePart5Installer
         manager.StandaloneChapters.RemoveAll(item =>
             item != null && (item.Story == chapter || (item.Story != null && item.Story.name == chapter.name)));
 
-        var christmasIndex = manager.StandaloneChapters.FindIndex(item =>
-            item != null && item.Story != null &&
-            item.Story.name.Equals("Christmas special - The miracle pill", StringComparison.OrdinalIgnoreCase));
-        var insertIndex = christmasIndex >= 0 ? christmasIndex : Math.Min(4, manager.StandaloneChapters.Count);
-        manager.StandaloneChapters.Insert(insertIndex, new DialogueChapterManager.ChapterData
+        // Append rather than insert: saves refer to standalone chapters by list position,
+        // so existing entries (like the Christmas special) must keep their index.
+        var insertIndex = manager.StandaloneChapters.Count;
+        manager.StandaloneChapters.Add(new DialogueChapterManager.ChapterData
         {
             Story = chapter,
             StartID = string.Empty,
@@ -245,8 +244,8 @@ public static class ProloguePart5Installer
 
         var manager = Resources.FindObjectsOfTypeAll<DialogueChapterManager>()
             .FirstOrDefault(item => item.gameObject.scene.IsValid());
-        if (manager == null || manager.StandaloneChapters.Count < 5 || manager.StandaloneChapters[4].Story != chapter)
-            throw new InvalidOperationException("Prologue Part 5 was not installed after Prologue Part 4.");
+        if (manager == null || manager.StandaloneChapters.Count == 0 || manager.StandaloneChapters[manager.StandaloneChapters.Count - 1].Story != chapter)
+            throw new InvalidOperationException("Prologue Part 5 was not installed at the end of the standalone chapters.");
     }
 
     private static T LoadOrCreate<T>(string path) where T : ScriptableObject

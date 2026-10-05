@@ -15,6 +15,8 @@ namespace MeetAndTalk
     {
         public const float BASE_NODE_DISPLAY_TIME = 2;
         public const float REPOPULATE_YIELD_COUNT = 10;
+        // Restoring history normally takes well under a second; past this, treat the save as unloadable instead of spinning forever.
+        private const float REPOPULATE_TIMEOUT_SECONDS = 30f;
 
         private static DialogueManager _instance;
         public static DialogueManager Instance
@@ -78,6 +80,8 @@ namespace MeetAndTalk
         private bool _populatHistoryFailed = false;
         private bool _dialogueStarted = false;
         private bool _failLoadDialogShown = false;
+        private float _populateHistoryStartTime;
+        private Coroutine _populateHistoryRoutine;
         private ChapterSaveData _chapterData;
         [SerializeField] private RectTransform _loadingIndicator;
         private void Awake()
@@ -98,6 +102,14 @@ namespace MeetAndTalk
                 return;
             }
 
+            if (_populatingHistory && Time.realtimeSinceStartup - _populateHistoryStartTime > REPOPULATE_TIMEOUT_SECONDS)
+            {
+                Debug.LogError($"[DialogueManager] Restoring chapter history timed out after {REPOPULATE_TIMEOUT_SECONDS} seconds.");
+                if (_populateHistoryRoutine != null)
+                    StopCoroutine(_populateHistoryRoutine);
+                FinishPopulatingHistory(success: false);
+            }
+
             if (_populatingHistory)
             {
                 _loadingIndicator.gameObject.SetActive(true);
@@ -107,10 +119,12 @@ namespace MeetAndTalk
                 _loadingIndicator.gameObject.SetActive(false);
                 if (_populatHistoryFailed)
                 {
+                    // Stay in the failed state until the player confirms the dialog, which reloads the save and restarts the chapter.
+                    // Clearing the flag here would start the half-restored dialogue on the next frame.
                     if (!_failLoadDialogShown)
                     {
+                        Debug.LogWarning("[DialogueManager] Chapter history could not be restored; asking the player to restart the chapter.");
                         _failLoadDialogShown = true;
-                        _populatHistoryFailed = false;
                         //The save file could not be loaded for this chapter, this implies that it is out of date with the latest verison.
                         //Reset the game state and start the Player from the top of the chapter
                         GameManager.Instance.DisplayDialog(GameConstants.DialogTextKeys.INVALID_SAVE_DATA, () =>
@@ -180,10 +194,20 @@ namespace MeetAndTalk
             {
                 //Draw out all the conversation up until this point but it cannot be done with notifications
                 _populatingHistory = true;
+                _populatHistoryFailed = false;
+                _populateHistoryStartTime = Time.realtimeSinceStartup;
                 _failLoadDialogShown = false;
                 _dialogueStarted = false;
                 Debug.Log("Loading Dialogue History...");
-                StartCoroutine(PopulateHistoryCoroutine(chapterData));
+                try
+                {
+                    _populateHistoryRoutine = StartCoroutine(PopulateHistoryCoroutine(chapterData));
+                }
+                catch (System.Exception ex)
+                {
+                    Debug.LogException(ex);
+                    FinishPopulatingHistory(success: false);
+                }
             }
 
             SaveAndLoadManager.Save();
@@ -205,9 +229,17 @@ namespace MeetAndTalk
         private IEnumerator PopulateHistoryCoroutine(ChapterSaveData chapterData)
         {
             bool loadSuccess = true;
+            var timer = System.Diagnostics.Stopwatch.StartNew();
 
             // Before populating the past conversations, loop over the seen characater list and create message buttons for them
-            PopulateConversationButtons();
+            try
+            {
+                PopulateConversationButtons();
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogException(ex);
+            }
 
             var count = 0;
             foreach (var item in chapterData.PastCoversations)
@@ -219,85 +251,122 @@ namespace MeetAndTalk
                     yield return null;
                 }
 
-                var node = GetNodeByGuid(item.GUID);
-                if (node == null)
+                // An error restoring one old message must not abort the whole restore, otherwise the loading indicator never clears
+                try
                 {
-                    //We failed to find the node by the GUID that was saved to file. This implies that their current chapter save data is invalid.
-                    //Eaxit to start the Player from the top of the chapter using the latest data
-                    loadSuccess = false;
-                    break;
-                }
-
-                if (item.GUID == chapterData.CurrentGUID)
-                {
-                    continue;
-                }
-
-                _visitedNodes.Push(node);
-                if (node.GetType() == typeof(DialogueChoiceNodeData) || node.GetType() == typeof(TimerChoiceNodeData))
-                {
-                    var dNode = (DialogueChoiceNodeData)node;
-                    if (item.SelectedChoice != "")
+                    if (!RestoreHistoryItem(item, chapterData))
                     {
-                        var found = false;
-                        //We have an old save that was made before localization. Compare the texts against the localized version and attempt to display the correct translation
-                        foreach (var lang in dNode.DialogueNodePorts)
-                        {
-                            if (lang.TextLanguage.Any(x => x.LanguageGenericType == item.SelectedChoice))
-                            {
-                                //We found the matching selection from the port. Update and choose that
-                                item.SelectedChoiceTexts = lang.TextLanguage;
-                                found = true;
-                                break;
-                            }
-                        }
-
-                        if (!found)
-                        {
-                            item.SelectedChoiceTexts = dNode.DialogueNodePorts.First().TextLanguage;
-                        }
+                        loadSuccess = false;
+                        break;
                     }
                 }
-
-                //Update these to blank as we will be using the new LanguageGenerics
-                //Soon to be removed as obsolete
-                item.SelectedChoice = "";
-                item.Text = "";
-
-                switch (node)
+                catch (System.Exception ex)
                 {
-                    case EventNodeData:
-                        break;
-                    case DialogueNodeData nd:
-                        item.Texts = nd.Texts;
-                        dialogueUIManager.PopulatePreviousMessage(nd.Texts, node, DialogueUIManager.MessageSource.Character);
-                        break;
-                    case TimerChoiceNodeData tChoiceNode when node is TimerChoiceNodeData:
-                        if (tChoiceNode.RequireCharacterInput)
-                        {
-                            dialogueUIManager.PopulatePreviousMessage(tChoiceNode.TextType, node, DialogueUIManager.MessageSource.Character);
-                        }
-                        dialogueUIManager.PopulatePreviousMessage(item.SelectedChoiceTexts, tChoiceNode, DialogueUIManager.MessageSource.Player);
-                        tChoiceNode.SelectedChoice = item.SelectedChoiceTexts;
-                        break;
-                    case DialogueChoiceNodeData dChoiceNode when node is DialogueChoiceNodeData:
-                        if (dChoiceNode.RequireCharacterInput)
-                        {
-                            dialogueUIManager.PopulatePreviousMessage(dChoiceNode.TextType, node, DialogueUIManager.MessageSource.Character);
-                        }
-                        dialogueUIManager.PopulatePreviousMessage(item.SelectedChoiceTexts, dChoiceNode, DialogueUIManager.MessageSource.Player);
-                        dChoiceNode.SelectedChoice = item.SelectedChoiceTexts;
-                        break;
+                    Debug.LogError($"[DialogueManager] Skipping history entry {item.GUID} that failed to restore.");
+                    Debug.LogException(ex);
                 }
             }
 
             // Populate social media history from save data
-            var saveData = SaveAndLoadManager.Instance.CurrentSave;
-            GameManager.Instance.SocialMediaCanvas.PopulateHistory(saveData.CurrentState.LastVisibleSocialMediaPosts);
-            GameManager.Instance.SpicySocialMediaCanvas.PopulateHistory(saveData.CurrentState.LastVisibleSpicySocialMediaPosts);
+            try
+            {
+                var saveData = SaveAndLoadManager.Instance.CurrentSave;
+                GameManager.Instance.SocialMediaCanvas.PopulateHistory(saveData.CurrentState.LastVisibleSocialMediaPosts);
+                GameManager.Instance.SpicySocialMediaCanvas.PopulateHistory(saveData.CurrentState.LastVisibleSpicySocialMediaPosts);
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogException(ex);
+            }
 
+            Debug.Log($"[LoadTiming] PopulateHistory {chapterData.PastCoversations.Count} entries in {timer.ElapsedMilliseconds} ms");
+            FinishPopulatingHistory(loadSuccess);
+        }
+
+        private void FinishPopulatingHistory(bool success)
+        {
+            _populateHistoryRoutine = null;
             _populatingHistory = false;
-            _populatHistoryFailed = !loadSuccess;
+            _populatHistoryFailed = !success;
+        }
+
+        /// <summary>
+        /// Restores one saved conversation entry into the message panels.
+        /// </summary>
+        /// <returns>False when the entry's node no longer exists in this chapter, meaning the save is out of date</returns>
+        private bool RestoreHistoryItem(ChapterSaveData.PastCoversationData item, ChapterSaveData chapterData)
+        {
+            var node = GetNodeByGuid(item.GUID);
+            if (node == null)
+            {
+                //We failed to find the node by the GUID that was saved to file. This implies that their current chapter save data is invalid.
+                //Eaxit to start the Player from the top of the chapter using the latest data
+                return false;
+            }
+
+            if (item.GUID == chapterData.CurrentGUID)
+            {
+                return true;
+            }
+
+            _visitedNodes.Push(node);
+            if (node.GetType() == typeof(DialogueChoiceNodeData) || node.GetType() == typeof(TimerChoiceNodeData))
+            {
+                var dNode = (DialogueChoiceNodeData)node;
+                if (item.SelectedChoice != "")
+                {
+                    var found = false;
+                    //We have an old save that was made before localization. Compare the texts against the localized version and attempt to display the correct translation
+                    foreach (var lang in dNode.DialogueNodePorts)
+                    {
+                        if (lang.TextLanguage.Any(x => x.LanguageGenericType == item.SelectedChoice))
+                        {
+                            //We found the matching selection from the port. Update and choose that
+                            item.SelectedChoiceTexts = lang.TextLanguage;
+                            found = true;
+                            break;
+                        }
+                    }
+
+                    if (!found)
+                    {
+                        item.SelectedChoiceTexts = dNode.DialogueNodePorts.First().TextLanguage;
+                    }
+                }
+            }
+
+            //Update these to blank as we will be using the new LanguageGenerics
+            //Soon to be removed as obsolete
+            item.SelectedChoice = "";
+            item.Text = "";
+
+            switch (node)
+            {
+                case EventNodeData:
+                    break;
+                case DialogueNodeData nd:
+                    item.Texts = nd.Texts;
+                    dialogueUIManager.PopulatePreviousMessage(nd.Texts, node, DialogueUIManager.MessageSource.Character);
+                    break;
+                case TimerChoiceNodeData tChoiceNode when node is TimerChoiceNodeData:
+                    if (tChoiceNode.RequireCharacterInput)
+                    {
+                        dialogueUIManager.PopulatePreviousMessage(tChoiceNode.TextType, node, DialogueUIManager.MessageSource.Character);
+                    }
+                    dialogueUIManager.PopulatePreviousMessage(item.SelectedChoiceTexts, tChoiceNode, DialogueUIManager.MessageSource.Player);
+                    tChoiceNode.SelectedChoice = item.SelectedChoiceTexts;
+                    break;
+                case DialogueChoiceNodeData dChoiceNode when node is DialogueChoiceNodeData:
+                    if (dChoiceNode.RequireCharacterInput)
+                    {
+                        dialogueUIManager.PopulatePreviousMessage(dChoiceNode.TextType, node, DialogueUIManager.MessageSource.Character);
+                    }
+                    dialogueUIManager.PopulatePreviousMessage(item.SelectedChoiceTexts, dChoiceNode, DialogueUIManager.MessageSource.Player);
+                    dChoiceNode.SelectedChoice = item.SelectedChoiceTexts;
+                    break;
+            }
+
+            return true;
         }
 
         private void TriggerDialogueStart(ChapterSaveData chapterData)
